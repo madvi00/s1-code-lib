@@ -106,17 +106,14 @@ function switchPlatform(platform) {
   });
 
   // 2. 토큰 + 컴포넌트 CSS 교체 (lib-style.css는 항상 유지)
-  const pcVars   = document.getElementById('pc-variables');
   const pcComp   = document.getElementById('pc-components');
   const mobVars  = document.getElementById('mobile-variables');
   const mobComp  = document.getElementById('mobile-components');
   if (platform === 'mobile') {
-    pcVars.disabled  = true;
     pcComp.disabled  = true;
     mobVars.disabled = false;
     mobComp.disabled = false;
   } else {
-    pcVars.disabled  = false;
     pcComp.disabled  = false;
     mobVars.disabled = true;
     mobComp.disabled = true;
