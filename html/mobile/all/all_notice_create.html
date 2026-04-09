@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <title>팝업 공지 등록 | 삼성통근버스</title>
+  <!-- CSS resource load -->
+  <link href="../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script src="../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../assets/js/lib/bootstrap-datepicker.js"></script>
+  <script src="../../../assets/js/common.js"></script>
+  <script src="../../../assets/js/datepicker.js"></script>
+  <script src="../../../assets/js/dropdown.js"></script>
+  <script src="../../../assets/js/file.js"></script>
+  <script src="../../../assets/js/input.js"></script>
+  <script src="../../../assets/js/modal.js"></script>
+  <script src="../../../assets/js/multiDropdown.js"></script>
+  <script src="../../../assets/js/rangeTimePicker.js"></script>
+  <script src="../../../assets/js/routeAccordion.js"></script>
+  <script src="../../../assets/js/tab.js"></script>
+  <script src="../../../assets/js/timePicker.js"></script>
+</head>
+
+<body>
+  <!-- .notice-create : 팝업 공지 등록 페이지 전용 class -->
+  <div class="wrapper notice-create">
+    <!-- header -->
+    <header class="header">
+      <button type="button" class="btn-left"></button>
+      <h1 class="title-box">팝업 공지 등록</h1>
+      <button type="button" class="btn-close"></button>
+    </header>
+    <!-- // header -->
+    <main class="main-container">
+      <section class="account-container">
+        <div class="account-area">
+          <div class="account-middle">
+            <div class="field-container">
+              <div class="field-radio-box required">
+                <div class="field-label-box">
+                  <label for="radio-1" class="field-label">사용 여부</label>
+                </div>
+                <div class="radio-group">
+                  <label for="radio-1">
+                    <input type="radio" id="radio-1" name="radio-1" value="value1" checked />
+                    <span>사용</span>
+                  </label>
+                  <label for="radio-2">
+                    <input type="radio" id="radio-2" name="radio-1" value="value3" />
+                    <span>미사용</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="field-container">
+              <div class="field-dropdown-box required">
+                <div class="field-label-box">
+                  <span class="field-label">노출 대상</span>
+                </div>
+                <div class="field field-multi-dropdown">
+                  <div class="field-form">
+                    <!-- 숨겨진 select 태그 -->
+                    <select class="dropdown-select" multiple style="display: none">
+                      <option value="" selected disabled>노출 대상 선택</option>
+                      <option value="포털">
+                        포털
+                      </option>
+                      <option value="관제">
+                        관제
+                      </option>
+                      <option value="앱">
+                        앱
+                      </option>
+                    </select>
+                    <input type="text" id="id" class="btn-dropdown" placeholder="노출 대상 선택" value="" readonly />
+                    <div class="dropdown-list-box">
+                      <div class="dim"></div>
+                      <div class="dropdown-list-wrap">
+                        <div class="dropdown-list-header">
+                          <div class="title-box">운행 구분 선택</div>
+                          <button type="button" class="btn-close"></button>
+                        </div>
+                        <div class="dropdown-list-body">
+                          <div class="checkbox-group">
+                            <label for="portal">
+                              <input type="checkbox" id="portal" name="portal" value="포털" />
+                              <span>포털</span>
+                            </label>
+                            <label for="control">
+                              <input type="checkbox" id="control" name="control" value="관제" />
+                              <span>관제</span>
+                            </label>
+                            <label for="app">
+                              <input type="checkbox" id="app" name="app" value="앱" />
+                              <span>앱</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="dropdown-list-footer">
+                          <div class="button-box">
+                            <button type="button" class="btn btn-white">
+                              <span>취소</span>
+                            </button>
+                            <button type="button" class="btn btn-blue">
+                              <span>선택</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field-container">
+              <div class="field field-input required">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <label for="datepicker-01" class="field-label">노출 시작일시</label>
+                  </div>
+                  <div class="field-wrap">
+                    <div class="field-input-box">
+                      <!-- 2/2 update -->
+                      <div class="input-wrap date">
+                        <input type="text" class="input-datepicker" id="datepicker-01" name="datepicker-01" placeholder="날짜를 선택하세요" value="" data-value="datepicker" readonly />
+                        <i class="icon icon-calendar"></i>
+                      </div>
+                      <div class="modal-datepicker" id="datepicker">
+                        <div class="dim"></div>
+                        <div class="datepicker-picker">
+                          <div class="datepicker-header">
+                            <div class="datepicker-title-box">
+                              <span class="title">날짜 선택</span>
+                            </div>
+                            <button type="button" class="close-button">닫기</button>
+                          </div>
+                          <div class="datepicker-body">
+                            <div class="datepicker-box"></div>
+                          </div>
+                          <div class="datepicker-footer">
+                            <div class="datepicker-controls">
+                              <button type="button" class="btn btn-white cancel-button">
+                                <span>취소</span>
+                              </button>
+                              <button type="button" class="btn btn-blue confirm-button">
+                                <span>확인</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field-input-box">
+                      <div class="timepicker-box">
+                        <div class="timepicker-input">
+                          <input type="text" class="form-control time-input" readonly placeholder="00:00" />
+                        </div>
+                        <div class="timepicker">
+                          <div class="timepicker-container">
+                            <div class="dim"></div>
+                            <div class="timepicker-area">
+                              <div class="timepicker-header">
+                                <div class="timepicker-title">
+                                  <span>시간 선택</span>
+                                </div>
+                                <button type="button" class="btn-timepicker-close" title="시간선택 닫기"></button>
+                              </div>
+                              <div class="timepicker-middle">
+                                <div class="picker">
+                                  <div class="swiper-container hours">
+                                    <div class="swiper-wrapper">
+                                      <div class="hour swiper-slide">00</div>
+                                      <div class="hour swiper-slide">01</div>
+                                      <div class="hour swiper-slide">02</div>
+                                      <div class="hour swiper-slide">03</div>
+                                      <div class="hour swiper-slide">04</div>
+                                      <div class="hour swiper-slide">05</div>
+                                      <div class="hour swiper-slide">06</div>
+                                      <div class="hour swiper-slide">07</div>
+                                      <div class="hour swiper-slide">08</div>
+                                      <div class="hour swiper-slide">09</div>
+                                      <div class="hour swiper-slide">10</div>
+                                      <div class="hour swiper-slide">11</div>
+                                      <div class="hour swiper-slide">12</div>
+                                      <div class="hour swiper-slide">13</div>
+                                      <div class="hour swiper-slide">14</div>
+                                      <div class="hour swiper-slide">15</div>
+                                      <div class="hour swiper-slide">16</div>
+                                      <div class="hour swiper-slide">17</div>
+                                      <div class="hour swiper-slide">18</div>
+                                      <div class="hour swiper-slide">19</div>
+                                      <div class="hour swiper-slide">20</div>
+                                      <div class="hour swiper-slide">21</div>
+                                      <div class="hour swiper-slide">22</div>
+                                      <div class="hour swiper-slide">23</div>
+                                    </div>
+                                  </div>
+                                  <div class="separator-box">
+                                    <div class="separator">:</div>
+                                  </div>
+                                  <div class="swiper-container minutes">
+                                    <div class="swiper-wrapper">
+                                      <div class="minute swiper-slide">00</div>
+                                      <div class="minute swiper-slide">01</div>
+                                      <div class="minute swiper-slide">02</div>
+                                      <div class="minute swiper-slide">03</div>
+                                      <div class="minute swiper-slide">04</div>
+                                      <div class="minute swiper-slide">05</div>
+                                      <div class="minute swiper-slide">06</div>
+                                      <div class="minute swiper-slide">07</div>
+                                      <div class="minute swiper-slide">08</div>
+                                      <div class="minute swiper-slide">09</div>
+                                      <div class="minute swiper-slide">10</div>
+                                      <div class="minute swiper-slide">11</div>
+                                      <div class="minute swiper-slide">12</div>
+                                      <div class="minute swiper-slide">13</div>
+                                      <div class="minute swiper-slide">14</div>
+                                      <div class="minute swiper-slide">15</div>
+                                      <div class="minute swiper-slide">16</div>
+                                      <div class="minute swiper-slide">17</div>
+                                      <div class="minute swiper-slide">18</div>
+                                      <div class="minute swiper-slide">19</div>
+                                      <div class="minute swiper-slide">20</div>
+                                      <div class="minute swiper-slide">21</div>
+                                      <div class="minute swiper-slide">22</div>
+                                      <div class="minute swiper-slide">23</div>
+                                      <div class="minute swiper-slide">24</div>
+                                      <div class="minute swiper-slide">25</div>
+                                      <div class="minute swiper-slide">26</div>
+                                      <div class="minute swiper-slide">27</div>
+                                      <div class="minute swiper-slide">28</div>
+                                      <div class="minute swiper-slide">29</div>
+                                      <div class="minute swiper-slide">30</div>
+                                      <div class="minute swiper-slide">31</div>
+                                      <div class="minute swiper-slide">32</div>
+                                      <div class="minute swiper-slide">33</div>
+                                      <div class="minute swiper-slide">34</div>
+                                      <div class="minute swiper-slide">35</div>
+                                      <div class="minute swiper-slide">36</div>
+                                      <div class="minute swiper-slide">37</div>
+                                      <div class="minute swiper-slide">38</div>
+                                      <div class="minute swiper-slide">39</div>
+                                      <div class="minute swiper-slide">40</div>
+                                      <div class="minute swiper-slide">41</div>
+                                      <div class="minute swiper-slide">42</div>
+                                      <div class="minute swiper-slide">43</div>
+                                      <div class="minute swiper-slide">44</div>
+                                      <div class="minute swiper-slide">45</div>
+                                      <div class="minute swiper-slide">46</div>
+                                      <div class="minute swiper-slide">47</div>
+                                      <div class="minute swiper-slide">48</div>
+                                      <div class="minute swiper-slide">49</div>
+                                      <div class="minute swiper-slide">50</div>
+                                      <div class="minute swiper-slide">51</div>
+                                      <div class="minute swiper-slide">52</div>
+                                      <div class="minute swiper-slide">53</div>
+                                      <div class="minute swiper-slide">54</div>
+                                      <div class="minute swiper-slide">55</div>
+                                      <div class="minute swiper-slide">56</div>
+                                      <div class="minute swiper-slide">57</div>
+                                      <div class="minute swiper-slide">58</div>
+                                      <div class="minute swiper-slide">59</div>
+                                    </div>
+                                  </div>
+                                  <div class="vizor"></div>
+                                </div>
+                              </div>
+                              <div class="timepicker-bottom">
+                                <div class="button-box">
+                                  <button type="button" class="btn btn-blue btn-confirm">
+                                    <span>적용</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field-container">
+              <div class="field field-input required">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <label for="datepicker-02" class="field-label">노출 종료일시</label>
+                    <div class="checkbox-box">
+                      <div class="checkbox-group">
+                        <label for="checkbox-1">
+                          <input type="checkbox" id="checkbox-1" name="checkbox-1" />
+                          <span>무기한</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field-wrap">
+                    <div class="field-input-box">
+                      <!-- 2/2 update -->
+                      <div class="input-wrap date">
+                        <input type="text" class="input-datepicker" id="datepicker-02" name="datepicker-02" placeholder="날짜를 선택하세요" value="" data-value="datepicker" readonly />
+                        <i class="icon icon-calendar"></i>
+                      </div>
+                      <div class="modal-datepicker" id="datepicker">
+                        <div class="dim"></div>
+                        <div class="datepicker-picker">
+                          <div class="datepicker-header">
+                            <div class="datepicker-title-box">
+                              <span class="title">날짜 선택</span>
+                            </div>
+                            <button type="button" class="close-button">닫기</button>
+                          </div>
+                          <div class="datepicker-body">
+                            <div class="datepicker-box"></div>
+                          </div>
+                          <div class="datepicker-footer">
+                            <div class="datepicker-controls">
+                              <button type="button" class="btn btn-white cancel-button">
+                                <span>취소</span>
+                              </button>
+                              <button type="button" class="btn btn-blue confirm-button">
+                                <span>확인</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field-input-box">
+                      <div class="timepicker-box">
+                        <div class="timepicker-input">
+                          <input type="text" class="form-control time-input" readonly placeholder="00:00" />
+                        </div>
+                        <div class="timepicker">
+                          <div class="timepicker-container">
+                            <div class="dim"></div>
+                            <div class="timepicker-area">
+                              <div class="timepicker-header">
+                                <div class="timepicker-title">
+                                  <span>시간 선택</span>
+                                </div>
+                                <button type="button" class="btn-timepicker-close" title="시간선택 닫기"></button>
+                              </div>
+                              <div class="timepicker-middle">
+                                <div class="picker">
+                                  <div class="swiper-container hours">
+                                    <div class="swiper-wrapper">
+                                      <div class="hour swiper-slide">00</div>
+                                      <div class="hour swiper-slide">01</div>
+                                      <div class="hour swiper-slide">02</div>
+                                      <div class="hour swiper-slide">03</div>
+                                      <div class="hour swiper-slide">04</div>
+                                      <div class="hour swiper-slide">05</div>
+                                      <div class="hour swiper-slide">06</div>
+                                      <div class="hour swiper-slide">07</div>
+                                      <div class="hour swiper-slide">08</div>
+                                      <div class="hour swiper-slide">09</div>
+                                      <div class="hour swiper-slide">10</div>
+                                      <div class="hour swiper-slide">11</div>
+                                      <div class="hour swiper-slide">12</div>
+                                      <div class="hour swiper-slide">13</div>
+                                      <div class="hour swiper-slide">14</div>
+                                      <div class="hour swiper-slide">15</div>
+                                      <div class="hour swiper-slide">16</div>
+                                      <div class="hour swiper-slide">17</div>
+                                      <div class="hour swiper-slide">18</div>
+                                      <div class="hour swiper-slide">19</div>
+                                      <div class="hour swiper-slide">20</div>
+                                      <div class="hour swiper-slide">21</div>
+                                      <div class="hour swiper-slide">22</div>
+                                      <div class="hour swiper-slide">23</div>
+                                    </div>
+                                  </div>
+                                  <div class="separator-box">
+                                    <div class="separator">:</div>
+                                  </div>
+                                  <div class="swiper-container minutes">
+                                    <div class="swiper-wrapper">
+                                      <div class="minute swiper-slide">00</div>
+                                      <div class="minute swiper-slide">01</div>
+                                      <div class="minute swiper-slide">02</div>
+                                      <div class="minute swiper-slide">03</div>
+                                      <div class="minute swiper-slide">04</div>
+                                      <div class="minute swiper-slide">05</div>
+                                      <div class="minute swiper-slide">06</div>
+                                      <div class="minute swiper-slide">07</div>
+                                      <div class="minute swiper-slide">08</div>
+                                      <div class="minute swiper-slide">09</div>
+                                      <div class="minute swiper-slide">10</div>
+                                      <div class="minute swiper-slide">11</div>
+                                      <div class="minute swiper-slide">12</div>
+                                      <div class="minute swiper-slide">13</div>
+                                      <div class="minute swiper-slide">14</div>
+                                      <div class="minute swiper-slide">15</div>
+                                      <div class="minute swiper-slide">16</div>
+                                      <div class="minute swiper-slide">17</div>
+                                      <div class="minute swiper-slide">18</div>
+                                      <div class="minute swiper-slide">19</div>
+                                      <div class="minute swiper-slide">20</div>
+                                      <div class="minute swiper-slide">21</div>
+                                      <div class="minute swiper-slide">22</div>
+                                      <div class="minute swiper-slide">23</div>
+                                      <div class="minute swiper-slide">24</div>
+                                      <div class="minute swiper-slide">25</div>
+                                      <div class="minute swiper-slide">26</div>
+                                      <div class="minute swiper-slide">27</div>
+                                      <div class="minute swiper-slide">28</div>
+                                      <div class="minute swiper-slide">29</div>
+                                      <div class="minute swiper-slide">30</div>
+                                      <div class="minute swiper-slide">31</div>
+                                      <div class="minute swiper-slide">32</div>
+                                      <div class="minute swiper-slide">33</div>
+                                      <div class="minute swiper-slide">34</div>
+                                      <div class="minute swiper-slide">35</div>
+                                      <div class="minute swiper-slide">36</div>
+                                      <div class="minute swiper-slide">37</div>
+                                      <div class="minute swiper-slide">38</div>
+                                      <div class="minute swiper-slide">39</div>
+                                      <div class="minute swiper-slide">40</div>
+                                      <div class="minute swiper-slide">41</div>
+                                      <div class="minute swiper-slide">42</div>
+                                      <div class="minute swiper-slide">43</div>
+                                      <div class="minute swiper-slide">44</div>
+                                      <div class="minute swiper-slide">45</div>
+                                      <div class="minute swiper-slide">46</div>
+                                      <div class="minute swiper-slide">47</div>
+                                      <div class="minute swiper-slide">48</div>
+                                      <div class="minute swiper-slide">49</div>
+                                      <div class="minute swiper-slide">50</div>
+                                      <div class="minute swiper-slide">51</div>
+                                      <div class="minute swiper-slide">52</div>
+                                      <div class="minute swiper-slide">53</div>
+                                      <div class="minute swiper-slide">54</div>
+                                      <div class="minute swiper-slide">55</div>
+                                      <div class="minute swiper-slide">56</div>
+                                      <div class="minute swiper-slide">57</div>
+                                      <div class="minute swiper-slide">58</div>
+                                      <div class="minute swiper-slide">59</div>
+                                    </div>
+                                  </div>
+                                  <div class="vizor"></div>
+                                </div>
+                              </div>
+                              <div class="timepicker-bottom">
+                                <div class="button-box">
+                                  <button type="button" class="btn btn-blue btn-confirm">
+                                    <span>적용</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field-container">
+              <div class="field field-input required">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <label for="input_01" class="field-label">제목</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-wrap">
+                      <div class="input-box">
+                        <input id="input_01" name="input_01" placeholder="입력해 주세요." type="text" value="" />
+                        <i class="icon-clear"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field-container">
+              <div class="field field-input required">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <span class="field-label">공지사항 내용</span>
+                  </div>
+                  <div class="field-wrap">
+                    <!-- Editor 영역 -->
+                    <div class="editor-container">
+                      <div class="editor-wrap" style="width: 100%; height: 342px; background-color: gray;">Editor 영역</div>
+                    </div>
+                    <!-- // Editor 영역 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field-container">
+              <div class="field field-input">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <label for="input_01" class="field-label">이미지 설명</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-wrap">
+                      <div class="input-box">
+                        <input id="input_01" name="input_01" placeholder="입력해 주세요." type="text" value="" />
+                        <i class="icon-clear"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="account-bottom">
+            <div class="button-box">
+              <button type="button" class="btn btn-white">
+                <span>취소</span>
+              </button>
+              <button type="button" class="btn btn-blue">
+                <span>등록</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

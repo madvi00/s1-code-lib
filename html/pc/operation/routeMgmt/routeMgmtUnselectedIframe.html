@@ -1,0 +1,1360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript">
+    sessionStorage.setItem('contextpath', '/uvis')
+    sessionStorage.setItem('langSet', 'ko')
+    //////////달력 설정//////////
+    var cldMsg_prevMonth = '이전 달' // 이전 달
+    var cldMsg_nextMonth = '다음 달' // 다음 달
+    var cldMsg_prevYear = '이전 년도' // 이전 년도
+    var cldMsg_nextYear = '다음 년도' // 다음 년도
+    var cldMsg_prev = '이전' // 이전
+    var cldMsg_next = '다음' // 다음
+    //////////달력 설정//////////
+    //////////jquery.uvis.common.js 다국어//////////
+    var jquery_uvis_common_checkPasswordRegex1 = '비밀번호에는 공백을 입력할 수 없습니다.' // 비밀번호에는 공백을 입력할 수 없습니다.
+    var jquery_uvis_common_checkPasswordRegex2 = '새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.' // 새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.
+    var jquery_uvis_common_ajaxErrorMessage0 = '접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.' // 접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage1 = '장시간 미사용으로 로그아웃 되었습니다.\r\n로그인 페이지로 이동 합니다.' // 장시간 미사용으로 로그아웃 되었습니다.\\r\\n로그인 페이지로 이동 합니다.
+    var jquery_uvis_common_ajaxErrorMessage2 = '에러가 발생하였습니다.\r\n네트워크 상태를 확인해주세요.' // 에러가 발생하였습니다.\\r\\n네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage3 = '에러가 발생하였습니다.\r\n접근이 거부되었습니다.\n\n새로고침 또는 로그인을 다시 해주세요.' // 에러가 발생하였습니다.\\r\\n접근이 거부되었습니다.\\n\\n새로고침 또는 로그인을 다시 해주세요.
+    var jquery_uvis_common_ajaxErrorMessage4 = '에러가 발생하였습니다.\r\nURL을 찾을 수 없습니다.' // 에러가 발생하였습니다.\\r\\nURL을 찾을 수 없습니다.
+    var jquery_uvis_common_ajaxErrorMessage5 = '에러가 발생하였습니다.\r\n내부 서버 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n내부 서버 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage6 = '에러가 발생하였습니다.\r\n파싱 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n파싱 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage7 = '에러가 발생하였습니다.\r\n실행시간이 지연되어 타임아웃이 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n실행시간이 지연되어 타임아웃이 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage8 = '에러가 발생하였습니다.\r\n알 수 없는 에러입니다.\n\n' // 에러가 발생하였습니다.\\r\\n알 수 없는 에러입니다.\\n\\n
+    var jquery_uvis_common_isValidDate1 = '잘못된 날짜형식 입니다.\n\r입력하신 문자열 길이를 확인해주세요.' // 잘못된 날짜형식 입니다.\\n\\r입력하신 문자열 길이를 확인해주세요.
+    var jquery_uvis_common_isValidDate21 = '잘못된 날짜형식 입니다.\n\r' // 잘못된 날짜형식 입니다.\\n\\r
+    var jquery_uvis_common_isValidDate22 = '월은 존재하지 않는 월입니다.' // 월은 존재하지 않는 월입니다.
+    var jquery_uvis_common_isValidDate31 = '잘못된 날짜형식 입니다.\n\r해당 월은' // 잘못된 날짜형식 입니다.\\n\\r해당 월은
+    var jquery_uvis_common_isValidDate32 = '일 까지입니다.' // 일 까지입니다.
+    var jquery_uvis_common_isValidDate4 = '잘못된 날짜형식 입니다.' // 잘못된 날짜형식 입니다.
+    var jquery_uvis_common_checkFileExt1 = '정상적인 파일이 아닙니다.' // 정상적인 파일이 아닙니다.
+    var jquery_uvis_common_checkFileExt2 = '파일만 업로드 가능 합니다.' // 파일만 업로드 가능 합니다.
+    var jquery_uvis_common_downloadCapture1 = '인터넷 익스플로러는 지원하지 않습니다.' // 인터넷 익스플로러는 지원하지 않습니다.
+    var jquery_uvis_common_downloadCapture2 = '이미지로 변환 중 에러가 발생하였습니다.' // 이미지로 변환 중 에러가 발생하였습니다.
+    //////////jquery.uvis.common.js 다국어//////////
+    var termsFilter = ['img', 'a', 'p', 'br', 'span', 'b', 'strong', 'u', 'colgroup', 'col', 'table', 'tbody', 'tr', 'td', 'ul', 'li', 'dl', 'dd', 'dt']
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <!-- CSS resource load -->
+  <link href="../../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../../assets/css/lib/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../../../assets/js/jquery-ui.js"></script>
+  <script src="../../../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../../../assets/js/bootstrap.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../../../assets/js/popper.min.js"></script>
+  <script src="../../../../assets/js/datatables.min.js"></script>
+  <script src="../../../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../../../assets/js/jquery.cookie.js"></script>
+  <script src="../../../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../../../assets/js/jquery.uvis.common.js"></script>
+  <script src="../../../../assets/js/highcharts.js"></script>
+  <script src="../../../../assets/js/exporting.js"></script>
+  <script src="../../../../assets/js/canvg.js"></script>
+  <script src="../../../../assets/js/rgbcolor.min.js"></script>
+  <script src="../../../../assets/js/html2canvas.js"></script>
+  <script src="../../../../assets/js/es6-promise.auto.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../../../assets/js/jquery.jqGrid.src.js"></script>
+  <script src="../../../../assets/js/jquery.paging.js"></script>
+  <script src="../../../../assets/js/publish.js"></script>
+  <script src="../../../../assets/js/amobe_datepicker.js"></script>
+  <script src="../../../../assets/js/amobe_dropdown.js"></script>
+  <script src="../../../../assets/js/amobe_header.js"></script>
+  <script src="../../../../assets/js/amobe_input.js"></script>
+  <script src="../../../../assets/js/amobe_mapList.js"></script>
+  <script src="../../../../assets/js/amobe_modal.js"></script>
+  <script src="../../../../assets/js/amobe_multiMap.js"></script>
+  <script src="../../../../assets/js/amobe_rangeTimePicker.js"></script>
+  <script src="../../../../assets/js/amobe_routeAccordion.js"></script>
+  <script src="../../../../assets/js/amobe_swiper.js"></script>
+  <script src="../../../../assets/js/amobe_tab.js"></script>
+  <script src="../../../../assets/js/amobe_table.js"></script>
+  <script src="../../../../assets/js/amobe_timePicker.js"></script>
+  <title>노선관리</title>
+  <script type="text/javascript">
+    // jqGrid Local Data - 노선 리스트
+    const _JQ_GRID_DATA = [{
+        sequence: '6',
+        operationType: '출근',
+        status: '평상',
+        routeName: '경기일보_K1-H2-H1(토요일)',
+        path: 'Y',
+      },
+      {
+        sequence: '5',
+        operationType: '출근',
+        status: '정상',
+        routeName: '고색동_H1-H2-K1',
+        path: 'Y',
+      },
+      {
+        sequence: '4',
+        operationType: '퇴근',
+        status: '정상',
+        routeName: '권선동선행초교/권선자이_K1',
+        path: 'Y',
+      },
+      {
+        sequence: '3',
+        operationType: '서를',
+        status: '입시',
+        routeName: '금곡동/호매실동_H1-H2-K1(토요일)',
+        path: 'Y',
+      },
+      {
+        sequence: '2',
+        operationType: '퇴근',
+        status: '메지',
+        routeName: '화상캠퍼스H1-H3_DS큐브(중형) (9/22부터시행]',
+        path: 'N',
+      },
+      {
+        sequence: '1',
+        operationType: '서를',
+        status: '정상',
+        routeName: '곡반정동한솔아파트 H4',
+        path: 'Y',
+      },
+      {
+        sequence: '6',
+        operationType: '출근',
+        status: '평상',
+        routeName: '경기일보_K1-H2-H1(토요일)',
+        path: 'Y',
+      },
+      {
+        sequence: '5',
+        operationType: '출근',
+        status: '정상',
+        routeName: '고색동_H1-H2-K1',
+        path: 'Y',
+      },
+      {
+        sequence: '4',
+        operationType: '퇴근',
+        status: '정상',
+        routeName: '권선동선행초교/권선자이_K1',
+        path: 'Y',
+      },
+      {
+        sequence: '3',
+        operationType: '서를',
+        status: '입시',
+        routeName: '금곡동/호매실동_H1-H2-K1(토요일)',
+        path: 'Y',
+      },
+      {
+        sequence: '2',
+        operationType: '퇴근',
+        status: '메지',
+        routeName: '화상캠퍼스H1-H3_DS큐브(중형) (9/22부터시행]',
+        path: 'N',
+      },
+      {
+        sequence: '1',
+        operationType: '서를',
+        status: '정상',
+        routeName: '곡반정동한솔아파트 H4',
+        path: 'Y',
+      },
+      {
+        sequence: '6',
+        operationType: '출근',
+        status: '평상',
+        routeName: '경기일보_K1-H2-H1(토요일)',
+        path: 'Y',
+      },
+      {
+        sequence: '5',
+        operationType: '출근',
+        status: '정상',
+        routeName: '고색동_H1-H2-K1',
+        path: 'Y',
+      },
+      {
+        sequence: '4',
+        operationType: '퇴근',
+        status: '정상',
+        routeName: '권선동선행초교/권선자이_K1',
+        path: 'Y',
+      },
+      {
+        sequence: '3',
+        operationType: '서를',
+        status: '입시',
+        routeName: '금곡동/호매실동_H1-H2-K1(토요일)',
+        path: 'Y',
+      },
+      {
+        sequence: '2',
+        operationType: '퇴근',
+        status: '메지',
+        routeName: '화상캠퍼스H1-H3_DS큐브(중형) (9/22부터시행]',
+        path: 'N',
+      },
+      {
+        sequence: '1',
+        operationType: '서를',
+        status: '정상',
+        routeName: '곡반정동한솔아파트 H4',
+        path: 'Y',
+      },
+    ];
+    // jqGrid Local Data - 정류장 정보
+    const _JQ_GRID_DATA_ROUTE_INFO = [];
+    $(document).ready(function() {
+      setPageDefault();
+      setupJqGridResize({
+        containerSelector: '#div_list2',
+        gridSelector: '#list2',
+      });
+    });
+
+    function setPageDefault() {
+      listLoad(false, 1);
+      initRouteInfoGrid(false, 1);
+    }
+
+    function listLoad(firstNoLoad, page) {
+      $('#list').jqGrid('GridUnload');
+      var grid = jQuery('#list');
+      var displayData = _JQ_GRID_DATA || [];
+      var emptyRow = {
+        sequence: '',
+        operationType: '',
+        status: '',
+        routeName: '',
+        path: '',
+        isEmpty: true,
+      };
+      while (displayData.length < 15) {
+        displayData.push(Object.assign({}, emptyRow));
+      }
+      var initialHeight = calculateJqGridHeight();
+      grid.jqGrid({
+        datatype: 'local',
+        data: displayData,
+        // 2/23 update : 텍스트 변경
+        colNames: ['순번', '운행구분', '운영상태', '노선명', '경로'],
+        colModel: [{
+            name: 'sequence',
+            index: 'sequence',
+            width: 64,
+            align: 'center',
+            sortable: true
+          },
+          {
+            name: 'operationType',
+            index: 'operationType',
+            width: 80,
+            align: 'center',
+            sortable: true
+          },
+          {
+            name: 'status',
+            index: 'status',
+            width: 80,
+            align: 'center',
+            sortable: true
+          },
+          {
+            name: 'routeName',
+            index: 'routeName',
+            width: 300,
+            align: 'left',
+            sortable: true
+          },
+          {
+            name: 'path',
+            index: 'path',
+            width: 64,
+            align: 'center',
+            sortable: true
+          },
+        ],
+        sortable: false,
+        rowNum: 15,
+        autowidth: true,
+        scrollRows: true,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        height: initialHeight,
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 0,
+        multiselect: true,
+        multiselectWidth: 43,
+        multiboxonly: false,
+        beforeSelectRow: function(rowid, e) {
+          var rowData = grid.jqGrid('getRowData', rowid);
+          // 빈 행은 선택 불가능
+          if (rowData.isEmpty === 'true' || (!rowData.sequence && !rowData.operationType && !rowData.status && !rowData.routeName && !rowData.path)) {
+            return false;
+          }
+          return true;
+        },
+        onSelectRow: function(rowid, status, e) {
+          var rowData = grid.jqGrid('getRowData', rowid);
+          if (rowData.isEmpty !== 'true' && rowData.sequence) {
+            // 선택된 행의 데이터로 상세 정보 업데이트
+            // 필요시 여기에 로직 추가
+          }
+        },
+        loadComplete: function(data) {
+          // 빈 행 처리
+          var ids = grid.jqGrid('getDataIDs');
+          for (var i = 0; i < ids.length; i++) {
+            var rowData = grid.jqGrid('getRowData', ids[i]);
+            if (rowData.isEmpty === 'true' || (!rowData.sequence && !rowData.operationType && !rowData.status && !rowData.routeName && !rowData.path)) {
+              // 빈 행의 체크박스 비활성화 및 숨김
+              var checkbox = grid.find('tr#' + ids[i] + ' input[type="checkbox"]');
+              checkbox.prop('disabled', true).hide();
+              // 빈 행에 클래스 추가
+              grid.find('tr#' + ids[i]).addClass('empty-row');
+              // 빈 행의 모든 셀 내용 제거 (첫 번째 셀인 체크박스는 제외)
+              grid
+                .find('tr#' + ids[i] + ' td')
+                .not(':first')
+                .html('');
+            }
+          }
+          // 스크롤 여부 확인 후 .ui-jqgrid-bdiv 너비 조정
+          setTimeout(function() {
+            adjustBdivWidth(grid);
+          }, 0);
+        },
+      });
+    }
+
+    function initRouteInfoGrid() {
+      // jqGrid 리스트 초기화, 생성
+      const $wrap = $('#div_list2');
+      var grid = jQuery('#list2');
+      if (grid.length === 0) return;
+      if (grid.jqGrid) {
+        try {
+          grid.jqGrid('GridUnload');
+        } catch (e) {
+          // 그리드가 이미 언로드되었거나 존재하지 않는 경우 무시
+        }
+      }
+      // 데이터 준비
+      var displayData = _JQ_GRID_DATA_ROUTE_INFO ? [..._JQ_GRID_DATA_ROUTE_INFO] : [];
+      var isEmptyData = displayData.length === 0;
+      // 그리드 너비 설정
+      var gridWidth = $wrap.width();
+      if (gridWidth <= 0) {
+        // 너비가 0이면 기본값 사용
+        gridWidth = 500;
+      }
+      grid.jqGrid({
+        datatype: 'local',
+        data: displayData,
+        colNames: ['순번', '정류장명', '소요시간', '메모'],
+        colModel: [{
+            name: 'sequence',
+            index: 'sequence',
+            width: 48,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'stopName',
+            index: 'stopName',
+            width: 191,
+            align: 'left',
+            sortable: false
+          },
+          {
+            name: 'travelTime',
+            index: 'travelTime',
+            width: 80,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'memo',
+            index: 'memo',
+            width: 200,
+            align: 'center',
+            sortable: false
+          },
+        ],
+        sortable: false,
+        rowNum: 10000, // 모든 행 표시
+        autowidth: true,
+        scrollRows: false,
+        scroll: true,
+        loadonce: true,
+        viewrecords: false,
+        width: gridWidth,
+        height: 227,
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 0,
+        loadComplete: function(data) {
+          // 데이터가 없을 때 메시지 표시
+          if (isEmptyData) {
+            var emptyMsg = '<tr class="empty-message-row">' + '<td colspan="4">' + '<span>설정 버튼을 눌러<br>정류장 정보를 추가해 주세요.</span>' + '</td>' + '</tr>';
+            grid.find('tbody tr').remove();
+            grid.find('tbody').append(emptyMsg);
+          }
+          // 불필요한 wrapper div 제거
+          var $bdiv = grid.closest('.ui-jqgrid-bdiv');
+          if ($bdiv.length) {
+            var $wrapper = $bdiv.find('> div[style*="position:relative"]');
+            if ($wrapper.length) {
+              var $emptyDiv = $wrapper.find('> div:empty');
+              if ($emptyDiv.length) {
+                $emptyDiv.remove();
+              }
+              // table을 직접 bdiv의 자식으로 이동
+              var $table = $wrapper.find('table');
+              if ($table.length) {
+                $table.detach();
+                $wrapper.replaceWith($table);
+              }
+            }
+          }
+          // 스크롤 여부 확인 후 .ui-jqgrid-bdiv 너비 조정
+          setTimeout(function() {
+            adjustBdivWidth(grid);
+          }, 0);
+        },
+      });
+    }
+  </script>
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <form id="searchForm" name="searchForm" onsubmit="return false;">
+            <input type="hidden" id="rows" name="rows" value="15" />
+            <input type="hidden" id="page" name="page" value="1" />
+            <div class="row">
+              <!-- 노선명 -->
+              <div class="input-group">
+                <legend>노선명</legend>
+                <div class="input-wrap">
+                  <div class="input-wrap">
+                    <input id="route-name" name="route-name" class="input-xsmall" placeholder="노선명을 입력하세요" type="text" value="" @@property />
+                  </div>
+                </div>
+              </div>
+              <!-- 운행구분 -->
+              <div class="input-group">
+                <legend>운행구분</legend>
+                <div class="input-wrap inline select">
+                  <div class="field field-dropdown field-x-small normal">
+                    <div class="field-form">
+                      <!-- 숨겨진 select 태그 -->
+                      <select class="dropdown-select" style="display: none">
+                        >
+                        <option value="전체" active>전체</option>
+                        <option value="출근">출근</option>
+                        <option value="퇴근">퇴근</option>
+                        <option value="서를">서를</option>
+                      </select>
+                      <button type="button" class="btn-dropdown">
+                        <span class="text">전체</span>
+                        <span class="placeholder" style="display: none">선택</span>
+                      </button>
+                      <div class="dropdown-list-box">
+                        <div class="dropdown-list active">
+                          <button type="button" class="btn-dropdown-list" data-value="전체">
+                            <span>전체</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="출근">
+                            <span>출근</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="퇴근">
+                            <span>퇴근</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="서를">
+                            <span>서를</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 2/23 update : 텍스트 변경 -->
+              <!-- 운영상태 -->
+              <div class="input-group">
+                <legend>운영상태</legend>
+                <div class="input-wrap inline select">
+                  <div class="field field-dropdown field-x-small normal">
+                    <div class="field-form">
+                      <!-- 숨겨진 select 태그 -->
+                      <select class="dropdown-select" style="display: none">
+                        >
+                        <option value="전체" active>전체</option>
+                        <option value="정상">정상</option>
+                        <option value="평상">평상</option>
+                        <option value="입시">입시</option>
+                        <option value="메지">메지</option>
+                      </select>
+                      <button type="button" class="btn-dropdown">
+                        <span class="text">전체</span>
+                        <span class="placeholder" style="display: none">선택</span>
+                      </button>
+                      <div class="dropdown-list-box">
+                        <div class="dropdown-list active">
+                          <button type="button" class="btn-dropdown-list" data-value="전체">
+                            <span>전체</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="정상">
+                            <span>정상</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="평상">
+                            <span>평상</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="입시">
+                            <span>입시</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="메지">
+                            <span>메지</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="search-btns">
+          <button type="button" class="btn btn-white btn-reset" onclick="resetSearch()">
+            <span>초기화</span>
+          </button>
+          <button type="button" class="btn btn-blue btn-search" onclick="searchNotice()">
+            <span>검색</span>
+          </button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <!-- 2/4 update -->
+      <div class="partition-area fixed-area">
+        <div class="row">
+          <div class="col col-xl-4">
+            <div class="area-box">
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-left">
+                    <div class="title-box">노선 리스트</div>
+                    <div class="info-box">
+                      <div class="count-box">
+                        <span class="label">총</span>
+                        <span class="data">{{count}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header-right">
+                    <button type="button" class="btn btn-white" onclick="" disabled>
+                      <span>삭제</span>
+                    </button>
+                    <button type="button" class="btn btn-white" onclick="">
+                      <span>노선복사</span>
+                    </button>
+                    <button type="button" class="btn btn-white" onclick="">
+                      <span>다운로드</span>
+                    </button>
+                    <button type="button" class="btn btn-blue" onclick="">
+                      <span>신규등록</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="data-table" id="div_list">
+                  <table id="list"></table>
+                </div>
+                <div class="data-list-table-footer">
+                  <div id="pager"></div>
+                  <div class="paging jquery-paging" id="paginate">
+                    <a class="btn-first disabled" href="#1"></a>
+                    <a class="btn-prev disabled" href="#1"></a>
+                    <a class="on" href="#1">1</a>
+                    <a href="#2">2</a>
+                    <a href="#3">3</a>
+                    <a href="#4">4</a>
+                    <a href="#5">5</a>
+                    <a href="#6">6</a>
+                    <a class="btn-next" href="#2"></a>
+                    <a class="btn-last" href="#6"></a>
+                  </div>
+                  <div class="footer-right">
+                    <div class="input-wrap inline select length-change small">
+                      <div class="field field-dropdown field-x-small normal">
+                        <div class="field-form">
+                          <!-- 숨겨진 select 태그 -->
+                          <select class="dropdown-select" style="display: none">
+                            >
+                            <option value="15개씩 보기" active>15개씩 보기</option>
+                            <option value="30개씩 보기">30개씩 보기</option>
+                            <option value="50개씩 보기">50개씩 보기</option>
+                            <option value="100개씩 보기">100개씩 보기</option>
+                          </select>
+                          <button type="button" class="btn-dropdown">
+                            <span class="text">15개씩 보기</span>
+                            <span class="placeholder" style="display: none">선택</span>
+                          </button>
+                          <div class="dropdown-list-box">
+                            <div class="dropdown-list active">
+                              <button type="button" class="btn-dropdown-list" data-value="15개씩 보기">
+                                <span>15개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="30개씩 보기">
+                                <span>30개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="50개씩 보기">
+                                <span>50개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="100개씩 보기">
+                                <span>100개씩 보기</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-xl-8">
+            <div class="area-box">
+              <div class="card-box data-form-table">
+                <div class="data-form-table-header">
+                  <div class="header-left">
+                    <h3 class="header-title">상세 정보</h3>
+                  </div>
+                  <div class="header-right">
+                    <button type="button" class="btn btn-white" id="toggle_cancel">취소</button>
+                    <button class="btn btn-blue" id="toggle_save">저장</button>
+                  </div>
+                </div>
+                <div class="data-form-table-body">
+                  <div class="table-group-box">
+                    <div class="table-box half">
+                      <div class="table-header">
+                        <h4>기본 정보</h4>
+                      </div>
+                      <form id="saveForm" name="saveForm" onsubmit="return false;">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <th><span class="necessary">노선명</span></th>
+                              <td colspan="3">
+                                <div class="input-wrap">
+                                  <div class="input-wrap">
+                                    <input id="routeName" name="routeName" class="input-xsmall" placeholder="노선명을 입력하세요" type="text" value="경기일보_K1-H2-H1(토요일)" @@property />
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th><span class="necessary">노선구분</span></th>
+                              <td>
+                                <div class="input-wrap inline select">
+                                  <div class="field field-dropdown field-x-small normal">
+                                    <div class="field-form">
+                                      <!-- 숨겨진 select 태그 -->
+                                      <select class="dropdown-select" style="display: none">
+                                        >
+                                        <option value="출근" active>출근</option>
+                                        <option value="퇴근">퇴근</option>
+                                        <option value="서를">서를</option>
+                                      </select>
+                                      <button type="button" class="btn-dropdown">
+                                        <span class="text">출근</span>
+                                        <span class="placeholder" style="display: none">선택</span>
+                                      </button>
+                                      <div class="dropdown-list-box">
+                                        <div class="dropdown-list active">
+                                          <button type="button" class="btn-dropdown-list" data-value="출근">
+                                            <span>출근</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="퇴근">
+                                            <span>퇴근</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="서를">
+                                            <span>서를</span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <!-- 2/23 update : 텍스트 변경 -->
+                              <th><span class="necessary">운영 상태</span></th>
+                              <td>
+                                <div class="input-wrap inline select">
+                                  <div class="field field-dropdown field-x-small normal">
+                                    <div class="field-form">
+                                      <!-- 숨겨진 select 태그 -->
+                                      <select class="dropdown-select" style="display: none">
+                                        >
+                                        <option value="정상" active>정상</option>
+                                        <option value="평상">평상</option>
+                                        <option value="입시">입시</option>
+                                        <option value="메지">메지</option>
+                                      </select>
+                                      <button type="button" class="btn-dropdown">
+                                        <span class="text">정상</span>
+                                        <span class="placeholder" style="display: none">선택</span>
+                                      </button>
+                                      <div class="dropdown-list-box">
+                                        <div class="dropdown-list active">
+                                          <button type="button" class="btn-dropdown-list" data-value="정상">
+                                            <span>정상</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="평상">
+                                            <span>평상</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="입시">
+                                            <span>입시</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="메지">
+                                            <span>메지</span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                              <th><span class="necessary">출발지</span></th>
+                              <td>
+                                <div class="input-wrap inline select">
+                                  <div class="field field-dropdown field-x-small normal">
+                                    <div class="field-form">
+                                      <!-- 숨겨진 select 태그 -->
+                                      <select class="dropdown-select" style="display: none">
+                                        >
+                                        <option value="수원시 팔달구" active>수원시 팔달구</option>
+                                        <option value="수원시 장안구">수원시 장안구</option>
+                                        <option value="수원시 권선구">수원시 권선구</option>
+                                        <option value="용인시 기흥구">용인시 기흥구</option>
+                                      </select>
+                                      <button type="button" class="btn-dropdown">
+                                        <span class="text">수원시 팔달구</span>
+                                        <span class="placeholder" style="display: none">선택</span>
+                                      </button>
+                                      <div class="dropdown-list-box">
+                                        <div class="dropdown-list active">
+                                          <button type="button" class="btn-dropdown-list" data-value="수원시 팔달구">
+                                            <span>수원시 팔달구</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="수원시 장안구">
+                                            <span>수원시 장안구</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="수원시 권선구">
+                                            <span>수원시 권선구</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="용인시 기흥구">
+                                            <span>용인시 기흥구</span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <th><span class="necessary">도착지</span></th>
+                              <td>
+                                <div class="input-wrap inline select">
+                                  <div class="field field-dropdown field-x-small normal">
+                                    <div class="field-form">
+                                      <!-- 숨겨진 select 태그 -->
+                                      <select class="dropdown-select" style="display: none">
+                                        >
+                                        <option value="기흥캠퍼스" active>기흥캠퍼스</option>
+                                        <option value="화성캠퍼스 H1">화성캠퍼스 H1</option>
+                                        <option value="화성캠퍼스 H2">화성캠퍼스 H2</option>
+                                      </select>
+                                      <button type="button" class="btn-dropdown">
+                                        <span class="text">기흥캠퍼스</span>
+                                        <span class="placeholder" style="display: none">선택</span>
+                                      </button>
+                                      <div class="dropdown-list-box">
+                                        <div class="dropdown-list active">
+                                          <button type="button" class="btn-dropdown-list" data-value="기흥캠퍼스">
+                                            <span>기흥캠퍼스</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="화성캠퍼스 H1">
+                                            <span>화성캠퍼스 H1</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="화성캠퍼스 H2">
+                                            <span>화성캠퍼스 H2</span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- 2/23 update : 텍스트 변경 -->
+                              <th><span class="necessary">권역</span></th>
+                              <td>
+                                <div class="input-wrap inline select">
+                                  <div class="field field-dropdown field-x-small normal">
+                                    <div class="field-form">
+                                      <!-- 숨겨진 select 태그 -->
+                                      <select class="dropdown-select" style="display: none">
+                                        >
+                                        <option value="수원시 팔달구" active>수원시 팔달구</option>
+                                        <option value="수원시 장안구">수원시 장안구</option>
+                                        <option value="수원시 권선구">수원시 권선구</option>
+                                        <option value="용인시 기흥구">용인시 기흥구</option>
+                                      </select>
+                                      <button type="button" class="btn-dropdown">
+                                        <span class="text">수원시 팔달구</span>
+                                        <span class="placeholder" style="display: none">선택</span>
+                                      </button>
+                                      <div class="dropdown-list-box">
+                                        <div class="dropdown-list active">
+                                          <button type="button" class="btn-dropdown-list" data-value="수원시 팔달구">
+                                            <span>수원시 팔달구</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="수원시 장안구">
+                                            <span>수원시 장안구</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="수원시 권선구">
+                                            <span>수원시 권선구</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="용인시 기흥구">
+                                            <span>용인시 기흥구</span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <th><span class="necessary">운행거리 구분</span></th>
+                              <td>
+                                <div class="input-wrap inline select">
+                                  <div class="field field-dropdown field-x-small normal">
+                                    <div class="field-form">
+                                      <!-- 숨겨진 select 태그 -->
+                                      <select class="dropdown-select" style="display: none">
+                                        >
+                                        <option value="11km ~ 15km" active>11km ~ 15km</option>
+                                        <option value="5km ~ 10km">5km ~ 10km</option>
+                                        <option value="16km ~ 20km">16km ~ 20km</option>
+                                        <option value="21km 이상">21km 이상</option>
+                                      </select>
+                                      <button type="button" class="btn-dropdown">
+                                        <span class="text">11km ~ 15km</span>
+                                        <span class="placeholder" style="display: none">선택</span>
+                                      </button>
+                                      <div class="dropdown-list-box">
+                                        <div class="dropdown-list active">
+                                          <button type="button" class="btn-dropdown-list" data-value="11km ~ 15km">
+                                            <span>11km ~ 15km</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="5km ~ 10km">
+                                            <span>5km ~ 10km</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="16km ~ 20km">
+                                            <span>16km ~ 20km</span>
+                                          </button>
+                                        </div>
+                                        <div class="dropdown-list">
+                                          <button type="button" class="btn-dropdown-list" data-value="21km 이상">
+                                            <span>21km 이상</span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th><span class="">노선번호</span></th>
+                              <td>
+                                <div class="input-group">
+                                  <div class="input-wrap">
+                                    <div class="input-wrap">
+                                      <input id="routeNumber1" name="routeNumber1" class="input-xsmall" placeholder="" type="text" value="I" @@property />
+                                    </div>
+                                  </div>
+                                  <span class="hyphen">-</span>
+                                  <div class="input-wrap">
+                                    <div class="input-wrap">
+                                      <input id="routeNumber2" name="routeNumber2" class="input-xsmall" placeholder="" type="text" value="D001" @@property />
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <th><span class="">노선 경로</span></th>
+                              <td>
+                                <div class="input-group">
+                                  <div class="input-wrap">
+                                    <!-- 2/23 update : 설정 된 값 표출 -->
+                                    <span class="text-display">00km</span>
+                                  </div>
+                                  <button type="button" class="btn btn-white">수정</button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th><span class="">경유지</span></th>
+                              <td colspan="3">
+                                <div class="waypoint-list">
+                                  <div class="waypoint-item">
+                                    <span class="waypoint-number">1.</span>
+                                    <div class="input-wrap inline select">
+                                      <div class="field field-dropdown field-x-small normal">
+                                        <div class="field-form">
+                                          <!-- 숨겨진 select 태그 -->
+                                          <select class="dropdown-select" style="display: none">
+                                            >
+                                            <option value="미선택" active>미선택</option>
+                                            <option value="서대문">서대문</option>
+                                            <option value="통일로">통일로</option>
+                                          </select>
+                                          <button type="button" class="btn-dropdown">
+                                            <span class="text">미선택</span>
+                                            <span class="placeholder" style="display: none">선택</span>
+                                          </button>
+                                          <div class="dropdown-list-box">
+                                            <div class="dropdown-list active">
+                                              <button type="button" class="btn-dropdown-list" data-value="미선택">
+                                                <span>미선택</span>
+                                              </button>
+                                            </div>
+                                            <div class="dropdown-list">
+                                              <button type="button" class="btn-dropdown-list" data-value="서대문">
+                                                <span>서대문</span>
+                                              </button>
+                                            </div>
+                                            <div class="dropdown-list">
+                                              <button type="button" class="btn-dropdown-list" data-value="통일로">
+                                                <span>통일로</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="waypoint-item">
+                                    <span class="waypoint-number">2.</span>
+                                    <div class="input-wrap inline select">
+                                      <div class="field field-dropdown field-x-small normal">
+                                        <div class="field-form">
+                                          <!-- 숨겨진 select 태그 -->
+                                          <select class="dropdown-select" style="display: none">
+                                            >
+                                            <option value="미선택" active>미선택</option>
+                                            <option value="서대문">서대문</option>
+                                            <option value="통일로">통일로</option>
+                                          </select>
+                                          <button type="button" class="btn-dropdown">
+                                            <span class="text">미선택</span>
+                                            <span class="placeholder" style="display: none">선택</span>
+                                          </button>
+                                          <div class="dropdown-list-box">
+                                            <div class="dropdown-list active">
+                                              <button type="button" class="btn-dropdown-list" data-value="미선택">
+                                                <span>미선택</span>
+                                              </button>
+                                            </div>
+                                            <div class="dropdown-list">
+                                              <button type="button" class="btn-dropdown-list" data-value="서대문">
+                                                <span>서대문</span>
+                                              </button>
+                                            </div>
+                                            <div class="dropdown-list">
+                                              <button type="button" class="btn-dropdown-list" data-value="통일로">
+                                                <span>통일로</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="waypoint-item">
+                                    <span class="waypoint-number">3.</span>
+                                    <div class="input-wrap inline select">
+                                      <div class="field field-dropdown field-x-small normal">
+                                        <div class="field-form">
+                                          <!-- 숨겨진 select 태그 -->
+                                          <select class="dropdown-select" style="display: none">
+                                            >
+                                            <option value="미선택" active>미선택</option>
+                                            <option value="서대문">서대문</option>
+                                            <option value="통일로">통일로</option>
+                                          </select>
+                                          <button type="button" class="btn-dropdown">
+                                            <span class="text">미선택</span>
+                                            <span class="placeholder" style="display: none">선택</span>
+                                          </button>
+                                          <div class="dropdown-list-box">
+                                            <div class="dropdown-list active">
+                                              <button type="button" class="btn-dropdown-list" data-value="미선택">
+                                                <span>미선택</span>
+                                              </button>
+                                            </div>
+                                            <div class="dropdown-list">
+                                              <button type="button" class="btn-dropdown-list" data-value="서대문">
+                                                <span>서대문</span>
+                                              </button>
+                                            </div>
+                                            <div class="dropdown-list">
+                                              <button type="button" class="btn-dropdown-list" data-value="통일로">
+                                                <span>통일로</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="waypoint-item">
+                                    <span class="waypoint-number">4.</span>
+                                    <div class="input-wrap inline select">
+                                      <div class="field field-dropdown field-x-small normal">
+                                        <div class="field-form">
+                                          <!-- 숨겨진 select 태그 -->
+                                          <select class="dropdown-select" style="display: none">
+                                            >
+                                            <option value="미선택" active>미선택</option>
+                                            <option value="서대문">서대문</option>
+                                            <option value="통일로">통일로</option>
+                                          </select>
+                                          <button type="button" class="btn-dropdown">
+                                            <span class="text">미선택</span>
+                                            <span class="placeholder" style="display: none">선택</span>
+                                          </button>
+                                          <div class="dropdown-list-box">
+                                            <div class="dropdown-list active">
+                                              <button type="button" class="btn-dropdown-list" data-value="미선택">
+                                                <span>미선택</span>
+                                              </button>
+                                            </div>
+                                            <div class="dropdown-list">
+                                              <button type="button" class="btn-dropdown-list" data-value="서대문">
+                                                <span>서대문</span>
+                                              </button>
+                                            </div>
+                                            <div class="dropdown-list">
+                                              <button type="button" class="btn-dropdown-list" data-value="통일로">
+                                                <span>통일로</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="waypoint-item">
+                                    <span class="waypoint-number">5.</span>
+                                    <div class="input-wrap inline select">
+                                      <div class="field field-dropdown field-x-small normal">
+                                        <div class="field-form">
+                                          <!-- 숨겨진 select 태그 -->
+                                          <select class="dropdown-select" style="display: none">
+                                            >
+                                            <option value="미선택" active>미선택</option>
+                                            <option value="서대문">서대문</option>
+                                            <option value="통일로">통일로</option>
+                                          </select>
+                                          <button type="button" class="btn-dropdown">
+                                            <span class="text">미선택</span>
+                                            <span class="placeholder" style="display: none">선택</span>
+                                          </button>
+                                          <div class="dropdown-list-box">
+                                            <div class="dropdown-list active">
+                                              <button type="button" class="btn-dropdown-list" data-value="미선택">
+                                                <span>미선택</span>
+                                              </button>
+                                            </div>
+                                            <div class="dropdown-list">
+                                              <button type="button" class="btn-dropdown-list" data-value="서대문">
+                                                <span>서대문</span>
+                                              </button>
+                                            </div>
+                                            <div class="dropdown-list">
+                                              <button type="button" class="btn-dropdown-list" data-value="통일로">
+                                                <span>통일로</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </form>
+                    </div>
+                    <div class="table-box half">
+                      <div class="data-list-table">
+                        <div class="data-list-table-header">
+                          <div class="header-left">
+                            <div class="title-box">정류장 정보</div>
+                          </div>
+                          <div class="header-right">
+                            <button type="button" class="btn-list-setting">
+                              <span>설정</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="data-table" id="div_list2">
+                          <table id="list2"></table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 1/19 update -->
+                  <div class="table-group-box">
+                    <div class="table-box type-list-table">
+                      <div class="table-header">
+                        <div class="header-left">
+                          <h4>운행 시간 설정</h4>
+                        </div>
+                        <div class="header-right">
+                          <button type="button" class="btn btn-white btn-minus" onclick="" disabled>
+                            <i class="icon icon-minus"></i>
+                          </button>
+                          <button type="button" class="btn btn-white btn-plus" onclick="" disabled>
+                            <i class="icon icon-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="table-body">
+                        <div class="htable">
+                          <table class="table" id="table-operation-time-setting">
+                            <colgroup>
+                              <col width="43" />
+                              <col width="48" />
+                              <col width="80" />
+                              <col width="80" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="220" />
+                              <col width="72" />
+                              <col width="144" />
+                              <col width="126" />
+                            </colgroup>
+                            <thead class="table-thead">
+                              <tr>
+                                <th rowspan="2">
+                                  <div>
+                                    <input type="checkbox" id="checkbox_all" name="checkbox_all" />
+                                  </div>
+                                  <span class="table-col-resize"></span>
+                                </th>
+                                <th rowspan="2"><span>순번</span><span class="table-col-resize"></span></th>
+                                <th rowspan="2"><span>출발</span><span class="table-col-resize"></span></th>
+                                <th rowspan="2"><span>도착</span><span class="table-col-resize"></span></th>
+                                <th colspan="9"><span>요일구분</span><span class="table-col-resize"></span></th>
+                                <th rowspan="2"><span>운행기간</span><span class="table-col-resize"></span></th>
+                                <th rowspan="2"><span>자동계획</span><span class="table-col-resize"></span></th>
+                                <th rowspan="2"><span>담당운수사</span><span class="table-col-resize"></span></th>
+                                <th rowspan="2"><span>추가비용</span><span class="table-col-resize"></span></th>
+                              </tr>
+                              <tr>
+                                <th><span>평일</span><span class="table-col-resize"></span></th>
+                                <th><span>월</span><span class="table-col-resize"></span></th>
+                                <th><span>금</span><span class="table-col-resize"></span></th>
+                                <th><span>토</span><span class="table-col-resize"></span></th>
+                                <th><span>휴무전</span><span class="table-col-resize"></span></th>
+                                <th><span>공휴일</span><span class="table-col-resize"></span></th>
+                                <th><span>패밀리</span><span class="table-col-resize"></span></th>
+                                <th><span>디데이</span><span class="table-col-resize"></span></th>
+                                <th><span>S</span><span class="table-col-resize"></span></th>
+                              </tr>
+                            </thead>
+                          </table>
+                        </div>
+                        <div class="btable">
+                          <table class="table" id="table-operation-time-setting">
+                            <colgroup>
+                              <col width="43" />
+                              <col width="48" />
+                              <col width="80" />
+                              <col width="80" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="38" />
+                              <col width="220" />
+                              <col width="72" />
+                              <col width="144" />
+                              <col width="126" />
+                            </colgroup>
+                            <tbody class="table-tbody">
+                              <tr class="tr-empty">
+                                <td class="td-empty" colspan="17">
+                                  <div class="empty-content-box">
+                                    <p class="message">+ 버튼을 눌러 운행 시간을 추가해 주세요.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+</body>
+
+</html>

@@ -1,0 +1,1469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript">
+    sessionStorage.setItem('contextpath', '/uvis')
+    sessionStorage.setItem('langSet', 'ko')
+    //////////달력 설정//////////
+    var cldMsg_prevMonth = '이전 달' // 이전 달
+    var cldMsg_nextMonth = '다음 달' // 다음 달
+    var cldMsg_prevYear = '이전 년도' // 이전 년도
+    var cldMsg_nextYear = '다음 년도' // 다음 년도
+    var cldMsg_prev = '이전' // 이전
+    var cldMsg_next = '다음' // 다음
+    //////////달력 설정//////////
+    //////////jquery.uvis.common.js 다국어//////////
+    var jquery_uvis_common_checkPasswordRegex1 = '비밀번호에는 공백을 입력할 수 없습니다.' // 비밀번호에는 공백을 입력할 수 없습니다.
+    var jquery_uvis_common_checkPasswordRegex2 = '새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.' // 새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.
+    var jquery_uvis_common_ajaxErrorMessage0 = '접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.' // 접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage1 = '장시간 미사용으로 로그아웃 되었습니다.\r\n로그인 페이지로 이동 합니다.' // 장시간 미사용으로 로그아웃 되었습니다.\\r\\n로그인 페이지로 이동 합니다.
+    var jquery_uvis_common_ajaxErrorMessage2 = '에러가 발생하였습니다.\r\n네트워크 상태를 확인해주세요.' // 에러가 발생하였습니다.\\r\\n네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage3 = '에러가 발생하였습니다.\r\n접근이 거부되었습니다.\n\n새로고침 또는 로그인을 다시 해주세요.' // 에러가 발생하였습니다.\\r\\n접근이 거부되었습니다.\\n\\n새로고침 또는 로그인을 다시 해주세요.
+    var jquery_uvis_common_ajaxErrorMessage4 = '에러가 발생하였습니다.\r\nURL을 찾을 수 없습니다.' // 에러가 발생하였습니다.\\r\\nURL을 찾을 수 없습니다.
+    var jquery_uvis_common_ajaxErrorMessage5 = '에러가 발생하였습니다.\r\n내부 서버 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n내부 서버 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage6 = '에러가 발생하였습니다.\r\n파싱 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n파싱 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage7 = '에러가 발생하였습니다.\r\n실행시간이 지연되어 타임아웃이 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n실행시간이 지연되어 타임아웃이 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage8 = '에러가 발생하였습니다.\r\n알 수 없는 에러입니다.\n\n' // 에러가 발생하였습니다.\\r\\n알 수 없는 에러입니다.\\n\\n
+    var jquery_uvis_common_isValidDate1 = '잘못된 날짜형식 입니다.\n\r입력하신 문자열 길이를 확인해주세요.' // 잘못된 날짜형식 입니다.\\n\\r입력하신 문자열 길이를 확인해주세요.
+    var jquery_uvis_common_isValidDate21 = '잘못된 날짜형식 입니다.\n\r' // 잘못된 날짜형식 입니다.\\n\\r
+    var jquery_uvis_common_isValidDate22 = '월은 존재하지 않는 월입니다.' // 월은 존재하지 않는 월입니다.
+    var jquery_uvis_common_isValidDate31 = '잘못된 날짜형식 입니다.\n\r해당 월은' // 잘못된 날짜형식 입니다.\\n\\r해당 월은
+    var jquery_uvis_common_isValidDate32 = '일 까지입니다.' // 일 까지입니다.
+    var jquery_uvis_common_isValidDate4 = '잘못된 날짜형식 입니다.' // 잘못된 날짜형식 입니다.
+    var jquery_uvis_common_checkFileExt1 = '정상적인 파일이 아닙니다.' // 정상적인 파일이 아닙니다.
+    var jquery_uvis_common_checkFileExt2 = '파일만 업로드 가능 합니다.' // 파일만 업로드 가능 합니다.
+    var jquery_uvis_common_downloadCapture1 = '인터넷 익스플로러는 지원하지 않습니다.' // 인터넷 익스플로러는 지원하지 않습니다.
+    var jquery_uvis_common_downloadCapture2 = '이미지로 변환 중 에러가 발생하였습니다.' // 이미지로 변환 중 에러가 발생하였습니다.
+    //////////jquery.uvis.common.js 다국어//////////
+    var termsFilter = ['img', 'a', 'p', 'br', 'span', 'b', 'strong', 'u', 'colgroup', 'col', 'table', 'tbody', 'tr', 'td', 'ul', 'li', 'dl', 'dd', 'dt']
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <!-- CSS resource load -->
+  <link href="../../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../../assets/css/lib/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../../../assets/js/jquery-ui.js"></script>
+  <script src="../../../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../../../assets/js/bootstrap.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../../../assets/js/popper.min.js"></script>
+  <script src="../../../../assets/js/datatables.min.js"></script>
+  <script src="../../../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../../../assets/js/jquery.cookie.js"></script>
+  <script src="../../../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../../../assets/js/jquery.uvis.common.js"></script>
+  <script src="../../../../assets/js/highcharts.js"></script>
+  <script src="../../../../assets/js/exporting.js"></script>
+  <script src="../../../../assets/js/canvg.js"></script>
+  <script src="../../../../assets/js/rgbcolor.min.js"></script>
+  <script src="../../../../assets/js/html2canvas.js"></script>
+  <script src="../../../../assets/js/es6-promise.auto.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../../../assets/js/jquery.jqGrid.src.js"></script>
+  <script src="../../../../assets/js/jquery.paging.js"></script>
+  <script src="../../../../assets/js/publish.js"></script>
+  <script src="../../../../assets/js/amobe_datepicker.js"></script>
+  <script src="../../../../assets/js/amobe_dropdown.js"></script>
+  <script src="../../../../assets/js/amobe_header.js"></script>
+  <script src="../../../../assets/js/amobe_input.js"></script>
+  <script src="../../../../assets/js/amobe_mapList.js"></script>
+  <script src="../../../../assets/js/amobe_modal.js"></script>
+  <script src="../../../../assets/js/amobe_multiMap.js"></script>
+  <script src="../../../../assets/js/amobe_rangeTimePicker.js"></script>
+  <script src="../../../../assets/js/amobe_routeAccordion.js"></script>
+  <script src="../../../../assets/js/amobe_swiper.js"></script>
+  <script src="../../../../assets/js/amobe_tab.js"></script>
+  <script src="../../../../assets/js/amobe_table.js"></script>
+  <script src="../../../../assets/js/amobe_timePicker.js"></script>
+  <title>버스휴일관리</title>
+  <script type="text/javascript">
+    // jqGride Local Data
+    const _JQ_GRID_DATA = [{
+        rownum: 1,
+        offKey: '0013368',
+        offName: '에스원테스트',
+        epDeptname: '',
+        oUser: '89529cb17c3470fa3c2653c5a55ff3f4',
+        nName: '김명주',
+        nHp: '0109870****',
+        nMail: '',
+        iUserid: 's1uvisadm2',
+        iCode: '999022',
+        nCodename: '관리자',
+        procDate: '2019-09-10',
+        totalCnt: 15,
+        rmk: '',
+        maskingName: '김*주',
+        maskingId: 's1u*******',
+        maskingHp: '010-9870-***0',
+        maskingEmail: '',
+      },
+      {
+        rownum: 2,
+        offKey: '0013368',
+        offName: '에스원테스트',
+        epDeptname: 'tete',
+        oUser: '49f0540bcd80e762d976b9cbaae62a67',
+        nName: '김선우',
+        nHp: '0108447****',
+        nMail: '',
+        iUserid: 's1uvisgusdn',
+        iCode: '999021',
+        nCodename: '사용자',
+        procDate: '2024-02-29',
+        totalCnt: 15,
+        rmk: '',
+        maskingName: '김*우',
+        maskingId: 's1u********',
+        maskingHp: '010-8447-***8',
+        maskingEmail: '',
+      },
+    ];
+    const _JQ_GRID_DATA_USER = {
+      result: true,
+      userInfo: {
+        custId: 'CI190820000006',
+        offKey: '0013368',
+        offName: '에스원테스트',
+        epDeptname: '',
+        iUserid: 's1uvisadm2',
+        nName: '김명주',
+        iCode: '999022',
+        nCodename: '관리자',
+        nHp: '010-9870-****',
+        nMail: '',
+        rmk: '',
+        nomaskYn: 'Y',
+        procDate: '2019-09-10',
+        offNomaskYn: 'Y',
+        sensorSpeedYn: 'Y',
+        maskingId: 's1u*******',
+        maskingName: '김*주',
+        maskingHp: '010-9870-***0',
+        maskingEmail: '',
+      },
+      errCode: '',
+      errMsg: '',
+      groupList: [{
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI220707000032',
+          grpId: 'GI220707000032',
+          grpName: 'A/S전담자',
+          useYn: 'Y',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI220708000007',
+          grpId: 'GI220708000007',
+          grpName: '상용화테스트',
+          useYn: 'Y',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI220708000008',
+          grpId: 'GI220708000008',
+          grpName: '테스트2',
+          useYn: 'N',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI220708000009',
+          grpId: 'GI220708000009',
+          grpName: '테스트3',
+          useYn: 'N',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI220711000006',
+          grpId: 'GI220711000006',
+          grpName: '테스트5',
+          useYn: 'Y',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI220711000009',
+          grpId: 'GI220711000009',
+          grpName: 'A테스트',
+          useYn: 'N',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI231114000003',
+          grpId: 'GI231114000003',
+          grpName: '음주',
+          useYn: 'N',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI240124000011',
+          grpId: 'GI240124000011',
+          grpName: '배터리 저전압',
+          useYn: 'Y',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI240704000007',
+          grpId: 'GI240704000007',
+          grpName: '품질시험',
+          useYn: 'N',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI240722000002',
+          grpId: 'GI240722000002',
+          grpName: 'DB구조개선테스트',
+          useYn: 'N',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI240910000015',
+          grpId: 'GI240910000015',
+          grpName: '통근버스테스트11212',
+          useYn: 'N',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI240912000038',
+          grpId: 'GI240912000038',
+          grpName: '온도테스트',
+          useYn: 'Y',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI241209000020',
+          grpId: 'GI241209000020',
+          grpName: '통신단말 고도화',
+          useYn: 'N',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI241212000006',
+          grpId: 'GI241212000006',
+          grpName: '그룹 미지정',
+          useYn: 'N',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI250702000026',
+          grpId: 'GI250702000026',
+          grpName: 'DTG GPS TEST',
+          useYn: 'Y',
+        },
+        {
+          custId: 'CI190820000006',
+          grpLevel: 1,
+          pGrpId: 'GI250811000005',
+          grpId: 'GI250811000005',
+          grpName: '카드리더 개발테스트',
+          useYn: 'N',
+        },
+      ],
+      params: {
+        iUserid: 's1uvisadm2',
+        ssCustId: 'CI190820000006',
+        offKey: '0013368',
+      },
+    };
+    var permissionCodeList = new Array();
+    var permissionNameList = new Array();
+    $(document).ready(function() {
+      setPageDefault();
+      selectSetting();
+      $('#menuBtn').click(function() {
+        userMenuPopup();
+      });
+      $('#groupBtn').click(function() {
+        groupMenuPopup();
+      });
+      $(document).on('change', '#selPermission', function() {
+        checkAdmin();
+      });
+      // 엔터키 이벤트 처리
+      $('#searchForm #search_searchName, #searchForm #search_searchId').on('keydown', function(e) {
+        if (e.keyCode == '13') {
+          listLoad(true, 1);
+        }
+      });
+    });
+    $(window).resize(function() {
+      $('#list').setGridWidth($('#div_list').width(), true);
+    });
+
+    function setPageDefault() {
+      listLoad(false, 1);
+    }
+
+    function selectSetting() {
+      permissionCodeList.push('999000');
+      permissionNameList.push('승인 대기자');
+      permissionCodeList.push('999021');
+      permissionNameList.push('사용자');
+      permissionCodeList.push('999022');
+      permissionNameList.push('관리자');
+      permissionCodeList.push('999024');
+      permissionNameList.push('운영자');
+      permissionCodeList.push('999025');
+      permissionNameList.push('임직원');
+      permissionCodeList.push('999026');
+      permissionNameList.push('LTE');
+      permissionCodeList.push('999027');
+      permissionNameList.push('A/S전담');
+      permissionCodeList.push('999999');
+      permissionNameList.push('운영관리자');
+    }
+
+    function searchFormInit() {
+      $('#search_searchOffice option:eq(0)').prop('selected', true);
+      $('#search_searchName').val('');
+      $('#search_searchId').val('');
+      $('#search_searchPermission option:eq(0)').prop('selected', true);
+      $('#search_searchOffice').selectmenu('refresh');
+      $('#search_searchPermission').selectmenu('refresh');
+    }
+
+    function applyClassesToHeaders(grid) {
+      // Use the passed in grid as context,
+      // in case we have more than one table on the page.
+      var trHead = $('thead:first tr', grid.hdiv);
+      var colModel = grid.getGridParam('colModel');
+      for (var iCol = 0; iCol < colModel.length; iCol++) {
+        var columnInfo = colModel[iCol];
+        if (columnInfo.classes) {
+          var headDiv = jQuery('th:eq(' + iCol + ')', trHead);
+          headDiv.addClass(columnInfo.classes);
+        }
+      }
+    }
+
+    function listLoad(firstNoLoad, page) {
+      $('#searchForm #page').val(page);
+      $('#searchForm #searchOffice').val($('#searchForm #search_searchOffice').val());
+      $('#searchForm #searchName').val($('#searchForm #search_searchName').val());
+      $('#searchForm #searchId').val($('#searchForm #search_searchId').val());
+      $('#searchForm #searchPermission').val($('#searchForm #search_searchPermission').val());
+      $('span#totCnt').text('0');
+      //////////////////////////////////////////////////////////////////////////////////////////
+      //jqGrid 생성 시작
+      //////////////////////////////////////////////////////////////////////////////////////////
+      //jqGrid 리스트 초기화
+      $('#list').jqGrid('GridUnload');
+      //jqGrid 리스트 생성
+      var grid = jQuery('#list');
+      grid.jqGrid({
+        // url: './data/userList.json',
+        // mtype: 'GET',
+        // datatype: 'json',
+        datatype: 'local',
+        data: _JQ_GRID_DATA,
+        // ajaxGridOptions: { contentType: 'application/json;charset=UTF-8'},
+        // jsonReader: {repeatitems:false,id:"id",root:function(obj) {return obj.resultList;}},
+        colNames: ['회사명', '부서명', '이름', '휴대폰 번호', '아이디', '권한', '이메일', '비고', '등록일', 'iUserid', 'nName', 'nHp', 'oUser', 'offKey', 'iCode'],
+        colModel: [{
+            name: 'offName',
+            index: 'offName',
+            width: 100,
+            align: 'center',
+            sortable: true
+          },
+          {
+            name: 'epDeptname',
+            index: 'epDeptname',
+            width: 100,
+            align: 'center',
+            sortable: true
+          },
+          {
+            name: 'maskingName',
+            index: 'maskingName',
+            width: 100,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'maskingHp',
+            index: 'maskingHp',
+            width: 100,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'maskingId',
+            index: 'maskingId',
+            width: 100,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'nCodename',
+            index: 'nCodename',
+            width: 100,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'nMail',
+            index: 'nMail',
+            align: 'center',
+            hidden: true
+          },
+          {
+            name: 'rmk',
+            index: 'rmk',
+            align: 'center',
+            hidden: true
+          },
+          {
+            name: 'procDate',
+            index: 'procDate',
+            width: 100,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'iUserid',
+            index: 'iUserid',
+            align: 'center',
+            hidden: true,
+            classes: 'noneExel'
+          },
+          {
+            name: 'nName',
+            index: 'nName',
+            align: 'center',
+            hidden: true,
+            classes: 'noneExel'
+          },
+          {
+            name: 'nHp',
+            index: 'nHp',
+            align: 'center',
+            hidden: true,
+            classes: 'noneExel'
+          },
+          {
+            name: 'oUser',
+            index: 'oUser',
+            align: 'center',
+            hidden: true,
+            classes: 'noneExel'
+          },
+          {
+            name: 'offKey',
+            index: 'offKey',
+            align: 'center',
+            hidden: true,
+            classes: 'noneExel'
+          },
+          {
+            name: 'iCode',
+            index: 'iCode',
+            align: 'center',
+            hidden: true,
+            classes: 'noneExel'
+          },
+          // hidden:true ui상에 미출력, classes:"noneExcel" 엑셀에 미출력
+        ],
+        sortable: false,
+        autowidth: true,
+        scrollRows: true,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        multiselect: true,
+        multiselectWidth: 55,
+        multiboxonly: false,
+        height: 575,
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 0,
+        beforeProcessing: function(data, status, xhr) {
+          $('#list').trigger('reloadGrid');
+          // 데이터 로드 전에 rowNum 을 데이터 갯수만큼 할당
+          $(this).setGridParam({
+            rowNum: data.length
+          });
+        },
+        loadError: function(xhr, status, error) {
+          // 데이터 로딩실패시 함수
+          if (!firstNoLoad) {
+            alert('데이터 로드에 실패 했습니다.\n다시 시도하시기 바랍니다.');
+          }
+        },
+        loadComplete: function(data) {
+          var resultList = data?.resultList;
+          // setPaging(1, 0)
+          /*
+          if (resultList != undefined && resultList.length == 0) {
+            //리스트 데이터 없을 시
+            alert("조회된 데이터가 없습니다.");
+            // 페이징 처리
+            setPaging(1, 0);
+          } else {
+            var resultCnt = data.resultCnt;
+            if (resultCnt != undefined) {
+              gTotCnt = resultCnt.totalCnt;
+              $("span#totCnt").text(gTotCnt);
+              // 페이징 처리
+              setPaging(page, gTotCnt);
+            }
+          }
+          */
+        },
+        onSelectRow: function(rowid, iCol, cellcontent, e) {
+          // 로우 선택시 함수
+          selectedRow($(this).getRowData(rowid).offKey, $(this).getRowData(rowid).iUserid);
+        },
+        ondblClickRow: function(rowid, iRow, iCol, e) {
+          // 더블 선택시 함수
+        },
+      });
+      //jqGrid 페이지단 설정
+      applyClassesToHeaders(grid);
+    }
+
+    function chkDelete() {
+      var ids = jQuery('#list').jqGrid('getGridParam', 'selarrrow'); //체크된 row id들을 배열로 반환
+      var userList = new Array();
+      if (ids.length <= 0) {
+        alert('삭제할 사용자를 체크하세요.');
+      } else {
+        for (var i = 0; i < ids.length; i++) {
+          var rowObject = $('#list').getRowData(ids[i]); //체크된 id의 row 데이터 정보를 Object 형태로 반환
+          var value = rowObject.offKey + ':::' + rowObject.iUserid; //Obejct key값이 iCode인 value값 반환
+          userList.push(value);
+        }
+        if (userList.length > 0 && confirm('선택한 사용자를 삭제 하시겠습니까?')) {
+          var data = {
+            userList: userList + ''
+          };
+          $.restful({
+            url: '/uvis/userDelete.ajax',
+            header: {
+              userId: 's1uvisadm',
+              _csrf: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1LXZpcy5jb20tczEiLCJpc3MiOiJ3d3cudS12aXMuY29tIiwiX3Rva2VuIjoiYmJwcUNHSVVUZURjeTdTWXRhMTlrRWlta0ZTazZkdzM0czlCUTlmNEY2TTFEckhRbnFYVXJxekI4ZnU4ODFmciIsIl91dWlkIjoiZjA3NTViOGItZjkyMS00MmU1LThmYjktNmRhMTZjOWZjYjE5In0.bvaQzZi9dHyVmni9CmgzkLEJQe1tJa0kPGV6ccXtbB0',
+            },
+            data: JSON.stringify(data),
+            callback: function(data, textStatus, jqXHR) {
+              if (data.result == true) {
+                var resultMap = data.resultMap;
+                alert('삭제되었습니다.');
+                listLoad(false, 1);
+                initUserForm();
+              } else {
+                if (data.errCode == 'ext') {
+                  alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
+                } else if (data.errCode == 'EMPTY_PARAMETER') {
+                  alert('필수 파라미터가 없습니다.');
+                } else if (data.errCode == 'FAILED_DELETE_USER') {
+                  alert('회원 삭제에 실패했습니다.\n다시 시도하여 주십시오.');
+                } else {
+                  alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
+                }
+              }
+            },
+          });
+        }
+      }
+    }
+
+    function chkPermission() {
+      var ids = jQuery('#list').jqGrid('getGridParam', 'selarrrow'); //체크된 row id들을 배열로 반환
+      var userList = new Array();
+      if (ids.length <= 0) {
+        alert('승인할 사용자를 체크하세요.');
+      } else {
+        for (var i = 0; i < ids.length; i++) {
+          var rowObject = $('#list').getRowData(ids[i]); //체크된 id의 row 데이터 정보를 Object 형태로 반환
+          var value = rowObject.offKey + ':::' + rowObject.iUserid; //Obejct key값이 iCode인 value값 반환
+          if (rowObject.iCode != '999000') {
+            alert('선택한 사용자는 이미 승인된 사용자입니다.');
+            return false;
+          } else {
+            userList.push(value);
+          }
+        }
+        if (userList.length > 0 && confirm('선택된 사용자를 승인 하시겠습니까?')) {
+          var data = {
+            userList: userList + ''
+          };
+          $.restful({
+            url: '/uvis/userPermissionApproval.ajax',
+            header: {
+              userId: 's1uvisadm',
+              _csrf: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1LXZpcy5jb20tczEiLCJpc3MiOiJ3d3cudS12aXMuY29tIiwiX3Rva2VuIjoiYmJwcUNHSVVUZURjeTdTWXRhMTlrRWlta0ZTazZkdzM0czlCUTlmNEY2TTFEckhRbnFYVXJxekI4ZnU4ODFmciIsIl91dWlkIjoiZjA3NTViOGItZjkyMS00MmU1LThmYjktNmRhMTZjOWZjYjE5In0.bvaQzZi9dHyVmni9CmgzkLEJQe1tJa0kPGV6ccXtbB0',
+            },
+            data: JSON.stringify(data),
+            callback: function(data, textStatus, jqXHR) {
+              if (data.result == true) {
+                var resultMap = data.resultMap;
+                alert('승인 되었습니다.');
+                listLoad(false, $('#searchForm #page').val());
+                initUserForm();
+              } else {
+                if (data.errCode == 'ext') {
+                  alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
+                } else if (data.errCode == 'EMPTY_PARAMETER') {
+                  alert('필수 파라미터가 없습니다.');
+                } else if (data.errCode == 'FAILED_PERMISSION_APPROVAL') {
+                  alert('권한 승인에 실패했습니다.\n다시 시도하여 주십시오.');
+                } else {
+                  alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
+                }
+              }
+            },
+          });
+        }
+      }
+    }
+    /**
+     * 엑셀 다운로드
+     * @author     DFCC
+     * @param
+     * @return
+     * @example
+     */
+    function exportExcel() {
+      if (jQuery('#list').jqGrid('getGridParam', 'records') < 1) {
+        alert('사용자 정보가 없습니다.');
+        return false;
+      }
+      var sf = $('#searchForm').serializeObject();
+      var excelForm = $("<form id='excelForm' method='post' action='/uvis/download/excel.do'>")
+        .append(
+          $('<input>', {
+            type: 'hidden',
+            name: '_csrf',
+            value: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1LXZpcy5jb20tczEiLCJpc3MiOiJ3d3cudS12aXMuY29tIiwiX3Rva2VuIjoiYmJwcUNHSVVUZURjeTdTWXRhMTlrRWlta0ZTazZkdzM0czlCUTlmNEY2TTFEckhRbnFYVXJxekI4ZnU4ODFmciIsIl91dWlkIjoiZjA3NTViOGItZjkyMS00MmU1LThmYjktNmRhMTZjOWZjYjE5In0.bvaQzZi9dHyVmni9CmgzkLEJQe1tJa0kPGV6ccXtbB0',
+          }),
+        )
+        .append($('<input>', {
+          type: 'hidden',
+          name: 'target',
+          value: 'userListExcel'
+        }))
+        .append('<input type="hidden" name="searchOffice"    value="' + sf.searchOffice + '"/>')
+        .append('<input type="hidden" name="searchName"   value="' + sf.searchName + '"/>')
+        .append('<input type="hidden" name="searchId" value="' + sf.searchId + '"/>')
+        .append('<input type="hidden" name="searchPermission"      value="' + sf.searchPermission + '"/>');
+      // * jquery.uvis.common userLogInsert 함수의 주석 참조 line 1007 *
+      $('body').append(excelForm);
+      $('#excelForm').attr({
+        action: '/uvis/download/excel.do',
+        method: 'post',
+      });
+      $('#excelForm').submit().remove();
+      var saveLogHeader = {
+        userId: 's1uvisadm',
+        _csrf: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1LXZpcy5jb20tczEiLCJpc3MiOiJ3d3cudS12aXMuY29tIiwiX3Rva2VuIjoiYmJwcUNHSVVUZURjeTdTWXRhMTlrRWlta0ZTazZkdzM0czlCUTlmNEY2TTFEckhRbnFYVXJxekI4ZnU4ODFmciIsIl91dWlkIjoiZjA3NTViOGItZjkyMS00MmU1LThmYjktNmRhMTZjOWZjYjE5In0.bvaQzZi9dHyVmni9CmgzkLEJQe1tJa0kPGV6ccXtbB0',
+      };
+      userLogInsert(saveLogHeader, '', '사용자관리', 'userList', '2', 'DW', 'userListExcelDownBtn', 'S', '', '0', '', '', '');
+    }
+
+    function selectedRow(offKey, iUserid) {
+      var data = _JQ_GRID_DATA_USER;
+      if (data.result == true) {
+        var userInfo = data.userInfo;
+        var cpName = '';
+        $('#toggle_delete').show();
+        $('#toggle_modify').show();
+        $('#toggle_save').hide();
+        $('#resetBtn').show();
+        if (userInfo.iCode == '999000') {
+          $('#menuBtn').hide();
+          $('#groupBtn').hide();
+        } else {
+          $('#menuBtn').show();
+          $('#groupBtn').show();
+        }
+        $('#saveForm #custId').val(userInfo.custId);
+        $('#saveForm #offKey').val(userInfo.offKey);
+        $('#saveForm #iCode').val(userInfo.iCode);
+        $('#saveForm #iUserid').val(userInfo.iUserid);
+        $('#saveForm #epDeptname').val(userInfo.epDeptname);
+        $('#saveForm #menuGrpId').val(userInfo.iCode);
+        $('#saveForm #rmk').val(userInfo.rmk);
+        $('#saveForm #nomaskYn').val(userInfo.nomaskYn);
+        $('#companyName').html(userInfo.offName);
+        $('#deptName').html(userInfo.epDeptname);
+        $('#epDeptnameForm').val(userInfo.epDeptname);
+        // $("#userId").html(userInfo.iUserid);
+        $('#userId').html(userInfo.maskingId);
+        // $("#userName").html(userInfo.nName);
+        $('#userName').html(userInfo.maskingName);
+        // $('#permissionForm').html(userInfo.nCodename)
+        // $("#userPhone").html(userInfo.nHp);
+        $('#userPhone').html(userInfo.maskingHp);
+        $('#userEmail').html(userInfo.nMail);
+        $('#rmkForm').html(userInfo.rmk);
+        $('#regDate').html(userInfo.procDate);
+        //부서명
+        $('#epDeptnameForm').hide();
+        $('#deptName').show();
+        $('#nomaskYnForm').html(userInfo.nomaskYn);
+        if (userInfo.offNomaskYn == 'Y') {
+          $("span[name='nomaskYnSpan']").parent('th').attr('style', 'background-color:#f6f6f6');
+          $("span[name='nomaskYnSpan']").attr('style', 'visibility:');
+          $("span[name='nomaskYnForm']").attr('style', 'visibility:');
+        } else {
+          $("span[name='nomaskYnSpan']").parent('th').attr('style', 'background-color:#FFFFFF');
+          $("span[name='nomaskYnSpan']").attr('style', 'visibility:hidden');
+          $("span[name='nomaskYnForm']").attr('style', 'visibility:hidden');
+        }
+        // 차량그룹표시
+        var groupList = data.groupList;
+        var str_groupList = '';
+        for (var i = 0; i < groupList.length; i++) {
+          var grpName = groupList[i].grpName;
+          var grpLevel = groupList[i].grpLevel;
+          var useYn = groupList[i].useYn;
+          if (grpLevel == 1) {
+            if ('1' == '2') {
+              str_groupList += '|' + grpName + ' > ';
+            } else {
+              if (useYn == 'Y') {
+                str_groupList += '|' + grpName + ' > ';
+              }
+            }
+          } else {
+            if (useYn == 'Y') {
+              str_groupList += grpName + ', ';
+            }
+          }
+        }
+        var itm_groupList = '';
+        var arr_groupList = str_groupList.split('|');
+        if ('1' == '2') {
+          for (var i = 0; i < arr_groupList.length; i++) {
+            var row_grouList = arr_groupList[i];
+            if (row_grouList.indexOf('>') > -1) {
+              if (row_grouList.indexOf('>') + 2 < row_grouList.length) {
+                if (row_grouList.substr(row_grouList.length - 2) == ', ') {
+                  itm_groupList += row_grouList.substr(0, row_grouList.length - 2) + '<br/>';
+                } else {
+                  itm_groupList += row_grouList + '<br/>';
+                }
+              }
+            }
+          }
+        } else {
+          for (var i = 0; i < arr_groupList.length; i++) {
+            var row_grouList = arr_groupList[i].replace('|', '').trim();
+            if (row_grouList != '') {
+              itm_groupList += row_grouList + '<br/>';
+            }
+          }
+        }
+        if (itm_groupList == '') {
+          $('#groupList').hide();
+        } else {
+          $('#groupList').show();
+        }
+        $('#groupList').html(itm_groupList);
+      }
+    }
+
+    function deleteBtn() {
+      var userList = $('#saveForm #offKey').val() + ':::' + $('#saveForm #iUserid').val();
+      if (userList.length > 0 && confirm('해당 사용자를 삭제 하시겠습니까?')) {
+        var data = {
+          userList: userList + ''
+        };
+        $.restful({
+          url: '/uvis/userDelete.ajax',
+          header: {
+            userId: 's1uvisadm',
+            _csrf: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1LXZpcy5jb20tczEiLCJpc3MiOiJ3d3cudS12aXMuY29tIiwiX3Rva2VuIjoiYmJwcUNHSVVUZURjeTdTWXRhMTlrRWlta0ZTazZkdzM0czlCUTlmNEY2TTFEckhRbnFYVXJxekI4ZnU4ODFmciIsIl91dWlkIjoiZjA3NTViOGItZjkyMS00MmU1LThmYjktNmRhMTZjOWZjYjE5In0.bvaQzZi9dHyVmni9CmgzkLEJQe1tJa0kPGV6ccXtbB0',
+          },
+          data: JSON.stringify(data),
+          callback: function(data, textStatus, jqXHR) {
+            if (data.result == true) {
+              var resultMap = data.resultMap;
+              alert('삭제되었습니다.');
+              listLoad(false, 1);
+              initUserForm();
+            } else {
+              if (data.errCode == 'ext') {
+                alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
+              } else if (data.errCode == 'EMPTY_PARAMETER') {
+                alert('필수 파라미터가 없습니다.');
+              } else if (data.errCode == 'FAILED_DELETE_USER') {
+                alert('회원 삭제에 실패했습니다.\n다시 시도하여 주십시오.');
+              } else {
+                alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
+              }
+            }
+          },
+        });
+      }
+    }
+
+    function modifyForm() {
+      $('#toggle_modify').hide();
+      $('#toggle_save').show();
+      //부서명
+      $('#deptName').hide();
+      $('#epDeptnameForm').show();
+      //권한
+      var permissionForm = '<select id="selPermission" name="selPermission">';
+      for (var i = 0; i < permissionCodeList.length; i++) {
+        // 현재 권한이 승인 대기자 인 경우에만 변경목록에 승인대기자 추가
+        if (permissionCodeList[i] == '999000') {
+          if ($('#menuGrpId').val() == '999000') {
+            permissionForm += '<option value="' + permissionCodeList[i] + '">' + permissionNameList[i] + '</option>';
+          }
+        } else {
+          permissionForm += '<option value="' + permissionCodeList[i] + '">' + permissionNameList[i] + '</option>';
+        }
+      }
+      permissionForm += '</select>';
+      // $('#permissionForm').html(permissionForm)
+      $('#permissionForm').show();
+      $('#selPermission').val($('#menuGrpId').val());
+      //비고
+      var rmkForm = '<textarea cols rows="3" id="rmkText" name="rmkText"></textarea>';
+      $('#rmkForm').html(rmkForm);
+      $('#rmkText').val($('#saveForm #rmk').val());
+      //노마스킹 여부
+      var nomaskYn = $('#saveForm #nomaskYn').val();
+      var chk_nomaskYn = nomaskYn == 'Y' ? 'checked' : '';
+      $('#nomaskYnForm').html("<input type='checkbox' name='nomaskYnText' id='nomaskYnText' value='Y' " + chk_nomaskYn + ' />');
+      $('#nomaskYnText').change(function() {
+        if ($(this).is(':checked')) {
+          if (
+            confirm(
+              '정보표시를 체크하면 로그인시 항상 휴대폰인증을 해야합니다.\n진행하시겠습니까?\n\n* 정보표시 항목을 체크할 경우 마스킹 기능(개인정보 일부를 *로 표시하는 기능)이 해제되어 개인정보의 화면출력, 파일 다운로드를 통해 개인정보가 유출될 수 있으며, 마스킹 기능해제로 인하여 발생되는 문제는 전적으로 고객이 그 책임을 부담합니다.',
+            )
+          ) {
+            $(this).prop('checked', true);
+          } else {
+            $(this).prop('checked', false);
+          }
+        } else {
+          if (confirm('정보표시체크를 해제할 경우 마스킹 기능이 다시 설정됩니다.\n진행하시겠습니까?')) {
+            $(this).prop('checked', false);
+          } else {
+            $(this).prop('checked', true);
+          }
+        }
+      });
+    }
+
+    function userInfoSave() {
+      if (confirm('사용자 정보를 변경 저장하시겠습니까?')) {
+        var chkFlg = false;
+        if ($('#saveForm #iCode').val() != '999000') {
+          chkFlg = true;
+        } else {
+          if ($('#selPermission option:selected').val() != '999000') {
+            chkFlg = true;
+          } else {
+            chkFlg = false;
+            alert('권한을 선택하세요.');
+            return false;
+          }
+        }
+        if ($('#nomaskYnText').is(':checked')) {
+          $('#saveForm #nomaskYn').val('Y');
+        } else {
+          $('#saveForm #nomaskYn').val('N');
+        }
+        if (chkFlg) {
+          $('#saveForm #epDeptname').val($('#epDeptnameForm').val());
+          $('#saveForm #menuGrpId').val($('#selPermission option:selected').val());
+          $('#saveForm #rmk').val($('#rmkText').val());
+          $.restful({
+            url: '/uvis/userDetailModify.ajax',
+            header: {
+              userId: 's1uvisadm',
+              _csrf: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1LXZpcy5jb20tczEiLCJpc3MiOiJ3d3cudS12aXMuY29tIiwiX3Rva2VuIjoiYmJwcUNHSVVUZURjeTdTWXRhMTlrRWlta0ZTazZkdzM0czlCUTlmNEY2TTFEckhRbnFYVXJxekI4ZnU4ODFmciIsIl91dWlkIjoiZjA3NTViOGItZjkyMS00MmU1LThmYjktNmRhMTZjOWZjYjE5In0.bvaQzZi9dHyVmni9CmgzkLEJQe1tJa0kPGV6ccXtbB0',
+            },
+            data: JSON.stringify($('#saveForm').serializeObject()),
+            callback: function(data, textStatus, jqXHR) {
+              if (data.result == true) {
+                alert('사용자 정보 저장이 완료 되었습니다.');
+                listLoad(false, $('#searchForm #page').val());
+                selectedRow($('#saveForm #offKey').val(), $('#saveForm #iUserid').val());
+              } else {
+                if (data.errCode == 'ext') {
+                  alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
+                } else if (data.errCode == 'EMPTY_PARAMETER') {
+                  alert('필수 파라미터가 없습니다.');
+                } else if (data.errCode == 'FAILED_UPDATE_USERINFO') {
+                  alert('사용자 수정에 실패했습니다.');
+                } else {
+                  alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
+                }
+              }
+            },
+          });
+        }
+      }
+    }
+
+    function passReset() {
+      if (confirm('사용자 비밀번호를 초기화 하시겠습니까?')) {
+        $.restful({
+          url: '/uvis/userPwdInit.ajax',
+          header: {
+            userId: 's1uvisadm',
+            _csrf: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1LXZpcy5jb20tczEiLCJpc3MiOiJ3d3cudS12aXMuY29tIiwiX3Rva2VuIjoiYmJwcUNHSVVUZURjeTdTWXRhMTlrRWlta0ZTazZkdzM0czlCUTlmNEY2TTFEckhRbnFYVXJxekI4ZnU4ODFmciIsIl91dWlkIjoiZjA3NTViOGItZjkyMS00MmU1LThmYjktNmRhMTZjOWZjYjE5In0.bvaQzZi9dHyVmni9CmgzkLEJQe1tJa0kPGV6ccXtbB0',
+          },
+          data: JSON.stringify($('#saveForm').serializeObject()),
+          callback: function(data, textStatus, jqXHR) {
+            if (data.result == true) {
+              alert('비밀번호 초기화가 완료 되었습니다. 사용자에게 안내 문자가 발송되었습니다.');
+              selectedRow($('#saveForm #offKey').val(), $('#saveForm #iUserid').val());
+            } else {
+              alert(data.errMsg);
+            }
+          },
+        });
+      }
+    }
+
+    function initUserForm() {
+      $('#toggle_delete').hide();
+      $('#toggle_modify').hide();
+      $('#toggle_save').hide();
+      $('#resetBtn').hide();
+      $('#menuBtn').hide();
+      $('#groupBtn').hide();
+      $('#saveForm #offKey').val('');
+      $('#saveForm #iUserid').val('');
+      $('#saveForm #epDeptname').val('');
+      $('#saveForm #menuGrpId').val('');
+      $('#saveForm #rmk').val('');
+      $('#saveForm #nomaskYn').val('');
+      $('#companyName').html('');
+      $('#deptName').html('');
+      $('#epDeptnameForm').html('');
+      $('#userId').html('');
+      $('#userName').html('');
+      $('#permissionForm').html('');
+      $('#userPhone').html('');
+      $('#userEmail').html('');
+      $('#rmkForm').html('');
+      $('#regDate').html('');
+      //부서명
+      $('#epDeptnameForm').hide();
+      $('#deptName').show();
+      //이메일 2023.08.09
+      // $("#userEmailForm").hide();
+      // $("#userEmail").show();
+      //노마스킹
+      $('#nomaskYnForm').html('');
+    }
+
+    function userMenuPopup() {
+      $('#userMenuSettingForm #custId').val($('#saveForm #custId').val());
+      $('#userMenuSettingForm #offKey').val($('#saveForm #offKey').val());
+      $('#userMenuSettingForm #iCode').val($('#saveForm #iCode').val());
+      $('#userMenuSettingForm #iUserid').val($('#saveForm #iUserid').val());
+      $('#userMenuSettingForm #menuGrpId').val($('#saveForm #menuGrpId').val());
+      $('#userMenuSettingForm').attr('target', 'iframeUserMenuSetting');
+      $('#userMenuSettingForm').attr('action', '/uvis/userList/userMenuSetting.do');
+      $('#userMenuSettingForm')[0].submit();
+      $('#userMenuModel1').modal();
+    }
+
+    function groupMenuPopup() {
+      // var html = '';
+      // html += '<iframe name="iframeVehicleGroup" frameborder="0"></iframe>';
+      // $("#groupChkForm").html(html)
+      $('#vehicleGroupForm #offKey').val($('#saveForm #offKey').val());
+      $('#vehicleGroupForm #iUserid').val($('#saveForm #iUserid').val());
+      $('#vehicleGroupForm').attr('target', 'iframeVehicleGroup');
+      // $("#vehicleGroupForm").attr("action", "/uvis/commonGroupSelect.do");
+      $('#vehicleGroupForm').attr('action', '/uvis/userList/userGroupList.do');
+      $('#vehicleGroupForm')[0].submit();
+      $('#vehicleGroupModel1').modal();
+    }
+
+    function closeModal(id) {
+      $('#' + id).modal('hide');
+      $('#iframeVehicleGroup').attr('src', '');
+    }
+
+    function checkAdmin() {
+      var code = $('#selPermission option:selected').val();
+      if ($('#saveForm #iCode').val() == '999022' && code != '999022') {
+        $.restful({
+          url: '/uvis/adminCheck.ajax',
+          header: {
+            userId: 's1uvisadm',
+            _csrf: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1LXZpcy5jb20tczEiLCJpc3MiOiJ3d3cudS12aXMuY29tIiwiX3Rva2VuIjoiYmJwcUNHSVVUZURjeTdTWXRhMTlrRWlta0ZTazZkdzM0czlCUTlmNEY2TTFEckhRbnFYVXJxekI4ZnU4ODFmciIsIl91dWlkIjoiZjA3NTViOGItZjkyMS00MmU1LThmYjktNmRhMTZjOWZjYjE5In0.bvaQzZi9dHyVmni9CmgzkLEJQe1tJa0kPGV6ccXtbB0',
+          },
+          data: JSON.stringify($('#saveForm').serializeObject()),
+          callback: function(data, textStatus, jqXHR) {
+            if (data.result == true) {
+              var resultMap = data.resultMap;
+              if (Number(resultMap.cnt) <= 1) {
+                alert('관리자는 1인 이상 존재해야 합니다.');
+                $('#selPermission').val('999022');
+              }
+            } else {
+              if (data.errCode == 'ext') {
+                alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
+              } else if (data.errCode == 'EMPTY_PARAMETER') {
+                alert('필수 파라미터가 없습니다.');
+              } else {
+                alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
+              }
+            }
+          },
+        });
+      }
+    }
+    /**
+     * 페이징 처리
+     * @author     DFCC
+     * @param
+     * @return
+     * @example
+     */
+    function setPaging(page, pTotCnt) {
+      var rows = $('#rows').val();
+      pTotCnt = pTotCnt == undefined ? gTotCnt : pTotCnt;
+      var totPageCnt = Math.ceil(pTotCnt / rows);
+      $('.paging').paging({
+        prevClass: 'btn-prev',
+        nextClass: 'btn-next',
+        firstClass: 'btn-first',
+        lastClass: 'btn-last',
+        length: 10,
+        max: totPageCnt, // 전체 페이지
+        current: page, // 현재 페이지
+        onclick: function(e, pPage) {
+          // 링크 클릭 이벤트 핸들러
+          listLoad(true, pPage);
+        },
+      });
+    }
+    /**
+     * 검색폼에 셀렉트 박스의 선택값 적용
+     * @author     DFCC
+     * @param
+     * @return
+     * @example
+     */
+    function setRows() {
+      var rows = $('#selRows').val();
+      $('#page').val(1);
+      $('#rows').val(rows);
+      listLoad(true, 1);
+    }
+  </script>
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <div class="top-chip">
+    <ul class="chip-box">
+      <li class="chip">
+        <button type="button" class="btn-chip active">
+          <span>휴일 관리</span>
+        </button>
+      </li>
+      <li class="chip">
+        <button type="button" class="btn-chip">
+          <span>공통코드 관리</span>
+        </button>
+      </li>
+      <li class="chip">
+        <button type="button" class="btn-chip">
+          <span>지역코드 관리</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-9">
+            <!-- 1/27 update -->
+            <!-- 달력 -->
+            <div class="calendar-area">
+              <div class="calendar-top">
+                <div class="top-center">
+                  <div class="calendar-title">
+                    <button class="btn-prev" id="callPrevMonthBtn" type="button">이전달</button>
+                    <h3>
+                      <label for="monthDatepicker"><span class="year">2025</span>.<span class="month">12</span>
+                        <input class="datepicker monthly hide-obj" id="monthDatepicker" name="" type="text" />
+                      </label>
+                    </h3>
+                    <button class="btn-next" id="callNextMonthBtn" type="button">다음달</button>
+                  </div>
+                  <button class="btn btn-white" id="closingScheduleYearDownloadExcelBtn" onclick="exportExcel('Year')">다운로드</button>
+                </div>
+              </div>
+              <div class="calendar-bottom closing-schedule">
+                <!-- calendar header -->
+                <div class="calendar-header">
+                  <ul>
+                    <li><span class="day sun">일요일</span></li>
+                    <li><span class="day">월요일</span></li>
+                    <li><span class="day">화요일</span></li>
+                    <li><span class="day">수요일</span></li>
+                    <li><span class="day">목요일</span></li>
+                    <li><span class="day">금요일</span></li>
+                    <li><span class="day sat">토요일</span></li>
+                  </ul>
+                </div>
+                <!-- //calendar header -->
+                <!-- calendar body -->
+                <div class="calendar-body">
+                  <ul>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date sun">30</span></div>
+                      </div>
+                    </li>
+                    <li class="today">
+                      <div class="date-area" id="20251201" date="20251201" onclick="edtClosingSchedule(20251201,123001)">
+                        <div class="date-title"><span class="date">1</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251202" date="20251202" onclick="edtClosingSchedule(20251202,123001)">
+                        <div class="date-title"><span class="date">2</span></div>
+                      </div>
+                    </li>
+                    <li class="active">
+                      <div class="date-area" id="20251203" date="20251203" onclick="edtClosingSchedule(20251203,123001)">
+                        <div class="date-title"><span class="date">3</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251204" date="20251204" onclick="edtClosingSchedule(20251204,123001)">
+                        <div class="date-title"><span class="date">4</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251205" date="20251205" onclick="edtClosingSchedule(20251205,123001)">
+                        <div class="date-title"><span class="date">5</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251206" date="20251206" onclick="edtClosingSchedule(20251206,123002)">
+                        <div class="date-title"><span class="date sat">6</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251207" date="20251207" onclick="edtClosingSchedule(20251207,123003)">
+                        <div class="date-title"><span class="date sun">7</span><span class="date-name sun">일요일</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251208" date="20251208" onclick="edtClosingSchedule(20251208,123001)">
+                        <div class="date-title"><span class="date">8</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251209" date="20251209" onclick="edtClosingSchedule(20251209,123001)">
+                        <div class="date-title"><span class="date">9</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251210" date="20251210" onclick="edtClosingSchedule(20251210,123001)">
+                        <div class="date-title"><span class="date">10</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251211" date="20251211" onclick="edtClosingSchedule(20251211,123001)">
+                        <div class="date-title"><span class="date">11</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251212" date="20251212" onclick="edtClosingSchedule(20251212,123001)">
+                        <div class="date-title"><span class="date">12</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251213" date="20251213" onclick="edtClosingSchedule(20251213,123002)">
+                        <div class="date-title"><span class="date sat">13</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251214" date="20251214" onclick="edtClosingSchedule(20251214,123003)">
+                        <div class="date-title"><span class="date sun">14</span><span class="date-name sun">일요일</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251215" date="20251215" onclick="edtClosingSchedule(20251215,123001)">
+                        <div class="date-title"><span class="date">15</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251216" date="20251216" onclick="edtClosingSchedule(20251216,123001)">
+                        <div class="date-title"><span class="date">16</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251217" date="20251217" onclick="edtClosingSchedule(20251217,123001)">
+                        <div class="date-title"><span class="date">17</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251218" date="20251218" onclick="edtClosingSchedule(20251218,123001)">
+                        <div class="date-title"><span class="date">18</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251219" date="20251219" onclick="edtClosingSchedule(20251219,123001)">
+                        <div class="date-title"><span class="date">19</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251220" date="20251220" onclick="edtClosingSchedule(20251220,123002)">
+                        <div class="date-title"><span class="date sat">20</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251221" date="20251221" onclick="edtClosingSchedule(20251221,123003)">
+                        <div class="date-title"><span class="date sun">21</span><span class="date-name sun">일요일</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251222" date="20251222" onclick="edtClosingSchedule(20251222,123001)">
+                        <div class="date-title"><span class="date">22</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251223" date="20251223" onclick="edtClosingSchedule(20251223,123001)">
+                        <div class="date-title"><span class="date">23</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251224" date="20251224" onclick="edtClosingSchedule(20251224,123001)">
+                        <div class="date-title"><span class="date">24</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251225" date="20251225" onclick="edtClosingSchedule(20251225,123001)">
+                        <div class="date-title"><span class="date">25</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251226" date="20251226" onclick="edtClosingSchedule(20251226,123001)">
+                        <div class="date-title"><span class="date">26</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251227" date="20251227" onclick="edtClosingSchedule(20251227,123002)">
+                        <div class="date-title"><span class="date sat">27</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251228" date="20251228" onclick="edtClosingSchedule(20251228,123003)">
+                        <div class="date-title"><span class="date sun">28</span><span class="date-name sun">일요일</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251229" date="20251229" onclick="edtClosingSchedule(20251229,123001)">
+                        <div class="date-title"><span class="date">29</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251230" date="20251230" onclick="edtClosingSchedule(20251230,123001)">
+                        <div class="date-title"><span class="date">30</span></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date-area" id="20251231" date="20251231" onclick="edtClosingSchedule(20251231,123001)">
+                        <div class="date-title"><span class="date">31</span></div>
+                      </div>
+                    </li>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date">1</span></div>
+                      </div>
+                    </li>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date">2</span></div>
+                      </div>
+                    </li>
+                    <li class="other-month">
+                      <div class="date-area">
+                        <div class="date-title"><span class="date sat">3</span></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <!-- //calendar body -->
+              </div>
+            </div>
+            <!-- //달력 -->
+          </div>
+          <div class="col col-xl-3">
+            <div class="area-box">
+              <div class="card-box data-form-table">
+                <div class="data-form-table-header">
+                  <div class="header-left">
+                    <h3 class="header-title">휴일설정</h3>
+                  </div>
+                  <div class="header-right">
+                    <button class="btn btn-white" disabled>취소</button>
+                    <button class="btn btn-blue" disabled>저장</button>
+                  </div>
+                </div>
+                <div class="data-form-table-body v-middle">
+                  <div class="empty-content-box">
+                    <p class="message">
+                      선택된 항목이 없어요.<br />
+                      좌측 캘린더에서 날짜를 선택해주세요.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+      <!-- 팝업 영역 -->
+      <!-- 휴일 관리 팝업 -->
+      <div class="modal fade dark" id="popModel1" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">휴일관리</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- data form table -->
+              <div class="data-form-table">
+                <div class="data-form-table-body v-middle">
+                  <form name="saveForm" id="saveForm">
+                    <input type="hidden" name="startDate" />
+                    <input type="hidden" name="endDate" />
+                    <table>
+                      <tbody>
+                        <tr>
+                          <th><span class="mecessary">날짜</span></th>
+                          <td>
+                            <div class="input-group date-range">
+                              <div class="input-wrap date">
+                                <input class="datepicker" id="startDate" type="text" />
+                                <i class="icon icon-calendar"></i>
+                              </div>
+                              <span class="between">~</span>
+                              <div class="input-wrap date">
+                                <input class="datepicker" id="endDate" type="text" />
+                                <i class="icon icon-calendar"></i>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th><span class="mecessary">요일구분</span></th>
+                          <!-- 요일구분 -->
+                          <td>
+                            <div class="input-wrap select">
+                              <select class="select" name="dayCode">
+                                <option value="123001" selected="">평일</option>
+                                <!-- 평일 -->
+                                <option value="123002">토요일</option>
+                                <!-- 토요일 -->
+                                <option value="123003">공휴일</option>
+                                <!-- 공휴일 -->
+                                <option value="123004">휴무익일</option>
+                                <!-- 휴무익일 -->
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </form>
+                </div>
+              </div>
+              <!-- //data form table -->
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <!-- 취소 -->
+              <button class="btn btn-blue" type="button" onclick="closingScheduleInfoSave()">저장</button>
+              <!-- 저장 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

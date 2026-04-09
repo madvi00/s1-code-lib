@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../../assets/css/lib/bootstrap-datepicker.standalone.css" />
+  <link rel="stylesheet" href="../../assets/css/lib-style.css" />
+  <link rel="stylesheet" href="../../assets/css/pc-style.css" />
+  <link rel="stylesheet" href="../../assets/css/general.css" />
+  <script src="../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  <script>
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../assets/js/jquery.cookie.js"></script>
+  <script src="../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../assets/js/jquery.uvis.common.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../assets/js/publish.js"></script>
+  <script src="../../assets/js/amobe_timePicker.js"></script>
+  <title>Guide | Time Picker</title>
+  <style>
+    .timepicker-box { width: 190px; }
+  </style>
+</head>
+
+<body style="overflow:hidden; margin:0;">
+  <div class="general-container">
+    <div class="general-area">
+      <div class="general-top">
+        <div class="general-label">Component</div>
+        <div class="general-title">Time Picker</div>
+      </div>
+      <div class="general-middle">
+
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Medium</div>
+              <div class="component-block-subtitle">normal · disabled</div>
+            </div>
+          </div>
+          <div class="component-preview" style="gap:12px; align-items:flex-start;">
+            <div class="timepicker-box timepicker-medium">
+              <div class="timepicker-input">
+                <input type="text" name="timepicker-01" id="timepicker-01" class="time-input input-medium" placeholder="시간을 선택하세요" readonly />
+              </div>
+              <div class="timepicker timepicker-dropdown">
+                <div class="timepicker-picker-container">
+                  <div class="timepicker-picker-area">
+                    <div class="timepicker-picker">
+                      <div class="timepicker-top">
+                        <div class="time">
+                          <button type="button" class="list ampm">오전</button>
+                          <button type="button" class="list ampm">오후</button>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="time">
+                          <button type="button" class="list hour">00</button>
+                          <button type="button" class="list hour">01</button>
+                          <button type="button" class="list hour">02</button>
+                          <button type="button" class="list hour">03</button>
+                          <button type="button" class="list hour">04</button>
+                          <button type="button" class="list hour">05</button>
+                          <button type="button" class="list hour">06</button>
+                          <button type="button" class="list hour">07</button>
+                          <button type="button" class="list hour">08</button>
+                          <button type="button" class="list hour">09</button>
+                          <button type="button" class="list hour">10</button>
+                          <button type="button" class="list hour">11</button>
+                          <button type="button" class="list hour">12</button>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="time">
+                          <button type="button" class="minute list">00</button>
+                          <button type="button" class="minute list">01</button>
+                          <button type="button" class="minute list">02</button>
+                          <button type="button" class="minute list">03</button>
+                          <button type="button" class="minute list">04</button>
+                          <button type="button" class="minute list">05</button>
+                          <button type="button" class="minute list">06</button>
+                          <button type="button" class="minute list">07</button>
+                          <button type="button" class="minute list">08</button>
+                          <button type="button" class="minute list">09</button>
+                          <button type="button" class="minute list">10</button>
+                          <button type="button" class="minute list">11</button>
+                          <button type="button" class="minute list">12</button>
+                          <button type="button" class="minute list">13</button>
+                          <button type="button" class="minute list">14</button>
+                          <button type="button" class="minute list">15</button>
+                          <button type="button" class="minute list">16</button>
+                          <button type="button" class="minute list">17</button>
+                          <button type="button" class="minute list">18</button>
+                          <button type="button" class="minute list">19</button>
+                          <button type="button" class="minute list">20</button>
+                          <button type="button" class="minute list">21</button>
+                          <button type="button" class="minute list">22</button>
+                          <button type="button" class="minute list">23</button>
+                          <button type="button" class="minute list">24</button>
+                          <button type="button" class="minute list">25</button>
+                          <button type="button" class="minute list">26</button>
+                          <button type="button" class="minute list">27</button>
+                          <button type="button" class="minute list">28</button>
+                          <button type="button" class="minute list">29</button>
+                          <button type="button" class="minute list">30</button>
+                          <button type="button" class="minute list">31</button>
+                          <button type="button" class="minute list">32</button>
+                          <button type="button" class="minute list">33</button>
+                          <button type="button" class="minute list">34</button>
+                          <button type="button" class="minute list">35</button>
+                          <button type="button" class="minute list">36</button>
+                          <button type="button" class="minute list">37</button>
+                          <button type="button" class="minute list">38</button>
+                          <button type="button" class="minute list">39</button>
+                          <button type="button" class="minute list">40</button>
+                          <button type="button" class="minute list">41</button>
+                          <button type="button" class="minute list">42</button>
+                          <button type="button" class="minute list">43</button>
+                          <button type="button" class="minute list">44</button>
+                          <button type="button" class="minute list">45</button>
+                          <button type="button" class="minute list">46</button>
+                          <button type="button" class="minute list">47</button>
+                          <button type="button" class="minute list">48</button>
+                          <button type="button" class="minute list">49</button>
+                          <button type="button" class="minute list">50</button>
+                          <button type="button" class="minute list">51</button>
+                          <button type="button" class="minute list">52</button>
+                          <button type="button" class="minute list">53</button>
+                          <button type="button" class="minute list">54</button>
+                          <button type="button" class="minute list">55</button>
+                          <button type="button" class="minute list">56</button>
+                          <button type="button" class="minute list">57</button>
+                          <button type="button" class="minute list">58</button>
+                          <button type="button" class="minute list">59</button>
+                        </div>
+                      </div>
+                      <div class="timepicker-bottom">
+                        <button type="button" class="btn-confirm" disabled>확인</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timepicker-box timepicker-medium">
+              <div class="timepicker-input">
+                <input type="text" name="timepicker-02" id="timepicker-02" class="time-input input-medium" placeholder="시간을 선택하세요" readonly disabled />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Small</div>
+              <div class="component-block-subtitle">normal · disabled</div>
+            </div>
+          </div>
+          <div class="component-preview" style="gap:12px; align-items:flex-start;">
+            <div class="timepicker-box timepicker-small">
+              <div class="timepicker-input">
+                <input type="text" name="timepicker-03" id="timepicker-03" class="time-input input-small" placeholder="시간을 선택하세요" readonly />
+              </div>
+              <div class="timepicker timepicker-dropdown">
+                <div class="timepicker-picker-container">
+                  <div class="timepicker-picker-area">
+                    <div class="timepicker-picker">
+                      <div class="timepicker-top">
+                        <div class="time">
+                          <button type="button" class="list ampm">오전</button>
+                          <button type="button" class="list ampm">오후</button>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="time">
+                          <button type="button" class="list hour">00</button>
+                          <button type="button" class="list hour">01</button>
+                          <button type="button" class="list hour">02</button>
+                          <button type="button" class="list hour">03</button>
+                          <button type="button" class="list hour">04</button>
+                          <button type="button" class="list hour">05</button>
+                          <button type="button" class="list hour">06</button>
+                          <button type="button" class="list hour">07</button>
+                          <button type="button" class="list hour">08</button>
+                          <button type="button" class="list hour">09</button>
+                          <button type="button" class="list hour">10</button>
+                          <button type="button" class="list hour">11</button>
+                          <button type="button" class="list hour">12</button>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="time">
+                          <button type="button" class="minute list">00</button>
+                          <button type="button" class="minute list">01</button>
+                          <button type="button" class="minute list">02</button>
+                          <button type="button" class="minute list">03</button>
+                          <button type="button" class="minute list">04</button>
+                          <button type="button" class="minute list">05</button>
+                          <button type="button" class="minute list">06</button>
+                          <button type="button" class="minute list">07</button>
+                          <button type="button" class="minute list">08</button>
+                          <button type="button" class="minute list">09</button>
+                          <button type="button" class="minute list">10</button>
+                          <button type="button" class="minute list">11</button>
+                          <button type="button" class="minute list">12</button>
+                          <button type="button" class="minute list">13</button>
+                          <button type="button" class="minute list">14</button>
+                          <button type="button" class="minute list">15</button>
+                          <button type="button" class="minute list">16</button>
+                          <button type="button" class="minute list">17</button>
+                          <button type="button" class="minute list">18</button>
+                          <button type="button" class="minute list">19</button>
+                          <button type="button" class="minute list">20</button>
+                          <button type="button" class="minute list">21</button>
+                          <button type="button" class="minute list">22</button>
+                          <button type="button" class="minute list">23</button>
+                          <button type="button" class="minute list">24</button>
+                          <button type="button" class="minute list">25</button>
+                          <button type="button" class="minute list">26</button>
+                          <button type="button" class="minute list">27</button>
+                          <button type="button" class="minute list">28</button>
+                          <button type="button" class="minute list">29</button>
+                          <button type="button" class="minute list">30</button>
+                          <button type="button" class="minute list">31</button>
+                          <button type="button" class="minute list">32</button>
+                          <button type="button" class="minute list">33</button>
+                          <button type="button" class="minute list">34</button>
+                          <button type="button" class="minute list">35</button>
+                          <button type="button" class="minute list">36</button>
+                          <button type="button" class="minute list">37</button>
+                          <button type="button" class="minute list">38</button>
+                          <button type="button" class="minute list">39</button>
+                          <button type="button" class="minute list">40</button>
+                          <button type="button" class="minute list">41</button>
+                          <button type="button" class="minute list">42</button>
+                          <button type="button" class="minute list">43</button>
+                          <button type="button" class="minute list">44</button>
+                          <button type="button" class="minute list">45</button>
+                          <button type="button" class="minute list">46</button>
+                          <button type="button" class="minute list">47</button>
+                          <button type="button" class="minute list">48</button>
+                          <button type="button" class="minute list">49</button>
+                          <button type="button" class="minute list">50</button>
+                          <button type="button" class="minute list">51</button>
+                          <button type="button" class="minute list">52</button>
+                          <button type="button" class="minute list">53</button>
+                          <button type="button" class="minute list">54</button>
+                          <button type="button" class="minute list">55</button>
+                          <button type="button" class="minute list">56</button>
+                          <button type="button" class="minute list">57</button>
+                          <button type="button" class="minute list">58</button>
+                          <button type="button" class="minute list">59</button>
+                        </div>
+                      </div>
+                      <div class="timepicker-bottom">
+                        <button type="button" class="btn-confirm" disabled>확인</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timepicker-box timepicker-small">
+              <div class="timepicker-input">
+                <input type="text" name="timepicker-04" id="timepicker-04" class="time-input input-small" placeholder="시간을 선택하세요" readonly disabled />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div id="timepicker-portal" style="position:fixed;z-index:9999;"></div>
+  <script>document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
+</body>
+
+</html>

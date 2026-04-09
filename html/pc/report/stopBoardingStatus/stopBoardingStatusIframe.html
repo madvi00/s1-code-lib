@@ -1,0 +1,1486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript">
+    sessionStorage.setItem('contextpath', '/uvis')
+    sessionStorage.setItem('langSet', 'ko')
+    //////////달력 설정//////////
+    var cldMsg_prevMonth = '이전 달' // 이전 달
+    var cldMsg_nextMonth = '다음 달' // 다음 달
+    var cldMsg_prevYear = '이전 년도' // 이전 년도
+    var cldMsg_nextYear = '다음 년도' // 다음 년도
+    var cldMsg_prev = '이전' // 이전
+    var cldMsg_next = '다음' // 다음
+    //////////달력 설정//////////
+    //////////jquery.uvis.common.js 다국어//////////
+    var jquery_uvis_common_checkPasswordRegex1 = '비밀번호에는 공백을 입력할 수 없습니다.' // 비밀번호에는 공백을 입력할 수 없습니다.
+    var jquery_uvis_common_checkPasswordRegex2 = '새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.' // 새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.
+    var jquery_uvis_common_ajaxErrorMessage0 = '접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.' // 접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage1 = '장시간 미사용으로 로그아웃 되었습니다.\r\n로그인 페이지로 이동 합니다.' // 장시간 미사용으로 로그아웃 되었습니다.\\r\\n로그인 페이지로 이동 합니다.
+    var jquery_uvis_common_ajaxErrorMessage2 = '에러가 발생하였습니다.\r\n네트워크 상태를 확인해주세요.' // 에러가 발생하였습니다.\\r\\n네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage3 = '에러가 발생하였습니다.\r\n접근이 거부되었습니다.\n\n새로고침 또는 로그인을 다시 해주세요.' // 에러가 발생하였습니다.\\r\\n접근이 거부되었습니다.\\n\\n새로고침 또는 로그인을 다시 해주세요.
+    var jquery_uvis_common_ajaxErrorMessage4 = '에러가 발생하였습니다.\r\nURL을 찾을 수 없습니다.' // 에러가 발생하였습니다.\\r\\nURL을 찾을 수 없습니다.
+    var jquery_uvis_common_ajaxErrorMessage5 = '에러가 발생하였습니다.\r\n내부 서버 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n내부 서버 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage6 = '에러가 발생하였습니다.\r\n파싱 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n파싱 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage7 = '에러가 발생하였습니다.\r\n실행시간이 지연되어 타임아웃이 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n실행시간이 지연되어 타임아웃이 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage8 = '에러가 발생하였습니다.\r\n알 수 없는 에러입니다.\n\n' // 에러가 발생하였습니다.\\r\\n알 수 없는 에러입니다.\\n\\n
+    var jquery_uvis_common_isValidDate1 = '잘못된 날짜형식 입니다.\n\r입력하신 문자열 길이를 확인해주세요.' // 잘못된 날짜형식 입니다.\\n\\r입력하신 문자열 길이를 확인해주세요.
+    var jquery_uvis_common_isValidDate21 = '잘못된 날짜형식 입니다.\n\r' // 잘못된 날짜형식 입니다.\\n\\r
+    var jquery_uvis_common_isValidDate22 = '월은 존재하지 않는 월입니다.' // 월은 존재하지 않는 월입니다.
+    var jquery_uvis_common_isValidDate31 = '잘못된 날짜형식 입니다.\n\r해당 월은' // 잘못된 날짜형식 입니다.\\n\\r해당 월은
+    var jquery_uvis_common_isValidDate32 = '일 까지입니다.' // 일 까지입니다.
+    var jquery_uvis_common_isValidDate4 = '잘못된 날짜형식 입니다.' // 잘못된 날짜형식 입니다.
+    var jquery_uvis_common_checkFileExt1 = '정상적인 파일이 아닙니다.' // 정상적인 파일이 아닙니다.
+    var jquery_uvis_common_checkFileExt2 = '파일만 업로드 가능 합니다.' // 파일만 업로드 가능 합니다.
+    var jquery_uvis_common_downloadCapture1 = '인터넷 익스플로러는 지원하지 않습니다.' // 인터넷 익스플로러는 지원하지 않습니다.
+    var jquery_uvis_common_downloadCapture2 = '이미지로 변환 중 에러가 발생하였습니다.' // 이미지로 변환 중 에러가 발생하였습니다.
+    //////////jquery.uvis.common.js 다국어//////////
+    var termsFilter = ['img', 'a', 'p', 'br', 'span', 'b', 'strong', 'u', 'colgroup', 'col', 'table', 'tbody', 'tr', 'td', 'ul', 'li', 'dl', 'dd', 'dt']
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <!-- CSS resource load -->
+  <link href="../../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../../assets/css/lib/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../../../assets/js/jquery-ui.js"></script>
+  <script src="../../../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../../../assets/js/bootstrap.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../../../assets/js/popper.min.js"></script>
+  <script src="../../../../assets/js/datatables.min.js"></script>
+  <script src="../../../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../../../assets/js/jquery.cookie.js"></script>
+  <script src="../../../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../../../assets/js/jquery.uvis.common.js"></script>
+  <script src="../../../../assets/js/highcharts.js"></script>
+  <script src="../../../../assets/js/exporting.js"></script>
+  <script src="../../../../assets/js/canvg.js"></script>
+  <script src="../../../../assets/js/rgbcolor.min.js"></script>
+  <script src="../../../../assets/js/html2canvas.js"></script>
+  <script src="../../../../assets/js/es6-promise.auto.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../../../assets/js/jquery.jqGrid.src.js"></script>
+  <script src="../../../../assets/js/jquery.paging.js"></script>
+  <script src="../../../../assets/js/publish.js"></script>
+  <script src="../../../../assets/js/amobe_datepicker.js"></script>
+  <script src="../../../../assets/js/amobe_dropdown.js"></script>
+  <script src="../../../../assets/js/amobe_header.js"></script>
+  <script src="../../../../assets/js/amobe_input.js"></script>
+  <script src="../../../../assets/js/amobe_mapList.js"></script>
+  <script src="../../../../assets/js/amobe_modal.js"></script>
+  <script src="../../../../assets/js/amobe_multiMap.js"></script>
+  <script src="../../../../assets/js/amobe_rangeTimePicker.js"></script>
+  <script src="../../../../assets/js/amobe_routeAccordion.js"></script>
+  <script src="../../../../assets/js/amobe_swiper.js"></script>
+  <script src="../../../../assets/js/amobe_tab.js"></script>
+  <script src="../../../../assets/js/amobe_table.js"></script>
+  <script src="../../../../assets/js/amobe_timePicker.js"></script>
+  <title>차량위치</title>
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <div class="map-partition-area station-boarding-status">
+        <!-- 좌측 리스트 영역 -->
+        <div class="left-area expanded">
+          <!-- .lite-mode : 간단 모드로 변경 -->
+          <!-- 1/29 update : tab-container class -->
+          <div class="map-list tab-container">
+            <!-- 1/6 update -->
+            <div class="map-list-top">
+              <div class="search-box">
+                <div class="input-wrap">
+                  <input id="input-search" name="input-search" class="input-medium input-search" placeholder="노선, 정류장을 입력해 주세요." type="search" value="" @@property />
+                  <div class="search-button-box">
+                    <button type="button" class="btn-search"></button>
+                  </div>
+                </div>
+              </div>
+              <div class="map-list-tabs">
+                <ul class="tabs">
+                  <li class="tab">
+                    <a class="on" href="#">노선</a>
+                  </li>
+                  <li class="tab">
+                    <a href="#">정류장</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="map-list-bottom">
+              <div class="search-result-box">
+                <div class="search-result-bottom">
+                  <div class="empty-box" style="display: none">
+                    <p>노선, 정류장을 검색해 주세요.</p>
+                  </div>
+                  <div class="tab-content-box">
+                    <div class="tab-pannel active">
+                      <div class="total-count">
+                        <div class="label">
+                          검색 결과 : <em class="data">총 <span class="count">000</span>건</em>
+                        </div>
+                      </div>
+                      <div class="map-route-list-box">
+                        <div class="map-route-list">
+                          <div class="bus-route-box active">
+                            <div class="bus-route-wrap">
+                              <div class="bus-route-left">
+                                <div class="bus-route-top">
+                                  <div class="badge-box"><span class="badge blue">출근</span></div>
+                                  <strong class="info-name">(근거리셔틀)<span class="highlight">동탄</span>2신도시목동_H1</strong>
+                                </div>
+                              </div>
+                              <div class="bus-route-right">
+                                <button type="button" class="detail-button" title="상세정보 열기"></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="map-route-list">
+                          <div class="bus-route-box">
+                            <div class="bus-route-wrap">
+                              <div class="bus-route-left">
+                                <div class="bus-route-top">
+                                  <div class="badge-box"><span class="badge green">퇴근</span></div>
+                                  <strong class="info-name">(근거리셔틀)<span class="highlight">동탄</span>2신도시목동_H1</strong>
+                                </div>
+                              </div>
+                              <div class="bus-route-right">
+                                <button type="button" class="detail-button" title="상세정보 열기"></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pannel">
+                      <div class="route-list-box">
+                        <ul class="route-lists">
+                          <li class="route-list active">
+                            <div class="route-list-top">
+                              <div class="list-title-box">
+                                <span class="list-title">행복마을참누리에듀파크104동(버스정류장)</span>
+                                <span class="list-count">00</span>
+                              </div>
+                              <div class="list-button-box">
+                                <button type="button" class="btn-arrow"></button>
+                              </div>
+                            </div>
+                            <div class="route-list-bottom">
+                              <div class="map-content-box">
+                                <ul class="map-content-lists">
+                                  <li class="map-content-list">
+                                    <div class="list-left-box">
+                                      <div class="badge-box"><span class="badge blue">출근</span></div>
+                                    </div>
+                                    <div class="list-right-box">
+                                      <div class="route-name-box">기산동푸르지오/반월동SK뷰_H1-K1</div>
+                                    </div>
+                                  </li>
+                                  <li class="map-content-list">
+                                    <div class="list-left-box">
+                                      <div class="badge-box"><span class="badge blue">출근</span></div>
+                                    </div>
+                                    <div class="list-right-box">
+                                      <div class="route-name-box">기산동푸르지오/반월동SK뷰_H1-K1</div>
+                                    </div>
+                                  </li>
+                                  <li class="map-content-list">
+                                    <div class="list-left-box">
+                                      <div class="badge-box"><span class="badge blue">출근</span></div>
+                                    </div>
+                                    <div class="list-right-box">
+                                      <div class="route-name-box">기산동푸르지오/반월동SK뷰_H1-K1</div>
+                                    </div>
+                                  </li>
+                                  <li class="map-content-list">
+                                    <div class="list-left-box">
+                                      <div class="badge-box"><span class="badge blue">출근</span></div>
+                                    </div>
+                                    <div class="list-right-box">
+                                      <div class="route-name-box">기산동푸르지오/반월동SK뷰_H1-K1</div>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shuttle-detail-container">
+            <div class="map-status-box">
+              <div class="map-status-area">
+                <div class="route-status-box">
+                  <div class="status-box">
+                    <span class="status-color red"></span>
+                    <div class="text-box">
+                      <span class="route-title">[출근]기흥역/신갈_K1-H2</span>
+                      <span class="route-time">평일ㅣ첫차 07:10 ∙ 막차 07:10 </span>
+                    </div>
+                    <button type="button" class="btn-close"></button>
+                  </div>
+                  <div class="status-box">
+                    <span class="status-color yellow"></span>
+                    <div class="text-box">
+                      <span class="route-title">[출근]기흥역/신갈_K1-H2</span>
+                      <span class="route-time">평일ㅣ첫차 07:10 ∙ 막차 07:10 </span>
+                    </div>
+                    <button type="button" class="btn-close"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 1/29 update : tab-container class -->
+            <div class="shuttle-detail-area tab-container">
+              <div class="shuttle-detail-top">
+                <button type="button" class="btn-close"></button>
+                <div class="bus-route-box">
+                  <div class="bus-route-wrap">
+                    <div class="bus-route-left">
+                      <div class="bus-route-top">
+                        <div class="badge-box"><span class="badge blue">출근</span></div>
+                        <strong class="info-name">(근거리셔틀)동탄2신도시목동_H1</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-box">
+                  <ul class="tabs">
+                    <li class="tab">
+                      <a class="on" href="#">정류장 정보</a>
+                    </li>
+                    <li class="tab">
+                      <a href="#">배차 시간표</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="shuttle-detail-bottom">
+                <div class="tab-content-box">
+                  <!-- 정류장 정보 -->
+                  <div class="tab-pannel active">
+                    <!-- 1/29 update -->
+                    <div class="filter-box">
+                      <div class="desc-box">
+                        <p>요일, 시간 선택 시 최근 탑승자 평균이 표출됩니다.</p>
+                      </div>
+                      <div class="input-group">
+                        <div class="input-wrap dropdown">
+                          <div class="field field-dropdown field-small has-label type-solid">
+                            <div class="field-form">
+                              <!-- 숨겨진 select 태그 -->
+                              <select class="dropdown-select" style="display: none">
+                                >
+                                <option value="" selected disabled>요일 선택</option>
+                                <option value="전체">전체</option>
+                                <option value="평일">평일</option>
+                                <option value="토요일">토요일</option>
+                                <option value="공휴일">공휴일</option>
+                                <option value="월요일">월요일</option>
+                                <option value="패밀리데이">패밀리데이</option>
+                              </select>
+                              <button type="button" class="btn-dropdown" type-solid>
+                                <span class="inner-label">
+                                  <strong class="selected-label" style="display: none;"></strong>
+                                  <!-- 2/27 update : placeholder 추가 -->
+                                  <span class="placeholder">요일 선택</span>
+                                </span>
+                              </button>
+                              <div class="dropdown-list-box">
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="전체">
+                                    <span>전체</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="평일">
+                                    <span>평일</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="토요일">
+                                    <span>토요일</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="공휴일">
+                                    <span>공휴일</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="월요일">
+                                    <span>월요일</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="패밀리데이">
+                                    <span>패밀리데이</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 1/29 update -->
+                        <div class="input-wrap time">
+                          <div class="timepicker-box timepicker-medium has-label">
+                            <div class="timepicker-input">
+                              <button type="button" class="time-input">
+                                <span class="label">시간</span>
+                                <span class="data" style="display: none"></span>
+                                <!-- 2/27 update : placeholder 추가 -->
+                                <span class="placeholder">선택</span>
+                              </button>
+                            </div>
+                            <div class="timepicker timepicker-dropdown">
+                              <div class="timepicker-picker-container">
+                                <div class="timepicker-picker-area">
+                                  <div class="timepicker-picker">
+                                    <div class="timepicker-top">
+                                      <div class="time">
+                                        <button type="button" class="list ampm">오전</button>
+                                        <button type="button" class="list ampm">오후</button>
+                                      </div>
+                                      <div class="separator"></div>
+                                      <div class="time">
+                                        <button type="button" class="list hour">00</button>
+                                        <button type="button" class="list hour">01</button>
+                                        <button type="button" class="list hour">02</button>
+                                        <button type="button" class="list hour">03</button>
+                                        <button type="button" class="list hour">04</button>
+                                        <button type="button" class="list hour">05</button>
+                                        <button type="button" class="list hour">06</button>
+                                        <button type="button" class="list hour">07</button>
+                                        <button type="button" class="list hour">08</button>
+                                        <button type="button" class="list hour">09</button>
+                                        <button type="button" class="list hour">10</button>
+                                        <button type="button" class="list hour">11</button>
+                                        <button type="button" class="list hour">12</button>
+                                      </div>
+                                      <div class="separator"></div>
+                                      <div class="time">
+                                        <button type="button" class="minute list">00</button>
+                                        <button type="button" class="minute list">01</button>
+                                        <button type="button" class="minute list">02</button>
+                                        <button type="button" class="minute list">03</button>
+                                        <button type="button" class="minute list">04</button>
+                                        <button type="button" class="minute list">05</button>
+                                        <button type="button" class="minute list">06</button>
+                                        <button type="button" class="minute list">07</button>
+                                        <button type="button" class="minute list">08</button>
+                                        <button type="button" class="minute list">09</button>
+                                        <button type="button" class="minute list">10</button>
+                                        <button type="button" class="minute list">11</button>
+                                        <button type="button" class="minute list">12</button>
+                                        <button type="button" class="minute list">13</button>
+                                        <button type="button" class="minute list">14</button>
+                                        <button type="button" class="minute list">15</button>
+                                        <button type="button" class="minute list">16</button>
+                                        <button type="button" class="minute list">17</button>
+                                        <button type="button" class="minute list">18</button>
+                                        <button type="button" class="minute list">19</button>
+                                        <button type="button" class="minute list">20</button>
+                                        <button type="button" class="minute list">21</button>
+                                        <button type="button" class="minute list">21</button>
+                                        <button type="button" class="minute list">22</button>
+                                        <button type="button" class="minute list">23</button>
+                                        <button type="button" class="minute list">24</button>
+                                        <button type="button" class="minute list">25</button>
+                                        <button type="button" class="minute list">26</button>
+                                        <button type="button" class="minute list">27</button>
+                                        <button type="button" class="minute list">28</button>
+                                        <button type="button" class="minute list">29</button>
+                                        <button type="button" class="minute list">30</button>
+                                        <button type="button" class="minute list">31</button>
+                                        <button type="button" class="minute list">32</button>
+                                        <button type="button" class="minute list">33</button>
+                                        <button type="button" class="minute list">34</button>
+                                        <button type="button" class="minute list">35</button>
+                                        <button type="button" class="minute list">36</button>
+                                        <button type="button" class="minute list">37</button>
+                                        <button type="button" class="minute list">38</button>
+                                        <button type="button" class="minute list">39</button>
+                                        <button type="button" class="minute list">40</button>
+                                        <button type="button" class="minute list">41</button>
+                                        <button type="button" class="minute list">42</button>
+                                        <button type="button" class="minute list">43</button>
+                                        <button type="button" class="minute list">44</button>
+                                        <button type="button" class="minute list">45</button>
+                                        <button type="button" class="minute list">46</button>
+                                        <button type="button" class="minute list">47</button>
+                                        <button type="button" class="minute list">48</button>
+                                        <button type="button" class="minute list">49</button>
+                                        <button type="button" class="minute list">50</button>
+                                        <button type="button" class="minute list">51</button>
+                                        <button type="button" class="minute list">52</button>
+                                        <button type="button" class="minute list">53</button>
+                                        <button type="button" class="minute list">54</button>
+                                        <button type="button" class="minute list">55</button>
+                                        <button type="button" class="minute list">56</button>
+                                        <button type="button" class="minute list">57</button>
+                                        <button type="button" class="minute list">58</button>
+                                        <button type="button" class="minute list">59</button>
+                                      </div>
+                                    </div>
+                                    <div class="timepicker-bottom">
+                                      <button type="button" class="btn-confirm" disabled>확인</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="boarding-list-box">
+                      <div class="title-box">정류장 탑승인원</div>
+                      <div class="boarding-list">
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">인천간석오거리(시몬스침대)</span>
+                            <span class="boarding-count">12명</span>
+                          </div>
+                        </div>
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">만수3동주민센터(버스정류장)</span>
+                            <span class="boarding-count">12명</span>
+                          </div>
+                        </div>
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">인천하이웨이주유소(레드페이스)</span>
+                            <span class="boarding-count">12명</span>
+                          </div>
+                        </div>
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">인천만수동삼환2차202동</span>
+                            <span class="boarding-count">12명</span>
+                          </div>
+                        </div>
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">인천청선학교(버스정류장)</span>
+                            <span class="boarding-count">12명</span>
+                          </div>
+                        </div>
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">기흥캠퍼스</span>
+                            <span class="boarding-count">0명</span>
+                          </div>
+                        </div>
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">화성캠퍼스H1</span>
+                            <span class="boarding-count">0명</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-box">
+                      <button type="button" class="btn btn-white btn-medium" onclick="">
+                        <span>지도에 경로 고정 표시</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- 정류장 정보 -->
+                  <div class="tab-pannel">
+                    <div class="data-list-table">
+                      <div class="card-box data-form-table">
+                        <div class="data-form-table-body v-middle">
+                          <div class="table-box type-list-table">
+                            <div class="table-body">
+                              <div class="htable">
+                                <table class="table">
+                                  <colgroup>
+                                    <col width="54" />
+                                    <col width="96" />
+                                    <col width="120" />
+                                    <col width="50" />
+                                  </colgroup>
+                                  <thead class="table-thead">
+                                    <tr>
+                                      <th><span>요일</span></th>
+                                      <th><span>노선 출발 시간</span></th>
+                                      <th><span>운수사</span></th>
+                                      <th><span>운행수</span></th>
+                                    </tr>
+                                  </thead>
+                                </table>
+                              </div>
+                              <div class="btable">
+                                <table class="table">
+                                  <colgroup>
+                                    <col width="54" />
+                                    <col width="96" />
+                                    <col width="120" />
+                                    <col width="50" />
+                                  </colgroup>
+                                  <tbody class="table-tbody">
+                                    <!-- 평일 (5행) -->
+                                    <tr>
+                                      <td rowspan="5"><span>평일</span></td>
+                                      <td><span>06:30</span></td>
+                                      <td><span>창진관광</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>06:30</span></td>
+                                      <td><span>이든</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>06:45</span></td>
+                                      <td><span>하나신정관광</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>07:00</span></td>
+                                      <td><span>월드여행사</span></td>
+                                      <td><span>2</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>07:15</span></td>
+                                      <td><span>태진관광</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <!-- 월요일 (4행) -->
+                                    <tr>
+                                      <td rowspan="4"><span>월요일</span></td>
+                                      <td><span>06:20</span></td>
+                                      <td><span>월드여행사</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>06:30</span></td>
+                                      <td><span>태진관광</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>06:45</span></td>
+                                      <td><span>하나신정관광</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>07:00</span></td>
+                                      <td><span>월드여행사</span></td>
+                                      <td><span>2</span></td>
+                                    </tr>
+                                    <!-- 토요일 (1행) -->
+                                    <tr>
+                                      <td><span>토요일</span></td>
+                                      <td><span>06:20</span></td>
+                                      <td><span>월드여행사</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <!-- 패밀리 데이 (2행) -->
+                                    <tr>
+                                      <td rowspan="2"><span>패밀리 데이</span></td>
+                                      <td><span>08:50</span></td>
+                                      <td><span>하나신정관광</span></td>
+                                      <td><span>2</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>10:00</span></td>
+                                      <td><span>태진관광</span></td>
+                                      <td><span>2</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="station-detail-container">
+            <div class="station-detail-area tab-container">
+              <div class="station-detail-top">
+                <button type="button" class="btn-close"></button>
+                <div class="bus-route-box">
+                  <div class="bus-route-wrap">
+                    <div class="bus-route-left">
+                      <div class="bus-route-top">
+                        <div class="badge-box"><span class="badge blue">출근</span></div>
+                        <strong class="info-name">기산동푸르지오/반월동SK뷰_H1-K1</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-box">
+                  <ul class="tabs">
+                    <li class="tab">
+                      <a class="on" href="#">정류장 정보</a>
+                    </li>
+                    <li class="tab">
+                      <a href="#">배차 시간표</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="station-detail-bottom">
+                <div class="tab-content-box">
+                  <!-- 정류장 정보 -->
+                  <div class="tab-pannel active">
+                    <div class="filter-box">
+                      <div class="desc-box">
+                        <p>요일, 시간 선택 시 최근 탑승자 평균이 표출됩니다.</p>
+                      </div>
+                      <div class="input-group">
+                        <div class="input-wrap dropdown">
+                          <div class="field field-dropdown field-small has-label type-solid">
+                            <div class="field-form">
+                              <!-- 숨겨진 select 태그 -->
+                              <select class="dropdown-select" style="display: none">
+                                >
+                                <option value="" selected disabled>요일 선택</option>
+                                <option value="전체">전체</option>
+                                <option value="평일">평일</option>
+                                <option value="토요일">토요일</option>
+                                <option value="공휴일">공휴일</option>
+                                <option value="월요일">월요일</option>
+                                <option value="패밀리데이">패밀리데이</option>
+                              </select>
+                              <button type="button" class="btn-dropdown" type-solid>
+                                <span class="inner-label">
+                                  <strong class="selected-label" style="display: none;"></strong>
+                                  <!-- 2/27 update : placeholder 추가 -->
+                                  <span class="placeholder">요일 선택</span>
+                                </span>
+                              </button>
+                              <div class="dropdown-list-box">
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="전체">
+                                    <span>전체</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="평일">
+                                    <span>평일</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="토요일">
+                                    <span>토요일</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="공휴일">
+                                    <span>공휴일</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="월요일">
+                                    <span>월요일</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="패밀리데이">
+                                    <span>패밀리데이</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="input-wrap time">
+                          <div class="timepicker-box timepicker-medium has-label">
+                            <div class="timepicker-input">
+                              <button type="button" class="time-input">
+                                <span class="label">시간</span>
+                                <span class="data" style="display: none"></span>
+                                <!-- 2/27 update : placeholder 추가 -->
+                                <span class="placeholder">선택</span>
+                              </button>
+                            </div>
+                            <div class="timepicker timepicker-dropdown">
+                              <div class="timepicker-picker-container">
+                                <div class="timepicker-picker-area">
+                                  <div class="timepicker-picker">
+                                    <div class="timepicker-top">
+                                      <div class="time">
+                                        <button type="button" class="list ampm">오전</button>
+                                        <button type="button" class="list ampm">오후</button>
+                                      </div>
+                                      <div class="separator"></div>
+                                      <div class="time">
+                                        <button type="button" class="list hour">00</button>
+                                        <button type="button" class="list hour">01</button>
+                                        <button type="button" class="list hour">02</button>
+                                        <button type="button" class="list hour">03</button>
+                                        <button type="button" class="list hour">04</button>
+                                        <button type="button" class="list hour">05</button>
+                                        <button type="button" class="list hour">06</button>
+                                        <button type="button" class="list hour">07</button>
+                                        <button type="button" class="list hour">08</button>
+                                        <button type="button" class="list hour">09</button>
+                                        <button type="button" class="list hour">10</button>
+                                        <button type="button" class="list hour">11</button>
+                                        <button type="button" class="list hour">12</button>
+                                      </div>
+                                      <div class="separator"></div>
+                                      <div class="time">
+                                        <button type="button" class="minute list">00</button>
+                                        <button type="button" class="minute list">01</button>
+                                        <button type="button" class="minute list">02</button>
+                                        <button type="button" class="minute list">03</button>
+                                        <button type="button" class="minute list">04</button>
+                                        <button type="button" class="minute list">05</button>
+                                        <button type="button" class="minute list">06</button>
+                                        <button type="button" class="minute list">07</button>
+                                        <button type="button" class="minute list">08</button>
+                                        <button type="button" class="minute list">09</button>
+                                        <button type="button" class="minute list">10</button>
+                                        <button type="button" class="minute list">11</button>
+                                        <button type="button" class="minute list">12</button>
+                                        <button type="button" class="minute list">13</button>
+                                        <button type="button" class="minute list">14</button>
+                                        <button type="button" class="minute list">15</button>
+                                        <button type="button" class="minute list">16</button>
+                                        <button type="button" class="minute list">17</button>
+                                        <button type="button" class="minute list">18</button>
+                                        <button type="button" class="minute list">19</button>
+                                        <button type="button" class="minute list">20</button>
+                                        <button type="button" class="minute list">21</button>
+                                        <button type="button" class="minute list">21</button>
+                                        <button type="button" class="minute list">22</button>
+                                        <button type="button" class="minute list">23</button>
+                                        <button type="button" class="minute list">24</button>
+                                        <button type="button" class="minute list">25</button>
+                                        <button type="button" class="minute list">26</button>
+                                        <button type="button" class="minute list">27</button>
+                                        <button type="button" class="minute list">28</button>
+                                        <button type="button" class="minute list">29</button>
+                                        <button type="button" class="minute list">30</button>
+                                        <button type="button" class="minute list">31</button>
+                                        <button type="button" class="minute list">32</button>
+                                        <button type="button" class="minute list">33</button>
+                                        <button type="button" class="minute list">34</button>
+                                        <button type="button" class="minute list">35</button>
+                                        <button type="button" class="minute list">36</button>
+                                        <button type="button" class="minute list">37</button>
+                                        <button type="button" class="minute list">38</button>
+                                        <button type="button" class="minute list">39</button>
+                                        <button type="button" class="minute list">40</button>
+                                        <button type="button" class="minute list">41</button>
+                                        <button type="button" class="minute list">42</button>
+                                        <button type="button" class="minute list">43</button>
+                                        <button type="button" class="minute list">44</button>
+                                        <button type="button" class="minute list">45</button>
+                                        <button type="button" class="minute list">46</button>
+                                        <button type="button" class="minute list">47</button>
+                                        <button type="button" class="minute list">48</button>
+                                        <button type="button" class="minute list">49</button>
+                                        <button type="button" class="minute list">50</button>
+                                        <button type="button" class="minute list">51</button>
+                                        <button type="button" class="minute list">52</button>
+                                        <button type="button" class="minute list">53</button>
+                                        <button type="button" class="minute list">54</button>
+                                        <button type="button" class="minute list">55</button>
+                                        <button type="button" class="minute list">56</button>
+                                        <button type="button" class="minute list">57</button>
+                                        <button type="button" class="minute list">58</button>
+                                        <button type="button" class="minute list">59</button>
+                                      </div>
+                                    </div>
+                                    <div class="timepicker-bottom">
+                                      <button type="button" class="btn-confirm" disabled>확인</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="boarding-list-box">
+                      <div class="title-box">정류장 탑승인원</div>
+                      <div class="boarding-list">
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">인천간석오거리(시몬스침대)</span>
+                          </div>
+                        </div>
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">만수3동주민센터(버스정류장)</span>
+                          </div>
+                        </div>
+                        <div class="boarding-item active">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">인천하이웨이주유소(레드페이스)</span>
+                          </div>
+                        </div>
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">인천만수동삼환2차202동</span>
+                          </div>
+                        </div>
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">인천청선학교(버스정류장)</span>
+                          </div>
+                        </div>
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">기흥캠퍼스</span>
+                          </div>
+                        </div>
+                        <div class="boarding-item">
+                          <span class="boarding-dot"></span>
+                          <div class="boarding-content">
+                            <span class="boarding-name">화성캠퍼스H1</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-box">
+                      <button type="button" class="btn btn-white btn-medium" onclick="">
+                        <span>지도에 경로 고정 표시</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- 정류장 정보 -->
+                  <div class="tab-pannel">
+                    <div class="data-list-table">
+                      <div class="card-box data-form-table">
+                        <div class="data-form-table-body v-middle">
+                          <div class="table-box type-list-table">
+                            <div class="table-body">
+                              <div class="htable">
+                                <table class="table">
+                                  <colgroup>
+                                    <col width="54" />
+                                    <col width="96" />
+                                    <col width="120" />
+                                    <col width="50" />
+                                  </colgroup>
+                                  <thead class="table-thead">
+                                    <tr>
+                                      <th><span>요일</span></th>
+                                      <th><span>노선 출발 시간</span></th>
+                                      <th><span>운수사</span></th>
+                                      <th><span>운행수</span></th>
+                                    </tr>
+                                  </thead>
+                                </table>
+                              </div>
+                              <div class="btable">
+                                <table class="table">
+                                  <colgroup>
+                                    <col width="54" />
+                                    <col width="96" />
+                                    <col width="120" />
+                                    <col width="50" />
+                                  </colgroup>
+                                  <tbody class="table-tbody">
+                                    <!-- 평일 (5행) -->
+                                    <tr>
+                                      <td rowspan="5"><span>평일</span></td>
+                                      <td><span>06:30</span></td>
+                                      <td><span>창진관광</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>06:30</span></td>
+                                      <td><span>이든</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>06:45</span></td>
+                                      <td><span>하나신정관광</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>07:00</span></td>
+                                      <td><span>월드여행사</span></td>
+                                      <td><span>2</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>07:15</span></td>
+                                      <td><span>태진관광</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <!-- 월요일 (4행) -->
+                                    <tr>
+                                      <td rowspan="4"><span>월요일</span></td>
+                                      <td><span>06:20</span></td>
+                                      <td><span>월드여행사</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>06:30</span></td>
+                                      <td><span>태진관광</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>06:45</span></td>
+                                      <td><span>하나신정관광</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>07:00</span></td>
+                                      <td><span>월드여행사</span></td>
+                                      <td><span>2</span></td>
+                                    </tr>
+                                    <!-- 토요일 (1행) -->
+                                    <tr>
+                                      <td><span>토요일</span></td>
+                                      <td><span>06:20</span></td>
+                                      <td><span>월드여행사</span></td>
+                                      <td><span>1</span></td>
+                                    </tr>
+                                    <!-- 패밀리 데이 (2행) -->
+                                    <tr>
+                                      <td rowspan="2"><span>패밀리 데이</span></td>
+                                      <td><span>08:50</span></td>
+                                      <td><span>하나신정관광</span></td>
+                                      <td><span>2</span></td>
+                                    </tr>
+                                    <tr>
+                                      <td><span>10:00</span></td>
+                                      <td><span>태진관광</span></td>
+                                      <td><span>2</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn-toggle-sidebar"></button>
+        </div>
+        <!-- // 좌측 리스트 영역 -->
+        <!-- 우측 지도 영역 -->
+        <div class="right-area">
+          <div id="canvas" style="z-index: -99999">
+            <img style="width: 100%; height: 100%; object-fit: cover" src="../../../../assets/images/dummy/img_map_dummy.png" alt="map" />
+          </div>
+          <div class="map-control-box">
+            <div class="maptype-control-box">
+              <div class="map-option-box">
+                <div class="checkbox-group">
+                  <label for="checkbox-1">
+                    <input type="checkbox" id="checkbox-1" name="checkbox-1" checked />
+                    <span>정류장 신청</span>
+                  </label>
+                  <label for="checkbox-2">
+                    <input type="checkbox" id="checkbox-2" name="checkbox-2" checked />
+                    <span>등록 거주지</span>
+                  </label>
+                </div>
+              </div>
+              <div class="radius-dropdown-box">
+                <div class="field field-dropdown field-small normal">
+                  <div class="field-form">
+                    <!-- 숨겨진 select 태그 -->
+                    <select class="dropdown-select" style="display: none">
+                      >
+                      <option value="500M">500M</option>
+                      <option value="1000M">1000M</option>
+                      <option value="2000M">2000M</option>
+                      <option value="3000M" active>3000M</option>
+                      <option value="5000M">5000M</option>
+                    </select>
+                    <button type="button" class="btn-dropdown">
+                      <span class="text">3000M</span>
+                      <span class="placeholder" style="display: none">Placeholder</span>
+                    </button>
+                    <div class="dropdown-list-box">
+                      <div class="dropdown-list">
+                        <button type="button" class="btn-dropdown-list" data-value="500M">
+                          <span>500M</span>
+                        </button>
+                      </div>
+                      <div class="dropdown-list">
+                        <button type="button" class="btn-dropdown-list" data-value="1000M">
+                          <span>1000M</span>
+                        </button>
+                      </div>
+                      <div class="dropdown-list">
+                        <button type="button" class="btn-dropdown-list" data-value="2000M">
+                          <span>2000M</span>
+                        </button>
+                      </div>
+                      <div class="dropdown-list active">
+                        <button type="button" class="btn-dropdown-list" data-value="3000M">
+                          <span>3000M</span>
+                        </button>
+                      </div>
+                      <div class="dropdown-list">
+                        <button type="button" class="btn-dropdown-list" data-value="5000M">
+                          <span>5000M</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="maptype-tab-box">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-white on" id="tab1" onclick="console.log('Tab 1 클릭');">지도</button>
+                  <button type="button" class="btn btn-white" id="tab2" onclick="console.log('Tab 2 클릭');">위성</button>
+                </div>
+              </div>
+            </div>
+            <div class="map-toolbox">
+              <div class="button-box">
+                <button type="button" class="btn-settings"></button>
+                <div class="setting-layer-box">
+                  <ul class="setting-layer-lists">
+                    <li class="setting-layer-list">
+                      <!-- 1/30 update -->
+                      <div class="setting-switch-box">
+                        <div class="switch">
+                          <input type="checkbox" id="switch-2" class="switch-input" />
+                          <label for="switch-2" class="switch-label">
+                            <span class="switch-ui"></span>
+                            <span class="switch-text">교통정보 보기</span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="setting-layer-list">
+                      <!-- 1/30 update -->
+                      <div class="radio-group">
+                        <label for="usageStatus_use">
+                          <input type="radio" id="usageStatus_use" name="usageStatus" value="use" checked />
+                          <span>Google Map</span>
+                        </label>
+                        <label for="usageStatus_notUse">
+                          <input type="radio" id="usageStatus_notUse" name="usageStatus" value="notUse" />
+                          <span>Kakao Map</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="setting-layer-list">
+                      <div class="setting-option-box">
+                        <ul class="setting-option-lists">
+                          <li class="setting-option-list">
+                            <div class="setting-option-label">
+                              <span class="option-label">아이콘 글꼴</span>
+                            </div>
+                            <div class="setting-dropdown-box">
+                              <div class="field field-dropdown field-x-small normal">
+                                <div class="field-form">
+                                  <!-- 숨겨진 select 태그 -->
+                                  <select class="dropdown-select" style="display: none">
+                                    >
+                                    <option value="Arial">Arial</option>
+                                    <option value="Arial Black">Arial Black</option>
+                                    <option value="AppleGothic">AppleGothic</option>
+                                    <option value="San-serif" active>San-serif</option>
+                                    <option value="Impact">Impact</option>
+                                    <option value="굴림">굴림</option>
+                                    <option value="궁서">궁서</option>
+                                    <option value="돋움">돋움</option>
+                                    <option value="바탕">바탕</option>
+                                  </select>
+                                  <button type="button" class="btn-dropdown">
+                                    <span class="text">Sans-serif</span>
+                                    <span class="placeholder" style="display: none">Placeholder</span>
+                                  </button>
+                                  <div class="dropdown-list-box">
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="Arial">
+                                        <span>Arial</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="Arial Black">
+                                        <span>Arial Black</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="AppleGothic">
+                                        <span>AppleGothic</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list active">
+                                      <button type="button" class="btn-dropdown-list" data-value="San-serif">
+                                        <span>San-serif</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="Impact">
+                                        <span>Impact</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="굴림">
+                                        <span>굴림</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="궁서">
+                                        <span>궁서</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="돋움">
+                                        <span>돋움</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="바탕">
+                                        <span>바탕</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="setting-option-list">
+                            <div class="setting-option-label">
+                              <span class="option-label">글자 굵기</span>
+                            </div>
+                            <div class="setting-dropdown-box">
+                              <div class="field field-dropdown field-x-small normal">
+                                <div class="field-form">
+                                  <!-- 숨겨진 select 태그 -->
+                                  <select class="dropdown-select" style="display: none">
+                                    >
+                                    <option value="보통">보통</option>
+                                    <option value="굵게">굵게</option>
+                                    <option value="가늘게">가늘게</option>
+                                    <option value="100">100</option>
+                                    <option value="200">200</option>
+                                    <option value="300">300</option>
+                                    <option value="400">400</option>
+                                    <option value="500" active>500</option>
+                                    <option value="600">600</option>
+                                    <option value="700">700</option>
+                                    <option value="800">800</option>
+                                    <option value="900">900</option>
+                                  </select>
+                                  <button type="button" class="btn-dropdown">
+                                    <span class="text">500</span>
+                                    <span class="placeholder" style="display: none">Placeholder</span>
+                                  </button>
+                                  <div class="dropdown-list-box">
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="보통">
+                                        <span>보통</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="굵게">
+                                        <span>굵게</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="가늘게">
+                                        <span>가늘게</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="100">
+                                        <span>100</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="200">
+                                        <span>200</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="300">
+                                        <span>300</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="400">
+                                        <span>400</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list active">
+                                      <button type="button" class="btn-dropdown-list" data-value="500">
+                                        <span>500</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="600">
+                                        <span>600</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="700">
+                                        <span>700</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="800">
+                                        <span>800</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="900">
+                                        <span>900</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="setting-option-list">
+                            <div class="setting-option-label">
+                              <span class="option-label">글자 크기</span>
+                            </div>
+                            <div class="setting-input-box">
+                              <div class="input-wrap">
+                                <input id="input_number_1" name="input_number_1" class="input-xsmall" type="number" value="100" maxlength="3" max="100" min="0" step="5" />
+                              </div>
+                              <div class="unit-box">
+                                <span class="unit">%</span>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="setting-option-list">
+                            <div class="setting-option-label">
+                              <span class="option-label">아이콘 크기</span>
+                            </div>
+                            <div class="setting-input-box">
+                              <div class="input-wrap">
+                                <input id="input_number_2" name="input_number_2" class="input-xsmall" type="number" value="100" maxlength="3" max="100" min="0" step="5" />
+                              </div>
+                              <div class="unit-box">
+                                <span class="unit">%</span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="zoom-button-box">
+                <button type="button" class="btn-zoom-in"></button>
+                <button type="button" class="btn-zoom-out"></button>
+              </div>
+              <div class="button-box">
+                <button type="button" class="btn-location"></button>
+              </div>
+            </div>
+          </div>
+          <!-- Map Guide Tooltip -->
+          <div class="map-guide">
+            <div class="map-guide-box">
+              <p class="map-guide-text">
+                지도를 선택하면 해당 영역에 위치한 정류장과<br />
+                탑승차 현황을 확인할 수 있어요.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- // 우측 지도 영역 -->
+      </div>
+    </div>
+  </div>
+  <script>
+    // URL 파라미터에서 케이스 번호 가져오기
+    function getCaseFromURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const caseParam = urlParams.get('case');
+      return caseParam !== null ? parseInt(caseParam) : 0; // 기본값은 0
+    }
+    // 케이스별 UI 상태 설정
+    function setCaseUI(caseNumber) {
+      // 모든 요소 초기화
+      const leftArea = document.querySelector('.left-area');
+      const leftAreaTabContentBox = document.querySelector('.search-result-bottom .tab-content-box');
+      const leftAreaTabPannels = leftArea.querySelector('.search-result-bottom').querySelectorAll('.tab-pannel');
+      const shuttleDetailCont = document.querySelector('.shuttle-detail-container');
+      const stationDetailCont = document.querySelector('.station-detail-container');
+      const emptyBox = document.querySelector('.empty-box');
+      const mapGuide = document.querySelector('.map-guide');
+      const mapStatusBox = document.querySelector('.map-status-box');
+      const mapContentLists = document.querySelectorAll('.map-content-list');
+      // 모든 요소 초기화 (케이스별로 필요한 것만 다시 추가)
+      if (leftArea) leftArea.classList.remove('expanded');
+      if (shuttleDetailCont) shuttleDetailCont.classList.remove('show');
+      if (stationDetailCont) stationDetailCont.classList.remove('show');
+      if (emptyBox) {
+        emptyBox.style.display = '';
+        emptyBox.style.display = 'none';
+      }
+      if (mapGuide) {
+        mapGuide.style.display = '';
+        mapGuide.style.display = 'none';
+      }
+      // 케이스 9가 아닌 경우 empty-box 제거
+      if (caseNumber !== 0 && emptyBox && mapGuide) {
+        emptyBox.remove();
+        mapGuide.remove();
+      }
+      // 케이스 9가 아닌 경우 empty-box 제거
+      if (caseNumber !== 2 && mapStatusBox) {
+        mapStatusBox.remove();
+      }
+      switch (caseNumber) {
+        case 0:
+          if (leftArea) leftArea.classList.add('expanded');
+          leftAreaTabContentBox.remove();
+          leftAreaTabPannels.forEach((leftAreaTabPannel) => {
+            leftAreaTabPannel.classList.remove('active');
+          });
+          emptyBox.style.display = 'flex';
+          mapGuide.style.display = 'block';
+          break;
+        case 1:
+          if (leftArea) leftArea.classList.add('expanded');
+          leftAreaTabContentBox.style.display = 'block';
+          leftAreaTabPannels.forEach((leftAreaTabPannel, index) => {
+            if (index === 0) {
+              leftAreaTabPannel.classList.add('active');
+            }
+            leftAreaTabPannel.querySelectorAll('.bus-route-box').forEach((busRouteBox) => {
+              busRouteBox.classList.remove('active');
+            });
+          });
+          break;
+        case 2:
+          if (leftArea) leftArea.classList.add('expanded');
+          leftAreaTabContentBox.style.display = 'block';
+          leftAreaTabPannels.forEach((leftAreaTabPannel, index) => {
+            if (index === 0) {
+              leftAreaTabPannel.classList.add('active');
+            }
+          });
+          shuttleDetailCont.classList.add('show');
+          stationDetailCont.style.display = 'none';
+          break;
+        case 3:
+          const mapListTabs = document.querySelectorAll('.map-list-tabs .tab');
+          mapListTabs.forEach((tab, index) => {
+            tab.querySelector('a').classList.remove('on');
+            if (index === 1) {
+              tab.querySelector('a').classList.add('on');
+            }
+          });
+          if (leftArea) leftArea.classList.add('expanded');
+          leftAreaTabContentBox.style.display = 'block';
+          leftAreaTabPannels.forEach((leftAreaTabPannel, index) => {
+            leftAreaTabPannel.classList.remove('active');
+            if (index === 1) {
+              leftAreaTabPannel.classList.add('active');
+            }
+          });
+          stationDetailCont.classList.add('show');
+          shuttleDetailCont.style.display = 'none';
+          mapContentLists.forEach((mapContentList, index) => {
+            mapContentList.classList.remove('active');
+            if (index === 0) {
+              mapContentList.classList.add('active');
+            }
+          });
+          break;
+        default:
+          // 기본값은 케이스 0
+          if (leftArea) leftArea.classList.add('expanded');
+          break;
+      }
+    }
+    $(document).ready(function() {
+      // [주의] 아래 케이스별 UI 설정 로직은 개발용입니다. 실제 운영 환경에서는 사용되지 않습니다.
+      // URL 파라미터에서 케이스 번호 가져와서 UI 설정
+      const caseNumber = getCaseFromURL();
+      setCaseUI(caseNumber);
+    });
+  </script>
+</body>
+
+</html>

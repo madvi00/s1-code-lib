@@ -1,0 +1,1016 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript">
+    sessionStorage.setItem('contextpath', '/uvis')
+    sessionStorage.setItem('langSet', 'ko')
+    //////////달력 설정//////////
+    var cldMsg_prevMonth = '이전 달' // 이전 달
+    var cldMsg_nextMonth = '다음 달' // 다음 달
+    var cldMsg_prevYear = '이전 년도' // 이전 년도
+    var cldMsg_nextYear = '다음 년도' // 다음 년도
+    var cldMsg_prev = '이전' // 이전
+    var cldMsg_next = '다음' // 다음
+    //////////달력 설정//////////
+    //////////jquery.uvis.common.js 다국어//////////
+    var jquery_uvis_common_checkPasswordRegex1 = '비밀번호에는 공백을 입력할 수 없습니다.' // 비밀번호에는 공백을 입력할 수 없습니다.
+    var jquery_uvis_common_checkPasswordRegex2 = '새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.' // 새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.
+    var jquery_uvis_common_ajaxErrorMessage0 = '접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.' // 접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage1 = '장시간 미사용으로 로그아웃 되었습니다.\r\n로그인 페이지로 이동 합니다.' // 장시간 미사용으로 로그아웃 되었습니다.\\r\\n로그인 페이지로 이동 합니다.
+    var jquery_uvis_common_ajaxErrorMessage2 = '에러가 발생하였습니다.\r\n네트워크 상태를 확인해주세요.' // 에러가 발생하였습니다.\\r\\n네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage3 = '에러가 발생하였습니다.\r\n접근이 거부되었습니다.\n\n새로고침 또는 로그인을 다시 해주세요.' // 에러가 발생하였습니다.\\r\\n접근이 거부되었습니다.\\n\\n새로고침 또는 로그인을 다시 해주세요.
+    var jquery_uvis_common_ajaxErrorMessage4 = '에러가 발생하였습니다.\r\nURL을 찾을 수 없습니다.' // 에러가 발생하였습니다.\\r\\nURL을 찾을 수 없습니다.
+    var jquery_uvis_common_ajaxErrorMessage5 = '에러가 발생하였습니다.\r\n내부 서버 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n내부 서버 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage6 = '에러가 발생하였습니다.\r\n파싱 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n파싱 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage7 = '에러가 발생하였습니다.\r\n실행시간이 지연되어 타임아웃이 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n실행시간이 지연되어 타임아웃이 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage8 = '에러가 발생하였습니다.\r\n알 수 없는 에러입니다.\n\n' // 에러가 발생하였습니다.\\r\\n알 수 없는 에러입니다.\\n\\n
+    var jquery_uvis_common_isValidDate1 = '잘못된 날짜형식 입니다.\n\r입력하신 문자열 길이를 확인해주세요.' // 잘못된 날짜형식 입니다.\\n\\r입력하신 문자열 길이를 확인해주세요.
+    var jquery_uvis_common_isValidDate21 = '잘못된 날짜형식 입니다.\n\r' // 잘못된 날짜형식 입니다.\\n\\r
+    var jquery_uvis_common_isValidDate22 = '월은 존재하지 않는 월입니다.' // 월은 존재하지 않는 월입니다.
+    var jquery_uvis_common_isValidDate31 = '잘못된 날짜형식 입니다.\n\r해당 월은' // 잘못된 날짜형식 입니다.\\n\\r해당 월은
+    var jquery_uvis_common_isValidDate32 = '일 까지입니다.' // 일 까지입니다.
+    var jquery_uvis_common_isValidDate4 = '잘못된 날짜형식 입니다.' // 잘못된 날짜형식 입니다.
+    var jquery_uvis_common_checkFileExt1 = '정상적인 파일이 아닙니다.' // 정상적인 파일이 아닙니다.
+    var jquery_uvis_common_checkFileExt2 = '파일만 업로드 가능 합니다.' // 파일만 업로드 가능 합니다.
+    var jquery_uvis_common_downloadCapture1 = '인터넷 익스플로러는 지원하지 않습니다.' // 인터넷 익스플로러는 지원하지 않습니다.
+    var jquery_uvis_common_downloadCapture2 = '이미지로 변환 중 에러가 발생하였습니다.' // 이미지로 변환 중 에러가 발생하였습니다.
+    //////////jquery.uvis.common.js 다국어//////////
+    var termsFilter = ['img', 'a', 'p', 'br', 'span', 'b', 'strong', 'u', 'colgroup', 'col', 'table', 'tbody', 'tr', 'td', 'ul', 'li', 'dl', 'dd', 'dt']
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <!-- CSS resource load -->
+  <link href="../../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../../assets/css/lib/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../../../assets/js/jquery-ui.js"></script>
+  <script src="../../../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../../../assets/js/bootstrap.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../../../assets/js/popper.min.js"></script>
+  <script src="../../../../assets/js/datatables.min.js"></script>
+  <script src="../../../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../../../assets/js/jquery.cookie.js"></script>
+  <script src="../../../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../../../assets/js/jquery.uvis.common.js"></script>
+  <script src="../../../../assets/js/highcharts.js"></script>
+  <script src="../../../../assets/js/exporting.js"></script>
+  <script src="../../../../assets/js/canvg.js"></script>
+  <script src="../../../../assets/js/rgbcolor.min.js"></script>
+  <script src="../../../../assets/js/html2canvas.js"></script>
+  <script src="../../../../assets/js/es6-promise.auto.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../../../assets/js/jquery.jqGrid.src.js"></script>
+  <script src="../../../../assets/js/jquery.paging.js"></script>
+  <script src="../../../../assets/js/publish.js"></script>
+  <script src="../../../../assets/js/amobe_datepicker.js"></script>
+  <script src="../../../../assets/js/amobe_dropdown.js"></script>
+  <script src="../../../../assets/js/amobe_header.js"></script>
+  <script src="../../../../assets/js/amobe_input.js"></script>
+  <script src="../../../../assets/js/amobe_mapList.js"></script>
+  <script src="../../../../assets/js/amobe_modal.js"></script>
+  <script src="../../../../assets/js/amobe_multiMap.js"></script>
+  <script src="../../../../assets/js/amobe_rangeTimePicker.js"></script>
+  <script src="../../../../assets/js/amobe_routeAccordion.js"></script>
+  <script src="../../../../assets/js/amobe_swiper.js"></script>
+  <script src="../../../../assets/js/amobe_tab.js"></script>
+  <script src="../../../../assets/js/amobe_table.js"></script>
+  <script src="../../../../assets/js/amobe_timePicker.js"></script>
+  <title>사용 권한 관리</title>
+  <script type="text/javascript">
+    // jqGride Local Data
+    const _JQ_GRID_DATA = [{
+        rownum: 1,
+        permissionCode: '001',
+        permissionName: '전체 관리자',
+        registrationDate: '25.12.12',
+      },
+      {
+        rownum: 2,
+        permissionCode: '002',
+        permissionName: '운수사 관리자',
+        registrationDate: '25.12.12',
+      },
+      {
+        rownum: 3,
+        permissionCode: '003',
+        permissionName: '총무/총괄',
+        registrationDate: '25.12.12',
+      },
+      {
+        rownum: 4,
+        permissionCode: '004',
+        permissionName: '감사',
+        registrationDate: '25.12.12',
+      },
+    ];
+    $(document).ready(function() {
+      setPageDefault();
+      // jqGrid 높이 계산 및 리사이즈 설정
+      setupJqGridResize();
+      // 초기 로딩 시 그리드 너비 설정
+      $(window).resize(function() {
+        $('#list').setGridWidth($('#div_list').width(), true);
+      });
+      // 초기 로딩 시 한 번 실행
+      setTimeout(function() {
+        $('#list').setGridWidth($('#div_list').width(), true);
+      }, 100);
+    });
+
+    function setPageDefault() {
+      listLoad(false, 1);
+    }
+
+    function listLoad(firstNoLoad, page) {
+      // jqGrid 리스트 초기화, 생성
+      $('#list').jqGrid('GridUnload');
+      var grid = jQuery('#list');
+      // 데이터가 없거나 부족할 때 빈 행 추가
+      var displayData = _JQ_GRID_DATA || [];
+      var emptyRow = {
+        rownum: '',
+        permissionCode: '',
+        permissionName: '',
+        registrationDate: '',
+        isEmpty: true,
+      };
+      while (displayData.length < 15) {
+        displayData.push(Object.assign({}, emptyRow));
+      }
+      // 초기 높이 계산
+      var initialHeight = calculateJqGridHeight();
+      grid.jqGrid({
+        datatype: 'local',
+        data: displayData,
+        colNames: ['순번', '권한코드', '권한명', '등록일자'],
+        colModel: [{
+            name: 'rownum',
+            index: 'rownum',
+            width: 64,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'permissionCode',
+            index: 'permissionCode',
+            width: 104,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'permissionName',
+            index: 'permissionName',
+            width: 104,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'registrationDate',
+            index: 'registrationDate',
+            width: 104,
+            align: 'center',
+            sortable: false
+          },
+        ],
+        sortable: false,
+        rowNum: 15,
+        autowidth: true,
+        scrollRows: true,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        multiselect: true,
+        multiselectWidth: 43,
+        height: initialHeight,
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 0,
+        beforeSelectRow: function(rowid, e) {
+          var rowData = grid.jqGrid('getRowData', rowid);
+          // 빈 행은 선택 불가능
+          if (rowData.isEmpty === 'true' || (!rowData.rownum && !rowData.permissionCode)) {
+            return false;
+          }
+          return true;
+        },
+        loadComplete: function(data) {
+          // 그리드 너비 설정 (DOM 렌더링 완료 후 실행)
+          setTimeout(function() {
+            grid.setGridWidth($('#div_list').width(), true);
+          }, 0);
+          // 빈 행 처리
+          var ids = grid.jqGrid('getDataIDs');
+          for (var i = 0; i < ids.length; i++) {
+            var rowData = grid.jqGrid('getRowData', ids[i]);
+            if (rowData.isEmpty === 'true' || (!rowData.rownum && !rowData.permissionCode)) {
+              // 빈 행의 체크박스 비활성화 및 숨김
+              var checkbox = grid.find('tr#' + ids[i] + ' input[type="checkbox"]');
+              checkbox.prop('disabled', true).hide();
+              // 빈 행에 클래스 추가
+              grid.find('tr#' + ids[i]).addClass('empty-row');
+              // 빈 행의 모든 셀 내용 제거
+              grid
+                .find('tr#' + ids[i] + ' td')
+                .not(':first')
+                .html('');
+            }
+          }
+        },
+      });
+    }
+  </script>
+</head>
+
+<body class="sub" id="permissionSelected">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-3">
+            <div class="area-box">
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-left">
+                    <div class="title-box">권한 그룹 리스트</div>
+                    <div class="info-box">
+                      <div class="count-box">
+                        <span class="label">총</span>
+                        <span class="data">{{count}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header-right">
+                    <button type="button" class="btn btn-white" onclick="" disabled>
+                      <span>삭제</span>
+                    </button>
+                    <button type="button" class="btn btn-blue" onclick="">
+                      <span>신규등록</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="data-table" id="div_list">
+                  <table id="list"></table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-xl-9">
+            <div class="area-box">
+              <div class="card-box data-form-table">
+                <div class="data-form-table-header">
+                  <div class="header-left">
+                    <h3 class="header-title">상세 설정</h3>
+                  </div>
+                  <div class="header-right">
+                    <button type="button" class="btn btn-white" id="toggle_cancel">취소</button>
+                    <button class="btn btn-blue" id="toggle_save">저장</button>
+                  </div>
+                </div>
+                <div class="data-form-table-body">
+                  <div class="table-group-box">
+                    <div class="table-box">
+                      <div class="table-header">
+                        <h4>기본 정보</h4>
+                      </div>
+                      <form id="saveForm" name="saveForm" onsubmit="return false;">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <th><span class="necessary">권한 그룹명</span></th>
+                              <td colspan="3" class="size-md">
+                                <div class="input-wrap">
+                                  <div class="input-wrap">
+                                    <input id="permissionGroupName" name="permissionGroupName" class="input-xsmall" placeholder="권한 그룹명을 입력하세요" type="text" value="" />
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="table-group-box">
+                    <!-- 1/28 update : border-v 클래스 추가 -->
+                    <div class="table-box type-list-table border-v">
+                      <div class="table-header">
+                        <h4>권한 설정</h4>
+                      </div>
+                      <div class="table-body">
+                        <div class="htable">
+                          <table class="table">
+                            <colgroup>
+                              <col width="187" />
+                              <col width="187" />
+                              <col width="96" />
+                              <col width="96" />
+                              <col width="200" />
+                              <col width="200" />
+                              <col width="200" />
+                              <col width="200" />
+                            </colgroup>
+                            <thead class="table-thead">
+                              <tr>
+                                <th rowspan="2"><span>대메뉴</span><span class="table-col-resize"></span></th>
+                                <th rowspan="2"><span>총메뉴</span><span class="table-col-resize"></span></th>
+                                <th rowspan="2"><span>메인 메뉴 설정</span><span class="table-col-resize"></span></th>
+                                <th rowspan="2"><span>메뉴 사용 여부</span><span class="table-col-resize"></span></th>
+                                <th colspan="4"><span>상세 권한 설정</span></th>
+                              </tr>
+                              <tr>
+                                <th><span>전체</span><span class="table-col-resize"></span></th>
+                                <th><span>등록/수정/삭제</span><span class="table-col-resize"></span></th>
+                                <th><span>엑셀 다운</span><span class="table-col-resize"></span></th>
+                                <th><span>기타</span></th>
+                              </tr>
+                            </thead>
+                          </table>
+                        </div>
+                        <div class="btable">
+                          <table class="table">
+                            <colgroup>
+                              <col width="187" />
+                              <col width="187" />
+                              <col width="96" />
+                              <col width="96" />
+                              <col width="200" />
+                              <col width="200" />
+                              <col width="200" />
+                              <col width="200" />
+                            </colgroup>
+                            <tbody class="table-tbody">
+                              <!-- 모니터링 row 2개 -->
+                              <tr>
+                                <td rowspan="2" class="cell-merge-line">
+                                  <span>실시간 모니터링</span>
+                                </td>
+                                <td class="align-left"><span>대시보드 (HOME)</span></td>
+                                <td>
+                                  <input type="radio" id="radio-1" name="radio-1" value="" checked />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-01-01" name="checkbox-01-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-01-02" name="checkbox-01-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-01-03" name="checkbox-01-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-01-04" name="checkbox-01-04" />
+                                </td>
+                                <td>
+                                  <div class="checkbox-group">
+                                    <label for="checkbox-01-05">
+                                      <input type="checkbox" id="checkbox-01-05" name="checkbox-01-05" />
+                                      <span>사용자 관련</span>
+                                    </label>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr class="cell-merge-line">
+                                <td class="align-left"><span>차량위치</span></td>
+                                <td>
+                                  <input type="radio" id="radio-2" name="radio-2" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-02-01" name="checkbox-02-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-02-02" name="checkbox-02-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-02-03" name="checkbox-02-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-02-04" name="checkbox-02-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <!-- 운행관리 row 7개 -->
+                              <tr>
+                                <td rowspan="7" class="cell-merge-line">
+                                  <span>운행관리</span>
+                                </td>
+                                <td class="align-left"><span>기본설정</span></td>
+                                <td>
+                                  <input type="radio" id="radio-3" name="radio-3" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-03-01" name="checkbox-03-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-03-02" name="checkbox-03-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-03-03" name="checkbox-03-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-03-04" name="checkbox-03-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>정류장 관리</span></td>
+                                <td>
+                                  <input type="radio" id="radio-4" name="radio-4" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-04-01" name="checkbox-04-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-04-02" name="checkbox-04-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-04-03" name="checkbox-04-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-04-04" name="checkbox-04-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>노선관리</span></td>
+                                <td>
+                                  <input type="radio" id="radio-5" name="radio-5" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-05-01" name="checkbox-05-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-05-02" name="checkbox-05-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-05-03" name="checkbox-05-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-05-04" name="checkbox-05-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>운행 계획</span></td>
+                                <td>
+                                  <input type="radio" id="radio-6" name="radio-6" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-06-01" name="checkbox-06-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-06-02" name="checkbox-06-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-06-03" name="checkbox-06-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-06-04" name="checkbox-06-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>출퇴근 배차</span></td>
+                                <td>
+                                  <input type="radio" id="radio-7" name="radio-7" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-07-01" name="checkbox-07-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-07-02" name="checkbox-07-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-07-03" name="checkbox-07-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-07-04" name="checkbox-07-04" />
+                                </td>
+                                <td>
+                                  <div class="checkbox-group">
+                                    <label for="checkbox-07-05">
+                                      <input type="checkbox" id="checkbox-07-05" name="checkbox-07-05" />
+                                      <span>추가운행 계획</span>
+                                    </label>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>정산 운임표</span></td>
+                                <td>
+                                  <input type="radio" id="radio-8" name="radio-8" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-08-01" name="checkbox-08-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-08-02" name="checkbox-08-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-08-03" name="checkbox-08-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-08-04" name="checkbox-08-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr class="cell-merge-line">
+                                <td class="align-left"><span>정산 레포트</span></td>
+                                <td>
+                                  <input type="radio" id="radio-9" name="radio-9" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-09-01" name="checkbox-09-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-09-02" name="checkbox-09-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-09-03" name="checkbox-09-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-09-04" name="checkbox-09-04" />
+                                </td>
+                                <td>
+                                  <div class="checkbox-group">
+                                    <label for="checkbox-09-05">
+                                      <input type="checkbox" id="checkbox-09-05" name="checkbox-09-05" />
+                                      <span>운수사</span>
+                                    </label>
+                                  </div>
+                                </td>
+                              </tr>
+                              <!-- 통계레포트 row 7개 -->
+                              <tr>
+                                <td rowspan="7" class="cell-merge-line">
+                                  <span>통계레포트</span>
+                                </td>
+                                <td class="align-left"><span>운행 실적</span></td>
+                                <td>
+                                  <input type="radio" id="radio-10" name="radio-10" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-10-01" name="checkbox-10-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-10-02" name="checkbox-10-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-10-03" name="checkbox-10-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-10-04" name="checkbox-10-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>탑승자 조회</span></td>
+                                <td>
+                                  <input type="radio" id="radio-11" name="radio-11" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-11-01" name="checkbox-11-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-11-02" name="checkbox-11-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-11-03" name="checkbox-11-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-11-04" name="checkbox-11-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>노선별 승차 현황</span></td>
+                                <td>
+                                  <input type="radio" id="radio-12" name="radio-12" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-12-01" name="checkbox-12-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-12-02" name="checkbox-12-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-12-03" name="checkbox-12-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-12-04" name="checkbox-12-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <!-- 2/3 update -->
+                                <td class="align-left"><span>정류장별 승차 현황</span></td>
+                                <td>
+                                  <input type="radio" id="radio-13" name="radio-13" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-13-01" name="checkbox-13-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-13-02" name="checkbox-13-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-13-03" name="checkbox-13-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-13-04" name="checkbox-13-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>체류시간 관리</span></td>
+                                <td>
+                                  <input type="radio" id="radio-14" name="radio-14" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-14-01" name="checkbox-14-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-14-02" name="checkbox-14-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-14-03" name="checkbox-14-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-14-04" name="checkbox-14-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>음주측정 정보</span></td>
+                                <td>
+                                  <input type="radio" id="radio-15" name="radio-15" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-15-01" name="checkbox-15-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-15-02" name="checkbox-15-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-15-03" name="checkbox-15-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-15-04" name="checkbox-15-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr class="cell-merge-line">
+                                <td class="align-left"><span>대용량 다운로드</span></td>
+                                <td>
+                                  <input type="radio" id="radio-16" name="radio-16" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-16-01" name="checkbox-16-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-16-02" name="checkbox-16-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-16-03" name="checkbox-16-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-16-04" name="checkbox-16-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <!-- 알림 발송 관리 row 3개 -->
+                              <tr>
+                                <td rowspan="3" class="cell-merge-line">
+                                  <span>알림 발송 관리</span>
+                                </td>
+                                <td class="align-left"><span>푸시 알림</span></td>
+                                <td>
+                                  <input type="radio" id="radio-17" name="radio-17" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-17-01" name="checkbox-17-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-17-02" name="checkbox-17-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-17-03" name="checkbox-17-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-17-04" name="checkbox-17-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>팝업 공지</span></td>
+                                <td>
+                                  <input type="radio" id="radio-18" name="radio-18" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-18-01" name="checkbox-18-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-18-02" name="checkbox-18-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-18-03" name="checkbox-18-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-18-04" name="checkbox-18-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr class="cell-merge-line">
+                                <td class="align-left"><span>대용량 다운로드</span></td>
+                                <td>
+                                  <input type="radio" id="radio-19" name="radio-19" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-19-01" name="checkbox-19-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-19-02" name="checkbox-19-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-19-03" name="checkbox-19-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-19-04" name="checkbox-19-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <!-- 차량 정보 관리 row 5개 -->
+                              <tr>
+                                <td rowspan="5" class="cell-merge-line">
+                                  <span>차량 정보 관리</span>
+                                </td>
+                                <td class="align-left"><span>통근버스 신청 관리</span></td>
+                                <td>
+                                  <input type="radio" id="radio-20" name="radio-20" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-20-01" name="checkbox-20-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-20-02" name="checkbox-20-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-20-03" name="checkbox-20-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-20-04" name="checkbox-20-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>지점 관리</span></td>
+                                <td>
+                                  <input type="radio" id="radio-21" name="radio-21" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-21-01" name="checkbox-21-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-21-02" name="checkbox-21-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-21-03" name="checkbox-21-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-21-04" name="checkbox-21-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>운수사 관리</span></td>
+                                <td>
+                                  <input type="radio" id="radio-22" name="radio-22" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-22-01" name="checkbox-22-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-22-02" name="checkbox-22-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-22-03" name="checkbox-22-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-22-04" name="checkbox-22-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>차량/운전자 관리</span></td>
+                                <td>
+                                  <input type="radio" id="radio-23" name="radio-23" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-23-01" name="checkbox-23-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-23-02" name="checkbox-23-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-23-03" name="checkbox-23-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-23-04" name="checkbox-23-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr class="cell-merge-line">
+                                <td class="align-left"><span>협력사 관리</span></td>
+                                <td>
+                                  <input type="radio" id="radio-24" name="radio-24" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-24-01" name="checkbox-24-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-24-02" name="checkbox-24-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-24-03" name="checkbox-24-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-24-04" name="checkbox-24-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <!-- 설정 row 5개 -->
+                              <tr>
+                                <td rowspan="5">
+                                  <span>설정</span>
+                                </td>
+                                <td class="align-left"><span>사용자 계정 관리</span></td>
+                                <td>
+                                  <input type="radio" id="radio-26" name="radio-26" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-26-01" name="checkbox-26-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-26-02" name="checkbox-26-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-26-03" name="checkbox-26-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-26-04" name="checkbox-26-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>단말기 정보</span></td>
+                                <td>
+                                  <input type="radio" id="radio-27" name="radio-27" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-27-01" name="checkbox-27-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-27-02" name="checkbox-27-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-27-03" name="checkbox-27-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-27-04" name="checkbox-27-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>권한 관리</span></td>
+                                <td>
+                                  <input type="radio" id="radio-28" name="radio-28" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-28-01" name="checkbox-28-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-28-02" name="checkbox-28-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-28-03" name="checkbox-28-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-28-04" name="checkbox-28-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>사용자 로그</span></td>
+                                <td>
+                                  <input type="radio" id="radio-29" name="radio-29" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-29-01" name="checkbox-29-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-29-02" name="checkbox-29-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-29-03" name="checkbox-29-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-29-04" name="checkbox-29-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td class="align-left"><span>환경 설정</span></td>
+                                <td>
+                                  <input type="radio" id="radio-30" name="radio-30" value="" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-30-01" name="checkbox-30-01" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-30-02" name="checkbox-30-02" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-30-03" name="checkbox-30-03" />
+                                </td>
+                                <td>
+                                  <input type="checkbox" id="checkbox-30-04" name="checkbox-30-04" />
+                                </td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+</body>
+
+</html>

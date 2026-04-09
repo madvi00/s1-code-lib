@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <title>푸시 알림 전송 | 삼성통근버스</title>
+  <!-- CSS resource load -->
+  <link href="../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script src="../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../assets/js/lib/bootstrap-datepicker.js"></script>
+  <script src="../../../assets/js/common.js"></script>
+  <script src="../../../assets/js/datepicker.js"></script>
+  <script src="../../../assets/js/dropdown.js"></script>
+  <script src="../../../assets/js/file.js"></script>
+  <script src="../../../assets/js/input.js"></script>
+  <script src="../../../assets/js/modal.js"></script>
+  <script src="../../../assets/js/multiDropdown.js"></script>
+  <script src="../../../assets/js/rangeTimePicker.js"></script>
+  <script src="../../../assets/js/routeAccordion.js"></script>
+  <script src="../../../assets/js/tab.js"></script>
+  <script src="../../../assets/js/timePicker.js"></script>
+</head>
+
+<body>
+  <!-- .push-notification-create : 푸시 알림 전송 페이지 전용 class -->
+  <div class="wrapper push-notification-create">
+    <!-- header -->
+    <header class="header">
+      <button type="button" class="btn-left"></button>
+      <h1 class="title-box">푸시 알림 전송</h1>
+      <button type="button" class="btn-close"></button>
+    </header>
+    <!-- // header -->
+    <main class="main-container">
+      <section class="account-container">
+        <div class="account-area">
+          <div class="account-middle">
+            <div class="field-container">
+              <!-- 2/26 update : 발송유형 추가 -->
+              <div class="field-radio-box required">
+                <div class="field-label-box">
+                  <label for="radio-1" class="field-label">발송유형</label>
+                </div>
+                <div class="radio-group">
+                  <label for="deliveryType_immediate">
+                    <input type="radio" id="deliveryType_immediate" name="deliveryType" value="immediate" />
+                    <span>즉시발송</span>
+                  </label>
+                  <label for="deliveryType_scheduled">
+                    <input type="radio" id="deliveryType_scheduled" name="deliveryType" value="scheduled" checked />
+                    <span>예약발송</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- 2/26 update : 발송일시 추가 -->
+            <div class="field-container">
+              <div class="field field-input required">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <label for="datepicker-01" class="field-label">발송일시</label>
+                  </div>
+                  <div class="field-wrap">
+                    <div class="field-input-box">
+                      <!-- 2/2 update -->
+                      <div class="input-wrap date">
+                        <input type="text" class="input-datepicker" id="datepicker-01" name="datepicker-01" placeholder="날짜를 선택하세요" value="" data-value="datepicker" readonly />
+                        <i class="icon icon-calendar"></i>
+                      </div>
+                      <div class="modal-datepicker" id="datepicker">
+                        <div class="dim"></div>
+                        <div class="datepicker-picker">
+                          <div class="datepicker-header">
+                            <div class="datepicker-title-box">
+                              <span class="title">날짜 선택</span>
+                            </div>
+                            <button type="button" class="close-button">닫기</button>
+                          </div>
+                          <div class="datepicker-body">
+                            <div class="datepicker-box"></div>
+                          </div>
+                          <div class="datepicker-footer">
+                            <div class="datepicker-controls">
+                              <button type="button" class="btn btn-white cancel-button">
+                                <span>취소</span>
+                              </button>
+                              <button type="button" class="btn btn-blue confirm-button">
+                                <span>확인</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field-input-box">
+                      <div class="timepicker-box">
+                        <div class="timepicker-input">
+                          <input type="text" class="form-control time-input" readonly placeholder="00:00" />
+                        </div>
+                        <div class="timepicker">
+                          <div class="timepicker-container">
+                            <div class="dim"></div>
+                            <div class="timepicker-area">
+                              <div class="timepicker-header">
+                                <div class="timepicker-title">
+                                  <span>시간 선택</span>
+                                </div>
+                                <button type="button" class="btn-timepicker-close" title="시간선택 닫기"></button>
+                              </div>
+                              <div class="timepicker-middle">
+                                <div class="picker">
+                                  <div class="swiper-container hours">
+                                    <div class="swiper-wrapper">
+                                      <div class="hour swiper-slide">00</div>
+                                      <div class="hour swiper-slide">01</div>
+                                      <div class="hour swiper-slide">02</div>
+                                      <div class="hour swiper-slide">03</div>
+                                      <div class="hour swiper-slide">04</div>
+                                      <div class="hour swiper-slide">05</div>
+                                      <div class="hour swiper-slide">06</div>
+                                      <div class="hour swiper-slide">07</div>
+                                      <div class="hour swiper-slide">08</div>
+                                      <div class="hour swiper-slide">09</div>
+                                      <div class="hour swiper-slide">10</div>
+                                      <div class="hour swiper-slide">11</div>
+                                      <div class="hour swiper-slide">12</div>
+                                      <div class="hour swiper-slide">13</div>
+                                      <div class="hour swiper-slide">14</div>
+                                      <div class="hour swiper-slide">15</div>
+                                      <div class="hour swiper-slide">16</div>
+                                      <div class="hour swiper-slide">17</div>
+                                      <div class="hour swiper-slide">18</div>
+                                      <div class="hour swiper-slide">19</div>
+                                      <div class="hour swiper-slide">20</div>
+                                      <div class="hour swiper-slide">21</div>
+                                      <div class="hour swiper-slide">22</div>
+                                      <div class="hour swiper-slide">23</div>
+                                    </div>
+                                  </div>
+                                  <div class="separator-box">
+                                    <div class="separator">:</div>
+                                  </div>
+                                  <div class="swiper-container minutes">
+                                    <div class="swiper-wrapper">
+                                      <div class="minute swiper-slide">00</div>
+                                      <div class="minute swiper-slide">01</div>
+                                      <div class="minute swiper-slide">02</div>
+                                      <div class="minute swiper-slide">03</div>
+                                      <div class="minute swiper-slide">04</div>
+                                      <div class="minute swiper-slide">05</div>
+                                      <div class="minute swiper-slide">06</div>
+                                      <div class="minute swiper-slide">07</div>
+                                      <div class="minute swiper-slide">08</div>
+                                      <div class="minute swiper-slide">09</div>
+                                      <div class="minute swiper-slide">10</div>
+                                      <div class="minute swiper-slide">11</div>
+                                      <div class="minute swiper-slide">12</div>
+                                      <div class="minute swiper-slide">13</div>
+                                      <div class="minute swiper-slide">14</div>
+                                      <div class="minute swiper-slide">15</div>
+                                      <div class="minute swiper-slide">16</div>
+                                      <div class="minute swiper-slide">17</div>
+                                      <div class="minute swiper-slide">18</div>
+                                      <div class="minute swiper-slide">19</div>
+                                      <div class="minute swiper-slide">20</div>
+                                      <div class="minute swiper-slide">21</div>
+                                      <div class="minute swiper-slide">22</div>
+                                      <div class="minute swiper-slide">23</div>
+                                      <div class="minute swiper-slide">24</div>
+                                      <div class="minute swiper-slide">25</div>
+                                      <div class="minute swiper-slide">26</div>
+                                      <div class="minute swiper-slide">27</div>
+                                      <div class="minute swiper-slide">28</div>
+                                      <div class="minute swiper-slide">29</div>
+                                      <div class="minute swiper-slide">30</div>
+                                      <div class="minute swiper-slide">31</div>
+                                      <div class="minute swiper-slide">32</div>
+                                      <div class="minute swiper-slide">33</div>
+                                      <div class="minute swiper-slide">34</div>
+                                      <div class="minute swiper-slide">35</div>
+                                      <div class="minute swiper-slide">36</div>
+                                      <div class="minute swiper-slide">37</div>
+                                      <div class="minute swiper-slide">38</div>
+                                      <div class="minute swiper-slide">39</div>
+                                      <div class="minute swiper-slide">40</div>
+                                      <div class="minute swiper-slide">41</div>
+                                      <div class="minute swiper-slide">42</div>
+                                      <div class="minute swiper-slide">43</div>
+                                      <div class="minute swiper-slide">44</div>
+                                      <div class="minute swiper-slide">45</div>
+                                      <div class="minute swiper-slide">46</div>
+                                      <div class="minute swiper-slide">47</div>
+                                      <div class="minute swiper-slide">48</div>
+                                      <div class="minute swiper-slide">49</div>
+                                      <div class="minute swiper-slide">50</div>
+                                      <div class="minute swiper-slide">51</div>
+                                      <div class="minute swiper-slide">52</div>
+                                      <div class="minute swiper-slide">53</div>
+                                      <div class="minute swiper-slide">54</div>
+                                      <div class="minute swiper-slide">55</div>
+                                      <div class="minute swiper-slide">56</div>
+                                      <div class="minute swiper-slide">57</div>
+                                      <div class="minute swiper-slide">58</div>
+                                      <div class="minute swiper-slide">59</div>
+                                    </div>
+                                  </div>
+                                  <div class="vizor"></div>
+                                </div>
+                              </div>
+                              <div class="timepicker-bottom">
+                                <div class="button-box">
+                                  <button type="button" class="btn btn-blue btn-confirm">
+                                    <span>적용</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field-container">
+              <div class="field field-input required">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <label for="input_01" class="field-label">제목</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-wrap">
+                      <div class="input-box">
+                        <input id="input_01" name="input_01" placeholder="입력해 주세요." type="text" value="" />
+                        <i class="icon-clear"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field-container">
+              <div class="field-dropdown-box required">
+                <div class="field-label-box">
+                  <span class="field-label">발송 지역(거주지)</span>
+                </div>
+                <div class="field-wrap">
+                  <div class="field field-dropdown">
+                    <div class="field-form">
+                      <!-- 숨겨진 select 태그 -->
+                      <select class="dropdown-select" style="display: none">
+                        <option value="" selected disabled>시 선택</option>
+                        <option value="서울특별시">서울특별시</option>
+                        <option value="부산광역시">부산광역시</option>
+                        <option value="대구광역시">대구광역시</option>
+                        <option value="인천광역시">인천광역시</option>
+                        <option value="광주광역시">광주광역시</option>
+                        <option value="대전광역시">대전광역시</option>
+                        <option value="울산광역시">울산광역시</option>
+                        <option value="경기도">경기도</option>
+                        <option value="강원도">강원도</option>
+                        <option value="충청북도">충청북도</option>
+                      </select>
+                      <button type="button" class="btn-dropdown">
+                        <span class="text" style="display: none"></span>
+                        <span class="placeholder">시 선택</span>
+                      </button>
+                      <div class="dropdown-list-box">
+                        <div class="dim"></div>
+                        <div class="dropdown-list-wrap">
+                          <div class="dropdown-list-header">
+                            <div class="title-box">시 선택</div>
+                            <button type="button" class="btn-close"></button>
+                          </div>
+                          <div class="dropdown-list-body">
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="서울특별시">
+                                <span>서울특별시</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="부산광역시">
+                                <span>부산광역시</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="대구광역시">
+                                <span>대구광역시</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="인천광역시">
+                                <span>인천광역시</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="광주광역시">
+                                <span>광주광역시</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="대전광역시">
+                                <span>대전광역시</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="울산광역시">
+                                <span>울산광역시</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="경기도">
+                                <span>경기도</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="강원도">
+                                <span>강원도</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="충청북도">
+                                <span>충청북도</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field field-dropdown">
+                    <div class="field-form">
+                      <!-- 숨겨진 select 태그 -->
+                      <select class="dropdown-select" style="display: none">
+                        <option value="" selected disabled>구 선택</option>
+                        <option value="강남구">강남구</option>
+                        <option value="강동구">강동구</option>
+                        <option value="강서구">강서구</option>
+                        <option value="관악구">관악구</option>
+                        <option value="광진구">광진구</option>
+                        <option value="구로구">구로구</option>
+                        <option value="금천구">금천구</option>
+                        <option value="노원구">노원구</option>
+                        <option value="도봉구">도봉구</option>
+                        <option value="동대문구">동대문구</option>
+                      </select>
+                      <button type="button" class="btn-dropdown">
+                        <span class="text" style="display: none"></span>
+                        <span class="placeholder">구 선택</span>
+                      </button>
+                      <div class="dropdown-list-box">
+                        <div class="dim"></div>
+                        <div class="dropdown-list-wrap">
+                          <div class="dropdown-list-header">
+                            <div class="title-box">구 선택</div>
+                            <button type="button" class="btn-close"></button>
+                          </div>
+                          <div class="dropdown-list-body">
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="강남구">
+                                <span>강남구</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="강동구">
+                                <span>강동구</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="강서구">
+                                <span>강서구</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="관악구">
+                                <span>관악구</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="광진구">
+                                <span>광진구</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="구로구">
+                                <span>구로구</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="금천구">
+                                <span>금천구</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="노원구">
+                                <span>노원구</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="도봉구">
+                                <span>도봉구</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="동대문구">
+                                <span>동대문구</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field field-dropdown">
+                    <div class="field-form">
+                      <!-- 숨겨진 select 태그 -->
+                      <select class="dropdown-select" style="display: none">
+                        <option value="" selected disabled>동 선택</option>
+                        <option value="개포동">개포동</option>
+                        <option value="논현동">논현동</option>
+                        <option value="대치동">대치동</option>
+                        <option value="도곡동">도곡동</option>
+                        <option value="삼성동">삼성동</option>
+                        <option value="세곡동">세곡동</option>
+                        <option value="수서동">수서동</option>
+                        <option value="신사동">신사동</option>
+                        <option value="압구정동">압구정동</option>
+                        <option value="역삼동">역삼동</option>
+                      </select>
+                      <button type="button" class="btn-dropdown">
+                        <span class="text" style="display: none"></span>
+                        <span class="placeholder">동 선택</span>
+                      </button>
+                      <div class="dropdown-list-box">
+                        <div class="dim"></div>
+                        <div class="dropdown-list-wrap">
+                          <div class="dropdown-list-header">
+                            <div class="title-box">동 선택</div>
+                            <button type="button" class="btn-close"></button>
+                          </div>
+                          <div class="dropdown-list-body">
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="개포동">
+                                <span>개포동</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="논현동">
+                                <span>논현동</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="대치동">
+                                <span>대치동</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="도곡동">
+                                <span>도곡동</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="삼성동">
+                                <span>삼성동</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="세곡동">
+                                <span>세곡동</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="수서동">
+                                <span>수서동</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="신사동">
+                                <span>신사동</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="압구정동">
+                                <span>압구정동</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="역삼동">
+                                <span>역삼동</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field-container">
+              <div class="field field-input required">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <label for="input_02" class="field-label">수신인원</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-wrap">
+                      <div class="input-box">
+                        <input id="input_02" name="input_02" placeholder="" type="text" value="0명" disabled />
+                        <i class="icon-clear"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field-container">
+              <div class="textarea-box required">
+                <label for="input_textarea_1" class="label">알림 내용</label>
+                <textarea name="input_textarea_1" id="input_textarea_1" class="textarea" placeholder="입력해 주세요." maxlength="500"></textarea>
+              </div>
+            </div>
+            <div class="field-container">
+              <div class="field field-file">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <span class="field-label">이미지 첨부</span>
+                  </div>
+                  <div class="field-wrap">
+                    <div class="field-file-box">
+                      <div class="file-box">
+                        <div class="file-left">
+                          <div class="file">
+                            <button type="button" class="btn-name-remove" title="삭제"></button>
+                            <input type="text" class="file-name" placeholder="이미지를 첨부해 주세요." id="file-name" readonly="" onfocus="this.blur()" />
+                            <label for="input-upload" class="btn-file btn-white">
+                              찾아보기
+                              <input type="file" name="input-upload" id="input-upload" class="file-upload" />
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="account-bottom">
+            <div class="button-box">
+              <button type="button" class="btn btn-white">
+                <span>취소</span>
+              </button>
+              <button type="button" class="btn btn-blue">
+                <span>알림 전송</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

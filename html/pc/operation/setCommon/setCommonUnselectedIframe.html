@@ -1,0 +1,712 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript">
+    sessionStorage.setItem('contextpath', '/uvis')
+    sessionStorage.setItem('langSet', 'ko')
+    //////////달력 설정//////////
+    var cldMsg_prevMonth = '이전 달' // 이전 달
+    var cldMsg_nextMonth = '다음 달' // 다음 달
+    var cldMsg_prevYear = '이전 년도' // 이전 년도
+    var cldMsg_nextYear = '다음 년도' // 다음 년도
+    var cldMsg_prev = '이전' // 이전
+    var cldMsg_next = '다음' // 다음
+    //////////달력 설정//////////
+    //////////jquery.uvis.common.js 다국어//////////
+    var jquery_uvis_common_checkPasswordRegex1 = '비밀번호에는 공백을 입력할 수 없습니다.' // 비밀번호에는 공백을 입력할 수 없습니다.
+    var jquery_uvis_common_checkPasswordRegex2 = '새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.' // 새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.
+    var jquery_uvis_common_ajaxErrorMessage0 = '접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.' // 접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage1 = '장시간 미사용으로 로그아웃 되었습니다.\r\n로그인 페이지로 이동 합니다.' // 장시간 미사용으로 로그아웃 되었습니다.\\r\\n로그인 페이지로 이동 합니다.
+    var jquery_uvis_common_ajaxErrorMessage2 = '에러가 발생하였습니다.\r\n네트워크 상태를 확인해주세요.' // 에러가 발생하였습니다.\\r\\n네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage3 = '에러가 발생하였습니다.\r\n접근이 거부되었습니다.\n\n새로고침 또는 로그인을 다시 해주세요.' // 에러가 발생하였습니다.\\r\\n접근이 거부되었습니다.\\n\\n새로고침 또는 로그인을 다시 해주세요.
+    var jquery_uvis_common_ajaxErrorMessage4 = '에러가 발생하였습니다.\r\nURL을 찾을 수 없습니다.' // 에러가 발생하였습니다.\\r\\nURL을 찾을 수 없습니다.
+    var jquery_uvis_common_ajaxErrorMessage5 = '에러가 발생하였습니다.\r\n내부 서버 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n내부 서버 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage6 = '에러가 발생하였습니다.\r\n파싱 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n파싱 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage7 = '에러가 발생하였습니다.\r\n실행시간이 지연되어 타임아웃이 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n실행시간이 지연되어 타임아웃이 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage8 = '에러가 발생하였습니다.\r\n알 수 없는 에러입니다.\n\n' // 에러가 발생하였습니다.\\r\\n알 수 없는 에러입니다.\\n\\n
+    var jquery_uvis_common_isValidDate1 = '잘못된 날짜형식 입니다.\n\r입력하신 문자열 길이를 확인해주세요.' // 잘못된 날짜형식 입니다.\\n\\r입력하신 문자열 길이를 확인해주세요.
+    var jquery_uvis_common_isValidDate21 = '잘못된 날짜형식 입니다.\n\r' // 잘못된 날짜형식 입니다.\\n\\r
+    var jquery_uvis_common_isValidDate22 = '월은 존재하지 않는 월입니다.' // 월은 존재하지 않는 월입니다.
+    var jquery_uvis_common_isValidDate31 = '잘못된 날짜형식 입니다.\n\r해당 월은' // 잘못된 날짜형식 입니다.\\n\\r해당 월은
+    var jquery_uvis_common_isValidDate32 = '일 까지입니다.' // 일 까지입니다.
+    var jquery_uvis_common_isValidDate4 = '잘못된 날짜형식 입니다.' // 잘못된 날짜형식 입니다.
+    var jquery_uvis_common_checkFileExt1 = '정상적인 파일이 아닙니다.' // 정상적인 파일이 아닙니다.
+    var jquery_uvis_common_checkFileExt2 = '파일만 업로드 가능 합니다.' // 파일만 업로드 가능 합니다.
+    var jquery_uvis_common_downloadCapture1 = '인터넷 익스플로러는 지원하지 않습니다.' // 인터넷 익스플로러는 지원하지 않습니다.
+    var jquery_uvis_common_downloadCapture2 = '이미지로 변환 중 에러가 발생하였습니다.' // 이미지로 변환 중 에러가 발생하였습니다.
+    //////////jquery.uvis.common.js 다국어//////////
+    var termsFilter = ['img', 'a', 'p', 'br', 'span', 'b', 'strong', 'u', 'colgroup', 'col', 'table', 'tbody', 'tr', 'td', 'ul', 'li', 'dl', 'dd', 'dt']
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <!-- CSS resource load -->
+  <link href="../../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../../assets/css/lib/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../../../assets/js/jquery-ui.js"></script>
+  <script src="../../../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../../../assets/js/bootstrap.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../../../assets/js/popper.min.js"></script>
+  <script src="../../../../assets/js/datatables.min.js"></script>
+  <script src="../../../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../../../assets/js/jquery.cookie.js"></script>
+  <script src="../../../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../../../assets/js/jquery.uvis.common.js"></script>
+  <script src="../../../../assets/js/highcharts.js"></script>
+  <script src="../../../../assets/js/exporting.js"></script>
+  <script src="../../../../assets/js/canvg.js"></script>
+  <script src="../../../../assets/js/rgbcolor.min.js"></script>
+  <script src="../../../../assets/js/html2canvas.js"></script>
+  <script src="../../../../assets/js/es6-promise.auto.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../../../assets/js/jquery.jqGrid.src.js"></script>
+  <script src="../../../../assets/js/jquery.paging.js"></script>
+  <script src="../../../../assets/js/publish.js"></script>
+  <script src="../../../../assets/js/amobe_datepicker.js"></script>
+  <script src="../../../../assets/js/amobe_dropdown.js"></script>
+  <script src="../../../../assets/js/amobe_header.js"></script>
+  <script src="../../../../assets/js/amobe_input.js"></script>
+  <script src="../../../../assets/js/amobe_mapList.js"></script>
+  <script src="../../../../assets/js/amobe_modal.js"></script>
+  <script src="../../../../assets/js/amobe_multiMap.js"></script>
+  <script src="../../../../assets/js/amobe_rangeTimePicker.js"></script>
+  <script src="../../../../assets/js/amobe_routeAccordion.js"></script>
+  <script src="../../../../assets/js/amobe_swiper.js"></script>
+  <script src="../../../../assets/js/amobe_tab.js"></script>
+  <script src="../../../../assets/js/amobe_table.js"></script>
+  <script src="../../../../assets/js/amobe_timePicker.js"></script>
+  <title>차량운행관리 시스템 - 공통코드관리</title>
+  <script type="text/javascript">
+    const __DOMAIN_NAME = 'uvis';
+    const __DOMAIN_CONF = Object.assign({}, parent?.['__DOMAIN_CONF'] || {}, {
+      context_path: '',
+      context_time: 1764553429574,
+      js_base_name: 'u2',
+      language: 'ko',
+      manual_path: 'manual',
+      manual_root: '/ssws',
+      tab_max_cnt: '10',
+    });
+    const _SITE_SESSION = Object.assign({}, parent?.['_SITE_SESSION'] || {}, {
+      csrf: {
+        name: '_csrf',
+        value: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1LXZpcy5jb20tczEiLCJpc3MiOiJ3d3cudS12aXMuY29tIiwiX3Rva2VuIjoiS0ZJV1wvcGFcLzJqbGtyTEhxTTU5aHpxaEU1b1daKzZSaUNyRlwvN1ZzM1FadFdpTDRQdGtOYjBrRmlDQ2xKbGFVXC8iLCJfdXVpZCI6ImY3ZGZiOTBmLTZiNWItNGI4Mi1iNWYyLTJiNjc2MDgzODkzMCJ9.UacJgCp1Bvu_pmArWQEQJMrQ73KmC0OCT_sbdGBtuWg',
+        result: false,
+      },
+      groupLevel: 1,
+      isGoogleMap: true,
+      sessionScope: {
+        electricYn: 'N',
+        financeYn: 'N',
+        notifyFlag: 'N',
+        rentYn: 'Y',
+        safeSchoolBusYn: 'N',
+        schoolBusYn: 'N',
+        sensorSpeedYn: 'N',
+        temperatureFlag: 'Y'
+      },
+      userId: 'admin0011',
+    });
+    var termsFilter = 'img,a,p,br,span,b,strong,u,colgroup,col,table,tbody,tr,td,ul,li,dl,dd,dt'.split(',');
+    var googleYn = true;
+    // 달력 설정
+    var cldMsg_prevMonth = '이전 달';
+    var cldMsg_nextMonth = '다음 달';
+    var cldMsg_prevYear = '이전 년도';
+    var cldMsg_nextYear = '다음 년도';
+    var cldMsg_prev = '이전';
+    var cldMsg_next = '다음';
+    const _JQ_GRID_DATA_2 = [];
+    // 이하 기존 스크립트 유지, listLoad에서 컬럼명/모델만 맞춤
+    $(document).ready(function() {
+      setPageDefault();
+      // jqGrid 리사이즈 설정 - 두 개의 그리드에 대해 각각 설정
+      $(window).resize(function() {
+        // 두 번째 그리드 (#gview_subCodeList) - 높이 계산 및 너비 조정
+        $('#gview_subCodeList').setGridWidth($('#gbox_subCodeList').width(), true);
+        var newHeight = calculateJqGridHeight({
+          containerSelector: '#gbox_subCodeList',
+        });
+        $('#gview_subCodeList').jqGrid('setGridHeight', newHeight);
+      });
+      // 필요시 나머지 이벤트 핸들러 추가 (생략)
+    });
+
+    function setPageDefault() {
+      listLoad(false, 1);
+    }
+
+    function listLoad(firstNoLoad, page) {
+      // jqGrid 리스트 초기화, 생성
+      $('#gview_subCodeList').jqGrid('GridUnload');
+      var grid = jQuery('#gview_subCodeList');
+      // 데이터가 없거나 부족할 때 빈 행 추가
+      var displayData = _JQ_GRID_DATA_2 || [];
+      var isEmptyData = displayData.length === 0;
+      // 초기 높이 계산
+      var initialHeight = calculateJqGridHeight({
+        containerSelector: '#gbox_subCodeList',
+      });
+      grid.jqGrid({
+        datatype: 'local',
+        data: displayData,
+        colNames: ['대분류명', '소분류명', '사용여부'],
+        colModel: [{
+            name: 'iRootname',
+            index: 'iRootname',
+            width: 103,
+            align: 'center',
+            sortable: false,
+            fixed: true,
+            labelClasses: 'no-sort'
+          },
+          {
+            name: 'nCodename',
+            index: 'nCodename',
+            width: 'auto',
+            align: 'center',
+            sortable: false,
+            classes: 'link',
+            labelClasses: 'no-sort'
+          },
+          {
+            name: 'iUseYn',
+            index: 'iUseYn',
+            width: 103,
+            align: 'center',
+            sortable: true,
+            fixed: true,
+            labelClasses: 'is-sortable',
+            sorttype: function(cellvalue, rowObject) {
+              // 빈 행은 항상 맨 아래로 정렬되도록 큰 값 반환
+              if (rowObject.isEmpty === true || (!rowObject.iRootname && !rowObject.nCodename && !rowObject.iUseYn)) {
+                return '\uFFFF'; // 유니코드 최대값으로 빈 행을 항상 맨 아래로
+              }
+              return cellvalue || '';
+            },
+          },
+        ],
+        sortable: true,
+        viewsortcols: [false, false, true],
+        rowNum: 15,
+        autowidth: true,
+        scrollRows: true,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        multiselect: true,
+        multiselectWidth: 43,
+        multiboxonly: false,
+        height: initialHeight,
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 0,
+        beforeSelectRow: function(rowid, e) {
+          var rowData = grid.jqGrid('getRowData', rowid);
+          // 빈 행은 선택 불가능
+          if (rowData.isEmpty === 'true' || (!rowData.iRootname && !rowData.nCodename && !rowData.iUseYn)) {
+            return false;
+          }
+          return true;
+        },
+        loadComplete: function(data) {
+          // 불필요한 wrapper div 제거
+          var $bdiv = grid.closest('.ui-jqgrid-bdiv');
+          if ($bdiv.length) {
+            var $wrapper = $bdiv.find('> div[style*="position:relative"]');
+            if ($wrapper.length) {
+              var $emptyDiv = $wrapper.find('> div:empty');
+              if ($emptyDiv.length) {
+                $emptyDiv.remove();
+              }
+              // table을 직접 bdiv의 자식으로 이동
+              var $table = $wrapper.find('table');
+              if ($table.length) {
+                $table.detach();
+                $wrapper.replaceWith($table);
+              }
+            }
+          }
+          // 데이터가 없을 때 메시지 표시
+          if (isEmptyData) {
+            var emptyMsg = '<tr class="empty-message-row">' + '<td colspan="17">' + '<span>선택된 항목이 없어요.' + '<br/>' + ' 좌측 리스트에서 항목을 선택해주세요.</span>' + '  </td>' + '</tr>';
+            grid.find('tbody tr').remove();
+            grid.find('tbody').append(emptyMsg);
+            return;
+          }
+          // 헤더에 클래스 추가 (colModel의 labelClasses 동적 적용)
+          setTimeout(function() {
+            var $headerRow = $('#gview_subCodeList').closest('.ui-jqgrid-view').find('thead tr.ui-jqgrid-labels');
+            if ($headerRow.length > 0) {
+              var $headerCells = $headerRow.find('th');
+              var colModel = grid.jqGrid('getGridParam', 'colModel');
+              var gridId = 'gview_subCodeList';
+              $headerCells.each(function() {
+                var $th = $(this);
+                var thId = $th.attr('id');
+                // multiselect 체크박스 컬럼은 건너뛰기
+                if ($th.hasClass('cbox') || $th.find('input[type="checkbox"]').length > 0 || !thId) {
+                  return true;
+                }
+                // 헤더 셀의 id에서 컬럼 이름 추출 (예: gview_subCodeList_iRootname -> iRootname)
+                var columnName = thId.replace(gridId + '_', '');
+                // colModel에서 해당 name을 가진 컬럼 찾기
+                if (colModel) {
+                  for (var i = 0; i < colModel.length; i++) {
+                    if (colModel[i].name === columnName && colModel[i].labelClasses) {
+                      var labelClasses = colModel[i].labelClasses;
+                      // 기존 클래스 제거 후 새 클래스 추가 (동적 업데이트를 위해)
+                      $th.removeClass('no-sort is-sortable');
+                      if (labelClasses) {
+                        $th.addClass(labelClasses);
+                      }
+                      break;
+                    }
+                  }
+                }
+              });
+            }
+          }, 0);
+          // 빈 행 처리
+          var ids = grid.jqGrid('getDataIDs');
+          for (var i = 0; i < ids.length; i++) {
+            var rowData = grid.jqGrid('getRowData', ids[i]);
+            if (rowData.isEmpty === 'true' || (!rowData.iRootname && !rowData.nCodename && !rowData.iUseYn)) {
+              // 빈 행의 체크박스 비활성화 및 숨김
+              var checkbox = grid.find('tr#' + ids[i] + ' input[type="checkbox"]');
+              checkbox.prop('disabled', true).hide();
+              // 빈 행에 클래스 추가
+              grid.find('tr#' + ids[i]).addClass('empty-row');
+              // 빈 행의 모든 셀 내용 제거
+              grid
+                .find('tr#' + ids[i] + ' td')
+                .not(':first')
+                .html('');
+            }
+          }
+          // 스크롤 여부 확인 후 .ui-jqgrid-bdiv 너비 조정
+          setTimeout(function() {
+            adjustBdivWidth(grid);
+          }, 0);
+        },
+        gridComplete: function() {
+          // 헤더에 클래스 추가 (gridComplete에서도 실행, colModel의 labelClasses 동적 적용)
+          var $headerRow = $('#gview_subCodeList').closest('.ui-jqgrid-view').find('thead tr.ui-jqgrid-labels');
+          if ($headerRow.length > 0) {
+            var $headerCells = $headerRow.find('th');
+            var colModel = grid.jqGrid('getGridParam', 'colModel');
+            var gridId = 'gview_subCodeList';
+            $headerCells.each(function() {
+              var $th = $(this);
+              var thId = $th.attr('id');
+              // multiselect 체크박스 컬럼은 건너뛰기
+              if ($th.hasClass('cbox') || $th.find('input[type="checkbox"]').length > 0 || !thId) {
+                return true;
+              }
+              // 헤더 셀의 id에서 컬럼 이름 추출 (예: gview_subCodeList_iRootname -> iRootname)
+              var columnName = thId.replace(gridId + '_', '');
+              // colModel에서 해당 name을 가진 컬럼 찾기
+              if (colModel) {
+                for (var i = 0; i < colModel.length; i++) {
+                  if (colModel[i].name === columnName && colModel[i].labelClasses) {
+                    var labelClasses = colModel[i].labelClasses;
+                    // 기존 클래스 제거 후 새 클래스 추가 (동적 업데이트를 위해)
+                    $th.removeClass('no-sort is-sortable');
+                    if (labelClasses) {
+                      $th.addClass(labelClasses);
+                    }
+                    break;
+                  }
+                }
+              }
+            });
+          }
+        },
+      });
+    }
+  </script>
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <div class="top-chip">
+    <ul class="chip-box">
+      <li class="chip">
+        <button type="button" class="btn-chip">
+          <span>휴일 관리</span>
+        </button>
+      </li>
+      <li class="chip">
+        <button type="button" class="btn-chip active">
+          <span>공통코드 관리</span>
+        </button>
+      </li>
+      <li class="chip">
+        <button type="button" class="btn-chip">
+          <span>지역코드 관리</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- data filter -->
+    <div class="data-filter-box">
+      <!-- <div class="data-filter-header">
+          <div class="filter-header-left">
+            <div class="title-box"><span>단가 기준</span></div>
+            <div class="title-controls">
+              <button type="button" class="btn-control-left"></button>
+              <strong>2025.11</strong>
+              <button type="button" class="btn-control-right"></button>
+            </div>
+          </div>
+          <div class="filter-header-right">
+            <button type="button" class="btn btn-white" onclick="" >
+   
+  <span>설정</span>
+  
+</button>
+          </div>
+        </div> -->
+      <div class="data-filter-body">
+        <ul class="data-list-box">
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>거리</span>
+                <span class="count">14</span>
+              </div>
+              <!-- <div class="data-right">
+                  <span class="date">25.09.20~25.10.21 적용</span>
+                  <span class="state">마감완료</span>
+                </div> -->
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>출발지</span>
+                <span class="count">12</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>도착지</span>
+                <span class="count">14</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>권역</span>
+                <span class="count">14</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <!-- 2/23 update : 텍스트 추가 -->
+                <span>정산 추가비용</span>
+                <span class="count">14</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <!-- 2/23 update : 텍스트 변경 -->
+                <span>정산 운임표</span>
+                <span class="count">14</span>
+              </div>
+            </button>
+          </li>
+          <!-- 2/23 update : 항목 추가 -->
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>지점 타입</span>
+                <span class="count">14</span>
+              </div>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <form id="searchForm" name="searchForm" onsubmit="return false;">
+            <input type="hidden" id="rows" name="rows" value="15" />
+            <input type="hidden" id="page" name="page" value="1" />
+            <div class="row">
+              <div class="input-group">
+                <legend>항목</legend>
+                <div class="input-wrap">
+                  <input id="route-name" name="route-name" class="input-xsmall" placeholder="항목 입력" type="text" value="" @@property />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="search-btns">
+          <button type="button" class="btn btn-white btn-reset" onclick="searchFormInit();">
+            <span>초기화</span>
+          </button>
+          <button type="button" class="btn btn-blue" onclick="searchList();">
+            <span>검색</span>
+          </button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-9">
+            <div class="area-box">
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-left">
+                    <div class="title-box">공통 코드 리스트</div>
+                    <div class="info-box">
+                      <div class="count-box">
+                        <span class="label">총</span>
+                        <span class="data">{{count}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header-right">
+                    <button type="button" class="btn btn-white action checkSubCodeDel" onclick="chkDelete()">
+                      <span>삭제</span>
+                    </button>
+                    <button type="button" class="btn btn-white action codeExcel" onclick="exportExcel()">
+                      <span>다운로드</span>
+                    </button>
+                    <button type="button" class="btn btn-blue action subCodePopup" onclick="codeSavePopOpen()">
+                      <span>신규등록</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="data-table" id="gbox_subCodeList">
+                  <table id="gview_subCodeList"></table>
+                </div>
+                <div class="data-list-table-footer">
+                  <div id="pager"></div>
+                  <div class="paging jquery-paging" id="paginate">
+                    <!-- disabled 상태일 때 disabled 추가 클래스 적용 -->
+                    <a class="btn-first disabled" href="#1"></a>
+                    <a class="btn-prev disabled" href="#1"></a>
+                    <a class="on" href="#1">1</a>
+                    <a href="#1">2</a>
+                    <a class="btn-next" href="#1"></a>
+                    <a class="btn-last" href="#1"></a>
+                  </div>
+                  <div class="footer-right">
+                    <div class="input-wrap inline select length-change small">
+                      <div class="field field-dropdown field-x-small normal">
+                        <div class="field-form">
+                          <!-- 숨겨진 select 태그 -->
+                          <select class="dropdown-select" style="display: none">
+                            >
+                            <option value="15개씩 보기" active>15개씩 보기</option>
+                            <option value="30개씩 보기">30개씩 보기</option>
+                            <option value="50개씩 보기">50개씩 보기</option>
+                            <option value="100개씩 보기">100개씩 보기</option>
+                          </select>
+                          <button type="button" class="btn-dropdown">
+                            <span class="text">15개씩 보기</span>
+                            <span class="placeholder" style="display: none">선택</span>
+                          </button>
+                          <div class="dropdown-list-box">
+                            <div class="dropdown-list active">
+                              <button type="button" class="btn-dropdown-list" data-value="15개씩 보기">
+                                <span>15개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="30개씩 보기">
+                                <span>30개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="50개씩 보기">
+                                <span>50개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="100개씩 보기">
+                                <span>100개씩 보기</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-xl-3">
+            <div class="area-box">
+              <div class="card-box data-form-table">
+                <div class="data-form-table-header">
+                  <div class="header-left">
+                    <h3 class="header-title">상세 정보</h3>
+                  </div>
+                  <div class="header-right">
+                    <button type="button" class="btn btn-white" id="toggle_delete">취소</button>
+                    <button class="btn btn-blue" id="toggle_save">저장</button>
+                  </div>
+                </div>
+                <div class="data-form-table-body v-middle">
+                  <!-- 1/19 update -->
+                  <div class="empty-content-box">
+                    <p class="message">
+                      선택된 항목이 없어요.<br />
+                      좌측 리스트에서 항목을 선택해주세요.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+      <!-- 팝업영역 -->
+      <!-- 코드 정보 팝업 -->
+      <div class="modal fade dark" id="subCodeModal" role="dialog" aria-hidden="true" aria-labelledby="modelTitleId" tabindex="-1">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">코드 정보</h5>
+              <button class="close" data-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- data form table -->
+              <div class="data-form-table">
+                <div class="data-form-table-body v-middle">
+                  <form id="saveForm" name="saveForm">
+                    <input type="hidden" name="action" value="I" />
+                    <input type="hidden" name="iRoot" value="021" />
+                    <input type="hidden" name="oConf" value="" />
+                    <table>
+                      <tbody>
+                        <tr>
+                          <th><span>대분류명 </span></th>
+                          <td>
+                            <span id="iRootTxt">거리</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th><span>소분류명</span></th>
+                          <td>
+                            <div class="input-wrap">
+                              <label for="">
+                                <input name="nCodename" type="text" />
+                              </label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th><span>사용여부</span></th>
+                          <td>
+                            <div class="radio-group">
+                              <div class="input-wrap radio">
+                                <label for="selUse1">
+                                  <input type="radio" name="iUseYn" id="selUse1" value="Y" />
+                                  <span>사용</span>
+                                </label>
+                              </div>
+                              <div class="input-wrap radio">
+                                <label for="selUse2">
+                                  <input type="radio" name="iUseYn" id="selUse2" value="N" />
+                                  <span>미사용</span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </form>
+                </div>
+              </div>
+              <!-- //data form table -->
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-white" data-dismiss="modal" type="button">취소</button>
+              <button class="btn btn-blue action doSubCodeSave" type="button" onclick="codeInfoSave();">저장</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //코드 정보 팝업 -->
+      <!-- //팝업영역 -->
+    </div>
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+</body>
+
+</html>

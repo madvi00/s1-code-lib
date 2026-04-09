@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -lt layouts/general_pc/*.html)",
+      "Bash(python -c \"print\\('python available'\\)\")"
+    ]
+  }
+}

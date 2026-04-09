@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+  <link rel="stylesheet" href="../../assets/css/lib/bootstrap-datepicker.standalone.css" />
+  <link rel="stylesheet" href="../../assets/css/lib-style.css" />
+  <link rel="stylesheet" href="../../assets/css/general.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <script src="../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script>
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../assets/js/lib/bootstrap-datepicker.js"></script>
+  <script src="../../assets/js/lib/swiper-bundle.min.js"></script>
+  
+  <script src="../../assets/js/tab.js"></script>
+  <title>Guide | Tab</title>
+  <style>
+    .btn-group .btn.on {
+      border-color: var(--semantic-color-control-background-selected);
+      background-color: var(--semantic-color-control-background-selected);
+      color: var(--semantic-color-control-text-selected);
+    }
+  </style>
+</head>
+
+<body style="overflow:hidden; margin:0;">
+    <div class="general-container">
+      <div class="general-area">
+        <div class="general-top">
+          <div class="general-label">Component</div>
+          <div class="general-title">Tab</div>
+        </div>
+        <div class="general-middle">
+          <div class="component-block">
+            <div class="component-block-header"><div><div class="component-block-title">Underline Tab</div></div></div>
+            <div class="component-preview">
+              <div class="tab-wrap" style="width:100%;">
+                <div class="tabs">
+                  <div class="tab"><a class="on" href="#">항목</a></div>
+                  <div class="tab"><a href="#">항목</a></div>
+                  <div class="tab"><a href="#">항목</a></div>
+                </div>
+                <div class="tab-content-box">
+                  <div class="tab-pannel active"></div>
+                  <div class="tab-pannel"></div>
+                  <div class="tab-pannel"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script>
+    function setMobileTab(btn) {
+      var group = btn.closest('.btn-group');
+      group.querySelectorAll('.btn').forEach(function(b) { b.classList.remove('on'); });
+      btn.classList.add('on');
+    }
+  </script>
+<script>document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
+</body>
+
+</html>

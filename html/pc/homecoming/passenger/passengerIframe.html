@@ -1,0 +1,1152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript">
+    sessionStorage.setItem('contextpath', '/uvis')
+    sessionStorage.setItem('langSet', 'ko')
+    //////////달력 설정//////////
+    var cldMsg_prevMonth = '이전 달' // 이전 달
+    var cldMsg_nextMonth = '다음 달' // 다음 달
+    var cldMsg_prevYear = '이전 년도' // 이전 년도
+    var cldMsg_nextYear = '다음 년도' // 다음 년도
+    var cldMsg_prev = '이전' // 이전
+    var cldMsg_next = '다음' // 다음
+    //////////달력 설정//////////
+    //////////jquery.uvis.common.js 다국어//////////
+    var jquery_uvis_common_checkPasswordRegex1 = '비밀번호에는 공백을 입력할 수 없습니다.' // 비밀번호에는 공백을 입력할 수 없습니다.
+    var jquery_uvis_common_checkPasswordRegex2 = '새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.' // 새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.
+    var jquery_uvis_common_ajaxErrorMessage0 = '접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.' // 접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage1 = '장시간 미사용으로 로그아웃 되었습니다.\r\n로그인 페이지로 이동 합니다.' // 장시간 미사용으로 로그아웃 되었습니다.\\r\\n로그인 페이지로 이동 합니다.
+    var jquery_uvis_common_ajaxErrorMessage2 = '에러가 발생하였습니다.\r\n네트워크 상태를 확인해주세요.' // 에러가 발생하였습니다.\\r\\n네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage3 = '에러가 발생하였습니다.\r\n접근이 거부되었습니다.\n\n새로고침 또는 로그인을 다시 해주세요.' // 에러가 발생하였습니다.\\r\\n접근이 거부되었습니다.\\n\\n새로고침 또는 로그인을 다시 해주세요.
+    var jquery_uvis_common_ajaxErrorMessage4 = '에러가 발생하였습니다.\r\nURL을 찾을 수 없습니다.' // 에러가 발생하였습니다.\\r\\nURL을 찾을 수 없습니다.
+    var jquery_uvis_common_ajaxErrorMessage5 = '에러가 발생하였습니다.\r\n내부 서버 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n내부 서버 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage6 = '에러가 발생하였습니다.\r\n파싱 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n파싱 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage7 = '에러가 발생하였습니다.\r\n실행시간이 지연되어 타임아웃이 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n실행시간이 지연되어 타임아웃이 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage8 = '에러가 발생하였습니다.\r\n알 수 없는 에러입니다.\n\n' // 에러가 발생하였습니다.\\r\\n알 수 없는 에러입니다.\\n\\n
+    var jquery_uvis_common_isValidDate1 = '잘못된 날짜형식 입니다.\n\r입력하신 문자열 길이를 확인해주세요.' // 잘못된 날짜형식 입니다.\\n\\r입력하신 문자열 길이를 확인해주세요.
+    var jquery_uvis_common_isValidDate21 = '잘못된 날짜형식 입니다.\n\r' // 잘못된 날짜형식 입니다.\\n\\r
+    var jquery_uvis_common_isValidDate22 = '월은 존재하지 않는 월입니다.' // 월은 존재하지 않는 월입니다.
+    var jquery_uvis_common_isValidDate31 = '잘못된 날짜형식 입니다.\n\r해당 월은' // 잘못된 날짜형식 입니다.\\n\\r해당 월은
+    var jquery_uvis_common_isValidDate32 = '일 까지입니다.' // 일 까지입니다.
+    var jquery_uvis_common_isValidDate4 = '잘못된 날짜형식 입니다.' // 잘못된 날짜형식 입니다.
+    var jquery_uvis_common_checkFileExt1 = '정상적인 파일이 아닙니다.' // 정상적인 파일이 아닙니다.
+    var jquery_uvis_common_checkFileExt2 = '파일만 업로드 가능 합니다.' // 파일만 업로드 가능 합니다.
+    var jquery_uvis_common_downloadCapture1 = '인터넷 익스플로러는 지원하지 않습니다.' // 인터넷 익스플로러는 지원하지 않습니다.
+    var jquery_uvis_common_downloadCapture2 = '이미지로 변환 중 에러가 발생하였습니다.' // 이미지로 변환 중 에러가 발생하였습니다.
+    //////////jquery.uvis.common.js 다국어//////////
+    var termsFilter = ['img', 'a', 'p', 'br', 'span', 'b', 'strong', 'u', 'colgroup', 'col', 'table', 'tbody', 'tr', 'td', 'ul', 'li', 'dl', 'dd', 'dt']
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <!-- CSS resource load -->
+  <link href="../../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../../assets/css/lib/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../../../assets/js/jquery-ui.js"></script>
+  <script src="../../../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../../../assets/js/bootstrap.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../../../assets/js/popper.min.js"></script>
+  <script src="../../../../assets/js/datatables.min.js"></script>
+  <script src="../../../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../../../assets/js/jquery.cookie.js"></script>
+  <script src="../../../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../../../assets/js/jquery.uvis.common.js"></script>
+  <script src="../../../../assets/js/highcharts.js"></script>
+  <script src="../../../../assets/js/exporting.js"></script>
+  <script src="../../../../assets/js/canvg.js"></script>
+  <script src="../../../../assets/js/rgbcolor.min.js"></script>
+  <script src="../../../../assets/js/html2canvas.js"></script>
+  <script src="../../../../assets/js/es6-promise.auto.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../../../assets/js/jquery.jqGrid.src.js"></script>
+  <script src="../../../../assets/js/jquery.paging.js"></script>
+  <script src="../../../../assets/js/publish.js"></script>
+  <script src="../../../../assets/js/amobe_datepicker.js"></script>
+  <script src="../../../../assets/js/amobe_dropdown.js"></script>
+  <script src="../../../../assets/js/amobe_header.js"></script>
+  <script src="../../../../assets/js/amobe_input.js"></script>
+  <script src="../../../../assets/js/amobe_mapList.js"></script>
+  <script src="../../../../assets/js/amobe_modal.js"></script>
+  <script src="../../../../assets/js/amobe_multiMap.js"></script>
+  <script src="../../../../assets/js/amobe_rangeTimePicker.js"></script>
+  <script src="../../../../assets/js/amobe_routeAccordion.js"></script>
+  <script src="../../../../assets/js/amobe_swiper.js"></script>
+  <script src="../../../../assets/js/amobe_tab.js"></script>
+  <script src="../../../../assets/js/amobe_table.js"></script>
+  <script src="../../../../assets/js/amobe_timePicker.js"></script>
+  <title>차량운행관리 시스템 - 귀성 탑승자 관리</title>
+  <script type="text/javascript">
+    // 2/10 update : 테이블 컬럼 추가
+    // jqGrid Local Data
+    const _JQ_GRID_DATA = [{
+        rownum: '45',
+        employeeId: '06312669',
+        applicantId: 's1.admin.01',
+        applicantName: '송병주',
+        applicationInfo: '소인',
+        passengerName: '샘플명',
+        carNumber: '1',
+        passengerContact: '',
+        category: '귀사',
+        round: '1차',
+        routeName: '기흥 → 경주',
+        destination: '경주시외버스터미널',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '15,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '44',
+        employeeId: '23015498',
+        applicantId: 's1.admin.02',
+        applicantName: '조준범',
+        applicationInfo: '소인',
+        passengerName: '샘플명',
+        carNumber: '2',
+        passengerContact: '',
+        category: '귀사',
+        round: '2차',
+        routeName: '기흥 → 광주',
+        destination: '광주무등경기장',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '15,000',
+        paymentMethod: '급여공제',
+      },
+      {
+        rownum: '43',
+        employeeId: '24057543',
+        applicantId: 's1.admin.03',
+        applicantName: '최승수',
+        applicationInfo: '소인',
+        passengerName: '샘플명',
+        carNumber: '1',
+        passengerContact: '',
+        category: '귀사',
+        round: '1차',
+        routeName: '기흥→ 군산',
+        destination: '군산고속버스터미널',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '42',
+        employeeId: '21032326',
+        applicantId: 's1.admin.04',
+        applicantName: '최승수',
+        applicationInfo: '대인',
+        passengerName: '샘플명',
+        carNumber: '1',
+        passengerContact: '',
+        category: '귀사',
+        round: '1차',
+        routeName: '기흥 → 대구',
+        destination: '대구콘서트하우스',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '급여공제',
+      },
+      {
+        rownum: '41',
+        employeeId: '21067505',
+        applicantId: 's1.admin.05',
+        applicantName: '최승수',
+        applicationInfo: '대인',
+        passengerName: '샘플명',
+        carNumber: '1',
+        passengerContact: '',
+        category: '귀사',
+        round: '2차',
+        routeName: '기흥 → 대전 A',
+        destination: '대전복합터미널',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '40',
+        employeeId: '24020324',
+        applicantId: 's1.admin.06',
+        applicantName: '이현석',
+        applicationInfo: '대인',
+        passengerName: '샘플명',
+        carNumber: '2',
+        passengerContact: '',
+        category: '귀사',
+        round: '2차',
+        routeName: '기흥 → 마산',
+        destination: '마산역',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '급여공제',
+      },
+      {
+        rownum: '39',
+        employeeId: '10073979',
+        applicantId: 's1.admin.07',
+        applicantName: '심태웅',
+        applicationInfo: '대인',
+        passengerName: '샘플명',
+        carNumber: '2',
+        passengerContact: '',
+        category: '귀사',
+        round: '1차',
+        routeName: '기흥 → 목포',
+        destination: '목포종합버스터미널',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '급여공제',
+      },
+      {
+        rownum: '38',
+        employeeId: '15000370',
+        applicantId: 's1.admin.08',
+        applicantName: '신영수',
+        applicationInfo: '대인',
+        passengerName: '샘플명',
+        carNumber: '1',
+        passengerContact: '',
+        category: '귀사',
+        round: '1차',
+        routeName: '기흥 → 여수',
+        destination: '여수종합버스터미널',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '급여공제',
+      },
+      {
+        rownum: '37',
+        employeeId: '20045196',
+        applicantId: 's1.admin.09',
+        applicantName: '신영수',
+        applicationInfo: '대인',
+        passengerName: '샘플명',
+        carNumber: '2',
+        passengerContact: '',
+        category: '귀향',
+        round: '2차',
+        routeName: '기흥 → 울산',
+        destination: '울산고속버스터미널',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '36',
+        employeeId: '23007570',
+        applicantId: 's1.admin.10',
+        applicantName: '송하림',
+        applicationInfo: '대인',
+        passengerName: '샘플명',
+        carNumber: '1',
+        passengerContact: '',
+        category: '귀향',
+        round: '1차',
+        routeName: '기흥 → 부산',
+        destination: '부산역',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '급여공제',
+      },
+      {
+        rownum: '35',
+        employeeId: '22066508',
+        applicantId: 's1.admin.11',
+        applicantName: '이재관',
+        applicationInfo: '대인',
+        passengerName: '샘플명',
+        carNumber: '2',
+        passengerContact: '',
+        category: '귀향',
+        round: '2차',
+        routeName: '기흥 → 포항',
+        destination: '포항터미널',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '급여공제',
+      },
+      {
+        rownum: '34',
+        employeeId: '10205262',
+        applicantId: 's1.admin.12',
+        applicantName: '이재관',
+        applicationInfo: '소인',
+        passengerName: '샘플명',
+        carNumber: '1',
+        passengerContact: '',
+        category: '귀향',
+        round: '1차',
+        routeName: '기흥 → 청주 A',
+        destination: '청주시외버스터미널',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '급여공제',
+      },
+      {
+        rownum: '33',
+        employeeId: '23024911',
+        applicantId: 's1.admin.13',
+        applicantName: '임세나',
+        applicationInfo: '대인',
+        passengerName: '샘플명',
+        carNumber: '1',
+        passengerContact: '01012345678',
+        category: '귀사',
+        round: '1차',
+        routeName: '기흥 → 청주 B',
+        destination: '청주시외버스터미널',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '32',
+        employeeId: '24000148',
+        applicantId: 's1.admin.14',
+        applicantName: '윤병두',
+        applicationInfo: '대인',
+        passengerName: '샘플명',
+        carNumber: '2',
+        passengerContact: '01012345678',
+        category: '귀사',
+        round: '2차',
+        routeName: '화성 → 진주',
+        destination: '진주고속버스터미널',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: '삼성 SDI',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '급여공제',
+      },
+      {
+        rownum: '31',
+        employeeId: '95123652',
+        applicantId: 's1.admin.15',
+        applicantName: '안채덕',
+        applicationInfo: '소인',
+        passengerName: '샘플명',
+        carNumber: '1',
+        passengerContact: '01012345678',
+        category: '귀사',
+        round: '1차',
+        routeName: '화성 → 청주',
+        destination: '청주시외버스터미널',
+        departureDate: '25.09.19',
+        departureTime: '10:00',
+        department: 'DS부문',
+        date: '25.10.30',
+        result: '-',
+        date2: '25.11.18',
+        result2: '-',
+        applicationFee: '30,000',
+        paymentMethod: '무통장입금',
+      },
+    ];
+    $(document).ready(function() {
+      setPageDefault();
+      initCalendarDatePicker();
+      // // jqGrid 높이 계산 및 리사이즈 설정
+      // setupJqGridResize({
+      //   containerSelector: '#div_list2',
+      //   gridSelector: '#list2',
+      // });
+      // div_list2는 컬럼 너비 고정을 위해 별도 처리
+      $(window).resize(function() {
+        $('#list2').setGridWidth($('#div_list2').width(), false); // shrink: false로 컬럼 너비 유지
+        // setupJqGridResize({
+        //   containerSelector: '#div_list2',
+        //   gridSelector: '#list2',
+        // });
+        console.log('steve');
+        var newHeight2 = calculateJqGridHeight({
+          containerSelector: '#div_list2',
+          headerSelector: '.data-list-table-header',
+          footerSelector: '.data-list-table-footer',
+          padding: 56,
+        });
+        // 가로 스크롤이 있는지 확인
+        var bdiv = $('#list2').closest('.ui-jqgrid-bdiv')[0];
+        var hasHorizontalScroll = bdiv && bdiv.scrollWidth > bdiv.clientWidth;
+        var finalHeight = hasHorizontalScroll ? newHeight2 + 12 : newHeight2;
+        $('#list2').jqGrid('setGridHeight', finalHeight);
+      });
+    });
+
+    function setPageDefault() {
+      listLoad(false, 1);
+    }
+    // 달력 datepicker 초기화
+    function initCalendarDatePicker() {
+      if (typeof $.fn.datepicker !== 'undefined') {
+        var $datepicker = $('#calendarDatePicker');
+        if ($datepicker.length && !$datepicker.data('datepicker')) {
+          $datepicker.datepicker({
+            language: 'ko',
+            weekStart: 1,
+            format: 'yyyy.mm.dd',
+            todayBtn: false,
+            todayHighlight: true,
+            clearBtn: false,
+            autoclose: false,
+            maxViewMode: 2,
+            templates: {
+              leftArrow: '<i class="icon icon-arrow-left"></i>',
+              rightArrow: '<i class="icon icon-arrow-right"></i>',
+            },
+            beforeShowDay: function(date) {
+              // 주말 및 공휴일 처리
+              var day = date.getDay();
+              var isWeekend = day === 0 || day === 6; // 일요일(0) 또는 토요일(6)
+              return {
+                classes: isWeekend ? 'weekend' : '',
+                tooltip: '',
+                enabled: true,
+              };
+            },
+          });
+          // 날짜 선택 이벤트
+          $datepicker.on('changeDate', function(e) {
+            var selectedDate = e.date;
+            // 선택된 날짜로 데이터 필터링 및 새로고침
+            // listLoad(false, 1);
+          });
+        }
+      } else {
+        setTimeout(initCalendarDatePicker, 100);
+      }
+    }
+    // 헤더 높이 동기화 공통 함수
+    // 오른쪽 테이블의 thead 전체 높이(그룹 헤더 - ex. tr 2개 56px)를 가져옴
+    // 왼쪽 테이블의 tr 높이와 동일하게 맞춤
+    function syncHeaderHeight() {
+      var $leftHeaderRow = $('#list').closest('.ui-jqgrid').find('.ui-jqgrid-htable thead tr');
+      var $rightHeader = $('#list2').closest('.ui-jqgrid').find('.ui-jqgrid-htable thead');
+      if ($leftHeaderRow.length && $rightHeader.length) {
+        var leftHeaderRowHeight = $leftHeaderRow.outerHeight() || parseInt($leftHeaderRow.css('height')) || 0;
+        // 오른쪽 테이블의 thead 전체 높이 가져오기 (tr이 2개 있어서 56px)
+        var rightHeaderHeight = $rightHeader.outerHeight() || parseInt($rightHeader.css('height')) || 0;
+        // 오른쪽 테이블 헤더 높이가 왼쪽 테이블 헤더 높이보다 크면 맞춤
+        if (rightHeaderHeight > leftHeaderRowHeight) {
+          $leftHeaderRow.css('height', rightHeaderHeight + 'px');
+          $leftHeaderRow.find('th').css('height', rightHeaderHeight + 'px');
+        }
+      }
+    }
+
+    function listLoad(firstNoLoad, page) {
+      // ---------- 1번째 테이블 (왼쪽) ----------
+      // jqGrid 리스트 초기화, 생성
+      $('#list').jqGrid('GridUnload');
+      var grid = jQuery('#list');
+      // 데이터가 없거나 부족할 때 빈 행 추가
+      var displayData = _JQ_GRID_DATA ? _JQ_GRID_DATA.slice() : [];
+      var emptyRow = {
+        rownum: '',
+        employeeId: '',
+        applicantId: '',
+        applicantName: '',
+        isEmpty: true,
+      };
+      while (displayData.length < 15) {
+        displayData.push(Object.assign({}, emptyRow));
+      }
+      // 초기 높이 계산
+      var initialHeight = calculateJqGridHeight({
+        containerSelector: '#div_list',
+        headerSelector: '.data-list-table-header',
+        footerSelector: '.data-list-table-footer',
+        padding: 56,
+      });
+      grid.jqGrid({
+        datatype: 'local',
+        data: displayData,
+        colNames: ['순번', '사번', '신청자ID', '신청자'],
+        colModel: [{
+            name: 'rownum',
+            index: 'rownum',
+            width: 64,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'employeeId',
+            index: 'employeeId',
+            width: 100,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'applicantId',
+            index: 'applicantId',
+            width: 100,
+            align: 'left',
+            sortable: false,
+            classes: 'link',
+          },
+          {
+            name: 'applicantName',
+            index: 'applicantName',
+            width: 72,
+            align: 'center',
+            sortable: false
+          },
+        ],
+        sortable: false,
+        rowNum: displayData.length,
+        autowidth: false,
+        scrollRows: true,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        multiselect: true,
+        multiselectWidth: 42,
+        multiboxonly: false,
+        height: initialHeight,
+        scrollTimeout: 1,
+        shrinkToFit: false,
+        forceFit: false,
+        scrollOffset: 0,
+        beforeSelectRow: function(rowid, e) {
+          var rowData = grid.jqGrid('getRowData', rowid);
+          // 빈 행은 선택 불가능
+          if (rowData.isEmpty === 'true' || (!rowData.rownum && !rowData.applicantId)) {
+            return false;
+          }
+          return true;
+        },
+        loadComplete: function(data) {
+          // 빈 행 처리
+          var ids = grid.jqGrid('getDataIDs');
+          for (var i = 0; i < ids.length; i++) {
+            var rowData = grid.jqGrid('getRowData', ids[i]);
+            if (rowData.isEmpty === 'true' || (!rowData.rownum && !rowData.applicantId)) {
+              // 빈 행의 체크박스 비활성화 및 숨김
+              var checkbox = grid.find('tr#' + ids[i] + ' input[type="checkbox"]');
+              checkbox.prop('disabled', true).hide();
+              // 빈 행에 클래스 추가
+              grid.find('tr#' + ids[i]).addClass('empty-row');
+              // 빈 행의 모든 셀 내용 제거
+              grid
+                .find('tr#' + ids[i] + ' td')
+                .not(':first')
+                .html('');
+            }
+          }
+          // 오른쪽 테이블 헤더 높이와 동기화 (오른쪽 테이블이 로드된 경우)
+          requestAnimationFrame(function() {
+            requestAnimationFrame(syncHeaderHeight);
+          });
+        },
+      });
+      // ---------- 2번째 테이블 (오른쪽) ----------
+      $('#list2').jqGrid('GridUnload');
+      var grid2 = jQuery('#list2');
+      // 빈 row 채우기
+      var displayData2 = _JQ_GRID_DATA ? _JQ_GRID_DATA.slice() : [];
+      var emptyRow2 = {
+        applicationInfo: '',
+        passengerName: '',
+        carNumber: '',
+        passengerContact: '',
+        category: '',
+        round: '',
+        routeName: '',
+        destination: '',
+        departureDate: '',
+        departureTime: '',
+        department: '',
+        date: '',
+        result: '-',
+        date2: '',
+        result2: '-',
+        isEmpty: true,
+      };
+      while (displayData2.length < 15) {
+        displayData2.push(Object.assign({}, emptyRow2));
+      }
+      // 초기 높이 계산
+      var initialHeight2 = calculateJqGridHeight({
+        containerSelector: '#div_list2',
+        headerSelector: '.data-list-table-header',
+        footerSelector: '.data-list-table-footer',
+        padding: 56,
+      });
+      grid2.jqGrid({
+        datatype: 'local',
+        data: displayData2,
+        colNames: ['신청정보', '탑승자명', '호차', '탑승자연락처', '구분', '차수', '노선명', '도착지', '출발일', '출발시간', '소속', '날짜', '결과', '날짜', '결과', '적용요금', '입금방법'],
+        colModel: [{
+            name: 'applicationInfo',
+            index: 'applicationInfo',
+            width: 72,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'passengerName',
+            index: 'passengerName',
+            width: 64,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'carNumber',
+            index: 'carNumber',
+            width: 64,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'passengerContact',
+            index: 'passengerContact',
+            width: 108,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'category',
+            index: 'category',
+            width: 56,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'round',
+            index: 'round',
+            width: 56,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'routeName',
+            index: 'routeName',
+            width: 140,
+            align: 'left',
+            sortable: false,
+          },
+          {
+            name: 'destination',
+            index: 'destination',
+            width: 160,
+            align: 'left',
+            sortable: false,
+          },
+          {
+            name: 'departureDate',
+            index: 'departureDate',
+            width: 80,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'departureTime',
+            index: 'departureTime',
+            width: 80,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'department',
+            index: 'department',
+            width: 120,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'date',
+            index: 'date',
+            width: 66,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'result',
+            index: 'result',
+            width: 66,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'date2',
+            index: 'date2',
+            width: 66,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'result2',
+            index: 'result2',
+            width: 66,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'applicationFee',
+            index: 'applicationFee',
+            width: 71,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'paymentMethod',
+            index: 'paymentMethod',
+            width: 100,
+            align: 'center',
+            sortable: false
+          },
+        ],
+        sortable: false,
+        rowNum: displayData2.length,
+        autowidth: true,
+        scrollRows: true,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        height: initialHeight2,
+        autoheight: false,
+        scrollTimeout: 1,
+        shrinkToFit: false,
+        forceFit: true,
+        scrollOffset: 0,
+        beforeSelectRow: function(rowid) {
+          var rowData = grid2.jqGrid('getRowData', rowid);
+          if (rowData.isEmpty === 'true' || Object.values(rowData).every((val) => !val)) {
+            return false;
+          }
+          return true;
+        },
+        loadComplete: function() {
+          // 그룹 헤더 설정 - 발권1차 컬럼 안에 날짜, 결과 컬럼
+          grid2.jqGrid('setGroupHeaders', {
+            useColSpanStyle: true,
+            groupHeaders: [{
+                startColumnName: 'date',
+                numberOfColumns: 2,
+                titleText: '발권1차',
+              },
+              {
+                startColumnName: 'date2',
+                numberOfColumns: 2,
+                titleText: '발권2차',
+              },
+            ],
+          });
+          // 왼쪽 테이블 헤더 높이를 오른쪽 테이블과 동일하게 맞춤 (그룹 헤더 렌더링 후)
+          requestAnimationFrame(function() {
+            requestAnimationFrame(syncHeaderHeight);
+          });
+          // 가로 스크롤이 있는지 확인하고 높이 조정
+          setTimeout(function() {
+            var bdiv = $('#list2').closest('.ui-jqgrid-bdiv')[0];
+            var hasHorizontalScroll = bdiv && bdiv.scrollWidth > bdiv.clientWidth;
+            if (hasHorizontalScroll) {
+              var currentHeight = $('#list2').jqGrid('getGridParam', 'height');
+              $('#list2').jqGrid('setGridHeight', currentHeight + 12);
+            }
+          }, 100);
+          var ids = grid2.jqGrid('getDataIDs');
+          ids.forEach((id) => {
+            var rowData = grid2.jqGrid('getRowData', id);
+            if (Object.values(rowData).every((val) => !val)) {
+              var tr = grid2.find('tr#' + id);
+              tr.addClass('empty-row');
+              tr.find('td').html('');
+            }
+          });
+          // 양방향 스크롤 동기화 설정
+          var $bdiv2 = $('#div_list2 .ui-jqgrid-bdiv');
+          var $bdiv1 = $('#div_list .ui-jqgrid-bdiv');
+          var isScrolling = false; // 무한 루프 방지 플래그
+          // 기존 이벤트 리스너 제거 후 재설정 (중복 방지)
+          $bdiv2.off('scroll.sync');
+          $bdiv1.off('scroll.sync');
+          // div_list2의 스크롤 → div_list 동기화
+          $bdiv2.on('scroll.sync', function() {
+            if (!isScrolling) {
+              isScrolling = true;
+              var scrollTop = $(this).scrollTop();
+              $bdiv1.scrollTop(scrollTop);
+              setTimeout(function() {
+                isScrolling = false;
+              }, 10);
+            }
+          });
+          // div_list의 스크롤 → div_list2 동기화
+          $bdiv1.on('scroll.sync', function() {
+            if (!isScrolling) {
+              isScrolling = true;
+              var scrollTop = $(this).scrollTop();
+              $bdiv2.scrollTop(scrollTop);
+              setTimeout(function() {
+                isScrolling = false;
+              }, 10);
+            }
+          });
+        },
+      });
+    }
+  </script>
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="calendar-content">
+      <div id="calendarDatePicker"></div>
+    </div>
+    <div class="frame-content">
+      <!-- 분할영역 -->
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <form id="searchForm" name="searchForm" onsubmit="return false;">
+            <input type="hidden" id="rows" name="rows" value="15" />
+            <input type="hidden" id="page" name="page" value="1" />
+            <div class="row">
+              <div class="input-group">
+                <legend>노선명</legend>
+                <div class="input-wrap">
+                  <input id="route-name" name="route-name" class="input-xsmall" placeholder="노선명 입력" type="text" value="" @@property />
+                </div>
+              </div>
+              <div class="input-group">
+                <legend>신청자명</legend>
+                <div class="input-wrap">
+                  <input id="applicant-name" name="applicant-name" class="input-xsmall" placeholder="신청자명 입력" type="text" value="" @@property />
+                </div>
+              </div>
+              <div class="input-group">
+                <legend>구분</legend>
+                <div class="input-wrap">
+                  <div class="field field-dropdown field-x-small normal">
+                    <div class="field-form">
+                      <!-- 숨겨진 select 태그 -->
+                      <select class="dropdown-select" style="display: none">
+                        >
+                        <option value="전체" active>전체</option>
+                        <option value="귀사">귀사</option>
+                        <option value="귀향">귀향</option>
+                      </select>
+                      <button type="button" class="btn-dropdown" id="homecoming-type">
+                        <span class="text">전체</span>
+                        <span class="placeholder" style="display: none"></span>
+                      </button>
+                      <div class="dropdown-list-box">
+                        <div class="dropdown-list active">
+                          <button type="button" class="btn-dropdown-list" data-value="전체">
+                            <span>전체</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="귀사">
+                            <span>귀사</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="귀향">
+                            <span>귀향</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <legend>소속</legend>
+                <div class="input-wrap">
+                  <div class="field field-dropdown field-x-small normal">
+                    <div class="field-form">
+                      <!-- 숨겨진 select 태그 -->
+                      <select class="dropdown-select" style="display: none">
+                        >
+                        <option value="전체" active>전체</option>
+                        <option value="DS부문">DS부문</option>
+                        <option value="삼성 SDI">삼성 SDI</option>
+                      </select>
+                      <button type="button" class="btn-dropdown" id="department">
+                        <span class="text">전체</span>
+                        <span class="placeholder" style="display: none"></span>
+                      </button>
+                      <div class="dropdown-list-box">
+                        <div class="dropdown-list active">
+                          <button type="button" class="btn-dropdown-list" data-value="전체">
+                            <span>전체</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="DS부문">
+                            <span>DS부문</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="삼성 SDI">
+                            <span>삼성 SDI</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="search-btns">
+          <button type="button" class="btn btn-white btn-reset" onclick="">
+            <span>초기화</span>
+          </button>
+          <button type="button" class="btn btn-blue" onclick="">
+            <span>검색</span>
+          </button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 2/5 update -->
+      <div class="partition-area passenger-list-page">
+        <div class="row">
+          <!-- 우측 데이터 테이블 영역 -->
+          <div class="col col-xl-12">
+            <div class="area-box">
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-left">
+                    <div class="title-box">탑승자 현황</div>
+                    <div class="info-box">
+                      <div class="count-box">
+                        <span class="label">총</span>
+                        <span class="data">{{count}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header-right">
+                    <button type="button" class="btn btn-white btn-delete" onclick="" disabled>
+                      <span>삭제</span>
+                    </button>
+                    <button type="button" class="btn btn-white btn-download" onclick="exportExcel()">
+                      <span>다운로드</span>
+                    </button>
+                    <button type="button" class="btn btn-blue" onclick="">
+                      <span>발송</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="data-table-wrap">
+                  <!-- table left -->
+                  <div class="data-table data-table-fix" id="div_list">
+                    <table id="list"></table>
+                  </div>
+                  <!-- table right -->
+                  <div class="data-table" id="div_list2">
+                    <table id="list2"></table>
+                  </div>
+                </div>
+                <div class="data-list-table-footer">
+                  <div id="pager"></div>
+                  <div class="paging jquery-paging" id="paginate">
+                    <!-- disabled 상태일 때 disabled 추가 클래스 적용 -->
+                    <a class="btn-first disabled" href="#1"></a>
+                    <a class="btn-prev disabled" href="#1"></a>
+                    <a class="on" href="#1">1</a>
+                    <a href="#2">2</a>
+                    <a href="#3">3</a>
+                    <a href="#4">4</a>
+                    <a href="#5">5</a>
+                    <a href="#6">6</a>
+                    <a class="btn-next" href="#2"></a>
+                    <a class="btn-last" href="#6"></a>
+                  </div>
+                  <div class="footer-right">
+                    <div class="input-wrap inline select length-change small">
+                      <div class="field field-dropdown field-x-small normal">
+                        <div class="field-form">
+                          <!-- 숨겨진 select 태그 -->
+                          <select class="dropdown-select" style="display: none">
+                            >
+                            <option value="15개씩 보기" active>15개씩 보기</option>
+                            <option value="30개씩 보기">30개씩 보기</option>
+                            <option value="50개씩 보기">50개씩 보기</option>
+                            <option value="100개씩 보기">100개씩 보기</option>
+                          </select>
+                          <button type="button" class="btn-dropdown">
+                            <span class="text">15개씩 보기</span>
+                            <span class="placeholder" style="display: none">선택</span>
+                          </button>
+                          <div class="dropdown-list-box">
+                            <div class="dropdown-list active">
+                              <button type="button" class="btn-dropdown-list" data-value="15개씩 보기">
+                                <span>15개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="30개씩 보기">
+                                <span>30개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="50개씩 보기">
+                                <span>50개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="100개씩 보기">
+                                <span>100개씩 보기</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../../assets/css/lib/bootstrap-datepicker.standalone.css" />
+  <link rel="stylesheet" href="../../assets/css/lib-style.css" />
+  <link rel="stylesheet" href="../../assets/css/pc-style.css" />
+  <link rel="stylesheet" href="../../assets/css/general.css" />
+  <script src="../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  <script>
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../assets/js/jquery.cookie.js"></script>
+  <script src="../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../assets/js/jquery.uvis.common.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../assets/js/publish.js"></script>
+  
+  <title>Guide | Radio</title>
+</head>
+
+<body style="overflow:hidden; margin:0;">
+  <div class="general-container">
+    <div class="general-area">
+      <div class="general-top">
+        <div class="general-label">Component</div>
+        <div class="general-title">Radio</div>
+      </div>
+      <div class="general-middle">
+
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">radio</div>
+            </div>
+          </div>
+          <div class="component-preview">
+            <input type="radio" id="radio-1" name="radio-1" />
+          </div>
+        </div>
+
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">radio + label</div>
+            </div>
+          </div>
+          <div class="component-preview">
+            <div class="radio-group">
+              <label for="radio-2">
+                <input type="radio" id="radio-2" name="radio-2" value="value1" checked />
+                <span>라벨</span>
+              </label>
+              <label for="radio-3">
+                <input type="radio" id="radio-3" name="radio-3" value="value2" checked disabled />
+                <span>라벨</span>
+              </label>
+              <label for="radio-4">
+                <input type="radio" id="radio-4" name="radio-4" value="value3" />
+                <span>라벨</span>
+              </label>
+              <label for="radio-5">
+                <input type="radio" id="radio-5" name="radio-5" value="value4" disabled />
+                <span>라벨</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script>document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
+</body>
+
+</html>

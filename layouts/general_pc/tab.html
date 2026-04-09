@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../../assets/css/lib/bootstrap-datepicker.standalone.css" />
+  <link rel="stylesheet" href="../../assets/css/lib-style.css" />
+  <link rel="stylesheet" href="../../assets/css/pc-style.css" />
+  <link rel="stylesheet" href="../../assets/css/general.css" />
+  <script src="../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  <script>
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../assets/js/jquery.cookie.js"></script>
+  <script src="../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../assets/js/jquery.uvis.common.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../assets/js/publish.js"></script>
+  
+  <title>Guide | Tab</title>
+</head>
+
+<body style="overflow:hidden; margin:0;">
+  <div class="general-container">
+    <div class="general-area">
+      <div class="general-top">
+        <div class="general-label">Component</div>
+        <div class="general-title">Tab</div>
+      </div>
+      <div class="general-middle">
+
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Size Small - Tab</div>
+            </div>
+          </div>
+          <div class="component-preview" style="flex-direction:column; gap:8px; align-items:flex-start;">
+            <div class="btn-group">
+              <button type="button" class="btn btn-white on" id="tab1">항목</button>
+              <button type="button" class="btn btn-white" id="tab2">항목</button>
+              <button type="button" class="btn btn-white" id="tab3">항목</button>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-white" id="tab4">항목</button>
+              <button type="button" class="btn btn-white on" id="tab5">항목</button>
+              <button type="button" class="btn btn-white" id="tab6">항목</button>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-white" id="day1">일별</button>
+              <button type="button" class="btn btn-white" id="day7">주별</button>
+              <button type="button" class="btn btn-white on" id="day30">월별</button>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-white on" id="tab7">항목</button>
+              <button type="button" class="btn btn-white" id="tab8">항목</button>
+              <button type="button" class="btn btn-white" id="tab9">항목</button>
+              <button type="button" class="btn btn-white" id="tab10">항목</button>
+              <button type="button" class="btn btn-white" id="tab11">항목</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Size Medium - Tab</div>
+            </div>
+          </div>
+          <div class="component-preview" style="flex-direction:column; gap:8px; align-items:flex-start;">
+            <div class="btn-group">
+              <button type="button" class="btn btn-white btn-medium on" id="tab12">항목</button>
+              <button type="button" class="btn btn-white btn-medium" id="tab13">항목</button>
+              <button type="button" class="btn btn-white btn-medium" id="tab14">항목</button>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-white btn-medium on" id="tab15">항목</button>
+              <button type="button" class="btn btn-white btn-medium" id="tab16">항목</button>
+              <button type="button" class="btn btn-white btn-medium" id="tab17">항목</button>
+              <button type="button" class="btn btn-white btn-medium" id="tab18">항목</button>
+              <button type="button" class="btn btn-white btn-medium" id="tab19">항목</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script>document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
+</body>
+
+</html>

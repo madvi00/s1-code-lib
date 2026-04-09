@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+  <link rel="stylesheet" href="../../assets/css/lib/bootstrap-datepicker.standalone.css" />
+  <link rel="stylesheet" href="../../assets/css/lib-style.css" />
+  <link rel="stylesheet" href="../../assets/css/general.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <script src="../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script>
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../assets/js/lib/bootstrap-datepicker.js"></script>
+  <script src="../../assets/js/lib/swiper-bundle.min.js"></script>
+  
+  <script src="../../assets/js/tab.js"></script>
+  <title>Guide | Switch</title>
+  <style>
+    .switch { display: inline-flex; align-items: center; gap: 8px; position: relative; }
+    .switch .switch-input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+    .switch .switch-label { display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+    .switch .switch-ui {
+      position: relative; width: 40px; height: 20px;
+      background-color: var(--semantic-color-icon-gray-light, #c4c4c4);
+      border-radius: 20px; transition: background-color 0.2s ease;
+    }
+    .switch .switch-ui::after {
+      content: ""; position: absolute; top: 2px; left: 2px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background-color: #ffffff;
+      transition: transform 0.2s ease;
+    }
+    .switch .switch-input:checked + .switch-label .switch-ui {
+      background-color: var(--semantic-color-control-background-selected, #1d6ceb);
+    }
+    .switch .switch-input:checked + .switch-label .switch-ui::after {
+      transform: translateX(20px);
+    }
+    .switch .switch-text { font-size: 14px; font-weight: 400; color: var(--semantic-color-control-label-default, #202020); }
+  </style>
+</head>
+
+<body style="overflow:hidden; margin:0;">
+    <div class="general-container">
+      <div class="general-area">
+        <div class="general-top">
+          <div class="general-label">Component</div>
+          <div class="general-title">Switch</div>
+        </div>
+        <div class="general-middle">
+          <div class="component-block">
+            <div class="component-block-header"><div><div class="component-block-title">Switch (without label)</div></div></div>
+            <div class="component-preview">
+              <div class="switch">
+                <input type="checkbox" id="switch-1" class="switch-input" />
+                <label for="switch-1" class="switch-label">
+                  <span class="switch-ui"></span>
+                  <span class="switch-text"></span>
+                </label>
+              </div>
+              <div class="switch">
+                <input type="checkbox" id="switch-2" class="switch-input" checked />
+                <label for="switch-2" class="switch-label">
+                  <span class="switch-ui"></span>
+                  <span class="switch-text"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="component-block">
+            <div class="component-block-header"><div><div class="component-block-title">Switch (with label)</div></div></div>
+            <div class="component-preview">
+              <div class="switch">
+                <input type="checkbox" id="switch-3" class="switch-input" />
+                <label for="switch-3" class="switch-label">
+                  <span class="switch-ui"></span>
+                  <span class="switch-text">라벨</span>
+                </label>
+              </div>
+              <div class="switch">
+                <input type="checkbox" id="switch-4" class="switch-input" checked />
+                <label for="switch-4" class="switch-label">
+                  <span class="switch-ui"></span>
+                  <span class="switch-text">라벨</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<script>document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
+</body>
+
+</html>

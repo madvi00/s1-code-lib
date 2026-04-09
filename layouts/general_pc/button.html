@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../assets/images/favicon/favicon_192.png" />
+  <link rel="stylesheet" href="../../assets/css/lib/bootstrap-datepicker.standalone.css" />
+  <link rel="stylesheet" href="../../assets/css/lib-style.css" />
+  <link rel="stylesheet" href="../../assets/css/pc-style.css" />
+  <link rel="stylesheet" href="../../assets/css/general.css" />
+  <script src="../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  <script>
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../assets/js/jquery.cookie.js"></script>
+  <script src="../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../assets/js/jquery.uvis.common.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../assets/js/publish.js"></script>
+  <script>function chkDelete() {}</script>
+  <title>Guide | Button</title>
+</head>
+
+<body style="overflow:hidden; margin:0;">
+  <div class="general-container">
+    <div class="general-area">
+      <div class="general-top">
+        <div class="general-label">Component</div>
+        <div class="general-title">Button</div>
+      </div>
+      <div class="general-middle">
+
+        <!-- Primary -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Primary (btn-blue)</div>
+              <div class="component-block-subtitle">sm · md · lg · disabled</div>
+            </div>
+          </div>
+          <div class="component-preview" style="gap:12px; flex-wrap:wrap; align-items:center;">
+            <button type="button" class="btn btn-blue" onclick="chkDelete()">
+              <span>라벨</span>
+            </button>
+            <button type="button" class="btn btn-blue btn-medium" onclick="chkDelete()">
+              <span>라벨</span>
+            </button>
+            <button type="button" class="btn btn-blue btn-large" onclick="chkDelete()">
+              <span>라벨</span>
+            </button>
+            <button type="button" class="btn btn-blue" disabled>
+              <span>라벨</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Secondary -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Secondary (btn-white)</div>
+              <div class="component-block-subtitle">sm · md · lg · disabled</div>
+            </div>
+          </div>
+          <div class="component-preview" style="gap:12px; flex-wrap:wrap; align-items:center;">
+            <button type="button" class="btn btn-white" onclick="chkDelete()">
+              <span>라벨</span>
+            </button>
+            <button type="button" class="btn btn-white btn-medium" onclick="chkDelete()">
+              <span>라벨</span>
+            </button>
+            <button type="button" class="btn btn-white btn-large" onclick="chkDelete()">
+              <span>라벨</span>
+            </button>
+            <button type="button" class="btn btn-white" disabled>
+              <span>라벨</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Blue Line -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Blue Line (btn-default)</div>
+              <div class="component-block-subtitle">sm · md · lg · disabled</div>
+            </div>
+          </div>
+          <div class="component-preview" style="gap:12px; flex-wrap:wrap; align-items:center;">
+            <button type="button" class="btn btn-default" onclick="chkDelete()">
+              <span>라벨</span>
+            </button>
+            <button type="button" class="btn btn-default btn-medium" onclick="chkDelete()">
+              <span>라벨</span>
+            </button>
+            <button type="button" class="btn btn-default btn-large" onclick="chkDelete()">
+              <span>라벨</span>
+            </button>
+            <button type="button" class="btn btn-default" disabled>
+              <span>라벨</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Icon Type -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Icon Type</div>
+              <div class="component-block-subtitle">sm · md · lg · disabled</div>
+            </div>
+          </div>
+          <div class="component-preview" style="gap:12px; flex-wrap:wrap; align-items:center;">
+            <button type="button" class="btn btn-white" onclick="chkDelete()">
+              <i class="icon map"></i>
+              <span>라벨</span>
+            </button>
+            <button type="button" class="btn btn-white btn-medium" onclick="chkDelete()">
+              <i class="icon map"></i>
+              <span>라벨</span>
+            </button>
+            <button type="button" class="btn btn-white btn-large" onclick="chkDelete()">
+              <i class="icon map"></i>
+              <span>라벨</span>
+            </button>
+            <button type="button" class="btn btn-white" disabled>
+              <i class="icon map"></i>
+              <span>라벨</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Assist Type -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Assist Type (btn-assist)</div>
+              <div class="component-block-subtitle">normal · disabled · icon · icon disabled</div>
+            </div>
+          </div>
+          <div class="component-preview" style="gap:12px; flex-wrap:wrap; align-items:center;">
+            <button type="button" class="btn btn-assist" onclick="chkDelete()">
+              <span>보조버튼</span>
+            </button>
+            <button type="button" class="btn btn-assist" disabled>
+              <span>보조버튼</span>
+            </button>
+            <button type="button" class="btn btn-assist" onclick="chkDelete()">
+              <i class="icon download"></i>
+              <span>보조버튼</span>
+            </button>
+            <button type="button" class="btn btn-assist" disabled>
+              <i class="icon download"></i>
+              <span>보조버튼</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Text Type -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Text Type (btn-text)</div>
+              <div class="component-block-subtitle">primary · secondary · white</div>
+            </div>
+          </div>
+          <div class="component-preview" style="gap:12px; flex-wrap:wrap; align-items:center;">
+            <button type="button" class="btn btn-text-primary">
+              <span>보조버튼 primary</span>
+            </button>
+            <button type="button" class="btn btn-text-primary" disabled>
+              <span>보조버튼 primary disabled</span>
+            </button>
+            <button type="button" class="btn btn-text-secondary">
+              <span>보조버튼 secondary</span>
+            </button>
+            <button type="button" class="btn btn-text-secondary" disabled>
+              <span>보조버튼 secondary disabled</span>
+            </button>
+            <span style="display:inline-flex; gap:12px; background:#e9e9e9; padding:8px 12px; border-radius:4px;">
+              <button type="button" class="btn btn-text-white">
+                <span>보조버튼 white</span>
+              </button>
+              <button type="button" class="btn btn-text-white" disabled>
+                <span>보조버튼 white disabled</span>
+              </button>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script>document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
+</body>
+
+</html>

@@ -1,0 +1,1035 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript">
+    sessionStorage.setItem('contextpath', '/uvis')
+    sessionStorage.setItem('langSet', 'ko')
+    //////////달력 설정//////////
+    var cldMsg_prevMonth = '이전 달' // 이전 달
+    var cldMsg_nextMonth = '다음 달' // 다음 달
+    var cldMsg_prevYear = '이전 년도' // 이전 년도
+    var cldMsg_nextYear = '다음 년도' // 다음 년도
+    var cldMsg_prev = '이전' // 이전
+    var cldMsg_next = '다음' // 다음
+    //////////달력 설정//////////
+    //////////jquery.uvis.common.js 다국어//////////
+    var jquery_uvis_common_checkPasswordRegex1 = '비밀번호에는 공백을 입력할 수 없습니다.' // 비밀번호에는 공백을 입력할 수 없습니다.
+    var jquery_uvis_common_checkPasswordRegex2 = '새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.' // 새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.
+    var jquery_uvis_common_ajaxErrorMessage0 = '접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.' // 접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage1 = '장시간 미사용으로 로그아웃 되었습니다.\r\n로그인 페이지로 이동 합니다.' // 장시간 미사용으로 로그아웃 되었습니다.\\r\\n로그인 페이지로 이동 합니다.
+    var jquery_uvis_common_ajaxErrorMessage2 = '에러가 발생하였습니다.\r\n네트워크 상태를 확인해주세요.' // 에러가 발생하였습니다.\\r\\n네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage3 = '에러가 발생하였습니다.\r\n접근이 거부되었습니다.\n\n새로고침 또는 로그인을 다시 해주세요.' // 에러가 발생하였습니다.\\r\\n접근이 거부되었습니다.\\n\\n새로고침 또는 로그인을 다시 해주세요.
+    var jquery_uvis_common_ajaxErrorMessage4 = '에러가 발생하였습니다.\r\nURL을 찾을 수 없습니다.' // 에러가 발생하였습니다.\\r\\nURL을 찾을 수 없습니다.
+    var jquery_uvis_common_ajaxErrorMessage5 = '에러가 발생하였습니다.\r\n내부 서버 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n내부 서버 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage6 = '에러가 발생하였습니다.\r\n파싱 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n파싱 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage7 = '에러가 발생하였습니다.\r\n실행시간이 지연되어 타임아웃이 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n실행시간이 지연되어 타임아웃이 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage8 = '에러가 발생하였습니다.\r\n알 수 없는 에러입니다.\n\n' // 에러가 발생하였습니다.\\r\\n알 수 없는 에러입니다.\\n\\n
+    var jquery_uvis_common_isValidDate1 = '잘못된 날짜형식 입니다.\n\r입력하신 문자열 길이를 확인해주세요.' // 잘못된 날짜형식 입니다.\\n\\r입력하신 문자열 길이를 확인해주세요.
+    var jquery_uvis_common_isValidDate21 = '잘못된 날짜형식 입니다.\n\r' // 잘못된 날짜형식 입니다.\\n\\r
+    var jquery_uvis_common_isValidDate22 = '월은 존재하지 않는 월입니다.' // 월은 존재하지 않는 월입니다.
+    var jquery_uvis_common_isValidDate31 = '잘못된 날짜형식 입니다.\n\r해당 월은' // 잘못된 날짜형식 입니다.\\n\\r해당 월은
+    var jquery_uvis_common_isValidDate32 = '일 까지입니다.' // 일 까지입니다.
+    var jquery_uvis_common_isValidDate4 = '잘못된 날짜형식 입니다.' // 잘못된 날짜형식 입니다.
+    var jquery_uvis_common_checkFileExt1 = '정상적인 파일이 아닙니다.' // 정상적인 파일이 아닙니다.
+    var jquery_uvis_common_checkFileExt2 = '파일만 업로드 가능 합니다.' // 파일만 업로드 가능 합니다.
+    var jquery_uvis_common_downloadCapture1 = '인터넷 익스플로러는 지원하지 않습니다.' // 인터넷 익스플로러는 지원하지 않습니다.
+    var jquery_uvis_common_downloadCapture2 = '이미지로 변환 중 에러가 발생하였습니다.' // 이미지로 변환 중 에러가 발생하였습니다.
+    //////////jquery.uvis.common.js 다국어//////////
+    var termsFilter = ['img', 'a', 'p', 'br', 'span', 'b', 'strong', 'u', 'colgroup', 'col', 'table', 'tbody', 'tr', 'td', 'ul', 'li', 'dl', 'dd', 'dt']
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <!-- CSS resource load -->
+  <link href="../../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../../assets/css/lib/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../../../assets/js/jquery-ui.js"></script>
+  <script src="../../../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../../../assets/js/bootstrap.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../../../assets/js/popper.min.js"></script>
+  <script src="../../../../assets/js/datatables.min.js"></script>
+  <script src="../../../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../../../assets/js/jquery.cookie.js"></script>
+  <script src="../../../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../../../assets/js/jquery.uvis.common.js"></script>
+  <script src="../../../../assets/js/highcharts.js"></script>
+  <script src="../../../../assets/js/exporting.js"></script>
+  <script src="../../../../assets/js/canvg.js"></script>
+  <script src="../../../../assets/js/rgbcolor.min.js"></script>
+  <script src="../../../../assets/js/html2canvas.js"></script>
+  <script src="../../../../assets/js/es6-promise.auto.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../../../assets/js/jquery.jqGrid.src.js"></script>
+  <script src="../../../../assets/js/jquery.paging.js"></script>
+  <script src="../../../../assets/js/publish.js"></script>
+  <script src="../../../../assets/js/amobe_datepicker.js"></script>
+  <script src="../../../../assets/js/amobe_dropdown.js"></script>
+  <script src="../../../../assets/js/amobe_header.js"></script>
+  <script src="../../../../assets/js/amobe_input.js"></script>
+  <script src="../../../../assets/js/amobe_mapList.js"></script>
+  <script src="../../../../assets/js/amobe_modal.js"></script>
+  <script src="../../../../assets/js/amobe_multiMap.js"></script>
+  <script src="../../../../assets/js/amobe_rangeTimePicker.js"></script>
+  <script src="../../../../assets/js/amobe_routeAccordion.js"></script>
+  <script src="../../../../assets/js/amobe_swiper.js"></script>
+  <script src="../../../../assets/js/amobe_tab.js"></script>
+  <script src="../../../../assets/js/amobe_table.js"></script>
+  <script src="../../../../assets/js/amobe_timePicker.js"></script>
+  <title>차량운행관리 시스템 - 배차 관리</title>
+  <script type="text/javascript">
+    const __DOMAIN_NAME = 'uvis';
+    const __DOMAIN_CONF = Object.assign({}, parent?.['__DOMAIN_CONF'] || {}, {
+      context_path: '',
+      context_time: 1764553429574,
+      js_base_name: 'u2',
+      language: 'ko',
+      manual_path: 'manual',
+      manual_root: '/ssws',
+      tab_max_cnt: '10',
+    });
+    const _SITE_SESSION = Object.assign({}, parent?.['_SITE_SESSION'] || {}, {
+      csrf: {
+        name: '_csrf',
+        value: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1LXZpcy5jb20tczEiLCJpc3MiOiJ3d3cudS12aXMuY29tIiwiX3Rva2VuIjoiS0ZJV1wvcGFcLzJqbGtyTEhxTTU5aHpxaEU1b1daKzZSaUNyRlwvN1ZzM1FadFdpTDRQdGtOYjBrRmlDQ2xKbGFVXC8iLCJfdXVpZCI6ImY3ZGZiOTBmLTZiNWItNGI4Mi1iNWYyLTJiNjc2MDgzODkzMCJ9.UacJgCp1Bvu_pmArWQEQJMrQ73KmC0OCT_sbdGBtuWg',
+        result: false,
+      },
+      groupLevel: 1,
+      isGoogleMap: true,
+      sessionScope: {
+        electricYn: 'N',
+        financeYn: 'N',
+        notifyFlag: 'N',
+        rentYn: 'Y',
+        safeSchoolBusYn: 'N',
+        schoolBusYn: 'N',
+        sensorSpeedYn: 'N',
+        temperatureFlag: 'Y'
+      },
+      userId: 'admin0011',
+    });
+    // jqGrid Local Data
+    const _JQ_GRID_DATA = [{
+        rownum: 10000,
+        category: '노선추가',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: '동탄신도시a-1',
+        region: '서울시 송파구',
+        vehicleNumber: '미배차',
+        responsibleCarrier: '가자관광',
+        operatingCarrier: '-',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9999,
+        category: '노선추가',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '미배차',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '-',
+        claimAmount: '160,600',
+        lastRegistrant: '-',
+        lastRegistrationDate: '-',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9998,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9997,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9996,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9995,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9994,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9993,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9992,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9991,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9990,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9989,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9988,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9987,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+      {
+        rownum: 9986,
+        category: '운행계획',
+        operationDate: '2025.11.11',
+        departureTime: '05:44',
+        arrivalTime: '07:00',
+        operationType: '출근',
+        routeNumber: 'I-1212',
+        routeName: 'HPC센터 사내 셔틀_HPC센터 DSR동',
+        region: '서울시 송파구',
+        vehicleNumber: '경기 79사 1641',
+        responsibleCarrier: '하나신정관광운수사',
+        operatingCarrier: '하나신정관광운수사',
+        claimAmount: '160,600',
+        lastRegistrant: 'hwajin1772',
+        lastRegistrationDate: '25.11.12 11:22:33',
+        operationStatus: '노선불일치',
+        pushNotification: true,
+      },
+    ];
+    // 달력 설정
+    var cldMsg_prevMonth = '이전 달';
+    var cldMsg_nextMonth = '다음 달';
+    var cldMsg_prevYear = '이전 년도';
+    var cldMsg_nextYear = '다음 년도';
+    var cldMsg_prev = '이전';
+    var cldMsg_next = '다음';
+    $(document).ready(function() {
+      setPageDefault();
+      // jqGrid 높이 계산
+      calculateJqGridHeight({
+        initialHeight: 510,
+        maxHeight: 510,
+        minHeight: 510,
+      });
+      // jqGrid 리사이즈 설정
+      $(window).resize(function() {
+        $('#gview_list').setGridWidth($('#div_list').width(), true);
+      });
+    });
+
+    function setPageDefault() {
+      listLoad(false, 1);
+    }
+
+    function setOperationDateType(type) {
+      $('#operationDateType').val(type);
+      $('.btn-group button').removeClass('on');
+      $('#operationDateType_' + type).addClass('on');
+    }
+
+    function searchFormInit() {
+      $('#search_routeName').val('');
+      $('#search_vehicleNumber').val('');
+      setOperationDateType('일간');
+      $('#dateRangeStart').val('');
+      $('#dateRangeEnd').val('');
+      $('#operationType').val('전체');
+      $('#transportCompany').val('전체');
+      $('input[name^="operationStatus_"]').prop('checked', false);
+      $('#operationStatus_notInOperation').prop('checked', true);
+      $('#operationStatus_operationCompleted').prop('checked', true);
+    }
+
+    function searchList() {
+      listLoad(true, 1);
+    }
+
+    function listLoad(firstNoLoad, page) {
+      // jqGrid 리스트 초기화, 생성
+      $('#list').jqGrid('GridUnload');
+      var grid = jQuery('#list');
+      // 데이터가 없거나 부족할 때 빈 행 추가
+      var displayData = _JQ_GRID_DATA || [];
+      var emptyRow = {
+        rownum: '',
+        category: '',
+        operationDate: '',
+        departureTime: '',
+        arrivalTime: '',
+        operationType: '',
+        routeNumber: '',
+        routeName: '',
+        region: '',
+        vehicleNumber: '',
+        responsibleCarrier: '',
+        operatingCarrier: '',
+        claimAmount: '',
+        lastRegistrant: '',
+        lastRegistrationDate: '',
+        operationStatus: '',
+        pushNotification: false,
+        isEmpty: true,
+      };
+      while (displayData.length < 15) {
+        displayData.push(Object.assign({}, emptyRow));
+      }
+      // 초기 높이 계산
+      var initialHeight = calculateJqGridHeight();
+      $('#searchForm #page').val(page);
+      // 2/25 update : 컬럼 너비 조절 및 pushNotificationFormatter 수정
+      // jqGrid 리스트 초기화, 생성
+      $('#gview_list').jqGrid('GridUnload');
+      var grid = jQuery('#gview_list');
+      grid.jqGrid({
+        datatype: 'local',
+        data: _JQ_GRID_DATA,
+        colNames: [
+          '순번',
+          '구분',
+          '운행일자',
+          '출발',
+          '도착',
+          '운행구분',
+          '노선번호',
+          '노선명',
+          '권역',
+          '차량번호',
+          '담당운수사',
+          '운행운수사',
+          '청구금액',
+          '최종등록자',
+          '최종 등록 일시',
+          '운행현황',
+          '푸시알림',
+        ],
+        colModel: [{
+            name: 'rownum',
+            index: 'rownum',
+            width: 64,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'category',
+            index: 'category',
+            width: 80,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'operationDate',
+            index: 'operationDate',
+            width: 80,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'departureTime',
+            index: 'departureTime',
+            width: 72,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'arrivalTime',
+            index: 'arrivalTime',
+            width: 72,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'operationType',
+            index: 'operationType',
+            width: 96,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'routeNumber',
+            index: 'routeNumber',
+            width: 80,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'routeName',
+            index: 'routeName',
+            width: 250,
+            align: 'left',
+            sortable: false,
+            classes: 'link'
+          },
+          {
+            name: 'region',
+            index: 'region',
+            width: 112,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'vehicleNumber',
+            index: 'vehicleNumber',
+            width: 112,
+            align: 'center',
+            sortable: false,
+            classes: 'link'
+          },
+          {
+            name: 'responsibleCarrier',
+            index: 'responsibleCarrier',
+            width: 112,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'operatingCarrier',
+            index: 'operatingCarrier',
+            width: 112,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'claimAmount',
+            index: 'claimAmount',
+            width: 96,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'lastRegistrant',
+            index: 'lastRegistrant',
+            width: 112,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'lastRegistrationDate',
+            index: 'lastRegistrationDate',
+            width: 120,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'operationStatus',
+            index: 'operationStatus',
+            width: 112,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'pushNotification',
+            index: 'pushNotification',
+            width: 110,
+            align: 'center',
+            sortable: false,
+            formatter: pushNotificationFormatter
+          },
+        ],
+        rowNum: 15,
+        sortable: false,
+        autowidth: true,
+        scrollRows: true,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        multiselect: true,
+        multiselectWidth: 43,
+        height: initialHeight,
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 0,
+        beforeSelectRow: function(rowid, e) {
+          var rowData = grid.jqGrid('getRowData', rowid);
+          // 빈 행은 선택 불가능
+          if (rowData.isEmpty === 'true' || (!rowData.rownum && !rowData.routeName && !rowData.category)) {
+            return false;
+          }
+          return true;
+        },
+        loadComplete: function(data) {
+          // 그리드 너비 설정 (DOM 렌더링 완료 후 실행)
+          setTimeout(function() {
+            grid.setGridWidth($('#div_list').width(), true);
+          }, 0);
+          // 빈 행 처리
+          var ids = grid.jqGrid('getDataIDs');
+          for (var i = 0; i < ids.length; i++) {
+            var rowData = grid.jqGrid('getRowData', ids[i]);
+            if (rowData.isEmpty === 'true' || (!rowData.rownum && !rowData.routeName && !rowData.category)) {
+              // 빈 행의 체크박스 비활성화 및 숨김
+              var checkbox = grid.find('tr#' + ids[i] + ' input[type="checkbox"]');
+              checkbox.prop('disabled', true).hide();
+              // 빈 행에 클래스 추가
+              grid.find('tr#' + ids[i]).addClass('empty-row');
+              // 빈 행의 모든 셀 내용 제거
+              grid
+                .find('tr#' + ids[i] + ' td')
+                .not(':first')
+                .html('');
+            }
+          }
+        },
+      });
+    }
+
+    function pushNotificationFormatter(cellvalue, options, rowObject) {
+      if (cellvalue === true || cellvalue === 'true' || rowObject.pushNotification === true || rowObject.pushNotification === 'true') {
+        return '<button type="button" class="btn btn-white btn-notice"><i class="icon icon-nottice"></i><span>푸시알림</span></button>';
+      }
+      return '';
+    }
+
+    function exportExcel() {
+      if (jQuery('#gview_list').jqGrid('getGridParam', 'records') < 1) {
+        alert('운행실적 데이터가 없습니다.');
+        return false;
+      }
+      // 엑셀 다운로드 로직
+      alert('엑셀 다운로드 기능을 구현해주세요.');
+    }
+  </script>
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <form id="searchForm" name="searchForm" onsubmit="return false;">
+            <input type="hidden" id="rows" name="rows" value="15" />
+            <input type="hidden" id="page" name="page" value="1" />
+            <div class="row">
+              <div class="input-group">
+                <legend>운행일자</legend>
+                <div class="input-wrap date">
+                  <input type="text" class="datepicker input-xsmall" id="operationDate" name="operationDate" placeholder="날짜를 선택하세요" value="" />
+                  <i class="icon icon-calendar"></i>
+                </div>
+              </div>
+              <div class="input-group">
+                <legend>운수사</legend>
+                <div class="input-wrap">
+                  <div class="field field-dropdown field-x-small normal">
+                    <div class="field-form">
+                      <!-- 숨겨진 select 태그 -->
+                      <select class="dropdown-select" style="display: none">
+                        >
+                        <option value="전체" active>전체</option>
+                        <option value="하나신정관광운수사">하나신정관광운수사</option>
+                        <option value="가자관광">가자관광</option>
+                      </select>
+                      <button type="button" class="btn-dropdown" id="transportCompany">
+                        <span class="text">전체</span>
+                        <span class="placeholder" style="display: none"></span>
+                      </button>
+                      <div class="dropdown-list-box">
+                        <div class="dropdown-list active">
+                          <button type="button" class="btn-dropdown-list" data-value="전체">
+                            <span>전체</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="하나신정관광운수사">
+                            <span>하나신정관광운수사</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="가자관광">
+                            <span>가자관광</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <legend>노선검색</legend>
+                <div class="input-wrap">
+                  <input id="search_routeName" name="search_routeName" class="input-xsmall" placeholder="노선명 입력" type="text" value="" @@property />
+                </div>
+              </div>
+              <div class="input-group">
+                <legend>차량검색</legend>
+                <div class="input-wrap">
+                  <input id="search_vehicleNumber" name="search_vehicleNumber" class="input-xsmall" placeholder="단말기번호, 차량번호 입력" type="text" value="" @@property />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-group">
+                <legend>운행구분</legend>
+                <div class="input-wrap">
+                  <div class="field field-dropdown field-x-small normal">
+                    <div class="field-form">
+                      <!-- 숨겨진 select 태그 -->
+                      <select class="dropdown-select" style="display: none">
+                        >
+                        <option value="전체" active>전체</option>
+                        <option value="출근">출근</option>
+                      </select>
+                      <button type="button" class="btn-dropdown" id="operationType">
+                        <span class="text">전체</span>
+                        <span class="placeholder" style="display: none"></span>
+                      </button>
+                      <div class="dropdown-list-box">
+                        <div class="dropdown-list active">
+                          <button type="button" class="btn-dropdown-list" data-value="전체">
+                            <span>전체</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="출근">
+                            <span>출근</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <legend>권역</legend>
+                <div class="input-wrap">
+                  <div class="field field-dropdown field-x-small normal">
+                    <div class="field-form">
+                      <!-- 숨겨진 select 태그 -->
+                      <select class="dropdown-select" style="display: none">
+                        >
+                        <option value="전체" active>전체</option>
+                        <option value="서울시 송파구">서울시 송파구</option>
+                      </select>
+                      <button type="button" class="btn-dropdown" id="region">
+                        <span class="text">전체</span>
+                        <span class="placeholder" style="display: none"></span>
+                      </button>
+                      <div class="dropdown-list-box">
+                        <div class="dropdown-list active">
+                          <button type="button" class="btn-dropdown-list" data-value="전체">
+                            <span>전체</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="서울시 송파구">
+                            <span>서울시 송파구</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 3/5 update : 운행대기 항목 추가 -->
+              <div class="input-group">
+                <legend>배차상태</legend>
+                <div class="checkbox-group">
+                  <label for="operationStatus_beforeDispatch">
+                    <input type="checkbox" id="operationStatus_beforeDispatch" name="operationStatus_beforeDispatch" />
+                    <span>배차전</span>
+                  </label>
+                  <label for="operationStatus_operationWaiting">
+                    <input type="checkbox" id="operationStatus_operationWaiting" name="operationStatus_operationWaiting" />
+                    <span>운행대기</span>
+                  </label>
+                  <label for="operationStatus_operationEnded">
+                    <input type="checkbox" id="operationStatus_operationEnded" name="operationStatus_operationEnded" />
+                    <span>운행종료</span>
+                  </label>
+                  <label for="operationStatus_routeMismatch">
+                    <input type="checkbox" id="operationStatus_routeMismatch" name="operationStatus_routeMismatch" />
+                    <span>노선불일치</span>
+                  </label>
+                  <label for="operationStatus_uninstalledDispatch">
+                    <input type="checkbox" id="operationStatus_uninstalledDispatch" name="operationStatus_uninstalledDispatch" />
+                    <span>미장착배차</span>
+                  </label>
+                  <label for="operationStatus_noOperationRecord">
+                    <input type="checkbox" id="operationStatus_noOperationRecord" name="operationStatus_noOperationRecord" />
+                    <span>운행기록없음</span>
+                  </label>
+                  <label for="operationStatus_notInOperation">
+                    <input type="checkbox" id="operationStatus_notInOperation" name="operationStatus_notInOperation" />
+                    <span>미운행</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="search-btns">
+          <button type="button" class="btn btn-white btn-reset" onclick="searchFormInit();">
+            <span>초기화</span>
+          </button>
+          <button type="button" class="btn btn-blue" onclick="searchList();">
+            <span>검색</span>
+          </button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- data table -->
+      <div class="area-box">
+        <div class="data-list-table">
+          <div class="data-list-table-header">
+            <div class="header-left">
+              <div class="title-box">배차 관리 리스트</div>
+              <div class="info-box">
+                <div class="count-box">
+                  <span class="label">총</span>
+                  <span class="data">{{count}}</span>
+                </div>
+              </div>
+            </div>
+            <!-- 2/25 update -->
+            <div class="header-right">
+              <!-- 2/25 update : 리스트 설정 버튼 추가 -->
+              <button type="button" class="btn btn-white" onclick="">
+                <span>리스트 설정</span>
+              </button>
+              <button type="button" class="btn btn-white" onclick="">
+                <span>리스트 설정</span>
+              </button>
+              <button type="button" class="btn btn-white" onclick="">
+                <span>다운로드</span>
+              </button>
+              <div class="divider-v"></div>
+              <button type="button" class="btn btn-white" onclick="" disabled>
+                <span>배차취소</span>
+              </button>
+              <button type="button" class="btn btn-white" onclick="" disabled>
+                <span>다중배차</span>
+              </button>
+              <button type="button" class="btn btn-white" onclick="" disabled>
+                <span>기존배차</span>
+              </button>
+              <div class="divider-v"></div>
+              <button type="button" class="btn btn-blue" onclick="">
+                <span>운행추가</span>
+              </button>
+            </div>
+          </div>
+          <div class="data-table" id="div_list">
+            <table id="gview_list"></table>
+          </div>
+          <div class="data-list-table-footer">
+            <div id="pager"></div>
+            <div class="paging jquery-paging" id="paginate">
+              <!-- disabled 상태일 때 disabled 추가 클래스 적용 -->
+              <a class="btn-first disabled" href="#1"></a>
+              <a class="btn-prev disabled" href="#1"></a>
+              <a class="on" href="#1">1</a>
+              <a href="#2">2</a>
+              <a href="#3">3</a>
+              <a href="#4">4</a>
+              <a href="#5">5</a>
+              <a href="#6">6</a>
+              <a class="btn-next" href="#2"></a>
+              <a class="btn-last" href="#6"></a>
+            </div>
+            <div class="footer-right">
+              <div class="input-wrap inline select length-change small">
+                <div class="field field-dropdown field-x-small normal">
+                  <div class="field-form">
+                    <!-- 숨겨진 select 태그 -->
+                    <select class="dropdown-select" style="display: none">
+                      >
+                      <option value="15개씩 보기" active>15개씩 보기</option>
+                      <option value="30개씩 보기">30개씩 보기</option>
+                      <option value="50개씩 보기">50개씩 보기</option>
+                      <option value="100개씩 보기">100개씩 보기</option>
+                    </select>
+                    <button type="button" class="btn-dropdown">
+                      <span class="text">15개씩 보기</span>
+                      <span class="placeholder" style="display: none">선택</span>
+                    </button>
+                    <div class="dropdown-list-box">
+                      <div class="dropdown-list active">
+                        <button type="button" class="btn-dropdown-list" data-value="15개씩 보기">
+                          <span>15개씩 보기</span>
+                        </button>
+                      </div>
+                      <div class="dropdown-list">
+                        <button type="button" class="btn-dropdown-list" data-value="30개씩 보기">
+                          <span>30개씩 보기</span>
+                        </button>
+                      </div>
+                      <div class="dropdown-list">
+                        <button type="button" class="btn-dropdown-list" data-value="50개씩 보기">
+                          <span>50개씩 보기</span>
+                        </button>
+                      </div>
+                      <div class="dropdown-list">
+                        <button type="button" class="btn-dropdown-list" data-value="100개씩 보기">
+                          <span>100개씩 보기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //data table -->
+    </div>
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+</body>
+
+</html>

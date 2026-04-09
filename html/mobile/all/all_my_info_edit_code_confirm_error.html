@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <title>내 정보 | 삼성통근버스</title>
+  <!-- CSS resource load -->
+  <link href="../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script src="../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../assets/js/lib/bootstrap-datepicker.js"></script>
+  <script src="../../../assets/js/common.js"></script>
+  <script src="../../../assets/js/datepicker.js"></script>
+  <script src="../../../assets/js/dropdown.js"></script>
+  <script src="../../../assets/js/file.js"></script>
+  <script src="../../../assets/js/input.js"></script>
+  <script src="../../../assets/js/modal.js"></script>
+  <script src="../../../assets/js/multiDropdown.js"></script>
+  <script src="../../../assets/js/rangeTimePicker.js"></script>
+  <script src="../../../assets/js/routeAccordion.js"></script>
+  <script src="../../../assets/js/tab.js"></script>
+  <script src="../../../assets/js/timePicker.js"></script>
+</head>
+
+<body>
+  <!-- .my-info-edit : 내정보 페이지 전용 class -->
+  <div class="wrapper my-info-edit">
+    <!-- header -->
+    <header class="header">
+      <button type="button" class="btn-left"></button>
+      <h1 class="title-box">내 정보</h1>
+    </header>
+    <!-- // header -->
+    <main class="main-container">
+      <section class="account-container">
+        <div class="account-area">
+          <div class="account-middle">
+            <div class="field-container">
+              <div class="field field-text">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <span class="field-label">이름</span>
+                  </div>
+                  <div class="field-text-box">
+                    <div class="field-text">
+                      <span class="desc">홍길동</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="field field-text">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <span class="field-label">사업장</span>
+                  </div>
+                  <div class="field-text-box">
+                    <div class="field-text">
+                      <span class="desc">삼성전자(기흥/화성)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="field field-text">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <span class="field-label">소속 회사</span>
+                  </div>
+                  <div class="field-text-box">
+                    <div class="field-text">
+                      <span class="desc">OO관광</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="field field-text">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <span class="field-label">아이디</span>
+                  </div>
+                  <div class="field-text-box">
+                    <div class="field-text">
+                      <span class="desc">s1design</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 2/2 update -->
+            <div class="field-container">
+              <div class="field field-email">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <span class="field-label">이메일</span>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-wrap">
+                      <div class="input-box">
+                        <input id="input_id" name="input_id" class="clearable" placeholder="" type="text" value="s1design">
+                        <i class="icon-clear"></i>
+                      </div>
+                    </div>
+                    <div class="at-box">@</div>
+                    <div class="field field-dropdown" id="dropdown_7235heq9">
+                      <div class="field-form">
+                        <!-- 숨겨진 select 태그 -->
+                        <select class="dropdown-select" style="display: none" id="dropdown_select_fghti2ij5" name="dropdown_fghti2ij5">
+                          <option value="직접입력" active="">직접입력</option>
+                          <option value="naver.com">naver.com</option>
+                          <option value="kakao.com">kakao.com</option>
+                          <option value="gmail.com">gmail.com</option>
+                        </select>
+                        <button type="button" class="btn-dropdown" id="dropdown_fghti2ij5">
+                          <span class="text">직접입력</span>
+                          <span class="placeholder" style="display: none"></span>
+                        </button>
+                        <span class="dropdown-portal-home" aria-hidden="true"></span>
+                        <div class="dropdown-list-box">
+                          <div class="dim"></div>
+                          <div class="dropdown-list-wrap">
+                            <div class="dropdown-list-header">
+                              <div class="title-box">이메일 선택</div>
+                              <button type="button" class="btn-close"></button>
+                            </div>
+                            <div class="dropdown-list-body">
+                              <div class="dropdown-list active">
+                                <button type="button" class="btn-dropdown-list" data-value="직접입력">
+                                  <span>직접입력</span>
+                                </button>
+                              </div>
+                              <div class="dropdown-list">
+                                <button type="button" class="btn-dropdown-list" data-value="naver.com">
+                                  <span>naver.com</span>
+                                </button>
+                              </div>
+                              <div class="dropdown-list">
+                                <button type="button" class="btn-dropdown-list" data-value="kakao.com">
+                                  <span>kakao.com</span>
+                                </button>
+                              </div>
+                              <div class="dropdown-list">
+                                <button type="button" class="btn-dropdown-list" data-value="gmail.com">
+                                  <span>gmail.com</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-wrap">
+                      <div class="input-box">
+                        <input id="input_01" name="input_01" class="clearable" placeholder="" type="text" value="samsung.com" />
+                        <i class="icon-clear"></i>
+                      </div>
+                    </div>
+                    <div class="input-desc-box">
+                      <p class="input-desc">입력하신 이메일로 ID 또는 비밀번호를 찾을 수 있습니다.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- // 2/2 update -->
+            <div class="field-container">
+              <div class="field field-input">
+                <div class="field-form">
+                  <div class="field-label-box">
+                    <label for="input_02" class="field-label">휴대전화번호</label>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-wrap">
+                      <div class="input-box">
+                        <input id="input_02" name="input_02" placeholder="입력해 주세요." type="text" value="01087654321" />
+                        <i class="icon-clear"></i>
+                      </div>
+                      <div class="input-button-box">
+                        <button type="button" class="btn btn-white">
+                          <span>재요청</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group error">
+                <div class="input-wrap">
+                  <div class="input-box">
+                    <input id="input_03" name="input_03" class="clearable" placeholder="입력해 주세요." type="text" value="123456" />
+                    <i class="icon-clear"></i>
+                    <div class="time">
+                      <span>03:00</span>
+                    </div>
+                  </div>
+                  <div class="input-button-box">
+                    <button type="button" class="btn btn-white">
+                      <span>확인</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="input-desc-box">
+                  <p class="input-desc">인증 번호가 일치하지 않습니다. 확인하신 후 다시 입력해 주세요.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sub-btn-box">
+              <button type="button" class="btn-text">비밀번호 변경</button>
+            </div>
+          </div>
+          <div class="account-bottom">
+            <div class="button-box">
+              <button type="button" class="btn btn-blue" disabled>
+                <span>변경</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

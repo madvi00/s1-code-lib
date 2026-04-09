@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <title>배차 관리 | 삼성통근버스</title>
+  <!-- CSS resource load -->
+  <link href="../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script src="../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../assets/js/lib/bootstrap-datepicker.js"></script>
+  <script src="../../../assets/js/common.js"></script>
+  <script src="../../../assets/js/datepicker.js"></script>
+  <script src="../../../assets/js/dropdown.js"></script>
+  <script src="../../../assets/js/file.js"></script>
+  <script src="../../../assets/js/input.js"></script>
+  <script src="../../../assets/js/modal.js"></script>
+  <script src="../../../assets/js/multiDropdown.js"></script>
+  <script src="../../../assets/js/rangeTimePicker.js"></script>
+  <script src="../../../assets/js/routeAccordion.js"></script>
+  <script src="../../../assets/js/tab.js"></script>
+  <script src="../../../assets/js/timePicker.js"></script>
+</head>
+
+<body>
+  <!-- .dispatch-management : 배차 관리 페이지 전용 class -->
+  <div class="wrapper dispatch-management">
+    <!-- 1/28 update -->
+    <nav class="navigation-box">
+      <ul class="navigation">
+        <li class="navigation-list">
+          <button type="button" class="nav home">홈</button>
+        </li>
+        <li class="navigation-list">
+          <button type="button" class="nav dispatch active">배차관리</button>
+        </li>
+        <li class="navigation-list">
+          <button type="button" class="nav tracking">차량위치</button>
+        </li>
+        <li class="navigation-list">
+          <button type="button" class="nav all">전체</button>
+        </li>
+      </ul>
+    </nav>
+    <main class="main-container">
+      <div class="dispatch-list-container">
+        <div class="dispatch-list-area">
+          <div class="dispatch-list-top">
+            <div class="map-filter-box">
+              <div class="map-filter-top">
+                <div class="search-box">
+                  <div class="input-group">
+                    <div class="input-wrap">
+                      <div class="input-box">
+                        <input id="input_search" name="input_search" class="clearable" placeholder="차량번호, 노선명을 입력해 주세요." type="search" value="" />
+                        <i class="icon-clear"></i>
+                        <div class="search-button-box">
+                          <button type="button" class="btn-search"></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="map-filter-middle">
+                <div class="map-filter-box swiper">
+                  <ul class="chip-box swiper-wrapper">
+                    <li class="chip swiper-slide">
+                      <div class="field field-dropdown field-dropdown-type-label field-small has-label">
+                        <div class="field-form">
+                          <!-- 숨겨진 select 태그 -->
+                          <select class="dropdown-select" style="display: none">
+                            >
+                            <option value="전체" active>전체</option>
+                            <option value="여산관광">여산관광</option>
+                            <option value="OO관광">OO관광</option>
+                            <option value="OO관광사">OO관광사</option>
+                            <option value="금성관광">금성관광</option>
+                          </select>
+                          <button type="button" class="btn-dropdown">
+                            <span class="inner-label">
+                              <span>운수사</span>
+                              <strong class="selected-label">전체</strong>
+                            </span>
+                          </button>
+                          <div class="dropdown-list-box">
+                            <div class="dim"></div>
+                            <div class="dropdown-list-wrap">
+                              <div class="dropdown-list-header">
+                                <div class="title-box">운수사 선택</div>
+                                <button type="button" class="btn-close"></button>
+                              </div>
+                              <div class="dropdown-list-body">
+                                <div class="dropdown-list active">
+                                  <button type="button" class="btn-dropdown-list" data-value="전체">
+                                    <span>전체</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="여산관광">
+                                    <span>여산관광</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="OO관광">
+                                    <span>OO관광</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="OO관광사">
+                                    <span>OO관광사</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="금성관광">
+                                    <span>금성관광</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="chip swiper-slide">
+                      <div class="field field-dropdown field-dropdown-type-label field-small has-label">
+                        <div class="field-form">
+                          <!-- 숨겨진 select 태그 -->
+                          <select class="dropdown-select" style="display: none">
+                            >
+                            <option value="전체" active>전체</option>
+                            <option value="출근">출근</option>
+                            <option value="퇴근">퇴근</option>
+                            <option value="셔틀">셔틀</option>
+                          </select>
+                          <button type="button" class="btn-dropdown">
+                            <span class="inner-label">
+                              <span>운행</span>
+                              <strong class="selected-label">전체</strong>
+                            </span>
+                          </button>
+                          <div class="dropdown-list-box">
+                            <div class="dim"></div>
+                            <div class="dropdown-list-wrap">
+                              <div class="dropdown-list-header">
+                                <div class="title-box">운행 구분 선택</div>
+                                <button type="button" class="btn-close"></button>
+                              </div>
+                              <div class="dropdown-list-body">
+                                <div class="dropdown-list active">
+                                  <button type="button" class="btn-dropdown-list" data-value="전체">
+                                    <span>전체</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="출근">
+                                    <span>출근</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="퇴근">
+                                    <span>퇴근</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="셔틀">
+                                    <span>셔틀</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="chip swiper-slide">
+                      <div class="field field-dropdown field-dropdown-type-label field-small has-label">
+                        <div class="field-form">
+                          <!-- 숨겨진 select 태그 -->
+                          <select class="dropdown-select" style="display: none">
+                            >
+                            <option value="전체" active>전체</option>
+                            <option value="배차전">배차전</option>
+                            <option value="운행종료">운행종료</option>
+                            <option value="노선불일치">노선불일치</option>
+                            <option value="미장착배차">미장착배차</option>
+                            <option value="운행기록 없음">운행기록 없음</option>
+                            <option value="미운행">미운행</option>
+                          </select>
+                          <button type="button" class="btn-dropdown">
+                            <span class="inner-label">
+                              <span>현황</span>
+                              <strong class="selected-label">전체</strong>
+                            </span>
+                          </button>
+                          <div class="dropdown-list-box">
+                            <div class="dim"></div>
+                            <div class="dropdown-list-wrap">
+                              <div class="dropdown-list-header">
+                                <div class="title-box">운행 현황 선택</div>
+                                <button type="button" class="btn-close"></button>
+                              </div>
+                              <div class="dropdown-list-body">
+                                <div class="dropdown-list active">
+                                  <button type="button" class="btn-dropdown-list" data-value="전체">
+                                    <span>전체</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="배차전">
+                                    <span>배차전</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="운행종료">
+                                    <span>운행종료</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="노선불일치">
+                                    <span>노선불일치</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="미장착배차">
+                                    <span>미장착배차</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="운행기록 없음">
+                                    <span>운행기록 없음</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="미운행">
+                                    <span>미운행</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="chip swiper-slide">
+                      <div class="range-timepicker-box range range-timepicker-medium">
+                        <div class="range-timepicker-input">
+                          <button type="button" class="time-input">
+                            <span class="label">시간</span>
+                            <span class="data">00:00~23:55</span>
+                          </button>
+                        </div>
+                        <div class="range-timepicker range-timepicker-dropdown">
+                          <div class="dim"></div>
+                          <div class="range-timepicker-picker-container">
+                            <div class="range-timepicker-picker-area">
+                              <div class="range-timepicker-header">
+                                <div class="range-timepicker-title">
+                                  <span>시간 선택</span>
+                                </div>
+                                <button type="button" class="btn-range-timepicker-close" title="시간선택 닫기"></button>
+                              </div>
+                              <div class="range-timepicker-middle">
+                                <div class="range-timepicker-picker">
+                                  <div class="range-timepicker-top">
+                                    <ul class="tabs">
+                                      <li class="tab">
+                                        <a class="on" href="#">시작</a>
+                                      </li>
+                                      <li class="tab">
+                                        <a href="#">종료</a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="range-timepicker-middle">
+                                    <div class="tab-content-box">
+                                      <div class="tab-pannel active">
+                                        <div class="picker">
+                                          <div class="swiper-container hours">
+                                            <div class="swiper-wrapper">
+                                              <div class="hour swiper-slide">00</div>
+                                              <div class="hour swiper-slide">01</div>
+                                              <div class="hour swiper-slide">02</div>
+                                              <div class="hour swiper-slide">03</div>
+                                              <div class="hour swiper-slide">04</div>
+                                              <div class="hour swiper-slide">05</div>
+                                              <div class="hour swiper-slide">06</div>
+                                              <div class="hour swiper-slide">07</div>
+                                              <div class="hour swiper-slide">08</div>
+                                              <div class="hour swiper-slide">09</div>
+                                              <div class="hour swiper-slide">10</div>
+                                              <div class="hour swiper-slide">11</div>
+                                              <div class="hour swiper-slide">12</div>
+                                              <div class="hour swiper-slide">13</div>
+                                              <div class="hour swiper-slide">14</div>
+                                              <div class="hour swiper-slide">15</div>
+                                              <div class="hour swiper-slide">16</div>
+                                              <div class="hour swiper-slide">17</div>
+                                              <div class="hour swiper-slide">18</div>
+                                              <div class="hour swiper-slide">19</div>
+                                              <div class="hour swiper-slide">20</div>
+                                              <div class="hour swiper-slide">21</div>
+                                              <div class="hour swiper-slide">22</div>
+                                              <div class="hour swiper-slide">23</div>
+                                            </div>
+                                          </div>
+                                          <div class="separator-box">
+                                            <div class="separator">:</div>
+                                            <div class="separator">:</div>
+                                            <div class="separator">:</div>
+                                          </div>
+                                          <div class="swiper-container minutes">
+                                            <div class="swiper-wrapper">
+                                              <div class="minute swiper-slide">00</div>
+                                              <div class="minute swiper-slide">01</div>
+                                              <div class="minute swiper-slide">02</div>
+                                              <div class="minute swiper-slide">03</div>
+                                              <div class="minute swiper-slide">04</div>
+                                              <div class="minute swiper-slide">05</div>
+                                              <div class="minute swiper-slide">06</div>
+                                              <div class="minute swiper-slide">07</div>
+                                              <div class="minute swiper-slide">08</div>
+                                              <div class="minute swiper-slide">09</div>
+                                              <div class="minute swiper-slide">10</div>
+                                              <div class="minute swiper-slide">11</div>
+                                              <div class="minute swiper-slide">12</div>
+                                              <div class="minute swiper-slide">13</div>
+                                              <div class="minute swiper-slide">14</div>
+                                              <div class="minute swiper-slide">15</div>
+                                              <div class="minute swiper-slide">16</div>
+                                              <div class="minute swiper-slide">17</div>
+                                              <div class="minute swiper-slide">18</div>
+                                              <div class="minute swiper-slide">19</div>
+                                              <div class="minute swiper-slide">20</div>
+                                              <div class="minute swiper-slide">21</div>
+                                              <div class="minute swiper-slide">22</div>
+                                              <div class="minute swiper-slide">23</div>
+                                              <div class="minute swiper-slide">24</div>
+                                              <div class="minute swiper-slide">25</div>
+                                              <div class="minute swiper-slide">26</div>
+                                              <div class="minute swiper-slide">27</div>
+                                              <div class="minute swiper-slide">28</div>
+                                              <div class="minute swiper-slide">29</div>
+                                              <div class="minute swiper-slide">30</div>
+                                              <div class="minute swiper-slide">31</div>
+                                              <div class="minute swiper-slide">32</div>
+                                              <div class="minute swiper-slide">33</div>
+                                              <div class="minute swiper-slide">34</div>
+                                              <div class="minute swiper-slide">35</div>
+                                              <div class="minute swiper-slide">36</div>
+                                              <div class="minute swiper-slide">37</div>
+                                              <div class="minute swiper-slide">38</div>
+                                              <div class="minute swiper-slide">39</div>
+                                              <div class="minute swiper-slide">40</div>
+                                              <div class="minute swiper-slide">41</div>
+                                              <div class="minute swiper-slide">42</div>
+                                              <div class="minute swiper-slide">43</div>
+                                              <div class="minute swiper-slide">44</div>
+                                              <div class="minute swiper-slide">45</div>
+                                              <div class="minute swiper-slide">46</div>
+                                              <div class="minute swiper-slide">47</div>
+                                              <div class="minute swiper-slide">48</div>
+                                              <div class="minute swiper-slide">49</div>
+                                              <div class="minute swiper-slide">50</div>
+                                              <div class="minute swiper-slide">51</div>
+                                              <div class="minute swiper-slide">52</div>
+                                              <div class="minute swiper-slide">53</div>
+                                              <div class="minute swiper-slide">54</div>
+                                              <div class="minute swiper-slide">55</div>
+                                              <div class="minute swiper-slide">56</div>
+                                              <div class="minute swiper-slide">57</div>
+                                              <div class="minute swiper-slide">58</div>
+                                              <div class="minute swiper-slide">59</div>
+                                            </div>
+                                          </div>
+                                          <div class="vizor"></div>
+                                        </div>
+                                      </div>
+                                      <div class="tab-pannel">
+                                        <div class="picker">
+                                          <div class="swiper-container hours">
+                                            <div class="swiper-wrapper">
+                                              <div class="hour swiper-slide">00</div>
+                                              <div class="hour swiper-slide">01</div>
+                                              <div class="hour swiper-slide">02</div>
+                                              <div class="hour swiper-slide">03</div>
+                                              <div class="hour swiper-slide">04</div>
+                                              <div class="hour swiper-slide">05</div>
+                                              <div class="hour swiper-slide">06</div>
+                                              <div class="hour swiper-slide">07</div>
+                                              <div class="hour swiper-slide">08</div>
+                                              <div class="hour swiper-slide">09</div>
+                                              <div class="hour swiper-slide">10</div>
+                                              <div class="hour swiper-slide">11</div>
+                                              <div class="hour swiper-slide">12</div>
+                                              <div class="hour swiper-slide">13</div>
+                                              <div class="hour swiper-slide">14</div>
+                                              <div class="hour swiper-slide">15</div>
+                                              <div class="hour swiper-slide">16</div>
+                                              <div class="hour swiper-slide">17</div>
+                                              <div class="hour swiper-slide">18</div>
+                                              <div class="hour swiper-slide">19</div>
+                                              <div class="hour swiper-slide">20</div>
+                                              <div class="hour swiper-slide">21</div>
+                                              <div class="hour swiper-slide">22</div>
+                                              <div class="hour swiper-slide">23</div>
+                                            </div>
+                                          </div>
+                                          <div class="separator-box">
+                                            <div class="separator">:</div>
+                                            <div class="separator">:</div>
+                                            <div class="separator">:</div>
+                                          </div>
+                                          <div class="swiper-container minutes">
+                                            <div class="swiper-wrapper">
+                                              <div class="minute swiper-slide">00</div>
+                                              <div class="minute swiper-slide">01</div>
+                                              <div class="minute swiper-slide">02</div>
+                                              <div class="minute swiper-slide">03</div>
+                                              <div class="minute swiper-slide">04</div>
+                                              <div class="minute swiper-slide">05</div>
+                                              <div class="minute swiper-slide">06</div>
+                                              <div class="minute swiper-slide">07</div>
+                                              <div class="minute swiper-slide">08</div>
+                                              <div class="minute swiper-slide">09</div>
+                                              <div class="minute swiper-slide">10</div>
+                                              <div class="minute swiper-slide">11</div>
+                                              <div class="minute swiper-slide">12</div>
+                                              <div class="minute swiper-slide">13</div>
+                                              <div class="minute swiper-slide">14</div>
+                                              <div class="minute swiper-slide">15</div>
+                                              <div class="minute swiper-slide">16</div>
+                                              <div class="minute swiper-slide">17</div>
+                                              <div class="minute swiper-slide">18</div>
+                                              <div class="minute swiper-slide">19</div>
+                                              <div class="minute swiper-slide">20</div>
+                                              <div class="minute swiper-slide">21</div>
+                                              <div class="minute swiper-slide">22</div>
+                                              <div class="minute swiper-slide">23</div>
+                                              <div class="minute swiper-slide">24</div>
+                                              <div class="minute swiper-slide">25</div>
+                                              <div class="minute swiper-slide">26</div>
+                                              <div class="minute swiper-slide">27</div>
+                                              <div class="minute swiper-slide">28</div>
+                                              <div class="minute swiper-slide">29</div>
+                                              <div class="minute swiper-slide">30</div>
+                                              <div class="minute swiper-slide">31</div>
+                                              <div class="minute swiper-slide">32</div>
+                                              <div class="minute swiper-slide">33</div>
+                                              <div class="minute swiper-slide">34</div>
+                                              <div class="minute swiper-slide">35</div>
+                                              <div class="minute swiper-slide">36</div>
+                                              <div class="minute swiper-slide">37</div>
+                                              <div class="minute swiper-slide">38</div>
+                                              <div class="minute swiper-slide">39</div>
+                                              <div class="minute swiper-slide">40</div>
+                                              <div class="minute swiper-slide">41</div>
+                                              <div class="minute swiper-slide">42</div>
+                                              <div class="minute swiper-slide">43</div>
+                                              <div class="minute swiper-slide">44</div>
+                                              <div class="minute swiper-slide">45</div>
+                                              <div class="minute swiper-slide">46</div>
+                                              <div class="minute swiper-slide">47</div>
+                                              <div class="minute swiper-slide">48</div>
+                                              <div class="minute swiper-slide">49</div>
+                                              <div class="minute swiper-slide">50</div>
+                                              <div class="minute swiper-slide">51</div>
+                                              <div class="minute swiper-slide">52</div>
+                                              <div class="minute swiper-slide">53</div>
+                                              <div class="minute swiper-slide">54</div>
+                                              <div class="minute swiper-slide">55</div>
+                                              <div class="minute swiper-slide">56</div>
+                                              <div class="minute swiper-slide">57</div>
+                                              <div class="minute swiper-slide">58</div>
+                                              <div class="minute swiper-slide">59</div>
+                                            </div>
+                                          </div>
+                                          <div class="vizor"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="range-timepicker-bottom">
+                                <div class="button-box">
+                                  <button type="button" class="btn btn-blue btn-confirm">적용</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="map-filter-bottom">
+                <div class="filter-left-box">
+                  <div class="field-container">
+                    <div class="field field-dropdown">
+                      <div class="field-form">
+                        <!-- 숨겨진 select 태그 -->
+                        <select class="dropdown-select" style="display: none">
+                          <option value="" selected disabled>2025.12.23</option>
+                          <option value="전체">전체</option>
+                          <option value="결행" active>결행</option>
+                          <option value="노선 알림">노선 알림</option>
+                        </select>
+                        <button type="button" class="btn-dropdown">
+                          <span class="text" style="display: none"></span>
+                          <span class="placeholder">2025.12.23</span>
+                        </button>
+                        <div class="dropdown-list-box">
+                          <div class="dim"></div>
+                          <div class="dropdown-list-wrap">
+                            <div class="dropdown-list-header">
+                              <div class="title-box">알림 구분 선택</div>
+                              <button type="button" class="btn-close"></button>
+                            </div>
+                            <div class="dropdown-list-body">
+                              <div class="dropdown-list">
+                                <button type="button" class="btn-dropdown-list" data-value="전체">
+                                  <span>전체</span>
+                                </button>
+                              </div>
+                              <div class="dropdown-list active">
+                                <button type="button" class="btn-dropdown-list" data-value="결행">
+                                  <span>결행</span>
+                                </button>
+                              </div>
+                              <div class="dropdown-list">
+                                <button type="button" class="btn-dropdown-list" data-value="노선 알림">
+                                  <span>노선 알림</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dispatch-list-middle">
+            <div class="map-list-box">
+              <a href="javascript:void(0);" class="map-list">
+                <div class="map-data-box">
+                  <div class="title-box">
+                    <span class="title">애오개A_K2-H2-H1(교대조)</span>
+                  </div>
+                  <div class="list-box">
+                    <p class="list">출근</p>
+                    <p class="list">07:10</p>
+                    <p class="list">배차전</p>
+                  </div>
+                  <div class="list-box">
+                    <span class="list">하나신정관광운수사</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="map-list-box">
+              <a href="javascript:void(0);" class="map-list">
+                <div class="map-data-box">
+                  <div class="title-box">
+                    <span class="title">애오개A_K2-H2-H1(교대조)</span>
+                  </div>
+                  <div class="list-box">
+                    <p class="list">출근</p>
+                    <p class="list">07:10</p>
+                    <p class="list">배차전</p>
+                  </div>
+                  <div class="list-box">
+                    <span class="list">하나신정관광운수사</span>
+                    <span class="list">경기 79사 1641</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="map-list-box">
+              <a href="javascript:void(0);" class="map-list">
+                <div class="map-data-box">
+                  <div class="title-box">
+                    <span class="title">애오개A_K2-H2-H1(교대조)</span>
+                  </div>
+                  <div class="list-box">
+                    <p class="list">출근</p>
+                    <p class="list">07:10</p>
+                    <p class="list">배차전</p>
+                  </div>
+                  <div class="list-box">
+                    <span class="list">하나신정관광운수사</span>
+                    <span class="list">경기 79사 1641</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="map-list-box">
+              <a href="javascript:void(0);" class="map-list">
+                <div class="map-data-box">
+                  <div class="title-box">
+                    <span class="title">애오개A_K2-H2-H1(교대조)</span>
+                  </div>
+                  <div class="list-box">
+                    <p class="list">출근</p>
+                    <p class="list">07:10</p>
+                    <p class="list">배차전</p>
+                  </div>
+                  <div class="list-box">
+                    <span class="list">하나신정관광운수사</span>
+                    <span class="list">경기 79사 1641</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="map-list-box">
+              <a href="javascript:void(0);" class="map-list">
+                <div class="map-data-box">
+                  <div class="title-box">
+                    <span class="title">애오개A_K2-H2-H1(교대조)</span>
+                  </div>
+                  <div class="list-box">
+                    <p class="list">출근</p>
+                    <p class="list">07:10</p>
+                    <p class="list">배차전</p>
+                  </div>
+                  <div class="list-box">
+                    <span class="list">하나신정관광운수사</span>
+                    <span class="list">경기 79사 1641</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="map-list-box">
+              <a href="javascript:void(0);" class="map-list">
+                <div class="map-data-box">
+                  <div class="title-box">
+                    <span class="title">애오개A_K2-H2-H1(교대조)</span>
+                  </div>
+                  <div class="list-box">
+                    <p class="list">출근</p>
+                    <p class="list">07:10</p>
+                    <p class="list">배차전</p>
+                  </div>
+                  <div class="list-box">
+                    <span class="list">하나신정관광운수사</span>
+                    <span class="list">경기 79사 1641</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="map-list-box">
+              <a href="javascript:void(0);" class="map-list">
+                <div class="map-data-box">
+                  <div class="title-box">
+                    <span class="title">애오개A_K2-H2-H1(교대조)</span>
+                  </div>
+                  <div class="list-box">
+                    <p class="list">출근</p>
+                    <p class="list">07:10</p>
+                    <p class="list">배차전</p>
+                  </div>
+                  <div class="list-box">
+                    <span class="list">하나신정관광운수사</span>
+                    <span class="list">경기 79사 1641</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

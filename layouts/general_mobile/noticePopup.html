@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+
+<body style="overflow:hidden; margin:0;">
+  <div id="popup-notice" class="notice-popup-container">
+    <div class="notice-popup-area">
+      <div class="notice-popup-top">
+        <div class="notice-content-box">
+          <img src="../../assets/images/common/img_default.jpg" alt="대체텍스트" />
+          <br />
+          <p>텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트</p>
+        </div>
+      </div>
+      <div class="notice-popup-bottom">
+        <div class="left-side"></div>
+        <div class="right-side">
+          <button type="button" class="btn-close">닫기</button>
+        </div>
+      </div>
+    </div>
+<script>document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
+</body>
+
+</html>

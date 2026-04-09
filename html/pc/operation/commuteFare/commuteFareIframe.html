@@ -1,0 +1,1170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript">
+    sessionStorage.setItem('contextpath', '/uvis')
+    sessionStorage.setItem('langSet', 'ko')
+    //////////달력 설정//////////
+    var cldMsg_prevMonth = '이전 달' // 이전 달
+    var cldMsg_nextMonth = '다음 달' // 다음 달
+    var cldMsg_prevYear = '이전 년도' // 이전 년도
+    var cldMsg_nextYear = '다음 년도' // 다음 년도
+    var cldMsg_prev = '이전' // 이전
+    var cldMsg_next = '다음' // 다음
+    //////////달력 설정//////////
+    //////////jquery.uvis.common.js 다국어//////////
+    var jquery_uvis_common_checkPasswordRegex1 = '비밀번호에는 공백을 입력할 수 없습니다.' // 비밀번호에는 공백을 입력할 수 없습니다.
+    var jquery_uvis_common_checkPasswordRegex2 = '새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.' // 새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.
+    var jquery_uvis_common_ajaxErrorMessage0 = '접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.' // 접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage1 = '장시간 미사용으로 로그아웃 되었습니다.\r\n로그인 페이지로 이동 합니다.' // 장시간 미사용으로 로그아웃 되었습니다.\\r\\n로그인 페이지로 이동 합니다.
+    var jquery_uvis_common_ajaxErrorMessage2 = '에러가 발생하였습니다.\r\n네트워크 상태를 확인해주세요.' // 에러가 발생하였습니다.\\r\\n네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage3 = '에러가 발생하였습니다.\r\n접근이 거부되었습니다.\n\n새로고침 또는 로그인을 다시 해주세요.' // 에러가 발생하였습니다.\\r\\n접근이 거부되었습니다.\\n\\n새로고침 또는 로그인을 다시 해주세요.
+    var jquery_uvis_common_ajaxErrorMessage4 = '에러가 발생하였습니다.\r\nURL을 찾을 수 없습니다.' // 에러가 발생하였습니다.\\r\\nURL을 찾을 수 없습니다.
+    var jquery_uvis_common_ajaxErrorMessage5 = '에러가 발생하였습니다.\r\n내부 서버 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n내부 서버 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage6 = '에러가 발생하였습니다.\r\n파싱 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n파싱 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage7 = '에러가 발생하였습니다.\r\n실행시간이 지연되어 타임아웃이 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n실행시간이 지연되어 타임아웃이 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage8 = '에러가 발생하였습니다.\r\n알 수 없는 에러입니다.\n\n' // 에러가 발생하였습니다.\\r\\n알 수 없는 에러입니다.\\n\\n
+    var jquery_uvis_common_isValidDate1 = '잘못된 날짜형식 입니다.\n\r입력하신 문자열 길이를 확인해주세요.' // 잘못된 날짜형식 입니다.\\n\\r입력하신 문자열 길이를 확인해주세요.
+    var jquery_uvis_common_isValidDate21 = '잘못된 날짜형식 입니다.\n\r' // 잘못된 날짜형식 입니다.\\n\\r
+    var jquery_uvis_common_isValidDate22 = '월은 존재하지 않는 월입니다.' // 월은 존재하지 않는 월입니다.
+    var jquery_uvis_common_isValidDate31 = '잘못된 날짜형식 입니다.\n\r해당 월은' // 잘못된 날짜형식 입니다.\\n\\r해당 월은
+    var jquery_uvis_common_isValidDate32 = '일 까지입니다.' // 일 까지입니다.
+    var jquery_uvis_common_isValidDate4 = '잘못된 날짜형식 입니다.' // 잘못된 날짜형식 입니다.
+    var jquery_uvis_common_checkFileExt1 = '정상적인 파일이 아닙니다.' // 정상적인 파일이 아닙니다.
+    var jquery_uvis_common_checkFileExt2 = '파일만 업로드 가능 합니다.' // 파일만 업로드 가능 합니다.
+    var jquery_uvis_common_downloadCapture1 = '인터넷 익스플로러는 지원하지 않습니다.' // 인터넷 익스플로러는 지원하지 않습니다.
+    var jquery_uvis_common_downloadCapture2 = '이미지로 변환 중 에러가 발생하였습니다.' // 이미지로 변환 중 에러가 발생하였습니다.
+    //////////jquery.uvis.common.js 다국어//////////
+    var termsFilter = ['img', 'a', 'p', 'br', 'span', 'b', 'strong', 'u', 'colgroup', 'col', 'table', 'tbody', 'tr', 'td', 'ul', 'li', 'dl', 'dd', 'dt']
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <!-- CSS resource load -->
+  <link href="../../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../../assets/css/lib/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../../../assets/js/jquery-ui.js"></script>
+  <script src="../../../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../../../assets/js/bootstrap.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../../../assets/js/popper.min.js"></script>
+  <script src="../../../../assets/js/datatables.min.js"></script>
+  <script src="../../../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../../../assets/js/jquery.cookie.js"></script>
+  <script src="../../../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../../../assets/js/jquery.uvis.common.js"></script>
+  <script src="../../../../assets/js/highcharts.js"></script>
+  <script src="../../../../assets/js/exporting.js"></script>
+  <script src="../../../../assets/js/canvg.js"></script>
+  <script src="../../../../assets/js/rgbcolor.min.js"></script>
+  <script src="../../../../assets/js/html2canvas.js"></script>
+  <script src="../../../../assets/js/es6-promise.auto.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../../../assets/js/jquery.jqGrid.src.js"></script>
+  <script src="../../../../assets/js/jquery.paging.js"></script>
+  <script src="../../../../assets/js/publish.js"></script>
+  <script src="../../../../assets/js/amobe_datepicker.js"></script>
+  <script src="../../../../assets/js/amobe_dropdown.js"></script>
+  <script src="../../../../assets/js/amobe_header.js"></script>
+  <script src="../../../../assets/js/amobe_input.js"></script>
+  <script src="../../../../assets/js/amobe_mapList.js"></script>
+  <script src="../../../../assets/js/amobe_modal.js"></script>
+  <script src="../../../../assets/js/amobe_multiMap.js"></script>
+  <script src="../../../../assets/js/amobe_rangeTimePicker.js"></script>
+  <script src="../../../../assets/js/amobe_routeAccordion.js"></script>
+  <script src="../../../../assets/js/amobe_swiper.js"></script>
+  <script src="../../../../assets/js/amobe_tab.js"></script>
+  <script src="../../../../assets/js/amobe_table.js"></script>
+  <script src="../../../../assets/js/amobe_timePicker.js"></script>
+  <title>정산 운임표</title>
+  <script type="text/javascript">
+    // jqGrid Local Data
+    const _JQ_GRID_DATA = [{
+        rownum: '60',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '59',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '58',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '57',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '56',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '55',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '54',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '53',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '52',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '51',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '50',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '49',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '48',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '47',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+      {
+        rownum: '46',
+        distance: '(DS큐브)5km~10km(중형)',
+        routeName: 'DS큐브_수원2/구성/죽전/광교/궐동',
+      },
+    ];
+    const _JQ_GRID_DATA_2 = [{
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+      {
+        baseAmount: '160,000',
+        noneDevice: '177,600',
+        replacement: '200,000',
+        deduction: '200,000',
+        add1: '0',
+        add2: '200,000',
+        add3: '1,300,000',
+        add4: '200,000',
+        add5: '200,000',
+        add6: '200,000',
+        add7: '1,177,600',
+        add8: '1,177,600',
+      },
+    ];
+    $(document).ready(function() {
+      setPageDefault();
+      // jqGrid 높이 계산 및 리사이즈 설정
+      setupJqGridResize({
+        containerSelector: '#div_list',
+        gridSelector: '#list',
+      });
+      // div_list2는 컬럼 너비 고정을 위해 별도 처리
+      $(window).resize(function() {
+        $('#list2').setGridWidth($('#div_list2').width(), false); // shrink: false로 컬럼 너비 유지
+        var newHeight2 = calculateJqGridHeight({
+          containerSelector: '#div_list2',
+        });
+        // 가로 스크롤이 있는지 확인
+        var bdiv = $('#list2').closest('.ui-jqgrid-bdiv')[0];
+        var hasHorizontalScroll = bdiv && bdiv.scrollWidth > bdiv.clientWidth;
+        var finalHeight = hasHorizontalScroll ? newHeight2 + 12 : newHeight2;
+        $('#list2').jqGrid('setGridHeight', finalHeight);
+      });
+      // 필요시 나머지 이벤트 핸들러 추가 (생략)
+    });
+    $(window).resize(function() {
+      $('#list').setGridWidth($('#div_list').width(), true);
+    });
+
+    function setPageDefault() {
+      listLoad(false, 1);
+    }
+
+    function listLoad(firstNoLoad, page) {
+      // ---------- 1번째 테이블 ----------
+      // jqGrid 리스트 초기화, 생성
+      $('#list').jqGrid('GridUnload');
+      var grid = jQuery('#list');
+      // 데이터가 없거나 부족할 때 빈 행 추가
+      var displayData = _JQ_GRID_DATA ? _JQ_GRID_DATA.slice() : [];
+      var emptyRow = {
+        rownum: '',
+        distance: '',
+        routeName: '',
+        isEmpty: true,
+      };
+      while (displayData.length < 15) {
+        displayData.push(Object.assign({}, emptyRow));
+      }
+      // 초기 높이 계산
+      var initialHeight = calculateJqGridHeight({
+        containerSelector: '#div_list',
+      });
+      grid.jqGrid({
+        datatype: 'local',
+        data: displayData,
+        colNames: ['순번', '거리', '운임명'],
+        colModel: [{
+            name: 'rownum',
+            index: 'rownum',
+            width: 64,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'distance',
+            index: 'distance',
+            width: 152,
+            align: 'left',
+            sortable: false
+          },
+          {
+            name: 'routeName',
+            index: 'routeName',
+            width: 200,
+            align: 'left',
+            sortable: false
+          },
+        ],
+        sortable: false,
+        rowNum: displayData.length,
+        autowidth: false,
+        scrollRows: true,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        multiselect: true,
+        multiselectWidth: 42,
+        multiboxonly: false,
+        height: initialHeight,
+        scrollTimeout: 1,
+        shrinkToFit: false,
+        forceFit: false,
+        scrollOffset: 0,
+        beforeSelectRow: function(rowid, e) {
+          var rowData = grid.jqGrid('getRowData', rowid);
+          // 빈 행은 선택 불가능
+          if (rowData.isEmpty === 'true' || (!rowData.routeCode && !rowData.routeName && !rowData.boardCount)) {
+            return false;
+          }
+          return true;
+        },
+        loadComplete: function(data) {
+          // 빈 행 처리
+          var ids = grid.jqGrid('getDataIDs');
+          for (var i = 0; i < ids.length; i++) {
+            var rowData = grid.jqGrid('getRowData', ids[i]);
+            if (rowData.isEmpty === 'true' || (!rowData.routeCode && !rowData.routeName && !rowData.boardCount)) {
+              // 빈 행의 체크박스 비활성화 및 숨김
+              var checkbox = grid.find('tr#' + ids[i] + ' input[type="checkbox"]');
+              checkbox.prop('disabled', true).hide();
+              // 빈 행에 클래스 추가
+              grid.find('tr#' + ids[i]).addClass('empty-row');
+              // 빈 행의 모든 셀 내용 제거
+              grid
+                .find('tr#' + ids[i] + ' td')
+                .not(':first')
+                .html('');
+            }
+          }
+        },
+      });
+      // ---------- 2번째 테이블: DATA_2 적용 ----------
+      $('#list2').jqGrid('GridUnload');
+      var grid2 = jQuery('#list2');
+      // 빈 row 채우기 (데이터가 하나라면 15개까지 채움, 실제 row수와 요구 rowNum에 맞추어 조정)
+      var displayData2 = _JQ_GRID_DATA_2 ? _JQ_GRID_DATA_2.slice() : [];
+      // DATA_2 구조에 맞추어 빈 row 개체 생성
+      var emptyRow2 = {
+        baseAmount: '',
+        noneDevice: '',
+        replacement: '',
+        deduction: '',
+        add1: '',
+        add2: '',
+        add3: '',
+        add4: '',
+        add5: '',
+        add6: '',
+        add7: '',
+        add8: '',
+        isEmpty: true,
+      };
+      while (displayData2.length < 15) {
+        // 2테이블은 1행만 보여주고 싶을 수 있으나, 15행 고정이면 length<15로 바꿔도 됨
+        displayData2.push(Object.assign({}, emptyRow2));
+      }
+      // 초기 높이 계산
+      var initialHeight2 = calculateJqGridHeight({
+        containerSelector: '#div_list2',
+      });
+      grid2.jqGrid({
+        datatype: 'local',
+        data: displayData2,
+        colNames: ['기준금액', '단말기 미장착', '대차운행', '결행공제', '추가1', '추가2', '추가3', '추가4', '추가5', '추가6', '추가7', '추가8'],
+        colModel: [{
+            name: 'baseAmount',
+            width: 90,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'noneDevice',
+            width: 90,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'replacement',
+            width: 90,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'deduction',
+            width: 90,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'add1',
+            width: 90,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'add2',
+            width: 90,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'add3',
+            width: 90,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'add4',
+            width: 90,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'add5',
+            width: 90,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'add6',
+            width: 90,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'add7',
+            width: 90,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'add8',
+            width: 90,
+            align: 'center',
+            sortable: false
+          },
+        ],
+        sortable: false,
+        rowNum: displayData2.length,
+        autowidth: true,
+        scrollRows: true,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        height: initialHeight2,
+        autoheight: false,
+        scrollTimeout: 1,
+        shrinkToFit: false,
+        forceFit: true,
+        scrollOffset: 0,
+        beforeSelectRow: function(rowid) {
+          var rowData = grid2.jqGrid('getRowData', rowid);
+          if (rowData.isEmpty === 'true' || Object.values(rowData).every((val) => !val)) {
+            return false;
+          }
+          return true;
+        },
+        loadComplete: function() {
+          // 가로 스크롤이 있는지 확인하고 높이 조정
+          setTimeout(function() {
+            var bdiv = $('#list2').closest('.ui-jqgrid-bdiv')[0];
+            var hasHorizontalScroll = bdiv && bdiv.scrollWidth > bdiv.clientWidth;
+            if (hasHorizontalScroll) {
+              var currentHeight = $('#list2').jqGrid('getGridParam', 'height');
+              $('#list2').jqGrid('setGridHeight', currentHeight + 12);
+            }
+          }, 100);
+          var ids = grid2.jqGrid('getDataIDs');
+          ids.forEach((id) => {
+            var rowData = grid2.jqGrid('getRowData', id);
+            if (Object.values(rowData).every((val) => !val)) {
+              var tr = grid2.find('tr#' + id);
+              tr.addClass('empty-row');
+              tr.find('input[type="checkbox"]').prop('disabled', true).hide();
+              tr.find('td').not(':first').html('');
+            }
+          });
+          // 양방향 스크롤 동기화 설정
+          var $bdiv2 = $('#div_list2 .ui-jqgrid-bdiv');
+          var $bdiv1 = $('#div_list .ui-jqgrid-bdiv');
+          var isScrolling = false; // 무한 루프 방지 플래그
+          // 기존 이벤트 리스너 제거 후 재설정 (중복 방지)
+          $bdiv2.off('scroll.sync');
+          $bdiv1.off('scroll.sync');
+          // div_list2의 스크롤 → div_list 동기화
+          $bdiv2.on('scroll.sync', function() {
+            if (!isScrolling) {
+              isScrolling = true;
+              var scrollTop = $(this).scrollTop();
+              $bdiv1.scrollTop(scrollTop);
+              setTimeout(function() {
+                isScrolling = false;
+              }, 10);
+            }
+          });
+          // div_list의 스크롤 → div_list2 동기화
+          $bdiv1.on('scroll.sync', function() {
+            if (!isScrolling) {
+              isScrolling = true;
+              var scrollTop = $(this).scrollTop();
+              $bdiv2.scrollTop(scrollTop);
+              setTimeout(function() {
+                isScrolling = false;
+              }, 10);
+            }
+          });
+        },
+      });
+    }
+  </script>
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- data filter -->
+    <div class="data-filter-box">
+      <div class="data-filter-header">
+        <div class="filter-header-left">
+          <div class="title-box"><span>단가 기준</span></div>
+        </div>
+        <div class="filter-header-right">
+          <button type="button" class="btn btn-white" onclick="">
+            <span>설정</span>
+          </button>
+        </div>
+      </div>
+      <div class="data-filter-body">
+        <!-- 2/6 update -->
+        <ul class="data-list-box">
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>최고유류단가</span>
+                <span class="date">적용중</span>
+              </div>
+              <div class="data-right">
+                <span class="date">~26.01.30</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>고유류단가</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>표준유류단가</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>저유류단가</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>최저유류단가</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>샘플 텍스트 1</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>샘플 텍스트 2</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>샘플 텍스트 3</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>샘플 텍스트 4</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>샘플 텍스트 5</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>샘플 텍스트 6</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>샘플 텍스트 7</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>샘플 텍스트 8</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>샘플 텍스트 9</span>
+              </div>
+            </button>
+          </li>
+          <li class="data-list">
+            <button type="button" class="btn-data-list">
+              <div class="data-left">
+                <span>샘플 텍스트 10</span>
+              </div>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-10">
+            <div class="area-box">
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-left">
+                    <div class="title-box">단가 리스트</div>
+                    <div class="info-box">
+                      <div class="count-box">
+                        <span class="label">총</span>
+                        <span class="data">{{count}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 2/23 update : 버튼 사양 수정 -->
+                  <div class="header-right">
+                    <button type="button" class="btn btn-white" onclick="" disabled>
+                      <span>삭제</span>
+                    </button>
+                    <button type="button" class="btn btn-white" onclick="">
+                      <span>일괄업로드</span>
+                    </button>
+                    <button type="button" class="btn btn-white codeExcel" onclick=";">
+                      <span>다운로드</span>
+                    </button>
+                    <button type="button" class="btn btn-blue" onclick="">
+                      <span>신규 등록</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="data-table-wrap">
+                  <!-- table left -->
+                  <div class="data-table data-table-fix" id="div_list">
+                    <table id="list"></table>
+                  </div>
+                  <!-- table right -->
+                  <div class="data-table" id="div_list2">
+                    <table id="list2"></table>
+                  </div>
+                </div>
+                <div class="data-list-table-footer">
+                  <div id="pager"></div>
+                  <div class="paging jquery-paging" id="paginate">
+                    <!-- disabled 상태일 때 disabled 추가 클래스 적용 -->
+                    <a class="btn-first disabled" href="#1"></a>
+                    <a class="btn-prev disabled" href="#1"></a>
+                    <a class="on" href="#1">1</a>
+                    <a href="#1">2</a>
+                    <a href="#1">3</a>
+                    <a href="#1">4</a>
+                    <a href="#1">5</a>
+                    <a href="#1">6</a>
+                    <a class="btn-next" href="#1"></a>
+                    <a class="btn-last" href="#1"></a>
+                  </div>
+                  <div class="footer-right">
+                    <div class="input-wrap inline select length-change small">
+                      <div class="field field-dropdown field-x-small normal">
+                        <div class="field-form">
+                          <!-- 숨겨진 select 태그 -->
+                          <select class="dropdown-select" style="display: none">
+                            >
+                            <option value="15개씩 보기" active>15개씩 보기</option>
+                            <option value="30개씩 보기">30개씩 보기</option>
+                            <option value="50개씩 보기">50개씩 보기</option>
+                            <option value="100개씩 보기">100개씩 보기</option>
+                          </select>
+                          <button type="button" class="btn-dropdown">
+                            <span class="text">15개씩 보기</span>
+                            <span class="placeholder" style="display: none">선택</span>
+                          </button>
+                          <div class="dropdown-list-box">
+                            <div class="dropdown-list active">
+                              <button type="button" class="btn-dropdown-list" data-value="15개씩 보기">
+                                <span>15개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="30개씩 보기">
+                                <span>30개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="50개씩 보기">
+                                <span>50개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="100개씩 보기">
+                                <span>100개씩 보기</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-xl-2">
+            <div class="area-box">
+              <div class="card-box data-form-table">
+                <div class="data-form-table-header">
+                  <div class="header-left">
+                    <h3 class="header-title">상세 내용</h3>
+                  </div>
+                  <div class="header-right">
+                    <button type="button" class="btn btn-white" id="toggle_delete">취소</button>
+                    <!-- <button class="btn btn-blue" id="toggle_modify" onclick="modifyForm()" style="display: none">수정</button> -->
+                    <button class="btn btn-blue" id="toggle_save">저장</button>
+                  </div>
+                </div>
+                <div class="data-form-table-body v-middle">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span class="necessary">거리(km)</span></th>
+                        <td colspan="3">
+                          <div class="input-wrap">
+                            <div class="field field-dropdown field-x-small normal">
+                              <div class="field-form">
+                                <!-- 숨겨진 select 태그 -->
+                                <select class="dropdown-select" style="display: none">
+                                  >
+                                  <option value="(DS큐브)5km~10km(중형)" active>(DS큐브)5km~10km(중형)</option>
+                                  <option value="(DS큐브)5km~10km(중형) 2">(DS큐브)5km~10km(중형) 2</option>
+                                </select>
+                                <button type="button" class="btn-dropdown" id="list-1">
+                                  <span class="text">(DS큐브)5km~10km(중형)</span>
+                                  <span class="placeholder" style="display: none"></span>
+                                </button>
+                                <div class="dropdown-list-box">
+                                  <div class="dropdown-list active">
+                                    <button type="button" class="btn-dropdown-list" data-value="(DS큐브)5km~10km(중형)">
+                                      <span>(DS큐브)5km~10km(중형)</span>
+                                    </button>
+                                  </div>
+                                  <div class="dropdown-list">
+                                    <button type="button" class="btn-dropdown-list" data-value="(DS큐브)5km~10km(중형) 2">
+                                      <span>(DS큐브)5km~10km(중형) 2</span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">운임명</span></th>
+                        <td colspan="3">
+                          <div class="input-wrap">
+                            <label for="list-2">
+                              <input class="clearable input-xsmall" name="list-2" id="list-2" type="text" placeholder="운임명을 입력하세요" value="DS큐브_수원2/구성/죽전/광교/궐동" />
+                              <i class="icon-clear" style="display: none"></i>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">기준금액</span></th>
+                        <td colspan="3">
+                          <div class="flex-row">
+                            <div class="input-wrap">
+                              <input id="list-3" name="list-3" class="clearable input-xsmall align-right" placeholder="" type="text" value="160,000" />
+                            </div>
+                            <span class="unit">원</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="">단말기미장착</span></th>
+                        <td colspan="3">
+                          <div class="flex-row">
+                            <div class="input-wrap">
+                              <input id="list-4" name="list-4" class="clearable input-xsmall align-right" placeholder="" type="text" value="177,600" />
+                            </div>
+                            <span class="unit">원</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">대차운행</span></th>
+                        <td colspan="3">
+                          <div class="flex-row">
+                            <div class="input-wrap">
+                              <input id="list-5" name="list-5" class="clearable input-xsmall align-right" placeholder="" type="text" value="200,000" />
+                            </div>
+                            <span class="unit">원</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">결행공제</span></th>
+                        <td colspan="3">
+                          <div class="flex-row">
+                            <div class="input-wrap">
+                              <input id="list-6" name="list-6" class="clearable input-xsmall align-right" placeholder="" type="text" value="200,000" />
+                            </div>
+                            <span class="unit">원</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="">추가1</span></th>
+                        <td colspan="3">
+                          <div class="flex-row">
+                            <div class="input-wrap">
+                              <input id="list-7" name="list-7" class="clearable input-xsmall align-right" placeholder="" type="text" value="0" />
+                            </div>
+                            <span class="unit">원</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="">추가2</span></th>
+                        <td colspan="3">
+                          <div class="flex-row">
+                            <div class="input-wrap">
+                              <input id="list-8" name="list-8" class="clearable input-xsmall align-right" placeholder="" type="text" value="200,000" />
+                            </div>
+                            <span class="unit">원</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="">추가3</span></th>
+                        <td colspan="3">
+                          <div class="flex-row">
+                            <div class="input-wrap">
+                              <input id="list-9" name="list-9" class="clearable input-xsmall align-right" placeholder="" type="text" value="1,300,000" />
+                            </div>
+                            <span class="unit">원</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="">추가4</span></th>
+                        <td colspan="3">
+                          <div class="flex-row">
+                            <div class="input-wrap">
+                              <input id="list-10" name="list-10" class="clearable input-xsmall align-right" placeholder="" type="text" value="200,000" />
+                            </div>
+                            <span class="unit">원</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="">추가5</span></th>
+                        <td colspan="3">
+                          <div class="flex-row">
+                            <div class="input-wrap">
+                              <input id="list-11" name="list-11" class="clearable input-xsmall align-right" placeholder="" type="text" value="200,000" />
+                            </div>
+                            <span class="unit">원</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="">추가6</span></th>
+                        <td colspan="3">
+                          <div class="flex-row">
+                            <div class="input-wrap">
+                              <input id="list-12" name="list-12" class="clearable input-xsmall align-right" placeholder="" type="text" value="200,000" />
+                            </div>
+                            <span class="unit">원</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="">추가7</span></th>
+                        <td colspan="3">
+                          <div class="flex-row">
+                            <div class="input-wrap">
+                              <input id="list-13" name="list-13" class="clearable input-xsmall align-right" placeholder="" type="text" value="1,177,600" />
+                            </div>
+                            <span class="unit">원</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="">추가8</span></th>
+                        <td colspan="3">
+                          <div class="flex-row">
+                            <div class="input-wrap">
+                              <input id="list-14" name="list-14" class="clearable input-xsmall align-right" placeholder="" type="text" value="1,177,600" />
+                            </div>
+                            <span class="unit">원</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span>최초 입력</span></th>
+                        <td colspan="3"><span>2022.03.16 / 버스배차</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>최종 수정</span></th>
+                        <td colspan="3"><span>2022.03.16 / 버스배차</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+</body>
+
+</html>

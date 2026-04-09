@@ -1,0 +1,483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript">
+    sessionStorage.setItem('contextpath', '/uvis')
+    sessionStorage.setItem('langSet', 'ko')
+    //////////달력 설정//////////
+    var cldMsg_prevMonth = '이전 달' // 이전 달
+    var cldMsg_nextMonth = '다음 달' // 다음 달
+    var cldMsg_prevYear = '이전 년도' // 이전 년도
+    var cldMsg_nextYear = '다음 년도' // 다음 년도
+    var cldMsg_prev = '이전' // 이전
+    var cldMsg_next = '다음' // 다음
+    //////////달력 설정//////////
+    //////////jquery.uvis.common.js 다국어//////////
+    var jquery_uvis_common_checkPasswordRegex1 = '비밀번호에는 공백을 입력할 수 없습니다.' // 비밀번호에는 공백을 입력할 수 없습니다.
+    var jquery_uvis_common_checkPasswordRegex2 = '새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.' // 새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.
+    var jquery_uvis_common_ajaxErrorMessage0 = '접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.' // 접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage1 = '장시간 미사용으로 로그아웃 되었습니다.\r\n로그인 페이지로 이동 합니다.' // 장시간 미사용으로 로그아웃 되었습니다.\\r\\n로그인 페이지로 이동 합니다.
+    var jquery_uvis_common_ajaxErrorMessage2 = '에러가 발생하였습니다.\r\n네트워크 상태를 확인해주세요.' // 에러가 발생하였습니다.\\r\\n네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage3 = '에러가 발생하였습니다.\r\n접근이 거부되었습니다.\n\n새로고침 또는 로그인을 다시 해주세요.' // 에러가 발생하였습니다.\\r\\n접근이 거부되었습니다.\\n\\n새로고침 또는 로그인을 다시 해주세요.
+    var jquery_uvis_common_ajaxErrorMessage4 = '에러가 발생하였습니다.\r\nURL을 찾을 수 없습니다.' // 에러가 발생하였습니다.\\r\\nURL을 찾을 수 없습니다.
+    var jquery_uvis_common_ajaxErrorMessage5 = '에러가 발생하였습니다.\r\n내부 서버 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n내부 서버 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage6 = '에러가 발생하였습니다.\r\n파싱 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n파싱 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage7 = '에러가 발생하였습니다.\r\n실행시간이 지연되어 타임아웃이 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n실행시간이 지연되어 타임아웃이 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage8 = '에러가 발생하였습니다.\r\n알 수 없는 에러입니다.\n\n' // 에러가 발생하였습니다.\\r\\n알 수 없는 에러입니다.\\n\\n
+    var jquery_uvis_common_isValidDate1 = '잘못된 날짜형식 입니다.\n\r입력하신 문자열 길이를 확인해주세요.' // 잘못된 날짜형식 입니다.\\n\\r입력하신 문자열 길이를 확인해주세요.
+    var jquery_uvis_common_isValidDate21 = '잘못된 날짜형식 입니다.\n\r' // 잘못된 날짜형식 입니다.\\n\\r
+    var jquery_uvis_common_isValidDate22 = '월은 존재하지 않는 월입니다.' // 월은 존재하지 않는 월입니다.
+    var jquery_uvis_common_isValidDate31 = '잘못된 날짜형식 입니다.\n\r해당 월은' // 잘못된 날짜형식 입니다.\\n\\r해당 월은
+    var jquery_uvis_common_isValidDate32 = '일 까지입니다.' // 일 까지입니다.
+    var jquery_uvis_common_isValidDate4 = '잘못된 날짜형식 입니다.' // 잘못된 날짜형식 입니다.
+    var jquery_uvis_common_checkFileExt1 = '정상적인 파일이 아닙니다.' // 정상적인 파일이 아닙니다.
+    var jquery_uvis_common_checkFileExt2 = '파일만 업로드 가능 합니다.' // 파일만 업로드 가능 합니다.
+    var jquery_uvis_common_downloadCapture1 = '인터넷 익스플로러는 지원하지 않습니다.' // 인터넷 익스플로러는 지원하지 않습니다.
+    var jquery_uvis_common_downloadCapture2 = '이미지로 변환 중 에러가 발생하였습니다.' // 이미지로 변환 중 에러가 발생하였습니다.
+    //////////jquery.uvis.common.js 다국어//////////
+    var termsFilter = ['img', 'a', 'p', 'br', 'span', 'b', 'strong', 'u', 'colgroup', 'col', 'table', 'tbody', 'tr', 'td', 'ul', 'li', 'dl', 'dd', 'dt']
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <!-- CSS resource load -->
+  <link href="../../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../../assets/css/lib/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../../../assets/js/jquery-ui.js"></script>
+  <script src="../../../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../../../assets/js/bootstrap.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../../../assets/js/popper.min.js"></script>
+  <script src="../../../../assets/js/datatables.min.js"></script>
+  <script src="../../../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../../../assets/js/jquery.cookie.js"></script>
+  <script src="../../../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../../../assets/js/jquery.uvis.common.js"></script>
+  <script src="../../../../assets/js/highcharts.js"></script>
+  <script src="../../../../assets/js/exporting.js"></script>
+  <script src="../../../../assets/js/canvg.js"></script>
+  <script src="../../../../assets/js/rgbcolor.min.js"></script>
+  <script src="../../../../assets/js/html2canvas.js"></script>
+  <script src="../../../../assets/js/es6-promise.auto.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../../../assets/js/jquery.jqGrid.src.js"></script>
+  <script src="../../../../assets/js/jquery.paging.js"></script>
+  <script src="../../../../assets/js/publish.js"></script>
+  <script src="../../../../assets/js/amobe_datepicker.js"></script>
+  <script src="../../../../assets/js/amobe_dropdown.js"></script>
+  <script src="../../../../assets/js/amobe_header.js"></script>
+  <script src="../../../../assets/js/amobe_input.js"></script>
+  <script src="../../../../assets/js/amobe_mapList.js"></script>
+  <script src="../../../../assets/js/amobe_modal.js"></script>
+  <script src="../../../../assets/js/amobe_multiMap.js"></script>
+  <script src="../../../../assets/js/amobe_rangeTimePicker.js"></script>
+  <script src="../../../../assets/js/amobe_routeAccordion.js"></script>
+  <script src="../../../../assets/js/amobe_swiper.js"></script>
+  <script src="../../../../assets/js/amobe_tab.js"></script>
+  <script src="../../../../assets/js/amobe_table.js"></script>
+  <script src="../../../../assets/js/amobe_timePicker.js"></script>
+  <title>운전자 검색</title>
+  <script type="text/javascript">
+    // jqGrid Local Data - 단말기 리스트
+    const _JQ_GRID_DATA_DRIVER_LIST = [{
+        sequence: '10',
+        driverName: '민병관',
+        contactNumber: '01012345678',
+        driverNumber: '경기72아7327',
+      },
+      {
+        sequence: '9',
+        driverName: '김근우',
+        contactNumber: '01012345678',
+        driverNumber: '경기70바7393',
+      },
+      {
+        sequence: '8',
+        driverName: '이병건',
+        contactNumber: '01012345678',
+        driverNumber: '경기03바7460',
+      },
+      {
+        sequence: '7',
+        driverName: '강감찬',
+        contactNumber: '01012345678',
+        driverNumber: '-',
+      },
+      {
+        sequence: '6',
+        driverName: '오나라',
+        contactNumber: '01012345678',
+        driverNumber: '경기76아9779',
+      },
+      {
+        sequence: '5',
+        driverName: '민병관',
+        contactNumber: '01012345678',
+        driverNumber: '경기72아7327',
+      },
+      {
+        sequence: '4',
+        driverName: '김근우',
+        contactNumber: '01012345678',
+        driverNumber: '경기70바7393',
+      },
+      {
+        sequence: '3',
+        driverName: '이병건',
+        contactNumber: '01012345678',
+        driverNumber: '경기03바7460',
+      },
+      {
+        sequence: '2',
+        driverName: '강감찬',
+        contactNumber: '01012345678',
+        driverNumber: '-',
+      },
+      {
+        sequence: '1',
+        driverName: '오나라',
+        contactNumber: '01012345678',
+        driverNumber: '경기76아9779',
+      },
+      {
+        sequence: '1',
+        driverName: '오나라',
+        contactNumber: '01012345678',
+        driverNumber: '경기76아9779',
+      },
+    ];
+    $(document).ready(function() {
+      // jqGrid 높이 계산 및 리사이즈 설정
+      if (typeof setupJqGridResize === 'function') {
+        setupJqGridResize();
+      }
+      // 모달이 열릴 때 jqGrid 다시 그리기
+      var modalEl = $('#modal-search-driver');
+      if (modalEl.length) {
+        // MutationObserver로 모달의 display 속성 변경 감지
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+              var display = modalEl.css('display');
+              if (display === 'block') {
+                // 모달이 열렸을 때 그리드 resizing
+                setTimeout(function() {
+                  resizeGrid();
+                }, 0);
+              }
+            }
+          });
+        });
+        observer.observe(modalEl[0], {
+          attributes: true,
+          attributeFilter: ['style']
+        });
+      }
+      initTerminalListGrid();
+      // $(window).on('resize', resizeGrid);
+    });
+    // 스크롤 여부 확인 후 .ui-jqgrid-bdiv 너비 조정
+    function adjustBdivWidth(grid) {
+      var $bdiv = grid.closest('.ui-jqgrid-bdiv');
+      if ($bdiv.length && $bdiv[0]) {
+        var hasScroll = $bdiv[0].scrollHeight > $bdiv[0].clientHeight;
+        if (hasScroll) {
+          $bdiv.css('width', 'calc(100% + 12px)');
+        } else {
+          $bdiv.css('width', '');
+        }
+      }
+    }
+
+    function resizeGrid() {
+      const $wrap1 = $('#div_list1');
+      $('#list1').jqGrid('setGridWidth', $wrap1.width());
+      adjustBdivWidth($('#list1'));
+    }
+
+    function initTerminalListGrid() {
+      // jqGrid 리스트 초기화, 생성
+      const $wrap = $('#div_list1');
+      var grid = jQuery('#list1');
+      if (grid.length === 0) return;
+      if (grid.jqGrid) {
+        try {
+          grid.jqGrid('GridUnload');
+        } catch (e) {
+          // 그리드가 이미 언로드되었거나 존재하지 않는 경우 무시
+        }
+      }
+      // 데이터 준비
+      var displayData = _JQ_GRID_DATA_DRIVER_LIST ? [..._JQ_GRID_DATA_DRIVER_LIST] : [];
+      grid.jqGrid({
+        datatype: 'local',
+        data: displayData,
+        colNames: ['순번', '운전자명', '연락처', '차량번호'],
+        colModel: [{
+            name: 'sequence',
+            index: 'sequence',
+            width: 64,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'driverName',
+            index: 'driverName',
+            width: 210,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'contactNumber',
+            index: 'contactNumber',
+            width: 210,
+            align: 'left',
+            sortable: false
+          },
+          {
+            name: 'driverNumber',
+            index: 'driverNumber',
+            width: 210,
+            align: 'center',
+            sortable: false
+          },
+        ],
+        sortable: false,
+        rowNum: 15,
+        autowidth: true,
+        scrollRows: false,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        pager: false,
+        // width: $wrap.width(),
+        height: 340,
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 0,
+        onSelectRow: function(rowid, status, e) {
+          var rowData = grid.jqGrid('getRowData', rowid);
+          if (rowData.isEmpty !== 'true' && (rowData.sequence || rowData.driverName)) {
+            // 선택된 행의 데이터로 하위 테이블 업데이트
+            // 필요시 여기에 로직 추가
+          }
+        },
+        loadComplete: function(data) {
+          // 불필요한 wrapper div 제거
+          var $bdiv = grid.closest('.ui-jqgrid-bdiv');
+          if ($bdiv.length) {
+            var $wrapper = $bdiv.find('> div[style*="position:relative"]');
+            if ($wrapper.length) {
+              var $emptyDiv = $wrapper.find('> div:empty');
+              if ($emptyDiv.length) {
+                $emptyDiv.remove();
+              }
+              // table을 직접 bdiv의 자식으로 이동
+              var $table = $wrapper.find('table');
+              if ($table.length) {
+                $table.detach();
+                $wrapper.replaceWith($table);
+              }
+            }
+          }
+          // 스크롤 여부 확인 후 .ui-jqgrid-bdiv 너비 조정
+          setTimeout(function() {
+            adjustBdivWidth(grid);
+          }, 0);
+          // 빈 행 처리
+          var ids = grid.jqGrid('getDataIDs');
+          for (var i = 0; i < ids.length; i++) {
+            var rowData = grid.jqGrid('getRowData', ids[i]);
+            if (rowData.isEmpty === 'true' || (!rowData.sequence && !rowData.driverName)) {
+              // 빈 행에 클래스 추가
+              grid.find('tr#' + ids[i]).addClass('empty-row');
+              // 빈 행의 모든 셀 내용 제거
+              grid.find('tr#' + ids[i] + ' td').html('');
+            }
+          }
+        },
+      });
+    }
+
+    function searchFormInit() {
+      // 검색 폼 초기화
+      $('#carrier-select').val('');
+      $('#terminal-id').val('');
+    }
+
+    function searchList() {
+      // 검색 로직
+      var carrier = $('#carrier-select').val();
+      var driverName = $('#driver-name').val();
+      // 검색 조건에 맞는 데이터 필터링
+      var filteredData = _JQ_GRID_DATA_DRIVER_LIST.filter(function(item) {
+        var matchCarrier = !carrier || carrier === '전체';
+        var matchDriverName = !driverName || item.driverName.indexOf(driverName) !== -1;
+        return matchCarrier && matchDriverName;
+      });
+      // 그리드에 필터링된 데이터 적용
+      jQuery('#list1').jqGrid('clearGridData');
+      jQuery('#list1').jqGrid('setGridParam', {
+        data: filteredData
+      });
+      jQuery('#list1').trigger('reloadGrid');
+    }
+  </script>
+</head>
+
+<body>
+  <button type="button" class="btn btn-blue btn-medium btn-modal" onclick="openModalById('modal-search-driver')" data-modal='modal-search-driver'>
+    <span>Modal Open</span>
+  </button>
+  <!-- modal -->
+  <div id="modal-search-driver" class="modal">
+    <div class="dim"></div>
+    <div class="modal-container">
+      <div class="modal-area">
+        <div class="modal-top">
+          <div class="modal-title-box">
+            <span class="title">운전자 검색</span>
+          </div>
+        </div>
+        <div class="modal-middle">
+          <div class="modal-content-box">
+            <div class="modal-content">
+              <!-- top search -->
+              <div class="top-search">
+                <div class="search-forms">
+                  <form id="searchForm" name="searchForm" onsubmit="return false;">
+                    <div class="row">
+                      <div class="input-group size-md">
+                        <legend>검색</legend>
+                        <div class="input-wrap">
+                          <input id="stop-name" name="stop-name" class="input-xsmall" placeholder="검색어를 입력하세요" type="text" value="정류장명 입력" @@property />
+                        </div>
+                      </div>
+                      <div class="input-group size-md">
+                        <legend>운행구분</legend>
+                        <div class="input-wrap">
+                          <div class="field field-dropdown field-x-small normal">
+                            <div class="field-form">
+                              <!-- 숨겨진 select 태그 -->
+                              <select class="dropdown-select" style="display: none">
+                                >
+                                <option value="출근" active>출근</option>
+                                <option value="퇴근">퇴근</option>
+                                <option value="서를">서를</option>
+                              </select>
+                              <button type="button" class="btn-dropdown" id="carrier-select">
+                                <span class="text">출근</span>
+                                <span class="placeholder" style="display: none"></span>
+                              </button>
+                              <div class="dropdown-list-box">
+                                <div class="dropdown-list active">
+                                  <button type="button" class="btn-dropdown-list" data-value="출근">
+                                    <span>출근</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="퇴근">
+                                    <span>퇴근</span>
+                                  </button>
+                                </div>
+                                <div class="dropdown-list">
+                                  <button type="button" class="btn-dropdown-list" data-value="서를">
+                                    <span>서를</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="search-btns">
+                  <button type="button" class="btn btn-white btn-reset" onclick="searchFormInit();">
+                    <span>초기화</span>
+                  </button>
+                  <button type="button" class="btn btn-blue" onclick="searchList();">
+                    <span>검색</span>
+                  </button>
+                </div>
+              </div>
+              <!-- //top search -->
+              <!-- 테이블 : 단말기 리스트 -->
+              <div class="data-list-table">
+                <div class="data-table" id="div_list1">
+                  <table id="list1"></table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-bottom">
+          <div class="modal-button-box">
+            <button type="button" class="btn btn-white btn-small" onclick="">
+              <span>취소</span>
+            </button>
+            <button type="button" class="btn btn-blue btn-small" onclick="">
+              <span>확인</span>
+            </button>
+          </div>
+        </div>
+        <button type="button" class="btn-close" title="팝업창 닫기 버튼"></button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

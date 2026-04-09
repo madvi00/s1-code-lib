@@ -1,0 +1,799 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript">
+    sessionStorage.setItem('contextpath', '/uvis')
+    sessionStorage.setItem('langSet', 'ko')
+    //////////달력 설정//////////
+    var cldMsg_prevMonth = '이전 달' // 이전 달
+    var cldMsg_nextMonth = '다음 달' // 다음 달
+    var cldMsg_prevYear = '이전 년도' // 이전 년도
+    var cldMsg_nextYear = '다음 년도' // 다음 년도
+    var cldMsg_prev = '이전' // 이전
+    var cldMsg_next = '다음' // 다음
+    //////////달력 설정//////////
+    //////////jquery.uvis.common.js 다국어//////////
+    var jquery_uvis_common_checkPasswordRegex1 = '비밀번호에는 공백을 입력할 수 없습니다.' // 비밀번호에는 공백을 입력할 수 없습니다.
+    var jquery_uvis_common_checkPasswordRegex2 = '새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.' // 새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.
+    var jquery_uvis_common_ajaxErrorMessage0 = '접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.' // 접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage1 = '장시간 미사용으로 로그아웃 되었습니다.\r\n로그인 페이지로 이동 합니다.' // 장시간 미사용으로 로그아웃 되었습니다.\\r\\n로그인 페이지로 이동 합니다.
+    var jquery_uvis_common_ajaxErrorMessage2 = '에러가 발생하였습니다.\r\n네트워크 상태를 확인해주세요.' // 에러가 발생하였습니다.\\r\\n네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage3 = '에러가 발생하였습니다.\r\n접근이 거부되었습니다.\n\n새로고침 또는 로그인을 다시 해주세요.' // 에러가 발생하였습니다.\\r\\n접근이 거부되었습니다.\\n\\n새로고침 또는 로그인을 다시 해주세요.
+    var jquery_uvis_common_ajaxErrorMessage4 = '에러가 발생하였습니다.\r\nURL을 찾을 수 없습니다.' // 에러가 발생하였습니다.\\r\\nURL을 찾을 수 없습니다.
+    var jquery_uvis_common_ajaxErrorMessage5 = '에러가 발생하였습니다.\r\n내부 서버 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n내부 서버 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage6 = '에러가 발생하였습니다.\r\n파싱 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n파싱 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage7 = '에러가 발생하였습니다.\r\n실행시간이 지연되어 타임아웃이 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n실행시간이 지연되어 타임아웃이 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage8 = '에러가 발생하였습니다.\r\n알 수 없는 에러입니다.\n\n' // 에러가 발생하였습니다.\\r\\n알 수 없는 에러입니다.\\n\\n
+    var jquery_uvis_common_isValidDate1 = '잘못된 날짜형식 입니다.\n\r입력하신 문자열 길이를 확인해주세요.' // 잘못된 날짜형식 입니다.\\n\\r입력하신 문자열 길이를 확인해주세요.
+    var jquery_uvis_common_isValidDate21 = '잘못된 날짜형식 입니다.\n\r' // 잘못된 날짜형식 입니다.\\n\\r
+    var jquery_uvis_common_isValidDate22 = '월은 존재하지 않는 월입니다.' // 월은 존재하지 않는 월입니다.
+    var jquery_uvis_common_isValidDate31 = '잘못된 날짜형식 입니다.\n\r해당 월은' // 잘못된 날짜형식 입니다.\\n\\r해당 월은
+    var jquery_uvis_common_isValidDate32 = '일 까지입니다.' // 일 까지입니다.
+    var jquery_uvis_common_isValidDate4 = '잘못된 날짜형식 입니다.' // 잘못된 날짜형식 입니다.
+    var jquery_uvis_common_checkFileExt1 = '정상적인 파일이 아닙니다.' // 정상적인 파일이 아닙니다.
+    var jquery_uvis_common_checkFileExt2 = '파일만 업로드 가능 합니다.' // 파일만 업로드 가능 합니다.
+    var jquery_uvis_common_downloadCapture1 = '인터넷 익스플로러는 지원하지 않습니다.' // 인터넷 익스플로러는 지원하지 않습니다.
+    var jquery_uvis_common_downloadCapture2 = '이미지로 변환 중 에러가 발생하였습니다.' // 이미지로 변환 중 에러가 발생하였습니다.
+    //////////jquery.uvis.common.js 다국어//////////
+    var termsFilter = ['img', 'a', 'p', 'br', 'span', 'b', 'strong', 'u', 'colgroup', 'col', 'table', 'tbody', 'tr', 'td', 'ul', 'li', 'dl', 'dd', 'dt']
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <!-- CSS resource load -->
+  <link href="../../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../../assets/css/lib/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../../../assets/js/jquery-ui.js"></script>
+  <script src="../../../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../../../assets/js/bootstrap.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../../../assets/js/popper.min.js"></script>
+  <script src="../../../../assets/js/datatables.min.js"></script>
+  <script src="../../../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../../../assets/js/jquery.cookie.js"></script>
+  <script src="../../../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../../../assets/js/jquery.uvis.common.js"></script>
+  <script src="../../../../assets/js/highcharts.js"></script>
+  <script src="../../../../assets/js/exporting.js"></script>
+  <script src="../../../../assets/js/canvg.js"></script>
+  <script src="../../../../assets/js/rgbcolor.min.js"></script>
+  <script src="../../../../assets/js/html2canvas.js"></script>
+  <script src="../../../../assets/js/es6-promise.auto.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../../../assets/js/jquery.jqGrid.src.js"></script>
+  <script src="../../../../assets/js/jquery.paging.js"></script>
+  <script src="../../../../assets/js/publish.js"></script>
+  <script src="../../../../assets/js/amobe_datepicker.js"></script>
+  <script src="../../../../assets/js/amobe_dropdown.js"></script>
+  <script src="../../../../assets/js/amobe_header.js"></script>
+  <script src="../../../../assets/js/amobe_input.js"></script>
+  <script src="../../../../assets/js/amobe_mapList.js"></script>
+  <script src="../../../../assets/js/amobe_modal.js"></script>
+  <script src="../../../../assets/js/amobe_multiMap.js"></script>
+  <script src="../../../../assets/js/amobe_rangeTimePicker.js"></script>
+  <script src="../../../../assets/js/amobe_routeAccordion.js"></script>
+  <script src="../../../../assets/js/amobe_swiper.js"></script>
+  <script src="../../../../assets/js/amobe_tab.js"></script>
+  <script src="../../../../assets/js/amobe_table.js"></script>
+  <script src="../../../../assets/js/amobe_timePicker.js"></script>
+  <title>노선 상세정보 팝업</title>
+  <script type="text/javascript">
+    // jqGrid Local Data - 요청 대수 (순번, 담당운수사, 차량번호, 대차)
+    const _JQ_GRID_DATA_REQUEST_COUNT = [{
+        seq: '1',
+        carrier: '동안관광여행사',
+        vehicleNo: '경기 76아 2056',
+        replacement: '자차'
+      },
+      {
+        seq: '2',
+        carrier: '동안관광여행사',
+        vehicleNo: '경기 70아 2254',
+        replacement: '자차'
+      },
+      {
+        seq: '3',
+        carrier: '동안관광여행사',
+        vehicleNo: '경기 24자 8850',
+        replacement: '자차'
+      },
+      {
+        seq: '4',
+        carrier: '동안관광여행사',
+        vehicleNo: '경기 97구 2145',
+        replacement: '자차'
+      },
+    ];
+    $(document).ready(function() {
+      if (typeof setupJqGridResize === 'function') {
+        setupJqGridResize({
+          containerSelector: '#div_list',
+          gridSelector: '#list'
+        });
+      }
+      var modalEl = $('#modal-operation-plan-detail-info');
+      if (modalEl.length) {
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+              var display = modalEl.css('display');
+              if (display === 'block') {
+                setTimeout(function() {
+                  resizeRequestCountGrid();
+                }, 0);
+              }
+            }
+          });
+        });
+        observer.observe(modalEl[0], {
+          attributes: true,
+          attributeFilter: ['style']
+        });
+      }
+      initRequestCountGrid();
+    });
+
+    function adjustBdivWidth(grid) {
+      var $bdiv = grid.closest('.ui-jqgrid-bdiv');
+      if ($bdiv.length && $bdiv[0]) {
+        var hasScroll = $bdiv[0].scrollHeight > $bdiv[0].clientHeight;
+        if (hasScroll) {
+          $bdiv.css('width', 'calc(100% + 12px)');
+        } else {
+          $bdiv.css('width', '');
+        }
+      }
+    }
+
+    function resizeRequestCountGrid() {
+      var $wrap = $('#div_list');
+      if ($('#list').length && $('#list').jqGrid) {
+        $('#list').jqGrid('setGridWidth', $wrap.width());
+        adjustBdivWidth($('#list'));
+      }
+    }
+
+    function initRequestCountGrid() {
+      var grid = jQuery('#list');
+      if (grid.length === 0) return;
+      if (grid.jqGrid) {
+        try {
+          grid.jqGrid('GridUnload');
+        } catch (e) {}
+      }
+      var displayData = _JQ_GRID_DATA_REQUEST_COUNT ? [..._JQ_GRID_DATA_REQUEST_COUNT] : [];
+      var emptyRow = {
+        seq: '',
+        carrier: '',
+        vehicleNo: '',
+        replacement: ''
+      };
+      while (displayData.length < 5) {
+        displayData.push(Object.assign({}, emptyRow));
+      }
+      // 담당운수사 드롭다운 옵션 (필요시 확장)
+      var carrierOptions = [{
+          value: '동안관광여행사',
+          text: '동안관광여행사'
+        },
+        {
+          value: '현대관광',
+          text: '현대관광'
+        },
+      ];
+      grid.jqGrid({
+        datatype: 'local',
+        data: displayData,
+        colNames: ['순번', '담당운수사', '차량번호', '대차'],
+        colModel: [{
+            name: 'seq',
+            index: 'seq',
+            width: 64,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'carrier',
+            index: 'carrier',
+            width: 184,
+            align: 'center',
+            sortable: false,
+            formatter: function(cellvalue, options, rowObject) {
+              var isEmptyRow = !(rowObject.seq || rowObject.carrier || rowObject.vehicleNo || rowObject.replacement);
+              if (isEmptyRow) return '';
+              var val = cellvalue || '';
+              var esc = function(s) {
+                return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+              };
+              var selectOpts = carrierOptions.map(function(opt) {
+                var selected = opt.value === val ? ' selected' : '';
+                return '<option value="' + esc(opt.value) + '"' + selected + '>' + esc(opt.text) + '</option>';
+              }).join('');
+              var listItems = carrierOptions.map(function(opt) {
+                var active = opt.value === val ? ' active' : '';
+                return (
+                  '<div class="dropdown-list' + active + '">' +
+                  '<button type="button" class="btn-dropdown-list" data-value="' + esc(opt.value) + '">' +
+                  '<span>' + esc(opt.text) + '</span>' +
+                  '</button>' +
+                  '</div>'
+                );
+              }).join('');
+              var hasValue = val !== '';
+              var textDisplay = hasValue ? '' : ' style="display: none"';
+              var placeholderDisplay = hasValue ? ' style="display: none"' : '';
+              return (
+                '<div class="field field-dropdown field-x-small normal">' +
+                '<div class="field-form">' +
+                '<select class="dropdown-select" style="display: none">' +
+                selectOpts +
+                '</select>' +
+                '<button type="button" class="btn-dropdown" style="max-width: none; padding: 0 32px 0 8px;">' +
+                '<span class="text"' + textDisplay + '>' + esc(val) + '</span>' +
+                '<span class="placeholder"' + placeholderDisplay + '>선택</span>' +
+                '</button>' +
+                '<div class="dropdown-list-box">' +
+                listItems +
+                '</div>' +
+                '</div>' +
+                '</div>'
+              );
+            },
+          },
+          {
+            name: 'vehicleNo',
+            index: 'vehicleNo',
+            width: 184,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'replacement',
+            index: 'replacement',
+            width: 184,
+            align: 'center',
+            sortable: false
+          },
+        ],
+        sortable: false,
+        rowNum: 10000,
+        autowidth: true,
+        scrollRows: false,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        height: 170,
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 0,
+        multiselect: true,
+        multiselectWidth: 43,
+        multiboxonly: false,
+        beforeSelectRow: function(rowid) {
+          var rowData = grid.jqGrid('getRowData', rowid);
+          var isEmpty = !(rowData.seq || rowData.carrier || rowData.vehicleNo || rowData.replacement);
+          if (isEmpty) return false;
+          return true;
+        },
+        loadComplete: function() {
+          // 빈 행 체크박스 숨김
+          var ids = grid.jqGrid('getDataIDs');
+          for (var i = 0; i < ids.length; i++) {
+            var rowData = grid.jqGrid('getRowData', ids[i]);
+            var isEmpty = !(rowData.seq || rowData.carrier || rowData.vehicleNo || rowData.replacement);
+            if (isEmpty) {
+              var checkbox = grid.find('tr#' + ids[i] + ' input[type="checkbox"]');
+              checkbox.prop('disabled', true).hide();
+              grid.find('tr#' + ids[i]).addClass('empty-row');
+            }
+          }
+          var $bdiv = grid.closest('.ui-jqgrid-bdiv');
+          if ($bdiv.length) {
+            var $wrapper = $bdiv.find('> div[style*="position:relative"]');
+            if ($wrapper.length) {
+              var $table = $wrapper.find('table');
+              if ($table.length) {
+                $table.detach();
+                $wrapper.replaceWith($table);
+              }
+            }
+          }
+          // 그리드 셀 내 드롭다운 컴포넌트 초기화
+          grid.find('.field-dropdown').each(function() {
+            var $dropdown = $(this);
+            if (!$dropdown.data('dropdown-instance')) {
+              $dropdown.dropdown();
+            }
+          });
+          setTimeout(function() {
+            adjustBdivWidth(grid);
+          }, 0);
+        },
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <button type="button" class="btn btn-blue btn-medium btn-modal" onclick="openModalById('modal-operation-plan-detail-info')" data-modal='modal-operation-plan-detail-info'>
+    <span>Modal Open</span>
+  </button>
+  <!-- modal -->
+  <div id="modal-operation-plan-detail-info" class="modal">
+    <div class="dim"></div>
+    <div class="modal-container">
+      <div class="modal-area">
+        <div class="modal-top">
+          <div class="modal-title-box">
+            <span class="title">(사업장식사셔틀)SR3-6라인</span>
+          </div>
+        </div>
+        <div class="modal-middle">
+          <div class="modal-content-box">
+            <div class="modal-content">
+              <div class="card-box data-form-table">
+                <div class="data-form-table-body v-middle">
+                  <div class="table-group-box">
+                    <!-- 테이블 : 기본정보 -->
+                    <div class="table-box">
+                      <div class="table-header">
+                        <h4>기본정보</h4>
+                      </div>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <th><span class="necessary">출발지</span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <div class="field field-dropdown field-x-small normal">
+                                  <div class="field-form">
+                                    <!-- 숨겨진 select 태그 -->
+                                    <select class="dropdown-select" style="display: none">
+                                      >
+                                      <option value="기흥캠퍼스" active>기흥캠퍼스</option>
+                                      <option value="화성캠퍼스">화성캠퍼스</option>
+                                    </select>
+                                    <button type="button" class="btn-dropdown" id="departureLocation">
+                                      <span class="text">기흥캠퍼스</span>
+                                      <span class="placeholder" style="display: none">선택</span>
+                                    </button>
+                                    <div class="dropdown-list-box">
+                                      <div class="dropdown-list active">
+                                        <button type="button" class="btn-dropdown-list" data-value="기흥캠퍼스">
+                                          <span>기흥캠퍼스</span>
+                                        </button>
+                                      </div>
+                                      <div class="dropdown-list">
+                                        <button type="button" class="btn-dropdown-list" data-value="화성캠퍼스">
+                                          <span>화성캠퍼스</span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <th><span class="necessary">출발일시</span></th>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-wrap date">
+                                  <input type="text" class="datepicker input-xsmall" id="departureDate" name="departureDate" placeholder="00.00.00" value="25.12.30" />
+                                  <i class="icon icon-calendar"></i>
+                                </div>
+                                <div class="input-wrap time">
+                                  <div class="timepicker-box timepicker-xsmall">
+                                    <div class="timepicker-input">
+                                      <input type="text" name="departureTime" id="departureTime" class="time-input input-xsmall" placeholder="00:00" value="00:55" readonly />
+                                    </div>
+                                    <div class="timepicker timepicker-dropdown">
+                                      <div class="timepicker-picker-container">
+                                        <div class="timepicker-picker-area">
+                                          <div class="timepicker-picker">
+                                            <div class="timepicker-top">
+                                              <div class="time">
+                                                <button type="button" class="list ampm">오전</button>
+                                                <button type="button" class="list ampm">오후</button>
+                                              </div>
+                                              <div class="separator"></div>
+                                              <div class="time">
+                                                <button type="button" class="list hour">00</button>
+                                                <button type="button" class="list hour">01</button>
+                                                <button type="button" class="list hour">02</button>
+                                                <button type="button" class="list hour">03</button>
+                                                <button type="button" class="list hour">04</button>
+                                                <button type="button" class="list hour">05</button>
+                                                <button type="button" class="list hour">06</button>
+                                                <button type="button" class="list hour">07</button>
+                                                <button type="button" class="list hour">08</button>
+                                                <button type="button" class="list hour">09</button>
+                                                <button type="button" class="list hour">10</button>
+                                                <button type="button" class="list hour">11</button>
+                                                <button type="button" class="list hour">12</button>
+                                              </div>
+                                              <div class="separator"></div>
+                                              <div class="time">
+                                                <button type="button" class="minute list">00</button>
+                                                <button type="button" class="minute list">01</button>
+                                                <button type="button" class="minute list">02</button>
+                                                <button type="button" class="minute list">03</button>
+                                                <button type="button" class="minute list">04</button>
+                                                <button type="button" class="minute list">05</button>
+                                                <button type="button" class="minute list">06</button>
+                                                <button type="button" class="minute list">07</button>
+                                                <button type="button" class="minute list">08</button>
+                                                <button type="button" class="minute list">09</button>
+                                                <button type="button" class="minute list">10</button>
+                                                <button type="button" class="minute list">11</button>
+                                                <button type="button" class="minute list">12</button>
+                                                <button type="button" class="minute list">13</button>
+                                                <button type="button" class="minute list">14</button>
+                                                <button type="button" class="minute list">15</button>
+                                                <button type="button" class="minute list">16</button>
+                                                <button type="button" class="minute list">17</button>
+                                                <button type="button" class="minute list">18</button>
+                                                <button type="button" class="minute list">19</button>
+                                                <button type="button" class="minute list">20</button>
+                                                <button type="button" class="minute list">21</button>
+                                                <button type="button" class="minute list">21</button>
+                                                <button type="button" class="minute list">22</button>
+                                                <button type="button" class="minute list">23</button>
+                                                <button type="button" class="minute list">24</button>
+                                                <button type="button" class="minute list">25</button>
+                                                <button type="button" class="minute list">26</button>
+                                                <button type="button" class="minute list">27</button>
+                                                <button type="button" class="minute list">28</button>
+                                                <button type="button" class="minute list">29</button>
+                                                <button type="button" class="minute list">30</button>
+                                                <button type="button" class="minute list">31</button>
+                                                <button type="button" class="minute list">32</button>
+                                                <button type="button" class="minute list">33</button>
+                                                <button type="button" class="minute list">34</button>
+                                                <button type="button" class="minute list">35</button>
+                                                <button type="button" class="minute list">36</button>
+                                                <button type="button" class="minute list">37</button>
+                                                <button type="button" class="minute list">38</button>
+                                                <button type="button" class="minute list">39</button>
+                                                <button type="button" class="minute list">40</button>
+                                                <button type="button" class="minute list">41</button>
+                                                <button type="button" class="minute list">42</button>
+                                                <button type="button" class="minute list">43</button>
+                                                <button type="button" class="minute list">44</button>
+                                                <button type="button" class="minute list">45</button>
+                                                <button type="button" class="minute list">46</button>
+                                                <button type="button" class="minute list">47</button>
+                                                <button type="button" class="minute list">48</button>
+                                                <button type="button" class="minute list">49</button>
+                                                <button type="button" class="minute list">50</button>
+                                                <button type="button" class="minute list">51</button>
+                                                <button type="button" class="minute list">52</button>
+                                                <button type="button" class="minute list">53</button>
+                                                <button type="button" class="minute list">54</button>
+                                                <button type="button" class="minute list">55</button>
+                                                <button type="button" class="minute list">56</button>
+                                                <button type="button" class="minute list">57</button>
+                                                <button type="button" class="minute list">58</button>
+                                                <button type="button" class="minute list">59</button>
+                                              </div>
+                                            </div>
+                                            <div class="timepicker-bottom">
+                                              <button type="button" class="btn-confirm" disabled>확인</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span class="necessary">도착지</span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <div class="field field-dropdown field-x-small normal">
+                                  <div class="field-form">
+                                    <!-- 숨겨진 select 태그 -->
+                                    <select class="dropdown-select" style="display: none">
+                                      >
+                                      <option value="기흥캠퍼스" active>기흥캠퍼스</option>
+                                      <option value="화성캠퍼스">화성캠퍼스</option>
+                                    </select>
+                                    <button type="button" class="btn-dropdown" id="arrivalLocation">
+                                      <span class="text">기흥캠퍼스</span>
+                                      <span class="placeholder" style="display: none">선택</span>
+                                    </button>
+                                    <div class="dropdown-list-box">
+                                      <div class="dropdown-list active">
+                                        <button type="button" class="btn-dropdown-list" data-value="기흥캠퍼스">
+                                          <span>기흥캠퍼스</span>
+                                        </button>
+                                      </div>
+                                      <div class="dropdown-list">
+                                        <button type="button" class="btn-dropdown-list" data-value="화성캠퍼스">
+                                          <span>화성캠퍼스</span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <th><span class="necessary">도착일시</span></th>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-wrap date">
+                                  <input type="text" class="datepicker input-xsmall" id="arrivalDate" name="arrivalDate" placeholder="00.00.00" value="25.12.30" />
+                                  <i class="icon icon-calendar"></i>
+                                </div>
+                                <div class="input-wrap time">
+                                  <div class="timepicker-box timepicker-xsmall">
+                                    <div class="timepicker-input">
+                                      <input type="text" name="arrivalTime" id="arrivalTime" class="time-input input-xsmall" placeholder="00:00" value="01:00" readonly />
+                                    </div>
+                                    <div class="timepicker timepicker-dropdown">
+                                      <div class="timepicker-picker-container">
+                                        <div class="timepicker-picker-area">
+                                          <div class="timepicker-picker">
+                                            <div class="timepicker-top">
+                                              <div class="time">
+                                                <button type="button" class="list ampm">오전</button>
+                                                <button type="button" class="list ampm">오후</button>
+                                              </div>
+                                              <div class="separator"></div>
+                                              <div class="time">
+                                                <button type="button" class="list hour">00</button>
+                                                <button type="button" class="list hour">01</button>
+                                                <button type="button" class="list hour">02</button>
+                                                <button type="button" class="list hour">03</button>
+                                                <button type="button" class="list hour">04</button>
+                                                <button type="button" class="list hour">05</button>
+                                                <button type="button" class="list hour">06</button>
+                                                <button type="button" class="list hour">07</button>
+                                                <button type="button" class="list hour">08</button>
+                                                <button type="button" class="list hour">09</button>
+                                                <button type="button" class="list hour">10</button>
+                                                <button type="button" class="list hour">11</button>
+                                                <button type="button" class="list hour">12</button>
+                                              </div>
+                                              <div class="separator"></div>
+                                              <div class="time">
+                                                <button type="button" class="minute list">00</button>
+                                                <button type="button" class="minute list">01</button>
+                                                <button type="button" class="minute list">02</button>
+                                                <button type="button" class="minute list">03</button>
+                                                <button type="button" class="minute list">04</button>
+                                                <button type="button" class="minute list">05</button>
+                                                <button type="button" class="minute list">06</button>
+                                                <button type="button" class="minute list">07</button>
+                                                <button type="button" class="minute list">08</button>
+                                                <button type="button" class="minute list">09</button>
+                                                <button type="button" class="minute list">10</button>
+                                                <button type="button" class="minute list">11</button>
+                                                <button type="button" class="minute list">12</button>
+                                                <button type="button" class="minute list">13</button>
+                                                <button type="button" class="minute list">14</button>
+                                                <button type="button" class="minute list">15</button>
+                                                <button type="button" class="minute list">16</button>
+                                                <button type="button" class="minute list">17</button>
+                                                <button type="button" class="minute list">18</button>
+                                                <button type="button" class="minute list">19</button>
+                                                <button type="button" class="minute list">20</button>
+                                                <button type="button" class="minute list">21</button>
+                                                <button type="button" class="minute list">21</button>
+                                                <button type="button" class="minute list">22</button>
+                                                <button type="button" class="minute list">23</button>
+                                                <button type="button" class="minute list">24</button>
+                                                <button type="button" class="minute list">25</button>
+                                                <button type="button" class="minute list">26</button>
+                                                <button type="button" class="minute list">27</button>
+                                                <button type="button" class="minute list">28</button>
+                                                <button type="button" class="minute list">29</button>
+                                                <button type="button" class="minute list">30</button>
+                                                <button type="button" class="minute list">31</button>
+                                                <button type="button" class="minute list">32</button>
+                                                <button type="button" class="minute list">33</button>
+                                                <button type="button" class="minute list">34</button>
+                                                <button type="button" class="minute list">35</button>
+                                                <button type="button" class="minute list">36</button>
+                                                <button type="button" class="minute list">37</button>
+                                                <button type="button" class="minute list">38</button>
+                                                <button type="button" class="minute list">39</button>
+                                                <button type="button" class="minute list">40</button>
+                                                <button type="button" class="minute list">41</button>
+                                                <button type="button" class="minute list">42</button>
+                                                <button type="button" class="minute list">43</button>
+                                                <button type="button" class="minute list">44</button>
+                                                <button type="button" class="minute list">45</button>
+                                                <button type="button" class="minute list">46</button>
+                                                <button type="button" class="minute list">47</button>
+                                                <button type="button" class="minute list">48</button>
+                                                <button type="button" class="minute list">49</button>
+                                                <button type="button" class="minute list">50</button>
+                                                <button type="button" class="minute list">51</button>
+                                                <button type="button" class="minute list">52</button>
+                                                <button type="button" class="minute list">53</button>
+                                                <button type="button" class="minute list">54</button>
+                                                <button type="button" class="minute list">55</button>
+                                                <button type="button" class="minute list">56</button>
+                                                <button type="button" class="minute list">57</button>
+                                                <button type="button" class="minute list">58</button>
+                                                <button type="button" class="minute list">59</button>
+                                              </div>
+                                            </div>
+                                            <div class="timepicker-bottom">
+                                              <button type="button" class="btn-confirm" disabled>확인</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span class="">운행구분</span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <div class="field field-dropdown field-x-small normal">
+                                  <div class="field-form">
+                                    <!-- 숨겨진 select 태그 -->
+                                    <select class="dropdown-select" style="display: none">
+                                      >
+                                      <option value="출근" active>출근</option>
+                                      <option value="퇴근">퇴근</option>
+                                      <option value="서를">서를</option>
+                                      <option value="출근추가">출근추가</option>
+                                      <option value="퇴근추가">퇴근추가</option>
+                                    </select>
+                                    <button type="button" class="btn-dropdown" id="operationType">
+                                      <span class="text">출근</span>
+                                      <span class="placeholder" style="display: none">선택</span>
+                                    </button>
+                                    <div class="dropdown-list-box">
+                                      <div class="dropdown-list active">
+                                        <button type="button" class="btn-dropdown-list" data-value="출근">
+                                          <span>출근</span>
+                                        </button>
+                                      </div>
+                                      <div class="dropdown-list">
+                                        <button type="button" class="btn-dropdown-list" data-value="퇴근">
+                                          <span>퇴근</span>
+                                        </button>
+                                      </div>
+                                      <div class="dropdown-list">
+                                        <button type="button" class="btn-dropdown-list" data-value="서를">
+                                          <span>서를</span>
+                                        </button>
+                                      </div>
+                                      <div class="dropdown-list">
+                                        <button type="button" class="btn-dropdown-list" data-value="출근추가">
+                                          <span>출근추가</span>
+                                        </button>
+                                      </div>
+                                      <div class="dropdown-list">
+                                        <button type="button" class="btn-dropdown-list" data-value="퇴근추가">
+                                          <span>퇴근추가</span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <th><span class="">경유</span></th>
+                            <td>
+                              <div class="input-wrap">
+                                <input id="input-via" name="input-via" class="clearable input-xsmall" placeholder="경유를 입력하세요" type="text" value="0" />
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span class="">최종 등록 정보</span></th>
+                            <td>
+                              25.12.30 / 홍길동
+                            </td>
+                            <th><span>최종 승인 정보</span></th>
+                            <td>25.12.30 / 버스배차2</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- 테이블 : 요청 대수 -->
+                    <div class="table-box">
+                      <div class="data-list-table">
+                        <div class="data-list-table-header">
+                          <div class="header-left">
+                            <div class="title-box">요청 대수</div>
+                          </div>
+                          <div class="header-right">
+                            <button type="button" class="btn btn-white btn-minus" onclick="">
+                              <i class="icon icon-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-white btn-plus" onclick="">
+                              <i class="icon icon-plus"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="data-table" id="div_list">
+                          <table id="list"></table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-bottom">
+          <div class="modal-button-box">
+            <button type="button" class="btn btn-white btn-small" onclick="closeModalById('modal-commute-fare')">
+              <span>취소</span>
+            </button>
+            <button type="button" class="btn btn-blue btn-small" onclick="">
+              <span>저장</span>
+            </button>
+          </div>
+        </div>
+        <button type="button" class="btn-close" title="팝업창 닫기 버튼"></button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

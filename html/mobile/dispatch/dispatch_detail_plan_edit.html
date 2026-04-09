@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <title>배차 관리 | 삼성통근버스</title>
+  <!-- CSS resource load -->
+  <link href="../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script src="../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../assets/js/lib/bootstrap-datepicker.js"></script>
+  <script src="../../../assets/js/common.js"></script>
+  <script src="../../../assets/js/datepicker.js"></script>
+  <script src="../../../assets/js/dropdown.js"></script>
+  <script src="../../../assets/js/file.js"></script>
+  <script src="../../../assets/js/input.js"></script>
+  <script src="../../../assets/js/modal.js"></script>
+  <script src="../../../assets/js/multiDropdown.js"></script>
+  <script src="../../../assets/js/rangeTimePicker.js"></script>
+  <script src="../../../assets/js/routeAccordion.js"></script>
+  <script src="../../../assets/js/tab.js"></script>
+  <script src="../../../assets/js/timePicker.js"></script>
+</head>
+
+<body>
+  <!-- .dispatch-detail : 배차 상세 페이지 전용 class -->
+  <div class="wrapper dispatch-detail">
+    <!-- header -->
+    <header class="header">
+      <button type="button" class="btn-left"></button>
+      <h1 class="title-box">배차 상세 정보</h1>
+      <button type="button" class="btn-close"></button>
+    </header>
+    <!-- // header -->
+    <main class="main-container">
+      <div class="dispatch-list-container">
+        <div class="dispatch-list-area">
+          <div class="dispatch-list-middle">
+            <div class="dispatch-detail-box">
+              <div class="detail-content-box">
+                <div class="detail-content-box">
+                  <div class="detail-content-bottom">
+                    <div class="detail-list-box">
+                      <ul class="detail-lists">
+                        <li class="detail-list">
+                          <span class="list-label">노선명</span>
+                          <span class="list-data">애오개A_K2-H2-H1(교대조)</span>
+                        </li>
+                        <li class="detail-list">
+                          <span class="list-label">운행구분</span>
+                          <span class="list-data">출근</span>
+                        </li>
+                        <li class="detail-list">
+                          <span class="list-label">운행현황</span>
+                          <span class="list-data">미배차</span>
+                        </li>
+                        <li class="detail-list">
+                          <span class="list-label">출발/도착 정보</span>
+                          <!-- 1/28 update -->
+                          <span class="list-data">2025.02.14 05:50<br />~2025.02.14 07:30</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="detail-content-box">
+                  <div class="detail-content-bottom">
+                    <div class="field-container">
+                      <div class="field-dropdown-box">
+                        <div class="field-label-box">
+                          <span class="field-label">담당운수사</span>
+                        </div>
+                        <div class="field-wrap">
+                          <div class="field field-dropdown">
+                            <div class="field-form">
+                              <!-- 숨겨진 select 태그 -->
+                              <select class="dropdown-select" style="display: none">
+                                <option value="여산관광" active>여산관광</option>
+                                <option value="OO관광">OO관광</option>
+                                <option value="OO관광사">OO관광사</option>
+                                <option value="금성관광">금성관광</option>
+                              </select>
+                              <button type="button" class="btn-dropdown">
+                                <span class="text">여산관광</span>
+                                <span class="placeholder" style="display: none"></span>
+                              </button>
+                              <div class="dropdown-list-box">
+                                <div class="dim"></div>
+                                <div class="dropdown-list-wrap">
+                                  <div class="dropdown-list-header">
+                                    <div class="title-box">운수사 선택</div>
+                                    <button type="button" class="btn-close"></button>
+                                  </div>
+                                  <div class="dropdown-list-body">
+                                    <div class="dropdown-list active">
+                                      <button type="button" class="btn-dropdown-list" data-value="여산관광">
+                                        <span>여산관광</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="OO관광">
+                                        <span>OO관광</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="OO관광사">
+                                        <span>OO관광사</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="금성관광">
+                                        <span>금성관광</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field-container">
+                      <div class="field-dropdown-box">
+                        <div class="field-label-box">
+                          <span class="field-label">운행운수사</span>
+                        </div>
+                        <div class="field-wrap">
+                          <div class="field field-dropdown">
+                            <div class="field-form">
+                              <!-- 숨겨진 select 태그 -->
+                              <select class="dropdown-select" style="display: none">
+                                <option value="여산관광" active>여산관광</option>
+                                <option value="OO관광">OO관광</option>
+                                <option value="OO관광사">OO관광사</option>
+                                <option value="금성관광">금성관광</option>
+                              </select>
+                              <button type="button" class="btn-dropdown">
+                                <span class="text">여산관광</span>
+                                <span class="placeholder" style="display: none"></span>
+                              </button>
+                              <div class="dropdown-list-box">
+                                <div class="dim"></div>
+                                <div class="dropdown-list-wrap">
+                                  <div class="dropdown-list-header">
+                                    <div class="title-box">운수사 선택</div>
+                                    <button type="button" class="btn-close"></button>
+                                  </div>
+                                  <div class="dropdown-list-body">
+                                    <div class="dropdown-list active">
+                                      <button type="button" class="btn-dropdown-list" data-value="여산관광">
+                                        <span>여산관광</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="OO관광">
+                                        <span>OO관광</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="OO관광사">
+                                        <span>OO관광사</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="금성관광">
+                                        <span>금성관광</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dispatch-list-bottom">
+            <div class="button-box">
+              <button type="button" class="btn btn-white">
+                <span>취소</span>
+              </button>
+              <button type="button" class="btn btn-blue">
+                <span>수정</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

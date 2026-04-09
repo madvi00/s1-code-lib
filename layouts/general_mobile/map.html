@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+  <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+  <link rel="stylesheet" href="../../assets/css/lib/bootstrap-datepicker.standalone.css" />
+  <link rel="stylesheet" href="../../assets/css/lib-style.css" />
+  <link rel="stylesheet" href="../../assets/css/general.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <script src="../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../assets/js/lib/bootstrap-datepicker.js"></script>
+  <script src="../../assets/js/lib/swiper-bundle.min.js"></script>
+  
+  <script src="../../assets/js/datepicker.js"></script>
+  <script src="../../assets/js/dropdown.js"></script>
+  <script src="../../assets/js/file.js"></script>
+  <script src="../../assets/js/input.js"></script>
+  <script src="../../assets/js/modal.js"></script>
+  <script src="../../assets/js/multiDropdown.js"></script>
+  <script src="../../assets/js/rangeTimePicker.js"></script>
+  <script src="../../assets/js/routeAccordion.js"></script>
+  <script src="../../assets/js/tab.js"></script>
+  <script src="../../assets/js/timePicker.js"></script>
+  <title>Guide | Map</title>
+  <style>
+    .general-content>* {
+      position: static;
+      transform: none;
+      width: auto;
+    }
+
+    .research-btn-box {
+      display: block;
+    }
+
+    .general-content {
+      display: grid;
+      align-items: end;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .dummy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+    }
+
+    .station-tooltip:has(.bus-location-button) .station-content {
+      bottom: auto;
+      top: -20%;
+    }
+  </style>
+</head>
+
+<body style="overflow:hidden; margin:0;">
+    <div class="general-container">
+      <div class="general-area">
+        <div class="general-top">
+          <div class="general-label">Component</div>
+          <div class="general-title">Map</div>
+        </div>
+        <div class="general-middle">
+          <div class="component-block">
+            <div class="component-block-header"><div><div class="component-block-title">우측 상단 컨트롤 영역</div></div></div>
+            <div class="component-preview">
+              <!-- 우측 상단 컨트롤 영역 -->
+              <!-- [수정] 241114 -->
+              <div class="map-control-box">
+                <div class="view-btn-box">
+                  <!-- 선택됨 클래스 : pressed 선택됨 상태 : aria-pressed="true" 기본값 : aria-pressed="false" -->
+                  <button type="button" class="tab-view tab-map pressed" aria-pressed="true">지도</button>
+                  <button type="button" class="tab-view tab-skyview" aria-pressed="false">스카이뷰</button>
+                </div>
+                <div class="map-control-btn-box">
+                  <div class="scale-btn-box">
+                    <button type="button" class="btn-scale scale-plus" title="확대"></button>
+                    <button type="button" class="btn-scale scale-minus" title="축소"></button>
+                  </div>
+                  <div class="location-btn-box">
+                    <!-- 선택됨 클래스 : pressed 선택됨 상태 : aria-pressed="true" 기본값 : aria-pressed="false" -->
+                    <button type="button" class="btn-location" aria-pressed="false" title="현재 위치로"></button>
+                    <!-- [수정] 241204 -->
+                    <div class="location-tooltip-box">
+                      <div class="location-tooltip-box-inner">
+                        <p class="location-tooltip-text">접속 위치가 실제와 다른가요?</p>
+                        <button type="button" class="tooltip-button">안내 ></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="component-block">
+            <!-- [수정] 241210 : '현 지도 ... ' 문구 변경 -->
+            <div class="component-block-header"><div><div class="component-block-title">현 지도에서 재검색</div></div></div>
+            <div class="component-preview">
+              <div class="research-btn-box">
+                <button type="button" class="btn-research">
+                  <span>현 지도에서 재검색</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="component-block">
+            <div class="component-block-header"><div><div class="component-block-title">(모바일) 지도 우측 하단 새로고침 버튼</div></div></div>
+            <div class="component-preview">
+              <div class="dummy" style="position: relative; background-color: gainsboro">
+                <button type="button" class="btn-refresh"></button>
+              </div>
+              <div class="dummy" style="position: relative; background-color: gainsboro">
+                <!-- [수정] 250108 : 추가 -->
+                <button type="button" class="btn-current"></button>
+              </div>
+            </div>
+          </div>
+          <div class="component-block">
+            <div class="component-block-header"><div><div class="component-block-title">상황별 버튼</div></div></div>
+            <div class="component-preview">
+              <div class="dummy">
+                <!-- [수정] 241127 : station-tooltip 내 엘리먼트 버튼, station-content 순으로 정렬 -->
+                <!-- [수정] 241127 : 기존 .hide 클래스 삭제 -->
+                <!-- 이하 .station-tooltip 추가 클래스 설명 -->
+                <!-- .selected : 선택 케이스 스타일 / 아이콘 + 텍스트 노출 -->
+                <!-- .focused : 아이콘 + 텍스트(primary 배경) 노출 -->
+                <!-- .error : 에러 케이스 -->
+                <div class="station-tooltip">
+                  <div class="station-content">출근버스</div>
+                  <button type="button" class="station-button" title="출근 버스 정류장"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <div class="station-tooltip selected">
+                  <div class="station-content">출근버스 selected</div>
+                  <button type="button" class="station-button" title="출근 버스 정류장"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <div class="station-tooltip selected">
+                  <div class="station-content">
+                    출근버스 selected
+                    <button type="button" class="view-station-button" title="정류장 이미지 보기"></button>
+                  </div>
+                  <button type="button" class="station-button" title="출근 버스 정류장"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <div class="station-tooltip">
+                  <div class="station-content">셔틀버스</div>
+                  <button type="button" class="station-shuttle-button" title="셔틀 버스 정류장"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <div class="station-tooltip selected">
+                  <div class="station-content">셔틀버스 selected</div>
+                  <button type="button" class="station-shuttle-button" title="셔틀 버스 정류장"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <!-- [수정] 241210 : 퇴근 case 추가 -->
+                <div class="station-tooltip">
+                  <div class="station-content">퇴근버스</div>
+                  <button type="button" class="leave-work-button" title="퇴근 버스 정류장"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <!-- [수정] 241210 : 퇴근 case 추가 -->
+                <div class="station-tooltip selected">
+                  <div class="station-content">퇴근버스 selected</div>
+                  <button type="button" class="leave-work-button" title="퇴근 버스 정류장"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <div class="station-tooltip">
+                  <div class="station-content">홈 위치</div>
+                  <button type="button" class="location-home-button" title="홈 위치"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <div class="station-tooltip">
+                  <div class="station-content">현재 위치</div>
+                  <button type="button" class="location-button" title="현재 위치"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <div class="station-tooltip selected">
+                  <div class="station-content">현재 위치 selected</div>
+                  <button type="button" class="location-button" title="현재 위치"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <!-- .focused : 아이콘 + 텍스트(primary 배경) 노출 -->
+                <div class="station-tooltip focused">
+                  <div class="station-content">현재 위치 focused</div>
+                  <button type="button" class="location-button" title="현재 위치"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <!-- .error : 에러 케이스 -->
+                <div class="station-tooltip error">
+                  <div class="station-content">현재 위치 error</div>
+                  <button type="button" class="location-button" title="현재 위치"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <div class="station-tooltip error selected">
+                  <div class="station-content">현재 위치 error selected</div>
+                  <button type="button" class="location-button" title="현재 위치"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <div class="station-tooltip">
+                  <div class="station-content">
+                    <span class="info">경기78자1234</span>
+                    <div class="num">12/44</div>
+                  </div>
+                  <button type="button" class="bus-location-button" title="버스 현재 위치"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <div class="station-tooltip selected">
+                  <div class="station-content">
+                    <span class="info">경기78자1234</span>
+                    <div class="num">12/44</div>
+                  </div>
+                  <button type="button" class="bus-location-button" title="버스 현재 위치"></button>
+                </div>
+              </div>
+              <div class="dummy">
+                <!-- [수정] 250102 : 거주자 반경 범위 표시 추가 (.flag) -->
+                <div class="flag">
+                  <span>700m</span>
+                </div>
+              </div>
+              <div class="dummy">
+                <!-- [수정] 250106 -->
+                <div class="round-icon work">
+                  <span>출근</span>
+                </div>
+              </div>
+              <div class="dummy">
+                <!-- [수정] 250106 -->
+                <div class="round-icon leave-out">
+                  <span>퇴근</span>
+                </div>
+              </div>
+              <div class="dummy">
+                <!-- [수정] 250106 -->
+                <div class="round-icon shuttle">
+                  <span>셔틀</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<script>document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
+</body>
+
+</html>

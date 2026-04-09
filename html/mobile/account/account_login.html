@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <title>로그인 | 삼성통근버스</title>
+  <!-- CSS resource load -->
+  <link href="../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script src="../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../assets/js/lib/bootstrap-datepicker.js"></script>
+  <script src="../../../assets/js/common.js"></script>
+  <script src="../../../assets/js/datepicker.js"></script>
+  <script src="../../../assets/js/dropdown.js"></script>
+  <script src="../../../assets/js/file.js"></script>
+  <script src="../../../assets/js/input.js"></script>
+  <script src="../../../assets/js/modal.js"></script>
+  <script src="../../../assets/js/multiDropdown.js"></script>
+  <script src="../../../assets/js/rangeTimePicker.js"></script>
+  <script src="../../../assets/js/routeAccordion.js"></script>
+  <script src="../../../assets/js/tab.js"></script>
+  <script src="../../../assets/js/timePicker.js"></script>
+</head>
+
+<body>
+  <!-- .account-login : 로그인 페이지 전용 class -->
+  <div class="wrapper account-login">
+    <main class="main-container">
+      <section class="account-container">
+        <div class="account-area">
+          <div class="account-top-box">
+            <div class="account-heading-box">
+              <div class="logo-box">
+                <img src="../../../assets/images/logo_samsung.svg" alt="SAMSUNG" />
+              </div>
+            </div>
+          </div>
+          <div class="account-middle">
+            <div class="field-container">
+              <div class="input-group">
+                <div class="input-wrap">
+                  <div class="input-box">
+                    <input id="input_id" name="input_id" class="clearable" placeholder="아이디를 입력해 주세요" type="text" value="" />
+                    <i class="icon-clear"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group input-medium">
+                <div class="input-wrap">
+                  <div class="input-box">
+                    <input id="input_password" name="input_password" class="clearable" placeholder="비밀번호를 입력해 주세요" type="password" value="" />
+                    <i class="icon-clear"></i>
+                    <div class="eye-button-box">
+                      <button type="button" class="btn-eye"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field-container">
+              <div class="checkbox-group">
+                <label for="checkbox-1">
+                  <input type="checkbox" id="checkbox-1" name="checkbox-1" />
+                  <span>아이디 저장</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="account-bottom">
+            <div class="button-box">
+              <button type="button" class="btn btn-blue" disabled>
+                <span>로그인</span>
+              </button>
+            </div>
+            <div class="link-box">
+              <ul class="link-list-box">
+                <li class="link-list">
+                  <a href="javascript:void(0);" class="link">
+                    <span>아이디 찾기</span>
+                  </a>
+                </li>
+                <li class="link-list">
+                  <a href="javascript:void(0);" class="link">
+                    <span>비밀번호 찾기</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer class="footer-container">
+      <div class="menu-box">
+        <ul class="menu-lists">
+          <li class="menu-list">
+            <a href="../../pages/setting/all_terms.html" class="btn-external terms" onclick="
+            openWindow(this.href);
+            return false;
+          " title="새 창으로 열기">
+              <span>이용약관</span>
+            </a>
+          </li>
+          <li class="menu-list">
+            <a href="../../pages/setting/all_privacy_policy.html" class="btn-external privacy" onclick="
+            openWindow(this.href);
+            return false;
+          " title="새 창으로 열기"><span>개인정보처리방침</span></a>
+          </li>
+          <li class="menu-list">
+            <a href="../../pages/setting/all_location_terms.html" class="btn-external" onclick="
+            openWindow(this.href);
+            return false;
+          " title="새 창으로 열기"><span>위치기반 서비스 이용약관</span></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <!-- // footer -->
+    <script>
+      function openWindow(url) {
+        // 새 창의 크기 설정
+        var width = 500;
+        var height = 700;
+        // 현재 화면 크기
+        var screenWidth = window.screen.width;
+        var screenHeight = window.screen.height;
+        // 새 창을 화면 중앙으로 위치시키기 위해 top과 left 값 계산
+        var top = (screenHeight - height) / 2;
+        var left = (screenWidth - width) / 2;
+        // 새 창 열기
+        window.open(url, '_blank', `width=${width},height=${height},top=${top},left=${left}`);
+      }
+    </script>
+  </div>
+</body>
+
+</html>

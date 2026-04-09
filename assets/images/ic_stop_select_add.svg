@@ -1,0 +1,24 @@
+<svg width="46" height="54" viewBox="0 0 46 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_6292_10669)">
+<path d="M36 8C37.1044 8.00021 38 8.89556 38 10V36C38 37.1044 37.1044 37.9998 36 38H26V45C26 45.5523 25.5523 46 25 46H21C20.4477 46 20 45.5523 20 45V38H10C8.89543 38 8 37.1046 8 36V10C8 8.89543 8.89543 8 10 8H36Z" fill="#1D6CEB"/>
+<path d="M23 14C27.4198 14 30.9997 14.4736 31 17.7891V22.6377C30.3934 22.2887 29.7188 22.0449 29 21.9336V17.7891H17V22.5264H25.4062C23.5476 23.499 22.2783 25.4443 22.2783 27.6875C22.2784 28.5505 22.4678 29.3688 22.8047 30.1055H19V31.0527C18.9999 31.5737 18.555 32 18 32H17C16.45 32 16.0001 31.5737 16 31.0527V29.3662C15.39 28.8452 15 28.1011 15 27.2627V17.7891C15.0003 14.4736 18.5802 14 23 14ZM18.5 25.3682C17.6701 25.3682 17.0002 26.0029 17 26.7891C17 27.5754 17.67 28.2109 18.5 28.2109C19.33 28.2109 20 27.5754 20 26.7891C19.9998 26.0029 19.3299 25.3682 18.5 25.3682Z" fill="white"/>
+<path d="M28.1018 22.5918C30.9155 22.592 33.1963 24.8728 33.1965 27.6865C33.1965 30.5004 30.9156 32.782 28.1018 32.7822C25.2878 32.7822 23.0061 30.5006 23.0061 27.6865C23.0063 24.8727 25.2879 22.5918 28.1018 22.5918Z" fill="white"/>
+<rect x="27.6016" y="24.9375" width="1" height="2.75" rx="0.5" fill="#1D6CEB"/>
+<rect x="27.6016" y="27.6875" width="1" height="2.78223" rx="0.5" fill="#1D6CEB"/>
+<rect x="30.8682" y="27.2041" width="1" height="2.75" rx="0.5" transform="rotate(90 30.8682 27.2041)" fill="#1D6CEB"/>
+<rect x="28.1182" y="27.2041" width="1" height="2.78223" rx="0.5" transform="rotate(90 28.1182 27.2041)" fill="#1D6CEB"/>
+<path d="M20 45C20 45.5523 20.4477 46 21 46H25C25.5523 46 26 45.5523 26 45V38H36C37.1044 37.9998 38 37.1044 38 36V10C38 8.89556 37.1044 8.00021 36 8V6C38.1392 6.00042 39.8879 7.68036 39.9951 9.79395L40 10V36C40 38.1404 38.3188 39.8877 36.2061 39.9951L36 40H28V45C28 46.6569 26.6569 48 25 48H21C19.3431 48 18 46.6569 18 45V40H10C7.85996 40 6.11211 38.3194 6.00488 36.2061L6 36V10C6 7.79086 7.79086 6 10 6V8C8.89543 8 8 8.89543 8 10V36C8 37.1046 8.89543 38 10 38H20V45ZM36 6V8H10V6H36Z" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_d_6292_10669" x="0" y="0" width="46" height="54" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="3"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6292_10669"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6292_10669" result="shape"/>
+</filter>
+</defs>
+</svg>

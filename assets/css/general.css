@@ -1,0 +1,42 @@
+/* general.css — general_mobile iframe 전용 레이아웃
+   component-block / component-block-header / component-preview 스타일은
+   lib-style.css에서 동일하게 적용됨 */
+* {
+  box-sizing: border-box;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ====== 외부 래퍼 ====== */
+.general-container {
+  padding: 24px;
+  background: var(--gray-50, #f5f5f5);
+}
+
+.general-area {
+  display: flex;
+  flex-direction: column;
+}
+
+/* section-header와 중복이므로 숨김 */
+.general-top {
+  display: none;
+}
+
+/* 카드 목록 컨테이너 */
+.general-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* general-middle 안의 component-block은 margin-bottom 제거 (gap으로 대체) */
+.general-middle > .component-block {
+  margin-bottom: 0;
+}
+
+/* iframe 안에서 component-preview는 border-bottom 제거 */
+.general-area .component-preview {
+  border-bottom: none;
+}

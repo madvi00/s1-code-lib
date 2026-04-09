@@ -1,0 +1,916 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript">
+    sessionStorage.setItem('contextpath', '/uvis')
+    sessionStorage.setItem('langSet', 'ko')
+    //////////달력 설정//////////
+    var cldMsg_prevMonth = '이전 달' // 이전 달
+    var cldMsg_nextMonth = '다음 달' // 다음 달
+    var cldMsg_prevYear = '이전 년도' // 이전 년도
+    var cldMsg_nextYear = '다음 년도' // 다음 년도
+    var cldMsg_prev = '이전' // 이전
+    var cldMsg_next = '다음' // 다음
+    //////////달력 설정//////////
+    //////////jquery.uvis.common.js 다국어//////////
+    var jquery_uvis_common_checkPasswordRegex1 = '비밀번호에는 공백을 입력할 수 없습니다.' // 비밀번호에는 공백을 입력할 수 없습니다.
+    var jquery_uvis_common_checkPasswordRegex2 = '새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.' // 새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.
+    var jquery_uvis_common_ajaxErrorMessage0 = '접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.' // 접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage1 = '장시간 미사용으로 로그아웃 되었습니다.\r\n로그인 페이지로 이동 합니다.' // 장시간 미사용으로 로그아웃 되었습니다.\\r\\n로그인 페이지로 이동 합니다.
+    var jquery_uvis_common_ajaxErrorMessage2 = '에러가 발생하였습니다.\r\n네트워크 상태를 확인해주세요.' // 에러가 발생하였습니다.\\r\\n네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage3 = '에러가 발생하였습니다.\r\n접근이 거부되었습니다.\n\n새로고침 또는 로그인을 다시 해주세요.' // 에러가 발생하였습니다.\\r\\n접근이 거부되었습니다.\\n\\n새로고침 또는 로그인을 다시 해주세요.
+    var jquery_uvis_common_ajaxErrorMessage4 = '에러가 발생하였습니다.\r\nURL을 찾을 수 없습니다.' // 에러가 발생하였습니다.\\r\\nURL을 찾을 수 없습니다.
+    var jquery_uvis_common_ajaxErrorMessage5 = '에러가 발생하였습니다.\r\n내부 서버 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n내부 서버 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage6 = '에러가 발생하였습니다.\r\n파싱 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n파싱 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage7 = '에러가 발생하였습니다.\r\n실행시간이 지연되어 타임아웃이 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n실행시간이 지연되어 타임아웃이 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage8 = '에러가 발생하였습니다.\r\n알 수 없는 에러입니다.\n\n' // 에러가 발생하였습니다.\\r\\n알 수 없는 에러입니다.\\n\\n
+    var jquery_uvis_common_isValidDate1 = '잘못된 날짜형식 입니다.\n\r입력하신 문자열 길이를 확인해주세요.' // 잘못된 날짜형식 입니다.\\n\\r입력하신 문자열 길이를 확인해주세요.
+    var jquery_uvis_common_isValidDate21 = '잘못된 날짜형식 입니다.\n\r' // 잘못된 날짜형식 입니다.\\n\\r
+    var jquery_uvis_common_isValidDate22 = '월은 존재하지 않는 월입니다.' // 월은 존재하지 않는 월입니다.
+    var jquery_uvis_common_isValidDate31 = '잘못된 날짜형식 입니다.\n\r해당 월은' // 잘못된 날짜형식 입니다.\\n\\r해당 월은
+    var jquery_uvis_common_isValidDate32 = '일 까지입니다.' // 일 까지입니다.
+    var jquery_uvis_common_isValidDate4 = '잘못된 날짜형식 입니다.' // 잘못된 날짜형식 입니다.
+    var jquery_uvis_common_checkFileExt1 = '정상적인 파일이 아닙니다.' // 정상적인 파일이 아닙니다.
+    var jquery_uvis_common_checkFileExt2 = '파일만 업로드 가능 합니다.' // 파일만 업로드 가능 합니다.
+    var jquery_uvis_common_downloadCapture1 = '인터넷 익스플로러는 지원하지 않습니다.' // 인터넷 익스플로러는 지원하지 않습니다.
+    var jquery_uvis_common_downloadCapture2 = '이미지로 변환 중 에러가 발생하였습니다.' // 이미지로 변환 중 에러가 발생하였습니다.
+    //////////jquery.uvis.common.js 다국어//////////
+    var termsFilter = ['img', 'a', 'p', 'br', 'span', 'b', 'strong', 'u', 'colgroup', 'col', 'table', 'tbody', 'tr', 'td', 'ul', 'li', 'dl', 'dd', 'dt']
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <!-- CSS resource load -->
+  <link href="../../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../../assets/css/lib/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../../../assets/js/jquery-ui.js"></script>
+  <script src="../../../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../../../assets/js/bootstrap.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../../../assets/js/popper.min.js"></script>
+  <script src="../../../../assets/js/datatables.min.js"></script>
+  <script src="../../../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../../../assets/js/jquery.cookie.js"></script>
+  <script src="../../../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../../../assets/js/jquery.uvis.common.js"></script>
+  <script src="../../../../assets/js/highcharts.js"></script>
+  <script src="../../../../assets/js/exporting.js"></script>
+  <script src="../../../../assets/js/canvg.js"></script>
+  <script src="../../../../assets/js/rgbcolor.min.js"></script>
+  <script src="../../../../assets/js/html2canvas.js"></script>
+  <script src="../../../../assets/js/es6-promise.auto.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../../../assets/js/jquery.jqGrid.src.js"></script>
+  <script src="../../../../assets/js/jquery.paging.js"></script>
+  <script src="../../../../assets/js/publish.js"></script>
+  <script src="../../../../assets/js/amobe_datepicker.js"></script>
+  <script src="../../../../assets/js/amobe_dropdown.js"></script>
+  <script src="../../../../assets/js/amobe_header.js"></script>
+  <script src="../../../../assets/js/amobe_input.js"></script>
+  <script src="../../../../assets/js/amobe_mapList.js"></script>
+  <script src="../../../../assets/js/amobe_modal.js"></script>
+  <script src="../../../../assets/js/amobe_multiMap.js"></script>
+  <script src="../../../../assets/js/amobe_rangeTimePicker.js"></script>
+  <script src="../../../../assets/js/amobe_routeAccordion.js"></script>
+  <script src="../../../../assets/js/amobe_swiper.js"></script>
+  <script src="../../../../assets/js/amobe_tab.js"></script>
+  <script src="../../../../assets/js/amobe_table.js"></script>
+  <script src="../../../../assets/js/amobe_timePicker.js"></script>
+  <title>차량운행관리 시스템 - 귀성 노선 관리</title>
+  <script type="text/javascript">
+    // jqGride Local Data
+    const _JQ_GRID_DATA = [{
+        rownum: 205,
+        homecomingType: '귀사',
+        vehicleType: '우등',
+        region: '경북',
+        routeName: '기흥 → 경주',
+        departureStop: '기흥캠퍼스',
+        finalStop: '경주시외버스터미널',
+      },
+      {
+        rownum: 204,
+        homecomingType: '귀사',
+        vehicleType: '우등',
+        region: '전남',
+        routeName: '기흥 → 광주',
+        departureStop: '기흥캠퍼스',
+        finalStop: '광주무등경기장',
+      },
+      {
+        rownum: 203,
+        homecomingType: '귀사',
+        vehicleType: '우등',
+        region: '전북',
+        routeName: '기흥 → 군산',
+        departureStop: '기흥캠퍼스',
+        finalStop: '군산고속버스터미널',
+      },
+      {
+        rownum: 202,
+        homecomingType: '귀향',
+        vehicleType: '우등',
+        region: '충남',
+        routeName: '기흥 → 대전 A',
+        departureStop: '기흥캠퍼스',
+        finalStop: '대전터미널',
+      },
+      {
+        rownum: 201,
+        homecomingType: '귀사',
+        vehicleType: '우등',
+        region: '최장거리',
+        routeName: '화성 → 진주',
+        departureStop: '화성캠퍼스',
+        finalStop: '마산맥',
+      },
+      {
+        rownum: 200,
+        homecomingType: '귀사',
+        vehicleType: '우등',
+        region: '충북',
+        routeName: '기흥 → 부산',
+        departureStop: '기흥캠퍼스',
+        finalStop: '부산역',
+      },
+      {
+        rownum: 199,
+        homecomingType: '귀사',
+        vehicleType: '우등',
+        region: '경북',
+        routeName: '기흥 → 포항',
+        departureStop: '기흥캠퍼스',
+        finalStop: '포항터미널',
+      },
+    ];
+    // 정류장 정보 jqGrid 데이터
+    const _STOP_GRID_DATA = [{
+        stopSeq: 1,
+        stopName: '기흥캠퍼스',
+        adultFare: '10,000',
+        childFare: '8,000',
+      },
+      {
+        stopSeq: 2,
+        stopName: '선택',
+        adultFare: '',
+        childFare: '8,000',
+      },
+      {
+        stopSeq: 3,
+        stopName: '군산고속버스터미널',
+        adultFare: '10,000',
+        childFare: '8,000',
+      },
+      {
+        stopSeq: 4,
+        stopName: '선택',
+        adultFare: '',
+        childFare: '',
+      },
+    ];
+    // NOTE: 기존과 열 구조가 다름에 따라, colNames/colModel도 아래에서 맞춰줍니다.
+    // 이하 기존 스크립트 유지, listLoad에서 컬럼명/모델만 맞춤
+    $(document).ready(function() {
+      setPageDefault();
+      stopListLoad();
+      // jqGrid 높이 계산 및 리사이즈 설정 (공통 함수 사용)
+      setupJqGridResize({
+        containerSelector: '#div_list',
+        gridSelector: '#list',
+      });
+      // 초기 로딩 시 그리드 너비 설정
+      $(window).resize(function() {
+        $('#list').setGridWidth($('#div_list').width(), true);
+      });
+      // 초기 로딩 시 한 번 실행
+      setTimeout(function() {
+        $('#list').setGridWidth($('#div_list').width(), true);
+      }, 100);
+      // 필요시 나머지 이벤트 핸들러 추가 (생략)
+    });
+
+    function setPageDefault() {
+      listLoad(false, 1);
+    }
+
+    function listLoad(firstNoLoad, page) {
+      // jqGrid 리스트 초기화, 생성
+      $('#list').jqGrid('GridUnload');
+      var grid = jQuery('#list');
+      // 데이터가 없거나 부족할 때 빈 행 추가
+      var displayData = _JQ_GRID_DATA || [];
+      var emptyRow = {
+        rownum: '',
+        homecomingType: '',
+        vehicleType: '',
+        region: '',
+        routeName: '',
+        departureStop: '',
+        finalStop: '',
+        isEmpty: true
+      };
+      while (displayData.length < 15) {
+        displayData.push(Object.assign({}, emptyRow));
+      }
+      // 초기 높이 계산 (공통 함수 사용)
+      var initialHeight = calculateJqGridHeight({
+        containerSelector: '#div_list',
+        headerSelector: '.data-list-table-header',
+        footerSelector: '.data-list-table-footer',
+        padding: 56,
+      });
+      grid.jqGrid({
+        datatype: 'local',
+        data: displayData,
+        colNames: ['순번', '귀성 구분', '차량 구분', '지역', '노선명', '출발 정류장', '최종 정류장'],
+        colModel: [{
+            name: 'rownum',
+            index: 'rownum',
+            width: 80,
+            align: 'center',
+            sortable: true
+          },
+          {
+            name: 'homecomingType',
+            index: 'homecomingType',
+            width: 100,
+            align: 'center',
+            sortable: true
+          },
+          {
+            name: 'vehicleType',
+            index: 'vehicleType',
+            width: 100,
+            align: 'center',
+            sortable: true
+          },
+          {
+            name: 'region',
+            index: 'region',
+            width: 100,
+            align: 'center',
+            sortable: true
+          },
+          {
+            name: 'routeName',
+            index: 'routeName',
+            width: 200,
+            align: 'left',
+            sortable: true
+          },
+          {
+            name: 'departureStop',
+            index: 'departureStop',
+            width: 150,
+            align: 'center',
+            sortable: true
+          },
+          {
+            name: 'finalStop',
+            index: 'finalStop',
+            width: 200,
+            align: 'center',
+            sortable: false
+          },
+        ],
+        sortable: false,
+        rowNum: 15,
+        autowidth: true,
+        scrollRows: true,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        multiselect: true,
+        multiselectWidth: 55,
+        multiboxonly: false,
+        height: initialHeight,
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: true,
+        scrollOffset: 0,
+        beforeSelectRow: function(rowid, e) {
+          var rowData = grid.jqGrid('getRowData', rowid);
+          // 빈 행은 선택 불가능
+          if (rowData.isEmpty === 'true' || (!rowData.rownum && !rowData.routeName)) {
+            return false;
+          }
+          return true;
+        },
+        loadComplete: function(data) {
+          // 그리드 너비 설정 (DOM 렌더링 완료 후 실행)
+          setTimeout(function() {
+            grid.setGridWidth($('#div_list').width(), true);
+          }, 0);
+          // 빈 행 처리
+          var ids = grid.jqGrid('getDataIDs');
+          for (var i = 0; i < ids.length; i++) {
+            var rowData = grid.jqGrid('getRowData', ids[i]);
+            if (rowData.isEmpty === 'true' || (!rowData.rownum && !rowData.routeName)) {
+              // 빈 행의 체크박스 비활성화 및 숨김
+              var checkbox = grid.find('tr#' + ids[i] + ' input[type="checkbox"]');
+              checkbox.prop('disabled', true).hide();
+              // 빈 행에 클래스 추가
+              grid.find('tr#' + ids[i]).addClass('empty-row');
+              // 빈 행의 모든 셀 내용 제거
+              grid
+                .find('tr#' + ids[i] + ' td')
+                .not(':first')
+                .html('');
+            }
+          }
+          // 스크롤 여부 확인 후 .ui-jqgrid-bdiv 너비 조정
+          setTimeout(function() {
+            adjustBdivWidth(grid);
+          }, 0);
+        },
+      });
+    }
+    // 정류장 정보 jqGrid 초기화 함수
+    function stopListLoad() {
+      var stopGrid = jQuery('#stopList');
+      // 기존 그리드가 있으면 제거
+      if (stopGrid.length && stopGrid.data('jqGrid')) {
+        stopGrid.jqGrid('GridUnload');
+      }
+      // 정류장명 옵션
+      var stopNameOptions = '기흥캠퍼스:기흥캠퍼스;군산고속버스터미널:군산고속버스터미널;경주시외버스터미널:경주시외버스터미널';
+      stopGrid.jqGrid({
+        datatype: 'local',
+        data: _STOP_GRID_DATA || [],
+        colNames: ['순번', '정류장명', '대인금액(원)', '소인금액(원)'],
+        colModel: [{
+            name: 'stopSeq',
+            index: 'stopSeq',
+            width: 50,
+            align: 'center',
+            sortable: false,
+          },
+          {
+            name: 'stopName',
+            index: 'stopName',
+            width: 280,
+            align: 'left',
+            sortable: false,
+            editable: false,
+          },
+          {
+            name: 'adultFare',
+            index: 'adultFare',
+            width: 100,
+            align: 'left',
+            sortable: false,
+            editable: false,
+          },
+          {
+            name: 'childFare',
+            index: 'childFare',
+            width: 100,
+            align: 'left',
+            sortable: false,
+            editable: false,
+          },
+        ],
+        sortable: false,
+        autowidth: false,
+        width: '100%',
+        shrinkToFit: false,
+        forceFit: false,
+        height: 'auto',
+        multiselect: true,
+        multiselectWidth: 43,
+        viewrecords: false,
+        pgtext: '',
+        pgbuttons: false,
+        pginput: false,
+        recordtext: '',
+        emptyrecords: '',
+        loadComplete: function(data) {
+          // 각 행에 dropdown과 input 추가
+          var ids = stopGrid.jqGrid('getDataIDs');
+          for (var i = 0; i < ids.length; i++) {
+            var rowData = stopGrid.jqGrid('getRowData', ids[i]);
+            var rowId = ids[i];
+            var row = stopGrid.find('tr#' + rowId);
+            // 정류장명 셀에 dropdown 추가 (multiselect가 있으므로 인덱스 2)
+            var stopNameCell = row.find('td').eq(2);
+            if (stopNameCell.length) {
+              var currentValue = rowData.stopName || '선택';
+              var dropdownHtml =
+                '<div class="field field-dropdown field-x-small normal">' +
+                '<div class="field-form">' +
+                '<button type="button" class="btn-dropdown">' +
+                '<span class="text">' +
+                currentValue +
+                '</span>' +
+                '</button>' +
+                '<div class="dropdown-list-box">' +
+                '<div class="dropdown-list ' + (currentValue === '기흥캠퍼스' ? 'active' : '') + '">' +
+                '<button type="button" class="btn-dropdown-list">' +
+                '<span>기흥캠퍼스</span>' +
+                '</button>' +
+                '</div>' +
+                '<div class="dropdown-list ' + (currentValue === '군산고속버스터미널' ? 'active' : '') + '">' +
+                '<button type="button" class="btn-dropdown-list">' +
+                '<span>군산고속버스터미널</span>' +
+                '</button>' +
+                '</div>' +
+                '<div class="dropdown-list ' + (currentValue === '경주시외버스터미널' ? 'active' : '') + '">' +
+                '<button type="button" class="btn-dropdown-list">' +
+                '<span>경주시외버스터미널</span>' +
+                '</button>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+              stopNameCell.html(dropdownHtml);
+            }
+            // 대인금액 셀에 input 추가 (multiselect가 있으므로 인덱스 3)
+            var adultFareCell = row.find('td').eq(3);
+            if (adultFareCell.length) {
+              var adultFareValue = rowData.adultFare || '';
+              var adultFareHtml =
+                '<div class="input-wrap">' +
+                '<input type="text" id="adultFare_' +
+                rowId +
+                '" name="adultFare_' +
+                rowId +
+                '" class="clearable input-xsmall align-right" value="' +
+                (adultFareValue ? adultFareValue.replace(/"/g, '&quot;').replace(/'/g, '&#39;') : '') +
+                '" placeholder="금액 입력" />' +
+                '</div>';
+              adultFareCell.html(adultFareHtml);
+            }
+            // 소인금액 셀에 input 추가 (multiselect가 있으므로 인덱스 4)
+            var childFareCell = row.find('td').eq(4);
+            if (childFareCell.length) {
+              var childFareValue = rowData.childFare || '';
+              var childFareHtml =
+                '<div class="input-wrap">' +
+                '<input type="text" id="childFare_' +
+                rowId +
+                '" name="childFare_' +
+                rowId +
+                '" class="clearable input-xsmall align-right" value="' +
+                (childFareValue ? childFareValue.replace(/"/g, '&quot;').replace(/'/g, '&#39;') : '') +
+                '" placeholder="금액 입력" />' +
+                '</div>';
+              childFareCell.html(childFareHtml);
+            }
+          }
+          // 스크롤 여부 확인 후 .ui-jqgrid-bdiv 너비 조정
+          setTimeout(function() {
+            adjustBdivWidth(stopGrid);
+          }, 0);
+        },
+      });
+    }
+  </script>
+</head>
+
+<body class="sub">
+  <!-- Markup Start -->
+  <!-- 1/28 update : top-chip 제거 -->
+  <!-- frame wrapper -->
+  <div class="frame-wrapper">
+    <!-- frame content -->
+    <div class="frame-content">
+      <!-- top search -->
+      <div class="top-search">
+        <div class="search-forms">
+          <form id="searchForm" name="searchForm" onsubmit="return false;">
+            <input type="hidden" id="rows" name="rows" value="15" />
+            <input type="hidden" id="page" name="page" value="1" />
+            <div class="row">
+              <div class="input-group">
+                <legend>노선명</legend>
+                <div class="input-wrap">
+                  <input id="route-name" name="route-name" class="clearable clearable input-xsmall" placeholder="내용을 입력하세요" type="text" value="" @@property />
+                  <i class="icon-clear" style="display: none"></i>
+                </div>
+              </div>
+              <div class="input-group">
+                <legend>귀성 구분</legend>
+                <div class="input-wrap">
+                  <div class="field field-dropdown field-x-small normal">
+                    <div class="field-form">
+                      <!-- 숨겨진 select 태그 -->
+                      <select class="dropdown-select" style="display: none">
+                        >
+                        <option value="전체" active>전체</option>
+                        <option value="option1">option1</option>
+                        <option value="option2">option2</option>
+                      </select>
+                      <button type="button" class="btn-dropdown">
+                        <span class="text">전체</span>
+                        <span class="placeholder" style="display: none"></span>
+                      </button>
+                      <div class="dropdown-list-box">
+                        <div class="dropdown-list active">
+                          <button type="button" class="btn-dropdown-list" data-value="전체">
+                            <span>전체</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="option1">
+                            <span>option1</span>
+                          </button>
+                        </div>
+                        <div class="dropdown-list">
+                          <button type="button" class="btn-dropdown-list" data-value="option2">
+                            <span>option2</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="search-btns">
+          <button type="button" class="btn btn-white btn-reset" onclick="searchFormInit();">
+            <span>초기화</span>
+          </button>
+          <button type="button" class="btn btn-blue" onclick="searchList();">
+            <span>검색</span>
+          </button>
+        </div>
+      </div>
+      <!-- //top search -->
+      <!-- 분할영역 -->
+      <div class="partition-area">
+        <div class="row">
+          <div class="col col-xl-8">
+            <div class="area-box">
+              <div class="data-list-table">
+                <div class="data-list-table-header">
+                  <div class="header-left">
+                    <div class="title-box">노선 리스트</div>
+                    <div class="info-box">
+                      <div class="count-box">
+                        <span class="label">총</span>
+                        <span class="data">{{count}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header-right">
+                    <button type="button" class="btn btn-white" onclick="chkDelete()" disabled>
+                      <span>삭제</span>
+                    </button>
+                    <button type="button" class="btn btn-white" onclick="exportExcel()">
+                      <span>다운로드</span>
+                    </button>
+                    <button type="button" class="btn btn-blue" onclick="exportExcel()">
+                      <span>신규등록</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="data-table" id="div_list">
+                  <table id="list"></table>
+                </div>
+                <div class="data-list-table-footer">
+                  <div id="pager"></div>
+                  <div class="paging jquery-paging" id="paginate">
+                    <!-- disabled 상태일 때 disabled 추가 클래스 적용 -->
+                    <a class="btn-first disabled" href="#1"></a>
+                    <a class="btn-prev disabled" href="#1"></a>
+                    <a class="on" href="#1">1</a>
+                    <!-- <a href="#1">2</a> -->
+                    <a class="btn-next disabled" href="#1"></a>
+                    <a class="btn-last disabled" href="#1"></a>
+                  </div>
+                  <div class="footer-right">
+                    <div class="input-wrap inline select length-change small">
+                      <div class="field field-dropdown field-x-small normal">
+                        <div class="field-form">
+                          <!-- 숨겨진 select 태그 -->
+                          <select class="dropdown-select" style="display: none">
+                            >
+                            <option value="15개씩 보기" active>15개씩 보기</option>
+                            <option value="30개씩 보기">30개씩 보기</option>
+                            <option value="50개씩 보기">50개씩 보기</option>
+                            <option value="100개씩 보기">100개씩 보기</option>
+                          </select>
+                          <button type="button" class="btn-dropdown">
+                            <span class="text">15개씩 보기</span>
+                            <span class="placeholder" style="display: none">선택</span>
+                          </button>
+                          <div class="dropdown-list-box">
+                            <div class="dropdown-list active">
+                              <button type="button" class="btn-dropdown-list" data-value="15개씩 보기">
+                                <span>15개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="30개씩 보기">
+                                <span>30개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="50개씩 보기">
+                                <span>50개씩 보기</span>
+                              </button>
+                            </div>
+                            <div class="dropdown-list">
+                              <button type="button" class="btn-dropdown-list" data-value="100개씩 보기">
+                                <span>100개씩 보기</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-xl-4">
+            <div class="area-box">
+              <div class="card-box data-form-table">
+                <div class="data-form-table-header">
+                  <div class="header-left">
+                    <h3 class="header-title">상세 정보</h3>
+                  </div>
+                  <div class="header-right">
+                    <button type="button" class="btn btn-white" id="toggle_delete">취소</button>
+                    <button class="btn btn-blue" id="toggle_save">저장</button>
+                  </div>
+                </div>
+                <div class="data-form-table-body v-middle">
+                  <div class="table-group-box">
+                    <div class="table-box">
+                      <div class="table-header">
+                        <h4>기본 정보</h4>
+                      </div>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <th><span class="necessary">노선명</span></th>
+                            <td colspan="3" class="size-sm">
+                              <div class="input-wrap">
+                                <label for="routeName">
+                                  <input class="clearable input-xsmall" name="routeName" id="routeName" type="text" placeholder="노선명을 입력하세요" />
+                                  <i class="icon-clear" style="display: none"></i>
+                                </label>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span class="necessary">귀성 구분</span></th>
+                            <td colspan="3" class="size-sm">
+                              <div class="field field-dropdown field-x-small normal">
+                                <div class="field-form">
+                                  <!-- 숨겨진 select 태그 -->
+                                  <select class="dropdown-select" style="display: none">
+                                    >
+                                    <option value="" selected disabled>선택</option>
+                                    <option value="귀사">귀사</option>
+                                    <option value="귀향">귀향</option>
+                                  </select>
+                                  <button type="button" class="btn-dropdown">
+                                    <span class="text" style="display: none"></span>
+                                    <span class="placeholder">선택</span>
+                                  </button>
+                                  <div class="dropdown-list-box">
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="귀사">
+                                        <span>귀사</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="귀향">
+                                        <span>귀향</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span class="necessary">이름</span></th>
+                            <td colspan="3" class="size-sm">
+                              <div class="field field-dropdown field-x-small normal">
+                                <div class="field-form">
+                                  <!-- 숨겨진 select 태그 -->
+                                  <select class="dropdown-select" style="display: none">
+                                    >
+                                    <option value="" selected disabled>선택</option>
+                                    <option value="우등">우등</option>
+                                    <option value="일반">일반</option>
+                                  </select>
+                                  <button type="button" class="btn-dropdown">
+                                    <span class="text" style="display: none"></span>
+                                    <span class="placeholder">선택</span>
+                                  </button>
+                                  <div class="dropdown-list-box">
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="우등">
+                                        <span>우등</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="일반">
+                                        <span>일반</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span class="necessary">지역 구분</span></th>
+                            <td colspan="3" class="size-sm">
+                              <div class="field field-dropdown field-x-small normal">
+                                <div class="field-form">
+                                  <!-- 숨겨진 select 태그 -->
+                                  <select class="dropdown-select" style="display: none">
+                                    >
+                                    <option value="" selected disabled>선택</option>
+                                    <option value="전북">전북</option>
+                                    <option value="경북">경북</option>
+                                    <option value="전남">전남</option>
+                                    <option value="충남">충남</option>
+                                    <option value="충북">충북</option>
+                                    <option value="최장거리">최장거리</option>
+                                  </select>
+                                  <button type="button" class="btn-dropdown">
+                                    <span class="text" style="display: none"></span>
+                                    <span class="placeholder">선택</span>
+                                  </button>
+                                  <div class="dropdown-list-box">
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="전북">
+                                        <span>전북</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="경북">
+                                        <span>경북</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="전남">
+                                        <span>전남</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="충남">
+                                        <span>충남</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="충북">
+                                        <span>충북</span>
+                                      </button>
+                                    </div>
+                                    <div class="dropdown-list">
+                                      <button type="button" class="btn-dropdown-list" data-value="최장거리">
+                                        <span>최장거리</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th><span>메모</span></th>
+                            <td colspan="3">
+                              <textarea class="textarea-small" placeholder="내용을 입력하세요"></textarea>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- 1/19 update -->
+                    <div class="table-box type-list-table">
+                      <div class="table-header">
+                        <div class="header-left">
+                          <h4>정류장 정보</h4>
+                        </div>
+                        <!-- 1/19 update -->
+                        <div class="header-right">
+                          <button type="button" class="btn-add-list">
+                            <span>등록</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="table-body">
+                        <div class="htable">
+                          <table class="table">
+                            <colgroup>
+                              <col width="43" />
+                              <col width="50" />
+                              <col width="280" />
+                              <col width="100" />
+                              <col width="100" />
+                            </colgroup>
+                            <thead class="table-thead">
+                              <tr>
+                                <th>
+                                  <div>
+                                    <input type="checkbox" id="checkbox_all" name="checkbox_all" />
+                                  </div>
+                                  <span class="table-col-resize"></span>
+                                </th>
+                                <th><span>순번</span><span class="table-col-resize"></span></th>
+                                <th><span>정류장명</span><span class="table-col-resize"></span></th>
+                                <th><span>대인 요금</span><span class="table-col-resize"></span></th>
+                                <th><span>소인 요금</span><span class="table-col-resize"></span></th>
+                              </tr>
+                            </thead>
+                          </table>
+                        </div>
+                        <div class="btable">
+                          <table class="table">
+                            <colgroup>
+                              <col width="43" />
+                              <col width="50" />
+                              <col width="280" />
+                              <col width="100" />
+                              <col width="100" />
+                            </colgroup>
+                            <tbody class="table-tbody">
+                              <tr class="tr-empty">
+                                <td class="td-empty" colspan="5">
+                                  <div class="empty-content-box">
+                                    <p class="message">정류장 정보가 없어요.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //분할영역 -->
+    </div>
+    <!-- //frame content -->
+  </div>
+  <!-- //wrapper -->
+  <!-- //Markup End -->
+</body>
+
+</html>

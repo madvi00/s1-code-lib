@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+  <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+  <link rel="stylesheet" href="../../assets/css/lib/bootstrap-datepicker.standalone.css" />
+  <link rel="stylesheet" href="../../assets/css/lib-style.css" />
+  <link rel="stylesheet" href="../../assets/css/general.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <script src="../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../assets/js/lib/bootstrap-datepicker.js"></script>
+  <script src="../../assets/js/lib/swiper-bundle.min.js"></script>
+  
+  <script src="../../assets/js/datepicker.js"></script>
+  <script src="../../assets/js/dropdown.js"></script>
+  <script src="../../assets/js/file.js"></script>
+  <script src="../../assets/js/input.js"></script>
+  <script src="../../assets/js/modal.js"></script>
+  <script src="../../assets/js/multiDropdown.js"></script>
+  <script src="../../assets/js/rangeTimePicker.js"></script>
+  <script src="../../assets/js/routeAccordion.js"></script>
+  <script src="../../assets/js/tab.js"></script>
+  <script src="../../assets/js/timePicker.js"></script>
+  <title>Guide | Radio</title>
+</head>
+
+<body style="overflow:hidden; margin:0;">
+    <div class="general-container">
+      <div class="general-area">
+        <div class="general-top">
+          <div class="general-label">Component</div>
+          <div class="general-title">Radio</div> 
+        </div>
+        <div class="general-middle">
+          <div class="component-block">
+            <div class="component-block-header"><div><div class="component-block-title">Radio (without label)</div></div></div>
+            <div class="component-preview">
+              <input type="radio" id="@@id" name="@@name" />
+            </div>
+          </div>
+          <div class="component-block">
+            <div class="component-block-header"><div><div class="component-block-title">Radio (with label)</div></div></div>
+            <div class="component-preview">
+              <div class="radio-group">
+                <label for="radio-2">
+                  <input type="radio" id="radio-2" name="radio-2" value="value1" checked />
+                  <span>라벨</span>
+                </label>
+                <label for="radio-3">
+                  <input type="radio" id="radio-3" name="radio-3" value="value2" checked disabled />
+                  <span>라벨</span>
+                </label>
+                <label for="radio-4">
+                  <input type="radio" id="radio-4" name="radio-4" value="value3" />
+                  <span>라벨</span>
+                </label>
+                <label for="radio-5">
+                  <input type="radio" id="radio-5" name="radio-5" value="value4" disabled />
+                  <span>라벨</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<script>document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
+</body>
+
+</html>

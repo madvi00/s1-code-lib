@@ -1,0 +1,687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript">
+    sessionStorage.setItem('contextpath', '/uvis')
+    sessionStorage.setItem('langSet', 'ko')
+    //////////달력 설정//////////
+    var cldMsg_prevMonth = '이전 달' // 이전 달
+    var cldMsg_nextMonth = '다음 달' // 다음 달
+    var cldMsg_prevYear = '이전 년도' // 이전 년도
+    var cldMsg_nextYear = '다음 년도' // 다음 년도
+    var cldMsg_prev = '이전' // 이전
+    var cldMsg_next = '다음' // 다음
+    //////////달력 설정//////////
+    //////////jquery.uvis.common.js 다국어//////////
+    var jquery_uvis_common_checkPasswordRegex1 = '비밀번호에는 공백을 입력할 수 없습니다.' // 비밀번호에는 공백을 입력할 수 없습니다.
+    var jquery_uvis_common_checkPasswordRegex2 = '새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.' // 새 비밀번호는 8~20자리의 영문, 숫자, 특수문자를 조합으로 만드셔야합니다.
+    var jquery_uvis_common_ajaxErrorMessage0 = '접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.' // 접속이 원활하지 않습니다. 네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage1 = '장시간 미사용으로 로그아웃 되었습니다.\r\n로그인 페이지로 이동 합니다.' // 장시간 미사용으로 로그아웃 되었습니다.\\r\\n로그인 페이지로 이동 합니다.
+    var jquery_uvis_common_ajaxErrorMessage2 = '에러가 발생하였습니다.\r\n네트워크 상태를 확인해주세요.' // 에러가 발생하였습니다.\\r\\n네트워크 상태를 확인해주세요.
+    var jquery_uvis_common_ajaxErrorMessage3 = '에러가 발생하였습니다.\r\n접근이 거부되었습니다.\n\n새로고침 또는 로그인을 다시 해주세요.' // 에러가 발생하였습니다.\\r\\n접근이 거부되었습니다.\\n\\n새로고침 또는 로그인을 다시 해주세요.
+    var jquery_uvis_common_ajaxErrorMessage4 = '에러가 발생하였습니다.\r\nURL을 찾을 수 없습니다.' // 에러가 발생하였습니다.\\r\\nURL을 찾을 수 없습니다.
+    var jquery_uvis_common_ajaxErrorMessage5 = '에러가 발생하였습니다.\r\n내부 서버 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n내부 서버 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage6 = '에러가 발생하였습니다.\r\n파싱 에러가 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n파싱 에러가 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage7 = '에러가 발생하였습니다.\r\n실행시간이 지연되어 타임아웃이 발생하였습니다.' // 에러가 발생하였습니다.\\r\\n실행시간이 지연되어 타임아웃이 발생하였습니다.
+    var jquery_uvis_common_ajaxErrorMessage8 = '에러가 발생하였습니다.\r\n알 수 없는 에러입니다.\n\n' // 에러가 발생하였습니다.\\r\\n알 수 없는 에러입니다.\\n\\n
+    var jquery_uvis_common_isValidDate1 = '잘못된 날짜형식 입니다.\n\r입력하신 문자열 길이를 확인해주세요.' // 잘못된 날짜형식 입니다.\\n\\r입력하신 문자열 길이를 확인해주세요.
+    var jquery_uvis_common_isValidDate21 = '잘못된 날짜형식 입니다.\n\r' // 잘못된 날짜형식 입니다.\\n\\r
+    var jquery_uvis_common_isValidDate22 = '월은 존재하지 않는 월입니다.' // 월은 존재하지 않는 월입니다.
+    var jquery_uvis_common_isValidDate31 = '잘못된 날짜형식 입니다.\n\r해당 월은' // 잘못된 날짜형식 입니다.\\n\\r해당 월은
+    var jquery_uvis_common_isValidDate32 = '일 까지입니다.' // 일 까지입니다.
+    var jquery_uvis_common_isValidDate4 = '잘못된 날짜형식 입니다.' // 잘못된 날짜형식 입니다.
+    var jquery_uvis_common_checkFileExt1 = '정상적인 파일이 아닙니다.' // 정상적인 파일이 아닙니다.
+    var jquery_uvis_common_checkFileExt2 = '파일만 업로드 가능 합니다.' // 파일만 업로드 가능 합니다.
+    var jquery_uvis_common_downloadCapture1 = '인터넷 익스플로러는 지원하지 않습니다.' // 인터넷 익스플로러는 지원하지 않습니다.
+    var jquery_uvis_common_downloadCapture2 = '이미지로 변환 중 에러가 발생하였습니다.' // 이미지로 변환 중 에러가 발생하였습니다.
+    //////////jquery.uvis.common.js 다국어//////////
+    var termsFilter = ['img', 'a', 'p', 'br', 'span', 'b', 'strong', 'u', 'colgroup', 'col', 'table', 'tbody', 'tr', 'td', 'ul', 'li', 'dl', 'dd', 'dt']
+  </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../../assets/images/favicon/favicon_192.png" />
+  <!-- CSS resource load -->
+  <link href="../../../../assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+  <link href="../../../../assets/css/lib/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="../../../../assets/css/style.css" rel="stylesheet" />
+  <script src="../../../../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../../../../assets/js/jquery-ui.js"></script>
+  <script src="../../../../assets/js/jquery-ui.min.js"></script>
+  <script src="../../../../assets/js/bootstrap.min.js"></script>
+  <script>
+    // bootstrap-datepicker.js에서 사용하는 메시지 변수 정의 (bootstrap-datepicker.js보다 먼저 실행되어야 함)
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../../../assets/js/lib/swiper-bundle.min.js"></script>
+  <script src="../../../../assets/js/bootstrap-datepicker.js"></script>
+  <script src="../../../../assets/js/popper.min.js"></script>
+  <script src="../../../../assets/js/datatables.min.js"></script>
+  <script src="../../../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../../../assets/js/jquery.cookie.js"></script>
+  <script src="../../../../assets/js/jquery.mask.min.js"></script>
+  <script src="../../../../assets/js/jquery.uvis.common.js"></script>
+  <script src="../../../../assets/js/highcharts.js"></script>
+  <script src="../../../../assets/js/exporting.js"></script>
+  <script src="../../../../assets/js/canvg.js"></script>
+  <script src="../../../../assets/js/rgbcolor.min.js"></script>
+  <script src="../../../../assets/js/html2canvas.js"></script>
+  <script src="../../../../assets/js/es6-promise.auto.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function() {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../../../assets/js/jquery.jqGrid.src.js"></script>
+  <script src="../../../../assets/js/jquery.paging.js"></script>
+  <script src="../../../../assets/js/publish.js"></script>
+  <script src="../../../../assets/js/amobe_datepicker.js"></script>
+  <script src="../../../../assets/js/amobe_dropdown.js"></script>
+  <script src="../../../../assets/js/amobe_header.js"></script>
+  <script src="../../../../assets/js/amobe_input.js"></script>
+  <script src="../../../../assets/js/amobe_mapList.js"></script>
+  <script src="../../../../assets/js/amobe_modal.js"></script>
+  <script src="../../../../assets/js/amobe_multiMap.js"></script>
+  <script src="../../../../assets/js/amobe_rangeTimePicker.js"></script>
+  <script src="../../../../assets/js/amobe_routeAccordion.js"></script>
+  <script src="../../../../assets/js/amobe_swiper.js"></script>
+  <script src="../../../../assets/js/amobe_tab.js"></script>
+  <script src="../../../../assets/js/amobe_table.js"></script>
+  <script src="../../../../assets/js/amobe_timePicker.js"></script>
+  <title>귀성 신청자 관리 - 협력사 신청 현황 팝업</title>
+  <script type="text/javascript">
+    // jqGride Local Data
+    const _JQ_GRID_DATA = [{
+        rownum: '10',
+        category: '귀향',
+        departureDateTime: '25.10.02 09:10',
+        affiliation: '에스원',
+        applicant: '이수일',
+        applicantId: 'admin0073',
+        adultReservations: '1',
+        childReservations: '2',
+        carNumber: '1',
+        contactNumber: '010.1234.5678',
+        appliedFee: '60,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '9',
+        category: '귀향',
+        departureDateTime: '25.10.02 09:20',
+        affiliation: '에스원',
+        applicant: '박광제',
+        applicantId: 'admin0073',
+        adultReservations: '6',
+        childReservations: '0',
+        carNumber: '3',
+        contactNumber: '010.1234.5678',
+        appliedFee: '180,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '8',
+        category: '귀향',
+        departureDateTime: '25.10.02 10:00',
+        affiliation: '에스원',
+        applicant: '김종섭',
+        applicantId: 'admin0073',
+        adultReservations: '2',
+        childReservations: '0',
+        carNumber: '1',
+        contactNumber: '010.1234.5678',
+        appliedFee: '50,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '7',
+        category: '귀향',
+        departureDateTime: '25.10.02 10:20',
+        affiliation: '에스원',
+        applicant: '박재명',
+        applicantId: 'admin0073',
+        adultReservations: '3',
+        childReservations: '0',
+        carNumber: '1',
+        contactNumber: '010.1234.5678',
+        appliedFee: '30,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '6',
+        category: '귀향',
+        departureDateTime: '25.10.02 10:20',
+        affiliation: '에스원',
+        applicant: '하대연',
+        applicantId: 'admin0073',
+        adultReservations: '1',
+        childReservations: '0',
+        carNumber: '미정',
+        contactNumber: '010.1234.5678',
+        appliedFee: '30,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '5',
+        category: '귀향',
+        departureDateTime: '25.10.02 10:20',
+        affiliation: '에스원',
+        applicant: '하대연',
+        applicantId: 'admin0073',
+        adultReservations: '1',
+        childReservations: '0',
+        carNumber: '미정',
+        contactNumber: '010.1234.5678',
+        appliedFee: '30,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '4',
+        category: '귀향',
+        departureDateTime: '25.10.02 10:20',
+        affiliation: '에스원',
+        applicant: '하대연',
+        applicantId: 'admin0073',
+        adultReservations: '1',
+        childReservations: '0',
+        carNumber: '미정',
+        contactNumber: '010.1234.5678',
+        appliedFee: '30,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '3',
+        category: '귀향',
+        departureDateTime: '25.10.02 10:20',
+        affiliation: '에스원',
+        applicant: '하대연',
+        applicantId: 'admin0073',
+        adultReservations: '1',
+        childReservations: '0',
+        carNumber: '미정',
+        contactNumber: '010.1234.5678',
+        appliedFee: '30,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '2',
+        category: '귀향',
+        departureDateTime: '25.10.02 10:20',
+        affiliation: '에스원',
+        applicant: '하대연',
+        applicantId: 'admin0073',
+        adultReservations: '1',
+        childReservations: '0',
+        carNumber: '미정',
+        contactNumber: '010.1234.5678',
+        appliedFee: '30,000',
+        paymentMethod: '무통장입금',
+      },
+      {
+        rownum: '1',
+        category: '귀향',
+        departureDateTime: '25.10.02 10:20',
+        affiliation: '에스원',
+        applicant: '하대연',
+        applicantId: 'admin0073',
+        adultReservations: '1',
+        childReservations: '0',
+        carNumber: '미정',
+        contactNumber: '010.1234.5678',
+        appliedFee: '30,000',
+        paymentMethod: '무통장입금',
+      },
+    ];
+    $(document).ready(function() {
+      setPageDefault();
+      initCalendarDatePicker();
+      // jqGrid 높이 계산 및 리사이즈 설정 (공통 함수 사용)
+      setupJqGridResize({
+        containerSelector: '#div_list',
+        gridSelector: '#list',
+      });
+      // 초기 로딩 시 그리드 너비 설정
+      $(window).resize(function() {
+        $('#list').setGridWidth($('#div_list').width(), true);
+        // resize 시 높이 고정 (행 5개의 높이)
+        $('#list').jqGrid('setGridHeight', 170);
+      });
+      // 초기 로딩 시 한 번 실행
+      setTimeout(function() {
+        $('#list').setGridWidth($('#div_list').width(), true);
+      }, 100);
+      // 모달이 열릴 때 jqGrid 다시 그리기
+      var modalEl = $('#modal-partner-application');
+      if (modalEl.length) {
+        // MutationObserver로 모달의 display 속성 변경 감지
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+              var display = modalEl.css('display');
+              if (display === 'block') {
+                // 모달이 열렸을 때 그리드 다시 그리기
+                setTimeout(function() {
+                  listLoad(false, 1);
+                  // 모달이 열릴 때 높이 재설정
+                  $('#list').jqGrid('setGridHeight', 170);
+                }, 50);
+              }
+            }
+          });
+        });
+        observer.observe(modalEl[0], {
+          attributes: true,
+          attributeFilter: ['style']
+        });
+      }
+    });
+
+    function setPageDefault() {
+      listLoad(false, 1);
+    }
+    // 달력 datepicker 초기화
+    function initCalendarDatePicker() {
+      if (typeof $.fn.datepicker !== 'undefined') {
+        var $datepicker = $('#calendarDatePicker');
+        if ($datepicker.length && !$datepicker.data('datepicker')) {
+          $datepicker.datepicker({
+            language: 'ko',
+            format: 'yyyy.mm.dd',
+            todayBtn: false,
+            todayHighlight: true,
+            clearBtn: false,
+            autoclose: false,
+            maxViewMode: 2,
+            templates: {
+              leftArrow: '<i class="icon icon-arrow-left"></i>',
+              rightArrow: '<i class="icon icon-arrow-right"></i>',
+            },
+            beforeShowDay: function(date) {
+              // 주말 및 공휴일 처리
+              var day = date.getDay();
+              var isWeekend = day === 0 || day === 6; // 일요일(0) 또는 토요일(6)
+              return {
+                classes: isWeekend ? 'weekend' : '',
+                tooltip: '',
+                enabled: true,
+              };
+            },
+          });
+          // 날짜 선택 이벤트
+          $datepicker.on('changeDate', function(e) {
+            var selectedDate = e.date;
+            // 선택된 날짜로 데이터 필터링 및 새로고침
+            // listLoad(false, 1);
+          });
+        }
+      } else {
+        setTimeout(initCalendarDatePicker, 100);
+      }
+    }
+
+    function listLoad(firstNoLoad, page) {
+      // jqGrid 리스트 초기화, 생성
+      $('#list').jqGrid('GridUnload');
+      var grid = jQuery('#list');
+      // 데이터가 없거나 부족할 때 빈 행 추가
+      var displayData = _JQ_GRID_DATA || [];
+      var emptyRow = {
+        rownum: '',
+        category: '',
+        departureDateTime: '',
+        affiliation: '',
+        applicant: '',
+        applicantId: '',
+        adultReservations: '',
+        childReservations: '',
+        carNumber: '',
+        contactNumber: '',
+        appliedFee: '',
+        paymentMethod: '',
+        isEmpty: true,
+      };
+      while (displayData.length < 5) {
+        // 보여질 최대 행 수
+        displayData.push(Object.assign({}, emptyRow));
+      }
+      // 초기 높이 계산 (공통 함수 사용)
+      var initialHeight = calculateJqGridHeight({
+        containerSelector: '#div_list',
+        headerSelector: '.data-list-table-header',
+        footerSelector: '.data-list-table-footer',
+        padding: 56,
+      });
+      grid.jqGrid({
+        datatype: 'local',
+        data: displayData,
+        colNames: ['순번', '구분', '출발일시', '소속', '신청자', '신청자 ID', '총', '대인', '소인', '호차', '연락처', '적용요금', '지불방법'],
+        colModel: [{
+            name: 'rownum',
+            index: 'rownum',
+            width: 40,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'category',
+            index: 'category',
+            width: 60,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'departureDateTime',
+            index: 'departureDateTime',
+            width: 100,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'affiliation',
+            index: 'affiliation',
+            width: 80,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'applicant',
+            index: 'applicant',
+            width: 72,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'applicantId',
+            index: 'applicantId',
+            width: 100,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'totalReservations',
+            index: 'totalReservations',
+            width: 40,
+            align: 'center',
+            sortable: false,
+            formatter: function(cellvalue, options, rowObject) {
+              if (rowObject.adultReservations !== undefined && rowObject.childReservations !== undefined) {
+                var adult = parseInt(rowObject.adultReservations) || 0;
+                var child = parseInt(rowObject.childReservations) || 0;
+                return adult + child;
+              }
+              return '';
+            },
+          },
+          {
+            name: 'adultReservations',
+            index: 'adultReservations',
+            width: 40,
+            align: 'center',
+            sortable: false,
+            formatter: function(cellvalue) {
+              return cellvalue || '';
+            },
+          },
+          {
+            name: 'childReservations',
+            index: 'childReservations',
+            width: 40,
+            align: 'center',
+            sortable: false,
+            formatter: function(cellvalue) {
+              return cellvalue || '';
+            },
+          },
+          {
+            name: 'carNumber',
+            index: 'carNumber',
+            width: 50,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'contactNumber',
+            index: 'contactNumber',
+            width: 120,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'appliedFee',
+            index: 'appliedFee',
+            width: 80,
+            align: 'center',
+            sortable: false
+          },
+          {
+            name: 'paymentMethod',
+            index: 'paymentMethod',
+            width: 100,
+            align: 'center',
+            sortable: false
+          },
+        ],
+        sortable: false,
+        rowNum: 999, // 최대 행 수
+        autowidth: true,
+        scrollRows: true,
+        scroll: true,
+        loadonce: true,
+        viewrecords: true,
+        // multiselect: true,
+        // multiselectWidth: 43,
+        // multiboxonly: false,
+        // height: initialHeight,
+        height: 170, //행 5개의 높이
+        scrollTimeout: 1,
+        shrinkToFit: true,
+        forceFit: false,
+        scrollOffset: 0,
+        beforeSelectRow: function(rowid, e) {
+          var rowData = grid.jqGrid('getRowData', rowid);
+          // 빈 행은 선택 불가능
+          if (rowData.isEmpty === 'true' || !rowData.rownum) {
+            return false;
+          }
+          return true;
+        },
+        loadComplete: function(data) {
+          // 그리드 높이 재계산 (레이아웃 완료 후)
+          setTimeout(function() {
+            // var recalculatedHeight = calculateJqGridHeight({
+            //   containerSelector: '#div_list',
+            //   headerSelector: '.data-list-table-header',
+            //   footerSelector: '.data-list-table-footer',
+            //   padding: 56,
+            // });
+            var recalculatedHeight = 170; // 행 5개의 높이
+            grid.jqGrid('setGridHeight', recalculatedHeight);
+          }, 0);
+          // 그룹 헤더 설정
+          grid.jqGrid('setGroupHeaders', {
+            useColSpanStyle: true,
+            groupHeaders: [{
+              startColumnName: 'totalReservations',
+              numberOfColumns: 3,
+              titleText: '예약수',
+            }, ],
+          });
+          // 빈 행 처리
+          var ids = grid.jqGrid('getDataIDs');
+          for (var i = 0; i < ids.length; i++) {
+            var rowData = grid.jqGrid('getRowData', ids[i]);
+            if (rowData.isEmpty === 'true' || !rowData.rownum) {
+              // 빈 행의 체크박스 비활성화 및 숨김
+              var checkbox = grid.find('tr#' + ids[i] + ' input[type="checkbox"]');
+              checkbox.prop('disabled', true).hide();
+              // 빈 행에 클래스 추가
+              grid.find('tr#' + ids[i]).addClass('empty-row');
+              // 빈 행의 모든 셀 내용 제거
+              grid
+                .find('tr#' + ids[i] + ' td')
+                .not(':first')
+                .html('');
+            }
+          }
+          // 스크롤 여부 확인 후 .ui-jqgrid-bdiv 너비 조정
+          setTimeout(function() {
+            adjustBdivWidth(grid);
+          }, 0);
+        },
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <button type="button" class="btn btn-blue btn-medium btn-modal" onclick="" data-modal='modal-partner-application'>
+    <span>Open Modal</span>
+  </button>
+  <!-- modal -->
+  <div id="modal-partner-application" class="modal">
+    <div class="dim"></div>
+    <div class="modal-container">
+      <div class="modal-area">
+        <div class="modal-top">
+          <div class="modal-title-box">
+            <span class="title">신청현황</span>
+          </div>
+        </div>
+        <div class="modal-middle">
+          <div class="modal-content-box">
+            <div class="modal-content">
+              <div class="card-box data-form-table">
+                <div class="data-form-table-body v-middle">
+                  <div class="table-group-box">
+                    <!-- 테이블 : 상세 정보 -->
+                    <div class="table-box">
+                      <div class="table-header">
+                        <div class="header-left">
+                          <h4>상세 정보</h4>
+                        </div>
+                      </div>
+                      <div class="table-body">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <th><span>회사명</span></th>
+                              <td class="size-md">
+                                <div class="input-wrap">
+                                  <input id="companyName" name="companyName" class="clearable input-xsmall complete" placeholder="" type="text" value="우진산업" disabled readonly />
+                                </div>
+                              </td>
+                              <th><span>신청자 ID</span></th>
+                              <td class="size-md">
+                                <div class="input-wrap">
+                                  <input id="applicantId" name="applicantId" class="clearable input-xsmall complete" placeholder="" type="text" value="s1.admin.01" disabled readonly />
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th><span>신청좌석수</span></th>
+                              <td class="size-md">
+                                <div class="input-wrap">
+                                  <input id="totalReservations" name="totalReservations" class="clearable input-xsmall complete" placeholder="" type="text" value="25" disabled readonly />
+                                </div>
+                              </td>
+                              <th><span>신청건수</span></th>
+                              <td class="size-md">
+                                <div class="input-wrap">
+                                  <input id="applicationCount" name="applicationCount" class="clearable input-xsmall complete" placeholder="" type="text" value="10" disabled readonly />
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th><span>총금액</span></th>
+                              <td class="size-md">
+                                <div class="input-wrap">
+                                  <input id="totalAmount" name="totalAmount" class="clearable input-xsmall complete" placeholder="" type="text" value="605,000" disabled readonly />
+                                </div>
+                              </td>
+                              <th><span>입금 확인 여부</span></th>
+                              <td>
+                                <div class="radio-group">
+                                  <label for="checkStatus_check">
+                                    <input type="radio" id="checkStatus_check" name="checkStatus" value="check" checked="" />
+                                    <span>확인</span>
+                                  </label>
+                                  <label for="checkStatus_notCheck">
+                                    <input type="radio" id="checkStatus_notCheck" name="checkStatus" value="notCheck" />
+                                    <span>미확인</span>
+                                  </label>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="table-box">
+                      <div class="data-list-table">
+                        <div class="data-table" id="div_list">
+                          <table id="list"></table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-bottom">
+          <div class="modal-button-box">
+            <button type="button" class="btn btn-white btn-small" onclick="">
+              <span>취소</span>
+            </button>
+            <button type="button" class="btn btn-blue btn-small" onclick="">
+              <span>확인</span>
+            </button>
+          </div>
+        </div>
+        <button type="button" class="btn-close" title="팝업창 닫기 버튼"></button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
