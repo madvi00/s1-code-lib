@@ -2267,7 +2267,7 @@ input[type=checkbox]:disabled + span {
 /* Field Multi Dropdown */
 .field-multi-dropdown .btn-dropdown {
   padding-right: 3.2rem;
-  background: url("../images/ic_menu_arrow_down.svg") no-repeat calc(100% - 0.8rem) center/2.4rem !important;
+  background: var(--semantic-color-form-control-background-default) url("../images/ic_menu_arrow_down.svg") no-repeat calc(100% - 0.8rem) center/2.4rem !important;
 }
 
 .field-multi-dropdown.dropdown-list-box .dropdown-list-body {

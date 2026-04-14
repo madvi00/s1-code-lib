@@ -2463,18 +2463,25 @@
             <div class="code-tabs">
               <div class="code-tab active" onclick="switchTab(this, 'input-text-html')">Text Input</div>
               <div class="code-tab" onclick="switchTab(this, 'input-search-html')">Search Input</div>
-              <div class="code-tab" onclick="switchTab(this, 'input-states-html')">States</div>
+              <div class="code-tab" onclick="switchTab(this, 'input-password-html')">Password</div>
+              <div class="code-tab" onclick="switchTab(this, 'input-number-html')">Number</div>
             </div>
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="input-text-html">
               <pre>&lt;!-- Medium --&gt;
-&lt;input type="text" class="input-medium" placeholder="내용" /&gt;
+&lt;div class="input-wrap"&gt;
+  &lt;input type="text" class="input-medium" placeholder="내용" /&gt;
+&lt;/div&gt;
 
 &lt;!-- Small --&gt;
-&lt;input type="text" class="input-small" placeholder="내용" /&gt;
+&lt;div class="input-wrap"&gt;
+  &lt;input type="text" class="input-small" placeholder="내용" /&gt;
+&lt;/div&gt;
 
 &lt;!-- XSmall --&gt;
-&lt;input type="text" class="input-xsmall" placeholder="내용" /&gt;</pre>
+&lt;div class="input-wrap"&gt;
+  &lt;input type="text" class="input-xsmall" placeholder="내용" /&gt;
+&lt;/div&gt;</pre>
             </div>
             <div class="code-snippet" id="input-search-html">
               <pre>&lt;!-- Medium --&gt;
@@ -2501,16 +2508,17 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre>
             </div>
-            <div class="code-snippet" id="input-states-html">
-              <pre>&lt;!-- Error --&gt;
-&lt;div class="input-wrap"&gt;
-  &lt;input type="text" class="input-medium input-error" placeholder="내용" /&gt;
-  &lt;span class="input-error-msg"&gt;유효하지 않은 값입니다.&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;!-- Disabled --&gt;
-&lt;div class="input-wrap"&gt;
-  &lt;input type="text" class="input-medium" placeholder="내용" disabled /&gt;
+            <div class="code-snippet" id="input-password-html">
+              <pre>&lt;div class="input-wrap"&gt;
+  &lt;input type="password" class="input-medium" placeholder="" /&gt;
+  &lt;div class="eye-button-box"&gt;
+    &lt;button type="button" class="btn-eye"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+            <div class="code-snippet" id="input-number-html">
+              <pre>&lt;div class="input-wrap"&gt;
+  &lt;input type="number" class="input-xsmall" value="100" maxlength="3" max="100" min="0" step="5" /&gt;
 &lt;/div&gt;</pre>
             </div>
           </div>
@@ -2540,24 +2548,75 @@
           </div>
           <div class="code-block-wrapper">
             <div class="code-tabs">
-              <div class="code-tab active">HTML</div>
+              <div class="code-tab active" onclick="switchTab(this, 'dd-normal')">normal</div>
+              <div class="code-tab" onclick="switchTab(this, 'dd-has-label')">has-label</div>
             </div>
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-            <div class="code-snippet active">
-              <pre>&lt;div class="field field-dropdown field-medium normal"&gt;
+            <div class="code-snippet active" id="dd-normal">
+              <pre>&lt;!-- Medium --&gt;
+&lt;div class="field field-dropdown field-medium normal"&gt;
   &lt;div class="field-form"&gt;
     &lt;select class="dropdown-select" style="display:none"&gt;
       &lt;option value="OPTION1" active&gt;OPTION1&lt;/option&gt;
       &lt;option value="OPTION2"&gt;OPTION2&lt;/option&gt;
+      &lt;option value="OPTION3"&gt;OPTION3&lt;/option&gt;
+      &lt;option value="OPTION4"&gt;OPTION4&lt;/option&gt;
     &lt;/select&gt;
     &lt;button type="button" class="btn-dropdown"&gt;
       &lt;span class="text"&gt;OPTION1&lt;/span&gt;
+      &lt;span class="placeholder" style="display:none"&gt;Placeholder&lt;/span&gt;
     &lt;/button&gt;
     &lt;div class="dropdown-list-box"&gt;
       &lt;div class="dropdown-list active"&gt;
-        &lt;button class="btn-dropdown-list" data-value="OPTION1"&gt;
-          &lt;span&gt;OPTION1&lt;/span&gt;
-        &lt;/button&gt;
+        &lt;button type="button" class="btn-dropdown-list" data-value="OPTION1"&gt;&lt;span&gt;OPTION1&lt;/span&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="dropdown-list"&gt;
+        &lt;button type="button" class="btn-dropdown-list" data-value="OPTION2"&gt;&lt;span&gt;OPTION2&lt;/span&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="dropdown-list"&gt;
+        &lt;button type="button" class="btn-dropdown-list" data-value="OPTION3"&gt;&lt;span&gt;OPTION3&lt;/span&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="dropdown-list"&gt;
+        &lt;button type="button" class="btn-dropdown-list" data-value="OPTION4"&gt;&lt;span&gt;OPTION4&lt;/span&gt;&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Small --&gt;
+&lt;div class="field field-dropdown field-small normal"&gt;...&lt;/div&gt;
+
+&lt;!-- xSmall --&gt;
+&lt;div class="field field-dropdown field-x-small normal"&gt;...&lt;/div&gt;</pre>
+            </div>
+            <div class="code-snippet" id="dd-has-label">
+              <pre>&lt;div class="field field-dropdown field-small has-label"&gt;
+  &lt;div class="field-form"&gt;
+    &lt;select class="dropdown-select" style="display:none"&gt;
+      &lt;option value="전체" active&gt;전체&lt;/option&gt;
+      &lt;option value="OPTION2"&gt;OPTION2&lt;/option&gt;
+      &lt;option value="OPTION3"&gt;OPTION3&lt;/option&gt;
+      &lt;option value="OPTION4"&gt;OPTION4&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;button type="button" class="btn-dropdown"&gt;
+      &lt;span class="inner-label"&gt;
+        &lt;span&gt;배차상태&lt;/span&gt;
+        &lt;strong class="selected-label"&gt;전체&lt;/strong&gt;
+        &lt;span class="placeholder" style="display:none"&gt;&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="dropdown-list-box"&gt;
+      &lt;div class="dropdown-list active"&gt;
+        &lt;button type="button" class="btn-dropdown-list" data-value="전체"&gt;&lt;span&gt;전체&lt;/span&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="dropdown-list"&gt;
+        &lt;button type="button" class="btn-dropdown-list" data-value="OPTION2"&gt;&lt;span&gt;OPTION2&lt;/span&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="dropdown-list"&gt;
+        &lt;button type="button" class="btn-dropdown-list" data-value="OPTION3"&gt;&lt;span&gt;OPTION3&lt;/span&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="dropdown-list"&gt;
+        &lt;button type="button" class="btn-dropdown-list" data-value="OPTION4"&gt;&lt;span&gt;OPTION4&lt;/span&gt;&lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -2588,10 +2647,11 @@
           </div>
           <div class="code-block-wrapper">
             <div class="code-tabs">
-              <div class="code-tab active">HTML</div>
+              <div class="code-tab active" onclick="switchTab(this, 'dp-single-range')">Single / Range</div>
+              <div class="code-tab" onclick="switchTab(this, 'dp-range-time')">Range &amp; time</div>
             </div>
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-            <div class="code-snippet active">
+            <div class="code-snippet active" id="dp-single-range">
               <pre>&lt;!-- Single Medium --&gt;
 &lt;div class="input-wrap date"&gt;
   &lt;input type="text" class="datepicker input-medium" placeholder="날짜를 선택하세요" /&gt;
@@ -2627,6 +2687,133 @@
   &lt;div class="input-wrap date"&gt;
     &lt;input type="text" class="datepicker input-small" placeholder="날짜를 선택하세요" /&gt;
     &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+            <div class="code-snippet" id="dp-range-time">
+              <pre>&lt;div class="input-group input-daterange"&gt;
+  &lt;!-- 시작 날짜 --&gt;
+  &lt;div class="input-wrap date"&gt;
+    &lt;input type="text" class="datepicker input-small" id="startDate" name="startDate" placeholder="날짜를 선택하세요" /&gt;
+    &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;!-- 시작 시간 --&gt;
+  &lt;div class="input-wrap time"&gt;
+    &lt;div class="timepicker-box timepicker-small"&gt;
+      &lt;div class="timepicker-input"&gt;
+        &lt;input type="text" id="time-startDate" name="time-startDate" class="time-input input-small" placeholder="00:00" readonly /&gt;
+      &lt;/div&gt;
+      &lt;div class="timepicker timepicker-dropdown"&gt;
+        &lt;div class="timepicker-picker-container"&gt;
+          &lt;div class="timepicker-picker-area"&gt;
+            &lt;div class="timepicker-picker"&gt;
+              &lt;div class="timepicker-top"&gt;
+                &lt;div class="time"&gt;
+                  &lt;button type="button" class="list ampm"&gt;오전&lt;/button&gt;
+                  &lt;button type="button" class="list ampm"&gt;오후&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class="separator"&gt;&lt;/div&gt;
+                &lt;div class="time"&gt;
+                  &lt;button type="button" class="list hour"&gt;00&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;01&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;02&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;03&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;04&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;05&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;06&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;07&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;08&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;09&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;10&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;11&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;12&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class="separator"&gt;&lt;/div&gt;
+                &lt;div class="time"&gt;
+                  &lt;button type="button" class="minute list"&gt;00&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;05&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;10&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;15&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;20&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;25&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;30&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;35&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;40&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;45&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;50&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;55&lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class="timepicker-bottom"&gt;
+                &lt;button type="button" class="btn-confirm" disabled&gt;확인&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="between"&gt;~&lt;/span&gt;
+  &lt;!-- 종료 날짜 --&gt;
+  &lt;div class="input-wrap date"&gt;
+    &lt;input type="text" class="datepicker input-small" id="endDate" name="endDate" placeholder="날짜를 선택하세요" /&gt;
+    &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;!-- 종료 시간 --&gt;
+  &lt;div class="input-wrap time"&gt;
+    &lt;div class="timepicker-box timepicker-small"&gt;
+      &lt;div class="timepicker-input"&gt;
+        &lt;input type="text" id="time-endDate" name="time-endDate" class="time-input input-small" placeholder="00:00" readonly /&gt;
+      &lt;/div&gt;
+      &lt;div class="timepicker timepicker-dropdown"&gt;
+        &lt;div class="timepicker-picker-container"&gt;
+          &lt;div class="timepicker-picker-area"&gt;
+            &lt;div class="timepicker-picker"&gt;
+              &lt;div class="timepicker-top"&gt;
+                &lt;div class="time"&gt;
+                  &lt;button type="button" class="list ampm"&gt;오전&lt;/button&gt;
+                  &lt;button type="button" class="list ampm"&gt;오후&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class="separator"&gt;&lt;/div&gt;
+                &lt;div class="time"&gt;
+                  &lt;button type="button" class="list hour"&gt;00&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;01&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;02&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;03&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;04&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;05&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;06&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;07&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;08&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;09&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;10&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;11&lt;/button&gt;
+                  &lt;button type="button" class="list hour"&gt;12&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class="separator"&gt;&lt;/div&gt;
+                &lt;div class="time"&gt;
+                  &lt;button type="button" class="minute list"&gt;00&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;05&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;10&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;15&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;20&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;25&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;30&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;35&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;40&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;45&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;50&lt;/button&gt;
+                  &lt;button type="button" class="minute list"&gt;55&lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class="timepicker-bottom"&gt;
+                &lt;button type="button" class="btn-confirm" disabled&gt;확인&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
             </div>
@@ -2760,10 +2947,14 @@
           </div>
           <div class="code-block-wrapper">
             <div class="code-tabs">
-              <div class="code-tab active" onclick="switchTab(this, 'chk-checkbox-html')">Checkbox</div>
+              <div class="code-tab active" onclick="switchTab(this, 'chk-checkbox-only')">Checkbox (without label)</div>
+              <div class="code-tab" onclick="switchTab(this, 'chk-checkbox-html')">Checkbox (with label)</div>
             </div>
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-            <div class="code-snippet active" id="chk-checkbox-html">
+            <div class="code-snippet active" id="chk-checkbox-only">
+              <pre>&lt;input type="checkbox" id="@@id" name="@@name" /&gt;</pre>
+            </div>
+            <div class="code-snippet" id="chk-checkbox-html">
               <pre>&lt;div class="checkbox-group"&gt;
   &lt;!-- Checked --&gt;
   &lt;label for="chk1"&gt;
@@ -2984,9 +3175,11 @@
         <p>상태나 카테고리를 나타내는 배지 컴포넌트입니다. Blue/Gray/Teal/Green 색상을 제공합니다.</p>
       </div>
       <div class="component-blocks-row">
-        <div style="flex:1; min-width:0;">
-          <iframe src="layouts/general_pc/badge.html" style="width:100%; height:auto; border:none; display:block;"
-            title="Badge"></iframe>
+        <div class="component-block">
+          <div class="component-preview" style="padding:0;">
+            <iframe src="layouts/general_pc/badge.html" style="width:100%; height:auto; border:none; display:block;"
+              title="Badge"></iframe>
+          </div>
         </div>
         <div class="component-block">
           <div class="component-block-header">
@@ -3325,6 +3518,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Preview</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/input.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/input.html" style="width:100%; height:auto; border:none; display:block;"
               title="Input"></iframe>
@@ -3348,26 +3548,34 @@
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-input-default">
               <pre>&lt;!-- input + 버튼 --&gt;
-&lt;div class="input-group"&gt;
-  &lt;div class="input-wrap" style="display:flex; flex-direction:row; align-items:center;"&gt;
-    &lt;div class="input-box"&gt;
-      &lt;input id="input_01" name="input_01" class="clearable" placeholder="placeholder" type="text" value="" /&gt;
-      &lt;i class="icon-clear"&gt;&lt;/i&gt;
-    &lt;/div&gt;
-    &lt;div class="input-button-box"&gt;
-      &lt;button type="button" class="btn btn-white"&gt;
-        &lt;span&gt;버튼&lt;/span&gt;
-      &lt;/button&gt;
+&lt;div class="field field-input"&gt;
+  &lt;div class="field-form"&gt;
+    &lt;div class="input-group"&gt;
+      &lt;div class="input-wrap" style="display:flex; flex-direction:row; align-items:center;"&gt;
+        &lt;div class="input-box"&gt;
+          &lt;input id="@@id" name="@@name" class="clearable" placeholder="placeholder" type="text" value="" /&gt;
+          &lt;i class="icon-clear"&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        &lt;div class="input-button-box"&gt;
+          &lt;button type="button" class="btn btn-white"&gt;
+            &lt;span&gt;버튼&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;!-- input 단독 --&gt;
-&lt;div class="input-group"&gt;
-  &lt;div class="input-wrap"&gt;
-    &lt;div class="input-box"&gt;
-      &lt;input id="input_02" name="input_02" class="clearable" placeholder="placeholder" type="text" value="" /&gt;
-      &lt;i class="icon-clear"&gt;&lt;/i&gt;
+&lt;div class="field field-input"&gt;
+  &lt;div class="field-form"&gt;
+    &lt;div class="input-group"&gt;
+      &lt;div class="input-wrap"&gt;
+        &lt;div class="input-box"&gt;
+          &lt;input id="@@id" name="@@name" class="clearable" placeholder="placeholder" type="text" value="" /&gt;
+          &lt;i class="icon-clear"&gt;&lt;/i&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
@@ -3717,6 +3925,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Preview</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/filterChip.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/filterChip.html"
               style="width:100%; height:750px; border:none; display:block;" title="Filter Chip"></iframe>
@@ -4117,6 +4332,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Preview</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/dropdown.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/dropdown.html"
               style="width:100%; height:750px; border:none; display:block;" title="Dropdown"></iframe>
@@ -4135,51 +4357,43 @@
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-dropdown-html">
               <pre>&lt;div class="field field-dropdown"&gt;
-                &lt;div class="field-form"&gt;
-                  &lt;!-- 숨겨진 select 태그 --&gt;
-                  &lt;select class="dropdown-select" style="display: none"&gt;
-                    &lt;option value="OPTION1" active&gt;OPTION1&lt;/option&gt;
-                    &lt;option value="OPTION2"&gt;OPTION2&lt;/option&gt;
-                    &lt;option value="OPTION3"&gt;OPTION3&lt;/option&gt;
-                    &lt;option value="OPTION4"&gt;OPTION4&lt;/option&gt;
-                  &lt;/select&gt;
-                  &lt;button type="button" class="btn-dropdown"&gt;
-                    &lt;span class="text"&gt;OPTION1&lt;/span&gt;
-                    &lt;span class="placeholder" style="display: none"&gt;Placeholder&lt;/span&gt;
-                  &lt;/button&gt;
-                  &lt;div class="dropdown-list-box"&gt;
-                    &lt;div class="dim"&gt;&lt;/div&gt;
-                    &lt;div class="dropdown-list-wrap"&gt;
-                      &lt;div class="dropdown-list-header"&gt;
-                        &lt;div class="title-box"&gt;&lt;/div&gt;
-                        &lt;button type="button" class="btn-close"&gt;&lt;/button&gt;
-                      &lt;/div&gt;
-                      &lt;div class="dropdown-list-body"&gt;
-                        &lt;div class="dropdown-list active"&gt;
-                          &lt;button type="button" class="btn-dropdown-list" data-value="OPTION1"&gt;
-                            &lt;span&gt;OPTION1&lt;/span&gt;
-                          &lt;/button&gt;
-                        &lt;/div&gt;
-                        &lt;div class="dropdown-list"&gt;
-                          &lt;button type="button" class="btn-dropdown-list" data-value="OPTION2"&gt;
-                            &lt;span&gt;OPTION2&lt;/span&gt;
-                          &lt;/button&gt;
-                        &lt;/div&gt;
-                        &lt;div class="dropdown-list"&gt;
-                          &lt;button type="button" class="btn-dropdown-list" data-value="OPTION3"&gt;
-                            &lt;span&gt;OPTION3&lt;/span&gt;
-                          &lt;/button&gt;
-                        &lt;/div&gt;
-                        &lt;div class="dropdown-list"&gt;
-                          &lt;button type="button" class="btn-dropdown-list" data-value="OPTION4"&gt;
-                            &lt;span&gt;OPTION4&lt;/span&gt;
-                          &lt;/button&gt;
-                        &lt;/div&gt;
-                      &lt;/div&gt;
-                    &lt;/div&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;</pre>
+  &lt;div class="field-form"&gt;
+    &lt;!-- 숨겨진 select 태그 --&gt;
+    &lt;select class="dropdown-select" style="display:none"&gt;
+      &lt;option value="OPTION1" active&gt;OPTION1&lt;/option&gt;
+      &lt;option value="OPTION2"&gt;OPTION2&lt;/option&gt;
+      &lt;option value="OPTION3"&gt;OPTION3&lt;/option&gt;
+      &lt;option value="OPTION4"&gt;OPTION4&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;button type="button" class="btn-dropdown"&gt;
+      &lt;span class="text"&gt;OPTION1&lt;/span&gt;
+      &lt;span class="placeholder" style="display:none"&gt;Placeholder&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="dropdown-list-box"&gt;
+      &lt;div class="dim"&gt;&lt;/div&gt;
+      &lt;div class="dropdown-list-wrap"&gt;
+        &lt;div class="dropdown-list-header"&gt;
+          &lt;div class="title-box"&gt;&lt;/div&gt;
+          &lt;button type="button" class="btn-close"&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="dropdown-list-body"&gt;
+          &lt;div class="dropdown-list active"&gt;
+            &lt;button type="button" class="btn-dropdown-list" data-value="OPTION1"&gt;&lt;span&gt;OPTION1&lt;/span&gt;&lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class="dropdown-list"&gt;
+            &lt;button type="button" class="btn-dropdown-list" data-value="OPTION2"&gt;&lt;span&gt;OPTION2&lt;/span&gt;&lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class="dropdown-list"&gt;
+            &lt;button type="button" class="btn-dropdown-list" data-value="OPTION3"&gt;&lt;span&gt;OPTION3&lt;/span&gt;&lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class="dropdown-list"&gt;
+            &lt;button type="button" class="btn-dropdown-list" data-value="OPTION4"&gt;&lt;span&gt;OPTION4&lt;/span&gt;&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
             </div>
           </div>
         </div>
@@ -4194,6 +4408,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Preview</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/multiDropdown.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/multiDropdown.html"
               style="width:100%; height:750px; border:none; display:block;" title="Multi Dropdown"></iframe>
@@ -4278,6 +4499,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Preview</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/dropdownTypeLabel.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/dropdownTypeLabel.html"
               style="width:100%; height:750px; border:none; display:block;" title="Dropdown Label"></iframe>
@@ -4358,6 +4586,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Preview</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/tab.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/tab.html" style="width:100%; height:auto; border:none; display:block;"
               title="Tab"></iframe>
@@ -4401,6 +4636,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Preview</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/modal.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/modal.html"
               style="width:100%; height:750px; border:none; display:block;" title="Modal / Popup"></iframe>
@@ -4473,17 +4715,15 @@
           </div>
           <div class="code-block-wrapper">
             <div class="code-tabs">
-              <div class="code-tab active" onclick="switchTab(this, 'm-badge-html')">Badge</div>
+              <div class="code-tab active">HTML</div>
             </div>
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<div class="code-snippet active" id="m-badge-html">
-  <pre>&lt;div class="badge-box"&gt;
-  &lt;span class="badge blue"&gt;Blue&lt;/span&gt;
-  &lt;span class="badge gray"&gt;Gray&lt;/span&gt;
-  &lt;span class="badge teal"&gt;Teal&lt;/span&gt;
-  &lt;span class="badge green"&gt;Green&lt;/span&gt;
-  &lt;/div&gt;</pre>
-</div>
+            <div class="code-snippet active">
+              <pre>&lt;div class="badge-box"&gt;&lt;span class="badge blue"&gt;Blue&lt;/span&gt;&lt;/div&gt;
+&lt;div class="badge-box"&gt;&lt;span class="badge gray"&gt;Gray&lt;/span&gt;&lt;/div&gt;
+&lt;div class="badge-box"&gt;&lt;span class="badge teal"&gt;Teal&lt;/span&gt;&lt;/div&gt;
+&lt;div class="badge-box"&gt;&lt;span class="badge green"&gt;Green&lt;/span&gt;&lt;/div&gt;</pre>
+            </div>
           </div>
         </div>
       </div>
@@ -4497,6 +4737,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Preview</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/loading.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/loading.html"
               style="width:100%; height:auto; border:none; display:block;" title="Loading"></iframe>
@@ -4533,6 +4780,16 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Preview</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/datepicker.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/>
+                <path d="M8 1h3v3M11 1L6 6"/>
+              </svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/datepicker.html"
               style="width:100%; height:750px; border:none; display:block;" title="Datepicker"></iframe>
@@ -4550,35 +4807,34 @@
             </div>
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-datepicker-html">
-              <pre>&lt;!-- 2/2 update --&gt;
-              &lt;div class="input-wrap date"&gt;
-                &lt;input type="text" class="input-datepicker" id="time" name="time" placeholder="날짜를 선택하세요" value="" data-value="datepicker" readonly /&gt;
-                &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
-              &lt;/div&gt;
-              &lt;div class="modal-datepicker" id="datepicker"&gt;
-                &lt;div class="dim"&gt;&lt;/div&gt;
-                &lt;div class="datepicker-picker"&gt;
-                  &lt;div class="datepicker-header"&gt;
-                    &lt;div class="datepicker-title-box"&gt;
-                      &lt;span class="title"&gt;날짜 선택&lt;/span&gt;
-                    &lt;/div&gt;
-                    &lt;button type="button" class="close-button"&gt;닫기&lt;/button&gt;
-                  &lt;/div&gt;
-                  &lt;div class="datepicker-body"&gt;
-                    &lt;div class="datepicker-box"&gt;&lt;/div&gt;
-                  &lt;/div&gt;
-                  &lt;div class="datepicker-footer"&gt;
-                    &lt;div class="datepicker-controls"&gt;
-                      &lt;button type="button" class="btn btn-white cancel-button"&gt;
-                        &lt;span&gt;취소&lt;/span&gt;
-                      &lt;/button&gt;
-                      &lt;button type="button" class="btn btn-blue confirm-button"&gt;
-                        &lt;span&gt;확인&lt;/span&gt;
-                      &lt;/button&gt;
-                    &lt;/div&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;</pre>
+              <pre>&lt;div class="input-wrap date"&gt;
+  &lt;input type="text" class="input-datepicker" id="@@id" name="@@name" placeholder="날짜를 선택하세요" value="" data-value="datepicker" readonly /&gt;
+  &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;div class="modal-datepicker" id="datepicker"&gt;
+  &lt;div class="dim"&gt;&lt;/div&gt;
+  &lt;div class="datepicker-picker"&gt;
+    &lt;div class="datepicker-header"&gt;
+      &lt;div class="datepicker-title-box"&gt;
+        &lt;span class="title"&gt;날짜 선택&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;button type="button" class="close-button"&gt;닫기&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="datepicker-body"&gt;
+      &lt;div class="datepicker-box"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="datepicker-footer"&gt;
+      &lt;div class="datepicker-controls"&gt;
+        &lt;button type="button" class="btn btn-white cancel-button"&gt;
+          &lt;span&gt;취소&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="btn btn-blue confirm-button"&gt;
+          &lt;span&gt;확인&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
             </div>
           </div>
         </div>
@@ -4592,6 +4848,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Preview</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/timePicker.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/timePicker.html"
               style="width:100%; height:750px; border:none; display:block;" title="Time Picker"></iframe>
@@ -4748,6 +5011,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Preview</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/rangeTimePicker.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/rangeTimePicker.html"
               style="width:100%; height:750px; border:none; display:block;" title="Range Time Picker"></iframe>
@@ -5027,6 +5297,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Preview</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/routeAccordion.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/routeAccordion.html"
               style="width:100%; height:auto; border:none; display:block;" title="Route Accordion"></iframe>
@@ -6128,6 +6405,7 @@
       </div>
     </div>
   </div>
+
 </body>
 
 </html>

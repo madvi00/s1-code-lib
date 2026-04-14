@@ -234,18 +234,24 @@
       if (this.options.portal && this.$listBox && this.$listBox.length) {
         this.$portalBox = this.$listBox;
 
+        // body 이동 전 CSS position 확인: fixed(모바일 풀스크린)이면 JS 좌표 계산 생략
+        var cssPos = window.getComputedStyle(this.$listBox[0]).position;
+
         this.$portalBox.attr('data-portal-owner', this.ownerId);
         this.$portalBox.appendTo('body');
 
-        var btn = this.$element.find(SELECTORS.button)[0];
-        if (btn) {
-          var rect = btn.getBoundingClientRect();
-          this.$portalBox.css({
-            position: 'fixed',
-            top: rect.bottom + 8,
-            left: rect.left,
-            width: rect.width,
-          });
+        if (cssPos !== 'fixed') {
+          // PC: 버튼 위치 기준으로 좌표 계산
+          var btn = this.$element.find(SELECTORS.button)[0];
+          if (btn) {
+            var rect = btn.getBoundingClientRect();
+            this.$portalBox.css({
+              position: 'fixed',
+              top: rect.bottom + 8,
+              left: rect.left,
+              width: rect.width,
+            });
+          }
         }
 
         this.$portalBox.css({ zIndex: this.options.portalZIndex });
@@ -272,7 +278,7 @@
           this.$portalBox.insertAfter(this.$home);
         }
 
-        this.$portalBox.css({ zIndex: '' });
+        this.$portalBox.css({ zIndex: '', position: '', top: '', left: '', width: '' });
         this.$portalBox.removeAttr('data-portal-owner');
 
         this.$portalBox = null;

@@ -8,10 +8,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* pc-components.css의 body { min-width: 1440px } 재정의:
+   iframe 내부에서는 부모 컨테이너 너비에 맞게 유동적으로 렌더링 */
+html, body {
+  min-width: 0 !important;
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+  background: transparent !important;
+}
+
 /* ====== 외부 래퍼 ====== */
 .general-container {
-  padding: 24px;
+  padding: 0;
   background: var(--gray-50, #f5f5f5);
+  height: fit-content;
 }
 
 .general-area {
@@ -28,15 +40,19 @@
 .general-middle {
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
 
-/* general-middle 안의 component-block은 margin-bottom 제거 (gap으로 대체) */
+/* general-middle 안의 component-block은 margin-bottom 제거, 카드 스타일 제거 */
 .general-middle > .component-block {
   margin-bottom: 0;
+  border: none;
+  background: transparent;
+  border-radius: 0;
 }
 
-/* iframe 안에서 component-preview는 border-bottom 제거 */
+/* iframe 안에서 component-preview: border-bottom 제거, 패딩·min-height 축소 */
 .general-area .component-preview {
   border-bottom: none;
+  padding: 16px 20px;
+  min-height: 0;
 }

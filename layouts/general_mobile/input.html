@@ -38,11 +38,6 @@
   <script src="../../assets/js/timePicker.js"></script>
   <title>Guide | Input</title>
 </head>
-<style>
-  .general-contents {
-    max-width: 360px;
-  }
-</style>
 
 <body style="overflow:hidden; margin:0;">
     <div class="general-container">
@@ -55,26 +50,34 @@
           <div class="component-block">
             <div class="component-block-header"><div><div class="component-block-title">Input (without label)</div></div></div>
             <div class="component-preview">
-              <div class="input-group">
-                <div class="input-wrap" style="display:flex; flex-direction:row; align-items:center;">
-                  <div class="input-box">
-                    <input id="input_01" name="input_01" class="clearable" placeholder="placeholder" type="text" value="" />
-                    <i class="icon-clear"></i>
-                  </div>
-                  <div class="input-button-box">
-                    <button type="button" class="btn btn-white">
-                      <span>버튼</span>
-                    </button>
+              <div class="field field-input">
+                <div class="field-form">
+                  <div class="input-group">
+                    <div class="input-wrap" style="display:flex; flex-direction:row; align-items:center;">
+                      <div class="input-box">
+                        <input id="input_01" name="input_01" class="clearable" placeholder="placeholder" type="text" value="" />
+                        <i class="icon-clear"></i>
+                      </div>
+                      <div class="input-button-box">
+                        <button type="button" class="btn btn-white">
+                          <span>버튼</span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="component-preview">
-              <div class="input-group">
-                <div class="input-wrap">
-                  <div class="input-box">
-                    <input id="input_02" name="input_02" class="clearable" placeholder="placeholder" type="text" value="" />
-                    <i class="icon-clear"></i>
+              <div class="field field-input">
+                <div class="field-form">
+                  <div class="input-group">
+                    <div class="input-wrap">
+                      <div class="input-box">
+                        <input id="input_02" name="input_02" class="clearable" placeholder="placeholder" type="text" value="" />
+                        <i class="icon-clear"></i>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -206,13 +209,17 @@
           <div class="component-block">
             <div class="component-block-header"><div><div class="component-block-title">Password</div></div></div>
             <div class="component-preview">
-              <div class="input-group input-medium">
-                <div class="input-wrap">
-                  <div class="input-box">
-                    <input id="input_password" name="input_password" class="clearable" placeholder="" type="password" value="" />
-                    <i class="icon-clear"></i>
-                    <div class="eye-button-box">
-                      <button type="button" class="btn-eye"></button>
+              <div class="field field-input">
+                <div class="field-form">
+                  <div class="input-group">
+                    <div class="input-wrap">
+                      <div class="input-box">
+                        <input id="input_password" name="input_password" class="clearable" placeholder="" type="password" value="" />
+                        <i class="icon-clear"></i>
+                        <div class="eye-button-box">
+                          <button type="button" class="btn-eye"></button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -222,29 +229,47 @@
           <div class="component-block">
             <div class="component-block-header"><div><div class="component-block-title">Number</div></div></div>
             <div class="component-preview">
-              <div class="input-wrap">
-                <input id="input_number" name="input_number" class="" type="number" value="100" maxlength="3" max="100" min="0" step="5" />
+              <div class="field field-input">
+                <div class="field-form">
+                  <div class="input-group">
+                    <div class="input-wrap">
+                      <input id="input_number" name="input_number" class="" type="number" value="100" maxlength="3" max="100" min="0" step="5" style="width:100%;" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="component-block">
             <div class="component-block-header"><div><div class="component-block-title">Textarea</div></div></div>
             <div class="component-preview">
-              <div class="textarea-box">
-                <label for="input_textarea_1" class="label">라벨 있는 경우</label>
-                <textarea name="input_textarea_1" id="input_textarea_1" class="textarea" placeholder="placehorder" maxlength="500"></textarea>
+              <div class="field field-input" style="width:100%;">
+                <div class="field-form">
+                  <div class="textarea-box">
+                    <label for="input_textarea_1" class="label">라벨 있는 경우</label>
+                    <textarea name="input_textarea_1" id="input_textarea_1" class="textarea" placeholder="placehorder" maxlength="500"></textarea>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="component-preview">
-              <div class="textarea-box">
-                <label for="input_textarea_2" class="label ir">Label</label>
-                <textarea name="input_textarea_2" id="input_textarea_2" class="textarea" placeholder="placehorder" maxlength="500"></textarea>
+              <div class="field field-input" style="width:100%;">
+                <div class="field-form">
+                  <div class="textarea-box">
+                    <label for="input_textarea_2" class="label ir">Label</label>
+                    <textarea name="input_textarea_2" id="input_textarea_2" class="textarea" placeholder="placehorder" maxlength="500"></textarea>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="component-preview">
-              <div class="textarea-box">
-                <label for="input_textarea_3" class="label ir">Label</label>
-                <textarea name="input_textarea_3" id="input_textarea_3" class="textarea" placeholder="placehorder" disabled maxlength="500"></textarea>
+              <div class="field field-input" style="width:100%;">
+                <div class="field-form">
+                  <div class="textarea-box">
+                    <label for="input_textarea_3" class="label ir">Label</label>
+                    <textarea name="input_textarea_3" id="input_textarea_3" class="textarea" placeholder="placehorder" disabled maxlength="500"></textarea>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
