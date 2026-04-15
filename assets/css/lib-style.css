@@ -103,8 +103,7 @@
       display: flex;
       flex-direction: column;
       z-index: 100;
-      overflow-y: auto;
-      overflow-x: hidden;
+      overflow: hidden;
       font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
       font-size: 14px;
       line-height: 1.5;
@@ -160,7 +159,138 @@
       font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
       padding: 0 24px;
       padding-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
+    .sidebar-scroll {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .sidebar-scroll::-webkit-scrollbar { width: 4px; }
+    .sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
+    .sidebar-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+    .changelog-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      padding: 2px;
+      cursor: pointer;
+      color: rgba(255,255,255,0.3);
+      border-radius: 4px;
+      transition: color 0.15s, background 0.15s;
+      flex-shrink: 0;
+    }
+    .changelog-btn:hover {
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* Changelog Panel */
+    .changelog-panel {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #1a1f2e;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(-100%);
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+      pointer-events: none;
+    }
+    .changelog-panel.open {
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+    .changelog-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 20px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+    .changelog-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    .changelog-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      padding: 4px;
+      cursor: pointer;
+      color: rgba(255,255,255,0.3);
+      border-radius: 4px;
+      transition: color 0.15s, background 0.15s;
+    }
+    .changelog-close:hover {
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.08);
+    }
+    .changelog-body {
+      overflow-y: auto;
+      flex: 1;
+      padding: 16px 0;
+    }
+    .changelog-body::-webkit-scrollbar { width: 4px; }
+    .changelog-body::-webkit-scrollbar-track { background: transparent; }
+    .changelog-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+    .changelog-entry {
+      padding: 0 20px 20px;
+    }
+    .changelog-entry + .changelog-entry {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 20px;
+    }
+    .changelog-ver {
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.75);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .changelog-date {
+      font-size: 10px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.3);
+    }
+    .changelog-body ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .changelog-body ul li {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+      padding-left: 16px;
+      position: relative;
+    }
+    .changelog-body ul li::before {
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      font-size: 10px;
+    }
+    .changelog-body ul li.add::before { content: '+'; color: #4ade80; }
+    .changelog-body ul li.fix::before { content: '~'; color: #facc15; }
+    .changelog-body ul li.remove::before { content: '-'; color: #f87171; }
 
     .sidebar-section {
       padding: 16px 0 8px;
@@ -857,6 +987,22 @@
     .step-code .str { color: #a5d6ff; }
     .step-code .cmt { color: #8b949e; }
 
+    /* Getting Started Tabs */
+    .gs-tab-wrap { margin-top: 14px; border: 1px solid var(--gray-200); border-radius: var(--radius-md); overflow: hidden; }
+    .gs-tabs { display: flex; background: var(--gray-50); border-bottom: 1px solid var(--gray-200); gap: 0; }
+    .gs-tab {
+      padding: 8px 18px; font-size: 12px; font-weight: 600;
+      color: var(--gray-500); background: none; border: none;
+      cursor: pointer; border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      margin-bottom: -1px;
+    }
+    .gs-tab:hover { color: var(--gray-800); }
+    .gs-tab.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+    .gs-tab-panel { display: none; }
+    .gs-tab-panel.active { display: block; }
+    .gs-tab-panel .step-code { margin-top: 0; border-radius: 0; white-space: pre; }
+
     /* ============================================
        UTILITIES PAGE
     ============================================ */
@@ -1040,6 +1186,8 @@
       .main-content { left: 60px; }
       .topbar { padding: 0 16px; }
       .sidebar-logo .logo-text, .sidebar-section-label, .sidebar-nav a span, .sidebar-footer { display: none; }
+      .sidebar-version { padding: 0 8px 4px; justify-content: center; }
+      .changelog-btn { display: none; }
       .sidebar-nav a { justify-content: center; padding: 12px; }
       .getting-started-grid, .do-dont-grid { grid-template-columns: 1fr; }
       .stats-row { grid-template-columns: repeat(2,1fr); }

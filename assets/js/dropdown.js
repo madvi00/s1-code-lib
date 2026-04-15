@@ -32,6 +32,7 @@
     disabled: 'disabled',
     readonly: 'readonly',
     portalOpen: 'show',
+    portalSizeClasses: ['field-medium', 'field-small', 'field-x-small', 'has-label', 'has-label-solid'],
   };
 
   const Utils = {
@@ -249,10 +250,24 @@
               position: 'fixed',
               top: rect.bottom + 8,
               left: rect.left,
-              width: rect.width,
+              minWidth: rect.width,
+              width: 'auto',
             });
+
+            // iframe 내 실행 시 부모 창에 최소 높이 요청 (드롭다운 리스트가 잘리지 않도록)
+            if (window !== window.parent) {
+              window.parent.postMessage({
+                type: 'iframeDropdownOpen',
+                minHeight: rect.bottom + 8 + 210,
+              }, '*');
+            }
           }
         }
+
+        // 부모 field-dropdown의 사이즈/타입 클래스를 portal box에 복사
+        CLASSES.portalSizeClasses.forEach(function (cls) {
+          if (this.$element.hasClass(cls)) this.$portalBox.addClass(cls);
+        }, this);
 
         this.$portalBox.css({ zIndex: this.options.portalZIndex });
         this.$portalBox.addClass(CLASSES.portalOpen);
@@ -281,7 +296,17 @@
         this.$portalBox.css({ zIndex: '', position: '', top: '', left: '', width: '' });
         this.$portalBox.removeAttr('data-portal-owner');
 
+        // 열 때 복사했던 사이즈/타입 클래스 제거
+        CLASSES.portalSizeClasses.forEach(function (cls) {
+          this.$portalBox.removeClass(cls);
+        }, this);
+
         this.$portalBox = null;
+
+        // iframe 내 실행 시 부모 창에 높이 복원 요청
+        if (window !== window.parent) {
+          window.parent.postMessage({ type: 'iframeDropdownClose' }, '*');
+        }
       }
 
       this.$element.removeClass(CLASSES.reverse);

@@ -1,4 +1,21 @@
 /* 에스원 UI 코드 라이브러리 - scripts */
+
+// ---- GETTING STARTED TABS ----
+function gsTab(btn, panelId) {
+  var wrap = btn.closest('.component-block') || btn.closest('.step-card') || btn.closest('.gs-tab-wrap');
+  if (!wrap) return;
+  wrap.querySelectorAll('.gs-tab').forEach(function(b) { b.classList.remove('active'); });
+  wrap.querySelectorAll('.gs-tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  btn.classList.add('active');
+  var panel = document.getElementById(panelId);
+  if (panel) panel.classList.add('active');
+}
+
+// ---- CHANGELOG ----
+function toggleChangelog() {
+  const panel = document.getElementById('changelogPanel');
+  if (panel) panel.classList.toggle('open');
+}
 // ---- FILTER CHIP ----
     function toggleFilterChip(id) {
       const dd = document.getElementById(id);
@@ -197,6 +214,8 @@ function switchPlatform(platform) {
       section.querySelectorAll('.component-preview iframe').forEach(resizeIframe);
     }
   }
+
+  window.navigate = navigate;
 
   document.querySelectorAll('[data-page]').forEach(el => {
     el.addEventListener('click', function(e) {
