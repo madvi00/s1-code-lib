@@ -222,8 +222,17 @@
   --semantic-surface-status-secondary-sub: var(--foundation-color-green-400);
   --semantic-surface-status-tertiary-main: var(--foundation-color-skyblue-300);
   --semantic-surface-status-tertiary-sub: var(--foundation-color-skyblue-400);
+  --semantic-surface-status-success-strong: var(--foundation-color-green-350);
+  --semantic-surface-status-warning: var(--foundation-color-orange-300);
+  --semantic-surface-status-purple: var(--foundation-color-purple-350);
+  --semantic-surface-status-error-subtle: var(--foundation-color-red-50);
   --semantic-surface-status-disabled: var(--foundation-color-gray-300);
   --semantic-surface-status-error: var(--foundation-color-red-100);
+  --semantic-color-status-cluster-border-blue: var(--foundation-color-blue-500);
+  --semantic-color-status-cluster-border-red: var(--foundation-color-red-500);
+  --semantic-color-status-cluster-border-yellow: var(--foundation-color-yellow-500);
+  --semantic-color-status-cluster-border-gray: var(--foundation-color-gray-700);
+  --semantic-color-status-cluster-bg-gray: var(--foundation-color-gray-500);
   --semantic-color-control-background-default: var(--foundation-color-white);
   --semantic-color-control-background-default-alt: var(--foundation-color-gray-50);
   --semantic-color-control-background-hover: var(--foundation-color-gray-50);

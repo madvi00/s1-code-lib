@@ -93,6 +93,8 @@
       /* ── Semantic: Base ── */
       --semantic-base-background-default: var(--foundation-color-white);
       --semantic-base-background-home: #f5f6fb;
+      --semantic-base-background-wrapper: var(--foundation-color-visual-gray-300);
+      --semantic-base-background-toast: var(--foundation-color-black);
 
       /* ── Semantic: Surface ── */
       --semantic-surface-neutral-container-base: var(--foundation-color-white);
@@ -103,6 +105,10 @@
       --semantic-surface-status-primary-main: var(--foundation-color-blue-400);
       --semantic-surface-status-primary-sub: var(--foundation-color-blue-450);
       --semantic-surface-status-secondary-main: var(--foundation-color-green-300);
+      --semantic-surface-status-tertiary-main: var(--foundation-color-skyblue-300);
+      --semantic-surface-status-tertiary-sub: var(--foundation-color-skyblue-400);
+      --semantic-surface-status-warning: var(--foundation-color-orange-300);
+      --semantic-surface-status-purple: var(--foundation-color-purple-300);
       --semantic-surface-status-error: var(--foundation-color-red-100);
       --semantic-surface-status-disabled: var(--foundation-color-gray-300);
 
@@ -182,6 +188,7 @@
       --semantic-color-navigation-indicator-selected: var(--foundation-color-blue-400);
 
       /* ── Semantic: Line ── */
+      --semantic-color-line-white: var(--foundation-color-white);
       --semantic-color-line-gray-default: var(--foundation-color-gray-200);
       --semantic-color-line-gray-subtle: var(--foundation-color-gray-100);
       --semantic-color-line-gray-strong: var(--foundation-color-gray-800);

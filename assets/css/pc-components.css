@@ -276,10 +276,10 @@ img {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: #808796;
+  background-color: var(--semantic-base-background-wrapper);
 }
 .wrapper:has(.error-container) {
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
 }
 
 .content-wrap {
@@ -1046,7 +1046,7 @@ img {
 .logo-guide-box .logo-box {
   position: absolute;
   height: 11.81%;
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
 }
 .logo-guide-box .logo-box:has(img) .guide-text {
   display: none;
@@ -1229,11 +1229,11 @@ img {
   background-color: var(--semantic-color-icon-gray-light);
 }
 .badge-box .badge.teal {
-  color: var(--foundation-color-white);
-  background-color: var(--foundation-color-skyblue-400);
+  color: var(--semantic-color-button-label-primary-default);
+  background-color: var(--semantic-surface-status-tertiary-sub);
 }
 .badge-box .badge.green {
-  color: var(--foundation-color-white);
+  color: var(--semantic-color-button-label-primary-default);
   background-color: var(--color-success);
 }
 
@@ -1273,7 +1273,7 @@ img {
 .btn.btn-blue {
   border-color: var(--semantic-color-button-background-primary-default);
   background-color: var(--semantic-color-button-border-primary-default);
-  color: var(--foundation-color-white);
+  color: var(--semantic-color-button-label-primary-default);
 }
 .btn.btn-blue:hover:not(:disabled) {
   border-color: transparent;
@@ -2268,8 +2268,8 @@ input[type=checkbox]:disabled + span {
 }
 .chip-box .btn-chip:hover {
   border-color: var(--semantic-color-chip-line-border);
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.05))), var(--foundation-color-white);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), var(--foundation-color-white);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.05))), var(--semantic-surface-neutral-container-base);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), var(--semantic-surface-neutral-container-base);
 }
 .chip-box .btn-chip.active {
   border-color: var(--semantic-color-chip-line-border-selected);
@@ -2480,7 +2480,7 @@ input[type=checkbox]:disabled + span {
   width: var(--foundation-sizing-30);
   height: var(--foundation-sizing-30);
   margin: auto;
-  border: var(--semantic-border-width-default) solid var(--foundation-color-white);
+  border: var(--semantic-border-width-default) solid var(--semantic-color-line-white);
   border-radius: var(--foundation-radius-full);
   background-color: var(--semantic-color-control-background-default);
   font-size: var(--foundation-font-size-16);
@@ -2912,8 +2912,8 @@ input[type=checkbox]:disabled + span {
   background-color: var(--color-primary-subtle);
 }
 .field-dropdown[class*=has-label] .btn-dropdown:hover {
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.05))), var(--foundation-color-white);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), var(--foundation-color-white);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.05))), var(--semantic-surface-neutral-container-base);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), var(--semantic-surface-neutral-container-base);
 }
 .field-dropdown[class*=has-label] .btn-dropdown:disabled {
   border-color: var(--semantic-color-chip-line-border-disabled) !important;
@@ -3407,15 +3407,15 @@ body > .dropdown-list-box .dropdown-list .btn-dropdown-list:disabled {
   height: 32px;
   padding: 0 8px 0 4px;
   border-radius: var(--radius-sm);
-  background: var(--foundation-color-white);
+  background: var(--semantic-surface-neutral-container-base);
   font-size: var(--text-md);
   font-weight: 500;
   color: var(--semantic-color-form-control-text-default);
   line-height: 1.3;
 }
 .language-box .btn-language:hover {
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.05))), var(--foundation-color-white);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), var(--foundation-color-white);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.05))), var(--semantic-surface-neutral-container-base);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), var(--semantic-surface-neutral-container-base);
 }
 .language-box .btn-language::before {
   content: "";
@@ -3481,7 +3481,7 @@ body > .dropdown-list-box .dropdown-list .btn-dropdown-list:disabled {
   width: var(--foundation-sizing-32);
   height: var(--foundation-sizing-32);
   border-radius: var(--radius-sm);
-  background: var(--foundation-color-white) url("../../assets/images/ic_user.svg") no-repeat center/24px auto;
+  background: var(--semantic-surface-neutral-container-base) url("../../assets/images/ic_user.svg") no-repeat center/24px auto;
 }
 .mymenu-box .btn-mymenu:hover {
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.05))), url("../../assets/images/ic_user.svg") no-repeat center/24px auto;
@@ -3601,7 +3601,7 @@ input:not([type=checkbox]):not([type=radio]) {
   padding: 0 var(--semantic-spacing-padding-inline-xs, 12px);
   border: var(--semantic-border-width-default, 1px) solid var(--gray-200);
   border-radius: var(--semantic-radius-control-sm, 4px);
-  background: var(--foundation-color-white);
+  background: var(--semantic-surface-neutral-container-base);
   font-size: var(--foundation-font-size-12);
   font-weight: var(--foundation-font-weight-regular);
   line-height: var(--foundation-line-height-130);
@@ -3970,7 +3970,7 @@ input::-webkit-inner-spin-button {
 .cluster-box {
   font-size: var(--text-md);
   font-weight: 700;
-  color: var(--foundation-color-white);
+  color: var(--semantic-color-button-label-primary-default);
   line-height: normal;
   white-space: nowrap;
 }
@@ -4096,7 +4096,7 @@ input::-webkit-inner-spin-button {
   -ms-flex: 0 0 32px;
   flex: 0 0 32px;
   padding: 0 var(--foundation-spacing-16);
-  background-color: #808796;
+  background-color: var(--semantic-base-background-wrapper);
 }
 .page-tabs ul {
   overflow: hidden;
@@ -4377,7 +4377,7 @@ input[type=radio]:disabled + span {
   align-items: center;
   gap: 8px;
   border-radius: var(--radius-xl);
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -5473,9 +5473,9 @@ textarea::placeholder {
   min-width: 320px;
   min-height: 52px;
   padding: 16px 40px;
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
   border-radius: var(--foundation-radius-full);
-  background-color: var(--foundation-color-black);
+  background-color: var(--semantic-base-background-toast);
   opacity: 0.7;
 }
 .toast-box .text {
@@ -5648,7 +5648,7 @@ textarea::placeholder {
   line-height: var(--foundation-line-height-130);
   letter-spacing: var(--foundation-letter-spacing-normal);
   line-height: normal;
-  color: var(--foundation-color-black);
+  color: var(--semantic-color-text-title-primary);
   text-transform: capitalize;
 }
 .bus-route-wrap .info-name .highlight {
@@ -6234,14 +6234,14 @@ body:has(.multi-map-container) {
 .multi-map-container .multi-map-content .content-middle .map-info .vehicle-number {
   font-size: var(--text-sm);
   font-weight: 500;
-  color: var(--foundation-color-white);
+  color: var(--semantic-color-button-label-primary-default);
   line-height: 16px;
 }
 .multi-map-container .multi-map-content .content-middle .map-info .datetime {
   margin-left: 8px;
   font-size: var(--text-sm);
   font-weight: 400;
-  color: var(--foundation-color-white);
+  color: var(--semantic-color-button-label-primary-default);
   line-height: 16px;
 }
 .multi-map-container .multi-map-content .content-middle .map-info .btn-refresh {
@@ -6878,7 +6878,7 @@ body:has(.multi-map-container) {
   font-weight: var(--foundation-font-weight-medium);
   line-height: var(--foundation-line-height-130);
   letter-spacing: var(--foundation-letter-spacing-normal);
-  color: var(--foundation-color-white);
+  color: var(--semantic-color-button-label-primary-default);
   text-align: center;
 }
 .dashboard-setting-box .dashboard-view-box .view-box .view-empty {
@@ -7525,7 +7525,7 @@ body:has(.multi-map-container) {
   background-color: var(--gray-50);
   font-size: var(--text-sm);
   font-weight: 400;
-  color: var(--foundation-color-black);
+  color: var(--semantic-color-text-title-primary);
   line-height: 16px;
 }
 .operation-date-section .calendar-container .time-select-section .time-select-header {
@@ -7622,7 +7622,7 @@ body:has(.multi-map-container) {
   height: 20px;
   border-radius: var(--foundation-radius-4);
   border: 1px solid var(--semantic-color-line-gray-default);
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
   font-size: var(--foundation-font-size-12);
   font-weight: var(--foundation-font-weight-regular);
   line-height: var(--foundation-line-height-130);
@@ -7711,7 +7711,7 @@ body:has(.multi-map-container) {
   color: var(--color-primary-light);
 }
 .search-results-table-container .speed-value.speed-purple {
-  color: var(--foundation-color-purple-300);
+  color: var(--semantic-surface-status-purple);
 }
 .search-results-table-container .speed-value.speed-red {
   color: var(--color-error);
@@ -7966,7 +7966,7 @@ body:has(.multi-map-container) {
 .calendar-area .calendar-body ul li.active .date {
   border-radius: var(--foundation-radius-full);
   background-color: var(--semantic-color-button-background-primary-default);
-  color: var(--foundation-color-white);
+  color: var(--semantic-color-button-label-primary-default);
 }
 .calendar-area .calendar-body ul li .date-area {
   cursor: pointer;
@@ -8092,7 +8092,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   border-left: 1px solid var(--gray-100);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
   -webkit-filter: drop-shadow(4px 0 4px rgba(0, 0, 0, 0.1));
   filter: drop-shadow(4px 0 4px rgba(0, 0, 0, 0.1));
   -webkit-transform: rotate(180deg);
@@ -8103,7 +8103,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   display: block;
   width: 20px;
   height: 20px;
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
   background: url(../../assets/images/ic_arrow_left.svg) no-repeat center/20px;
 }
 
@@ -8119,7 +8119,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   flex-direction: column;
   width: 360px;
   height: 100%;
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
 }
@@ -8263,7 +8263,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   height: auto;
   padding: 20px 24px;
   border-radius: var(--radius-lg);
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
   z-index: 10;
@@ -8285,7 +8285,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
 .map-list .map-list-top .update .list-setting-container .list-setting-top .list-setting-title {
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--foundation-color-black);
+  color: var(--semantic-color-text-title-primary);
   line-height: 23px;
 }
 .map-list .map-list-top .update .list-setting-container .list-setting-top .btn-close {
@@ -8430,7 +8430,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   flex-direction: column;
   gap: 4px;
   font-size: var(--text-sm);
-  color: var(--foundation-color-white);
+  color: var(--semantic-color-button-label-primary-default);
   line-height: 12px;
 }
 .map-status-box .route-status-box .status-box .text-box .route-title {
@@ -8463,7 +8463,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   border-radius: var(--radius-lg);
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
 }
 .map-status-box .legend-status-box .legend-title {
   font-size: 10px;
@@ -8512,10 +8512,10 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   color: var(--color-primary-light);
 }
 .map-status-box .legend-status-box .legend-bar-box .legend-bar.purple .bar {
-  background-color: var(--foundation-color-purple-300);
+  background-color: var(--semantic-surface-status-purple);
 }
 .map-status-box .legend-status-box .legend-bar-box .legend-bar.purple .value {
-  color: var(--foundation-color-purple-300);
+  color: var(--semantic-surface-status-purple);
 }
 .map-status-box .legend-status-box .legend-bar-box .legend-bar.red .bar {
   background-color: var(--color-error);
@@ -8614,7 +8614,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
 .route-schedule-box .schedule-title-box {
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--foundation-color-black);
+  color: var(--semantic-color-text-title-primary);
   line-height: 16px;
 }
 .route-schedule-box .route-schedule-bottom {
@@ -8703,14 +8703,14 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   content: "";
   width: 24px;
   height: 30px;
-  background: -webkit-gradient(linear, right top, left top, from(var(--foundation-color-white)), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(270deg, var(--foundation-color-white) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-gradient(linear, right top, left top, from(var(--semantic-surface-neutral-container-base)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(270deg, var(--semantic-surface-neutral-container-base) 0%, rgba(255, 255, 255, 0) 100%);
 }
 .filter-control-dim::after {
   content: "";
   width: 52px;
   height: 30px;
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
 }
 
 .map-filter-box {
@@ -8771,7 +8771,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   display: flex;
   font-size: var(--text-md);
   font-weight: 700;
-  color: var(--foundation-color-black);
+  color: var(--semantic-color-text-title-primary);
   line-height: 1;
 }
 .search-result-box .search-result-top .total-count .data {
@@ -8794,7 +8794,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   display: flex;
   font-size: var(--text-md);
   font-weight: 700;
-  color: var(--foundation-color-black);
+  color: var(--semantic-color-text-title-primary);
   line-height: 1;
   padding: 22px 20px 10px;
 }
@@ -9114,7 +9114,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   height: 100%;
   padding: 18px 0 0;
   border-radius: var(--radius-lg);
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
 }
@@ -9236,7 +9236,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   padding: 9px 0 9px 20px;
   font-weight: 400;
   color: var(--semantic-color-text-body-primary);
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
   text-align: left;
 }
 
@@ -9459,7 +9459,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   padding: 8px 0;
   border: 1px solid var(--semantic-color-form-control-border-default);
   border-radius: var(--semantic-radius-control-sm);
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
 }
@@ -9533,7 +9533,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
 .map-control-box .map-toolbox .btn-location {
   width: 34px;
   height: 34px;
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -9568,7 +9568,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   padding: 20px;
   border: 1px solid var(--semantic-color-button-border-secondary-default);
   border-radius: 10px;
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
 }
 .map-control-box .map-toolbox .setting-layer-box.show {
   display: block;
@@ -9645,7 +9645,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   left: 376px;
   bottom: 16px;
   border-radius: var(--radius-lg);
-  background-color: var(--foundation-color-white);
+  background-color: var(--semantic-surface-neutral-container-base);
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
   width: 300px;
@@ -9844,7 +9844,7 @@ body:has(.map-control-box) > .dropdown-list-box.field-medium .dropdown-list .btn
   font-weight: var(--foundation-font-weight-regular);
   line-height: var(--foundation-line-height-130);
   letter-spacing: var(--foundation-letter-spacing-tight);
-  color: var(--foundation-color-white);
+  color: var(--semantic-color-button-label-primary-default);
 }
 
 .station-detail-container,
@@ -10121,7 +10121,7 @@ body:has(.term-container) {
 .term-container .term-area .title-box {
   font-size: 20px;
   font-weight: 700;
-  color: var(--foundation-color-black);
+  color: var(--semantic-color-text-title-primary);
   line-height: 20px;
 }
 .term-container .term-area .term-middle {
@@ -10522,28 +10522,28 @@ body:has(.term-container) {
   color: #10a86c;
 }
 .dashboard-container .dashboard-status-list .status-item.complete::before {
-  background-color: var(--foundation-color-skyblue-400);
+  background-color: var(--semantic-surface-status-tertiary-sub);
 }
 .dashboard-container .dashboard-status-list .status-item.complete .status-bar {
   background-color: rgba(21, 155, 188, 0.3);
 }
 .dashboard-container .dashboard-status-list .status-item.complete .status-bar .bar {
-  background-color: var(--foundation-color-skyblue-400);
+  background-color: var(--semantic-surface-status-tertiary-sub);
 }
 .dashboard-container .dashboard-status-list .status-item.complete .count {
-  color: var(--foundation-color-skyblue-400);
+  color: var(--semantic-surface-status-tertiary-sub);
 }
 .dashboard-container .dashboard-status-list .status-item.waiting::before {
-  background-color: var(--foundation-color-orange-300);
+  background-color: var(--semantic-surface-status-warning);
 }
 .dashboard-container .dashboard-status-list .status-item.waiting .status-bar {
   background-color: rgba(255, 118, 26, 0.3);
 }
 .dashboard-container .dashboard-status-list .status-item.waiting .status-bar .bar {
-  background-color: var(--foundation-color-orange-300);
+  background-color: var(--semantic-surface-status-warning);
 }
 .dashboard-container .dashboard-status-list .status-item.waiting .count {
-  color: var(--foundation-color-orange-300);
+  color: var(--semantic-surface-status-warning);
 }
 .dashboard-container .dashboard-status-list .status-item.running::before {
   background-color: #4e4ec3;

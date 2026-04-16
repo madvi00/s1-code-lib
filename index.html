@@ -1264,7 +1264,7 @@
           <div style="padding:16px 20px; display:flex; gap:5px;">
             <div class="swatch-col">
               <div style="height:40px; background:#e3f2ea; border-radius:4px;"></div>
-              <div class="swatch-label">50<br />#e3f2e</div>
+              <div class="swatch-label">50<br />#e3f2ea</div>
             </div>
             <div class="swatch-col">
               <div style="height:40px; background:#caecda; border-radius:4px;"></div>
@@ -1291,45 +1291,64 @@
         <div class="component-block" style="margin-bottom:0;">
           <div class="component-block-header">
             <div>
-              <div class="component-block-title">Orange / Yellow / Skyblue / Purple</div>
+              <div class="component-block-title">Orange</div>
+              <div class="component-block-subtitle">--foundation-color-orange-{step}</div>
             </div>
           </div>
-          <div style="padding:16px 20px; display:flex; flex-direction:column; gap:8px;">
-            <div style="display:flex; gap:5px; align-items:center;">
-              <span style="font-size:10px; color:var(--gray-400); width:52px; flex-shrink:0;">Orange
-              </span>
-              <div
-                style="height:28px; flex:1; background:linear-gradient(to right,#ffede0,#ff761a,#8e2e00); border-radius:4px;">
-              </div>
-              <span style="font-family:var(--font-mono);font-size:10px;color:var(--gray-400);">50→500
-              </span>
+          <div style="padding:16px 20px; display:flex; gap:5px;">
+            <div class="swatch-col">
+              <div style="height:40px; background:#ff761a; border-radius:4px;"></div>
+              <div class="swatch-label">300<br />#ff761a</div>
             </div>
-            <div style="display:flex; gap:5px; align-items:center;">
-              <span style="font-size:10px; color:var(--gray-400); width:52px; flex-shrink:0;">Yellow
-              </span>
-              <div
-                style="height:28px; flex:1; background:linear-gradient(to right,#fff4ce,#ffc200,#8f6a00); border-radius:4px;">
-              </div>
-              <span style="font-family:var(--font-mono);font-size:10px;color:var(--gray-400);">50→500
-              </span>
+          </div>
+        </div>
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Yellow</div>
+              <div class="component-block-subtitle">--foundation-color-yellow-{step}</div>
             </div>
-            <div style="display:flex; gap:5px; align-items:center;">
-              <span style="font-size:10px; color:var(--gray-400); width:52px; flex-shrink:0;">Skyblue
-              </span>
-              <div
-                style="height:28px; flex:1; background:linear-gradient(to right,#c4eef7,#25b9da,#0f6c84); border-radius:4px;">
-              </div>
-              <span style="font-family:var(--font-mono);font-size:10px;color:var(--gray-400);">50→500
-              </span>
+          </div>
+          <div style="padding:16px 20px; display:flex; gap:5px;">
+            <div class="swatch-col">
+              <div style="height:40px; background:#ffc200; border-radius:4px;"></div>
+              <div class="swatch-label">300<br />#ffc200</div>
             </div>
-            <div style="display:flex; gap:5px; align-items:center;">
-              <span style="font-size:10px; color:var(--gray-400); width:52px; flex-shrink:0;">Purple
-              </span>
-              <div
-                style="height:28px; flex:1; background:linear-gradient(to right,#e8e9fc,#6666dd,#252576); border-radius:4px;">
-              </div>
-              <span style="font-family:var(--font-mono);font-size:10px;color:var(--gray-400);">50→500
-              </span>
+          </div>
+        </div>
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Skyblue</div>
+              <div class="component-block-subtitle">--foundation-color-skyblue-{step}</div>
+            </div>
+          </div>
+          <div style="padding:16px 20px; display:flex; gap:5px;">
+            <div class="swatch-col">
+              <div style="height:40px; background:#c4eef7; border-radius:4px;"></div>
+              <div class="swatch-label">50<br />#c4eef7</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#25b9da; border-radius:4px;"></div>
+              <div class="swatch-label">300<br />#25b9da</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#159bbc; border-radius:4px;"></div>
+              <div class="swatch-label">400<br />#159bbc</div>
+            </div>
+          </div>
+        </div>
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Purple</div>
+              <div class="component-block-subtitle">--foundation-color-purple-{step}</div>
+            </div>
+          </div>
+          <div style="padding:16px 20px; display:flex; gap:5px;">
+            <div class="swatch-col">
+              <div style="height:40px; background:#6666dd; border-radius:4px;"></div>
+              <div class="swatch-label">300<br />#6666dd</div>
             </div>
           </div>
         </div>
@@ -1345,24 +1364,20 @@
         </div>
         <div style="padding:20px 24px; background:#fff; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
           <div>
-            <div
-              style="font-size:11px; font-weight:700; color:var(--gray-400); letter-spacing:0.8px; text-transform:uppercase; margin-bottom:14px;">
-              Font Size Scale</div>
+            <div style="font-size:11px; font-weight:700; color:var(--gray-400); letter-spacing:0.8px; text-transform:uppercase; margin-bottom:10px;">Font Family</div>
+            <div style="background:var(--gray-50); border-radius:6px; padding:10px 12px; margin-bottom:16px;">
+              <code style="font-family:var(--font-mono); font-size:11px; color:var(--gray-600);">--foundation-font-family-base: 'Pretendard', sans-serif</code>
+            </div>
+            <div style="font-size:11px; font-weight:700; color:var(--gray-400); letter-spacing:0.8px; text-transform:uppercase; margin-bottom:14px;">Font Size Scale</div>
             <div class="typography-samples">
-              <div class="type-sample"><span class="type-label">font-size-10</span><span class="type-text"
-                  style="font-size:10px;">에스원 UI (10px / 1rem)</span></div>
-              <div class="type-sample"><span class="type-label">font-size-12</span><span class="type-text"
-                  style="font-size:12px;">에스원 UI (12px / 1.2rem)</span></div>
-              <div class="type-sample"><span class="type-label">font-size-14</span><span class="type-text"
-                  style="font-size:14px;">에스원 UI (14px / 1.4rem)</span></div>
-              <div class="type-sample"><span class="type-label">font-size-16</span><span class="type-text"
-                  style="font-size:16px;">에스원 UI (16px)</span></div>
-              <div class="type-sample"><span class="type-label">font-size-18</span><span class="type-text"
-                  style="font-size:18px; font-weight:500;">에스원 UI (18px)</span></div>
-              <div class="type-sample"><span class="type-label">font-size-20</span><span class="type-text"
-                  style="font-size:20px; font-weight:600;">에스원 UI (20px)</span></div>
-              <div class="type-sample"><span class="type-label">font-size-24</span><span class="type-text"
-                  style="font-size:24px; font-weight:700;">에스원 (24px)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-10</span><span class="type-text" style="font-size:10px;">에스원 UI (10px / 1rem)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-12</span><span class="type-text" style="font-size:12px;">에스원 UI (12px / 1.2rem)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-14</span><span class="type-text" style="font-size:14px;">에스원 UI (14px / 1.4rem)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-16</span><span class="type-text" style="font-size:16px;">에스원 UI (16px)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-18</span><span class="type-text" style="font-size:18px; font-weight:500;">에스원 UI (18px)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-20</span><span class="type-text" style="font-size:20px; font-weight:600;">에스원 UI (20px)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-24</span><span class="type-text" style="font-size:24px; font-weight:700;">에스원 (24px)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-32</span><span class="type-text" style="font-size:32px; font-weight:700;">에스원 (32px)</span></div>
             </div>
           </div>
           <div>
@@ -1565,6 +1580,7 @@
           <div class="component-block-header">
             <div>
               <div class="component-block-title">Semantic — Button</div>
+              <div class="component-block-subtitle">--semantic-color-button-*</div>
             </div>
           </div>
           <div style="padding:0;">
@@ -1576,64 +1592,84 @@
                 </tr>
               </thead>
               <tbody>
+                <tr style="background:var(--gray-50);"><td colspan="2" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">BACKGROUND</td></tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">...background-primary-default</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div>
-                      <code class="util-value">blue-400</code>
-                    </div>
-                  </td>
+                  <td><code class="util-class" style="font-size:10px;">background-primary-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">...background-primary-hover</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#2747b9;flex-shrink:0;"></div>
-                      <code class="util-value">blue-500</code>
-                    </div>
-                  </td>
+                  <td><code class="util-class" style="font-size:10px;">background-primary-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#2747b9;flex-shrink:0;"></div><code class="util-value">blue-500</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">...background-secondary-default</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div
-                        style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid #d9d9d9;flex-shrink:0;">
-                      </div><code class="util-value">white</code>
-                    </div>
-                  </td>
+                  <td><code class="util-class" style="font-size:10px;">background-secondary-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">...background-blue-line-hover</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#e2f1ff;flex-shrink:0;"></div>
-                      <code class="util-value">blue-50</code>
-                    </div>
-                  </td>
+                  <td><code class="util-class" style="font-size:10px;">background-secondary-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">...background-disabled</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div>
-                      <code class="util-value">gray-50</code>
-                    </div>
-                  </td>
+                  <td><code class="util-class" style="font-size:10px;">background-blue-line-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">...label-primary-default</code></td>
-                  <td><code class="util-value">white</code></td>
+                  <td><code class="util-class" style="font-size:10px;">background-blue-line-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e2f1ff;flex-shrink:0;"></div><code class="util-value">blue-50</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">...label-disabled</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#c4c4c4;flex-shrink:0;"></div>
-                      <code class="util-value">gray-300</code>
-                    </div>
-                  </td>
+                  <td><code class="util-class" style="font-size:10px;">background-assist-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">background-assist-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">background-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr style="background:var(--gray-50);"><td colspan="2" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">BORDER</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">border-primary-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">border-secondary-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">border-blue-line-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">border-assist-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">border-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr style="background:var(--gray-50);"><td colspan="2" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">LABEL</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">label-primary-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">label-secondary-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">label-blue-line-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">label-assist-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">label-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c4c4c4;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
                 </tr>
               </tbody>
             </table>
@@ -1644,6 +1680,7 @@
           <div class="component-block-header">
             <div>
               <div class="component-block-title">Semantic — Text / Form Control</div>
+              <div class="component-block-subtitle">--semantic-color-text-* / --semantic-color-form-control-*</div>
             </div>
           </div>
           <div style="padding:0;">
@@ -1655,77 +1692,83 @@
                 </tr>
               </thead>
               <tbody>
+                <tr style="background:var(--gray-50);"><td colspan="2" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">TEXT</td></tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">text-title-primary</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#000;flex-shrink:0;"></div><code
-                        class="util-value">black</code>
-                    </div>
-                  </td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#000;flex-shrink:0;"></div><code class="util-value">black</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">text-title-secondary</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">text-title-tertiary</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#555555;flex-shrink:0;"></div><code class="util-value">gray-600</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">text-body-primary</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div>
-                      <code class="util-value">gray-800</code>
-                    </div>
-                  </td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">text-body-secondary</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#555;flex-shrink:0;"></div><code
-                        class="util-value">gray-600</code>
-                    </div>
-                  </td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#555555;flex-shrink:0;"></div><code class="util-value">gray-600</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">text-body-tertiary</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">text-accent</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div>
-                      <code class="util-value">blue-400</code>
-                    </div>
-                  </td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">text-caution</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#ff4554;flex-shrink:0;"></div>
-                      <code class="util-value">red-300</code>
-                    </div>
-                  </td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ff4554;flex-shrink:0;"></div><code class="util-value">red-300</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">text-placeholder</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">text-helper</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">text-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c4c4c4;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                </tr>
+                <tr style="background:var(--gray-50);"><td colspan="2" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">FORM CONTROL</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-text-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-text-placeholder</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-text-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c4c4c4;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-background-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-background-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">form-control-border-default</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div>
-                      <code class="util-value">gray-200</code>
-                    </div>
-                  </td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">form-control-border-selected</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div>
-                      <code class="util-value">blue-400</code>
-                    </div>
-                  </td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">form-control-border-error</code></td>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:6px;">
-                      <div style="width:14px;height:14px;border-radius:3px;background:#ff4554;flex-shrink:0;"></div>
-                      <code class="util-value">red-300</code>
-                    </div>
-                  </td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ff4554;flex-shrink:0;"></div><code class="util-value">red-300</code></div></td>
                 </tr>
               </tbody>
             </table>
@@ -1736,6 +1779,7 @@
           <div class="component-block-header">
             <div>
               <div class="component-block-title">Semantic — Sizing</div>
+              <div class="component-block-subtitle">--semantic-sizing-*</div>
             </div>
           </div>
           <div style="padding:0;">
@@ -1748,6 +1792,7 @@
                 </tr>
               </thead>
               <tbody>
+                <tr style="background:var(--gray-50);"><td colspan="3" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">BUTTON HEIGHT</td></tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">button-height-lg</code></td>
                   <td><code class="util-value">4.8rem</code></td>
@@ -1756,7 +1801,7 @@
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">button-height-md</code></td>
                   <td><code class="util-value">4.4rem</code></td>
-                  <td style="font-size:12px;color:var(--gray-500);">버튼 md (44px)</td>
+                  <td style="font-size:12px;color:var(--gray-500);">버튼 md</td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">button-height-sm</code></td>
@@ -1768,6 +1813,18 @@
                   <td><code class="util-value">2.8rem</code></td>
                   <td style="font-size:12px;color:var(--gray-500);">버튼 xs</td>
                 </tr>
+                <tr style="background:var(--gray-50);"><td colspan="3" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">FORM CONTROL HEIGHT</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-height-lg</code></td>
+                  <td><code class="util-value">4.8rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">입력 필드 lg</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-height-md</code></td>
+                  <td><code class="util-value">4.4rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">입력 필드 md</td>
+                </tr>
+                <tr style="background:var(--gray-50);"><td colspan="3" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">CHIP HEIGHT</td></tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">chip-height-sm</code></td>
                   <td><code class="util-value">2.8rem</code></td>
@@ -1792,6 +1849,7 @@
           <div class="component-block-header">
             <div>
               <div class="component-block-title">Semantic — Radius / Spacing</div>
+              <div class="component-block-subtitle">--semantic-radius-* / --semantic-spacing-*</div>
             </div>
           </div>
           <div style="padding:0;">
@@ -1804,6 +1862,7 @@
                 </tr>
               </thead>
               <tbody>
+                <tr><td colspan="3" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">RADIUS</td></tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">radius-button-md</code></td>
                   <td><code class="util-value">0.4rem</code></td>
@@ -1824,6 +1883,12 @@
                   <td><code class="util-value">0.8rem</code></td>
                   <td style="font-size:12px;color:var(--gray-500);">모달</td>
                 </tr>
+                <tr><td colspan="3" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">SPACING</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-inline-sm</code></td>
+                  <td><code class="util-value">1.6rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">인라인 패딩 sm</td>
+                </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">spacing-padding-block-sm</code></td>
                   <td><code class="util-value">1.6rem</code></td>
@@ -1835,9 +1900,201 @@
                   <td style="font-size:12px;color:var(--gray-500);">블록 패딩 md</td>
                 </tr>
                 <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-section-md</code></td>
+                  <td><code class="util-value">2.4rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">섹션 간격 md</td>
+                </tr>
+                <tr>
                   <td><code class="util-class" style="font-size:10px;">spacing-section-lg</code></td>
                   <td><code class="util-value">3.2rem</code></td>
                   <td style="font-size:12px;color:var(--gray-500);">섹션 간격 lg</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Control semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Control</div>
+              <div class="component-block-subtitle">--semantic-color-control-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead>
+                <tr>
+                  <th>Token</th>
+                  <th>값</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">BACKGROUND</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">control-background-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #e5e7eb;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">control-background-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f9fafb;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">control-background-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">control-background-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f9fafb;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">BORDER</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">control-border-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e5e7eb;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">control-border-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">control-border-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d1d5db;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                </tr>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">TEXT / LABEL / INDICATOR</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">control-text-unselected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#6b7280;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">control-text-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #e5e7eb;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">control-text-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d1d5db;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">control-label-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1f2937;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">control-indicator-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Dropdown semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Dropdown</div>
+              <div class="component-block-subtitle">--semantic-color-dropdown-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead>
+                <tr>
+                  <th>Token</th>
+                  <th>값</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">LIST</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-list-background</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #e5e7eb;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-list-border</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e5e7eb;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">OPTION BACKGROUND</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-option-background-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #e5e7eb;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-option-background-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#eff4fd;flex-shrink:0;"></div><code class="util-value">blue-50</code></div></td>
+                </tr>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">OPTION LABEL</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-option-label-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#374151;flex-shrink:0;"></div><code class="util-value">gray-700</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-option-label-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-option-label-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d1d5db;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Surface semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Surface</div>
+              <div class="component-block-subtitle">--semantic-color-surface-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead>
+                <tr>
+                  <th>Token</th>
+                  <th>값</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">NEUTRAL CONTAINER</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">surface-neutral-container-base</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #e5e7eb;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">surface-neutral-container-base-alt</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f9fafb;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">surface-neutral-container-subtle</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f3f4f6;flex-shrink:0;"></div><code class="util-value">gray-100</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">surface-neutral-container-strong</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e5e7eb;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">surface-neutral-container-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#eff4fd;flex-shrink:0;"></div><code class="util-value">blue-50</code></div></td>
+                </tr>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">STATUS</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">surface-status-primary-main</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">surface-status-primary-sub</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#eff4fd;flex-shrink:0;"></div><code class="util-value">blue-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">surface-status-secondary-main</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#374151;flex-shrink:0;"></div><code class="util-value">gray-700</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">surface-status-error</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ff4554;flex-shrink:0;"></div><code class="util-value">red-300</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">surface-status-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f3f4f6;flex-shrink:0;"></div><code class="util-value">gray-100</code></div></td>
                 </tr>
               </tbody>
             </table>
