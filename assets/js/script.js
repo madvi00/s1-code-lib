@@ -256,7 +256,6 @@ function switchPlatform(platform) {
     {id:'tab',              label:'tab'},
     {id:'timepicker',       label:'timepicker time picker'},
     {id:'weatherwidget',    label:'weatherwidget weather widget'},
-    {id:'utility',          label:'utility'},
     {id:'guidelines',       label:'guidelines'},
   ];
   const mobilePages = [

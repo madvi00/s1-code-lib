@@ -481,7 +481,14 @@
       padding-bottom: var(--sp-6);
       border-bottom: 1px solid var(--gray-200);
     }
-    .section-header .badge {
+    .section-header .badge-row {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      margin-bottom: 10px;
+    }
+    .section-header .badge,
+    .section-header .badge-row .badge {
       display: inline-block;
       font-size: 11px; font-weight: 600;
       color: var(--color-primary);
@@ -492,6 +499,28 @@
       font-family: var(--font-mono) !important;
       letter-spacing: 0.5px;
       line-height: 1.5;
+    }
+    .section-header .badge-row .badge {
+      margin-bottom: 0;
+    }
+    .platform-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px; font-weight: 600;
+      border-radius: 9999px;
+      padding: 3px 10px;
+      font-family: var(--font-mono) !important;
+      letter-spacing: 0.5px;
+      line-height: 1.5;
+    }
+    .platform-badge.pc {
+      color: #c0392b;
+      background: #fde8e6;
+    }
+    .platform-badge.mobile {
+      color: #c0392b;
+      background: #fde8e6;
     }
     .section-header h1 {
       font-family: var(--font-sans) !important;
@@ -1161,13 +1190,22 @@
     .overview-name { font-family: var(--font-sans) !important; font-size: 13px; font-weight: 600; color: var(--gray-800); margin-bottom: var(--sp-1); line-height: 1.5; }
     .overview-desc { font-family: var(--font-sans) !important; font-size: 11px; color: var(--gray-400); line-height: 1.5; }
     .stats-row {
-      display: grid; grid-template-columns: repeat(5, 1fr);
+      display: grid; grid-template-columns: repeat(4, 1fr);
       gap: var(--sp-4); margin-bottom: var(--sp-9);
     }
     .stat-card {
       background: #fff; border: 1px solid var(--gray-200);
       border-radius: var(--radius-xl); padding: var(--sp-5);
+      display: flex; align-items: center; gap: var(--sp-4);
     }
+    .stat-icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      border-radius: var(--radius-lg);
+      display: flex; align-items: center; justify-content: center;
+      background: var(--color-primary-subtle);
+      color: var(--color-primary);
+    }
+    .stat-body { flex: 1; }
     .stat-num {
       font-family: var(--font-sans) !important;
       font-size: 28px; font-weight: 700;

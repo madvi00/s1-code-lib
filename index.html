@@ -348,12 +348,6 @@
     <div class="sidebar-section platform-pc">
       <div class="sidebar-section-label">가이드</div>
       <nav class="sidebar-nav">
-        <a data-page="utility" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <path d="M2 4h12M2 8h8M2 12h5"></path>
-          </svg>
-          <span>유틸리티 클래스
-          </span></a>
         <a data-page="guidelines" href="#">
           <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
             <circle cx="8" cy="8" r="6"></circle>
@@ -367,12 +361,6 @@
     <div class="sidebar-section platform-mobile">
       <div class="sidebar-section-label">가이드</div>
       <nav class="sidebar-nav">
-        <a data-page="utility" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <path d="M2 4h12M2 8h8M2 12h5"></path>
-          </svg>
-          <span>유틸리티 클래스
-          </span></a>
         <a data-page="guidelines" href="#">
           <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
             <circle cx="8" cy="8" r="6"></circle>
@@ -406,7 +394,6 @@
             <li class="add">Badge, Button, Checkbox, Datepicker, Dropdown, Filter Chip, Input, Loading, Modal, Radio, RangeTimePicker, RouteAccordion, Tab, TimePicker, WeatherWidget</li>
             <li class="add">Mobile 전용: Switch, Multi Dropdown, Dropdown Type Label</li>
             <li class="add">디자인 토큰(Color, Spacing, Typography) 문서화</li>
-            <li class="add">유틸리티 클래스 30+ 제공</li>
             <li class="add">사용 가이드라인 페이지 추가</li>
           </ul>
         </div>
@@ -437,24 +424,51 @@
       </div>
       <div class="stats-row">
         <div class="stat-card">
-          <div class="stat-num">15</div>
-          <div class="stat-label">PC 컴포넌트</div>
+          <div class="stat-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <rect x="2" y="4" width="20" height="14" rx="2"/>
+              <path d="M8 20h8M12 18v2"/>
+            </svg>
+          </div>
+          <div class="stat-body">
+            <div class="stat-num">15</div>
+            <div class="stat-label">PC 컴포넌트</div>
+          </div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">18</div>
-          <div class="stat-label">Mobile 컴포넌트</div>
+          <div class="stat-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <rect x="7" y="2" width="10" height="20" rx="2"/>
+              <circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div class="stat-body">
+            <div class="stat-num">18</div>
+            <div class="stat-label">Mobile 컴포넌트</div>
+          </div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">3</div>
-          <div class="stat-label">디자인 토큰 카테고리</div>
+          <div class="stat-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+            </svg>
+          </div>
+          <div class="stat-body">
+            <div class="stat-num">3</div>
+            <div class="stat-label">디자인 토큰 카테고리</div>
+          </div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">30+</div>
-          <div class="stat-label">유틸리티 클래스</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">순수 HTML/CSS</div>
+          <div class="stat-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <div class="stat-body">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">순수 HTML/CSS</div>
+          </div>
         </div>
       </div>
       <div class="overview-content platform-pc">
@@ -2170,7 +2184,10 @@
     <!-- ====== PAGE: UTILITY ====== -->
     <section class="page-section" id="page-weatherwidget">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Weather Widget</h1>
         <p>지역명·날씨 아이콘·기온을 표시하는 소형 위젯 컴포넌트입니다.</p>
       </div>
@@ -2205,7 +2222,10 @@
     </section>
     <section class="page-section" id="page-timepicker">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Time Picker</h1>
         <p>시간을 선택하는 컴포넌트입니다. timepicker-medium / timepicker-small 두 가지 크기를 제공합니다.</p>
       </div>
@@ -2547,7 +2567,10 @@
     </section>
     <section class="page-section" id="page-tab">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Tab</h1>
         <p>여러 뷰를 전환하는 탭 컴포넌트입니다. .on 클래스로 활성 탭을 나타냅니다.</p>
       </div>
@@ -2599,7 +2622,10 @@
     </section>
     <section class="page-section" id="page-routeaccordion">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Accordion</h1>
         <p>목록을 아코디언 방식으로 펼쳐 세부 정보를 표시하는 컴포넌트입니다.</p>
       </div>
@@ -2737,7 +2763,10 @@
     </section>
     <section class="page-section" id="page-rangetimepicker">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Range Time Picker</h1>
         <p>시작·종료 시간을 탭으로 전환하여 선택하는 범위 시간 선택 컴포넌트입니다.</p>
       </div>
@@ -2778,7 +2807,10 @@
     </section>
     <section class="page-section" id="page-radio">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Radio</h1>
         <p>하나의 그룹에서 단일 값을 선택하는 라디오 버튼 컴포넌트입니다. 항상 label 태그와 함께 사용하여 접근성을 확보합니다.</p>
       </div>
@@ -2818,7 +2850,10 @@
     </section>
     <section class="page-section" id="page-modal">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Modal</h1>
         <p>페이지 위에 레이어로 나타나는 팝업 창 컴포넌트입니다. 제목, 내용, 버튼으로 구성됩니다.</p>
       </div>
@@ -2879,7 +2914,10 @@
     </section>
     <section class="page-section" id="page-loading">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Loading</h1>
         <p>데이터 처리 중 사용자에게 대기 상태를 알리는 로딩 인디케이터 컴포넌트입니다.</p>
       </div>
@@ -2914,7 +2952,10 @@
     </section>
     <section class="page-section" id="page-input">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Input</h1>
         <p>사용자가 텍스트, 숫자, 검색어를 입력하는 필드 컴포넌트입니다. input-medium, input-small, input-xsmall 세 가지 크기를 제공합니다.</p>
       </div>
@@ -3001,7 +3042,10 @@
     </section>
     <section class="page-section" id="page-dropdown">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Dropdown</h1>
         <p>여러 옵션 중 하나를 선택하는 드롭다운 컴포넌트입니다. field-medium, field-small, field-x-small 세 가지 크기 및 has-label 변형을 제공합니다.</p>
       </div>
@@ -3100,7 +3144,10 @@
     </section>
     <section class="page-section" id="page-datepicker">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Datepicker</h1>
         <p>날짜를 입력·선택하는 컴포넌트입니다. Single/Range 두 가지 형태를 제공합니다.</p>
       </div>
@@ -3295,7 +3342,10 @@
     </section>
     <section class="page-section" id="page-chip">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Filter Chip</h1>
         <p>드롭다운 형태로 필터 값을 선택하는 칩 컴포넌트입니다. has-label(외곽선), has-label-solid(채움) 두 가지 스타일을 제공합니다.
         </p>
@@ -3400,7 +3450,10 @@
     </section>
     <section class="page-section" id="page-checkbox">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Checkbox</h1>
         <p>다중 선택이 가능한 체크박스 컴포넌트입니다. 항상 label 태그와 함께 사용하여 접근성을 확보합니다.</p>
       </div>
@@ -3456,7 +3509,10 @@
     </section>
     <section class="page-section" id="page-button">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Button</h1>
         <p>사용자의 액션을 유발하는 기본 UI 요소입니다. Primary, Secondary, Outline 등의 변형을 제공합니다.</p>
       </div>
@@ -3642,7 +3698,10 @@
     </section>
     <section class="page-section" id="page-badge">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge pc">PC</div>
+        </div>
         <h1>Badge</h1>
         <p>상태나 카테고리를 나타내는 배지 컴포넌트입니다. Blue/Gray/Teal/Green 색상을 제공합니다.</p>
       </div>
@@ -3673,150 +3732,6 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="page-section" id="page-utility">
-      <div class="section-header">
-        <div class="badge">UTILITY</div>
-        <h1>유틸리티 클래스</h1>
-        <p>반복적으로 사용되는 스타일 패턴을 단일 클래스로 제공합니다. 빠른 레이아웃과 간격 조정에 활용하세요.</p>
-      </div>
-      <div class="notice">💡 유틸리티 클래스는 style.css에 정의되어 있으며, 인라인 스타일 대신 이 클래스를 우선 사용하는 것을 권장합니다.</div>
-      <h3 class="sub-title">Spacing</h3>
-      <table class="util-table" style="margin-bottom:24px;">
-        <thead>
-          <tr>
-            <th>Class</th>
-            <th>CSS 속성</th>
-            <th>설명</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code class="util-class">mt-4</code></td>
-            <td><code class="util-value">margin-top: 4px</code></td>
-            <td>상단 마진 4px</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">mt-8</code></td>
-            <td><code class="util-value">margin-top: 8px</code></td>
-            <td>상단 마진 8px</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">mt-16</code></td>
-            <td><code class="util-value">margin-top: 16px</code></td>
-            <td>상단 마진 16px</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">mt-24</code></td>
-            <td><code class="util-value">margin-top: 24px</code></td>
-            <td>상단 마진 24px</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">mb-8</code></td>
-            <td><code class="util-value">margin-bottom: 8px</code></td>
-            <td>하단 마진 8px</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">mb-16</code></td>
-            <td><code class="util-value">margin-bottom: 16px</code></td>
-            <td>하단 마진 16px</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">pt-8</code></td>
-            <td><code class="util-value">padding-top: 8px</code></td>
-            <td>상단 패딩 8px</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">px-16</code></td>
-            <td><code class="util-value">padding: 0 16px</code></td>
-            <td>좌우 패딩 16px</td>
-          </tr>
-        </tbody>
-      </table>
-      <h3 class="sub-title">Display &amp; Layout</h3>
-      <table class="util-table" style="margin-bottom:24px;">
-        <thead>
-          <tr>
-            <th>Class</th>
-            <th>CSS 속성</th>
-            <th>설명</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code class="util-class">flex</code></td>
-            <td><code class="util-value">display: flex</code></td>
-            <td>Flex 컨테이너</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">flex-center</code></td>
-            <td><code class="util-value">display:flex; align-items:center; justify-content:center</code></td>
-            <td>완전 중앙 정렬</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">flex-between</code></td>
-            <td><code class="util-value">display:flex; justify-content:space-between</code></td>
-            <td>양 끝 정렬</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">hidden</code></td>
-            <td><code class="util-value">display: none</code></td>
-            <td>요소 숨기기</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">sr-only</code></td>
-            <td><code class="util-value">position:absolute; width:1px; height:1px; overflow:hidden;</code></td>
-            <td>스크린 리더 전용</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">w-full</code></td>
-            <td><code class="util-value">width: 100%</code></td>
-            <td>전체 너비</td>
-          </tr>
-        </tbody>
-      </table>
-      <h3 class="sub-title">Typography</h3>
-      <table class="util-table">
-        <thead>
-          <tr>
-            <th>Class</th>
-            <th>CSS 속성</th>
-            <th>설명</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code class="util-class">text-center</code></td>
-            <td><code class="util-value">text-align: center</code></td>
-            <td>텍스트 중앙 정렬</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">text-right</code></td>
-            <td><code class="util-value">text-align: right</code></td>
-            <td>텍스트 우측 정렬</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">font-bold</code></td>
-            <td><code class="util-value">font-weight: 700</code></td>
-            <td>굵은 텍스트</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">ellipsis</code></td>
-            <td><code class="util-value">overflow:hidden; white-space:nowrap; text-overflow:ellipsis</code></td>
-            <td>말줄임 처리</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">no-wrap</code></td>
-            <td><code class="util-value">white-space: nowrap</code></td>
-            <td>줄 바꿈 방지</td>
-          </tr>
-          <tr>
-            <td><code class="util-class">ir</code></td>
-            <td><code class="util-value">position:absolute; clip:rect(0,0,0,0)</code></td>
-            <td>이미지 대체 텍스트 (IR기법)</td>
-          </tr>
-        </tbody>
-      </table>
     </section>
     <!-- ====== PAGE: GUIDELINES ====== -->
     <section class="page-section" id="page-guidelines">
@@ -3920,7 +3835,10 @@
     <!-- M: BUTTON -->
     <section class="page-section" id="page-m-button">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Button</h1>
         <p>사용자의 액션을 유발하는 기본 UI 요소입니다. Primary, Secondary, Outline 등의 변형을 제공합니다.</p>
       </div>
@@ -3984,7 +3902,10 @@
     <!-- M: INPUT -->
     <section class="page-section" id="page-m-input">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Input</h1>
         <p>사용자가 텍스트, 숫자, 검색어를 입력하는 필드 컴포넌트입니다. 라벨 유무, 상태(기본/비활성) 변형을 제공합니다.</p>
       </div>
@@ -4212,7 +4133,10 @@
     <!-- M: CHECKBOX -->
     <section class="page-section" id="page-m-checkbox">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Checkbox</h1>
         <p>다중 선택이 가능한 체크박스 컴포넌트입니다. 항상 label 태그와 함께 사용하여 접근성을 확보합니다.</p>
       </div>
@@ -4269,7 +4193,10 @@
     <!-- M: RADIO -->
     <section class="page-section" id="page-m-radio">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Radio</h1>
         <p>하나의 그룹에서 단일 값을 선택하는 라디오 버튼 컴포넌트입니다. 항상 label 태그와 함께 사용하여 접근성을 확보합니다.</p>
       </div>
@@ -4323,7 +4250,10 @@
     <!-- M: SWITCH -->
     <section class="page-section" id="page-m-switch">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Switch</h1>
         <p>켜짐/꺼짐 상태를 전환하는 토글 스위치 컴포넌트입니다. 라벨 유무 두 가지 형태를 제공합니다.</p>
       </div>
@@ -4391,7 +4321,10 @@
     <!-- M: FILTER CHIP -->
     <section class="page-section" id="page-m-filterchip">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Filter Chip</h1>
         <p>드롭다운 형태로 필터 값을 선택하는 칩 컴포넌트입니다. has-label(외곽선), has-label-solid(채움) 두 가지 스타일을 제공합니다.</p>
       </div>
@@ -4798,7 +4731,10 @@
     <!-- M: DROPDOWN -->
     <section class="page-section" id="page-m-dropdown">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Dropdown</h1>
         <p>여러 옵션 중 하나를 선택하는 드롭다운 컴포넌트입니다.</p>
       </div>
@@ -4874,7 +4810,10 @@
     <!-- M: MULTI DROPDOWN -->
     <section class="page-section" id="page-m-multidropdown">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Multi Dropdown</h1>
         <p>여러 옵션을 동시에 선택할 수 있는 다중 선택 드롭다운 컴포넌트입니다.</p>
       </div>
@@ -4965,7 +4904,10 @@
     <!-- M: DROPDOWN LABEL -->
     <section class="page-section" id="page-m-dropdowntypelabel">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Dropdown Type Label</h1>
         <p>버튼 내부에 레이블과 선택값을 함께 표시하는 드롭다운 컴포넌트입니다.</p>
       </div>
@@ -5052,7 +4994,10 @@
     <!-- M: TAB -->
     <section class="page-section" id="page-m-tab">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Underline Tab</h1>
         <p>여러 뷰를 전환하는 탭 컴포넌트입니다. .on 클래스로 활성 탭을 나타냅니다.</p>
       </div>
@@ -5102,7 +5047,10 @@
     <!-- M: MODAL -->
     <section class="page-section" id="page-m-modal">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Modal</h1>
         <p>페이지 위에 레이어로 나타나는 팝업 창 컴포넌트입니다. 제목, 내용, 버튼으로 구성됩니다.</p>
       </div>
@@ -5168,7 +5116,10 @@
     </section>
     <section class="page-section" id="page-m-badge">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Badge</h1>
         <p>상태나 카테고리를 나타내는 배지 컴포넌트입니다. Blue/Gray/Teal/Green 색상을 제공합니다.</p>
       </div>
@@ -5203,7 +5154,10 @@
     <!-- M: LOADING -->
     <section class="page-section" id="page-m-loading">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Loading</h1>
         <p>데이터 처리 중 사용자에게 대기 상태를 알리는 로딩 인디케이터 컴포넌트입니다.</p>
       </div>
@@ -5246,7 +5200,10 @@
     <!-- M: DATEPICKER -->
     <section class="page-section" id="page-m-datepicker">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Datepicker</h1>
         <p>날짜를 입력·선택하는 컴포넌트입니다. Single/Range 두 가지 형태를 제공합니다.</p>
       </div>
@@ -5314,7 +5271,10 @@
     </section>
     <section class="page-section" id="page-m-timepicker">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Time Picker</h1>
         <p>시간을 선택하는 컴포넌트입니다. 스와이퍼 방식으로 시·분을 선택합니다.</p>
       </div>
@@ -5477,7 +5437,10 @@
     <!-- M: RANGE TIME PICKER -->
     <section class="page-section" id="page-m-rangetimepicker">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Range Time Picker</h1>
         <p>시작·종료 시간을 탭으로 전환하여 선택하는 범위 시간 선택 컴포넌트입니다.</p>
       </div>
@@ -5763,7 +5726,10 @@
     <!-- M: ACCORDION -->
     <section class="page-section" id="page-m-routeaccordion">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Accordion</h1>
         <p>목록을 아코디언 방식으로 펼쳐 세부 정보를 표시하는 컴포넌트입니다.</p>
       </div>
@@ -6564,7 +6530,10 @@
     </section>
     <section class="page-section" id="page-m-weatherwidget">
       <div class="section-header">
-        <div class="badge">COMPONENT</div>
+        <div class="badge-row">
+          <div class="badge">COMPONENT</div>
+          <div class="platform-badge mobile">Mobile</div>
+        </div>
         <h1>Weather Widget</h1>
         <p>지역명·날씨 아이콘·기온을 표시하는 소형 위젯 컴포넌트입니다.</p>
       </div>
