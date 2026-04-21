@@ -1281,6 +1281,7 @@ img {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), var(--semantic-color-button-border-primary-hover);
 }
 .btn.btn-white {
+  border-color: var(--semantic-color-button-border-secondary-default);
   background-color: var(--semantic-color-button-background-secondary-default);
   color: var(--gray-800);
 }

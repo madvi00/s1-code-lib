@@ -15,10 +15,9 @@
   <link href="assets/css/lib-style.css" id="lib-style" rel="stylesheet" />
   <!-- Datepicker -->
   <link href="assets/css/lib/bootstrap-datepicker.standalone.css" rel="stylesheet" />
-  <!-- PC 디자인 토큰 + 컴포넌트: 초기 활성 -->
+  <!-- PC 컴포넌트: 초기 활성 -->
   <link href="assets/css/pc-style.css" id="pc-components" rel="stylesheet" />
-  <!-- Mobile 디자인 토큰 + 컴포넌트: 초기 비활성 -->
-  <link disabled="" href="assets/css/mobile-variables.css" id="mobile-variables" rel="stylesheet" />
+  <!-- Mobile 컴포넌트: 초기 비활성 -->
   <link disabled="" href="assets/css/mobile-style.css" id="mobile-components" rel="stylesheet" />
   <link href="../../assets/images/favicon/favicon_48.png" rel="icon" sizes="48x48" type="image/png" />
   <link href="../../assets/images/favicon/favicon_57.png" rel="icon" sizes="57x57" type="image/png" />
@@ -356,6 +355,13 @@
           </svg>
           <span>사용 가이드라인
           </span></a>
+        <a data-page="pub-guide" href="#">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+            <rect x="2" y="1" width="10" height="13" rx="1.5"></rect>
+            <path d="M5 5h6M5 8h6M5 11h3"></path>
+            <path d="M10 10l4 4"></path>
+          </svg>
+          <span>퍼블리싱 가이드</span></a>
       </nav>
     </div>
     <div class="sidebar-section platform-mobile">
@@ -369,6 +375,13 @@
           </svg>
           <span>사용 가이드라인
           </span></a>
+        <a data-page="pub-guide" href="#">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+            <rect x="2" y="1" width="10" height="13" rx="1.5"></rect>
+            <path d="M5 5h6M5 8h6M5 11h3"></path>
+            <path d="M10 10l4 4"></path>
+          </svg>
+          <span>퍼블리싱 가이드</span></a>
       </nav>
     </div>
     <div class="sidebar-footer">
@@ -420,7 +433,7 @@
       <div class="section-header">
         <div class="badge">OVERVIEW</div>
         <h1>에스원 UI 코드 라이브러리</h1>
-        <p>에스원 솔루션의 UI 컴포넌트 가이드라인과 HTML/CSS 코드 스니펫을 제공합니다. 일관된 디자인 언어와 접근 가능한 인터페이스를 구축하기 위한 단일 소스입니다.</p>
+        <p>에스원 UI를 구성하는 모든 컴포넌트의 코드와 가이드를 한 곳에서 확인하세요.<br>PC · Mobile 환경에 최적화된 <strong>디자인 토큰</strong>, 바로 복사해 사용할 수 있는 <strong>HTML/CSS 스니펫</strong>, 그리고 올바른 사용법을 안내하는 <strong>컴포넌트 가이드라인</strong>을 제공합니다.<br>별도 프레임워크 없이 순수 HTML/CSS만으로 에스원 디자인 시스템을 빠르고 일관되게 구현하세요.</p>
       </div>
       <div class="stats-row">
         <div class="stat-card">
@@ -468,6 +481,19 @@
           <div class="stat-body">
             <div class="stat-num">100%</div>
             <div class="stat-label">순수 HTML/CSS</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M4 7h16M4 12h10M4 17h7"/>
+              <circle cx="19" cy="17" r="3"/>
+              <path d="M19 15v2l1 1"/>
+            </svg>
+          </div>
+          <div class="stat-body">
+            <div class="stat-num">488</div>
+            <div class="stat-label">CSS 변수</div>
           </div>
         </div>
       </div>
@@ -1311,8 +1337,28 @@
           </div>
           <div style="padding:16px 20px; display:flex; gap:5px;">
             <div class="swatch-col">
+              <div style="height:40px; background:#ffede0; border-radius:4px;"></div>
+              <div class="swatch-label">50<br />#ffede0</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#fdd8bf; border-radius:4px;"></div>
+              <div class="swatch-label">100<br />#fdd8bf</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#ffb482; border-radius:4px;"></div>
+              <div class="swatch-label">200<br />#ffb482</div>
+            </div>
+            <div class="swatch-col">
               <div style="height:40px; background:#ff761a; border-radius:4px;"></div>
               <div class="swatch-label">300<br />#ff761a</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#da4c00; border-radius:4px;"></div>
+              <div class="swatch-label">400<br />#da4c00</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#8e2e00; border-radius:4px;"></div>
+              <div class="swatch-label">500<br />#8e2e00</div>
             </div>
           </div>
         </div>
@@ -1325,8 +1371,28 @@
           </div>
           <div style="padding:16px 20px; display:flex; gap:5px;">
             <div class="swatch-col">
+              <div style="height:40px; background:#fff4ce; border-radius:4px;"></div>
+              <div class="swatch-label">50<br />#fff4ce</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#fee89a; border-radius:4px;"></div>
+              <div class="swatch-label">100<br />#fee89a</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#ffd53d; border-radius:4px;"></div>
+              <div class="swatch-label">200<br />#ffd53d</div>
+            </div>
+            <div class="swatch-col">
               <div style="height:40px; background:#ffc200; border-radius:4px;"></div>
               <div class="swatch-label">300<br />#ffc200</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#dba400; border-radius:4px;"></div>
+              <div class="swatch-label">400<br />#dba400</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#8f6a00; border-radius:4px;"></div>
+              <div class="swatch-label">500<br />#8f6a00</div>
             </div>
           </div>
         </div>
@@ -1343,12 +1409,24 @@
               <div class="swatch-label">50<br />#c4eef7</div>
             </div>
             <div class="swatch-col">
+              <div style="height:40px; background:#a5e5f3; border-radius:4px;"></div>
+              <div class="swatch-label">100<br />#a5e5f3</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#51c7e1; border-radius:4px;"></div>
+              <div class="swatch-label">200<br />#51c7e1</div>
+            </div>
+            <div class="swatch-col">
               <div style="height:40px; background:#25b9da; border-radius:4px;"></div>
               <div class="swatch-label">300<br />#25b9da</div>
             </div>
             <div class="swatch-col">
               <div style="height:40px; background:#159bbc; border-radius:4px;"></div>
               <div class="swatch-label">400<br />#159bbc</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#0f6c84; border-radius:4px;"></div>
+              <div class="swatch-label">500<br />#0f6c84</div>
             </div>
           </div>
         </div>
@@ -1361,8 +1439,96 @@
           </div>
           <div style="padding:16px 20px; display:flex; gap:5px;">
             <div class="swatch-col">
+              <div style="height:40px; background:#e8e9fc; border-radius:4px;"></div>
+              <div class="swatch-label">50<br />#e8e9fc</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#cfd1f9; border-radius:4px;"></div>
+              <div class="swatch-label">100<br />#cfd1f9</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#b0b0ff; border-radius:4px;"></div>
+              <div class="swatch-label">200<br />#b0b0ff</div>
+            </div>
+            <div class="swatch-col">
               <div style="height:40px; background:#6666dd; border-radius:4px;"></div>
               <div class="swatch-label">300<br />#6666dd</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#3535a8; border-radius:4px;"></div>
+              <div class="swatch-label">400<br />#3535a8</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#252576; border-radius:4px;"></div>
+              <div class="swatch-label">500<br />#252576</div>
+            </div>
+          </div>
+        </div>
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Brown</div>
+              <div class="component-block-subtitle">--foundation-color-brown-{step}</div>
+            </div>
+          </div>
+          <div style="padding:16px 20px; display:flex; gap:5px;">
+            <div class="swatch-col">
+              <div style="height:40px; background:#f6eee9; border-radius:4px;"></div>
+              <div class="swatch-label">50<br />#f6eee9</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#e4d5c8; border-radius:4px;"></div>
+              <div class="swatch-label">100<br />#e4d5c8</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#d1b69f; border-radius:4px;"></div>
+              <div class="swatch-label">200<br />#d1b69f</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#7c614a; border-radius:4px;"></div>
+              <div class="swatch-label">300<br />#7c614a</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#554435; border-radius:4px;"></div>
+              <div class="swatch-label">400<br />#554435</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#3b3025; border-radius:4px;"></div>
+              <div class="swatch-label">500<br />#3b3025</div>
+            </div>
+          </div>
+        </div>
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Visual Gray</div>
+              <div class="component-block-subtitle">--foundation-color-visual-gray-{step}</div>
+            </div>
+          </div>
+          <div style="padding:16px 20px; display:flex; gap:5px;">
+            <div class="swatch-col">
+              <div style="height:40px; background:#f3f5f7; border-radius:4px;"></div>
+              <div class="swatch-label">50<br />#f3f5f7</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#e8ebef; border-radius:4px;"></div>
+              <div class="swatch-label">100<br />#e8ebef</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#cdd2de; border-radius:4px;"></div>
+              <div class="swatch-label">200<br />#cdd2de</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#808796; border-radius:4px;"></div>
+              <div class="swatch-label">300<br />#808796</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#3e4347; border-radius:4px;"></div>
+              <div class="swatch-label">400<br />#3e4347</div>
+            </div>
+            <div class="swatch-col">
+              <div style="height:40px; background:#1b1d1f; border-radius:4px;"></div>
+              <div class="swatch-label">500<br />#1b1d1f</div>
             </div>
           </div>
         </div>
@@ -1443,8 +1609,28 @@
               </div>
               <div style="display:flex; align-items:center; gap:10px;">
                 <span
+                  style="font-family:var(--font-mono); font-size:11px; color:var(--gray-400); min-width:100px;">letter-normal
+                </span><span style="font-size:14px; letter-spacing:0em;">자간 기본 (0em)
+                </span>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span
                   style="font-family:var(--font-mono); font-size:11px; color:var(--gray-400); min-width:100px;">letter-wide
                 </span><span style="font-size:14px; letter-spacing:0.02em;">자간 넓게 (0.02em)
+                </span>
+              </div>
+              <div class="divider"></div>
+              <div style="font-size:11px; font-weight:700; color:var(--gray-400); letter-spacing:0.8px; text-transform:uppercase; margin-bottom:4px;">Text Decoration</div>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span
+                  style="font-family:var(--font-mono); font-size:11px; color:var(--gray-400); min-width:100px;">text-deco-underline
+                </span><span style="font-size:14px; text-decoration:underline;">밑줄 텍스트
+                </span>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span
+                  style="font-family:var(--font-mono); font-size:11px; color:var(--gray-400); min-width:100px;">text-deco-line-through
+                </span><span style="font-size:14px; text-decoration:line-through;">취소선 텍스트
                 </span>
               </div>
             </div>
@@ -1500,34 +1686,56 @@
           <div class="token-card-title">Sizing (컴포넌트 높이)</div>
           <div style="display:flex; flex-direction:column; gap:8px;">
             <div class="spacing-item">
-              <div
-                style="width:28px; height:16px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;">
-              </div>
-              <div class="spacing-meta">sizing-28 / 2.8rem — 칩 sm</div>
+              <div style="width:10px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
+              <div class="spacing-meta">sizing-10 / 1rem — 아이콘 xs</div>
             </div>
             <div class="spacing-item">
-              <div
-                style="width:34px; height:16px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;">
-              </div>
-              <div class="spacing-meta">sizing-34 / 3.4rem — 칩 lg</div>
+              <div style="width:16px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
+              <div class="spacing-meta">sizing-16 / 1.6rem — 아이콘 sm</div>
             </div>
             <div class="spacing-item">
-              <div
-                style="width:40px; height:16px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;">
-              </div>
+              <div style="width:18px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
+              <div class="spacing-meta">sizing-18 / 1.8rem — 아이콘</div>
+            </div>
+            <div class="spacing-item">
+              <div style="width:20px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
+              <div class="spacing-meta">sizing-20 / 2rem — 아이콘</div>
+            </div>
+            <div class="spacing-item">
+              <div style="width:24px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
+              <div class="spacing-meta">sizing-24 / 2.4rem — 아이콘 md</div>
+            </div>
+            <div class="spacing-item">
+              <div style="width:28px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
+              <div class="spacing-meta">sizing-28 / 2.8rem — 칩 sm · 버튼 xs</div>
+            </div>
+            <div class="spacing-item">
+              <div style="width:30px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
+              <div class="spacing-meta">sizing-30 / 3rem — 칩 md</div>
+            </div>
+            <div class="spacing-item">
+              <div style="width:32px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
+              <div class="spacing-meta">sizing-32 / 3.2rem — 아이콘 lg · 데이터뷰 md</div>
+            </div>
+            <div class="spacing-item">
+              <div style="width:34px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
+              <div class="spacing-meta">sizing-34 / 3.4rem — 칩 lg · 폼 xs · 테이블 xs</div>
+            </div>
+            <div class="spacing-item">
+              <div style="width:38px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
+              <div class="spacing-meta">sizing-38 / 3.8rem — 테이블 sm</div>
+            </div>
+            <div class="spacing-item">
+              <div style="width:40px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
               <div class="spacing-meta">sizing-40 / 4rem — 버튼 sm</div>
             </div>
             <div class="spacing-item">
-              <div
-                style="width:44px; height:16px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;">
-              </div>
-              <div class="spacing-meta">sizing-44 / 4.4rem — 버튼 md</div>
+              <div style="width:44px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
+              <div class="spacing-meta">sizing-44 / 4.4rem — 버튼 md · 테이블 md</div>
             </div>
             <div class="spacing-item">
-              <div
-                style="width:48px; height:16px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;">
-              </div>
-              <div class="spacing-meta">sizing-48 / 4.8rem — 버튼 lg</div>
+              <div style="width:48px; height:14px; background:var(--color-primary-subtle); border:1px solid var(--color-primary); border-radius:2px;"></div>
+              <div class="spacing-meta">sizing-48 / 4.8rem — 버튼 lg · 폼 lg</div>
             </div>
           </div>
         </div>
@@ -1580,7 +1788,7 @@
             </div>
             <div class="spacing-item">
               <div style="height:2px; width:40px; background:var(--color-primary);"></div>
-              <div class="spacing-meta">border-width-200 / 0.2rem — 강조 선</div>
+              <div class="spacing-meta">border-width-200 / 2px — 강조 선</div>
             </div>
           </div>
         </div>
@@ -1649,7 +1857,15 @@
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
                 </tr>
                 <tr>
+                  <td><code class="util-class" style="font-size:10px;">border-primary-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#2747b9;flex-shrink:0;"></div><code class="util-value">blue-500</code></div></td>
+                </tr>
+                <tr>
                   <td><code class="util-class" style="font-size:10px;">border-secondary-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">border-secondary-hover</code></td>
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
                 </tr>
                 <tr>
@@ -1657,7 +1873,15 @@
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
                 </tr>
                 <tr>
+                  <td><code class="util-class" style="font-size:10px;">border-blue-line-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
                   <td><code class="util-class" style="font-size:10px;">border-assist-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">border-assist-hover</code></td>
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
                 </tr>
                 <tr>
@@ -1670,7 +1894,15 @@
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
                 </tr>
                 <tr>
+                  <td><code class="util-class" style="font-size:10px;">label-primary-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
                   <td><code class="util-class" style="font-size:10px;">label-secondary-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">label-secondary-hover</code></td>
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
                 </tr>
                 <tr>
@@ -1678,7 +1910,15 @@
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
                 </tr>
                 <tr>
+                  <td><code class="util-class" style="font-size:10px;">label-blue-line-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
                   <td><code class="util-class" style="font-size:10px;">label-assist-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">label-assist-hover</code></td>
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
                 </tr>
                 <tr>
@@ -1736,8 +1976,20 @@
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
                 </tr>
                 <tr>
+                  <td><code class="util-class" style="font-size:10px;">text-accent-alt</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">text-correct</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
                   <td><code class="util-class" style="font-size:10px;">text-caution</code></td>
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ff4554;flex-shrink:0;"></div><code class="util-value">red-300</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">text-caption</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">text-placeholder</code></td>
@@ -1757,6 +2009,10 @@
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
                 </tr>
                 <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-text-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
+                </tr>
+                <tr>
                   <td><code class="util-class" style="font-size:10px;">form-control-text-placeholder</code></td>
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
                 </tr>
@@ -1766,6 +2022,10 @@
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">form-control-background-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-background-selected</code></td>
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
                 </tr>
                 <tr>
@@ -1781,8 +2041,25 @@
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
                 </tr>
                 <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-border-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-border-correct</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
                   <td><code class="util-class" style="font-size:10px;">form-control-border-error</code></td>
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ff4554;flex-shrink:0;"></div><code class="util-value">red-300</code></div></td>
+                </tr>
+                <tr style="background:var(--gray-50);"><td colspan="2" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">LABEL</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-label-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-label-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c4c4c4;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
                 </tr>
               </tbody>
             </table>
@@ -1838,6 +2115,38 @@
                   <td><code class="util-value">4.4rem</code></td>
                   <td style="font-size:12px;color:var(--gray-500);">입력 필드 md</td>
                 </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-height-xs</code></td>
+                  <td><code class="util-value">3.4rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">입력 필드 xs</td>
+                </tr>
+                <tr style="background:var(--gray-50);"><td colspan="3" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">DATAVIEW HEIGHT</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-dataview-height-md</code></td>
+                  <td><code class="util-value">3.2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">데이터뷰 md</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">form-control-dataview-height-sm</code></td>
+                  <td><code class="util-value">2.8rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">데이터뷰 sm</td>
+                </tr>
+                <tr style="background:var(--gray-50);"><td colspan="3" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">TABLE ROW HEIGHT</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">table-row-height-md</code></td>
+                  <td><code class="util-value">4.4rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">테이블 행 md</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">table-row-height-sm</code></td>
+                  <td><code class="util-value">3.8rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">테이블 행 sm</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">table-row-height-xs</code></td>
+                  <td><code class="util-value">3.4rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">테이블 행 xs</td>
+                </tr>
                 <tr style="background:var(--gray-50);"><td colspan="3" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">CHIP HEIGHT</td></tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">chip-height-sm</code></td>
@@ -1853,6 +2162,42 @@
                   <td><code class="util-class" style="font-size:10px;">chip-height-lg</code></td>
                   <td><code class="util-value">3.4rem</code></td>
                   <td style="font-size:12px;color:var(--gray-500);">칩 lg</td>
+                </tr>
+                <tr style="background:var(--gray-50);"><td colspan="3" style="padding:6px 16px; font-size:10px; font-weight:700; color:var(--gray-400); letter-spacing:0.5px;">ICON</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-10</code></td>
+                  <td><code class="util-value">1rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">아이콘 10px</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-16</code></td>
+                  <td><code class="util-value">1.6rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">아이콘 16px</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-18</code></td>
+                  <td><code class="util-value">1.8rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">아이콘 18px</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-20</code></td>
+                  <td><code class="util-value">2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">아이콘 20px</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-24</code></td>
+                  <td><code class="util-value">2.4rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">아이콘 24px</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-28</code></td>
+                  <td><code class="util-value">2.8rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">아이콘 28px</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-32</code></td>
+                  <td><code class="util-value">3.2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">아이콘 32px</td>
                 </tr>
               </tbody>
             </table>
@@ -1888,6 +2233,11 @@
                   <td style="font-size:12px;color:var(--gray-500);">카드</td>
                 </tr>
                 <tr>
+                  <td><code class="util-class" style="font-size:10px;">radius-control-xs</code></td>
+                  <td><code class="util-value">0.2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">폼 컨트롤 xs</td>
+                </tr>
+                <tr>
                   <td><code class="util-class" style="font-size:10px;">radius-control-sm</code></td>
                   <td><code class="util-value">0.4rem</code></td>
                   <td style="font-size:12px;color:var(--gray-500);">폼 컨트롤</td>
@@ -1897,11 +2247,16 @@
                   <td><code class="util-value">0.8rem</code></td>
                   <td style="font-size:12px;color:var(--gray-500);">모달</td>
                 </tr>
-                <tr><td colspan="3" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">SPACING</td></tr>
+                <tr><td colspan="3" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">PADDING BLOCK</td></tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">spacing-padding-inline-sm</code></td>
-                  <td><code class="util-value">1.6rem</code></td>
-                  <td style="font-size:12px;color:var(--gray-500);">인라인 패딩 sm</td>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-block-xxs</code></td>
+                  <td><code class="util-value">0.8rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">블록 패딩 xxs</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-block-xs</code></td>
+                  <td><code class="util-value">1.2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">블록 패딩 xs</td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">spacing-padding-block-sm</code></td>
@@ -1914,6 +2269,95 @@
                   <td style="font-size:12px;color:var(--gray-500);">블록 패딩 md</td>
                 </tr>
                 <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-block-lg</code></td>
+                  <td><code class="util-value">2.4rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">블록 패딩 lg</td>
+                </tr>
+                <tr><td colspan="3" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">PADDING INLINE</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-inline-xxs</code></td>
+                  <td><code class="util-value">0.8rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">인라인 패딩 xxs</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-inline-xs</code></td>
+                  <td><code class="util-value">1.2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">인라인 패딩 xs</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-inline-sm</code></td>
+                  <td><code class="util-value">1.6rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">인라인 패딩 sm</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-inline-md</code></td>
+                  <td><code class="util-value">2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">인라인 패딩 md</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-inline-lg</code></td>
+                  <td><code class="util-value">2.4rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">인라인 패딩 lg</td>
+                </tr>
+                <tr><td colspan="3" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">PADDING</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-xxs</code></td>
+                  <td><code class="util-value">0.8rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">패딩 xxs</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-xs</code></td>
+                  <td><code class="util-value">1.2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">패딩 xs</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-sm</code></td>
+                  <td><code class="util-value">1.6rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">패딩 sm</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-padding-md</code></td>
+                  <td><code class="util-value">2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">패딩 md</td>
+                </tr>
+                <tr><td colspan="3" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">LABEL GAP</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-label-gap-inline-sm</code></td>
+                  <td><code class="util-value">0.8rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">라벨 인라인 gap sm</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-label-gap-inline-md</code></td>
+                  <td><code class="util-value">1.2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">라벨 인라인 gap md</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-label-gap-inline-lg</code></td>
+                  <td><code class="util-value">1.6rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">라벨 인라인 gap lg</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-label-gap-block-sm</code></td>
+                  <td><code class="util-value">0.4rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">라벨 블록 gap sm</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-label-gap-block-md</code></td>
+                  <td><code class="util-value">0.8rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">라벨 블록 gap md</td>
+                </tr>
+                <tr><td colspan="3" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">SECTION</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-section-xs</code></td>
+                  <td><code class="util-value">1.6rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">섹션 간격 xs</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-section-sm</code></td>
+                  <td><code class="util-value">2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">섹션 간격 sm</td>
+                </tr>
+                <tr>
                   <td><code class="util-class" style="font-size:10px;">spacing-section-md</code></td>
                   <td><code class="util-value">2.4rem</code></td>
                   <td style="font-size:12px;color:var(--gray-500);">섹션 간격 md</td>
@@ -1922,6 +2366,63 @@
                   <td><code class="util-class" style="font-size:10px;">spacing-section-lg</code></td>
                   <td><code class="util-value">3.2rem</code></td>
                   <td style="font-size:12px;color:var(--gray-500);">섹션 간격 lg</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-section-xl</code></td>
+                  <td><code class="util-value">4rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">섹션 간격 xl</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-section-xxl</code></td>
+                  <td><code class="util-value">4.8rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">섹션 간격 xxl</td>
+                </tr>
+                <tr><td colspan="3" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">STACK</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-stack-xs</code></td>
+                  <td><code class="util-value">1.2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">스택 gap xs</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-stack-sm</code></td>
+                  <td><code class="util-value">1.6rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">스택 gap sm</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-stack-md</code></td>
+                  <td><code class="util-value">2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">스택 gap md</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-stack-lg</code></td>
+                  <td><code class="util-value">2.4rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">스택 gap lg</td>
+                </tr>
+                <tr><td colspan="3" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">CLUSTER</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-cluster-xxs</code></td>
+                  <td><code class="util-value">0.8rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">클러스터 gap xxs</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-cluster-xs</code></td>
+                  <td><code class="util-value">1.2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">클러스터 gap xs</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-cluster-sm</code></td>
+                  <td><code class="util-value">1.6rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">클러스터 gap sm</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-cluster-md</code></td>
+                  <td><code class="util-value">2rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">클러스터 gap md</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">spacing-cluster-lg</code></td>
+                  <td><code class="util-value">2.4rem</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">클러스터 gap lg</td>
                 </tr>
               </tbody>
             </table>
@@ -1947,11 +2448,11 @@
                 <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">BACKGROUND</td></tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">control-background-default</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #e5e7eb;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">control-background-hover</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f9fafb;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">control-background-selected</code></td>
@@ -1959,12 +2460,12 @@
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">control-background-disabled</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f9fafb;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
                 </tr>
                 <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">BORDER</td></tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">control-border-default</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e5e7eb;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">control-border-selected</code></td>
@@ -1972,24 +2473,24 @@
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">control-border-disabled</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d1d5db;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c4c4c4;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
                 </tr>
                 <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">TEXT / LABEL / INDICATOR</td></tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">control-text-unselected</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#6b7280;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">control-text-selected</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #e5e7eb;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">control-text-disabled</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d1d5db;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c4c4c4;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">control-label-default</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1f2937;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">control-indicator-selected</code></td>
@@ -2019,25 +2520,37 @@
                 <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">LIST</td></tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">dropdown-list-background</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #e5e7eb;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">dropdown-list-border</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e5e7eb;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
                 </tr>
                 <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">OPTION BACKGROUND</td></tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">dropdown-option-background-default</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #e5e7eb;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">dropdown-option-background-hover</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#eff4fd;flex-shrink:0;"></div><code class="util-value">blue-50</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-option-background-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-option-background-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
                 </tr>
                 <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">OPTION LABEL</td></tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">dropdown-option-label-default</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#374151;flex-shrink:0;"></div><code class="util-value">gray-700</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-option-label-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">dropdown-option-label-selected</code></td>
@@ -2045,7 +2558,20 @@
                 </tr>
                 <tr>
                   <td><code class="util-class" style="font-size:10px;">dropdown-option-label-disabled</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d1d5db;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c4c4c4;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                </tr>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">OPTION BORDER</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-option-border-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-option-border-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">dropdown-option-border-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
                 </tr>
               </tbody>
             </table>
@@ -2056,7 +2582,7 @@
           <div class="component-block-header">
             <div>
               <div class="component-block-title">Semantic — Surface</div>
-              <div class="component-block-subtitle">--semantic-color-surface-*</div>
+              <div class="component-block-subtitle">--semantic-surface-*</div>
             </div>
           </div>
           <div style="padding:0;">
@@ -2070,45 +2596,535 @@
               <tbody>
                 <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">NEUTRAL CONTAINER</td></tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">surface-neutral-container-base</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #e5e7eb;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                  <td><code class="util-class" style="font-size:10px;">neutral-container-base</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">surface-neutral-container-base-alt</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f9fafb;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                  <td><code class="util-class" style="font-size:10px;">neutral-container-base-alt</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#fafafa;border:1px solid #e9e9e9;flex-shrink:0;"></div><code class="util-value">gray-0</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">surface-neutral-container-subtle</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f3f4f6;flex-shrink:0;"></div><code class="util-value">gray-100</code></div></td>
+                  <td><code class="util-class" style="font-size:10px;">neutral-container-subtle</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">surface-neutral-container-strong</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e5e7eb;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                  <td><code class="util-class" style="font-size:10px;">neutral-container-strong</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e9e9e9;flex-shrink:0;"></div><code class="util-value">gray-100</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">surface-neutral-container-selected</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#eff4fd;flex-shrink:0;"></div><code class="util-value">blue-50</code></div></td>
+                  <td><code class="util-class" style="font-size:10px;">neutral-container-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e2f1ff;flex-shrink:0;"></div><code class="util-value">blue-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">neutral-container-support</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e9e9e9;flex-shrink:0;"></div><code class="util-value">gray-100</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">neutral-container-border</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e9e9e9;flex-shrink:0;"></div><code class="util-value">gray-100</code></div></td>
                 </tr>
                 <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">STATUS</td></tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">surface-status-primary-main</code></td>
+                  <td><code class="util-class" style="font-size:10px;">status-primary-main</code></td>
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">surface-status-primary-sub</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#eff4fd;flex-shrink:0;"></div><code class="util-value">blue-50</code></div></td>
+                  <td><code class="util-class" style="font-size:10px;">status-primary-sub</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#2158c8;flex-shrink:0;"></div><code class="util-value">blue-450</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">surface-status-secondary-main</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#374151;flex-shrink:0;"></div><code class="util-value">gray-700</code></div></td>
+                  <td><code class="util-class" style="font-size:10px;">status-secondary-main</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1fb279;flex-shrink:0;"></div><code class="util-value">green-300</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">surface-status-error</code></td>
+                  <td><code class="util-class" style="font-size:10px;">status-secondary-sub</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#009e5e;flex-shrink:0;"></div><code class="util-value">green-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-tertiary-main</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#25b9da;flex-shrink:0;"></div><code class="util-value">skyblue-300</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-tertiary-sub</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#159bbc;flex-shrink:0;"></div><code class="util-value">skyblue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-success-strong</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#10a86c;flex-shrink:0;"></div><code class="util-value">green-350</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-warning</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ff761a;flex-shrink:0;"></div><code class="util-value">orange-300</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-purple</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#4e4ec3;flex-shrink:0;"></div><code class="util-value">purple-350</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-error</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffccd6;flex-shrink:0;"></div><code class="util-value">red-100</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-error-subtle</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffebef;flex-shrink:0;"></div><code class="util-value">red-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c4c4c4;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Base semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Base</div>
+              <div class="component-block-subtitle">--semantic-base-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead><tr><th>Token</th><th>값</th></tr></thead>
+              <tbody>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">BACKGROUND</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">base-background-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">base-background-home</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f6fb;flex-shrink:0;"></div><code class="util-value">#f5f6fb</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">base-background-wrapper</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e0e0e0;flex-shrink:0;"></div><code class="util-value">visual-gray-300</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">base-background-toast</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#000000;flex-shrink:0;"></div><code class="util-value">black</code></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Layout semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Layout</div>
+              <div class="component-block-subtitle">--semantic-layout-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead><tr><th>Token</th><th>값</th></tr></thead>
+              <tbody>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">CONTENT CONTAINER WIDTH</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">content-container-width-mobile-md</code></td>
+                  <td><code class="util-value">36rem (360px)</code></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">content-container-width-mobile-lg</code></td>
+                  <td><code class="util-value">76.8rem (768px)</code></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">content-container-width-desktop-sm</code></td>
+                  <td><code class="util-value">128rem (1280px)</code></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">content-container-width-desktop-md</code></td>
+                  <td><code class="util-value">144rem (1440px)</code></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">content-container-width-desktop-lg</code></td>
+                  <td><code class="util-value">192rem (1920px)</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Chip semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Chip</div>
+              <div class="component-block-subtitle">--semantic-color-chip-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead><tr><th>Token</th><th>값</th></tr></thead>
+              <tbody>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">SOLID</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-solid-background</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-solid-background-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-solid-background-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-solid-border</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-solid-border-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-solid-border-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-solid-label</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-solid-label-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-solid-label-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c4c4c4;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                </tr>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">LINE</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-line-background</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-line-background-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-line-background-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-line-border</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-line-border-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-line-border-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-line-label</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-line-label-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">chip-line-label-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c4c4c4;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Navigation semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Navigation</div>
+              <div class="component-block-subtitle">--semantic-color-navigation-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead><tr><th>Token</th><th>값</th></tr></thead>
+              <tbody>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">LABEL</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">navigation-label-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#555555;flex-shrink:0;"></div><code class="util-value">gray-600</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">navigation-label-default-alt</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#000000;flex-shrink:0;"></div><code class="util-value">black</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">navigation-label-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">navigation-label-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">BACKGROUND / INDICATOR</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">navigation-background-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">navigation-indicator-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">navigation-indicator-default-alt</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">navigation-indicator-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">navigation-indicator-selected</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Table semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Table</div>
+              <div class="component-block-subtitle">--semantic-color-table-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead><tr><th>Token</th><th>값</th></tr></thead>
+              <tbody>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">BORDER</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">table-border-strong</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">table-border-light</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e9e9e9;flex-shrink:0;"></div><code class="util-value">gray-100</code></div></td>
+                </tr>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">STATE</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">table-state-background</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">table-state-background-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e2f1ff;flex-shrink:0;"></div><code class="util-value">blue-50</code></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Pagination semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Pagination</div>
+              <div class="component-block-subtitle">--semantic-color-pagination-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead><tr><th>Token</th><th>값</th></tr></thead>
+              <tbody>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">CONTROL BACKGROUND</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">pagination-control-background-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">pagination-control-background-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f5f5;flex-shrink:0;"></div><code class="util-value">gray-50</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">pagination-control-background-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#fafafa;border:1px solid #e9e9e9;flex-shrink:0;"></div><code class="util-value">gray-0</code></div></td>
+                </tr>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">CONTROL BORDER</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">pagination-control-border-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e9e9e9;flex-shrink:0;"></div><code class="util-value">gray-100</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">pagination-control-border-hover</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e9e9e9;flex-shrink:0;"></div><code class="util-value">gray-100</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">pagination-control-border-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e9e9e9;flex-shrink:0;"></div><code class="util-value">gray-100</code></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Line semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Line</div>
+              <div class="component-block-subtitle">--semantic-color-line-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead><tr><th>Token</th><th>값</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">line-white</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">line-blue</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">line-gray-default</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#d9d9d9;flex-shrink:0;"></div><code class="util-value">gray-200</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">line-gray-subtle</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#e9e9e9;flex-shrink:0;"></div><code class="util-value">gray-100</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">line-gray-strong</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Icon semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Icon</div>
+              <div class="component-block-subtitle">--semantic-color-icon-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead><tr><th>Token</th><th>값</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-blue</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#1d6ceb;flex-shrink:0;"></div><code class="util-value">blue-400</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-gray</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-gray-dark</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#353535;flex-shrink:0;"></div><code class="util-value">gray-800</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-gray-light</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c4c4c4;flex-shrink:0;"></div><code class="util-value">gray-300</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-white</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">icon-red</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ff4554;flex-shrink:0;"></div><code class="util-value">red-300</code></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Status Card / Cluster semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Status Card / Cluster</div>
+              <div class="component-block-subtitle">--semantic-color-status-card-* / --semantic-color-status-cluster-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead><tr><th>Token</th><th>값</th></tr></thead>
+              <tbody>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">STATUS CARD TEXT</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-card-text-title</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-card-text-disabled</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ffffff;border:1px solid #d9d9d9;flex-shrink:0;"></div><code class="util-value">white</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-card-text-error</code></td>
                   <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#ff4554;flex-shrink:0;"></div><code class="util-value">red-300</code></div></td>
                 </tr>
                 <tr>
-                  <td><code class="util-class" style="font-size:10px;">surface-status-disabled</code></td>
-                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f3f4f6;flex-shrink:0;"></div><code class="util-value">gray-100</code></div></td>
+                  <td><code class="util-class" style="font-size:10px;">status-card-text-body-primary</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c8e4ff;flex-shrink:0;"></div><code class="util-value">blue-100</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-card-text-body-secondary</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#caecda;flex-shrink:0;"></div><code class="util-value">green-100</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-card-text-body-tertiary</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c4eef7;flex-shrink:0;"></div><code class="util-value">skyblue-50</code></div></td>
+                </tr>
+                <tr><td colspan="2" style="background:var(--gray-50);font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.04em;">STATUS CLUSTER BORDER</td></tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-cluster-border-blue</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#2747b9;flex-shrink:0;"></div><code class="util-value">blue-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-cluster-border-red</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#c8001e;flex-shrink:0;"></div><code class="util-value">red-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-cluster-border-yellow</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#8f6a00;flex-shrink:0;"></div><code class="util-value">yellow-500</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-cluster-border-gray</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#434343;flex-shrink:0;"></div><code class="util-value">gray-700</code></div></td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">status-cluster-bg-gray</code></td>
+                  <td><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#757575;flex-shrink:0;"></div><code class="util-value">gray-500</code></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Border Width semantic -->
+        <div class="component-block" style="margin-bottom:0;">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Semantic — Border Width</div>
+              <div class="component-block-subtitle">--semantic-border-width-*</div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <table class="util-table" style="border:none; border-radius:0;">
+              <thead><tr><th>Token</th><th>값</th><th>용도</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">border-width-default</code></td>
+                  <td><code class="util-value">1px</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">기본 테두리</td>
+                </tr>
+                <tr>
+                  <td><code class="util-class" style="font-size:10px;">border-width-strong</code></td>
+                  <td><code class="util-value">2px</code></td>
+                  <td style="font-size:12px;color:var(--gray-500);">강조 테두리</td>
                 </tr>
               </tbody>
             </table>
@@ -2193,6 +3209,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Weather Widget</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/weatherWidget.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/weatherWidget.html"
               style="width:100%; height:auto; border:none; display:block;" title="Weather Widget"></iframe>
@@ -2231,6 +3254,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Time Picker</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/timePicker.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/timePicker.html"
               style="width:100%; height:auto; border:none; display:block;" title="Time Picker"></iframe>
@@ -2576,6 +3606,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Tab</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/tab.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/tab.html" style="width:100%; height:auto; border:none; display:block;"
               title="Tab"></iframe>
@@ -2594,27 +3631,38 @@
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;!-- Size Small - Tab --&gt;
-&lt;div class="btn-group"&gt;
-  &lt;button type="button" class="btn btn-white on"&gt;항목&lt;/button&gt;
-  &lt;button type="button" class="btn btn-white"&gt;항목&lt;/button&gt;
-  &lt;button type="button" class="btn btn-white"&gt;항목&lt;/button&gt;
+&lt;div class="btn-group" role="tablist"&gt;
+  &lt;button type="button" class="btn btn-white on" id="tab1" role="tab" aria-selected="true" aria-controls="panel1"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white" id="tab2" role="tab" aria-selected="false" aria-controls="panel2"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white" id="tab3" role="tab" aria-selected="false" aria-controls="panel3"&gt;항목&lt;/button&gt;
 &lt;/div&gt;
+&lt;div id="panel1" role="tabpanel" aria-labelledby="tab1"&gt;&lt;/div&gt;
+&lt;div id="panel2" role="tabpanel" aria-labelledby="tab2" hidden&gt;&lt;/div&gt;
+&lt;div id="panel3" role="tabpanel" aria-labelledby="tab3" hidden&gt;&lt;/div&gt;
 
 &lt;!-- Size Medium - Tab --&gt;
-&lt;div class="btn-group"&gt;
-  &lt;button type="button" class="btn btn-white btn-medium on"&gt;항목&lt;/button&gt;
-  &lt;button type="button" class="btn btn-white btn-medium"&gt;항목&lt;/button&gt;
-  &lt;button type="button" class="btn btn-white btn-medium"&gt;항목&lt;/button&gt;
+&lt;div class="btn-group" role="tablist"&gt;
+  &lt;button type="button" class="btn btn-white btn-medium on" id="tab4" role="tab" aria-selected="true" aria-controls="panel4"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white btn-medium" id="tab5" role="tab" aria-selected="false" aria-controls="panel5"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white btn-medium" id="tab6" role="tab" aria-selected="false" aria-controls="panel6"&gt;항목&lt;/button&gt;
 &lt;/div&gt;
+&lt;div id="panel4" role="tabpanel" aria-labelledby="tab4"&gt;&lt;/div&gt;
+&lt;div id="panel5" role="tabpanel" aria-labelledby="tab5" hidden&gt;&lt;/div&gt;
+&lt;div id="panel6" role="tabpanel" aria-labelledby="tab6" hidden&gt;&lt;/div&gt;
 
 &lt;!-- 5개 항목 --&gt;
-&lt;div class="btn-group"&gt;
-  &lt;button type="button" class="btn btn-white on"&gt;항목&lt;/button&gt;
-  &lt;button type="button" class="btn btn-white"&gt;항목&lt;/button&gt;
-  &lt;button type="button" class="btn btn-white"&gt;항목&lt;/button&gt;
-  &lt;button type="button" class="btn btn-white"&gt;항목&lt;/button&gt;
-  &lt;button type="button" class="btn btn-white"&gt;항목&lt;/button&gt;
-&lt;/div&gt;</pre>
+&lt;div class="btn-group" role="tablist"&gt;
+  &lt;button type="button" class="btn btn-white on" id="tab7" role="tab" aria-selected="true" aria-controls="panel7"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white" id="tab8" role="tab" aria-selected="false" aria-controls="panel8"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white" id="tab9" role="tab" aria-selected="false" aria-controls="panel9"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white" id="tab10" role="tab" aria-selected="false" aria-controls="panel10"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white" id="tab11" role="tab" aria-selected="false" aria-controls="panel11"&gt;항목&lt;/button&gt;
+&lt;/div&gt;
+&lt;div id="panel7" role="tabpanel" aria-labelledby="tab7"&gt;&lt;/div&gt;
+&lt;div id="panel8" role="tabpanel" aria-labelledby="tab8" hidden&gt;&lt;/div&gt;
+&lt;div id="panel9" role="tabpanel" aria-labelledby="tab9" hidden&gt;&lt;/div&gt;
+&lt;div id="panel10" role="tabpanel" aria-labelledby="tab10" hidden&gt;&lt;/div&gt;
+&lt;div id="panel11" role="tabpanel" aria-labelledby="tab11" hidden&gt;&lt;/div&gt;</pre>
             </div>
           </div>
         </div>
@@ -2631,6 +3679,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Accordion</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/routeAccordion.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/routeAccordion.html"
               style="width:100%; height:auto; border:none; display:block;" title="Accordion"></iframe>
@@ -2772,6 +3827,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Range Time Picker</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/rangeTimePicker.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/rangeTimePicker.html"
               style="width:100%; height:auto; border:none; display:block;" title="Range Time Picker"></iframe>
@@ -2816,6 +3878,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Radio</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/radio.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/radio.html" style="width:100%; height:auto; border:none; display:block;"
               title="Radio"></iframe>
@@ -2859,6 +3928,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Modal</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/modal.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/modal.html" style="width:100%; height:auto; border:none; display:block;"
               title="Modal"></iframe>
@@ -2881,13 +3957,13 @@
   data-modal="modal-01"&gt;&lt;span&gt;열기&lt;/span&gt;&lt;/button&gt;
 
 &lt;!-- Modal (Default 360px) --&gt;
-&lt;div id="modal-01" class="modal"&gt;
+&lt;div id="modal-01" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-01-title"&gt;
   &lt;div class="dim"&gt;&lt;/div&gt;
   &lt;div class="modal-container"&gt;
     &lt;div class="modal-area"&gt;
       &lt;div class="modal-top"&gt;
         &lt;div class="modal-title-box"&gt;
-          &lt;span class="title"&gt;타이틀 텍스트&lt;/span&gt;
+          &lt;span class="title" id="modal-01-title"&gt;타이틀 텍스트&lt;/span&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class="modal-middle"&gt;
@@ -2900,7 +3976,7 @@
           &lt;button type="button" class="btn btn-blue btn-small"&gt;&lt;span&gt;확인&lt;/span&gt;&lt;/button&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-      &lt;button type="button" class="btn-close" title="팝업창 닫기 버튼"&gt;&lt;/button&gt;
+      &lt;button type="button" class="btn-close" title="팝업창 닫기 버튼" aria-label="팝업창 닫기"&gt;&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -2923,6 +3999,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Loading</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/loading.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/loading.html" style="width:100%; height:auto; border:none; display:block;"
               title="Loading"></iframe>
@@ -2941,9 +4024,9 @@
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;!-- 에스원 기본 로딩 --&gt;
-&lt;div class="loading-box"&gt;
+&lt;div class="loading-box" role="status" aria-live="polite" aria-label="로딩 중"&gt;
   &lt;img src="assets/images/loading_dots.gif"
-    alt="loading" /&gt;
+    alt="로딩 중" /&gt;
 &lt;/div&gt;</pre>
             </div>
           </div>
@@ -2961,6 +4044,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Input</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/input.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/input.html" style="width:100%; height:auto; border:none; display:block;"
               title="Input"></iframe>
@@ -2983,55 +4073,55 @@
             <div class="code-snippet active" id="input-text-html">
               <pre>&lt;!-- Medium --&gt;
 &lt;div class="input-wrap"&gt;
-  &lt;input type="text" class="input-medium" placeholder="내용" /&gt;
+  &lt;input type="text" class="input-medium" placeholder="내용" aria-label="텍스트 입력" /&gt;
 &lt;/div&gt;
 
 &lt;!-- Small --&gt;
 &lt;div class="input-wrap"&gt;
-  &lt;input type="text" class="input-small" placeholder="내용" /&gt;
+  &lt;input type="text" class="input-small" placeholder="내용" aria-label="텍스트 입력" /&gt;
 &lt;/div&gt;
 
 &lt;!-- XSmall --&gt;
 &lt;div class="input-wrap"&gt;
-  &lt;input type="text" class="input-xsmall" placeholder="내용" /&gt;
+  &lt;input type="text" class="input-xsmall" placeholder="내용" aria-label="텍스트 입력" /&gt;
 &lt;/div&gt;</pre>
             </div>
             <div class="code-snippet" id="input-search-html">
               <pre>&lt;!-- Medium --&gt;
 &lt;div class="input-wrap"&gt;
-  &lt;input type="search" class="input-medium input-search" placeholder="검색" /&gt;
+  &lt;input type="search" class="input-medium input-search" placeholder="검색" aria-label="검색어 입력" /&gt;
   &lt;div class="search-button-box"&gt;
-    &lt;button type="button" class="btn-search"&gt;&lt;/button&gt;
+    &lt;button type="button" class="btn-search" aria-label="검색"&gt;&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;!-- Small --&gt;
 &lt;div class="input-wrap"&gt;
-  &lt;input type="search" class="input-small input-search" placeholder="검색" /&gt;
+  &lt;input type="search" class="input-small input-search" placeholder="검색" aria-label="검색어 입력" /&gt;
   &lt;div class="search-button-box"&gt;
-    &lt;button type="button" class="btn-search"&gt;&lt;/button&gt;
+    &lt;button type="button" class="btn-search" aria-label="검색"&gt;&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;!-- XSmall --&gt;
 &lt;div class="input-wrap"&gt;
-  &lt;input type="search" class="input-xsmall input-search" placeholder="검색" /&gt;
+  &lt;input type="search" class="input-xsmall input-search" placeholder="검색" aria-label="검색어 입력" /&gt;
   &lt;div class="search-button-box"&gt;
-    &lt;button type="button" class="btn-search"&gt;&lt;/button&gt;
+    &lt;button type="button" class="btn-search" aria-label="검색"&gt;&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
             </div>
             <div class="code-snippet" id="input-password-html">
               <pre>&lt;div class="input-wrap"&gt;
-  &lt;input type="password" class="input-medium" placeholder="" /&gt;
+  &lt;input type="password" class="input-medium" placeholder="" aria-label="비밀번호 입력" /&gt;
   &lt;div class="eye-button-box"&gt;
-    &lt;button type="button" class="btn-eye"&gt;&lt;/button&gt;
+    &lt;button type="button" class="btn-eye" aria-label="비밀번호 표시/숨기기" aria-pressed="false"&gt;&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
             </div>
             <div class="code-snippet" id="input-number-html">
               <pre>&lt;div class="input-wrap"&gt;
-  &lt;input type="number" class="input-xsmall" value="100" maxlength="3" max="100" min="0" step="5" /&gt;
+  &lt;input type="number" class="input-xsmall" value="100" maxlength="3" max="100" min="0" step="5" aria-label="숫자 입력" /&gt;
 &lt;/div&gt;</pre>
             </div>
           </div>
@@ -3051,6 +4141,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Dropdown</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/dropdown.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/dropdown.html" style="width:100%; height:auto; border:none; display:block;"
               title="Dropdown"></iframe>
@@ -3078,11 +4175,11 @@
       &lt;option value="OPTION3"&gt;OPTION3&lt;/option&gt;
       &lt;option value="OPTION4"&gt;OPTION4&lt;/option&gt;
     &lt;/select&gt;
-    &lt;button type="button" class="btn-dropdown"&gt;
+    &lt;button type="button" class="btn-dropdown" aria-haspopup="listbox" aria-expanded="false"&gt;
       &lt;span class="text"&gt;OPTION1&lt;/span&gt;
       &lt;span class="placeholder" style="display:none"&gt;Placeholder&lt;/span&gt;
     &lt;/button&gt;
-    &lt;div class="dropdown-list-box"&gt;
+    &lt;div class="dropdown-list-box" role="listbox"&gt;
       &lt;div class="dropdown-list active"&gt;
         &lt;button type="button" class="btn-dropdown-list" data-value="OPTION1"&gt;&lt;span&gt;OPTION1&lt;/span&gt;&lt;/button&gt;
       &lt;/div&gt;
@@ -3114,14 +4211,14 @@
       &lt;option value="OPTION3"&gt;OPTION3&lt;/option&gt;
       &lt;option value="OPTION4"&gt;OPTION4&lt;/option&gt;
     &lt;/select&gt;
-    &lt;button type="button" class="btn-dropdown"&gt;
+    &lt;button type="button" class="btn-dropdown" aria-haspopup="listbox" aria-expanded="false"&gt;
       &lt;span class="inner-label"&gt;
         &lt;span&gt;배차상태&lt;/span&gt;
         &lt;strong class="selected-label"&gt;전체&lt;/strong&gt;
         &lt;span class="placeholder" style="display:none"&gt;&lt;/span&gt;
       &lt;/span&gt;
     &lt;/button&gt;
-    &lt;div class="dropdown-list-box"&gt;
+    &lt;div class="dropdown-list-box" role="listbox"&gt;
       &lt;div class="dropdown-list active"&gt;
         &lt;button type="button" class="btn-dropdown-list" data-value="전체"&gt;&lt;span&gt;전체&lt;/span&gt;&lt;/button&gt;
       &lt;/div&gt;
@@ -3153,6 +4250,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Datepicker</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/datepicker.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/datepicker.html"
               style="width:100%; height:auto; border:none; display:block;" title="Datepicker"></iframe>
@@ -3173,25 +4277,25 @@
             <div class="code-snippet active" id="dp-single-range">
               <pre>&lt;!-- Single Medium --&gt;
 &lt;div class="input-wrap date"&gt;
-  &lt;input type="text" class="datepicker input-medium" placeholder="날짜를 선택하세요" /&gt;
+  &lt;input type="text" class="datepicker input-medium" placeholder="날짜를 선택하세요" aria-label="날짜 선택 (YYYY.MM.DD)" /&gt;
   &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
 &lt;/div&gt;
 
 &lt;!-- Single Small --&gt;
 &lt;div class="input-wrap date"&gt;
-  &lt;input type="text" class="datepicker input-small" placeholder="날짜를 선택하세요" /&gt;
+  &lt;input type="text" class="datepicker input-small" placeholder="날짜를 선택하세요" aria-label="날짜 선택 (YYYY.MM.DD)" /&gt;
   &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
 &lt;/div&gt;
 
 &lt;!-- Range Medium --&gt;
 &lt;div class="input-group input-daterange"&gt;
   &lt;div class="input-wrap date"&gt;
-    &lt;input type="text" class="datepicker input-medium" placeholder="날짜를 선택하세요" /&gt;
+    &lt;input type="text" class="datepicker input-medium" placeholder="날짜를 선택하세요" aria-label="시작 날짜 선택 (YYYY.MM.DD)" /&gt;
     &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
   &lt;/div&gt;
   &lt;span class="between"&gt;~&lt;/span&gt;
   &lt;div class="input-wrap date"&gt;
-    &lt;input type="text" class="datepicker input-medium" placeholder="날짜를 선택하세요" /&gt;
+    &lt;input type="text" class="datepicker input-medium" placeholder="날짜를 선택하세요" aria-label="종료 날짜 선택 (YYYY.MM.DD)" /&gt;
     &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -3199,12 +4303,12 @@
 &lt;!-- Range Small --&gt;
 &lt;div class="input-group input-daterange"&gt;
   &lt;div class="input-wrap date"&gt;
-    &lt;input type="text" class="datepicker input-small" placeholder="날짜를 선택하세요" /&gt;
+    &lt;input type="text" class="datepicker input-small" placeholder="날짜를 선택하세요" aria-label="시작 날짜 선택 (YYYY.MM.DD)" /&gt;
     &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
   &lt;/div&gt;
   &lt;span class="between"&gt;~&lt;/span&gt;
   &lt;div class="input-wrap date"&gt;
-    &lt;input type="text" class="datepicker input-small" placeholder="날짜를 선택하세요" /&gt;
+    &lt;input type="text" class="datepicker input-small" placeholder="날짜를 선택하세요" aria-label="종료 날짜 선택 (YYYY.MM.DD)" /&gt;
     &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
@@ -3213,7 +4317,7 @@
               <pre>&lt;div class="input-group input-daterange"&gt;
   &lt;!-- 시작 날짜 --&gt;
   &lt;div class="input-wrap date"&gt;
-    &lt;input type="text" class="datepicker input-small" id="startDate" name="startDate" placeholder="날짜를 선택하세요" /&gt;
+    &lt;input type="text" class="datepicker input-small" id="startDate" name="startDate" placeholder="날짜를 선택하세요" aria-label="시작 날짜 선택 (YYYY.MM.DD)" /&gt;
     &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
   &lt;/div&gt;
   &lt;!-- 시작 시간 --&gt;
@@ -3275,7 +4379,7 @@
   &lt;span class="between"&gt;~&lt;/span&gt;
   &lt;!-- 종료 날짜 --&gt;
   &lt;div class="input-wrap date"&gt;
-    &lt;input type="text" class="datepicker input-small" id="endDate" name="endDate" placeholder="날짜를 선택하세요" /&gt;
+    &lt;input type="text" class="datepicker input-small" id="endDate" name="endDate" placeholder="날짜를 선택하세요" aria-label="종료 날짜 선택 (YYYY.MM.DD)" /&gt;
     &lt;i class="icon icon-calendar"&gt;&lt;/i&gt;
   &lt;/div&gt;
   &lt;!-- 종료 시간 --&gt;
@@ -3352,6 +4456,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Filter Chip</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/filterChip.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/filterChip.html"
               style="width:100%; height:auto; border:none; display:block;" title="Filter Chip"></iframe>
@@ -3459,6 +4570,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Checkbox</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/checkbox.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/checkbox.html" style="width:100%; height:auto; border:none; display:block;"
               title="Checkbox"></iframe>
@@ -3519,6 +4637,13 @@
       <!-- Primary -->
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Button</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/button.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/button.html" style="width:100%; height:auto; border:none; display:block;"
               title="Button"></iframe>
@@ -3707,6 +4832,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Badge</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/badge.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/badge.html" style="width:100%; height:auto; border:none; display:block;"
               title="Badge"></iframe>
@@ -3736,10 +4868,14 @@
     <!-- ====== PAGE: GUIDELINES ====== -->
     <section class="page-section" id="page-guidelines">
       <div class="section-header">
-        <div class="badge">GUIDELINES</div>
+        <div class="badge-row">
+          <div class="badge">GUIDELINES</div>
+        </div>
         <h1>사용 가이드라인</h1>
-        <p>컴포넌트의 올바른 사용법과 접근성(Accessibility) 지침을 제공합니다.</p>
+        <p>컴포넌트의 올바른 사용법, 색상·간격 원칙, 접근성(Accessibility) 지침을 제공합니다.<br>일관된 인터페이스 구축을 위해 아래 기준을 따라 주세요.</p>
       </div>
+
+      <!-- ── 1. Button ── -->
       <h3 class="sub-title">Button — Do's &amp; Don'ts</h3>
       <div class="do-dont-grid">
         <div class="do-card">
@@ -3762,9 +4898,10 @@
         <div class="do-card">
           <div class="do-header">✅ Do</div>
           <div class="do-preview">
-            <button class="demo-btn primary md">항공권 검색</button>
+            <button class="demo-btn primary md">검색</button>
+            <button class="demo-btn secondary md">초기화</button>
           </div>
-          <div class="do-body">버튼 레이블은 동사로 시작하는 명확한 행동 언어를 사용하세요. "확인", "저장", "검색" 등.</div>
+          <div class="do-body">버튼 레이블은 동사로 시작하는 명확한 행동 언어를 사용하세요. "저장", "검색", "초기화" 등 결과를 예측할 수 있어야 합니다.</div>
         </div>
         <div class="dont-card">
           <div class="dont-header">❌ Don't</div>
@@ -3774,10 +4911,227 @@
           </div>
           <div class="dont-body">의미 없거나 모호한 레이블 사용을 피하세요. 사용자가 버튼의 결과를 예측하기 어렵습니다.</div>
         </div>
+        <div class="do-card">
+          <div class="do-header">✅ Do</div>
+          <div class="do-preview">
+            <button class="demo-btn danger md">삭제</button>
+          </div>
+          <div class="do-body">되돌릴 수 없는 위험한 액션(삭제, 초기화)에는 Danger 버튼을 사용하여 사용자에게 경고를 전달하세요.</div>
+        </div>
+        <div class="dont-card">
+          <div class="dont-header">❌ Don't</div>
+          <div class="dont-preview">
+            <button class="demo-btn primary md">삭제</button>
+          </div>
+          <div class="dont-body">삭제와 같은 위험 액션에 Primary 버튼을 사용하지 마세요. 사용자가 행동의 심각성을 인지하기 어렵습니다.</div>
+        </div>
       </div>
+
       <div class="divider" style="margin: 32px 0;"></div>
+
+      <!-- ── 2. Input ── -->
+      <h3 class="sub-title">Input — Do's &amp; Don'ts</h3>
+      <div class="do-dont-grid">
+        <div class="do-card">
+          <div class="do-header">✅ Do</div>
+          <div class="do-preview" style="flex-direction:column; align-items:flex-start; gap:4px;">
+            <span style="font-size:12px; font-weight:600; color:#555;">이름</span>
+            <input type="text" placeholder="홍길동" style="height:36px; padding:0 10px; border:1px solid #d9d9d9; border-radius:4px; font-size:13px; width:200px;" />
+          </div>
+          <div class="do-body">입력 필드 위에 레이블을 명확히 표기하세요. 레이블은 필드의 목적을 설명하며 항상 보여야 합니다.</div>
+        </div>
+        <div class="dont-card">
+          <div class="dont-header">❌ Don't</div>
+          <div class="dont-preview">
+            <input type="text" placeholder="이름을 입력하세요" style="height:36px; padding:0 10px; border:1px solid #d9d9d9; border-radius:4px; font-size:13px; width:200px;" />
+          </div>
+          <div class="dont-body">Placeholder만으로 레이블을 대체하지 마세요. 입력을 시작하면 안내 문구가 사라져 사용자가 혼란을 겪습니다.</div>
+        </div>
+        <div class="do-card">
+          <div class="do-header">✅ Do</div>
+          <div class="do-preview" style="flex-direction:column; align-items:flex-start; gap:4px;">
+            <input type="text" value="잘못된 형식" style="height:36px; padding:0 10px; border:1.5px solid #ff4554; border-radius:4px; font-size:13px; width:200px; color:#ff4554;" />
+            <span style="font-size:11px; color:#ff4554;">올바른 이메일 형식으로 입력해 주세요.</span>
+          </div>
+          <div class="do-body">유효성 오류는 해당 필드 바로 아래에 구체적인 안내 메시지와 함께 표시하세요.</div>
+        </div>
+        <div class="dont-card">
+          <div class="dont-header">❌ Don't</div>
+          <div class="dont-preview" style="flex-direction:column; align-items:flex-start; gap:4px;">
+            <input type="text" value="잘못된 형식" style="height:36px; padding:0 10px; border:1px solid #d9d9d9; border-radius:4px; font-size:13px; width:200px;" />
+            <span style="font-size:11px; color:#ff4554;">오류가 발생했습니다.</span>
+          </div>
+          <div class="dont-body">필드에 오류 상태 표시 없이 모호한 메시지만 보여주지 마세요. 어떤 필드가 문제인지 파악하기 어렵습니다.</div>
+        </div>
+      </div>
+
+      <div class="divider" style="margin: 32px 0;"></div>
+
+      <!-- ── 3. Form ── -->
+      <h3 class="sub-title">Form — Do's &amp; Don'ts</h3>
+      <div class="do-dont-grid">
+        <div class="do-card">
+          <div class="do-header">✅ Do</div>
+          <div class="do-preview" style="flex-direction:column; align-items:flex-start; gap:6px;">
+            <div style="display:flex; align-items:center; gap:4px;">
+              <span style="font-size:12px; font-weight:600; color:#555;">이메일</span>
+              <span style="font-size:11px; color:#ff4554; font-weight:700;">*</span>
+            </div>
+            <input type="text" placeholder="example@email.com" style="height:36px; padding:0 10px; border:1px solid #d9d9d9; border-radius:4px; font-size:13px; width:220px;" />
+          </div>
+          <div class="do-body">필수 입력 항목에는 빨간색 별표(*)를 레이블 옆에 표기하고, 폼 상단에 "* 필수 항목" 안내를 추가하세요.</div>
+        </div>
+        <div class="dont-card">
+          <div class="dont-header">❌ Don't</div>
+          <div class="dont-preview" style="flex-direction:column; align-items:flex-start; gap:6px;">
+            <span style="font-size:12px; font-weight:600; color:#555;">이메일 (필수입력)</span>
+            <input type="text" placeholder="example@email.com" style="height:36px; padding:0 10px; border:1px solid #d9d9d9; border-radius:4px; font-size:13px; width:220px;" />
+          </div>
+          <div class="dont-body">레이블에 "(필수입력)" 텍스트를 직접 삽입하지 마세요. 레이블이 길어지고 시각적 일관성이 떨어집니다.</div>
+        </div>
+        <div class="do-card">
+          <div class="do-header">✅ Do</div>
+          <div class="do-preview" style="flex-direction:column; align-items:flex-start; gap:8px;">
+            <div style="display:flex; flex-direction:column; gap:4px; width:100%;">
+              <span style="font-size:12px; font-weight:600; color:#555;">이름</span>
+              <input type="text" style="height:36px; padding:0 10px; border:1px solid #d9d9d9; border-radius:4px; font-size:13px; width:200px;" />
+            </div>
+            <div style="display:flex; flex-direction:column; gap:4px; width:100%;">
+              <span style="font-size:12px; font-weight:600; color:#555;">이메일</span>
+              <input type="text" style="height:36px; padding:0 10px; border:1px solid #d9d9d9; border-radius:4px; font-size:13px; width:200px;" />
+            </div>
+          </div>
+          <div class="do-body">연관된 입력 필드는 일정한 간격(16px 이상)으로 세로로 나열하여 시선 흐름을 자연스럽게 유지하세요.</div>
+        </div>
+        <div class="dont-card">
+          <div class="dont-header">❌ Don't</div>
+          <div class="dont-preview" style="gap:4px;">
+            <div style="display:flex; flex-direction:column; gap:2px;">
+              <span style="font-size:12px; font-weight:600; color:#555;">이름</span>
+              <input type="text" style="height:36px; padding:0 10px; border:1px solid #d9d9d9; border-radius:4px; font-size:13px; width:90px;" />
+            </div>
+            <div style="display:flex; flex-direction:column; gap:2px;">
+              <span style="font-size:12px; font-weight:600; color:#555;">이메일</span>
+              <input type="text" style="height:36px; padding:0 10px; border:1px solid #d9d9d9; border-radius:4px; font-size:13px; width:90px;" />
+            </div>
+          </div>
+          <div class="dont-body">불필요하게 필드를 가로로 나열하지 마세요. 특히 연관 없는 항목을 한 줄에 배치하면 탭 순서가 직관적이지 않습니다.</div>
+        </div>
+      </div>
+
+      <div class="divider" style="margin: 32px 0;"></div>
+
+      <!-- ── 4. 색상 사용 원칙 ── -->
+      <h3 class="sub-title">색상 사용 원칙</h3>
+      <table class="a11y-table" style="margin-top: var(--sp-4);">
+        <thead>
+          <tr>
+            <th>역할</th>
+            <th>토큰</th>
+            <th>사용 기준</th>
+            <th>샘플</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Primary</strong></td>
+            <td><code class="a11y-code">--color-primary</code></td>
+            <td>주요 액션 버튼, 링크, 선택 상태, 포커스 인디케이터. 페이지당 핵심 요소 하나에만 적용하세요.</td>
+            <td><span style="display:inline-block; width:20px; height:20px; background:#1d6ceb; border-radius:4px; vertical-align:middle;"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Success</strong></td>
+            <td><code class="a11y-code">--color-success</code></td>
+            <td>완료·성공 상태, 긍정적 피드백 메시지. 배경에는 <code class="a11y-code">--color-success-bg</code>를 함께 사용하세요.</td>
+            <td><span style="display:inline-block; width:20px; height:20px; background:#1fb279; border-radius:4px; vertical-align:middle;"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Error</strong></td>
+            <td><code class="a11y-code">--color-error</code></td>
+            <td>유효성 오류, 삭제·위험 액션. 색상만으로 오류를 전달하지 말고 아이콘이나 텍스트를 반드시 병행하세요.</td>
+            <td><span style="display:inline-block; width:20px; height:20px; background:#ff4554; border-radius:4px; vertical-align:middle;"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Warning</strong></td>
+            <td><code class="a11y-code">--color-warning</code></td>
+            <td>주의가 필요한 상태, 기한 임박 알림. 배경·텍스트 조합 시 명도 대비 4.5:1 이상을 확인하세요.</td>
+            <td><span style="display:inline-block; width:20px; height:20px; background:#ffc200; border-radius:4px; vertical-align:middle;"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Disabled</strong></td>
+            <td><code class="a11y-code">--gray-300</code></td>
+            <td>비활성 요소에만 사용하세요. 활성 상태에서 회색 계열을 사용하면 사용자가 비활성으로 오인할 수 있습니다.</td>
+            <td><span style="display:inline-block; width:20px; height:20px; background:#c4c4c4; border-radius:4px; vertical-align:middle;"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Text</strong></td>
+            <td><code class="a11y-code">--gray-800 / 600 / 500</code></td>
+            <td>제목은 gray-800, 본문은 gray-600, 보조 텍스트·placeholder는 gray-500. 더 연한 값은 장식 요소에만 제한적으로 사용하세요.</td>
+            <td>
+              <span style="font-size:11px; color:#353535; font-weight:600;">제목</span>
+              <span style="font-size:11px; color:#555; margin:0 4px;">본문</span>
+              <span style="font-size:11px; color:#757575;">보조</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="divider" style="margin: 32px 0;"></div>
+
+      <!-- ── 5. 간격·레이아웃 원칙 ── -->
+      <h3 class="sub-title">간격 &amp; 레이아웃 원칙</h3>
+      <table class="a11y-table" style="margin-top: var(--sp-4);">
+        <thead>
+          <tr>
+            <th>토큰</th>
+            <th>값</th>
+            <th>사용 기준</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code class="a11y-code">--sp-1</code></td>
+            <td>4px</td>
+            <td>아이콘·텍스트 사이, 배지 내부 패딩 등 가장 작은 단위의 내부 간격.</td>
+          </tr>
+          <tr>
+            <td><code class="a11y-code">--sp-2</code></td>
+            <td>8px</td>
+            <td>버튼 아이콘 좌우, 인풋 내부 아이콘 간격, 칩 내부 요소 간격.</td>
+          </tr>
+          <tr>
+            <td><code class="a11y-code">--sp-4</code></td>
+            <td>16px</td>
+            <td>컴포넌트 내부 패딩 기본값. 카드·패널 안쪽 여백의 최소 기준.</td>
+          </tr>
+          <tr>
+            <td><code class="a11y-code">--sp-5</code></td>
+            <td>20px</td>
+            <td>섹션 내 컴포넌트 간 수직 간격, 폼 필드 간 간격.</td>
+          </tr>
+          <tr>
+            <td><code class="a11y-code">--sp-6</code></td>
+            <td>24px</td>
+            <td>카드·모달 내부 패딩 표준값, 섹션 헤더와 콘텐츠 사이 간격.</td>
+          </tr>
+          <tr>
+            <td><code class="a11y-code">--sp-8</code></td>
+            <td>32px</td>
+            <td>페이지 내 섹션 간 구분, 그룹 간 큰 여백이 필요한 경우.</td>
+          </tr>
+          <tr>
+            <td><code class="a11y-code">--sp-10</code></td>
+            <td>40px</td>
+            <td>페이지 외부 여백(padding), 주요 레이아웃 블록 간 최대 간격.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="divider" style="margin: 32px 0;"></div>
+
+      <!-- ── 6. 접근성 ── -->
       <h3 class="sub-title">접근성 (Accessibility) 가이드</h3>
-      <table class="a11y-table">
+      <table class="a11y-table" style="margin-top: var(--sp-4);">
         <thead>
           <tr>
             <th>컴포넌트</th>
@@ -3793,38 +5147,48 @@
           </tr>
           <tr>
             <td>Input</td>
-            <td>모든 입력 필드에는 연결된 <code class="a11y-code">&lt;label&gt;</code>이 필요합니다. 시각적으로 숨겨야 할 경우 <code
-                class="a11y-code">ir</code> 클래스를 사용하세요.</td>
-            <td><code class="a11y-code">&lt;label for="id" class="ir"&gt;</code></td>
+            <td>모든 입력 필드에는 연결된 <code class="a11y-code">&lt;label&gt;</code>이 필요합니다. 시각적으로 숨겨야 할 경우 <code class="a11y-code">sr-only</code> 등 숨김 클래스를 사용하세요.</td>
+            <td><code class="a11y-code">&lt;label for="id" class="sr-only"&gt;</code></td>
           </tr>
           <tr>
-            <td>Checkbox/Radio</td>
-            <td>항상 <code class="a11y-code">for</code>와 <code class="a11y-code">id</code> 속성을 일치시켜 클릭 영역을 label 전체로
-              확장하세요.</td>
+            <td>Checkbox / Radio</td>
+            <td><code class="a11y-code">for</code>와 <code class="a11y-code">id</code> 속성을 항상 일치시켜 클릭 영역을 label 전체로 확장하세요.</td>
             <td><code class="a11y-code">&lt;label for="chk1"&gt;&lt;input id="chk1"&gt;</code></td>
           </tr>
           <tr>
+            <td>Dropdown</td>
+            <td>트리거 버튼에 <code class="a11y-code">aria-haspopup="listbox"</code>와 <code class="a11y-code">aria-expanded</code>를 적용하고, 목록 열림·닫힘 상태를 동기화하세요.</td>
+            <td><code class="a11y-code">aria-haspopup="listbox" aria-expanded="true"</code></td>
+          </tr>
+          <tr>
             <td>Modal</td>
-            <td>모달 열릴 때 포커스를 모달 내부로 이동하고, 닫힐 때 트리거 버튼으로 포커스를 반환하세요. ESC 키 닫기 지원 필요.</td>
+            <td>모달이 열릴 때 포커스를 내부로 이동하고, 닫힐 때 트리거 버튼으로 반환하세요. ESC 키 닫기를 지원해야 합니다.</td>
             <td><code class="a11y-code">role="dialog" aria-modal="true"</code></td>
           </tr>
           <tr>
             <td>Switch</td>
-            <td>switch의 현재 상태를 스크린 리더가 읽을 수 있도록 <code class="a11y-code">role="switch"</code>와 <code
-                class="a11y-code">aria-checked</code>를 사용하세요.</td>
+            <td>현재 상태를 스크린 리더가 읽을 수 있도록 <code class="a11y-code">role="switch"</code>와 <code class="a11y-code">aria-checked</code>를 사용하세요.</td>
             <td><code class="a11y-code">role="switch" aria-checked="true"</code></td>
           </tr>
           <tr>
             <td>Tab</td>
-            <td>탭 컨테이너에 <code class="a11y-code">role="tablist"</code>, 각 탭에 <code class="a11y-code">role="tab"</code>, 탭
-              패널에 <code class="a11y-code">role="tabpanel"</code>을 적용하세요.</td>
+            <td>탭 컨테이너에 <code class="a11y-code">role="tablist"</code>, 각 탭에 <code class="a11y-code">role="tab"</code>, 탭 패널에 <code class="a11y-code">role="tabpanel"</code>을 적용하세요.</td>
             <td><code class="a11y-code">role="tab" aria-selected="true"</code></td>
           </tr>
           <tr>
+            <td>Loading</td>
+            <td>로딩 스피너에 <code class="a11y-code">role="status"</code>와 <code class="a11y-code">aria-live="polite"</code>를 사용하여 스크린 리더에 상태 변화를 알리세요.</td>
+            <td><code class="a11y-code">role="status" aria-live="polite"</code></td>
+          </tr>
+          <tr>
+            <td>Datepicker</td>
+            <td>날짜 입력 필드에 <code class="a11y-code">aria-label</code>로 날짜 형식을 안내하고, 달력 팝업에 <code class="a11y-code">role="dialog"</code>를 적용하세요.</td>
+            <td><code class="a11y-code">aria-label="날짜 선택 (YYYY.MM.DD)"</code></td>
+          </tr>
+          <tr>
             <td>공통</td>
-            <td>키보드 포커스 스타일을 제거하지 마세요. <code class="a11y-code">:focus-visible</code> 스타일이 명확히 보여야 합니다. 최소 명도 대비율 4.5:1을
-              유지하세요.</td>
-            <td><code class="a11y-code">:focus-visible { outline: 2px solid blue; }</code></td>
+            <td>키보드 포커스 스타일을 제거하지 마세요. <code class="a11y-code">:focus-visible</code> 스타일이 명확히 보여야 하며, 텍스트와 배경 간 명도 대비율 4.5:1 이상을 유지하세요.</td>
+            <td><code class="a11y-code">:focus-visible { outline: 2px solid #1d6ceb; }</code></td>
           </tr>
         </tbody>
       </table>
@@ -3844,6 +5208,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Button</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/button.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/button.html"
               style="width:100%; height:auto; border:none; display:block;" title="Button"></iframe>
@@ -4142,6 +5513,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Checkbox</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/checkbox.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/checkbox.html"
               style="width:100%; height:auto; border:none; display:block;" title="Checkbox"></iframe>
@@ -4160,7 +5538,7 @@
             </div>
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-checkbox-only">
-              <pre>&lt;input type="checkbox" id="checkbox-1" name="checkbox-1" /&gt;</pre>
+              <pre>&lt;input type="checkbox" id="checkbox-1" name="checkbox-1" aria-label="체크박스" /&gt;</pre>
             </div>
             <div class="code-snippet" id="m-checkbox-label">
               <pre>&lt;div class="checkbox-group"&gt;
@@ -4202,6 +5580,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Radio</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/radio.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/radio.html" style="width:100%; height:auto; border:none; display:block;"
               title="Radio"></iframe>
@@ -4259,6 +5644,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Switch</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/switch.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/switch.html"
               style="width:100%; height:auto; border:none; display:block;" title="Switch"></iframe>
@@ -4279,7 +5671,7 @@
             <div class="code-snippet active" id="m-switch-without">
               <pre>&lt;!-- Off --&gt;
 &lt;div class="switch"&gt;
-  &lt;input type="checkbox" id="switch-1" class="switch-input" /&gt;
+  &lt;input type="checkbox" id="switch-1" class="switch-input" role="switch" aria-checked="false" aria-label="스위치" /&gt;
   &lt;label for="switch-1" class="switch-label"&gt;
     &lt;span class="switch-ui"&gt;&lt;/span&gt;
     &lt;span class="switch-text"&gt;&lt;/span&gt;
@@ -4288,7 +5680,7 @@
 
 &lt;!-- On --&gt;
 &lt;div class="switch"&gt;
-  &lt;input type="checkbox" id="switch-2" class="switch-input" checked /&gt;
+  &lt;input type="checkbox" id="switch-2" class="switch-input" checked role="switch" aria-checked="true" aria-label="스위치" /&gt;
   &lt;label for="switch-2" class="switch-label"&gt;
     &lt;span class="switch-ui"&gt;&lt;/span&gt;
     &lt;span class="switch-text"&gt;&lt;/span&gt;
@@ -4298,7 +5690,7 @@
             <div class="code-snippet" id="m-switch-with">
               <pre>&lt;!-- Off --&gt;
 &lt;div class="switch"&gt;
-  &lt;input type="checkbox" id="switch-3" class="switch-input" /&gt;
+  &lt;input type="checkbox" id="switch-3" class="switch-input" role="switch" aria-checked="false" /&gt;
   &lt;label for="switch-3" class="switch-label"&gt;
     &lt;span class="switch-ui"&gt;&lt;/span&gt;
     &lt;span class="switch-text"&gt;라벨&lt;/span&gt;
@@ -4307,7 +5699,7 @@
 
 &lt;!-- On --&gt;
 &lt;div class="switch"&gt;
-  &lt;input type="checkbox" id="switch-4" class="switch-input" checked /&gt;
+  &lt;input type="checkbox" id="switch-4" class="switch-input" checked role="switch" aria-checked="true" /&gt;
   &lt;label for="switch-4" class="switch-label"&gt;
     &lt;span class="switch-ui"&gt;&lt;/span&gt;
     &lt;span class="switch-text"&gt;라벨&lt;/span&gt;
@@ -4773,11 +6165,11 @@
       &lt;option value="OPTION3"&gt;OPTION3&lt;/option&gt;
       &lt;option value="OPTION4"&gt;OPTION4&lt;/option&gt;
     &lt;/select&gt;
-    &lt;button type="button" class="btn-dropdown"&gt;
+    &lt;button type="button" class="btn-dropdown" aria-haspopup="listbox" aria-expanded="false"&gt;
       &lt;span class="text"&gt;OPTION1&lt;/span&gt;
       &lt;span class="placeholder" style="display:none"&gt;Placeholder&lt;/span&gt;
     &lt;/button&gt;
-    &lt;div class="dropdown-list-box"&gt;
+    &lt;div class="dropdown-list-box" role="listbox"&gt;
       &lt;div class="dim"&gt;&lt;/div&gt;
       &lt;div class="dropdown-list-wrap"&gt;
         &lt;div class="dropdown-list-header"&gt;
@@ -5125,6 +6517,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Badge</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/badge.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/badge.html" style="width:100%; height:auto; border:none; display:block;"
               title="Badge"></iframe>
@@ -5188,10 +6587,10 @@
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-loading-html">
               <pre>&lt;!-- 로딩 --&gt;
-  &lt;div class="loading-box"&gt;
-    &lt;img src="../../assets/images/loading_dots.gif" alt="loading" /&gt;
-  &lt;/div&gt;
-  &lt;!-- // 로딩 --&gt;</pre>
+&lt;div class="loading-box" role="status" aria-live="polite" aria-label="로딩 중"&gt;
+  &lt;img src="assets/images/loading_dots.gif" alt="로딩 중" /&gt;
+&lt;/div&gt;
+&lt;!-- // 로딩 --&gt;</pre>
             </div>
           </div>
         </div>
@@ -6539,6 +7938,13 @@
       </div>
       <div class="component-blocks-row">
         <div class="component-block">
+          <div class="component-block-header">
+            <div class="component-block-title">Weather Widget</div>
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/weatherWidget.html', '_blank')">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
+              새 창에서 열기
+            </button>
+          </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_mobile/weatherWidget.html"
               style="width:100%; height:auto; border:none; display:block;" title="Weather Widget"></iframe>
@@ -6845,6 +8251,475 @@
         </div>
       </div>
     </div>
+    <!-- ====== PAGE: PUB-GUIDE ====== -->
+    <section class="page-section" id="page-pub-guide">
+      <div class="section-header">
+        <div class="badge-row"><div class="badge">GUIDE</div></div>
+        <h1>퍼블리싱 가이드</h1>
+        <p>에스원 전사 공통 퍼블리싱 기준입니다. PC · Mobile 환경 모두에 적용되며, 모든 서비스 프로젝트에서 일관된 품질을 유지하기 위한 규칙을 정의합니다.</p>
+      </div>
+
+      <!-- 탭 -->
+      <div class="pubguide-tabs" id="pubguideTabs">
+        <button class="pubguide-tab active" data-tab="pg-env">기본 환경</button>
+        <button class="pubguide-tab" data-tab="pg-code">코드 규칙</button>
+        <button class="pubguide-tab" data-tab="pg-std">표준 규칙</button>
+        <button class="pubguide-tab" data-tab="pg-aria">WAI-ARIA 접근성</button>
+      </div>
+
+      <!-- 탭1: 기본 환경 -->
+      <div class="pubguide-panel active" id="pg-env">
+
+        <div class="pubguide-section">
+          <h2 class="pubguide-h2">공통 개발 환경</h2>
+          <table class="pubguide-table">
+            <colgroup><col style="width:22%"><col></colgroup>
+            <tbody>
+              <tr><th>문서 표준</th><td>HTML5, CSS3</td></tr>
+              <tr><th>인코딩</th><td>UTF-8 (BOM 없음)</td></tr>
+              <tr><th>들여쓰기</th><td>공백 2칸 (탭 문자 사용 금지)</td></tr>
+              <tr><th>줄 끝 처리</th><td>LF (Unix 방식) 통일</td></tr>
+              <tr><th>외부 라이브러리</th><td>프로젝트별 협의 후 사용. <code class="util-code">/assets/js/lib/</code> 또는 <code class="util-code">/vendor/</code> 하위에 보관</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pubguide-section">
+          <h2 class="pubguide-h2">브라우저 · 기기 호환 기준</h2>
+          <table class="pubguide-table">
+            <colgroup><col style="width:14%"><col style="width:30%"><col></colgroup>
+            <thead><tr><th>환경</th><th>지원 대상</th><th>비고</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>PC 웹</td>
+                <td>Chrome 최신, Edge 최신, Safari 최신</td>
+                <td>Internet Explorer는 지원하지 않는다.</td>
+              </tr>
+              <tr>
+                <td>Mobile 웹</td>
+                <td>Android Chrome (Android 8.0 이상)<br>iOS Safari (iOS 14 이상)</td>
+                <td>각 OS 최신 2개 메이저 버전 기준</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pubguide-section">
+          <h2 class="pubguide-h2">해상도 · 레이아웃 기준</h2>
+          <table class="pubguide-table">
+            <colgroup><col style="width:14%"><col style="width:30%"><col></colgroup>
+            <thead><tr><th>환경</th><th>기준</th><th>비고</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>PC</td>
+                <td>최소 너비 1280px 이상 대응<br>콘텐츠 영역 최대 너비는 프로젝트별 협의</td>
+                <td>1920px 이상 와이드 스크린도 레이아웃 깨짐 없이 대응</td>
+              </tr>
+              <tr>
+                <td>Mobile</td>
+                <td>기준 너비 360px<br>필요 시 320px(소형) · 430px(대형) 추가 대응</td>
+                <td>디자인 기준 너비는 프로젝트 착수 시 디자인팀과 협의하여 고정</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pubguide-section">
+          <h2 class="pubguide-h2">파일 · 폴더 네이밍 규칙</h2>
+          <ul class="pubguide-desc">
+            <li>파일명과 폴더명은 <strong>소문자 + 하이픈(-)</strong>만 사용한다. 대문자, 공백, 언더스코어(_) 혼용 금지.</li>
+            <li>HTML 파일명은 화면 단위 또는 기능 단위로 명명한다. 예) <code class="util-code">login.html</code>, <code class="util-code">my-page.html</code></li>
+            <li>이미지 파일명은 <code class="util-code">용도_설명_상태.확장자</code> 형식을 권장한다. 예) <code class="util-code">ico_arrow_down.svg</code>, <code class="util-code">bg_main_hero.png</code></li>
+            <li>공통 리소스와 페이지별 리소스는 폴더로 구분하여 관리한다.</li>
+          </ul>
+          <table class="pubguide-table">
+            <colgroup><col style="width:20%"><col style="width:25%"><col></colgroup>
+            <thead><tr><th>폴더</th><th>용도</th><th>예시</th></tr></thead>
+            <tbody>
+              <tr><td><code class="util-code">assets/css/</code></td><td>스타일시트</td><td>공통 스타일, 컴포넌트, 페이지별</td></tr>
+              <tr><td><code class="util-code">assets/js/</code></td><td>스크립트</td><td>공통 JS, 외부 라이브러리는 <code class="util-code">lib/</code> 하위</td></tr>
+              <tr><td><code class="util-code">assets/images/</code></td><td>이미지</td><td>공통 아이콘, 배경, 콘텐츠 이미지</td></tr>
+              <tr><td><code class="util-code">assets/fonts/</code></td><td>웹폰트</td><td>.woff2 우선, .woff 병행 제공</td></tr>
+              <tr><td><code class="util-code">html/</code> 또는 도메인별</td><td>HTML 페이지</td><td>기능 단위 하위 폴더로 분류</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- 탭2: 코드 규칙 -->
+      <div class="pubguide-panel" id="pg-code">
+
+        <div class="pubguide-section">
+          <h2 class="pubguide-h2">HTML 코드 규칙</h2>
+
+          <h3 class="pubguide-h3">들여쓰기 · 빈 줄</h3>
+          <ul class="pubguide-desc">
+            <li>들여쓰기는 공백 2칸을 사용한다. 탭(Tab) 문자는 사용하지 않는다.</li>
+            <li>가독성을 위한 빈 줄은 허용하되, 연속 2줄 이상은 허용하지 않는다.</li>
+          </ul>
+
+          <h3 class="pubguide-h3">주석</h3>
+          <ul class="pubguide-desc">
+            <li>영역 주석은 시작과 끝을 모두 작성하며, 닫는 주석은 <code class="util-code">// </code>를 앞에 붙인다.</li>
+            <li>수정 주석은 HTML에만 작성하며, <code class="util-code">YYYY-MM-DD 내용</code> 형식을 따른다.</li>
+            <li>이미 개발에 전달된 후 재수정 시에도 새 날짜로 별도 주석을 추가한다.</li>
+            <li>마크업이 제거될 경우 닫는 주석만 남기고 내용을 삭제한다. 재사용 가능성이 있으면 주석 처리만 한다.</li>
+          </ul>
+          <pre class="pubguide-pre"><code>&lt;!-- header --&gt;
+&lt;header&gt;
+  &lt;p&gt;영역 주석: 시작과 끝 모두 작성한다.&lt;/p&gt;
+&lt;/header&gt;
+&lt;!-- // header --&gt;
+
+&lt;!-- 2024-03-15 gnb 클래스 추가 --&gt;
+&lt;!-- 2024-03-20 서브메뉴 마크업 제거 --&gt;</code></pre>
+
+          <h3 class="pubguide-h3">HTML 속성 선언 순서</h3>
+          <table class="pubguide-table">
+            <colgroup><col style="width:12%"><col style="width:52%"><col></colgroup>
+            <thead><tr><th>순서</th><th>속성</th><th>비고</th></tr></thead>
+            <tbody>
+              <tr><td>1. 기능</td><td><code class="util-code">href</code>, <code class="util-code">src</code>, <code class="util-code">type</code>, <code class="util-code">action</code></td><td></td></tr>
+              <tr><td>2. 이름</td><td><code class="util-code">name</code>, <code class="util-code">id</code></td><td></td></tr>
+              <tr><td>3. 정보</td><td><code class="util-code">value</code>, <code class="util-code">title</code>, <code class="util-code">alt</code>, <code class="util-code">placeholder</code></td><td></td></tr>
+              <tr><td>4. 옵션</td><td><code class="util-code">target</code>, <code class="util-code">tabindex</code>, <code class="util-code">autocomplete</code></td><td></td></tr>
+              <tr><td>5. 꾸미기</td><td><code class="util-code">class</code></td><td></td></tr>
+              <tr><td>6. 역할</td><td><code class="util-code">role</code></td><td></td></tr>
+              <tr><td>7. ARIA 속성</td><td><code class="util-code">aria-controls</code>, <code class="util-code">aria-labelledby</code>, <code class="util-code">aria-describedby</code> 등</td><td></td></tr>
+              <tr><td>8. 상태</td><td><code class="util-code">checked</code>, <code class="util-code">disabled</code>, <code class="util-code">aria-selected</code>, <code class="util-code">aria-current</code>, <code class="util-code">aria-hidden</code> 등</td><td></td></tr>
+            </tbody>
+          </table>
+          <pre class="pubguide-pre"><code>&lt;a href="#" title="새창 열기" target="_blank" class="link-external"&gt;바로가기&lt;/a&gt;
+&lt;img src="img.png" alt="대체 텍스트" class="img-banner" /&gt;
+&lt;input type="text" name="userId" id="userId" value="" title="아이디" class="input-text" disabled /&gt;
+&lt;button type="button" class="btn btn-primary" aria-controls="modal-01"&gt;확인&lt;/button&gt;</code></pre>
+
+          <h3 class="pubguide-h3">클래스 네이밍 규칙</h3>
+          <ul class="pubguide-desc">
+            <li>클래스명은 <strong>소문자 + 하이픈(-)</strong>을 사용한다. 카멜케이스 및 언더스코어 혼용 금지.</li>
+            <li>의미를 나타내는 이름을 사용하며, 시각적 속성(색상, 크기)만으로 네이밍하지 않는다. 예) <code class="util-code">btn-primary</code> ✅ &nbsp; <code class="util-code">btn-blue</code> ❌</li>
+            <li>상태 클래스는 <code class="util-code">is-</code> 또는 <code class="util-code">has-</code> 접두사를 붙인다. 예) <code class="util-code">is-active</code>, <code class="util-code">is-disabled</code>, <code class="util-code">has-error</code></li>
+            <li>JavaScript 조작용 클래스는 <code class="util-code">js-</code> 접두사를 붙이고, 스타일 적용 목적으로는 사용하지 않는다.</li>
+          </ul>
+        </div>
+
+        <div class="pubguide-section">
+          <h2 class="pubguide-h2">CSS 코드 규칙</h2>
+
+          <h3 class="pubguide-h3">파일 상단 작업 정보</h3>
+          <pre class="pubguide-pre"><code>@charset "utf-8";
+/*-------------------------------------------------------------------
+  파일정의 : 파일명 또는 설명
+  작성일자 : 2024-01-01
+  작성자   : 홍길동
+  속성순서 : 표시 > 위치 > 넘침/흐름 > 크기/간격 > 박스모양 > 폰트/정렬 > 기타
+-------------------------------------------------------------------*/</code></pre>
+
+          <h3 class="pubguide-h3">작성 규칙</h3>
+          <ul class="pubguide-desc">
+            <li>선택자와 여는 중괄호 사이에 공백 1칸을 둔다. 예) <code class="util-code">.class-name &#123;</code></li>
+            <li>콜론(:)과 속성값 사이에 공백 1칸을 둔다. 예) <code class="util-code">margin-left: 0;</code></li>
+            <li>모든 선언은 세미콜론(;)으로 마무리한다. (마지막 속성 포함)</li>
+            <li>닫는 중괄호는 단독 줄에 위치한다.</li>
+            <li>코드 그룹 간 빈 줄은 1줄만 허용한다. 종료 주석은 작성하지 않는다.</li>
+            <li><code class="util-code">*</code> 전체 선택자는 성능 저하 우려가 있으므로 사용하지 않는다.</li>
+            <li>인라인 <code class="util-code">style</code> 속성은 동적 제어가 필요한 경우에만 제한적으로 허용한다.</li>
+            <li>단위는 <code class="util-code">px</code>, <code class="util-code">rem</code>, <code class="util-code">%</code>를 상황에 맞게 사용하되 border에는 <code class="util-code">px</code>를 사용한다.</li>
+          </ul>
+
+          <h3 class="pubguide-h3">CSS 속성 선언 순서</h3>
+          <table class="pubguide-table">
+            <colgroup><col style="width:15%"><col style="width:38%"><col></colgroup>
+            <thead><tr><th>구분</th><th>속성</th><th>속성 값 예시</th></tr></thead>
+            <tbody>
+              <tr><td>1. 표시</td><td><code class="util-code">display</code>, <code class="util-code">visibility</code></td><td>none, block, flex, grid 등</td></tr>
+              <tr><td>2. 위치</td><td><code class="util-code">position</code>, <code class="util-code">top/right/bottom/left</code>, <code class="util-code">z-index</code></td><td>absolute, fixed, relative, static</td></tr>
+              <tr><td>3. 넘침/흐름</td><td><code class="util-code">overflow</code>, <code class="util-code">float</code>, <code class="util-code">clear</code></td><td>visible, hidden, scroll, auto</td></tr>
+              <tr><td>4. 크기/간격</td><td><code class="util-code">width</code>, <code class="util-code">height</code>, <code class="util-code">margin</code>, <code class="util-code">padding</code></td><td>auto, px, rem, %</td></tr>
+              <tr><td>5. 박스</td><td><code class="util-code">border</code>, <code class="util-code">border-radius</code>, <code class="util-code">background</code>, <code class="util-code">box-shadow</code></td><td>px, rgba, hex 등</td></tr>
+              <tr><td>6. 폰트/정렬</td><td><code class="util-code">font</code>, <code class="util-code">color</code>, <code class="util-code">text-align</code>, <code class="util-code">line-height</code></td><td>px, rem, hex, em 등</td></tr>
+              <tr><td>7. 기타</td><td><code class="util-code">transition</code>, <code class="util-code">animation</code>, <code class="util-code">transform</code>, <code class="util-code">cursor</code> 등</td><td>후순위 적용</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- 탭3: 표준 규칙 -->
+      <div class="pubguide-panel" id="pg-std">
+
+        <div class="pubguide-section">
+          <h2 class="pubguide-h2">기본 문서 구조</h2>
+          <h3 class="pubguide-h3">PC 웹</h3>
+          <pre class="pubguide-pre"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;페이지명 | 에스원&lt;/title&gt;
+  &lt;link rel="stylesheet" href="/assets/css/common.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- wrap --&gt;
+  &lt;div id="wrap"&gt;
+    &lt;header id="header"&gt;&lt;/header&gt;
+    &lt;main id="content"&gt;&lt;/main&gt;
+    &lt;footer id="footer"&gt;&lt;/footer&gt;
+  &lt;/div&gt;
+  &lt;!-- // wrap --&gt;
+  &lt;script src="/assets/js/common.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+          <h3 class="pubguide-h3">Mobile 웹 (앱 내 웹뷰 포함)</h3>
+          <pre class="pubguide-pre"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;
+  &lt;title&gt;페이지명 | 에스원&lt;/title&gt;
+  &lt;link rel="stylesheet" href="/assets/css/common.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- wrap --&gt;
+  &lt;div id="wrap"&gt;
+    &lt;main id="content"&gt;&lt;/main&gt;
+  &lt;/div&gt;
+  &lt;!-- // wrap --&gt;
+  &lt;script src="/assets/js/common.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          <ul class="pubguide-desc">
+            <li>모바일 웹뷰에서는 앱 네이티브 헤더/푸터를 사용하는 경우가 많으므로 <code class="util-code">header</code> · <code class="util-code">footer</code> 포함 여부는 프로젝트별 협의한다.</li>
+            <li><code class="util-code">user-scalable=no</code>는 앱 내 웹뷰 환경에서만 적용하고, 일반 모바일 웹에서는 사용자 확대를 허용한다.</li>
+          </ul>
+        </div>
+
+        <div class="pubguide-section">
+          <h2 class="pubguide-h2">이미지 처리 기준</h2>
+          <table class="pubguide-table">
+            <colgroup><col style="width:20%"><col style="width:20%"><col></colgroup>
+            <thead><tr><th>용도</th><th>권장 포맷</th><th>비고</th></tr></thead>
+            <tbody>
+              <tr><td>아이콘 / UI 요소</td><td>SVG</td><td>색상 제어, 해상도 독립적, 인라인 또는 <code class="util-code">img</code> 태그 모두 사용 가능</td></tr>
+              <tr><td>사진 / 복잡한 이미지</td><td>WebP (PNG/JPG 폴백)</td><td>WebP 미지원 브라우저 대비 <code class="util-code">&lt;picture&gt;</code> 태그 활용 권장</td></tr>
+              <tr><td>애니메이션</td><td>WebP 또는 CSS 애니메이션</td><td>GIF는 파일 크기가 크므로 필요한 경우에만 사용</td></tr>
+              <tr><td>레티나 대응</td><td>SVG 우선 · 비트맵은 2x 제공</td><td>CSS <code class="util-code">image-set()</code> 또는 <code class="util-code">srcset</code> 속성 활용</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pubguide-section">
+          <h2 class="pubguide-h2">특수기호 Entity Name</h2>
+          <ul class="pubguide-desc">
+            <li>마크업 내 특수기호는 Entity Name으로 변환하여 작성한다. (ISO-8859-1 기준)</li>
+          </ul>
+          <table class="pubguide-table">
+            <thead>
+              <tr><th>Character</th><th>₩</th><th>"</th><th>&amp;</th><th>&lt;</th><th>&gt;</th><th>공백</th><th>·</th><th>©</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Entity Name</td><td>&amp;#8361;</td><td>&amp;quot;</td><td>&amp;amp;</td><td>&amp;lt;</td><td>&amp;gt;</td><td>&amp;nbsp;</td><td>&amp;middot;</td><td>&amp;copy;</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pubguide-section">
+          <h2 class="pubguide-h2">Semantic Markup</h2>
+          <table class="pubguide-table">
+            <colgroup><col style="width:12%"><col style="width:22%"><col style="width:18%"><col></colgroup>
+            <thead><tr><th>종류</th><th>구분</th><th>태그</th><th>설명</th></tr></thead>
+            <tbody>
+              <tr><td rowspan="2">그룹</td><td>블록타입</td><td><code class="util-code">div</code></td><td>의미 없는 블록 묶음</td></tr>
+              <tr><td>인라인타입</td><td><code class="util-code">span</code></td><td>의미 없는 인라인 묶음</td></tr>
+              <tr><td rowspan="5">랜드마크</td><td>머리글</td><td><code class="util-code">header</code></td><td>페이지 또는 섹션의 머리글</td></tr>
+              <tr><td>바닥글</td><td><code class="util-code">footer</code></td><td>페이지 또는 섹션의 바닥글</td></tr>
+              <tr><td>연속적인 콘텐츠 그룹</td><td><code class="util-code">section</code></td><td>제목을 포함하는 주제 구역</td></tr>
+              <tr><td>독립적인 콘텐츠 그룹</td><td><code class="util-code">article</code></td><td>단독으로 의미를 가지는 콘텐츠</td></tr>
+              <tr><td>보조적인 콘텐츠</td><td><code class="util-code">aside</code></td><td>본문과 관련 있는 부가 콘텐츠</td></tr>
+              <tr><td rowspan="6">목차</td><td>목차 1레벨</td><td><code class="util-code">h1</code></td><td>페이지 최상위 제목 (문서당 1개 권장)</td></tr>
+              <tr><td>목차 2레벨</td><td><code class="util-code">h2</code></td><td>주요 섹션 제목</td></tr>
+              <tr><td>목차 3레벨</td><td><code class="util-code">h3</code></td><td>콘텐츠 핵심 제목</td></tr>
+              <tr><td>목차 4레벨</td><td><code class="util-code">h4</code></td><td>콘텐츠 부제목</td></tr>
+              <tr><td>목차 5레벨</td><td><code class="util-code">h5</code></td><td>상세 제목</td></tr>
+              <tr><td>목차 6레벨</td><td><code class="util-code">h6</code></td><td>최하위 제목</td></tr>
+              <tr><td rowspan="7">콘텐츠 (Block)</td><td>순서 없는 리스트</td><td><code class="util-code">ul, li</code></td><td></td></tr>
+              <tr><td>순서 있는 리스트</td><td><code class="util-code">ol, li</code></td><td></td></tr>
+              <tr><td>정의 리스트</td><td><code class="util-code">dl, dt, dd</code></td><td>용어와 설명 쌍</td></tr>
+              <tr><td>단락</td><td><code class="util-code">p</code></td><td></td></tr>
+              <tr><td>이미지 + 설명 묶음</td><td><code class="util-code">figure, figcaption</code></td><td></td></tr>
+              <tr><td>대화상자</td><td><code class="util-code">dialog</code></td><td>미지원 환경에서는 <code class="util-code">role="dialog"</code> 대체 사용</td></tr>
+              <tr><td>내비게이션</td><td><code class="util-code">nav</code></td><td>주요 링크 목록</td></tr>
+              <tr><td rowspan="7">콘텐츠 (Inline)</td><td>링크</td><td><code class="util-code">a</code></td><td></td></tr>
+              <tr><td>중요한 텍스트</td><td><code class="util-code">strong</code></td><td>의미상 중요도 강조</td></tr>
+              <tr><td>일반 강조</td><td><code class="util-code">em</code></td><td>발음·강세 강조</td></tr>
+              <tr><td>아이콘용 마크업</td><td><code class="util-code">i</code></td><td>의미 없는 아이콘에 활용</td></tr>
+              <tr><td>작은 텍스트</td><td><code class="util-code">small</code></td><td>저작권, 법적 고지 등</td></tr>
+              <tr><td>취소선</td><td><code class="util-code">s</code></td><td></td></tr>
+              <tr><td>삭제된 내용</td><td><code class="util-code">del</code></td><td></td></tr>
+              <tr><td rowspan="5">서식</td><td>서식 그룹</td><td><code class="util-code">fieldset</code></td><td></td></tr>
+              <tr><td>서식 제목</td><td><code class="util-code">legend</code></td><td></td></tr>
+              <tr><td>라벨</td><td><code class="util-code">label</code></td><td><code class="util-code">for</code> 속성으로 입력 요소와 연결</td></tr>
+              <tr><td>입력 컨트롤</td><td><code class="util-code">input, textarea, select</code></td><td></td></tr>
+              <tr><td>버튼</td><td><code class="util-code">button</code></td><td>반드시 <code class="util-code">type</code> 속성 명시 (기본값 submit)</td></tr>
+              <tr><td rowspan="10">표</td><td>표</td><td><code class="util-code">table</code></td><td></td></tr>
+              <tr><td>표 제목</td><td><code class="util-code">caption</code></td><td>스크린 리더 인식 — 생략 시 숨김 처리</td></tr>
+              <tr><td>열 그룹</td><td><code class="util-code">colgroup, col</code></td><td>열 너비 지정</td></tr>
+              <tr><td>표 헤더</td><td><code class="util-code">thead</code></td><td></td></tr>
+              <tr><td>표 본문</td><td><code class="util-code">tbody</code></td><td></td></tr>
+              <tr><td>표 푸터</td><td><code class="util-code">tfoot</code></td><td></td></tr>
+              <tr><td>행</td><td><code class="util-code">tr</code></td><td></td></tr>
+              <tr><td>제목 셀</td><td><code class="util-code">th</code></td><td><code class="util-code">scope</code> 속성으로 행/열 구분</td></tr>
+              <tr><td>내용 셀</td><td><code class="util-code">td</code></td><td></td></tr>
+              <tr><td>셀 병합</td><td><code class="util-code">colspan, rowspan</code></td><td>복잡한 표는 접근성 마크업 추가 필요</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- 탭4: WAI-ARIA -->
+      <div class="pubguide-panel" id="pg-aria">
+        <div class="pubguide-section">
+          <h2 class="pubguide-h2">WAI-ARIA 접근성 적용 사례</h2>
+          <table class="pubguide-table">
+            <colgroup><col style="width:12%"><col style="width:18%"><col style="width:35%"><col></colgroup>
+            <thead><tr><th>구분</th><th>속성</th><th>설명</th><th>예시 코드</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>현재 상태</td>
+                <td><code class="util-code">aria-current</code></td>
+                <td>
+                  현재 맥락과 일치하는 요소에 사용<br>
+                  <code class="util-code">"page"</code> : 현재 페이지와 일치하는 링크<br>
+                  <code class="util-code">"step"</code> : 현재 단계와 일치하는 링크<br>
+                  <code class="util-code">"location"</code> : 플로우 차트 내 현재 위치
+                </td>
+                <td><pre class="pubguide-pre-inline"><code>&lt;strong aria-current="page"&gt;1&lt;/strong&gt;
+&lt;a href="#"&gt;2&lt;/a&gt;
+&lt;a href="#"&gt;3&lt;/a&gt;</code></pre></td>
+              </tr>
+              <tr>
+                <td>확장 상태</td>
+                <td><code class="util-code">aria-expanded</code></td>
+                <td>
+                  제어 대상의 확장/축소 상태 표시<br>
+                  아코디언, 드롭다운, 메뉴 등에 사용<br>
+                  <code class="util-code">"true"</code> : 확장됨 · <code class="util-code">"false"</code> : 축소됨
+                </td>
+                <td><pre class="pubguide-pre-inline"><code>&lt;button aria-expanded="false"
+  aria-controls="panel-01"&gt;
+  메뉴 열기
+&lt;/button&gt;
+&lt;div id="panel-01"&gt;...&lt;/div&gt;</code></pre></td>
+              </tr>
+              <tr>
+                <td>선택 상태</td>
+                <td><code class="util-code">aria-selected</code></td>
+                <td>
+                  선택 가능한 요소의 선택 여부 표시<br>
+                  <code class="util-code">"true"</code> : 선택됨 · <code class="util-code">"false"</code> : 미선택<br>
+                  ※ <code class="util-code">role="tab"</code>에 가장 많이 사용
+                </td>
+                <td><pre class="pubguide-pre-inline"><code>&lt;button role="tab"
+  aria-controls="tab1"
+  aria-selected="true"&gt;탭1&lt;/button&gt;</code></pre></td>
+              </tr>
+              <tr>
+                <td>간결한 설명 참조</td>
+                <td><code class="util-code">aria-labelledby</code></td>
+                <td>
+                  ID를 이용해 간결한 레이블을 참조<br>
+                  ※ 자세한 설명은 <code class="util-code">aria-describedby</code> 사용<br>
+                  ※ 숨김(<code class="util-code">display:none</code>) 요소는 참조 금지
+                </td>
+                <td><pre class="pubguide-pre-inline"><code>&lt;section aria-labelledby="sec-title"&gt;
+  &lt;h2 id="sec-title"&gt;소개&lt;/h2&gt;
+&lt;/section&gt;</code></pre></td>
+              </tr>
+              <tr>
+                <td>상세한 설명 참조</td>
+                <td><code class="util-code">aria-describedby</code></td>
+                <td>
+                  ID를 이용해 부가 설명을 참조<br>
+                  입력 필드의 안내 문구, 오류 메시지 연결에 활용
+                </td>
+                <td><pre class="pubguide-pre-inline"><code>&lt;input type="text"
+  aria-describedby="input-guide" /&gt;
+&lt;p id="input-guide"&gt;숫자만 입력하세요.&lt;/p&gt;</code></pre></td>
+              </tr>
+              <tr>
+                <td>숨김 처리</td>
+                <td><code class="util-code">aria-hidden</code></td>
+                <td>
+                  보조 기술에서 요소를 숨길 때 사용<br>
+                  <code class="util-code">"true"</code> : 보조 기술에 노출 안 함<br>
+                  ※ 장식용 아이콘, 중복 텍스트에 활용
+                </td>
+                <td><pre class="pubguide-pre-inline"><code>&lt;i class="ico-close" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;span class="sr-only"&gt;닫기&lt;/span&gt;</code></pre></td>
+              </tr>
+              <tr>
+                <td>라이브 영역</td>
+                <td><code class="util-code">aria-live</code></td>
+                <td>
+                  동적으로 변경되는 영역을 보조 기술에 알림<br>
+                  <code class="util-code">"polite"</code> : 현재 작업 완료 후 읽음<br>
+                  <code class="util-code">"assertive"</code> : 즉시 읽음 (오류·경고 알림)
+                </td>
+                <td><pre class="pubguide-pre-inline"><code>&lt;div role="status" aria-live="polite"&gt;
+  데이터를 불러오는 중...
+&lt;/div&gt;</code></pre></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pubguide-section">
+          <h2 class="pubguide-h2">접근성 작업 시 유의사항</h2>
+          <ul class="pubguide-desc">
+            <li>키보드 초점(focus)이 논리적인 순서로 이동하도록 마크업 순서와 시각적 순서를 일치시킨다.</li>
+            <li>모든 이미지에 <code class="util-code">alt</code> 속성을 제공한다. 장식용 이미지는 <code class="util-code">alt=""</code>로 처리하고, 내용이 있는 이미지는 의미 있는 설명을 작성한다.</li>
+            <li>색상만으로 정보를 전달하지 않는다. 텍스트, 아이콘, 패턴 등 보조 수단을 함께 사용한다.</li>
+            <li>버튼에는 반드시 <code class="util-code">type</code> 속성을 명시한다. 기본값은 <code class="util-code">submit</code>이므로 일반 버튼은 <code class="util-code">type="button"</code>을 명시해야 한다.</li>
+            <li>링크(<code class="util-code">&lt;a&gt;</code>)는 목적지나 기능을 명확히 전달하는 텍스트를 포함해야 한다. "여기를 클릭", "자세히" 같은 모호한 텍스트는 사용하지 않는다.</li>
+            <li>팝업(모달)이 열리면 초점을 팝업 내부로 이동시키고, 닫히면 팝업을 열었던 요소로 초점을 복귀시킨다.</li>
+            <li>스크린 리더 전용 텍스트는 <code class="util-code">.sr-only</code> 클래스를 사용하여 화면에는 보이지 않지만 보조 기술에는 노출되도록 처리한다.</li>
+            <li>콘트라스트 비율은 텍스트 기준 4.5:1 이상(대형 텍스트 3:1 이상)을 준수한다.</li>
+          </ul>
+          <pre class="pubguide-pre"><code>/* 스크린 리더 전용 숨김 텍스트 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}</code></pre>
+        </div>
+      </div>
+
+      <script>
+      (function() {
+        var tabs = document.querySelectorAll('#pubguideTabs .pubguide-tab');
+        tabs.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            tabs.forEach(function(t) { t.classList.remove('active'); });
+            document.querySelectorAll('#page-pub-guide .pubguide-panel').forEach(function(p) { p.classList.remove('active'); });
+            btn.classList.add('active');
+            document.getElementById(btn.dataset.tab).classList.add('active');
+          });
+        });
+      })();
+      </script>
+    </section>
+    <!-- ====== // PAGE: PUB-GUIDE ====== -->
+
     <!-- modal size-xl -->
     <div class="modal size-xl" id="modal-04">
       <div class="dim"></div>

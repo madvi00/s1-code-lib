@@ -1,0 +1,2530 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <title>퍼블리싱 가이드 | 에스원</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<style>
+  .syntaxhighlighter,
+  .syntaxhighlighter table td.code .container {
+    position: relative !important
+  }
+
+  .syntaxhighlighter .toolbar a,
+  .syntaxhighlighter.printing a {
+    text-decoration: none !important
+  }
+
+  .syntaxhighlighter a,
+  .syntaxhighlighter code,
+  .syntaxhighlighter div,
+  .syntaxhighlighter table,
+  .syntaxhighlighter table caption,
+  .syntaxhighlighter table tbody,
+  .syntaxhighlighter table td,
+  .syntaxhighlighter table thead,
+  .syntaxhighlighter table tr,
+  .syntaxhighlighter textarea {
+    -moz-border-radius: 0 !important;
+    -webkit-border-radius: 0 0 0 0 !important;
+    background: 0 0 !important;
+    border: 0 !important;
+    bottom: auto !important;
+    float: none !important;
+    height: auto !important;
+    left: auto !important;
+    line-height: 1.1em !important;
+    margin: 0 !important;
+    outline: 0 !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    position: static !important;
+    right: auto !important;
+    text-align: left !important;
+    top: auto !important;
+    vertical-align: baseline !important;
+    width: auto !important;
+    box-sizing: content-box !important;
+    font-family: Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 1em !important;
+    min-height: auto !important
+  }
+
+  .syntaxhighlighter {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: auto !important;
+    font-size: 12px !important;
+    background-color: #fff !important
+  }
+
+  .syntaxhighlighter.source {
+    overflow: hidden !important
+  }
+
+  .syntaxhighlighter .bold,
+  .syntaxhighlighter.printing .script {
+    font-weight: 700 !important
+  }
+
+  .syntaxhighlighter .italic {
+    font-style: italic !important
+  }
+
+  .syntaxhighlighter .line {
+    white-space: pre !important
+  }
+
+  .syntaxhighlighter table,
+  .syntaxhighlighter table td.code {
+    width: 100% !important
+  }
+
+  .syntaxhighlighter table caption {
+    text-align: left !important;
+    padding: .5em 0 .5em 1em !important
+  }
+
+  .syntaxhighlighter table td.code .container textarea {
+    box-sizing: border-box !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    background: #fff !important;
+    padding-left: 1em !important;
+    overflow: hidden !important;
+    white-space: pre !important
+  }
+
+  .syntaxhighlighter table td.gutter .line {
+    text-align: right !important;
+    padding: .3em .5em .3em 1em !important
+  }
+
+  .syntaxhighlighter table td.code .line {
+    padding: .3em 1em !important
+  }
+
+  .syntaxhighlighter.nogutter td.code .container textarea,
+  .syntaxhighlighter.nogutter td.code .line {
+    padding-left: 0 !important
+  }
+
+  .syntaxhighlighter.show {
+    display: block !important
+  }
+
+  .syntaxhighlighter .toolbar a.expandSource,
+  .syntaxhighlighter.collapsed table,
+  .syntaxhighlighter.printing .toolbar {
+    display: none !important
+  }
+
+  .syntaxhighlighter.collapsed .toolbar span {
+    display: inline !important;
+    margin-right: 1em !important
+  }
+
+  .syntaxhighlighter.collapsed .toolbar span a {
+    padding: 0 !important;
+    display: none !important
+  }
+
+  .syntaxhighlighter .toolbar span.title,
+  .syntaxhighlighter.collapsed .toolbar span a.expandSource {
+    display: inline !important
+  }
+
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important
+  }
+
+  .syntaxhighlighter .toolbar a {
+    display: block !important;
+    text-align: center !important;
+    padding-top: 1px !important;
+    color: #fff !important
+  }
+
+  .syntaxhighlighter.ie {
+    font-size: .9em !important;
+    padding: 1em !important
+  }
+
+  .syntaxhighlighter.ie .toolbar {
+    line-height: 8px !important
+  }
+
+  .syntaxhighlighter.ie .toolbar a {
+    padding-top: 0 !important
+  }
+
+  .syntaxhighlighter.printing .line.alt1 .content,
+  .syntaxhighlighter.printing .line.alt2 .content,
+  .syntaxhighlighter.printing .line.highlighted .number,
+  .syntaxhighlighter.printing .line.highlighted.alt1 .content,
+  .syntaxhighlighter.printing .line.highlighted.alt2 .content {
+    background: 0 0 !important
+  }
+
+  .syntaxhighlighter.printing .line .number {
+    color: #bbb !important
+  }
+
+  .syntaxhighlighter.printing .line .content {
+    color: #000 !important;
+    border: none !important
+  }
+
+  .syntaxhighlighter .line.highlighted.number,
+  .syntaxhighlighter .plain,
+  .syntaxhighlighter .plain a,
+  .syntaxhighlighter .toolbar a:hover,
+  .syntaxhighlighter table caption,
+  .syntaxhighlighter.printing .break,
+  .syntaxhighlighter.printing .break a,
+  .syntaxhighlighter.printing .plain,
+  .syntaxhighlighter.printing .plain a {
+    color: #000 !important
+  }
+
+  .syntaxhighlighter .comments,
+  .syntaxhighlighter .comments a,
+  .syntaxhighlighter.printing .comments,
+  .syntaxhighlighter.printing .comments a {
+    color: #008200 !important
+  }
+
+  .syntaxhighlighter .string,
+  .syntaxhighlighter .string a,
+  .syntaxhighlighter.collapsed .toolbar a,
+  .syntaxhighlighter.printing .string,
+  .syntaxhighlighter.printing .string a {
+    color: #00f !important
+  }
+
+  .syntaxhighlighter .keyword,
+  .syntaxhighlighter.printing .keyword {
+    color: #069 !important;
+    font-weight: 700 !important
+  }
+
+  .syntaxhighlighter .color1,
+  .syntaxhighlighter .color1 a,
+  .syntaxhighlighter .preprocessor,
+  .syntaxhighlighter.printing .color1,
+  .syntaxhighlighter.printing .color1 a,
+  .syntaxhighlighter.printing .preprocessor {
+    color: gray !important
+  }
+
+  .syntaxhighlighter .variable,
+  .syntaxhighlighter.printing .variable {
+    color: #a70 !important
+  }
+
+  .syntaxhighlighter .value,
+  .syntaxhighlighter.printing .value {
+    color: #090 !important
+  }
+
+  .syntaxhighlighter .color2,
+  .syntaxhighlighter .color2 a,
+  .syntaxhighlighter .functions,
+  .syntaxhighlighter.printing .color2,
+  .syntaxhighlighter.printing .color2 a,
+  .syntaxhighlighter.printing .functions {
+    color: #ff1493 !important
+  }
+
+  .syntaxhighlighter .constants,
+  .syntaxhighlighter.printing .constants {
+    color: #06c !important
+  }
+
+  .syntaxhighlighter .color3,
+  .syntaxhighlighter .color3 a,
+  .syntaxhighlighter.collapsed .toolbar a:hover,
+  .syntaxhighlighter.printing .color3,
+  .syntaxhighlighter.printing .color3 a {
+    color: red !important
+  }
+
+  .syntaxhighlighter .line.alt1 {
+    background-color: #f8f8f8 !important
+  }
+
+  .syntaxhighlighter .line.alt2 {
+    background-color: #fff !important
+  }
+
+  .syntaxhighlighter .line.highlighted.alt1,
+  .syntaxhighlighter .line.highlighted.alt2 {
+    background-color: #e0e0e0 !important
+  }
+
+  .syntaxhighlighter .gutter {
+    color: #afafaf !important
+  }
+
+  .syntaxhighlighter .gutter .line {
+    border-right: 3px solid #6ce26c !important
+  }
+
+  .syntaxhighlighter .gutter .line.highlighted {
+    background-color: #6ce26c !important;
+    color: #fff !important
+  }
+
+  .syntaxhighlighter.collapsed {
+    overflow: visible !important
+  }
+
+  .syntaxhighlighter.collapsed .toolbar {
+    padding: .1em .8em 0 !important;
+    font-size: 1em !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    color: #00f !important;
+    background: #fff !important;
+    border: 1px solid #6ce26c !important
+  }
+
+  .syntaxhighlighter .toolbar {
+    color: #fff !important;
+    background: #6ce26c !important;
+    border: none !important
+  }
+
+  .syntaxhighlighter .script {
+    font-weight: 700 !important;
+    color: #069 !important;
+    background-color: none !important
+  }
+
+  .box_tab_menu {
+    margin: 10px 0 30px
+  }
+
+  .g-code .syntaxhighlighter .gutter,
+  .syntaxhighlighter .gutter {
+    display: none !important;
+  }
+
+  .g-code .syntaxhighlighter .line.alt1 {
+    background-color: #fafafa !important;
+  }
+
+  /* 목차 */
+  .g-h1 {
+    padding: 30px 0;
+    font-size: 30px;
+    font-weight: normal
+  }
+
+  .g-h2 {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    font-size: 24px;
+    font-weight: normal;
+    border-bottom: 1px solid #eee
+  }
+
+  .g-h2:before {
+    display: block;
+    width: 20px;
+    height: 1px;
+    margin-bottom: 5px;
+    background-color: #222
+  }
+
+  .g-h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: normal
+  }
+
+  .g-h3:first-child {
+    margin-top: 0
+  }
+
+  .g-h4 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 16px
+  }
+
+  .g-h3+.g-h4 {
+    margin-top: 10px
+  }
+
+  .g-h4:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    width: 3px;
+    height: 13px;
+    margin-right: 5px;
+    background-color: #333;
+    vertical-align: middle
+  }
+
+  .g-explain-h1 {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+    font-family: 'NST'
+  }
+
+  .g-code {
+    border: 1px solid #ccc;
+    margin: 10px 0
+  }
+
+  .g-section~.g-section {
+    padding-top: 50px
+  }
+
+  .g-content-body {
+    padding-bottom: 50px
+  }
+
+  /* 설명 */
+  ul.g-desc {
+    margin: 5px 0
+  }
+
+  ul.g-desc:last-child {
+    margin-bottom: 0
+  }
+
+  p.g-desc,
+  ul.g-desc>li {
+    position: relative;
+    padding: 0 0 0 10px;
+    font-size: 14px;
+    line-height: 1.6
+  }
+
+  p.g-desc:before,
+  ul.g-desc>li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    display: block;
+    width: 2px;
+    height: 2px;
+    background: #555;
+    border-radius: 50%
+  }
+
+  ul.g-desc.g-gutter>li+li {
+    margin-top: 15px
+  }
+
+  .g-desc-guide {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666
+  }
+
+  .g-desc-guide a {
+    color: #666;
+    border-bottom: 1px solid #666
+  }
+
+  .g-desc-guide a:hover,
+  .g-desc-guide a:focus {
+    color: #333
+  }
+
+  .g-desc-guide+.g-desc-guide {
+    margin-top: 5px
+  }
+
+  .g-code {
+    border: 1px solid #ccc;
+    margin: 10px 0
+  }
+
+  .g-section-body p.g-tit {
+    font-size: 14px;
+    text-indent: -10px;
+    padding-left: 10px
+  }
+
+  .g-section-body p.g-tit:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    width: 3px;
+    height: 13px;
+    margin-right: 5px;
+    background-color: #d3002e;
+    vertical-align: middle
+  }
+
+  .g-section-body p.g-tit>strong {
+    font-weight: bold
+  }
+
+  .g-section-body .g-conts {
+    font-size: 14px;
+    padding-left: 10px
+  }
+
+  /* 표 type1 - 일반컨텐츠 */
+  .g-tbl-type1 {
+    overflow: hidden;
+    border: 1px solid #333;
+    border-width: 1px 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+  }
+
+  .g-tbl-type1 table {
+    width: calc(100% + 2px);
+    table-layout: fixed;
+    margin: 0 -1px -1px
+  }
+
+  .g-tbl-type1 table th,
+  .g-tbl-type1 table td {
+    height: 30px;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 13px;
+    font-size: 12px;
+    background: #fff;
+    line-height: 1.5
+  }
+
+  .g-tbl-type1 table th {
+    padding: 3px 15px;
+    border-bottom: 1px solid #666;
+    background-color: #f8f8f8;
+    text-align: center;
+    font-family: 'NSR';
+    word-break: keep-all
+  }
+
+  .g-tbl-type1 table td {
+    padding: 3px 15px;
+    border: 1px solid #eee;
+    border-bottom: 0
+  }
+
+  .g-tbl-type1 table tbody tr:first-child td {
+    border-top: 0
+  }
+
+  .g-tbl-type1 table tbody+tbody tr:first-child td {
+    border-top: 1px solid #666
+  }
+
+  .g-tbl-type1 table tbody th {
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee
+  }
+
+  .col>.g-tbl-type1 {
+    margin-top: 0
+  }
+
+  @media only screen and (max-width: 959px) {
+
+    .g-content-header,
+    .g-content-body {
+      padding: 30px 30px;
+    }
+
+    .g-content-header {
+      padding-top: 30px;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .g-content-body {
+      padding-bottom: 40px;
+    }
+
+    .g-section+.g-section {
+      margin-top: 40px;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .tab_container {
+      padding-top: 0
+    }
+
+    .box_tab_menu {
+      margin: 0px 0 10px
+    }
+
+    .g-h1 {
+      padding: 0
+    }
+
+    .g-h2 {
+      margin-bottom: 20px;
+      padding-bottom: 5px;
+      font-size: 18px
+    }
+
+    .g-h3 {
+      font-size: 16px
+    }
+
+    .g-h4 {
+      font-size: 14px
+    }
+
+    .g-content-header,
+    .g-content-body {
+      padding: 10px
+    }
+
+    .g-section+.g-section {
+      margin-top: 0
+    }
+  }
+</style>
+
+<body>
+  <div id="wrapper">
+    <div class="g-content-header">
+      <div class="g-in-sec">
+        <h1 class="g-h1">퍼블리싱 규칙</h1>
+      </div>
+    </div>
+    <div class="box_tab_menu line_menu">
+      <ul class="tab_menu" role="tablist">
+        <li class="tab on"><button type="button" class="tab_link on" role="tab" aria-controls="tabmenu1" tabindex="0"
+            aria-selected="true"><span>기본 환경(필수)</span></button></li>
+        <li class="tab"><button type="button" class="tab_link" role="tab" aria-controls="tabmenu2"><span>코드
+              규칙</span></button></li>
+        <li class="tab"><button type="button" class="tab_link" role="tab" aria-controls="tabmenu3"><span>표준
+              규칙</span></button></li>
+        <li class="tab"><button type="button" class="tab_link" role="tab" aria-controls="tabmenu4"><span>WAI-ARIA
+              접근성</span></button></li>
+      </ul>
+    </div>
+    <div class="tab_container">
+      <div id="tabmenu1" class="tab_cont on" role="tabpanel" tabindex="0" aria-selected="true">
+        <div class="g-content-body">
+          <!-- section1 -->
+          <section id="section1" class="g-section g-in-sec">
+            <div class="g-section-header">
+              <h2 class="g-h2">프로젝트 환경</h2>
+            </div>
+            <div class="g-section-body">
+              <div class="g-tbl-type1">
+                <table>
+                  <caption>환경정의</caption>
+                  <colgroup>
+                    <col style="width:20%">
+                    <col>
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="align-l">문서 및 버전</th>
+                      <td>HTML5, CSS3</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="align-l">인코딩</th>
+                      <td>UTF-8</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="align-l">웹 유형</th>
+                      <td>APP</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="align-l">PC 웹 호환성</th>
+                      <td>
+                        <div class="g-browser-icons">
+                          엣지, 크롬, 사파리
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="align-l">Mobile 웹 호환성</th>
+                      <td>
+                        <div class="g-browser-icons">
+                          <ul>
+                            <li>- 갤럭시 S8 360*740(Android 6.0 이상), 674*842, 320*872(폴드3)</li>
+                            <li>- 애플 아이폰11 375*812 (iOS 13 이상)</li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="align-l">웹 접근성</th>
+                      <td>표준 구현(마크X)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="align-l">해상도 기준 / 디자인 너비</th>
+                      <td>기준 360, 필요시 320 대응 / 디자인 너비 360</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <!-- //section1 -->
+
+          <!-- section2 -->
+          <section id="section2" class="g-section g-in-sec">
+            <div class="g-section-header">
+              <h2 class="g-h2">파일/폴더 구조</h2>
+            </div>
+            <div class="g-section-body">
+              <div class="g-tbl-type1">
+                <table>
+                  <caption>파일구조</caption>
+                  <colgroup>
+                    <col style="width:20%">
+                    <col style="width:20%">
+                    <col style="width:30%">
+                    <col>
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>분류 폴더</th>
+                      <th>서브 폴더</th>
+                      <th>파일 이름</th>
+                      <th>파일 설명</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>fonts</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>Pretendard-Bold.woff</li>
+                          <li>Pretendard-Medium.woff</li>
+                          <li>Pretendard-Regular.woff</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          <li>Pretendard-Bold</li>
+                          <li>Pretendard-Medium</li>
+                          <li>Pretendard-Regular</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>css</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>공통
+                            <ul class="bul_list">
+                              <li>style.css</li>
+                              <li>reset.css</li>
+                              <li>common.css</li>
+                            </ul>
+                          </li>
+                          <li>페이지
+                            <ul class="bul_list">
+                              <li>contents.css</li>
+                            </ul>
+                          </li>
+                          <li>PDF
+                            <ul class="bul_list">
+                              <li>pdf.css</li>
+                            </ul>
+                          </li>
+                          <li>swiper
+                            <ul class="bul_list">
+                              <li>swiper-bundle.min.css</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          <li>- style.css : @import</li>
+                          <li>- reset.css : 리셋 파일. 상단에 공통 색상 정의</li>
+                          <li>- common.css : 공통 엘리먼트 파일. 상단에 공통 높이값 정의, datepicker.min.css 포함</li>
+                          <li>- pdf.css : 해당 pdf html파일에만 적용</li>
+                          <li>- swiper-bundle.min.css : swiper</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>js</td>
+                      <td></td>
+                      <td>common.js</td>
+                      <td>스크립트 - 공통 UI</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        /lib <br>
+                      </td>
+                      <td>
+                        <ul>
+                          <li>jquery.min.js</li>
+                          <li>jquery-ui.min.js</li>
+                          <li>bootstrap-datepicker.min.js</li>
+                          <li>Sortable.min.js</li>
+                          <li>swiper-bundle.min.js</li>
+                          <li></li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          <li>bootstrap-datepicker.min.js : datepicker</li>
+                          <li>Sortable.min.js : drag and drop list</li>
+                          <li>swiper-bundle.min.js : swiper</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>images</td>
+                      <td></td>
+                      <td></td>
+                      <td>모든 이미지</td>
+                    </tr>
+                    <tr>
+                      <td>html</td>
+                      <td>
+                        <ul>
+                          <li>join*</li>
+                          <li>login*</li>
+                          <li>auth*</li>
+                          <li>myinfo*</li>
+                          <li>benefits</li>
+                          <li>card</li>
+                          <li>common</li>
+                          <li>contract</li>
+                          <li>customer</li>
+                          <li>deposit</li>
+                          <li>security</li>
+                          <li>start</li>
+                          <li>video</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          <li>(통합계정)회원가입</li>
+                          <li>(통합계정)로그인</li>
+                          <li>(통합계정)마이페이지-권한</li>
+                          <li>(통합계정)마이에스원 - 회원정보</li>
+                          <li>혜택 및 이벤트</li>
+                          <li>카드 관리</li>
+                          <li>공통</li>
+                          <li>마이에스원 - 계약정보</li>
+                          <li>고객센터</li>
+                          <li>마이에스원 - 청구/입금</li>
+                          <li>경비</li>
+                          <li>초기화면(대시보드)</li>
+                          <li>영상</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          <li>가이드
+                            <ul class="bul_list">
+                              <li>guide.html: 퍼블리싱 공통 가이드 페이지</li>
+                              <li>guide_output.html : 퍼블리싱 규칙 페이지</li>
+                            </ul>
+                          </li>
+                          <li>*표시가 있는 폴더는 APP페이지가 아닌 '통합계정' 페이지 확인용입니다.<br>
+                            로그인/회원가입/마이페이지-권한/마이에스원 - 회원정보는 통합계정 퍼블리싱 파일이 따로 있습니다(s1_total_member.zip 전달예정).<br>
+                            통합계정 파일의 경우 디자인 가이드는 비슷하나, 퍼블리싱은 APP작업 전에 선작업 후 현업에 전달하여 내용이 상이합니다.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <!-- //section2 -->
+
+        </div>
+      </div>
+      <div id="tabmenu2" class="tab_cont" role="tabpanel">
+        <div class="g-content-body">
+          <!-- section3 -->
+          <section id="section3" class="g-section g-in-sec">
+            <div class="g-section-header">
+              <h2 class="g-h2">코드 규칙</h2>
+            </div>
+            <div class="g-section-body">
+
+              <h3 class="g-h3">빈줄</h3>
+              <ul class="g-desc">
+                <li>가독성을 고려하여 빈 줄을 추가한다. 단, 1줄을 초과하지 않는다.</li>
+              </ul>
+
+              <h3 class="g-h3">주석(매우 중요)</h3>
+              <ul class="g-desc">
+                <li>끝의 표시는 // 로 구분한다.</li>
+                <li>수정 주석은 html에만 적용한다.</li>
+              </ul>
+              <div class="g-code">
+                <div>
+                  <div id="highlighter_934690" class="syntaxhighlighter html">
+                    <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td class="gutter">
+                            <div class="line number1 index0 alt2">1</div>
+                            <div class="line number2 index1 alt1">2</div>
+                            <div class="line number3 index2 alt2">3</div>
+                            <div class="line number4 index3 alt1">4</div>
+                            <div class="line number5 index4 alt2">5</div>
+                            <div class="line number6 index5 alt1">6</div>
+                            <div class="line number7 index6 alt2">7</div>
+                            <div class="line number8 index7 alt1">8</div>
+                            <div class="line number9 index8 alt2">9</div>
+                            <div class="line number10 index9 alt1">10</div>
+                            <div class="line number11 index10 alt2">11</div>
+                            <div class="line number12 index11 alt1">12</div>
+                            <div class="line number13 index12 alt2">13</div>
+                            <div class="line number14 index13 alt1">14</div>
+                            <div class="line number15 index14 alt2">15</div>
+                            <div class="line number16 index15 alt1">16</div>
+                            <div class="line number17 index16 alt2">17</div>
+                            <div class="line number18 index17 alt1">18</div>
+                            <div class="line number19 index18 alt2">19</div>
+                            <div class="line number20 index19 alt1">20</div>
+                            <div class="line number21 index20 alt2">21</div>
+                          </td>
+                          <td class="code">
+                            <div class="container">
+                              <div class="line number1 index0 alt2"><code
+                                  class="html comments">&lt;!-- header --&gt;</code></div>
+                              <div class="line number2 index1 alt1"><code class="html plain">&lt;</code><code
+                                  class="html keyword">div</code><code class="html plain">&gt;</code></div>
+                              <div class="line number3 index2 alt2"><code class="html spaces">&nbsp; &nbsp;</code><code
+                                  class="html plain">&lt;</code><code class="html keyword">p</code><code
+                                  class="html plain">&gt;영역주석 : 시작과 끝이 있고, 마크업의 영역을 표시한다.&lt;/</code><code
+                                  class="html keyword">p</code><code class="html plain">&gt;</code></div>
+                              <div class="line number4 index3 alt1"><code class="html plain">&lt;/</code><code
+                                  class="html keyword">div</code><code class="html plain">&gt;</code></div>
+                              <div class="line number5 index4 alt2"><code
+                                  class="html comments">&lt;!-- // header --&gt;</code></div>
+                              <div class="line number6 index5 alt1">&nbsp;</div>
+                              <div class="line number14 index13 alt1"><code
+                                  class="html comments">&lt;!-- 수정될 경우 주석 양식 --&gt;</code></div>
+                              <div class="line number15 index14 alt2"><code
+                                  class="html comments">&lt;!-- 2023-02-17 설명 수정--&gt;</code></div>
+                              <div class="line number16 index15 alt1"><code
+                                  class="html comments">&lt;!-- 2023-02-17 설명 추가--&gt;</code></div>
+                              <div class="line number17 index16 alt2"><code
+                                  class="html comments">&lt;!-- 2023-02-17 설명 삭제--&gt;</code></div>
+                              <div class="line number18 index17 alt1"><code class="html plain">&lt;</code><code
+                                  class="html keyword">p</code><code
+                                  class="html plain">&gt;수정주석 : 년도 + 해당월 + 순차적인 번호의 조합으로 작성한다. 예시) 2023-02-17 move클래스 추가/ 2023-02-17 마크업 제거&lt;/</code><code
+                                  class="html keyword">p</code><code class="html plain">&gt;</code></div>
+                              <div class="line number19 index18 alt2"><code class="html plain">&lt;</code><code
+                                  class="html keyword">p</code><code
+                                  class="html plain">&gt;수정주석 : 수정된 마크업의 경우 한 줄이더라도 시작과 끝 주석 처리를 추가한다.&lt;/</code><code
+                                  class="html keyword">p</code><code class="html plain">&gt;</code></div>
+                              <div class="line number20 index19 alt1"><code class="html plain">&lt;</code><code
+                                  class="html keyword">p</code><code
+                                  class="html plain">&gt;수정주석 : 주 단위나 일 단위로 수정되더라도 이미 개발에 전달된 후 시점에서는 날짜 뒷 번호는 +1해 작성한다. 예시) 2023-02-18 list_box 마크업 추가&lt;/</code><code
+                                  class="html keyword">p</code><code class="html plain">&gt;</code></div>
+                              <div class="line number21 index20 alt2"><code class="html plain">&lt;</code><code
+                                  class="html keyword">p</code><code
+                                  class="html plain">&gt;수정수석 : 컨텐츠가 사라져 마크업이 제거될 경우 끝 주석 표시를 하고 내용은 제거한다./ 추후 사용 가능성이 있는 컨텐츠는 주석처리만 추가하고 내용은 제거하지 않는다.&lt;/</code><code
+                                  class="html keyword">p</code><code class="html plain">&gt;</code></div>
+                              <div class="line number22 index21 alt1"><code
+                                  class="html comments">&lt;!-- //수정될 경우 주석 양식 --&gt;</code></div>
+                              <div class="line number23 index22 alt2">&nbsp;</div>
+                              <div class="line number24 index23 alt1"><code class="html comments">&lt;!-- 아이콘 상태</code>
+                              </div>
+                              <div class="line number25 index24 alt2"><code
+                                  class="html spaces">&nbsp; &nbsp;</code><code class="html comments">- 기본: .ico</code>
+                              </div>
+                              <div class="line number26 index25 alt1"><code
+                                  class="html spaces">&nbsp; &nbsp;</code><code
+                                  class="html comments">- 기본 활성화: .ico.on</code></div>
+                              <div class="line number27 index26 alt2"><code class="html comments">--&gt;</code></div>
+                              <div class="line number28 index27 alt1"><code class="html plain">&lt;</code><code
+                                  class="html keyword">p</code><code
+                                  class="html plain">&gt;전달할 내용이 많은 경우 여러줄로 설명한다. &lt;/</code><code
+                                  class="html keyword">p</code><code class="html plain">&gt;</code></div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="g-h3">속성 선언순서</h3>
+              <div class="g-tbl-type1">
+                <table>
+                  <caption>HTML 속성선언순서</caption>
+                  <colgroup>
+                    <col style="width:20%; ">
+                    <col>
+                    <col style="width:20%; ">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>구분</th>
+                      <th>속성</th>
+                      <th>속성 값</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1. 기능</td>
+                      <td>
+                        <p>href, src, type</p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>2. 이름</td>
+                      <td>
+                        <p>name, id</p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>3. 정보</td>
+                      <td>
+                        <p>value, title, alt</p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>4. 옵션</td>
+                      <td>
+                        <p>target, tabindex</p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>5. 꾸미기</td>
+                      <td>
+                        <p>class</p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>6. 역할</td>
+                      <td>
+                        <p>role</p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>7. 속성</td>
+                      <td>
+                        <p>aria-controls, aria-describedby, aria-labelledby, aria-popup, aria-modal 등</p>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>8. 상태</td>
+                      <td>
+                        <p>checked, disabled, selected, required, aria-selected, aria-current, aria-hidden 등</p>
+                      </td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4 class="g-h4">엘리먼트 예시</h4>
+              <div class="g-code">
+                <div>
+                  <div id="highlighter_234851" class="syntaxhighlighter  html">
+                    <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td class="gutter">
+                            <div class="line number1 index0 alt2">1</div>
+                            <div class="line number2 index1 alt1">2</div>
+                            <div class="line number3 index2 alt2">3</div>
+                            <div class="line number4 index3 alt1">4</div>
+                            <div class="line number5 index4 alt2">5</div>
+                          </td>
+                          <td class="code">
+                            <div class="container">
+                              <div class="line number1 index0 alt2"><code class="html plain">&lt;</code><code
+                                  class="html keyword">a</code> <code class="html color1">href</code><code
+                                  class="html plain">=</code><code class="html string">"#none"</code><code
+                                  class="html color1">title</code><code class="html plain">=</code><code
+                                  class="html string">"새창열기"</code><code class="html color1">target</code><code
+                                  class="html plain">=</code><code class="html string">""</code><code
+                                  class="html color1">class</code><code class="html plain">=</code><code
+                                  class="html string">""</code><code class="html plain">&gt;인쇄하기&lt;/</code><code
+                                  class="html keyword">a</code><code class="html plain">&gt;</code></div>
+                              <div class="line number2 index1 alt1"><code class="html plain">&lt;</code><code
+                                  class="html keyword">iframe</code> <code class="html color1">src</code><code
+                                  class="html plain">=</code><code class="html string">"about:blank"</code><code
+                                  class="html color1">title</code><code class="html plain">=</code><code
+                                  class="html string">"빈프레임"</code><code class="html plain">&gt;&lt;/</code><code
+                                  class="html keyword">iframe</code> <code class="html plain">&gt;</code></div>
+                              <div class="line number3 index2 alt2"><code class="html plain">&lt;</code><code
+                                  class="html keyword">img</code> <code class="html color1">src</code><code
+                                  class="html plain">=</code><code class="html string">"img.gif"</code><code
+                                  class="html color1">alt</code><code class="html plain">=</code><code
+                                  class="html string">"대체텍스트"</code><code class="html plain">/&gt;</code></div>
+                              <div class="line number4 index3 alt1"><code class="html plain">&lt;</code><code
+                                  class="html keyword">input</code> <code class="html color1">type</code><code
+                                  class="html plain">=</code><code class="html string">"text"</code><code
+                                  class="html color1">name</code><code class="html plain">=</code><code
+                                  class="html string">""</code><code class="html color1">id</code><code
+                                  class="html plain">=</code><code class="html string">""</code><code
+                                  class="html color1">value</code><code class="html plain">=</code><code
+                                  class="html string">""</code><code class="html color1">title</code><code
+                                  class="html plain">=</code><code class="html string">""</code><code
+                                  class="html color1">class</code><code class="html plain">=</code><code
+                                  class="html string">""</code><code class="html color1">style</code><code
+                                  class="html plain">=</code><code class="html string">""</code><code
+                                  class="html plain">disabled /&gt;</code></div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="g-h3">CSS 기본 규칙</h3>
+              <h4 class="g-h4">작업정보</h4>
+              <div class="g-code">
+                <div>
+                  <div id="highlighter_320918" class="syntaxhighlighter  css">
+                    <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td class="gutter">
+                            <div class="line number1 index0 alt2">1</div>
+                            <div class="line number2 index1 alt1">2</div>
+                            <div class="line number3 index2 alt2">3</div>
+                            <div class="line number4 index3 alt1">4</div>
+                            <div class="line number5 index4 alt2">5</div>
+                            <div class="line number6 index5 alt1">6</div>
+                            <div class="line number7 index6 alt2">7</div>
+                            <div class="line number8 index7 alt1">8</div>
+                            <div class="line number9 index8 alt2">9</div>
+                          </td>
+                          <td class="code">
+                            <div class="container">
+                              <div class="line number1 index0 alt2"><code class="css plain">@charset</code><code
+                                  class="css string">"utf-8"</code><code class="css plain">;</code></div>
+                              <div class="line number2 index1 alt1"><code
+                                  class="css comments">/*-------------------------------------------------------------------</code>
+                              </div>
+                              <div class="line number3 index2 alt2"><code class="css spaces">&nbsp; &nbsp;</code><code
+                                  class="css comments">파일정의 : 파일명 또는 파일설명</code></div>
+                              <div class="line number4 index3 alt1"><code class="css spaces">&nbsp; &nbsp;</code><code
+                                  class="css comments">작성날짜 : 2019-01-01 홍길동</code></div>
+                              <div class="line number5 index4 alt2"><code class="css spaces">&nbsp; &nbsp;</code><code
+                                  class="css comments">주의사항 : 주석표기는 페이지 접근방법을 알수 있도록 표시 (실제 파일에서는 미사용)</code></div>
+                              <div class="line number6 index5 alt1"><code class="css spaces">&nbsp; &nbsp;</code><code
+                                  class="css comments">분류순서 : 분류1 &gt;분류2 &gt;분류3 (실제 파일에서는 미사용)</code></div>
+                              <div class="line number7 index6 alt2"><code class="css spaces">&nbsp; &nbsp;</code><code
+                                  class="css comments">속성순서 : 표시 &gt;위치 &gt;넘침/흐름 &gt;크기/간격 &gt;박스모양 &gt;폰트/정렬 &gt;기타 (실제 파일에서는 미사용)</code>
+                              </div>
+                              <div class="line number8 index7 alt1"><code
+                                  class="css comments">-------------------------------------------------------------------*/</code>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <ul class="g-desc-guide">
+                <li>* 파일에 따라서 불필요한 항목은 삭제 할 수 있다. (예 : animate.css)</li>
+              </ul>
+
+              <h4 class="g-h4">큰 따옴표("") 사용 범위</h4>
+              <p class="g-desc">content에 큰 따옴표("")를 사용한다.</p>
+              <div class="g-code">
+                <div>
+                  <div id="highlighter_725049" class="syntaxhighlighter  css">
+                    <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td class="gutter">
+                            <div class="line number1 index0 alt2">1</div>
+                            <div class="line number2 index1 alt1">2</div>
+                          </td>
+                          <td class="code">
+                            <div class="container">
+                              <div class="line number1 index0 alt2"><code
+                                  class="css plain">.class_name:after {</code><code
+                                  class="css keyword">content</code><code class="css plain">:</code><code
+                                  class="css string">""</code><code class="css plain">}</code></div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="g-h4">콜론(:)</h4>
+              <p class="g-desc">콜론과 속성값 사이에 공백을 넣지 않는다.</p>
+              <div class="g-code">
+                <div>
+                  <div id="highlighter_560113" class="syntaxhighlighter  css">
+                    <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td class="gutter">
+                            <div class="line number1 index0 alt2">1</div>
+                            <div class="line number2 index1 alt1">2</div>
+                          </td>
+                          <td class="code">
+                            <div class="container">
+                              <div class="line number1 index0 alt2"><code class="css plain">.class_name {</code><code
+                                  class="css keyword">margin-left</code><code class="css plain">:</code><code
+                                  class="css value">0</code><code class="css plain">; </code><code
+                                  class="css keyword">padding-left</code><code class="css plain">:</code><code
+                                  class="css value">10px</code><code class="css plain">}</code></div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="g-h4">세미콜론(;)</h4>
+              <p class="g-desc">마지막 선언된 속성에 세미콜론(;)을 사용하지 않는다.</p>
+              <div class="g-code">
+                <div>
+                  <div id="highlighter_560113" class="syntaxhighlighter  css">
+                    <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td class="gutter">
+                            <div class="line number1 index0 alt2">1</div>
+                            <div class="line number2 index1 alt1">2</div>
+                          </td>
+                          <td class="code">
+                            <div class="container">
+                              <div class="line number1 index0 alt2"><code class="css plain">.class_name {</code><code
+                                  class="css keyword">margin-left</code><code class="css plain">:</code><code
+                                  class="css value">0</code><code class="css plain">; </code><code
+                                  class="css keyword">padding-left</code><code class="css plain">:</code><code
+                                  class="css value">10px</code><code class="css plain">}</code></div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="g-h4">주석 / 빈줄</h3>
+              <ul class="g-desc">
+                <li>종료 주석은 작성하지 않는다.</li>
+                <li>코드 그룹 간 1줄의 빈 줄을 허용한다. 단, 1줄을 초과하지 않는다.</li>
+              </ul>
+              <div class="g-code">
+                <div>
+                  <div id="highlighter_457230" class="syntaxhighlighter  css">
+                    <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td class="gutter">
+                            <div class="line number1 index0 alt2">1</div>
+                            <div class="line number2 index1 alt1">2</div>
+                            <div class="line number3 index2 alt2">3</div>
+                            <div class="line number4 index3 alt1">4</div>
+                            <div class="line number5 index4 alt2">5</div>
+                            <div class="line number6 index5 alt1">6</div>
+                          </td>
+                          <td class="code">
+                            <div class="container">
+                              <div class="line number1 index0 alt2"><code class="css comments">/* title */</code></div>
+                              <div class="line number2 index1 alt1"><code class="css plain">.title_type</code><code
+                                  class="css value">1</code> <code class="css plain">{</code><code
+                                  class="css keyword">margin</code><code class="css plain">:</code><code
+                                  class="css value">30px</code> <code class="css value">0</code> <code
+                                  class="css value">10px</code> <code class="css value">0</code><code
+                                  class="css plain">}</code></div>
+                              <div class="line number3 index2 alt2">&nbsp; </div>
+                              <div class="line number4 index3 alt1"><code class="css comments">/* description */</code>
+                              </div>
+                              <div class="line number5 index4 alt2"><code class="css plain">.desc</code><code
+                                  class="css value">1</code> <code class="css plain">{</code><code
+                                  class="css keyword">padding</code><code class="css plain">:</code><code
+                                  class="css value">2px</code> <code class="css value">0</code> <code
+                                  class="css value">0</code> <code class="css value">15px</code><code
+                                  class="css plain">; </code><code class="css keyword">font-size</code><code
+                                  class="css plain">:</code><code class="css value">16px</code><code
+                                  class="css plain">}</code></div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="g-h4">공통 선택자</h4>
+              <p class="g-desc">'*' 공통 선택자는 웹 페이지의 성능을 저하를 가져오기 때문에 가급적 사용하지 않는다.</p>
+              <div class="g-code">
+                <div>
+                  <div id="highlighter_347784" class="syntaxhighlighter  css">
+                    <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td class="gutter">
+                            <div class="line number1 index0 alt2">1</div>
+                            <div class="line number2 index1 alt1">2</div>
+                            <div class="line number3 index2 alt2">3</div>
+                          </td>
+                          <td class="code">
+                            <div class="container">
+                              <div class="line number1 index0 alt2"><code class="css comments">/* 잘못된 예 */</code></div>
+                              <div class="line number2 index1 alt1"><code class="css plain">* {</code><code
+                                  class="css keyword">margin</code><code class="css plain">:</code><code
+                                  class="css value">0</code><code class="css plain">; </code><code
+                                  class="css keyword">padding</code><code class="css plain">:</code><code
+                                  class="css value">0</code><code class="css plain">}</code></div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="g-h3">속성 선언순서</h3>
+              <div class="g-tbl-type1">
+                <table>
+                  <caption>CSS 속성선언순서</caption>
+                  <colgroup>
+                    <col style="width:20%; ">
+                    <col style="width:20%; ">
+                    <col>
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>구분</th>
+                      <th>속성</th>
+                      <th>속성 값</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td rowspan="2">1. 표시</td>
+                      <td>display</td>
+                      <td>none, block, inline, inline-block, inline-table, list-item, table, table-caption, table-cell,
+                        table-column, table-column-group, table-footer-group, table-header-group, table-row,
+                        table-row-group</td>
+                    </tr>
+                    <tr>
+                      <td>visibility</td>
+                      <td>visible, hidden, collapse</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="3">2. 위치</td>
+                      <td>position</td>
+                      <td>absolute, fixed, relative, static</td>
+                    </tr>
+                    <tr>
+                      <td>top, right, bottom, left</td>
+                      <td>length(px), %</td>
+                    </tr>
+                    <tr>
+                      <td>z-index</td>
+                      <td>number</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">3. 넘침/흐름</td>
+                      <td>overflow</td>
+                      <td>visible, hidden, scroll, auto</td>
+                    </tr>
+                    <tr>
+                      <td>float</td>
+                      <td>left, right, none</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="4">4. 크기/간격</td>
+                      <td>width, max-width, min-width</td>
+                      <td>auto, length(px), %</td>
+                    </tr>
+                    <tr>
+                      <td>height, max-height, min-height</td>
+                      <td>auto, length(px), %</td>
+                    </tr>
+                    <tr>
+                      <td>margin</td>
+                      <td>auto, length(px, em), %</td>
+                    </tr>
+                    <tr>
+                      <td>padding</td>
+                      <td>auto, length(px, em), %</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">5. 박스모양</td>
+                      <td>border</td>
+                      <td>border-width, border-style, border-color</td>
+                    </tr>
+                    <tr>
+                      <td>background</td>
+                      <td>background-color, background-image, background-repeat, background-attachment,
+                        background-position</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="4">6. 폰트/정렬</td>
+                      <td>font</td>
+                      <td>font-style, font-variant, font-weigth, font-size/line-height, font-family</td>
+                    </tr>
+                    <tr>
+                      <td>color</td>
+                      <td>hex_number, hex_number</td>
+                    </tr>
+                    <tr>
+                      <td>text-align</td>
+                      <td>left, right, center, justify</td>
+                    </tr>
+                    <tr>
+                      <td>vertical-align</td>
+                      <td>top, middle, bottom, baseline</td>
+                    </tr>
+                    <tr>
+                      <td>7. 기타</td>
+                      <td></td>
+                      <td>언급되지 않은 속성들은 후순위로 적용한다.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <!-- //section3 -->
+        </div>
+      </div>
+      <div id="tabmenu3" class="tab_cont" role="tabpanel">
+        <article id="g-content" class="">
+          <div class="g-content-body">
+            <!-- section4 -->
+            <section id="section4" class="g-section g-in-sec">
+              <div class="g-section-header">
+                <h2 class="g-h2">표준규칙</h2>
+              </div>
+              <div class="g-section-body">
+                <h3 class="g-h3">기본문서</h3>
+                <h4 class="g-h4">코드레이아웃</h4>
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_612376" class="syntaxhighlighter  html">
+                      <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div>
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="gutter">
+                              <div class="line number1 index0 alt2">1</div>
+                              <div class="line number2 index1 alt1">2</div>
+                              <div class="line number3 index2 alt2">3</div>
+                              <div class="line number4 index3 alt1">4</div>
+                              <div class="line number5 index4 alt2">5</div>
+                              <div class="line number6 index5 alt1">6</div>
+                              <div class="line number7 index6 alt2">7</div>
+                              <div class="line number8 index7 alt1">8</div>
+                              <div class="line number9 index8 alt2">9</div>
+                              <div class="line number10 index9 alt1">10</div>
+                              <div class="line number11 index10 alt2">11</div>
+                              <div class="line number12 index11 alt1">12</div>
+                              <div class="line number13 index12 alt2">13</div>
+                            </td>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index0 alt2"><code
+                                    class="html plain">&lt;!DOCTYPE html&gt;</code></div>
+                                <div class="line number2 index1 alt1"><code class="html plain">&lt;</code><code
+                                    class="html keyword">head</code><code class="html plain">&gt;</code></div>
+                                <div class="line number3 index2 alt2"><code class="html plain">&lt;</code><code
+                                    class="html keyword">meta</code><code class="html color1">charset</code><code
+                                    class="html plain">=</code><code class="html string">"utf-8"</code><code
+                                    class="html plain">&gt;</code></div>
+                                <div class="line number4 index3 alt1"><code class="html plain">&lt;</code><code
+                                    class="html keyword">meta</code><code class="html color1">http-equiv</code><code
+                                    class="html plain">=</code><code class="html string">"X-UA-Compatible"</code><code
+                                    class="html color1">content</code><code class="html plain">=</code><code
+                                    class="html string">"IE=edge"</code><code class="html plain">&gt;</code></div>
+                                <div class="line number5 index4 alt2"><code class="html plain">&lt;</code><code
+                                    class="html keyword">meta</code><code class="html color1">name</code><code
+                                    class="html plain">=</code><code class="html string">"viewport"</code><code
+                                    class="html color1">content</code><code class="html plain">=</code><code
+                                    class="html string">"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"</code><code
+                                    class="html plain">&gt;</code></div>
+                                <div class="line number6 index5 alt1"><code class="html plain">&lt;</code><code
+                                    class="html keyword">meta</code><code class="html color1">name</code><code
+                                    class="html plain">=</code><code class="html string">"title"</code><code
+                                    class="html color1">content</code><code class="html plain">=</code><code
+                                    class="html string">"에스원"</code><code class="html plain">&gt;</code></div>
+                                <div class="line number7 index6 alt2"><code class="html plain">&lt;</code><code
+                                    class="html keyword">meta</code><code class="html color1">name</code><code
+                                    class="html plain">=</code><code class="html string">"keywords"</code><code
+                                    class="html color1">content</code><code class="html plain">=</code><code
+                                    class="html string">"에스원"</code><code class="html plain">&gt;</code></div>
+                                <div class="line number8 index7 alt1"><code class="html plain">&lt;</code><code
+                                    class="html keyword">title</code><code
+                                    class="html plain">&gt;페이지명 | 에스원&lt;/</code><code
+                                    class="html keyword">title</code><code class="html plain">&gt;</code></div>
+                                <div class="line number9 index8 alt2"><code class="html plain">&lt;/</code><code
+                                    class="html keyword">head</code><code class="html plain">&gt;</code></div>
+                                <div class="line number10 index9 alt1"><code class="html plain">&lt;</code><code
+                                    class="html keyword">body</code><code class="html plain">&gt;</code></div>
+                                <div class="line number11 index10 alt2"><code class="html plain">&lt;/</code><code
+                                    class="html keyword">body</code><code class="html plain">&gt;</code></div>
+                                <div class="line number12 index11 alt1"><code class="html plain">&lt;/</code><code
+                                    class="html keyword">html</code><code class="html plain">&gt;</code></div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="g-h3">특수기호 Entity name</h3>
+                <ul class="g-desc">
+                  <li>특수기호는 Entity name을 사용하여 entity 코드로 변환한다. Entity 코드는 ISO-8859-1을 기준으로 한다.</li>
+                </ul>
+                <div class="g-tbl-type1">
+                  <table>
+                    <caption>주의 해야할 특수기호</caption>
+                    <tbody>
+                      <tr>
+                        <th>Character</th>
+                        <td>₩</td>
+                        <td>"</td>
+                        <td>&amp;</td>
+                        <td>&lt;</td>
+                        <td>&gt;</td>
+                        <td>&nbsp;</td>
+                        <td>·</td>
+                      </tr>
+                      <tr>
+                        <th>Entity Name</th>
+                        <td>&amp;#8361;</td>
+                        <td>&amp;quot;</td>
+                        <td>&amp;amp;</td>
+                        <td>&amp;lt;</td>
+                        <td>&amp;gt;</td>
+                        <td>&amp;nbsp;</td>
+                        <td>&amp;middot;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="g-desc-guide">* 참고 : <a href="http://www.w3schools.com/html/html_entities.asp" target="_blank"
+                    title="새창">HTML Entities</a></p>
+
+                <h3 class="g-h3">Semantic Markup</h3>
+                <div class="g-tbl-type1">
+                  <table>
+                    <caption>Semantics Markup</caption>
+                    <colgroup>
+                      <col style="width:20%">
+                      <col style="width:20%">
+                      <col style="width:20%">
+                      <col style="width:auto">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">종류</th>
+                        <th scope="col">구분</th>
+                        <th scope="col">태그</th>
+                        <th scope="col">설명</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td rowspan="2">그룹</td>
+                        <td>블록타입</td>
+                        <td>div</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>인라인타입</td>
+                        <td>span</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td rowspan="5">랜드마크</td>
+                        <td>머리글</td>
+                        <td>header</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>바닥글</td>
+                        <td>footer</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>연속적인 컨텐츠그룹</td>
+                        <td>section</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>독립적인 컨텐츠그룹</td>
+                        <td>article</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>보조적인 컨텐츠그룹</td>
+                        <td>aside</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td rowspan="6">목차</td>
+                        <td>목차 1레벨</td>
+                        <td>h1</td>
+                        <td>페이지 제목 최상위 레벨(문서 필수 요소)</td>
+                      </tr>
+                      <tr>
+                        <td>목차 2레벨</td>
+                        <td>h2</td>
+                        <td>페이지 제목 수준</td>
+                      </tr>
+                      <tr>
+                        <td>목차 3레벨</td>
+                        <td>h3</td>
+                        <td>컨텐츠 핵심 제목 수준</td>
+                      </tr>
+                      <tr>
+                        <td>목차 4레벨</td>
+                        <td>h4</td>
+                        <td>컨텐츠 부 제목 수준</td>
+                      </tr>
+                      <tr>
+                        <td>목차 5레벨</td>
+                        <td>h5</td>
+                        <td>컨텐츠 상세 제목 수준</td>
+                      </tr>
+                      <tr>
+                        <td>목차 6레벨</td>
+                        <td>h6</td>
+                        <td>컨텐츠 상세 제목 수준</td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td rowspan="8">컨텐츠<br>(Block Type)</td>
+                        <td>순서 없는 리스트</td>
+                        <td>ul, li</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>순서 있는 리스트</td>
+                        <td>ol, li</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>정의 리스트</td>
+                        <td>dl, dt, dd</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>단락</td>
+                        <td>p</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>주소</td>
+                        <td>address</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>사진의 내용 표시</td>
+                        <td>figure</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>사진의 제목 표시</td>
+                        <td>figcaption</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>대화상자</td>
+                        <td>dialog</td>
+                        <td>호환성 IE Not Supported (role="dialog" 대체사용)</td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td rowspan="8">컨텐츠<br>(Inline Type)</td>
+                        <td>링크</td>
+                        <td>a</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>중요한</td>
+                        <td>strong</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>일반강조</td>
+                        <td>em</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>의미없는 마크업</td>
+                        <td>i</td>
+                        <td>실제 용도에 의미를 두지는 않으며 아이콘 등에 사용한다.</td>
+                      </tr>
+                      <tr>
+                        <td>정의</td>
+                        <td>dfn</td>
+                        <td>title속성을 사용하여 용어를 정의한다.</td>
+                      </tr>
+                      <tr>
+                        <td>작은 텍스트</td>
+                        <td>small</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>취소</td>
+                        <td>s</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>삭제</td>
+                        <td>del</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td rowspan="5">서식<br></td>
+                        <td>서식 그룹</td>
+                        <td>fieldset</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>서식 제목</td>
+                        <td>legend</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>라벨</td>
+                        <td>label</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>입력, 선택 컨트롤</td>
+                        <td>input, textarea, select</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>버튼</td>
+                        <td>button</td>
+                        <td>일반 버튼타입과 전송타입의 버튼을 구분한다.</td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td rowspan="10">표<br></td>
+                        <td>표</td>
+                        <td>table</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>표 제목</td>
+                        <td>caption</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>표 열 그룹</td>
+                        <td>colgroup</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>표 열</td>
+                        <td>col</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>표 헤더</td>
+                        <td>thead</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>표 본문</td>
+                        <td>tbody</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>표 푸터</td>
+                        <td>tfoot</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>표 행</td>
+                        <td>tr</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>표 제목셀</td>
+                        <td>th</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>표 내용셀</td>
+                        <td>td</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+            <!-- //section4 -->
+          </div>
+        </article>
+      </div>
+      <div id="tabmenu4" class="tab_cont" role="tabpanel">
+        <div class="g-content-body">
+          <!-- section1 -->
+          <section id="section1" class="g-section g-in-sec">
+            <div class="g-section-header">
+              <h2 class="g-h2">WAI-ARIA 접근성</h2>
+            </div>
+            <div class="g-section-body">
+              <h3 class="g-h3">사이트 WAI-ARIA 적용 사례</h3>
+              <div class="g-tbl-type1">
+                <table>
+                  <caption>속성정의</caption>
+                  <colgroup>
+                    <col style="width:8%">
+                    <col style="width:10%">
+                    <col style="width:30%">
+                    <col style="width:auto">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">구분</th>
+                      <th scope="col">속성</th>
+                      <th scope="col">설명</th>
+                      <th scope="col">예시</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>현재 상태</td>
+                      <td><a
+                          href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-current"
+                          target="_blank" title="새창" class="g-link-basic">aria-current</a></td>
+                      <td>
+                        * 현재 맥락과 일치하는 요소에 사용 <br>
+                        "page" : 현재 '페이지'와 일치하는 시각적으로 강조한 링크<br>
+                        "step" : 현재 '단계'와 일치하는 시각적으로 강조한 링크<br>
+                        "location" : 플로우 차트에서 현재 '위치'와 일치하는 시각적으로 강조한 이미지
+                      </td>
+                      <td>
+                        <div class="pagination">
+                          <button type="button" class="btn_paging_first"><span class="a11y">처음으로</span></button>
+                          <button type="button" class="btn_paging_prev"><span class="a11y">이전으로</span></button>
+                          <div class="page_num">
+                            <strong aria-current="page">1</strong>
+                            <!--[Dev] 접근성 : 현재 선택된 페이지에 aria-current="page" 붙임.-->
+                            <a href="#none">2</a>
+                            <a href="#none">3</a>
+                          </div>
+                          <button type="button" class="btn_paging_next"><span class="a11y">다음으로</span></button>
+                          <button type="button" class="btn_paging_last"><span class="a11y">마지막으로</span></button>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- <tr>
+                      <td>확장 상태</td>
+                      <td><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-expanded" target="_blank" title="새창"
+                          class="g-link-basic">aria-expanded</a></td>
+                      <td>
+                        * 제어 대상의 확장 또는 축소 상태에 사용 <br>
+                        (예) 아코디언, 메뉴, 콤보박스, 트리와 같이 하위 그룹을 토글 하는 경우 사용하면 적절함. 독립적인 내용 제어 시 aria-controls 속성을 이용하여 제어 대상
+                        명시해야 함.<br>
+                        "undefined(default)" : 속성 또는 값을 선언하지 않은 경우 초기값. 제어 대상이 없거나 모두 확장 상태. 확장/축소 제어 불가능. <br>
+                        "true" : 요소 또는 제어 대상 확장 상태.<br>
+                        "false" : 요소 또는 제어 대상 축소 상태.
+                      </td>
+                      <td>
+                        <div class="org_area" style="text-align:center;">
+                          <div class="central_box">
+                            <div class="box"><a href="#none"><span>경영기획본부</span></a></div>
+                            <ul class="org_depth01">
+                              <li data-toggle="togglewrapSingle">
+                                <a href="#none"><span>기획조정실</span></a>
+                                <a href="#none" data-toggle="toggleAnchor" aria-expanded="false" class="btn_more"><span
+                                    class="a11y">더보기</span></a>
+                                <ul class="org_depth02">
+                                  <li><a href="#none"><span>- 재무팀</span></a></li>
+                                </ul>
+                              </li>
+                              <li data-toggle="togglewrapSingle">
+                                <a href="#none"><span>사회공헌부</span></a>
+                                <a href="#none" data-toggle="toggleAnchor" aria-expanded="false" class="btn_more"><span
+                                    class="a11y">더보기</span></a>
+                                <ul class="org_depth02">
+                                  <li><a href="#none"><span>- 사랑나눔재단</span></a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="g-code">
+                          <div>
+                            <div id="highlighter_614546" class="syntaxhighlighter  html">
+                              <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span>
+                              </div>
+                              <table border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="gutter">
+                                      <div class="line number1 index0 alt2">1</div>
+                                    </td>
+                                    <td class="code">
+                                      <div class="container">
+                                        <div class="line number1 index0 alt2">&nbsp;</div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr> -->
+                    <tr>
+                      <td>선택 상태</td>
+                      <td><a
+                          href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-selected"
+                          target="_blank" title="새창" class="g-link-basic">aria-selected</a>
+                      </td>
+                      <td>
+                        * 선택 상태를 명시하는 용도로 사용 <br>
+                        "undefined(default)" : 속성 또는 값을 선언하지 않은 경우 초기값. 선택할 수 없음. <br>
+                        "true" : 선택 가능한 요소를 선택함.<br>
+                        "false" : 선택 가능한 요소를 선택하지 않음. <br><br>
+                        <p>※유의사항</p>
+                        - 키보드의 초점을 받을 수 있는 요소에 적용 <br>
+                        - 단일 또는 다중 선택이 가능한 요소에 제한적으로 사용 가능 <br>
+                        - role="tab"요소에 가장 많이 사용됨
+                      </td>
+                      <td>
+                        <div class="box_tab_menu line_menu">
+                          <ul class="tab_menu" role="tablist">
+                            <li class="tab on"><button type="button" class="tab_link on" role="tab" aria-controls="tab1"
+                                tabindex="0" aria-selected="true"><span>탭1 제목</span></button></li>
+                            <li class="tab"><button type="button" class="tab_link" role="tab"
+                                aria-controls="tab2"><span>탭2 제목</span></button></li>
+                          </ul>
+                        </div>
+                        <div class="tab_container">
+                          <div class="tab_cont on" role="tabpanel" id="tab1"> <!-- on 클래스 추가시 노출됨-->
+                            탭1 내용
+                          </div>
+                          <div class="tab_cont" role="tabpanel" id="tab2">탭2 내용</div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>간결한 설명 참조</td>
+                      <td><a
+                          href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby"
+                          target="_blank" title="새창" class="g-link-basic">aria-labelledby</a>
+                      </td>
+                      <td>
+                        * 현재 요소에 설명을 제공하는 속성<br>
+                        aria-labelledby 속성은 ID값을 이용하여 간결한 내용을 참조(연결)하는 방식으로 설명
+                        <br><br>
+                        <p>※유의사항</p>
+                        - 간결한 설명이므로 자세한 설명 시 aria-describedby 속성 사용 <br>
+                        - aria-labelledby 속성으로 숨김 처리한 설명을 참조하면 안됨 <br>
+                        - 참조 불가능한 설명은 aria-label 속성 사용
+                      </td>
+                      <td>
+                        <div class="g-code">
+                          <div>
+                            <div id="highlighter_733056" class="syntaxhighlighter  html">
+                              <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span>
+                              </div>
+                              <table border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="gutter">
+                                      <div class="line number1 index0 alt2">1</div>
+                                      <div class="line number2 index1 alt1">2</div>
+                                      <div class="line number3 index2 alt2">3</div>
+                                      <div class="line number4 index3 alt1">4</div>
+                                      <div class="line number5 index4 alt2">5</div>
+                                      <div class="line number6 index5 alt1">6</div>
+                                      <div class="line number7 index6 alt2">7</div>
+                                      <div class="line number8 index7 alt1">8</div>
+                                      <div class="line number9 index8 alt2">9</div>
+                                      <div class="line number10 index9 alt1">10</div>
+                                      <div class="line number11 index10 alt2">11</div>
+                                    </td>
+                                    <td class="code">
+                                      <div class="container">
+                                        <div class="line number1 index0 alt2"><code
+                                            class="html comments">&lt;!-- O: 헤딩 설명 참조 --&gt;</code></div>
+                                        <div class="line number2 index1 alt1"><code class="html plain">&lt;</code><code
+                                            class="html keyword">section</code><code
+                                            class="html color1">aria-labelledby</code><code
+                                            class="html plain">=</code><code class="html string">"s1-intro"</code><code
+                                            class="html plain">&gt;</code></div>
+                                        <div class="line number3 index2 alt2"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">h2</code><code
+                                            class="html color1">id</code><code class="html plain">=</code><code
+                                            class="html string">"s1-intro"</code><code
+                                            class="html plain">&gt;보안장비 s1 소개&lt;/</code><code
+                                            class="html keyword">h2</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number4 index3 alt1"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">p</code><code
+                                            class="html plain">&gt;보안장비 s1의 특징은~~&lt;/</code><code
+                                            class="html keyword">p</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number5 index4 alt2"><code class="html plain">&lt;/</code><code
+                                            class="html keyword">section</code><code class="html plain">&gt;</code>
+                                        </div>
+                                        <div class="line number6 index5 alt1">&nbsp;</div>
+                                        <div class="line number7 index6 alt2"><code
+                                            class="html comments">&lt;!-- O: 링크 설명 참조 --&gt;</code></div>
+                                        <div class="line number8 index7 alt1"><code class="html plain">&lt;</code><code
+                                            class="html keyword">a</code><code class="html color1">id</code><code
+                                            class="html plain">=</code><code class="html string">"s1_intro"</code><code
+                                            class="html color1">href</code><code class="html plain">=</code><code
+                                            class="html string">"#s1-intro_text"</code><code
+                                            class="html plain">&gt;보안장비 s1이란?&lt;/</code><code
+                                            class="html keyword">a</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number9 index8 alt2"><code class="html plain">&lt;</code><code
+                                            class="html keyword">div</code><code class="html color1">id</code><code
+                                            class="html plain">=</code><code
+                                            class="html string">"s1-intro_text"</code><code
+                                            class="html color1">aria-labelledby</code><code
+                                            class="html plain">=</code><code class="html string">"s1_intro"</code><code
+                                            class="html plain">&gt;</code></div>
+                                        <div class="line number10 index9 alt1"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">p</code><code
+                                            class="html plain">&gt;이 작품의 유료 에피소드 열람 시 자동으로 구매합니다.&lt;/</code><code
+                                            class="html keyword">p</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number11 index10 alt2"><code
+                                            class="html plain">&lt;/</code><code class="html keyword">div</code><code
+                                            class="html plain">&gt;</code></div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>숨김 상태</td>
+                      <td><a
+                          href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-hidden"
+                          target="_blank" title="새창" class="g-link-basic">aria-hidden</a>
+                      </td>
+                      <td>
+                        * 숨김 상태를 명시하는 용도로 사용 <br>
+                        "undefined(default)" : 속성 또는 값을 선언하지 않은 경우 초기값. <br>
+                        "true" : 접근성 API 차단.(화면 표시 여부와 무관 API 차단)<br>
+                        "false" : 접근성 API 사용.(화면에 표시한 경우 API 사용) <br><br>
+                        <p>※유의사항</p>
+                        - aria-hidden="true" 속성이 접근성 API를 차단하지만 포인팅 기능(마우스 커서, 키보드 초점)을 차단하는 것은 아니므로 aria-hidden="true"
+                        요소가 포인팅을 받지 않도록 처리해야 함
+                      </td>
+                      <td>
+                        <div class="g-code">
+                          <div>
+                            <div id="highlighter_792967" class="syntaxhighlighter  html">
+                              <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span>
+                              </div>
+                              <table border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="gutter">
+                                      <div class="line number1 index0 alt2">1</div>
+                                      <div class="line number2 index1 alt1">2</div>
+                                      <div class="line number3 index2 alt2">3</div>
+                                      <div class="line number4 index3 alt1">4</div>
+                                      <div class="line number5 index4 alt2">5</div>
+                                      <div class="line number6 index5 alt1">6</div>
+                                      <div class="line number7 index6 alt2">7</div>
+                                      <div class="line number8 index7 alt1">8</div>
+                                      <div class="line number9 index8 alt2">9</div>
+                                      <div class="line number10 index9 alt1">10</div>
+                                      <div class="line number11 index10 alt2">11</div>
+                                      <div class="line number12 index11 alt1">12</div>
+                                    </td>
+                                    <td class="code">
+                                      <div class="container">
+                                        <div class="line number1 index0 alt2"><code
+                                            class="html comments">&lt;!-- O: 모달 윈도우를 표시할 때 다른 요소를 차단 --&gt;</code></div>
+                                        <div class="line number2 index1 alt1"><code class="html plain">&lt;</code><code
+                                            class="html keyword">body</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number3 index2 alt2"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">div</code><code
+                                            class="html color1">class</code><code class="html plain">=</code><code
+                                            class="html string">"container"</code><code
+                                            class="html color1">aria-hidden</code><code class="html plain">=</code><code
+                                            class="html string">"true"</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number4 index3 alt1"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">// 보조기기가 무시하는 영역</code></div>
+                                        <div class="line number5 index4 alt2"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;/</code><code class="html keyword">div</code><code
+                                            class="html plain">&gt;</code></div>
+                                        <div class="line number6 index5 alt1"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">div</code><code
+                                            class="html color1">role</code><code class="html plain">=</code><code
+                                            class="html string">"alertdialog"</code><code
+                                            class="html color1">aria-modal</code><code class="html plain">=</code><code
+                                            class="html string">"true"</code><code
+                                            class="html color1">aria-labelledby</code><code
+                                            class="html plain">=</code><code class="html string">"TITLE"</code><code
+                                            class="html color1">aria-describedby</code><code
+                                            class="html plain">=</code><code
+                                            class="html string">"DESCRIPTION"</code><code class="html plain">&gt;</code>
+                                        </div>
+                                        <div class="line number7 index6 alt2"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">h2</code><code
+                                            class="html color1">id</code><code class="html plain">=</code><code
+                                            class="html string">"TITLE"</code><code
+                                            class="html plain">&gt;레진패스 안내&lt;/</code><code
+                                            class="html keyword">h2</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number8 index7 alt1"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">p</code><code
+                                            class="html color1">id</code><code class="html plain">=</code><code
+                                            class="html string">"DESCRIPTION"</code><code
+                                            class="html plain">&gt;이 작품의 유료 에피소드 열람 시 자동으로 구매합니다. 레진패스를 적용하시겠습니까?&lt;/</code><code
+                                            class="html keyword">p</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number9 index8 alt2"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">button</code><code
+                                            class="html color1">type</code><code class="html plain">=</code><code
+                                            class="html string">"button"</code><code
+                                            class="html plain">&gt;레진패스 적용&lt;/</code><code
+                                            class="html keyword">button</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number10 index9 alt1"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">button</code><code
+                                            class="html color1">type</code><code class="html plain">=</code><code
+                                            class="html string">"button"</code><code
+                                            class="html plain">&gt;취소&lt;/</code><code
+                                            class="html keyword">button</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number11 index10 alt2"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;/</code><code class="html keyword">div</code><code
+                                            class="html plain">&gt;</code></div>
+                                        <div class="line number12 index11 alt1"><code
+                                            class="html plain">&lt;/</code><code class="html keyword">body</code><code
+                                            class="html plain">&gt;</code></div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>탭 목록, 탭</td>
+                      <td>
+                        <ul>
+                          <li>role="tab"</li>
+                        </ul>
+                      </td>
+                      <td>
+                        role="tab", role="tablist" <br>
+                        * 현재 페이지 내용에 색인을 제공하는 구조 <br><br>
+                        <p>※유의사항</p>
+                        - role 속성은 값에 따라 적용할 수 있는 HTML 요소가 제한되어 있음 (예) role="tabpanel" 속성은 &lt;ul&gt;요소에서 사용 불가능
+                      </td>
+                      <td>
+                        <div class="g-code">
+                          <div>
+                            <div id="highlighter_518617" class="syntaxhighlighter  html">
+                              <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span>
+                              </div>
+                              <table border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="gutter">
+                                      <div class="line number1 index0 alt2">1</div>
+                                      <div class="line number2 index1 alt1">2</div>
+                                      <div class="line number3 index2 alt2">3</div>
+                                      <div class="line number4 index3 alt1">4</div>
+                                      <div class="line number5 index4 alt2">5</div>
+                                      <div class="line number6 index5 alt1">6</div>
+                                      <div class="line number7 index6 alt2">7</div>
+                                      <div class="line number8 index7 alt1">8</div>
+                                      <div class="line number9 index8 alt2">9</div>
+                                      <div class="line number10 index9 alt1">10</div>
+                                      <div class="line number11 index10 alt2">11</div>
+                                      <div class="line number12 index11 alt1">12</div>
+                                    </td>
+                                    <td class="code">
+                                      <div class="container">
+                                        <div class="line number1 index0 alt2"><code class="html plain">&lt;</code><code
+                                            class="html keyword">div</code><code class="html color1">class</code><code
+                                            class="html plain">=</code><code class="html string">"weekly"</code><code
+                                            class="html plain">&gt;</code></div>
+                                        <div class="line number2 index1 alt1"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">div</code><code
+                                            class="html color1">role</code><code class="html plain">=</code><code
+                                            class="html string">"tablist"</code><code class="html plain">&gt;</code>
+                                        </div>
+                                        <div class="line number3 index2 alt2"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">button</code><code
+                                            class="html color1">type</code><code class="html plain">=</code><code
+                                            class="html string">"button"</code><code class="html color1">id</code><code
+                                            class="html plain">=</code><code
+                                            class="html string">"mon-anchor"</code><code
+                                            class="html color1">aria-controls</code><code
+                                            class="html plain">=</code><code class="html string">"mon"</code><code
+                                            class="html color1">role</code><code class="html plain">=</code><code
+                                            class="html string">"tab"</code><code
+                                            class="html color1">aria-selected</code><code
+                                            class="html plain">=</code><code class="html string">"true"</code><code
+                                            class="html plain">&gt;월&lt;/</code><code
+                                            class="html keyword">button</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number4 index3 alt1"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">button</code><code
+                                            class="html color1">type</code><code class="html plain">=</code><code
+                                            class="html string">"button"</code><code class="html color1">id</code><code
+                                            class="html plain">=</code><code
+                                            class="html string">"tue-anchor"</code><code
+                                            class="html color1">aria-controls</code><code
+                                            class="html plain">=</code><code class="html string">"tue"</code><code
+                                            class="html color1">role</code><code class="html plain">=</code><code
+                                            class="html string">"tab"</code><code
+                                            class="html color1">aria-selected</code><code
+                                            class="html plain">=</code><code class="html string">"false"</code><code
+                                            class="html plain">&gt;화&lt;/</code><code
+                                            class="html keyword">button</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number5 index4 alt2"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;/</code><code class="html keyword">div</code><code
+                                            class="html plain">&gt;</code></div>
+                                        <div class="line number6 index5 alt1"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">div</code><code
+                                            class="html color1">id</code><code class="html plain">=</code><code
+                                            class="html string">"mon"</code><code
+                                            class="html color1">tabindex</code><code class="html plain">=</code><code
+                                            class="html string">"0"</code><code class="html color1">role</code><code
+                                            class="html plain">=</code><code class="html string">"tabpanel"</code><code
+                                            class="html color1">aria-labelledby</code><code
+                                            class="html plain">=</code><code
+                                            class="html string">"mon-anchor"</code><code class="html plain">&gt;</code>
+                                        </div>
+                                        <div class="line number7 index6 alt2"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">월요일엔 빨간 장미를...</code></div>
+                                        <div class="line number8 index7 alt1"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;/</code><code class="html keyword">div</code><code
+                                            class="html plain">&gt;</code></div>
+                                        <div class="line number9 index8 alt2"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">div</code><code
+                                            class="html color1">id</code><code class="html plain">=</code><code
+                                            class="html string">"tue"</code><code
+                                            class="html color1">tabindex</code><code class="html plain">=</code><code
+                                            class="html string">"0"</code><code class="html color1">role</code><code
+                                            class="html plain">=</code><code class="html string">"tabpanel"</code><code
+                                            class="html color1">aria-labelledby</code><code
+                                            class="html plain">=</code><code
+                                            class="html string">"tue-anchor"</code><code
+                                            class="html color1">hidden</code><code class="html plain">=</code><code
+                                            class="html string">""</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number10 index9 alt1"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">화요일엔 노란 장미를...</code></div>
+                                        <div class="line number11 index10 alt2"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;/</code><code class="html keyword">div</code><code
+                                            class="html plain">&gt;</code></div>
+                                        <div class="line number12 index11 alt1"><code
+                                            class="html plain">&lt;/</code><code class="html keyword">div</code><code
+                                            class="html plain">&gt;</code></div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>툴팁</td>
+                      <td>role="tooltip"</td>
+                      <td>
+                        * 앵커 또는 폼 콘트롤 요소에 대한 참고용으로 사용 <br>
+                        "role="tooltip" : 툴팁 요소에 명시<br><br>
+                        <p>※유의사항</p>
+                        - 툴팁을 노출시키는 앵커 또는 컨트롤에 aria-describedby="ID reference list" 속성을 명시하여 연결
+                      </td>
+                      <td>
+                        <div class="g-code">
+                          <div>
+                            <div id="highlighter_474251" class="syntaxhighlighter  html">
+                              <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span>
+                              </div>
+                              <table border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="gutter">
+                                      <div class="line number1 index0 alt2">1</div>
+                                      <div class="line number2 index1 alt1">2</div>
+                                      <div class="line number3 index2 alt2">3</div>
+                                      <div class="line number4 index3 alt1">4</div>
+                                      <div class="line number5 index4 alt2">5</div>
+                                      <div class="line number6 index5 alt1">6</div>
+                                      <div class="line number7 index6 alt2">7</div>
+                                      <div class="line number8 index7 alt1">8</div>
+                                    </td>
+                                    <td class="code">
+                                      <div class="container">
+                                        <div class="line number1 index0 alt2"><code
+                                            class="html comments">&lt;!-- O: 인풋 툴팁 --&gt;</code></div>
+                                        <div class="line number2 index1 alt1"><code class="html plain">&lt;</code><code
+                                            class="html keyword">label</code><code class="html color1">for</code><code
+                                            class="html plain">=</code><code class="html string">"tel"</code><code
+                                            class="html plain">&gt;전화번호&lt;/</code><code
+                                            class="html keyword">label</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number3 index2 alt2"><code class="html plain">&lt;</code><code
+                                            class="html keyword">input</code><code class="html color1">id</code><code
+                                            class="html plain">=</code><code class="html string">"tel"</code><code
+                                            class="html color1">type</code><code class="html plain">=</code><code
+                                            class="html string">"tel"</code><code
+                                            class="html color1">aria-describedby</code><code
+                                            class="html plain">=</code><code class="html string">"TIP-TEL"</code><code
+                                            class="html plain">&gt;</code></div>
+                                        <div class="line number4 index3 alt1"><code class="html plain">&lt;</code><code
+                                            class="html keyword">p</code><code class="html color1">id</code><code
+                                            class="html plain">=</code><code class="html string">"TIP-TEL"</code><code
+                                            class="html color1">role</code><code class="html plain">=</code><code
+                                            class="html string">"tooltip"</code><code
+                                            class="html color1">hidden</code><code class="html plain">=</code><code
+                                            class="html string">""</code><code
+                                            class="html plain">&gt;하이픈(-) 없이 숫자만 입력.&lt;/</code><code
+                                            class="html keyword">p</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number5 index4 alt2">&nbsp;</div>
+                                        <div class="line number6 index5 alt1"><code
+                                            class="html comments">&lt;!-- O: 버튼 툴팁 --&gt;</code></div>
+                                        <div class="line number7 index6 alt2"><code class="html plain">&lt;</code><code
+                                            class="html keyword">button</code><code
+                                            class="html color1">aria-describedby</code><code
+                                            class="html plain">=</code><code class="html string">"TIP-DEL"</code><code
+                                            class="html plain">&gt;게시물 삭제&lt;/</code><code
+                                            class="html keyword">button</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number8 index7 alt1"><code class="html plain">&lt;</code><code
+                                            class="html keyword">p</code><code class="html color1">id</code><code
+                                            class="html plain">=</code><code class="html string">"TIP-DEL"</code><code
+                                            class="html color1">role</code><code class="html plain">=</code><code
+                                            class="html string">"tooltip"</code><code
+                                            class="html color1">hidden</code><code class="html plain">=</code><code
+                                            class="html string">""</code><code
+                                            class="html plain">&gt;게시물 삭제 후 복원할 수 없음.&lt;/</code><code
+                                            class="html keyword">p</code><code class="html plain">&gt;</code></div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>실시간</td>
+                      <td>aria-live="assertive"</td>
+                      <td>
+                        * 실시간으로 내용 갱신되는 영역에 사용 <br>
+                        "role="tooltip" : 툴팁 요소에 명시<br>
+                        실시간으로 내용을 갱신하는 모든 영역(채팅, 오류, 로그, 상태 표시)에 사용함<br><br>
+                        <p>※유의사항</p>
+                        - assertive값은 중요도가 높은 내용에 사용하여 현재 진행중인 보조기기 작업을 중단하고 갱신 내용을 즉시 사용자에게 전달함
+                      </td>
+                      <td>
+                        <div class="g-code">
+                          <div>
+                            <div id="highlighter_863479" class="syntaxhighlighter  html">
+                              <div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span>
+                              </div>
+                              <table border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="gutter">
+                                      <div class="line number1 index0 alt2">1</div>
+                                      <div class="line number2 index1 alt1">2</div>
+                                      <div class="line number3 index2 alt2">3</div>
+                                      <div class="line number4 index3 alt1">4</div>
+                                    </td>
+                                    <td class="code">
+                                      <div class="container">
+                                        <div class="line number1 index0 alt2"><code
+                                            class="html comments">&lt;!-- O: 알럿 --&gt;</code></div>
+                                        <div class="line number2 index1 alt1"><code class="html plain">&lt;</code><code
+                                            class="html keyword">div</code> <code class="html color1">role</code><code
+                                            class="html plain">=</code><code class="html string">"alert"</code> <code
+                                            class="html color1">aria-live</code><code class="html plain">=</code><code
+                                            class="html string">"assertive"</code><code class="html plain">&gt;</code>
+                                        </div>
+                                        <div class="line number3 index2 alt2"><code
+                                            class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code
+                                            class="html plain">&lt;</code><code class="html keyword">p</code><code
+                                            class="html plain">&gt;로그인 후 이용할 수 있습니다.&lt;/</code><code
+                                            class="html keyword">p</code><code class="html plain">&gt;</code></div>
+                                        <div class="line number4 index3 alt1"><code class="html plain">&lt;/</code><code
+                                            class="html keyword">div</code><code class="html plain">&gt;</code></div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </section>
+          <!-- //section1 -->
+
+          <!-- section2 -->
+          <section id="section2" class="g-section g-in-sec">
+            <div class="g-section-header">
+              <h3 class="g-h2">접근성 작업 시 유의사항</h3>
+            </div>
+            <div class="g-section-body">
+              <ul class="g-desc">
+                <li>반드시 읽어야 할 정보에는 visibility:hidden;과 display:none; 속성은 사용하지 않는다. (예: &lt;h*&gt;태그 제공)</li>
+              </ul>
+            </div>
+          </section>
+          <!-- //section2 -->
+
+          <!-- section3 -->
+          <section id="section3" class="g-section g-in-sec">
+            <div class="g-section-header">
+              <h3 class="g-h2">접근성 문의(feadback. 장총연)</h3>
+            </div>
+            <div class="g-section-body">
+              <p class="g-tit"><strong>Q) 접/펼침 컨텐츠에서 title= 열림 , 닫힘 의 알림은 필수인가요?<br>title제공 대신에 WAI-ARIA를 활용한
+                  aria-expanded를 추가하는 것으로 대체가 될까요? </strong></p>
+              <p class="g-conts"><br>
+                A) 접/펼침 컨텐츠에서 접/펼침 기능부분만 (예시 : "+", "-", "V", "^" 버튼 등) 단독으로 되어있는 링크의 경우에는 접/펼침 상태를 알 수 있는 접근성 준수는
+                필수입니다. 그 외의 경우에는 경우에 따라 제공하지 않아도 되는 경우도 있습니다. 해당 내용은 aria-expanded 속성으로도 대체 가능합니다. 다만 구조나 제공방법에 따라 음성낭독
+                프로그램에서 인식이 어려운 경우도 있어 title로 제공을 권고드립니다. </p> <br><br>
+
+              <p class="g-tit"><strong>Q) 모바일에서 레이어팝업 사용 시 aria-hidden을 사용하여 노출되어 있는 팝업에는 true, 바닥 페이지에는 false를 제공하는 것도
+                  필수인가요? <br>ARIA를 제공하지 않고 키보드만 팝업 내로 정상적으로 진입하면 오류가 아닌지 궁금합니다.</strong></p>
+              <p class="g-conts"> <br>
+                A) 모바일 레이어팝업의 경우도 구현방법에 따라 준수 여부가 다를 것으로 보입니다. 보이스오버, TalkBack 에서 정상적으로 팝업내로 진입하면 준수입니다. aria-hidden
+                뿐만아니라 레이어팝업을 띄우는 링크나 버튼, href="#"의 여부나 자바스크립트의 구현방식 등에 따라 다르기때문에 기본적으로 준수가능한 접근성을 우선적으로 적용해주시고 실제 심사시에
+                일부 추가 나오는 접근성 오류 부분에 대해서 추가적으로 개선을 진행해주시면 될 것 같습니다.
+                기본적으로 ARIA로도 마크 획등이 가능합니다.
+                다만 기능구현이나 구조 등과 같은 상황에 따른 음성낭독 프로그램의 인식 이슈가 있어 title을 통한 접근성 제공을 권고드립니다.</p> <br><br>
+
+              <p class="g-tit"><strong>Q) 메인 화면에서 상단 배너영역에 자동으로 재생되는 유튜브 영상을 삽입할 경우 접근성을 준수하려면 어디까지 맞춰야 하는지요? 유튜브 영상은 자체
+                  자막이 있어 자막은 그걸로 대체가 가능한지(텍스트 정보가 있는 영상인 경우), 자동으로 재생되어도 괜찮은지 문의드립니다.</strong></p>
+              <p class="g-conts"><br>
+                A) 페이지에 포함된 컨텐츠라고 사용자는 인지하므로 모든 접근성 항목에 대한 심사가 이루어 집니다. <br>
+                : 자동재생은 소리를 사용하지 않았거나 3초 이내 또는 바로 정지 할 수 있는 소리 콘텐츠를 사용한 경우 준수한 것으로 인정됩니다. <br>
+                : 자막은 자체자막 추가자막 등 가능하며, 영상의 내용과 일치할 경우 준수로 인정됩니다. (음성, 텍스트에 대한 정보를 유투브 자체자막에 제공 또는 영상 하단에 원고로 제공 모두 가능)
+              </p><br><br>
+
+              <p class="g-tit"><strong>Q) 날짜 선택 시 datepicker를 사용하려고 하는데 input에 직접 입력이 되면 접근성 위배되지 않는건가요? </strong></p>
+              <p class="g-conts"><br>
+                A) 접근성이 준수된 datepicker를 사용하거나, 그것이 불가능할 경우 직접입력과 수정이 가능하게 하고 오류 방지 수단을 제공해 주시면 심사를 통해 대체가 가능한지 확인하게 됩니다.
+              </p><br><br>
+            </div>
+          </section>
+          <!-- //section3 -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- script add -->
+<script type="text/javascript" src="../js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="../js/lib/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+
+</html>

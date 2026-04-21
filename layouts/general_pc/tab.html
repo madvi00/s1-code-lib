@@ -60,28 +60,42 @@
             </div>
           </div>
           <div class="component-preview" style="flex-direction:column; gap:8px; align-items:flex-start;">
-            <div class="btn-group">
-              <button type="button" class="btn btn-white on" id="tab1">항목</button>
-              <button type="button" class="btn btn-white" id="tab2">항목</button>
-              <button type="button" class="btn btn-white" id="tab3">항목</button>
+            <div class="btn-group" role="tablist">
+              <button type="button" class="btn btn-white on" id="tab1" role="tab" aria-selected="true" aria-controls="panel1">항목</button>
+              <button type="button" class="btn btn-white" id="tab2" role="tab" aria-selected="false" aria-controls="panel2">항목</button>
+              <button type="button" class="btn btn-white" id="tab3" role="tab" aria-selected="false" aria-controls="panel3">항목</button>
             </div>
-            <div class="btn-group">
-              <button type="button" class="btn btn-white" id="tab4">항목</button>
-              <button type="button" class="btn btn-white on" id="tab5">항목</button>
-              <button type="button" class="btn btn-white" id="tab6">항목</button>
+            <div id="panel1" role="tabpanel" aria-labelledby="tab1"></div>
+            <div id="panel2" role="tabpanel" aria-labelledby="tab2" hidden></div>
+            <div id="panel3" role="tabpanel" aria-labelledby="tab3" hidden></div>
+            <div class="btn-group" role="tablist">
+              <button type="button" class="btn btn-white" id="tab4" role="tab" aria-selected="false" aria-controls="panel4">항목</button>
+              <button type="button" class="btn btn-white on" id="tab5" role="tab" aria-selected="true" aria-controls="panel5">항목</button>
+              <button type="button" class="btn btn-white" id="tab6" role="tab" aria-selected="false" aria-controls="panel6">항목</button>
             </div>
-            <div class="btn-group">
-              <button type="button" class="btn btn-white" id="day1">일별</button>
-              <button type="button" class="btn btn-white" id="day7">주별</button>
-              <button type="button" class="btn btn-white on" id="day30">월별</button>
+            <div id="panel4" role="tabpanel" aria-labelledby="tab4" hidden></div>
+            <div id="panel5" role="tabpanel" aria-labelledby="tab5"></div>
+            <div id="panel6" role="tabpanel" aria-labelledby="tab6" hidden></div>
+            <div class="btn-group" role="tablist">
+              <button type="button" class="btn btn-white" id="day1" role="tab" aria-selected="false" aria-controls="panel-day1">일별</button>
+              <button type="button" class="btn btn-white" id="day7" role="tab" aria-selected="false" aria-controls="panel-day7">주별</button>
+              <button type="button" class="btn btn-white on" id="day30" role="tab" aria-selected="true" aria-controls="panel-day30">월별</button>
             </div>
-            <div class="btn-group">
-              <button type="button" class="btn btn-white on" id="tab7">항목</button>
-              <button type="button" class="btn btn-white" id="tab8">항목</button>
-              <button type="button" class="btn btn-white" id="tab9">항목</button>
-              <button type="button" class="btn btn-white" id="tab10">항목</button>
-              <button type="button" class="btn btn-white" id="tab11">항목</button>
+            <div id="panel-day1" role="tabpanel" aria-labelledby="day1" hidden></div>
+            <div id="panel-day7" role="tabpanel" aria-labelledby="day7" hidden></div>
+            <div id="panel-day30" role="tabpanel" aria-labelledby="day30"></div>
+            <div class="btn-group" role="tablist">
+              <button type="button" class="btn btn-white on" id="tab7" role="tab" aria-selected="true" aria-controls="panel7">항목</button>
+              <button type="button" class="btn btn-white" id="tab8" role="tab" aria-selected="false" aria-controls="panel8">항목</button>
+              <button type="button" class="btn btn-white" id="tab9" role="tab" aria-selected="false" aria-controls="panel9">항목</button>
+              <button type="button" class="btn btn-white" id="tab10" role="tab" aria-selected="false" aria-controls="panel10">항목</button>
+              <button type="button" class="btn btn-white" id="tab11" role="tab" aria-selected="false" aria-controls="panel11">항목</button>
             </div>
+            <div id="panel7" role="tabpanel" aria-labelledby="tab7"></div>
+            <div id="panel8" role="tabpanel" aria-labelledby="tab8" hidden></div>
+            <div id="panel9" role="tabpanel" aria-labelledby="tab9" hidden></div>
+            <div id="panel10" role="tabpanel" aria-labelledby="tab10" hidden></div>
+            <div id="panel11" role="tabpanel" aria-labelledby="tab11" hidden></div>
           </div>
         </div>
 
@@ -92,18 +106,26 @@
             </div>
           </div>
           <div class="component-preview" style="flex-direction:column; gap:8px; align-items:flex-start;">
-            <div class="btn-group">
-              <button type="button" class="btn btn-white btn-medium on" id="tab12">항목</button>
-              <button type="button" class="btn btn-white btn-medium" id="tab13">항목</button>
-              <button type="button" class="btn btn-white btn-medium" id="tab14">항목</button>
+            <div class="btn-group" role="tablist">
+              <button type="button" class="btn btn-white btn-medium on" id="tab12" role="tab" aria-selected="true" aria-controls="panel12">항목</button>
+              <button type="button" class="btn btn-white btn-medium" id="tab13" role="tab" aria-selected="false" aria-controls="panel13">항목</button>
+              <button type="button" class="btn btn-white btn-medium" id="tab14" role="tab" aria-selected="false" aria-controls="panel14">항목</button>
             </div>
-            <div class="btn-group">
-              <button type="button" class="btn btn-white btn-medium on" id="tab15">항목</button>
-              <button type="button" class="btn btn-white btn-medium" id="tab16">항목</button>
-              <button type="button" class="btn btn-white btn-medium" id="tab17">항목</button>
-              <button type="button" class="btn btn-white btn-medium" id="tab18">항목</button>
-              <button type="button" class="btn btn-white btn-medium" id="tab19">항목</button>
+            <div id="panel12" role="tabpanel" aria-labelledby="tab12"></div>
+            <div id="panel13" role="tabpanel" aria-labelledby="tab13" hidden></div>
+            <div id="panel14" role="tabpanel" aria-labelledby="tab14" hidden></div>
+            <div class="btn-group" role="tablist">
+              <button type="button" class="btn btn-white btn-medium on" id="tab15" role="tab" aria-selected="true" aria-controls="panel15">항목</button>
+              <button type="button" class="btn btn-white btn-medium" id="tab16" role="tab" aria-selected="false" aria-controls="panel16">항목</button>
+              <button type="button" class="btn btn-white btn-medium" id="tab17" role="tab" aria-selected="false" aria-controls="panel17">항목</button>
+              <button type="button" class="btn btn-white btn-medium" id="tab18" role="tab" aria-selected="false" aria-controls="panel18">항목</button>
+              <button type="button" class="btn btn-white btn-medium" id="tab19" role="tab" aria-selected="false" aria-controls="panel19">항목</button>
             </div>
+            <div id="panel15" role="tabpanel" aria-labelledby="tab15"></div>
+            <div id="panel16" role="tabpanel" aria-labelledby="tab16" hidden></div>
+            <div id="panel17" role="tabpanel" aria-labelledby="tab17" hidden></div>
+            <div id="panel18" role="tabpanel" aria-labelledby="tab18" hidden></div>
+            <div id="panel19" role="tabpanel" aria-labelledby="tab19" hidden></div>
           </div>
         </div>
 

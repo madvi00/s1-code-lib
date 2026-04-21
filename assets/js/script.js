@@ -122,17 +122,14 @@ function switchPlatform(platform) {
     btn.classList.toggle('active', btn.dataset.platform === platform);
   });
 
-  // 2. 토큰 + 컴포넌트 CSS 교체 (lib-style.css는 항상 유지)
-  const pcComp   = document.getElementById('pc-components');
-  const mobVars  = document.getElementById('mobile-variables');
-  const mobComp  = document.getElementById('mobile-components');
+  // 2. 컴포넌트 CSS 교체 (variables.css는 항상 유지, lib-style.css는 항상 유지)
+  const pcComp  = document.getElementById('pc-components');
+  const mobComp = document.getElementById('mobile-components');
   if (platform === 'mobile') {
     pcComp.disabled  = true;
-    mobVars.disabled = false;
     mobComp.disabled = false;
   } else {
     pcComp.disabled  = false;
-    mobVars.disabled = true;
     mobComp.disabled = true;
   }
 

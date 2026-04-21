@@ -1,5 +1,5 @@
 @charset "UTF-8";
 
 /* pc-style.css — PC 컴포넌트 스타일 래퍼 */
-@import url('./pc-variables.css');
+@import url('./variables.css');
 @import url('./pc-components.css');

@@ -50,8 +50,31 @@
 
     var modalId = btn.getAttribute('data-modal');
     var modal = document.getElementById(modalId);
-    if (!modal || window.parent === window) return;
+    if (!modal) return;
 
+    // 새 창(standalone) 모드: 현재 document에서 직접 표시
+    if (window.parent === window) {
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+
+      function closeModal() {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      var dim = modal.querySelector('.dim');
+      var btnClose = modal.querySelector('.btn-close');
+      if (dim) dim.addEventListener('click', closeModal, { once: true });
+      if (btnClose) btnClose.addEventListener('click', closeModal, { once: true });
+
+      function onEsc(ev) {
+        if (ev.key === 'Escape') { closeModal(); document.removeEventListener('keydown', onEsc); }
+      }
+      document.addEventListener('keydown', onEsc);
+      return;
+    }
+
+    // iframe 모드: 부모 document에 모달 복사 후 삽입
     var pdoc = window.parent.document;
 
     // 기존 데모 모달 제거
@@ -65,7 +88,7 @@
     pdoc.body.appendChild(clone);
     pdoc.body.style.overflow = 'hidden';
 
-    function closeModal() {
+    function closeModalIframe() {
       var el = pdoc.getElementById('__iframe_modal__');
       if (el) el.remove();
       pdoc.body.style.overflow = '';
@@ -73,11 +96,11 @@
 
     var dim = clone.querySelector('.dim');
     var btnClose = clone.querySelector('.btn-close');
-    if (dim) dim.addEventListener('click', closeModal);
-    if (btnClose) btnClose.addEventListener('click', closeModal);
+    if (dim) dim.addEventListener('click', closeModalIframe);
+    if (btnClose) btnClose.addEventListener('click', closeModalIframe);
 
     function onEsc(ev) {
-      if (ev.key === 'Escape') { closeModal(); pdoc.removeEventListener('keydown', onEsc); }
+      if (ev.key === 'Escape') { closeModalIframe(); pdoc.removeEventListener('keydown', onEsc); }
     }
     pdoc.addEventListener('keydown', onEsc);
   }, true);
@@ -104,13 +127,13 @@
             <button type="button" class="btn btn-blue btn-medium btn-modal" data-modal="modal-01">
               <span>Open</span>
             </button>
-            <div id="modal-01" class="modal">
+            <div id="modal-01" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-01-title">
               <div class="dim"></div>
               <div class="modal-container">
                 <div class="modal-area">
                   <div class="modal-top">
                     <div class="modal-title-box">
-                      <span class="title">타이틀 텍스트</span>
+                      <span class="title" id="modal-01-title">타이틀 텍스트</span>
                     </div>
                   </div>
                   <div class="modal-middle">
@@ -125,7 +148,7 @@
                       </button>
                     </div>
                   </div>
-                  <button type="button" class="btn-close" title="팝업창 닫기 버튼"></button>
+                  <button type="button" class="btn-close" title="팝업창 닫기 버튼" aria-label="팝업창 닫기"></button>
                 </div>
               </div>
             </div>
@@ -142,23 +165,28 @@
             <button type="button" class="btn btn-blue btn-medium btn-modal" data-modal="modal-02">
               <span>Open</span>
             </button>
-            <div id="modal-02" class="modal size-md">
+            <div id="modal-02" class="modal size-md" role="dialog" aria-modal="true" aria-labelledby="modal-02-title">
               <div class="dim"></div>
               <div class="modal-container">
                 <div class="modal-area">
                   <div class="modal-top">
                     <div class="modal-title-box">
-                      <span class="title">타이틀 텍스트</span>
+                      <span class="title" id="modal-02-title">타이틀 텍스트</span>
                     </div>
                   </div>
                   <div class="modal-middle">
                     <div class="modal-content-box">
-                      <div class="image-box">
-                        <img src="../../assets/images/dummy/img.jpg" alt="이미지" />
-                      </div>
+                      <p class="text">팝업 컨텐츠 텍스트</p>
                     </div>
                   </div>
-                  <button type="button" class="btn-close" title="팝업창 닫기 버튼"></button>
+                  <div class="modal-bottom">
+                    <div class="modal-button-box">
+                      <button type="button" class="btn btn-blue btn-small">
+                        <span>확인</span>
+                      </button>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-close" title="팝업창 닫기 버튼" aria-label="팝업창 닫기"></button>
                 </div>
               </div>
             </div>
@@ -175,23 +203,28 @@
             <button type="button" class="btn btn-blue btn-medium btn-modal" data-modal="modal-03">
               <span>Open</span>
             </button>
-            <div id="modal-03" class="modal size-lg">
+            <div id="modal-03" class="modal size-lg" role="dialog" aria-modal="true" aria-labelledby="modal-03-title">
               <div class="dim"></div>
               <div class="modal-container">
                 <div class="modal-area">
                   <div class="modal-top">
                     <div class="modal-title-box">
-                      <span class="title">타이틀 텍스트</span>
+                      <span class="title" id="modal-03-title">타이틀 텍스트</span>
                     </div>
                   </div>
                   <div class="modal-middle">
                     <div class="modal-content-box">
-                      <div class="image-box">
-                        <img src="../../assets/images/dummy/img.jpg" alt="이미지" />
-                      </div>
+                      <p class="text">팝업 컨텐츠 텍스트</p>
                     </div>
                   </div>
-                  <button type="button" class="btn-close" title="팝업창 닫기 버튼"></button>
+                  <div class="modal-bottom">
+                    <div class="modal-button-box">
+                      <button type="button" class="btn btn-blue btn-small">
+                        <span>확인</span>
+                      </button>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-close" title="팝업창 닫기 버튼" aria-label="팝업창 닫기"></button>
                 </div>
               </div>
             </div>
@@ -208,23 +241,28 @@
             <button type="button" class="btn btn-blue btn-medium btn-modal" data-modal="modal-04">
               <span>Open</span>
             </button>
-            <div id="modal-04" class="modal size-xl">
+            <div id="modal-04" class="modal size-xl" role="dialog" aria-modal="true" aria-labelledby="modal-04-title">
               <div class="dim"></div>
               <div class="modal-container">
                 <div class="modal-area">
                   <div class="modal-top">
                     <div class="modal-title-box">
-                      <span class="title">타이틀 텍스트</span>
+                      <span class="title" id="modal-04-title">타이틀 텍스트</span>
                     </div>
                   </div>
                   <div class="modal-middle">
                     <div class="modal-content-box">
-                      <div class="image-box">
-                        <img src="../../assets/images/dummy/img.jpg" alt="이미지" />
-                      </div>
+                      <p class="text">팝업 컨텐츠 텍스트</p>
                     </div>
                   </div>
-                  <button type="button" class="btn-close" title="팝업창 닫기 버튼"></button>
+                  <div class="modal-bottom">
+                    <div class="modal-button-box">
+                      <button type="button" class="btn btn-blue btn-small">
+                        <span>확인</span>
+                      </button>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-close" title="팝업창 닫기 버튼" aria-label="팝업창 닫기"></button>
                 </div>
               </div>
             </div>

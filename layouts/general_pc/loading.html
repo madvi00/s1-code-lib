@@ -24,17 +24,12 @@
       <div class="general-middle">
 
         <div class="component-block">
-          <div class="component-block-header">
-            <div>
-              <div class="component-block-title">Loading</div>
-            </div>
-          </div>
           <div class="component-preview">
             <button type="button" class="btn btn-blue btn-medium" id="btn-show-loading">
               <span>Show Loading</span>
             </button>
-            <div class="loading-box" id="loading-preview" style="display:none; position:static; background:rgba(0,0,0,0.35); border-radius:8px; width:100%; min-height:120px;">
-              <img src="../../assets/images/loading_dots.gif" alt="loading" />
+            <div class="loading-box" id="loading-preview" role="status" aria-live="polite" aria-label="로딩 중" style="display:none; position:static; background:rgba(0,0,0,0.35); border-radius:8px; width:100%; min-height:120px;">
+              <img src="../../assets/images/loading_dots.gif" alt="로딩 중" />
             </div>
           </div>
         </div>
@@ -59,7 +54,7 @@
     box.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);';
 
     var img = pdoc.createElement('img');
-    img.src = 'assets/images/loading_dots.gif';
+    img.src = window.parent !== window ? 'assets/images/loading_dots.gif' : '../../assets/images/loading_dots.gif';
     img.alt = 'loading';
     img.style.cssText = 'width:150px;height:auto;';
     box.appendChild(img);
