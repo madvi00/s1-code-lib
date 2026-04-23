@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
 
 <head>
@@ -31,14 +31,14 @@
   <script src="../../assets/js/file.js"></script>
   <script src="../../assets/js/input.js"></script>
   <script src="../../assets/js/modal.js"></script>
-  <script src="../../assets/js/multiDropdown.js"></script>
-  <script src="../../assets/js/rangeTimePicker.js"></script>
-  <script src="../../assets/js/routeAccordion.js"></script>
+  <script src="../../assets/js/multi-dropdown.js"></script>
+  <script src="../../assets/js/range-time-picker.js"></script>
+  <script src="../../assets/js/route-accordion.js"></script>
   <script src="../../assets/js/tab.js"></script>
-  <script src="../../assets/js/timePicker.js"></script>
-  <title>Guide | Dropdown</title>
+  <script src="../../assets/js/time-picker.js"></script>
+  <title>Guide | Multi Dropdown</title>
   <style>
-    .field-dropdown {
+    .field-multi-dropdown {
       width: 180px;
       max-width: 180px;
       flex: none;
@@ -51,27 +51,27 @@
       <div class="general-area">
         <div class="general-top">
           <div class="general-label">Component</div>
-          <div class="general-title">Dropdown</div>
+          <div class="general-title">Multi Dropdown</div>
         </div>
         <div class="general-middle">
           <div class="component-block">
             <div class="component-preview">
-              <div class="field field-dropdown field-dropdown-type-label field-small has-label">
+              <div class="field field-multi-dropdown">
                 <div class="field-form">
                   <!-- 숨겨진 select 태그 -->
-                  <select class="dropdown-select" style="display: none">
-                    >
-                    <option value="전체" active>전체</option>
-                    <option value="OPTION2">OPTION1</option>
-                    <option value="OPTION3">OPTION2</option>
-                    <option value="OPTION4">OPTION3</option>
+                  <select class="dropdown-select" multiple style="display: none">
+                    <option value="" selected disabled>Placeholder</option>
+                    <option value="OPTION1" selected>
+                      OPTION1
+                    </option>
+                    <option value="OPTION2">
+                      OPTION2
+                    </option>
+                    <option value="OPTION3">
+                      OPTION3
+                    </option>
                   </select>
-                  <button type="button" class="btn-dropdown">
-                    <span class="inner-label">
-                      <span>@@title</span>
-                      <strong class="selected-label">전체</strong>
-                    </span>
-                  </button>
+                  <input type="text" id="id" class="btn-dropdown" placeholder="Placeholder" value="" readonly />
                   <div class="dropdown-list-box">
                     <div class="dim"></div>
                     <div class="dropdown-list-wrap">
@@ -80,24 +80,28 @@
                         <button type="button" class="btn-close"></button>
                       </div>
                       <div class="dropdown-list-body">
-                        <div class="dropdown-list active">
-                          <button type="button" class="btn-dropdown-list" data-value="전체">
-                            <span>전체</span>
-                          </button>
-                        </div>
-                        <div class="dropdown-list">
-                          <button type="button" class="btn-dropdown-list" data-value="OPTION2">
+                        <div class="checkbox-group">
+                          <label for="portal">
+                            <input type="checkbox" id="portal" name="portal" value="OPTION1" checked />
                             <span>OPTION1</span>
-                          </button>
-                        </div>
-                        <div class="dropdown-list">
-                          <button type="button" class="btn-dropdown-list" data-value="OPTION3">
+                          </label>
+                          <label for="control">
+                            <input type="checkbox" id="control" name="control" value="OPTION2" />
                             <span>OPTION2</span>
-                          </button>
-                        </div>
-                        <div class="dropdown-list">
-                          <button type="button" class="btn-dropdown-list" data-value="OPTION4">
+                          </label>
+                          <label for="app">
+                            <input type="checkbox" id="app" name="app" value="OPTION3" />
                             <span>OPTION3</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="dropdown-list-footer">
+                        <div class="button-box">
+                          <button type="button" class="btn btn-white">
+                            <span>취소</span>
+                          </button>
+                          <button type="button" class="btn btn-blue">
+                            <span>선택</span>
                           </button>
                         </div>
                       </div>

@@ -1,7 +1,24 @@
 {
   "permissions": {
     "allow": [
-      "Bash(xxd)"
+      "Bash(xxd)",
+      "Bash(mv layouts/general_pc/filterChip.html layouts/general_pc/filter-chip.html)",
+      "Bash(mv layouts/general_pc/generalBasic.html layouts/general_pc/general-basic.html)",
+      "Bash(mv layouts/general_pc/rangeTimePicker.html layouts/general_pc/range-time-picker.html)",
+      "Bash(mv layouts/general_pc/routeAccordion.html layouts/general_pc/route-accordion.html)",
+      "Bash(mv layouts/general_pc/timePicker.html layouts/general_pc/time-picker.html)",
+      "Bash(mv multiDropdown.js multi-dropdown.js)",
+      "Bash(mv rangeTimePicker.js range-time-picker.js)",
+      "Bash(mv timePicker.js time-picker.js)",
+      "Bash(mv routeAccordion.js route-accordion.js)",
+      "Bash(mv amobe_rangeTimePicker.js amobe_range-time-picker.js)",
+      "Bash(xargs -I{} sed -i 's/^\\\\xef\\\\xbb\\\\xbf//' {})",
+      "Bash(grep -c \"\\\\\\\\\\\\\\\\t\")",
+      "Bash(grep \"\\\\\\\\\\\\\\\\t\")",
+      "Bash(git config *)"
+    ],
+    "additionalDirectories": [
+      "c:\\dev\\GitHub\\s1-code-lib\\assets\\fonts\\Pretendard"
     ]
   }
 }

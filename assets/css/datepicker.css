@@ -1,3 +1,4 @@
+@charset "utf-8";
 /*!
  * Datepicker for Bootstrap
  *
@@ -15,8 +16,8 @@
   border-radius: 4px;
   direction: ltr;
   /*.dow {
-		border-top: 1px solid #ddd !important;
-	}*/
+    border-top: 1px solid #ddd !important;
+  }*/
 
 }
 .datepicker-inline {
