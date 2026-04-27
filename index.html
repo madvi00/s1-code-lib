@@ -6,11 +6,6 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>에스원 UI 코드 라이브러리</title>
-  <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap"
-    rel="stylesheet" />
   <!-- 라이브러리 레이아웃: 항상 활성 -->
   <link href="assets/css/lib-style.css" id="lib-style" rel="stylesheet" />
   <!-- Datepicker -->
@@ -61,14 +56,14 @@
     <!-- Platform Toggle -->
     <div class="platform-toggle-bar">
       <button class="platform-btn active" data-platform="pc" onclick="switchPlatform('pc')">
-        <svg fill="none" height="14" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="14">
+        <svg fill="none" height="14" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="14">
           <rect height="10" rx="1.5" width="14" x="1" y="2"></rect>
           <path d="M5 14h6M8 12v2"></path>
         </svg>
         PC
       </button>
       <button class="platform-btn" data-platform="mobile" onclick="switchPlatform('mobile')">
-        <svg fill="none" height="14" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="14">
+        <svg fill="none" height="14" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="14">
           <rect height="14" rx="2" width="8" x="4" y="1"></rect>
           <circle cx="8" cy="12.5" fill="currentColor" r="0.8" stroke="none"></circle>
         </svg>
@@ -96,7 +91,7 @@
       <div class="sidebar-section-label">시작하기</div>
       <nav class="sidebar-nav">
         <a class="active" data-page="overview" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="6" rx="1.5" width="6" x="1" y="1"></rect>
             <rect height="6" rx="1.5" width="6" x="9" y="1"></rect>
             <rect height="6" rx="1.5" width="6" x="1" y="9"></rect>
@@ -105,13 +100,13 @@
           <span>개요
           </span></a>
         <a data-page="getting-started" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <path d="M2 8h12M8 2v12"></path>
           </svg>
           <span>시작하기 (Getting Started)
           </span></a>
         <a data-page="tokens" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <circle cx="8" cy="8" r="6"></circle>
             <circle cx="8" cy="8" r="2"></circle>
           </svg>
@@ -123,90 +118,100 @@
       <div class="sidebar-section-label">컴포넌트</div>
       <nav class="sidebar-nav">
         <a data-page="badge" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <rect height="6" rx="3" width="14" x="1" y="5"></rect>
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+            <rect height="5" rx="2.5" width="10" x="3" y="5.5"></rect>
+            <circle cx="5.5" cy="8" fill="currentColor" r="1.5" stroke="none"></circle>
           </svg>
           <span>Badge
           </span></a><a data-page="button" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <rect height="8" rx="2" width="14" x="1" y="4"></rect>
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+            <rect height="8" rx="3" width="12" x="2" y="4"></rect>
+            <line x1="5" x2="11" y1="8" y2="8" stroke-width="2"></line>
           </svg>
           <span>Button
           </span></a><a data-page="checkbox" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="12" rx="2.5" width="12" x="2" y="2"></rect>
             <polyline points="5,8 7,10.5 11,6"></polyline>
           </svg>
           <span>Checkbox
           </span></a><a data-page="chip" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <rect height="6" rx="3" width="12" x="2" y="5"></rect>
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+            <path d="M2 4h12l-4 5v3.5l-4-2V9z"></path>
           </svg>
           <span>Filter Chip
           </span></a><a data-page="datepicker" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="11" rx="1.5" width="12" x="2" y="3"></rect>
             <path d="M2 7h12M6 2v2M10 2v2"></path>
           </svg>
           <span>Datepicker
           </span></a><a data-page="dropdown" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="6" rx="1.5" width="14" x="1" y="3"></rect>
             <path d="M4 13h8M5.5 11l2.5 3 2.5-3"></path>
           </svg>
           <span>Dropdown
           </span></a><a data-page="input" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="8" rx="2" width="14" x="1" y="4"></rect>
-            <line x1="4" x2="4" y1="8" y2="8"></line>
+            <line x1="4" x2="4" y1="6.5" y2="9.5" stroke-width="1.5"></line>
+            <line x1="3" x2="5" y1="6.5" y2="6.5" stroke-width="1"></line>
+            <line x1="3" x2="5" y1="9.5" y2="9.5" stroke-width="1"></line>
+            <line x1="6" x2="11" y1="8" y2="8" stroke-width="1"></line>
           </svg>
           <span>Input
           </span></a><a data-page="loading" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <circle cx="8" cy="8" r="6"></circle>
-            <path d="M8 4v4l2.5 2"></path>
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+            <circle cx="3.5" cy="8" fill="currentColor" r="1.8" stroke="none"></circle>
+            <circle cx="8" cy="8" fill="currentColor" r="1.8" stroke="none"></circle>
+            <circle cx="12.5" cy="8" fill="currentColor" r="1.8" stroke="none"></circle>
           </svg>
           <span>Loading
           </span></a><a data-page="modal" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="12" rx="2" width="12" x="2" y="2"></rect>
             <line x1="5" x2="11" y1="6" y2="6"></line>
             <line x1="5" x2="9" y1="9" y2="9"></line>
           </svg>
           <span>Modal
           </span></a><a data-page="radio" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <circle cx="8" cy="8" r="6"></circle>
             <circle cx="8" cy="8" fill="currentColor" r="2.5" stroke="none"></circle>
           </svg>
           <span>Radio
           </span></a><a data-page="rangetimepicker" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <circle cx="5" cy="8" r="3.5"></circle>
-            <circle cx="11" cy="8" r="3.5"></circle>
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+            <circle cx="4.5" cy="8" r="3.5"></circle>
+            <path d="M4.5 6V8l1.2 1"></path>
+            <path d="M9 8h1.5"></path>
+            <path d="M9.8 6.5l1.7 1.5-1.7 1.5"></path>
+            <circle cx="13.5" cy="8" r="2"></circle>
+            <path d="M13.5 7V8l0.8 0.7"></path>
           </svg>
           <span>Range TimePicker
           </span></a><a data-page="routeaccordion" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <path d="M2 5h12M2 9h12M2 13h8"></path>
             <path d="M11 11l2 2 2-2"></path>
           </svg>
           <span>Accordion
           </span></a><a data-page="tab" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="4" rx="1" width="5" x="1" y="4"></rect>
             <rect height="4" rx="1" width="4" x="7" y="4"></rect>
             <line x1="1" x2="15" y1="11" y2="11"></line>
           </svg>
           <span>Tab
           </span></a><a data-page="timepicker" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <circle cx="8" cy="8" r="6"></circle>
             <path d="M8 5v3l2 2"></path>
           </svg>
           <span>Time Picker
           </span></a><a data-page="weatherwidget" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <circle cx="9" cy="6" r="3"></circle>
             <path d="M2 13c0-2.5 2-4 5-4h3c2 0 3 1 3 3"></path>
           </svg>
@@ -219,124 +224,137 @@
       <div class="sidebar-section-label">컴포넌트</div>
       <nav class="sidebar-nav">
         <a data-page="m-badge" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <rect height="6" rx="3" width="12" x="2" y="5"></rect>
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+            <rect height="5" rx="2.5" width="10" x="3" y="5.5"></rect>
+            <circle cx="5.5" cy="8" fill="currentColor" r="1.5" stroke="none"></circle>
           </svg>
           <span>Badge
           </span></a>
         <a data-page="m-button" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <rect height="8" rx="2" width="14" x="1" y="4"></rect>
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+            <rect height="8" rx="3" width="12" x="2" y="4"></rect>
+            <line x1="5" x2="11" y1="8" y2="8" stroke-width="2"></line>
           </svg>
           <span>Button
           </span></a>
         <a data-page="m-checkbox" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="12" rx="2" width="12" x="2" y="2"></rect>
             <path d="M5 8l2 2 4-4"></path>
           </svg>
           <span>Checkbox
           </span></a>
         <a data-page="m-datepicker" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="11" rx="1.5" width="12" x="2" y="3"></rect>
             <path d="M2 7h12M6 2v2M10 2v2"></path>
           </svg>
           <span>Datepicker
           </span></a>
         <a data-page="m-dropdown" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="8" rx="2" width="14" x="1" y="4"></rect>
-            <path d="M10 7l-2 2-2-2"></path>
+            <line x1="4" x2="9" y1="8" y2="8"></line>
+            <path d="M12 7l-2 2-2-2"></path>
           </svg>
           <span>Dropdown
           </span></a>
         <a data-page="m-dropdowntypelabel" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="8" rx="2" width="14" x="1" y="4"></rect>
-            <path d="M10 7l-2 2-2-2"></path>
-            <line x1="3" x2="7" y1="6" y2="6"></line>
+            <rect fill="currentColor" height="4" rx="0.8" stroke="none" width="3.5" x="2.5" y="6" opacity="0.5"></rect>
+            <path d="M12 7l-2 2-2-2"></path>
           </svg>
           <span>Dropdown Type Label
           </span></a>
         <a data-page="m-filterchip" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <rect height="6" rx="3" width="12" x="2" y="5"></rect>
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+            <path d="M2 4h12l-4 5v3.5l-4-2V9z"></path>
           </svg>
           <span>Filter Chip
           </span></a>
         <a data-page="m-input" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="8" rx="2" width="14" x="1" y="4"></rect>
-            <line x1="4" x2="4" y1="8" y2="8"></line>
+            <line x1="4" x2="4" y1="6.5" y2="9.5" stroke-width="1.5"></line>
+            <line x1="3" x2="5" y1="6.5" y2="6.5" stroke-width="1"></line>
+            <line x1="3" x2="5" y1="9.5" y2="9.5" stroke-width="1"></line>
+            <line x1="6" x2="11" y1="8" y2="8" stroke-width="1"></line>
           </svg>
           <span>Input
           </span></a>
         <a data-page="m-loading" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <circle cx="8" cy="8" r="6"></circle>
-            <path d="M8 4v4l2.5 2"></path>
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+            <circle cx="3.5" cy="8" fill="currentColor" r="1.8" stroke="none"></circle>
+            <circle cx="8" cy="8" fill="currentColor" r="1.8" stroke="none"></circle>
+            <circle cx="12.5" cy="8" fill="currentColor" r="1.8" stroke="none"></circle>
           </svg>
           <span>Loading
           </span></a>
         <a data-page="m-modal" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="10" rx="1.5" width="12" x="2" y="3"></rect>
             <path d="M2 6h12"></path>
           </svg>
           <span>Modal
           </span></a>
         <a data-page="m-multidropdown" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <rect height="8" rx="2" width="14" x="1" y="4"></rect>
-            <path d="M10 7l-2 2-2-2"></path>
-            <line x1="4" x2="6" y1="8" y2="8"></line>
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+            <rect height="10" rx="1.5" width="12" x="2" y="3"></rect>
+            <path d="M5 6.5l1 1 2-2"></path>
+            <line x1="9.5" x2="12" y1="7" y2="7"></line>
+            <path d="M5 9.5l1 1 2-2"></path>
+            <line x1="9.5" x2="12" y1="10" y2="10"></line>
           </svg>
           <span>Multi Dropdown
           </span></a>
         <a data-page="m-radio" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <circle cx="8" cy="8" r="6"></circle>
             <circle cx="8" cy="8" fill="currentColor" r="2.5" stroke="none"></circle>
           </svg>
           <span>Radio
           </span></a>
         <a data-page="m-rangetimepicker" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
-            <circle cx="5" cy="8" r="3.5"></circle>
-            <circle cx="11" cy="8" r="3.5"></circle>
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
+            <circle cx="4.5" cy="8" r="3.5"></circle>
+            <path d="M4.5 6V8l1.2 1"></path>
+            <path d="M9 8h1.5"></path>
+            <path d="M9.8 6.5l1.7 1.5-1.7 1.5"></path>
+            <circle cx="13.5" cy="8" r="2"></circle>
+            <path d="M13.5 7V8l0.8 0.7"></path>
           </svg>
           <span>Range Time Picker
           </span></a>
         <a data-page="m-routeaccordion" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <path d="M2 5h12M2 9h12M2 13h8"></path>
             <path d="M11 11l2 2 2-2"></path>
           </svg>
           <span>Accordion
           </span></a>
         <a data-page="m-switch" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="6" rx="3" width="14" x="1" y="5"></rect>
             <circle cx="11" cy="8" fill="currentColor" r="2.2" stroke="none"></circle>
           </svg>
           <span>Switch
           </span></a>
         <a data-page="m-tab" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <path d="M1 10V4a1 1 0 011-1h4v7H1zM6 10V3h8a1 1 0 011 1v6H6z"></path>
           </svg>
           <span>Underline Tab
           </span></a>
         <a data-page="m-timepicker" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <circle cx="8" cy="8" r="6"></circle>
             <path d="M8 5v3l2 2"></path>
           </svg>
           <span>Time Picker
           </span></a>
         <a data-page="m-weatherwidget" data-platform="mobile" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <circle cx="9" cy="6" r="3"></circle>
             <path d="M2 13c0-2.5 2-4 5-4h3c2 0 3 1 3 3"></path>
           </svg>
@@ -348,7 +366,7 @@
       <div class="sidebar-section-label">가이드</div>
       <nav class="sidebar-nav">
         <a data-page="guidelines" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <circle cx="8" cy="8" r="6"></circle>
             <line x1="8" x2="8" y1="6" y2="10"></line>
             <circle cx="8" cy="4.5" fill="currentColor" r="0.5"></circle>
@@ -356,7 +374,7 @@
           <span>사용 가이드라인
           </span></a>
         <a data-page="pub-guide" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect x="2" y="1" width="10" height="13" rx="1.5"></rect>
             <path d="M5 5h6M5 8h6M5 11h3"></path>
             <path d="M10 10l4 4"></path>
@@ -368,7 +386,7 @@
       <div class="sidebar-section-label">가이드</div>
       <nav class="sidebar-nav">
         <a data-page="guidelines" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <circle cx="8" cy="8" r="6"></circle>
             <line x1="8" x2="8" y1="6" y2="10"></line>
             <circle cx="8" cy="4.5" fill="currentColor" r="0.5"></circle>
@@ -376,7 +394,7 @@
           <span>사용 가이드라인
           </span></a>
         <a data-page="pub-guide" href="#">
-          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect x="2" y="1" width="10" height="13" rx="1.5"></rect>
             <path d="M5 5h6M5 8h6M5 11h3"></path>
             <path d="M10 10l4 4"></path>
@@ -418,7 +436,7 @@
     <!-- Top Bar -->
     <header class="topbar">
       <div class="topbar-search">
-        <svg fill="none" height="14" stroke="currentColor" stroke-width="1.8" viewbox="0 0 16 16" width="14">
+        <svg fill="none" height="14" stroke="currentColor" stroke-width="1.8" viewBox="0 0 16 16" width="14">
           <circle cx="6.5" cy="6.5" r="5.5"></circle>
           <line x1="10.5" x2="14" y1="10.5" y2="14"></line>
         </svg>
@@ -432,7 +450,7 @@
     <section class="page-section active" id="page-overview">
       <div class="section-header">
         <div class="badge">OVERVIEW</div>
-        <h1>에스원 UI 코드 라이브러리</h1 가이드>
+        <h1>에스원 UI 코드 라이브러리</h1>
         <p>에스원 UI를 구성하는 모든 컴포넌트의 코드와 가이드를 한 곳에서 확인하세요.<br>PC · Mobile 환경에 최적화된 <strong>디자인 토큰</strong>, 바로 복사해 사용할 수 있는 <strong>HTML/CSS 스니펫</strong>, 그리고 올바른 사용법을 안내하는 <strong>컴포넌트 가이드라인</strong>을 제공합니다.<br>별도 프레임워크 없이 순수 HTML/CSS만으로 에스원 디자인 시스템을 빠르고 일관되게 구현하세요.</p>
       </div>
       <div class="stats-row">
@@ -502,7 +520,7 @@
         <div class="overview-grid">
           <a class="overview-card" data-page="badge" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="5" rx="2.5" width="10" x="3" y="5.5"></rect>
                 <circle cx="5.5" cy="8" fill="currentColor" r="1.5" stroke="none"></circle>
               </svg>
@@ -511,7 +529,7 @@
             <div class="overview-desc">상태 표시 뱃지 (Blue/Gray/Teal/Green)</div>
           </a><a class="overview-card" data-page="button" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="8" rx="3" width="12" x="2" y="4"></rect>
                 <line x1="5" x2="11" y1="8" y2="8" stroke-width="2"></line>
               </svg>
@@ -520,7 +538,7 @@
             <div class="overview-desc">Primary, Secondary, Blue Line, Assist, Text 등 다양한 버튼 변형</div>
           </a><a class="overview-card" data-page="checkbox" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="12" rx="2.5" width="12" x="2" y="2"></rect>
                 <polyline points="5,8 7,10.5 11,6"></polyline>
               </svg>
@@ -529,7 +547,7 @@
             <div class="overview-desc">다중 선택 체크박스, 라벨 조합 및 비활성 상태 포함</div>
           </a><a class="overview-card" data-page="datepicker" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="11" rx="1.5" width="12" x="2" y="3"></rect>
                 <path d="M2 7h12M6 2v2M10 2v2"></path>
               </svg>
@@ -538,7 +556,7 @@
             <div class="overview-desc">Single / Range 두 가지 형태를 제공하는 날짜 선택기</div>
           </a><a class="overview-card" data-page="dropdown" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="6" rx="1.5" width="14" x="1" y="3"></rect>
                 <path d="M4 13h8M5.5 11l2.5 3 2.5-3"></path>
               </svg>
@@ -547,7 +565,7 @@
             <div class="overview-desc">단일 항목 선택, has-label 변형 포함</div>
           </a><a class="overview-card" data-page="chip" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <path d="M2 4h12l-4 5v3.5l-4-2V9z"></path>
               </svg>
             </div>
@@ -555,7 +573,7 @@
             <div class="overview-desc">has-label / has-label-solid 두 가지 스타일, 비활성 상태 포함</div>
           </a><a class="overview-card" data-page="input" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="8" rx="2" width="14" x="1" y="4"></rect>
                 <line x1="4" x2="4" y1="6.5" y2="9.5" stroke-width="1.5"></line>
                 <line x1="3" x2="5" y1="6.5" y2="6.5" stroke-width="1"></line>
@@ -567,7 +585,7 @@
             <div class="overview-desc">텍스트, 검색, 비밀번호, 숫자 입력 필드</div>
           </a><a class="overview-card" data-page="loading" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <circle cx="3.5" cy="8" fill="currentColor" r="1.8" stroke="none"></circle>
                 <circle cx="8" cy="8" fill="currentColor" r="1.8" stroke="none"></circle>
                 <circle cx="12.5" cy="8" fill="currentColor" r="1.8" stroke="none"></circle>
@@ -577,7 +595,7 @@
             <div class="overview-desc">로딩 인디케이터</div>
           </a><a class="overview-card" data-page="modal" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="12" rx="2" width="12" x="2" y="2"></rect>
                 <line x1="5" x2="11" y1="6" y2="6"></line>
                 <line x1="5" x2="9" y1="9" y2="9"></line>
@@ -587,7 +605,7 @@
             <div class="overview-desc">제목, 내용, 버튼으로 구성되는 팝업 모달</div>
           </a><a class="overview-card" data-page="radio" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <circle cx="8" cy="8" r="6"></circle>
                 <circle cx="8" cy="8" fill="currentColor" r="2.5" stroke="none"></circle>
               </svg>
@@ -596,7 +614,7 @@
             <div class="overview-desc">단일 선택 라디오 버튼, 그룹 및 비활성 상태 포함</div>
           </a><a class="overview-card" data-page="rangetimepicker" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <circle cx="4.5" cy="8" r="3.5"></circle>
                 <path d="M4.5 6V8l1.2 1"></path>
                 <path d="M9 8h1.5"></path>
@@ -609,7 +627,7 @@
             <div class="overview-desc">시작/종료 시간을 탭으로 전환하여 선택하는 범위 타임피커</div>
           </a><a class="overview-card" data-page="routeaccordion" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <path d="M2 5h12M2 9h12M2 13h8"></path>
                 <path d="M11 11l2 2 2-2"></path>
               </svg>
@@ -618,7 +636,7 @@
             <div class="overview-desc">목록을 아코디언 방식으로 펼쳐 세부 정보를 표시</div>
           </a><a class="overview-card" data-page="tab" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="4" rx="1" width="5" x="1" y="4"></rect>
                 <rect height="4" rx="1" width="4" x="7" y="4"></rect>
                 <line x1="1" x2="15" y1="11" y2="11"></line>
@@ -628,7 +646,7 @@
             <div class="overview-desc">여러 뷰를 전환하는 탭 그룹</div>
           </a><a class="overview-card" data-page="timepicker" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <circle cx="8" cy="8" r="6"></circle>
                 <path d="M8 5v3l2 2"></path>
               </svg>
@@ -637,7 +655,7 @@
             <div class="overview-desc">오전/오후·시·분 선택 타임피커</div>
           </a><a class="overview-card" data-page="weatherwidget" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <circle cx="9" cy="6" r="3"></circle>
                 <path d="M2 13c0-2.5 2-4 5-4h3c2 0 3 1 3 3"></path>
               </svg>
@@ -652,7 +670,7 @@
         <div class="overview-grid">
           <a class="overview-card" data-page="m-badge" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="5" rx="2.5" width="10" x="3" y="5.5"></rect>
                 <circle cx="5.5" cy="8" fill="currentColor" r="1.5" stroke="none"></circle>
               </svg>
@@ -661,7 +679,7 @@
             <div class="overview-desc">상태 표시 뱃지 (Blue/Gray/Teal/Green)</div>
           </a><a class="overview-card" data-page="m-button" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="8" rx="3" width="12" x="2" y="4"></rect>
                 <line x1="5" x2="11" y1="8" y2="8" stroke-width="2"></line>
               </svg>
@@ -670,7 +688,7 @@
             <div class="overview-desc">Primary, Secondary, Blue Line, Assist, Text 등 다양한 버튼 변형</div>
           </a><a class="overview-card" data-page="m-checkbox" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="12" rx="2" width="12" x="2" y="2"></rect>
                 <path d="M5 8l2 2 4-4"></path>
               </svg>
@@ -679,7 +697,7 @@
             <div class="overview-desc">다중 선택 체크박스, 라벨 조합 및 비활성 상태 포함</div>
           </a><a class="overview-card" data-page="m-datepicker" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="11" rx="1.5" width="12" x="2" y="3"></rect>
                 <path d="M2 7h12M6 2v2M10 2v2"></path>
               </svg>
@@ -688,7 +706,7 @@
             <div class="overview-desc">Single / Range 두 가지 형태를 제공하는 날짜 선택기</div>
           </a><a class="overview-card" data-page="m-dropdown" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="8" rx="2" width="14" x="1" y="4"></rect>
                 <line x1="4" x2="9" y1="8" y2="8"></line>
                 <path d="M12 7l-2 2-2-2"></path>
@@ -698,7 +716,7 @@
             <div class="overview-desc">단일 항목 선택, has-label 변형 포함</div>
           </a><a class="overview-card" data-page="m-dropdowntypelabel" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="8" rx="2" width="14" x="1" y="4"></rect>
                 <rect fill="currentColor" height="4" rx="0.8" stroke="none" width="3.5" x="2.5" y="6" opacity="0.5"></rect>
                 <path d="M12 7l-2 2-2-2"></path>
@@ -708,7 +726,7 @@
             <div class="overview-desc">버튼 내부에 레이블과 선택값을 함께 표시하는 드롭다운</div>
           </a><a class="overview-card" data-page="m-filterchip" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <path d="M2 4h12l-4 5v3.5l-4-2V9z"></path>
               </svg>
             </div>
@@ -716,7 +734,7 @@
             <div class="overview-desc">has-label / has-label-solid 두 가지 스타일, 비활성 상태 포함</div>
           </a><a class="overview-card" data-page="m-input" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="8" rx="2" width="14" x="1" y="4"></rect>
                 <line x1="4" x2="4" y1="6.5" y2="9.5" stroke-width="1.5"></line>
                 <line x1="3" x2="5" y1="6.5" y2="6.5" stroke-width="1"></line>
@@ -728,7 +746,7 @@
             <div class="overview-desc">텍스트, 검색, 비밀번호, 숫자 입력 필드</div>
           </a><a class="overview-card" data-page="m-loading" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <circle cx="3.5" cy="8" fill="currentColor" r="1.8" stroke="none"></circle>
                 <circle cx="8" cy="8" fill="currentColor" r="1.8" stroke="none"></circle>
                 <circle cx="12.5" cy="8" fill="currentColor" r="1.8" stroke="none"></circle>
@@ -738,7 +756,7 @@
             <div class="overview-desc">로딩 인디케이터</div>
           </a><a class="overview-card" data-page="m-modal" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="10" rx="1.5" width="12" x="2" y="3"></rect>
                 <path d="M2 6h12"></path>
               </svg>
@@ -747,7 +765,7 @@
             <div class="overview-desc">제목, 내용, 버튼으로 구성되는 팝업 모달</div>
           </a><a class="overview-card" data-page="m-multidropdown" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="10" rx="1.5" width="12" x="2" y="3"></rect>
                 <path d="M5 6.5l1 1 2-2"></path>
                 <line x1="9.5" x2="12" y1="7" y2="7"></line>
@@ -759,7 +777,7 @@
             <div class="overview-desc">다중 선택 드롭다운</div>
           </a><a class="overview-card" data-page="m-radio" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <circle cx="8" cy="8" r="6"></circle>
                 <circle cx="8" cy="8" fill="currentColor" r="2.5" stroke="none"></circle>
               </svg>
@@ -768,7 +786,7 @@
             <div class="overview-desc">단일 선택 라디오 버튼, 그룹 및 비활성 상태 포함</div>
           </a><a class="overview-card" data-page="m-rangetimepicker" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <circle cx="4.5" cy="8" r="3.5"></circle>
                 <path d="M4.5 6V8l1.2 1"></path>
                 <path d="M9 8h1.5"></path>
@@ -781,7 +799,7 @@
             <div class="overview-desc">시작/종료 시간을 탭으로 전환하여 선택하는 범위 타임피커</div>
           </a><a class="overview-card" data-page="m-routeaccordion" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <path d="M2 5h12M2 9h12M2 13h8"></path>
                 <path d="M11 11l2 2 2-2"></path>
               </svg>
@@ -790,7 +808,7 @@
             <div class="overview-desc">목록을 아코디언 방식으로 펼쳐 세부 정보를 표시</div>
           </a><a class="overview-card" data-page="m-switch" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <rect height="6" rx="3" width="14" x="1" y="5"></rect>
                 <circle cx="11" cy="8" fill="currentColor" r="2.2" stroke="none"></circle>
               </svg>
@@ -799,7 +817,7 @@
             <div class="overview-desc">On/Off 토글 스위치, 라벨 포함 변형 제공</div>
           </a><a class="overview-card" data-page="m-tab" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <path d="M1 10V4a1 1 0 011-1h4v7H1zM6 10V3h8a1 1 0 011 1v6H6z"></path>
               </svg>
             </div>
@@ -807,7 +825,7 @@
             <div class="overview-desc">여러 뷰를 전환하는 탭 그룹</div>
           </a><a class="overview-card" data-page="m-timepicker" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <circle cx="8" cy="8" r="6"></circle>
                 <path d="M8 5v3l2 2"></path>
               </svg>
@@ -816,7 +834,7 @@
             <div class="overview-desc">오전/오후·시·분 선택 타임피커</div>
           </a><a class="overview-card" data-page="m-weatherwidget" href="#">
             <div class="overview-icon">
-              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16" width="20">
+              <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="20">
                 <circle cx="9" cy="6" r="3"></circle>
                 <path d="M2 13c0-2.5 2-4 5-4h3c2 0 3 1 3 3"></path>
               </svg>
@@ -916,6 +934,7 @@
 &lt;!-- 컴포넌트별 JS (사용하는 것만 추가) --&gt;
 &lt;script src="assets/js/dropdown.js"&gt;&lt;/script&gt;       &lt;!-- Dropdown, Filter Chip --&gt;
 &lt;script src="assets/js/modal.js"&gt;&lt;/script&gt;          &lt;!-- Modal --&gt;
+&lt;script src="assets/js/lib/bootstrap-datepicker.js"&gt;&lt;/script&gt; &lt;!-- Datepicker 의존 라이브러리 --&gt;
 &lt;script src="assets/js/datepicker.js"&gt;&lt;/script&gt;     &lt;!-- Datepicker --&gt;
 &lt;script src="assets/js/time-picker.js"&gt;&lt;/script&gt;     &lt;!-- Time Picker --&gt;
 &lt;script src="assets/js/range-time-picker.js"&gt;&lt;/script&gt; &lt;!-- Range Time Picker --&gt;
@@ -932,6 +951,7 @@
 &lt;script src="assets/js/dropdown.js"&gt;&lt;/script&gt;       &lt;!-- Dropdown, Filter Chip --&gt;
 &lt;script src="assets/js/multi-dropdown.js"&gt;&lt;/script&gt;  &lt;!-- Multi Dropdown --&gt;
 &lt;script src="assets/js/modal.js"&gt;&lt;/script&gt;          &lt;!-- Modal --&gt;
+&lt;script src="assets/js/lib/bootstrap-datepicker.js"&gt;&lt;/script&gt; &lt;!-- Datepicker 의존 라이브러리 --&gt;
 &lt;script src="assets/js/datepicker.js"&gt;&lt;/script&gt;     &lt;!-- Datepicker --&gt;
 &lt;script src="assets/js/time-picker.js"&gt;&lt;/script&gt;     &lt;!-- Time Picker --&gt;
 &lt;script src="assets/js/range-time-picker.js"&gt;&lt;/script&gt; &lt;!-- Range Time Picker --&gt;
@@ -951,7 +971,7 @@
           <div class="step-title">컴포넌트 HTML 복사</div>
           <div class="step-desc">원하는 컴포넌트 페이지로 이동한 후 코드 스니펫의 HTML 마크업을 복사해 페이지에 붙여넣습니다. <strong>CSS·JS만으로는 화면에 아무것도 표시되지 않으며, HTML 마크업이 반드시 필요합니다.</strong></div>
           <div class="step-code">&lt;!-- 예시: Button 컴포넌트 --&gt;
-&lt;button type="button" class="btn btn-blue"&gt;
+&lt;button type="button" class="btn btn-primary"&gt;
   &lt;span&gt;라벨&lt;/span&gt;
 &lt;/button&gt;</div>
         </div>
@@ -971,7 +991,7 @@
               <div class="code-snippet active" style="max-height:none;"><pre>&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
-  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta charset="utf-8" /&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
   &lt;!-- 공통 기본 스타일 (필수) --&gt;
   &lt;link rel="stylesheet" href="assets/css/lib-style.css" /&gt;
@@ -998,8 +1018,8 @@
               <div class="code-snippet active" style="max-height:none;"><pre>&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
-  &lt;meta charset="UTF-8" /&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" /&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" /&gt; &lt;!-- 앱 내 웹뷰 전용 --&gt;
   &lt;!-- 공통 기본 스타일 (필수) --&gt;
   &lt;link rel="stylesheet" href="assets/css/lib-style.css" /&gt;
   &lt;!-- Mobile 컴포넌트 스타일 --&gt;
@@ -1064,7 +1084,7 @@
               </tr>
               <tr style="border-bottom: 1px solid var(--gray-100);">
                 <td style="padding: 10px 16px; color: var(--gray-800);">Datepicker</td>
-                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/datepicker.js<br><span style="color:var(--gray-400); font-size:11px;">+ bootstrap-datepicker.standalone.css</span></td>
+                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/lib/bootstrap-datepicker.js<br>assets/js/datepicker.js<br><span style="color:var(--gray-400); font-size:11px;">+ bootstrap-datepicker.standalone.css</span></td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
               </tr>
@@ -1095,7 +1115,13 @@
               <tr>
                 <td style="padding: 10px 16px; color: var(--gray-800);">Input</td>
                 <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/input.js</td>
-                <td style="padding: 10px 16px; text-align: center; color: var(--gray-300);">—</td>
+                <td style="padding: 10px 16px; text-align: center;">✓</td>
+                <td style="padding: 10px 16px; text-align: center;">✓</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 16px; color: var(--gray-800);">File Upload</td>
+                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/file.js</td>
+                <td style="padding: 10px 16px; text-align: center;">✓</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
               </tr>
             </tbody>
@@ -1127,7 +1153,7 @@
           </div>
         </div>
         <div style="display:flex; align-items:center; padding:0 12px; color:var(--gray-300);">
-          <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16" width="20">
+          <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" width="20">
             <line x1="3" x2="13" y1="8" y2="8"></line>
             <polyline points="9,4 13,8 9,12"></polyline>
           </svg>
@@ -1145,7 +1171,7 @@
           </div>
         </div>
         <div style="display:flex; align-items:center; padding:0 12px; color:var(--gray-300);">
-          <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16" width="20">
+          <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" width="20">
             <line x1="3" x2="13" y1="8" y2="8"></line>
             <polyline points="9,4 13,8 9,12"></polyline>
           </svg>
@@ -1553,11 +1579,11 @@
               <div class="type-sample"><span class="type-label">font-size-10</span><span class="type-text" style="font-size:10px;">에스원 UI (10px / 1rem)</span></div>
               <div class="type-sample"><span class="type-label">font-size-12</span><span class="type-text" style="font-size:12px;">에스원 UI (12px / 1.2rem)</span></div>
               <div class="type-sample"><span class="type-label">font-size-14</span><span class="type-text" style="font-size:14px;">에스원 UI (14px / 1.4rem)</span></div>
-              <div class="type-sample"><span class="type-label">font-size-16</span><span class="type-text" style="font-size:16px;">에스원 UI (16px)</span></div>
-              <div class="type-sample"><span class="type-label">font-size-18</span><span class="type-text" style="font-size:18px; font-weight:500;">에스원 UI (18px)</span></div>
-              <div class="type-sample"><span class="type-label">font-size-20</span><span class="type-text" style="font-size:20px; font-weight:600;">에스원 UI (20px)</span></div>
-              <div class="type-sample"><span class="type-label">font-size-24</span><span class="type-text" style="font-size:24px; font-weight:700;">에스원 (24px)</span></div>
-              <div class="type-sample"><span class="type-label">font-size-32</span><span class="type-text" style="font-size:32px; font-weight:700;">에스원 (32px)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-16</span><span class="type-text" style="font-size:16px;">에스원 UI (16px / 1.6rem)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-18</span><span class="type-text" style="font-size:18px; font-weight:500;">에스원 UI (18px / 1.8rem)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-20</span><span class="type-text" style="font-size:20px; font-weight:600;">에스원 UI (20px / 2rem)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-24</span><span class="type-text" style="font-size:24px; font-weight:700;">에스원 (24px / 2.4rem)</span></div>
+              <div class="type-sample"><span class="type-label">font-size-32</span><span class="type-text" style="font-size:32px; font-weight:700;">에스원 (32px / 3.2rem)</span></div>
             </div>
           </div>
           <div>
@@ -3233,9 +3259,21 @@
             </div>
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
-              <pre>&lt;div class="weather-widget"&gt;
+              <pre>&lt;!-- 날씨 아이콘 파일 목록 (assets/images/)
+  ic_weather_clear.svg            : 맑음
+  ic_weather_partly_cloudy.svg    : 구름조금 (낮), 구름많음 (낮)
+  ic_weather_cloudy.svg           : 흐림
+  ic_weather_rain.svg             : 비
+  ic_weather_snow.svg             : 눈
+  ic_weather_rain_or_snow.svg     : 비 또는 눈, 눈 또는 비
+  ic_weather_thunderstorm.svg     : 천둥번개
+  ic_weather_shower.svg           : 가끔 비, 한때 비
+  ic_weather_snow_shower.svg      : 가끔 눈, 한때 눈
+  ic_weather_rain_or_snow_shower.svg : 가끔 비 또는 눈, 한때 비 또는 눈
+--&gt;
+&lt;div class="weather-widget"&gt;
   서울
-  &lt;img class="weather-widget-icon" src="ic_weather_clear.svg" alt="맑음" /&gt;
+  &lt;img class="weather-widget-icon" src="assets/images/ic_weather_clear.svg" alt="맑음" /&gt;
   -6.4°
 &lt;/div&gt;</pre>
             </div>
@@ -6397,14 +6435,14 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Underline Tab</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/tab.html', '_blank')">
+            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/underline-tab.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
           </div>
           <div class="component-preview" style="padding:0;">
-            <iframe src="layouts/general_mobile/tab.html" style="width:100%; height:auto; border:none; display:block;"
-              title="Tab"></iframe>
+            <iframe src="layouts/general_mobile/underline-tab.html" style="width:100%; height:auto; border:none; display:block;"
+              title="Underline Tab"></iframe>
           </div>
         </div>
         <div class="component-block">
@@ -6420,15 +6458,15 @@
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;div class="tab-wrap" style="width:100%;"&gt;
-  &lt;div class="tabs"&gt;
-    &lt;div class="tab"&gt;&lt;a class="on" href="#"&gt;항목&lt;/a&gt;&lt;/div&gt;
-    &lt;div class="tab"&gt;&lt;a href="#"&gt;항목&lt;/a&gt;&lt;/div&gt;
-    &lt;div class="tab"&gt;&lt;a href="#"&gt;항목&lt;/a&gt;&lt;/div&gt;
+  &lt;div class="tabs" role="tablist"&gt;
+    &lt;div class="tab"&gt;&lt;a class="on" href="#" role="tab" aria-selected="true"&gt;항목&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="tab"&gt;&lt;a href="#" role="tab" aria-selected="false"&gt;항목&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="tab"&gt;&lt;a href="#" role="tab" aria-selected="false"&gt;항목&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="tab-content-box"&gt;
-    &lt;div class="tab-pannel active"&gt;&lt;!-- 탭 콘텐츠 --&gt;&lt;/div&gt;
-    &lt;div class="tab-pannel"&gt;&lt;!-- 탭 콘텐츠 --&gt;&lt;/div&gt;
-    &lt;div class="tab-pannel"&gt;&lt;!-- 탭 콘텐츠 --&gt;&lt;/div&gt;
+    &lt;div class="tab-pannel active" role="tabpanel"&gt;&lt;!-- 탭 콘텐츠 --&gt;&lt;/div&gt;
+    &lt;div class="tab-pannel" role="tabpanel"&gt;&lt;!-- 탭 콘텐츠 --&gt;&lt;/div&gt;
+    &lt;div class="tab-pannel" role="tabpanel"&gt;&lt;!-- 탭 콘텐츠 --&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
             </div>
@@ -7962,70 +8000,23 @@
             </div>
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-weatherwidget-html">
-              <pre>&lt;div style="display:flex;flex-direction:column;gap:6px;align-items:center;"&gt;
-                &lt;span style="font-size:11px;color:#9d9d9d;"&gt;맑음&lt;/span&gt;
-                &lt;div class="weather-widget"&gt;
-                  서울
-                  &lt;img class="weather-widget-icon" src="../../assets/images/ic_weather_clear.svg" alt="맑음" /&gt;
-                  -6.4°
-                &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div style="display:flex;flex-direction:column;gap:6px;align-items:center;"&gt;
-                &lt;span style="font-size:11px;color:#9d9d9d;"&gt;구름조금&lt;/span&gt;
-                &lt;div class="weather-widget"&gt;
-                  청주
-                  &lt;img class="weather-widget-icon" src="../../assets/images/ic_weather_partly_cloudy.svg" alt="구름조금" /&gt;
-                  -6.4°
-                &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div style="display:flex;flex-direction:column;gap:6px;align-items:center;"&gt;
-                &lt;span style="font-size:11px;color:#9d9d9d;"&gt;흐림&lt;/span&gt;
-                &lt;div class="weather-widget"&gt;
-                  천안
-                  &lt;img class="weather-widget-icon" src="../../assets/images/ic_weather_cloudy.svg" alt="흐림" /&gt;
-                  -8.6°
-                &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div style="display:flex;flex-direction:column;gap:6px;align-items:center;"&gt;
-                &lt;span style="font-size:11px;color:#9d9d9d;"&gt;비&lt;/span&gt;
-                &lt;div class="weather-widget"&gt;
-                  부산
-                  &lt;img class="weather-widget-icon" src="../../assets/images/ic_weather_rain.svg" alt="비" /&gt;
-                  -0.3°
-                &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div style="display:flex;flex-direction:column;gap:6px;align-items:center;"&gt;
-                &lt;span style="font-size:11px;color:#9d9d9d;"&gt;눈&lt;/span&gt;
-                &lt;div class="weather-widget"&gt;
-                  강릉
-                  &lt;img class="weather-widget-icon" src="../../assets/images/ic_weather_snow.svg" alt="눈" /&gt;
-                  -8.0°
-                &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div style="display:flex;flex-direction:column;gap:6px;align-items:center;"&gt;
-                &lt;span style="font-size:11px;color:#9d9d9d;"&gt;비 또는 눈&lt;/span&gt;
-                &lt;div class="weather-widget"&gt;
-                  수원
-                  &lt;img class="weather-widget-icon" src="../../assets/images/ic_weather_rain_or_snow.svg" alt="비 또는 눈" /&gt;
-                  -6.4°
-                &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div style="display:flex;flex-direction:column;gap:6px;align-items:center;"&gt;
-                &lt;span style="font-size:11px;color:#9d9d9d;"&gt;천둥번개&lt;/span&gt;
-                &lt;div class="weather-widget"&gt;
-                  포항
-                  &lt;img class="weather-widget-icon" src="../../assets/images/ic_weather_thunderstorm.svg" alt="천둥번개" /&gt;
-                  -1.5°
-                &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;div style="display:flex;flex-direction:column;gap:6px;align-items:center;"&gt;
-                &lt;span style="font-size:11px;color:#9d9d9d;"&gt;가끔 비&lt;/span&gt;
-                &lt;div class="weather-widget"&gt;
-                  울산
-                  &lt;img class="weather-widget-icon" src="../../assets/images/ic_weather_shower.svg" alt="가끔 비" /&gt;
-                  3.2°
-                &lt;/div&gt;
-              &lt;/div&gt;</pre>
+              <pre>&lt;!-- 날씨 아이콘 파일 목록 (assets/images/)
+  ic_weather_clear.svg            : 맑음
+  ic_weather_partly_cloudy.svg    : 구름조금 (낮), 구름많음 (낮)
+  ic_weather_cloudy.svg           : 흐림
+  ic_weather_rain.svg             : 비
+  ic_weather_snow.svg             : 눈
+  ic_weather_rain_or_snow.svg     : 비 또는 눈, 눈 또는 비
+  ic_weather_thunderstorm.svg     : 천둥번개
+  ic_weather_shower.svg           : 가끔 비, 한때 비
+  ic_weather_snow_shower.svg      : 가끔 눈, 한때 눈
+  ic_weather_rain_or_snow_shower.svg : 가끔 비 또는 눈, 한때 비 또는 눈
+--&gt;
+&lt;div class="weather-widget"&gt;
+  서울
+  &lt;img class="weather-widget-icon" src="assets/images/ic_weather_clear.svg" alt="맑음" /&gt;
+  -6.4°
+&lt;/div&gt;</pre>
             </div>
           </div>
         </div>
@@ -8037,7 +8028,7 @@
         <div class="modal-header">
           <span class="modal-title">타이틀 텍스트
           </span><button class="modal-close" onclick="closeModal('demo-modal')">
-            <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16" width="16">
+            <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" width="16">
               <line x1="3" x2="13" y1="3" y2="13"></line>
               <line x1="13" x2="3" y1="3" y2="13"></line>
             </svg>

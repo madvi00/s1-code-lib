@@ -22,45 +22,40 @@
   </script>
   <script src="../../assets/js/lib/bootstrap-datepicker.js"></script>
   <script src="../../assets/js/lib/swiper-bundle.min.js"></script>
-  
   <script src="../../assets/js/tab.js"></script>
-  <title>Guide | Tab</title>
-  <style>
-    .btn-group .btn.on {
-      border-color: var(--semantic-color-control-background-selected);
-      background-color: var(--semantic-color-control-background-selected);
-      color: var(--semantic-color-control-text-selected);
-    }
-  </style>
+  <title>Guide | Underline Tab</title>
 </head>
 
 <body style="overflow:hidden; margin:0;">
-    <div class="general-container">
-      <div class="general-area">
-        <div class="general-top">
-          <div class="general-label">Component</div>
-          <div class="general-title">Tab</div>
-        </div>
-        <div class="general-middle">
-          <div class="component-block">
-            <div class="component-preview">
-              <div class="tab-wrap" style="width:100%;">
-                <div class="tabs" role="tablist">
-                  <div class="tab"><a class="on" href="#" role="tab" aria-selected="true">항목</a></div>
-                  <div class="tab"><a href="#" role="tab" aria-selected="false">항목</a></div>
-                  <div class="tab"><a href="#" role="tab" aria-selected="false">항목</a></div>
-                </div>
-                <div class="tab-content-box">
-                  <div class="tab-pannel active" role="tabpanel"></div>
-                  <div class="tab-pannel" role="tabpanel"></div>
-                  <div class="tab-pannel" role="tabpanel"></div>
-                </div>
+  <div class="general-container">
+    <div class="general-area">
+      <div class="general-top">
+        <div class="general-label">Component</div>
+        <div class="general-title">Underline Tab</div>
+      </div>
+      <div class="general-middle">
+        <div class="component-block">
+          <div class="component-block-header">
+            <div><div class="component-block-title">Underline Tab</div></div>
+          </div>
+          <div class="component-preview">
+            <div class="tab-wrap" style="width:100%;">
+              <div class="tabs" role="tablist">
+                <div class="tab"><a class="on" href="#" role="tab" aria-selected="true">항목</a></div>
+                <div class="tab"><a href="#" role="tab" aria-selected="false">항목</a></div>
+                <div class="tab"><a href="#" role="tab" aria-selected="false">항목</a></div>
+              </div>
+              <div class="tab-content-box">
+                <div class="tab-pannel active" role="tabpanel"></div>
+                <div class="tab-pannel" role="tabpanel"></div>
+                <div class="tab-pannel" role="tabpanel"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   <script>document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
 </body>
 

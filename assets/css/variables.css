@@ -577,8 +577,7 @@
 
   /* Font Shortcuts */
   --font-sans: var(--foundation-font-family-base);
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-display: 'Outfit', sans-serif;
+  --font-mono: 'Pretendard', sans-serif;
 
   /* Text Size Shortcuts */
   --text-xs: 11px;

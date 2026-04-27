@@ -15,10 +15,15 @@
       "Bash(xargs -I{} sed -i 's/^\\\\xef\\\\xbb\\\\xbf//' {})",
       "Bash(grep -c \"\\\\\\\\\\\\\\\\t\")",
       "Bash(grep \"\\\\\\\\\\\\\\\\t\")",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Bash(xargs -0 grep -h \"class=\\\\\"\")",
+      "Bash(sed -i \"s/'JetBrains Mono', monospace/'Pretendard', sans-serif/g\" c:/dev/GitHub/s1-code-lib/assets/css/variables.css c:/dev/GitHub/s1-code-lib/assets/css/lib-style.css)",
+      "Bash(sed -i \"s/'JetBrains Mono', 'Consolas', monospace/'Pretendard', sans-serif/g\" c:/dev/GitHub/s1-code-lib/assets/css/lib-style.css)"
     ],
     "additionalDirectories": [
-      "c:\\dev\\GitHub\\s1-code-lib\\assets\\fonts\\Pretendard"
+      "c:\\dev\\GitHub\\s1-code-lib\\assets\\fonts\\Pretendard",
+      "\\tmp",
+      "c:\\dev\\GitHub\\s1-code-lib"
     ]
   }
 }
