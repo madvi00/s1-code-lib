@@ -65,6 +65,9 @@
       var btnClose = modal.querySelector('.btn-close');
       if (dim) dim.addEventListener('click', closeModal, { once: true });
       if (btnClose) btnClose.addEventListener('click', closeModal, { once: true });
+      modal.querySelectorAll('.modal-button-box .btn').forEach(function(b) {
+        b.addEventListener('click', closeModal, { once: true });
+      });
 
       function onEsc(ev) {
         if (ev.key === 'Escape') { closeModal(); document.removeEventListener('keydown', onEsc); }
@@ -97,6 +100,9 @@
     var btnClose = clone.querySelector('.btn-close');
     if (dim) dim.addEventListener('click', closeModalIframe);
     if (btnClose) btnClose.addEventListener('click', closeModalIframe);
+    clone.querySelectorAll('.modal-button-box .btn').forEach(function(b) {
+      b.addEventListener('click', closeModalIframe);
+    });
 
     function onEsc(ev) {
       if (ev.key === 'Escape') { closeModalIframe(); pdoc.removeEventListener('keydown', onEsc); }
@@ -122,9 +128,12 @@
               <div class="component-block-title">Default (360px)</div>
             </div>
           </div>
-          <div class="component-preview">
+          <div class="component-preview" style="gap:12px; flex-wrap:wrap;">
             <button type="button" class="btn btn-blue btn-medium btn-modal" data-modal="modal-01">
               <span>Open</span>
+            </button>
+            <button type="button" class="btn btn-blue btn-medium btn-modal" data-modal="modal-01b">
+              <span>Open (2 buttons)</span>
             </button>
             <div id="modal-01" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-01-title">
               <div class="dim"></div>
@@ -151,6 +160,34 @@
                 </div>
               </div>
             </div>
+            <div id="modal-01b" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-01b-title">
+              <div class="dim"></div>
+              <div class="modal-container">
+                <div class="modal-area">
+                  <div class="modal-top">
+                    <div class="modal-title-box">
+                      <span class="title" id="modal-01b-title">타이틀 텍스트</span>
+                    </div>
+                  </div>
+                  <div class="modal-middle">
+                    <div class="modal-content-box">
+                      <p class="text">팝업 컨텐츠 텍스트</p>
+                    </div>
+                  </div>
+                  <div class="modal-bottom">
+                    <div class="modal-button-box">
+                      <button type="button" class="btn btn-white btn-small">
+                        <span>아니오</span>
+                      </button>
+                      <button type="button" class="btn btn-blue btn-small">
+                        <span>네</span>
+                      </button>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-close" title="팝업창 닫기 버튼" aria-label="팝업창 닫기"></button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -160,9 +197,12 @@
               <div class="component-block-title">Size-md (520px)</div>
             </div>
           </div>
-          <div class="component-preview">
+          <div class="component-preview" style="gap:12px; flex-wrap:wrap;">
             <button type="button" class="btn btn-blue btn-medium btn-modal" data-modal="modal-02">
               <span>Open</span>
+            </button>
+            <button type="button" class="btn btn-blue btn-medium btn-modal" data-modal="modal-02b">
+              <span>Open (2 buttons)</span>
             </button>
             <div id="modal-02" class="modal size-md" role="dialog" aria-modal="true" aria-labelledby="modal-02-title">
               <div class="dim"></div>
@@ -189,6 +229,34 @@
                 </div>
               </div>
             </div>
+            <div id="modal-02b" class="modal size-md" role="dialog" aria-modal="true" aria-labelledby="modal-02b-title">
+              <div class="dim"></div>
+              <div class="modal-container">
+                <div class="modal-area">
+                  <div class="modal-top">
+                    <div class="modal-title-box">
+                      <span class="title" id="modal-02b-title">타이틀 텍스트</span>
+                    </div>
+                  </div>
+                  <div class="modal-middle">
+                    <div class="modal-content-box">
+                      <p class="text">팝업 컨텐츠 텍스트</p>
+                    </div>
+                  </div>
+                  <div class="modal-bottom">
+                    <div class="modal-button-box">
+                      <button type="button" class="btn btn-white btn-small">
+                        <span>아니오</span>
+                      </button>
+                      <button type="button" class="btn btn-blue btn-small">
+                        <span>네</span>
+                      </button>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-close" title="팝업창 닫기 버튼" aria-label="팝업창 닫기"></button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -198,9 +266,12 @@
               <div class="component-block-title">Size-lg (1000px)</div>
             </div>
           </div>
-          <div class="component-preview">
+          <div class="component-preview" style="gap:12px; flex-wrap:wrap;">
             <button type="button" class="btn btn-blue btn-medium btn-modal" data-modal="modal-03">
               <span>Open</span>
+            </button>
+            <button type="button" class="btn btn-blue btn-medium btn-modal" data-modal="modal-03b">
+              <span>Open (2 buttons)</span>
             </button>
             <div id="modal-03" class="modal size-lg" role="dialog" aria-modal="true" aria-labelledby="modal-03-title">
               <div class="dim"></div>
@@ -227,6 +298,34 @@
                 </div>
               </div>
             </div>
+            <div id="modal-03b" class="modal size-lg" role="dialog" aria-modal="true" aria-labelledby="modal-03b-title">
+              <div class="dim"></div>
+              <div class="modal-container">
+                <div class="modal-area">
+                  <div class="modal-top">
+                    <div class="modal-title-box">
+                      <span class="title" id="modal-03b-title">타이틀 텍스트</span>
+                    </div>
+                  </div>
+                  <div class="modal-middle">
+                    <div class="modal-content-box">
+                      <p class="text">팝업 컨텐츠 텍스트</p>
+                    </div>
+                  </div>
+                  <div class="modal-bottom">
+                    <div class="modal-button-box">
+                      <button type="button" class="btn btn-white btn-small">
+                        <span>아니오</span>
+                      </button>
+                      <button type="button" class="btn btn-blue btn-small">
+                        <span>네</span>
+                      </button>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-close" title="팝업창 닫기 버튼" aria-label="팝업창 닫기"></button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -236,9 +335,12 @@
               <div class="component-block-title">Size-xl (1200px)</div>
             </div>
           </div>
-          <div class="component-preview">
+          <div class="component-preview" style="gap:12px; flex-wrap:wrap;">
             <button type="button" class="btn btn-blue btn-medium btn-modal" data-modal="modal-04">
               <span>Open</span>
+            </button>
+            <button type="button" class="btn btn-blue btn-medium btn-modal" data-modal="modal-04b">
+              <span>Open (2 buttons)</span>
             </button>
             <div id="modal-04" class="modal size-xl" role="dialog" aria-modal="true" aria-labelledby="modal-04-title">
               <div class="dim"></div>
@@ -258,6 +360,34 @@
                     <div class="modal-button-box">
                       <button type="button" class="btn btn-blue btn-small">
                         <span>확인</span>
+                      </button>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-close" title="팝업창 닫기 버튼" aria-label="팝업창 닫기"></button>
+                </div>
+              </div>
+            </div>
+            <div id="modal-04b" class="modal size-xl" role="dialog" aria-modal="true" aria-labelledby="modal-04b-title">
+              <div class="dim"></div>
+              <div class="modal-container">
+                <div class="modal-area">
+                  <div class="modal-top">
+                    <div class="modal-title-box">
+                      <span class="title" id="modal-04b-title">타이틀 텍스트</span>
+                    </div>
+                  </div>
+                  <div class="modal-middle">
+                    <div class="modal-content-box">
+                      <p class="text">팝업 컨텐츠 텍스트</p>
+                    </div>
+                  </div>
+                  <div class="modal-bottom">
+                    <div class="modal-button-box">
+                      <button type="button" class="btn btn-white btn-small">
+                        <span>아니오</span>
+                      </button>
+                      <button type="button" class="btn btn-blue btn-small">
+                        <span>네</span>
                       </button>
                     </div>
                   </div>

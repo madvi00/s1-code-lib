@@ -585,7 +585,7 @@
     }
     .component-block-header {
       padding: var(--sp-4) var(--sp-5);
-      background: #fff;
+      background: var(--gray-50);
       border-bottom: 1px solid var(--gray-100);
       display: flex; align-items: center; justify-content: space-between;
     }
@@ -611,7 +611,6 @@
     }
     .component-preview {
       padding: var(--sp-7) var(--sp-6);
-      background: var(--gray-50);
       display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center;
       min-height: 80px;
       border-bottom: 1px solid var(--gray-100);

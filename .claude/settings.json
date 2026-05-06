@@ -18,12 +18,23 @@
       "Bash(git config *)",
       "Bash(xargs -0 grep -h \"class=\\\\\"\")",
       "Bash(sed -i \"s/'JetBrains Mono', monospace/'Pretendard', sans-serif/g\" c:/dev/GitHub/s1-code-lib/assets/css/variables.css c:/dev/GitHub/s1-code-lib/assets/css/lib-style.css)",
-      "Bash(sed -i \"s/'JetBrains Mono', 'Consolas', monospace/'Pretendard', sans-serif/g\" c:/dev/GitHub/s1-code-lib/assets/css/lib-style.css)"
+      "Bash(sed -i \"s/'JetBrains Mono', 'Consolas', monospace/'Pretendard', sans-serif/g\" c:/dev/GitHub/s1-code-lib/assets/css/lib-style.css)",
+      "mcp__claude_ai_Figma__get_design_context",
+      "mcp__claude_ai_Figma__whoami",
+      "mcp__claude_ai_Figma__get_metadata",
+      "mcp__claude_ai_Figma__get_screenshot",
+      "Bash(curl -s -o \"C:/dev/GitHub/s1-code-lib/tmp_table.png\" \"https://www.figma.com/api/mcp/asset/5adf50d5-5362-44fb-aa9a-f697f6fa4648\")",
+      "Bash(curl -s -o \"C:/dev/GitHub/s1-code-lib/tmp_grid.png\" \"https://www.figma.com/api/mcp/asset/1a2ba95b-9636-40ed-98a7-0c03ab6dac1b\")",
+      "Bash(curl -s -o \"C:/dev/GitHub/s1-code-lib/tmp_embed.png\" \"https://www.figma.com/api/mcp/asset/f54c83f5-024f-4143-b4cc-e244578720f8\")",
+      "Bash(grep -n \"^\\\\/\\\\* ──── Table ──── \\\\*\\\\/$\" \"c:/dev/GitHub/s1-code-lib/assets/css/pc-components.css\")",
+      "Bash(powershell -Command \"\\(Get-Content 'c:/dev/GitHub/s1-code-lib/assets/css/pc-components.css'\\)[0..11088] | Set-Content -Encoding utf8 'c:/dev/GitHub/s1-code-lib/assets/css/pc-components.css'; Write-Host 'done'\")",
+      "Bash(powershell -Command ' *)"
     ],
     "additionalDirectories": [
       "c:\\dev\\GitHub\\s1-code-lib\\assets\\fonts\\Pretendard",
       "\\tmp",
-      "c:\\dev\\GitHub\\s1-code-lib"
+      "c:\\dev\\GitHub\\s1-code-lib",
+      "C:\\dev\\GitHub\\s1-code-lib"
     ]
   }
 }

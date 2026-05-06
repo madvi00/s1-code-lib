@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="../../assets/images/favicon/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="57x57" href="../../assets/images/favicon/favicon_57.png" />
+  <link rel="icon" type="image/png" sizes="60x60" href="../../assets/images/favicon/favicon_60.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+  <link rel="icon" type="image/png" sizes="76x76" href="../../assets/images/favicon/favicon_76.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+  <link rel="icon" type="image/png" sizes="114x114" href="../../assets/images/favicon/favicon_114.png" />
+  <link rel="icon" type="image/png" sizes="120x120" href="../../assets/images/favicon/favicon_120.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+  <link rel="icon" type="image/png" sizes="152x152" href="../../assets/images/favicon/favicon_152.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../../assets/images/favicon/favicon_180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../../assets/images/favicon/favicon_192.png" />
+  <link rel="shortcut icon" type="image/png" href="../../assets/images/favicon/favicon_96.png" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../assets/images/favicon/favicon_57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="../../assets/images/favicon/favicon_60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../assets/images/favicon/favicon_76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../assets/images/favicon/favicon_114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/favicon/favicon_120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../assets/images/favicon/favicon_152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon/favicon_180.png" />
+  <!-- Android Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../../assets/images/favicon/favicon_192.png" />
+  <link rel="stylesheet" href="../../assets/css/lib/bootstrap-datepicker.standalone.css" />
+  <link rel="stylesheet" href="../../assets/css/lib-style.css" />
+  <link rel="stylesheet" href="../../assets/css/pc-style.css" />
+  <link rel="stylesheet" href="../../assets/css/iframe-layout.css" />
+  <script src="../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script src="../../assets/js/lib/jquery-ui.min.js"></script>
+  <script src="../../assets/js/lib/bootstrap.min.js"></script>
+  <script>
+    if (typeof cldMsg_prevMonth === 'undefined') {
+      window.cldMsg_prevMonth = '이전달';
+      window.cldMsg_nextMonth = '다음달';
+      window.cldMsg_prevYear = '이전년';
+      window.cldMsg_nextYear = '다음년';
+      window.cldMsg_prev = '이전';
+      window.cldMsg_next = '다음';
+    }
+  </script>
+  <script src="../../assets/js/lib/bootstrap-datepicker.js"></script>
+  <script src="../../assets/js/lib/popper.min.js"></script>
+  <script src="../../assets/js/s1-uvis-script.js"></script>
+  <script src="../../assets/js/lib/jquery.cookie.js"></script>
+  <script src="../../assets/js/lib/jquery.mask.min.js"></script>
+  <script src="../../assets/js/jquery.uvis.common.js"></script>
+  <script>
+    jQuery.browser = {};
+    (function () {
+      jQuery.browser.msie = false;
+      jQuery.browser.version = 0;
+      if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+      }
+    })();
+  </script>
+  <script src="../../assets/js/publish.js"></script>
+  <title>Guide | Table</title>
+  <style>
+    /* 체크박스 컬럼 너비 고정 */
+    .data-list-table .data-table table colgroup col.col-chk { width: 43px; }
+    .data-list-table .data-table table colgroup col.col-no   { width: 64px; }
+    .data-list-table .data-table table colgroup col.col-date { width: 120px; }
+    .data-list-table .data-table table thead tr th,
+    .data-list-table .data-table table tbody tr.ui-widget-content td {
+      box-sizing: border-box;
+    }
+    /* 체크박스 th 정렬 */
+    .data-list-table .data-table table thead tr th.th-chk {
+      text-align: center;
+      padding: 0 4px;
+    }
+    /* 빈 행 스타일 */
+    .data-list-table .data-table table tbody tr.ui-widget-content.empty-row td {
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body style="overflow:hidden; margin:0;">
+  <div class="general-container">
+    <div class="general-area">
+      <div class="general-top">
+        <div class="general-label">Component</div>
+        <div class="general-title">Table</div>
+      </div>
+      <div class="general-middle">
+
+        <!-- ============================================================
+             1. Data List Table
+             ============================================================ -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Data List Table</div>
+              <div class="component-block-subtitle">리스트 데이터 표시 · 체크박스 선택 · 페이징 · 빈 행 처리</div>
+            </div>
+          </div>
+          <div class="component-preview" style="padding: 16px 20px; display: block;">
+            <div class="data-list-table">
+
+              <!-- 헤더 -->
+              <div class="data-list-table-header">
+                <div class="header-left">
+                  <div class="title-box">리스트 제목</div>
+                  <div class="info-box">
+                    <div class="count-box">
+                      <span class="label">총</span>
+                      <span class="data">5</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="header-right">
+                  <button type="button" class="btn btn-white" disabled><span>삭제</span></button>
+                  <button type="button" class="btn btn-white"><span>다운로드</span></button>
+                  <button type="button" class="btn btn-blue"><span>신규등록</span></button>
+                </div>
+              </div>
+
+              <!-- 테이블 본문 -->
+              <div class="data-table">
+                <table>
+                  <colgroup>
+                    <col class="col-chk" /><!-- 체크박스 -->
+                    <col class="col-no" /><!-- 순번 -->
+                    <col /><!-- 항목명 -->
+                    <col style="width:120px;" /><!-- 분류 -->
+                    <col style="width:100px;" /><!-- 상태 -->
+                    <col class="col-date" /><!-- 등록일 -->
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="th-chk">
+                        <input type="checkbox" id="chk-all" />
+                      </th>
+                      <th style="text-align:center;">
+                        <div class="ui-jqgrid-sortable"><span>순번</span></div>
+                      </th>
+                      <th style="text-align:left; padding-left:8px;">
+                        <div class="ui-jqgrid-sortable"><span>항목명</span></div>
+                      </th>
+                      <th style="text-align:center;">
+                        <div class="ui-jqgrid-sortable"><span>분류</span></div>
+                      </th>
+                      <th style="text-align:center;">
+                        <div class="ui-jqgrid-sortable"><span>상태</span></div>
+                      </th>
+                      <th style="text-align:center;">
+                        <div class="ui-jqgrid-sortable"><span>등록일</span></div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- 데이터 행 -->
+                    <tr class="ui-widget-content">
+                      <td style="text-align:center;"><input type="checkbox" /></td>
+                      <td style="text-align:center;">1</td>
+                      <td>항목명 A</td>
+                      <td style="text-align:center;">분류1</td>
+                      <td style="text-align:center;">사용</td>
+                      <td style="text-align:center;">25.10.24</td>
+                    </tr>
+                    <tr class="ui-widget-content ui-state-highlight">
+                      <td style="text-align:center;"><input type="checkbox" checked /></td>
+                      <td style="text-align:center;">2</td>
+                      <td>항목명 B</td>
+                      <td style="text-align:center;">분류2</td>
+                      <td style="text-align:center;">사용</td>
+                      <td style="text-align:center;">25.10.23</td>
+                    </tr>
+                    <tr class="ui-widget-content">
+                      <td style="text-align:center;"><input type="checkbox" /></td>
+                      <td style="text-align:center;">3</td>
+                      <td>항목명 C</td>
+                      <td style="text-align:center;">분류1</td>
+                      <td style="text-align:center; color:var(--semantic-color-text-caution);">미사용</td>
+                      <td style="text-align:center;">25.10.22</td>
+                    </tr>
+                    <tr class="ui-widget-content">
+                      <td style="text-align:center;"><input type="checkbox" /></td>
+                      <td style="text-align:center;">4</td>
+                      <td>항목명 D</td>
+                      <td style="text-align:center;">분류3</td>
+                      <td style="text-align:center;">사용</td>
+                      <td style="text-align:center;">25.10.21</td>
+                    </tr>
+                    <tr class="ui-widget-content">
+                      <td style="text-align:center;"><input type="checkbox" /></td>
+                      <td style="text-align:center;">5</td>
+                      <td>항목명 E</td>
+                      <td style="text-align:center;">분류2</td>
+                      <td style="text-align:center;">사용</td>
+                      <td style="text-align:center;">25.10.20</td>
+                    </tr>
+                    <!-- 빈 행 (데이터 없는 행, 15개 고정 표시용) -->
+                    <tr class="ui-widget-content empty-row"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr class="ui-widget-content empty-row"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr class="ui-widget-content empty-row"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr class="ui-widget-content empty-row"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr class="ui-widget-content empty-row"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr class="ui-widget-content empty-row"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr class="ui-widget-content empty-row"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr class="ui-widget-content empty-row"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr class="ui-widget-content empty-row"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr class="ui-widget-content empty-row"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- 푸터 -->
+              <div class="data-list-table-footer">
+                <div class="paging jquery-paging">
+                  <a class="btn-first disabled" href="#1"></a>
+                  <a class="btn-prev disabled" href="#1"></a>
+                  <a class="on" href="#1">1</a>
+                  <a href="#2">2</a>
+                  <a href="#3">3</a>
+                  <a class="btn-next" href="#2"></a>
+                  <a class="btn-last" href="#3"></a>
+                </div>
+                <div class="footer-right">
+                  <div class="input-wrap inline select length-change small">
+                    <div class="field field-dropdown field-x-small normal">
+                      <div class="field-form">
+                        <select class="dropdown-select" style="display:none;">
+                          <option value="15" active>15개씩 보기</option>
+                          <option value="30">30개씩 보기</option>
+                          <option value="50">50개씩 보기</option>
+                          <option value="100">100개씩 보기</option>
+                        </select>
+                        <button type="button" class="btn-dropdown">
+                          <span class="text">15개씩 보기</span>
+                          <span class="placeholder" style="display:none;">선택</span>
+                        </button>
+                        <div class="dropdown-list-box">
+                          <div class="dropdown-list active">
+                            <button type="button" class="btn-dropdown-list" data-value="15"><span>15개씩 보기</span></button>
+                          </div>
+                          <div class="dropdown-list">
+                            <button type="button" class="btn-dropdown-list" data-value="30"><span>30개씩 보기</span></button>
+                          </div>
+                          <div class="dropdown-list">
+                            <button type="button" class="btn-dropdown-list" data-value="50"><span>50개씩 보기</span></button>
+                          </div>
+                          <div class="dropdown-list">
+                            <button type="button" class="btn-dropdown-list" data-value="100"><span>100개씩 보기</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /data-list-table -->
+          </div>
+        </div>
+
+        <!-- ============================================================
+             2. Data List Table — 빈 데이터 상태 (empty-message-row)
+             ============================================================ -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Data List Table — Empty</div>
+              <div class="component-block-subtitle">데이터 없음 상태 (empty-message-row)</div>
+            </div>
+          </div>
+          <div class="component-preview" style="padding: 16px 20px; display: block;">
+            <div class="data-list-table">
+              <div class="data-list-table-header">
+                <div class="header-left">
+                  <div class="title-box">리스트 제목</div>
+                  <div class="info-box">
+                    <div class="count-box">
+                      <span class="label">총</span>
+                      <span class="data">0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="header-right">
+                  <button type="button" class="btn btn-white" disabled><span>삭제</span></button>
+                  <button type="button" class="btn btn-white"><span>다운로드</span></button>
+                  <button type="button" class="btn btn-blue"><span>신규등록</span></button>
+                </div>
+              </div>
+              <div class="data-table">
+                <table>
+                  <colgroup>
+                    <col class="col-chk" />
+                    <col class="col-no" />
+                    <col />
+                    <col style="width:120px;" />
+                    <col style="width:100px;" />
+                    <col class="col-date" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="th-chk"><input type="checkbox" disabled /></th>
+                      <th style="text-align:center;"><div class="ui-jqgrid-sortable"><span>순번</span></div></th>
+                      <th style="text-align:left; padding-left:8px;"><div class="ui-jqgrid-sortable"><span>항목명</span></div></th>
+                      <th style="text-align:center;"><div class="ui-jqgrid-sortable"><span>분류</span></div></th>
+                      <th style="text-align:center;"><div class="ui-jqgrid-sortable"><span>상태</span></div></th>
+                      <th style="text-align:center;"><div class="ui-jqgrid-sortable"><span>등록일</span></div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="empty-message-row">
+                      <td colspan="6" style="height:200px;">
+                        등록된 항목이 없어요.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="data-list-table-footer">
+                <div class="paging jquery-paging">
+                  <a class="btn-first disabled" href="#1"></a>
+                  <a class="btn-prev disabled" href="#1"></a>
+                  <a class="on" href="#1">1</a>
+                  <a class="btn-next disabled" href="#1"></a>
+                  <a class="btn-last disabled" href="#1"></a>
+                </div>
+                <div class="footer-right">
+                  <div class="input-wrap inline select length-change small">
+                    <div class="field field-dropdown field-x-small normal">
+                      <div class="field-form">
+                        <select class="dropdown-select" style="display:none;">
+                          <option value="15" active>15개씩 보기</option>
+                        </select>
+                        <button type="button" class="btn-dropdown">
+                          <span class="text">15개씩 보기</span>
+                          <span class="placeholder" style="display:none;">선택</span>
+                        </button>
+                        <div class="dropdown-list-box">
+                          <div class="dropdown-list active">
+                            <button type="button" class="btn-dropdown-list" data-value="15"><span>15개씩 보기</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             3. Data Form Table
+             ============================================================ -->
+        <div class="component-block">
+          <div class="component-block-header">
+            <div>
+              <div class="component-block-title">Data Form Table</div>
+              <div class="component-block-subtitle">상세정보 입력 폼 · th/td 레이아웃 · 필수항목(necessary) · colspan 병합</div>
+            </div>
+          </div>
+          <div class="component-preview" style="padding: 16px 20px; display: block;">
+            <div class="data-form-table">
+              <div class="data-form-table-header">
+                <div class="header-left">
+                  <h3 class="header-title">상세 내용</h3>
+                </div>
+                <div class="header-right">
+                  <button type="button" class="btn btn-white">취소</button>
+                  <button type="button" class="btn btn-blue">저장</button>
+                </div>
+              </div>
+              <div class="data-form-table-body">
+                <form onsubmit="return false;">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th><span class="necessary">필수 항목</span></th>
+                        <td>
+                          <div class="input-wrap">
+                            <input type="text" class="input-medium" placeholder="텍스트 입력" />
+                          </div>
+                        </td>
+                        <th>일반 항목</th>
+                        <td>
+                          <div class="radio-group">
+                            <label for="tbl-radio1">
+                              <input type="radio" id="tbl-radio1" name="tbl-radio" checked />
+                              <span>선택1</span>
+                            </label>
+                            <label for="tbl-radio2">
+                              <input type="radio" id="tbl-radio2" name="tbl-radio" />
+                              <span>선택2</span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th><span class="necessary">다중 선택</span></th>
+                        <td colspan="3">
+                          <div class="checkbox-group">
+                            <label for="tbl-chk1">
+                              <input type="checkbox" id="tbl-chk1" checked />
+                              <span>항목1</span>
+                            </label>
+                            <label for="tbl-chk2">
+                              <input type="checkbox" id="tbl-chk2" />
+                              <span>항목2</span>
+                            </label>
+                            <label for="tbl-chk3">
+                              <input type="checkbox" id="tbl-chk3" />
+                              <span>항목3</span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>날짜</th>
+                        <td>
+                          <div class="input-wrap date">
+                            <input type="text" class="datepicker input-xsmall" placeholder="00.00.00" readonly />
+                            <i class="icon icon-calendar"></i>
+                          </div>
+                        </td>
+                        <th>텍스트 영역</th>
+                        <td>
+                          <div class="input-wrap">
+                            <textarea class="input-medium" placeholder="내용을 입력하세요" rows="3" style="resize:vertical;"></textarea>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>읽기 전용</th>
+                        <td colspan="3">
+                          <span>2025.10.24 / 관리자</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script>document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
+</body>
+
+</html>
