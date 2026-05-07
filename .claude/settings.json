@@ -28,7 +28,15 @@
       "Bash(curl -s -o \"C:/dev/GitHub/s1-code-lib/tmp_embed.png\" \"https://www.figma.com/api/mcp/asset/f54c83f5-024f-4143-b4cc-e244578720f8\")",
       "Bash(grep -n \"^\\\\/\\\\* ──── Table ──── \\\\*\\\\/$\" \"c:/dev/GitHub/s1-code-lib/assets/css/pc-components.css\")",
       "Bash(powershell -Command \"\\(Get-Content 'c:/dev/GitHub/s1-code-lib/assets/css/pc-components.css'\\)[0..11088] | Set-Content -Encoding utf8 'c:/dev/GitHub/s1-code-lib/assets/css/pc-components.css'; Write-Host 'done'\")",
-      "Bash(powershell -Command ' *)"
+      "Bash(powershell -Command ' *)",
+      "Bash(git restore *)",
+      "Bash(awk 'NR>=6109 && /<\\\\/pre>/{print NR; exit}' \"c:\\\\dev\\\\GitHub\\\\s1-code-lib\\\\index.html\")",
+      "Bash(python)",
+      "Bash(python \"c:\\\\dev\\\\GitHub\\\\s1-code-lib\\\\_replace_mobile_chip_snippet.py\")",
+      "Bash(python \"c:\\\\dev\\\\GitHub\\\\s1-code-lib\\\\_replace_pc_chip_snippet.py\")",
+      "Bash(grep -n \"page-section.*id=\\\\\"page-chip\\\\\\\\|page-section.*id=\\\\\"page-checkbox\\\\\\\\|page-section.*id=\\\\\"page-m-filterchip\\\\\\\\|page-section.*id=\\\\\"page-m-dropdown\\\\\"\" \"c:\\\\dev\\\\GitHub\\\\s1-code-lib\\\\index.html\")",
+      "Bash(awk 'NR>=6155 && /<\\\\/pre>/{print NR; exit}' \"c:\\\\dev\\\\GitHub\\\\s1-code-lib\\\\index.html\")",
+      "Bash(python \"c:\\\\dev\\\\GitHub\\\\s1-code-lib\\\\_replace_m_chip.py\")"
     ],
     "additionalDirectories": [
       "c:\\dev\\GitHub\\s1-code-lib\\assets\\fonts\\Pretendard",

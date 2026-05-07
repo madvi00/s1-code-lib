@@ -42,7 +42,30 @@
   <script src="../../assets/js/dropdown.js"></script>
   <title>Guide | Filter Chip</title>
   <style>
-    .field-dropdown { width: 180px; }
+    .field-dropdown { width: auto; }
+
+    /* ===== Filter chip selected-state styles ===== */
+    /* line + selected: blue label text */
+    .field-dropdown[class*=has-label]:not(.has-label-solid) .btn-dropdown.selected .selected-label,
+    .field-dropdown[class*=has-label]:not(.has-label-solid) .btn-dropdown.selected .inner-label > span {
+      color: var(--semantic-color-chip-line-label-selected);
+    }
+    /* solid + selected: blue background, white label, white arrow */
+    .field-dropdown[class*=has-label].has-label-solid .btn-dropdown.selected {
+      border-color: var(--semantic-color-chip-solid-background-selected);
+      background: var(--semantic-color-chip-solid-background-selected);
+    }
+    .field-dropdown[class*=has-label].has-label-solid .btn-dropdown.selected::after {
+      background: url("../../assets/images/ic_menu_arrow_down_white.svg") no-repeat center/contain;
+    }
+    .field-dropdown[class*=has-label].has-label-solid .btn-dropdown.selected .selected-label,
+    .field-dropdown[class*=has-label].has-label-solid .btn-dropdown.selected .inner-label > span {
+      color: var(--semantic-color-chip-solid-label-selected);
+    }
+    .field-dropdown[class*=has-label].has-label-solid .btn-dropdown.selected:hover {
+      border-color: transparent;
+      background: linear-gradient(0deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.05) 100%), var(--semantic-color-chip-solid-background-selected);
+    }
   </style>
 </head>
 
@@ -55,401 +78,415 @@
       </div>
       <div class="general-middle">
 
+        <!-- ===== Medium ===== -->
         <div class="component-block">
           <div class="component-block-header">
             <div>
               <div class="component-block-title">Medium</div>
+              <div class="component-block-subtitle">line · solid · selected · disabled</div>
             </div>
           </div>
           <div class="component-preview" style="flex-wrap:wrap; gap:8px;">
+            <!-- line / default -->
             <div class="field field-dropdown field-medium has-label">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
+                <select class="dropdown-select" style="display:none">
                   <option value="OPTION1" active>OPTION1</option>
                   <option value="OPTION2">OPTION2</option>
                   <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
                 </select>
-                <button type="button" class="btn-dropdown">
-                  <span class="inner-label">
-                    <strong class="selected-label">OPTION1</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><strong class="selected-label">OPTION1</strong></span>
                 </button>
-                <div class="dropdown-list-box">
+                <div class="dropdown-list-box" role="listbox">
                   <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="OPTION1"><span>OPTION1</span></button></div>
                   <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
                   <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
                 </div>
               </div>
             </div>
-            <div class="field field-dropdown field-medium has-label disabled">
+            <!-- line / selected -->
+            <div class="field field-dropdown field-medium has-label">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
-                  <option value="OPTION1" active>OPTION1</option>
-                  <option value="OPTION2">OPTION2</option>
+                <select class="dropdown-select" style="display:none">
+                  <option value="OPTION1">OPTION1</option>
+                  <option value="OPTION2" active>OPTION2</option>
                   <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
                 </select>
-                <button type="button" class="btn-dropdown" disabled>
-                  <span class="inner-label">
-                    <strong class="selected-label">OPTION1</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown selected" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><strong class="selected-label">OPTION2</strong></span>
                 </button>
-                <div class="dropdown-list-box">
-                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="OPTION1"><span>OPTION1</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
+                <div class="dropdown-list-box" role="listbox">
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION1"><span>OPTION1</span></button></div>
+                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
                   <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
                 </div>
               </div>
             </div>
+            <!-- solid / default -->
             <div class="field field-dropdown field-medium has-label-solid">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
+                <select class="dropdown-select" style="display:none">
                   <option value="OPTION1" active>OPTION1</option>
                   <option value="OPTION2">OPTION2</option>
                   <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
                 </select>
-                <button type="button" class="btn-dropdown">
-                  <span class="inner-label">
-                    <strong class="selected-label">OPTION1</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><strong class="selected-label">OPTION1</strong></span>
                 </button>
-                <div class="dropdown-list-box">
+                <div class="dropdown-list-box" role="listbox">
                   <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="OPTION1"><span>OPTION1</span></button></div>
                   <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
                   <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
                 </div>
               </div>
             </div>
-            <div class="field field-dropdown field-medium has-label-solid disabled">
+            <!-- solid / selected -->
+            <div class="field field-dropdown field-medium has-label-solid">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
+                <select class="dropdown-select" style="display:none">
+                  <option value="OPTION1">OPTION1</option>
+                  <option value="OPTION2" active>OPTION2</option>
+                  <option value="OPTION3">OPTION3</option>
+                </select>
+                <button type="button" class="btn-dropdown selected" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><strong class="selected-label">OPTION2</strong></span>
+                </button>
+                <div class="dropdown-list-box" role="listbox">
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION1"><span>OPTION1</span></button></div>
+                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
+                </div>
+              </div>
+            </div>
+            <!-- line / disabled -->
+            <div class="field field-dropdown field-medium has-label disabled">
+              <div class="field-form">
+                <select class="dropdown-select" style="display:none">
                   <option value="OPTION1" active>OPTION1</option>
                   <option value="OPTION2">OPTION2</option>
-                  <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
                 </select>
-                <button type="button" class="btn-dropdown" disabled>
-                  <span class="inner-label">
-                    <strong class="selected-label">OPTION1</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown" disabled aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><strong class="selected-label">OPTION1</strong></span>
                 </button>
-                <div class="dropdown-list-box">
-                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="OPTION1"><span>OPTION1</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
-                </div>
+              </div>
+            </div>
+            <!-- solid / disabled -->
+            <div class="field field-dropdown field-medium has-label-solid disabled">
+              <div class="field-form">
+                <select class="dropdown-select" style="display:none">
+                  <option value="OPTION1" active>OPTION1</option>
+                  <option value="OPTION2">OPTION2</option>
+                </select>
+                <button type="button" class="btn-dropdown" disabled aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><strong class="selected-label">OPTION1</strong></span>
+                </button>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- ===== Medium + (with prefix label) ===== -->
         <div class="component-block">
           <div class="component-block-header">
             <div>
               <div class="component-block-title">Medium +</div>
+              <div class="component-block-subtitle">prefix label · line · solid · selected · disabled</div>
             </div>
           </div>
           <div class="component-preview" style="flex-wrap:wrap; gap:8px;">
+            <!-- line+ / default -->
             <div class="field field-dropdown field-medium has-label">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
+                <select class="dropdown-select" style="display:none">
                   <option value="전체" active>전체</option>
-                  <option value="OPTION2">OPTION2</option>
-                  <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
+                  <option value="배차완료">배차완료</option>
+                  <option value="배차대기">배차대기</option>
                 </select>
-                <button type="button" class="btn-dropdown">
-                  <span class="inner-label">
-                    <span></span>
-                    <strong class="selected-label">전체</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><span>배차상태</span><strong class="selected-label">전체</strong></span>
                 </button>
-                <div class="dropdown-list-box">
+                <div class="dropdown-list-box" role="listbox">
                   <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="전체"><span>전체</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="배차완료"><span>배차완료</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="배차대기"><span>배차대기</span></button></div>
                 </div>
               </div>
             </div>
-            <div class="field field-dropdown field-medium has-label disabled">
+            <!-- line+ / selected -->
+            <div class="field field-dropdown field-medium has-label">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
-                  <option value="전체" active>전체</option>
-                  <option value="OPTION2">OPTION2</option>
-                  <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
+                <select class="dropdown-select" style="display:none">
+                  <option value="전체">전체</option>
+                  <option value="배차완료" active>배차완료</option>
+                  <option value="배차대기">배차대기</option>
                 </select>
-                <button type="button" class="btn-dropdown" disabled>
-                  <span class="inner-label">
-                    <span></span>
-                    <strong class="selected-label">전체</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown selected" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><span>배차상태</span><strong class="selected-label">배차완료</strong></span>
                 </button>
-                <div class="dropdown-list-box">
-                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="전체"><span>전체</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
+                <div class="dropdown-list-box" role="listbox">
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="전체"><span>전체</span></button></div>
+                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="배차완료"><span>배차완료</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="배차대기"><span>배차대기</span></button></div>
                 </div>
               </div>
             </div>
+            <!-- solid+ / default -->
             <div class="field field-dropdown field-medium has-label-solid">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
+                <select class="dropdown-select" style="display:none">
                   <option value="전체" active>전체</option>
-                  <option value="OPTION2">OPTION2</option>
-                  <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
+                  <option value="배차완료">배차완료</option>
+                  <option value="배차대기">배차대기</option>
                 </select>
-                <button type="button" class="btn-dropdown">
-                  <span class="inner-label">
-                    <span></span>
-                    <strong class="selected-label">전체</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><span>배차상태</span><strong class="selected-label">전체</strong></span>
                 </button>
-                <div class="dropdown-list-box">
+                <div class="dropdown-list-box" role="listbox">
                   <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="전체"><span>전체</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="배차완료"><span>배차완료</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="배차대기"><span>배차대기</span></button></div>
                 </div>
               </div>
             </div>
+            <!-- solid+ / selected -->
+            <div class="field field-dropdown field-medium has-label-solid">
+              <div class="field-form">
+                <select class="dropdown-select" style="display:none">
+                  <option value="전체">전체</option>
+                  <option value="배차완료" active>배차완료</option>
+                  <option value="배차대기">배차대기</option>
+                </select>
+                <button type="button" class="btn-dropdown selected" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><span>배차상태</span><strong class="selected-label">배차완료</strong></span>
+                </button>
+                <div class="dropdown-list-box" role="listbox">
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="전체"><span>전체</span></button></div>
+                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="배차완료"><span>배차완료</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="배차대기"><span>배차대기</span></button></div>
+                </div>
+              </div>
+            </div>
+            <!-- line+ / disabled -->
+            <div class="field field-dropdown field-medium has-label disabled">
+              <div class="field-form">
+                <select class="dropdown-select" style="display:none">
+                  <option value="전체" active>전체</option>
+                </select>
+                <button type="button" class="btn-dropdown" disabled aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><span>배차상태</span><strong class="selected-label">전체</strong></span>
+                </button>
+              </div>
+            </div>
+            <!-- solid+ / disabled -->
             <div class="field field-dropdown field-medium has-label-solid disabled">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
+                <select class="dropdown-select" style="display:none">
                   <option value="전체" active>전체</option>
-                  <option value="OPTION2">OPTION2</option>
-                  <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
                 </select>
-                <button type="button" class="btn-dropdown" disabled>
-                  <span class="inner-label">
-                    <span></span>
-                    <strong class="selected-label">전체</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown" disabled aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><span>배차상태</span><strong class="selected-label">전체</strong></span>
                 </button>
-                <div class="dropdown-list-box">
-                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="전체"><span>전체</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
-                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- ===== Small ===== -->
         <div class="component-block">
           <div class="component-block-header">
             <div>
               <div class="component-block-title">Small</div>
+              <div class="component-block-subtitle">line · solid · selected · disabled</div>
             </div>
           </div>
           <div class="component-preview" style="flex-wrap:wrap; gap:8px;">
             <div class="field field-dropdown field-small has-label">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
+                <select class="dropdown-select" style="display:none">
                   <option value="OPTION1" active>OPTION1</option>
                   <option value="OPTION2">OPTION2</option>
                   <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
                 </select>
-                <button type="button" class="btn-dropdown">
-                  <span class="inner-label">
-                    <strong class="selected-label">OPTION1</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><strong class="selected-label">OPTION1</strong></span>
                 </button>
-                <div class="dropdown-list-box">
+                <div class="dropdown-list-box" role="listbox">
                   <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="OPTION1"><span>OPTION1</span></button></div>
                   <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
                   <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
                 </div>
               </div>
             </div>
-            <div class="field field-dropdown field-small has-label disabled">
+            <div class="field field-dropdown field-small has-label">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
-                  <option value="OPTION1" active>OPTION1</option>
-                  <option value="OPTION2">OPTION2</option>
+                <select class="dropdown-select" style="display:none">
+                  <option value="OPTION1">OPTION1</option>
+                  <option value="OPTION2" active>OPTION2</option>
                   <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
                 </select>
-                <button type="button" class="btn-dropdown" disabled>
-                  <span class="inner-label">
-                    <strong class="selected-label">OPTION1</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown selected" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><strong class="selected-label">OPTION2</strong></span>
                 </button>
-                <div class="dropdown-list-box">
-                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="OPTION1"><span>OPTION1</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
+                <div class="dropdown-list-box" role="listbox">
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION1"><span>OPTION1</span></button></div>
+                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
                   <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
                 </div>
               </div>
             </div>
             <div class="field field-dropdown field-small has-label-solid">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
+                <select class="dropdown-select" style="display:none">
                   <option value="OPTION1" active>OPTION1</option>
                   <option value="OPTION2">OPTION2</option>
                   <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
                 </select>
-                <button type="button" class="btn-dropdown">
-                  <span class="inner-label">
-                    <strong class="selected-label">OPTION1</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><strong class="selected-label">OPTION1</strong></span>
                 </button>
-                <div class="dropdown-list-box">
+                <div class="dropdown-list-box" role="listbox">
                   <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="OPTION1"><span>OPTION1</span></button></div>
                   <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
                   <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
                 </div>
+              </div>
+            </div>
+            <div class="field field-dropdown field-small has-label-solid">
+              <div class="field-form">
+                <select class="dropdown-select" style="display:none">
+                  <option value="OPTION1">OPTION1</option>
+                  <option value="OPTION2" active>OPTION2</option>
+                  <option value="OPTION3">OPTION3</option>
+                </select>
+                <button type="button" class="btn-dropdown selected" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><strong class="selected-label">OPTION2</strong></span>
+                </button>
+                <div class="dropdown-list-box" role="listbox">
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION1"><span>OPTION1</span></button></div>
+                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
+                </div>
+              </div>
+            </div>
+            <div class="field field-dropdown field-small has-label disabled">
+              <div class="field-form">
+                <select class="dropdown-select" style="display:none">
+                  <option value="OPTION1" active>OPTION1</option>
+                </select>
+                <button type="button" class="btn-dropdown" disabled aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><strong class="selected-label">OPTION1</strong></span>
+                </button>
               </div>
             </div>
             <div class="field field-dropdown field-small has-label-solid disabled">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
+                <select class="dropdown-select" style="display:none">
                   <option value="OPTION1" active>OPTION1</option>
-                  <option value="OPTION2">OPTION2</option>
-                  <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
                 </select>
-                <button type="button" class="btn-dropdown" disabled>
-                  <span class="inner-label">
-                    <strong class="selected-label">OPTION1</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown" disabled aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><strong class="selected-label">OPTION1</strong></span>
                 </button>
-                <div class="dropdown-list-box">
-                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="OPTION1"><span>OPTION1</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
-                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- ===== Small + (with prefix label) ===== -->
         <div class="component-block">
           <div class="component-block-header">
             <div>
               <div class="component-block-title">Small +</div>
+              <div class="component-block-subtitle">prefix label · line · solid · selected · disabled</div>
             </div>
           </div>
           <div class="component-preview" style="flex-wrap:wrap; gap:8px;">
             <div class="field field-dropdown field-small has-label">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
+                <select class="dropdown-select" style="display:none">
                   <option value="전체" active>전체</option>
-                  <option value="OPTION2">OPTION2</option>
-                  <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
+                  <option value="배차완료">배차완료</option>
+                  <option value="배차대기">배차대기</option>
                 </select>
-                <button type="button" class="btn-dropdown">
-                  <span class="inner-label">
-                    <span></span>
-                    <strong class="selected-label">전체</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><span>배차상태</span><strong class="selected-label">전체</strong></span>
                 </button>
-                <div class="dropdown-list-box">
+                <div class="dropdown-list-box" role="listbox">
                   <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="전체"><span>전체</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="배차완료"><span>배차완료</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="배차대기"><span>배차대기</span></button></div>
                 </div>
               </div>
             </div>
-            <div class="field field-dropdown field-small has-label disabled">
+            <div class="field field-dropdown field-small has-label">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
-                  <option value="전체" active>전체</option>
-                  <option value="OPTION2">OPTION2</option>
-                  <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
+                <select class="dropdown-select" style="display:none">
+                  <option value="전체">전체</option>
+                  <option value="배차완료" active>배차완료</option>
+                  <option value="배차대기">배차대기</option>
                 </select>
-                <button type="button" class="btn-dropdown" disabled>
-                  <span class="inner-label">
-                    <span></span>
-                    <strong class="selected-label">전체</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown selected" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><span>배차상태</span><strong class="selected-label">배차완료</strong></span>
                 </button>
-                <div class="dropdown-list-box">
-                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="전체"><span>전체</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
+                <div class="dropdown-list-box" role="listbox">
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="전체"><span>전체</span></button></div>
+                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="배차완료"><span>배차완료</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="배차대기"><span>배차대기</span></button></div>
                 </div>
               </div>
             </div>
             <div class="field field-dropdown field-small has-label-solid">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
+                <select class="dropdown-select" style="display:none">
                   <option value="전체" active>전체</option>
-                  <option value="OPTION2">OPTION2</option>
-                  <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
+                  <option value="배차완료">배차완료</option>
+                  <option value="배차대기">배차대기</option>
                 </select>
-                <button type="button" class="btn-dropdown">
-                  <span class="inner-label">
-                    <span></span>
-                    <strong class="selected-label">전체</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><span>배차상태</span><strong class="selected-label">전체</strong></span>
                 </button>
-                <div class="dropdown-list-box">
+                <div class="dropdown-list-box" role="listbox">
                   <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="전체"><span>전체</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="배차완료"><span>배차완료</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="배차대기"><span>배차대기</span></button></div>
                 </div>
+              </div>
+            </div>
+            <div class="field field-dropdown field-small has-label-solid">
+              <div class="field-form">
+                <select class="dropdown-select" style="display:none">
+                  <option value="전체">전체</option>
+                  <option value="배차완료" active>배차완료</option>
+                  <option value="배차대기">배차대기</option>
+                </select>
+                <button type="button" class="btn-dropdown selected" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><span>배차상태</span><strong class="selected-label">배차완료</strong></span>
+                </button>
+                <div class="dropdown-list-box" role="listbox">
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="전체"><span>전체</span></button></div>
+                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="배차완료"><span>배차완료</span></button></div>
+                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="배차대기"><span>배차대기</span></button></div>
+                </div>
+              </div>
+            </div>
+            <div class="field field-dropdown field-small has-label disabled">
+              <div class="field-form">
+                <select class="dropdown-select" style="display:none">
+                  <option value="전체" active>전체</option>
+                </select>
+                <button type="button" class="btn-dropdown" disabled aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><span>배차상태</span><strong class="selected-label">전체</strong></span>
+                </button>
               </div>
             </div>
             <div class="field field-dropdown field-small has-label-solid disabled">
               <div class="field-form">
-                <select class="dropdown-select" style="display: none">
+                <select class="dropdown-select" style="display:none">
                   <option value="전체" active>전체</option>
-                  <option value="OPTION2">OPTION2</option>
-                  <option value="OPTION3">OPTION3</option>
-                  <option value="OPTION4">OPTION4</option>
                 </select>
-                <button type="button" class="btn-dropdown" disabled>
-                  <span class="inner-label">
-                    <span>배차상태</span>
-                    <strong class="selected-label">전체</strong>
-                    <span class="placeholder" style="display: none;"></span>
-                  </span>
+                <button type="button" class="btn-dropdown" disabled aria-haspopup="listbox" aria-expanded="false">
+                  <span class="inner-label"><span>배차상태</span><strong class="selected-label">전체</strong></span>
                 </button>
-                <div class="dropdown-list-box">
-                  <div class="dropdown-list active"><button type="button" class="btn-dropdown-list" data-value="전체"><span>전체</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION2"><span>OPTION2</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION3"><span>OPTION3</span></button></div>
-                  <div class="dropdown-list"><button type="button" class="btn-dropdown-list" data-value="OPTION4"><span>OPTION4</span></button></div>
-                </div>
               </div>
             </div>
           </div>
@@ -458,6 +495,27 @@
       </div>
     </div>
   </div>
+  <script>
+    // Filter chip: toggle .selected on btn-dropdown when value is chosen.
+    // The first option in each chip is treated as the "default" (no .selected);
+    // any other choice marks the chip as actively selected.
+    (function ($) {
+      function isDefaultValue($field, value) {
+        var $first = $field.find('.dropdown-select option').first();
+        if (!$first.length) return false;
+        return String($first.attr('value')) === String(value);
+      }
+      $(document).on('dropdown:change', '.field-dropdown.has-label, .field-dropdown.has-label-solid', function (e, data) {
+        var $btn = $(this).find('> .field-form > .btn-dropdown');
+        if (!$btn.length) return;
+        if (data && isDefaultValue($(this), data.value)) {
+          $btn.removeClass('selected');
+        } else {
+          $btn.addClass('selected');
+        }
+      });
+    })(jQuery);
+  </script>
   <script>document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
 </body>
 
