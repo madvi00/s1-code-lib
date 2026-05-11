@@ -1329,7 +1329,7 @@ img {
   height: var(--semantic-sizing-icon-16);
 }
 .btn.btn-medium {
-  min-width: 90px;
+  min-width: 64px;
   height: var(--semantic-sizing-button-height-md);
   padding: 0 var(--semantic-spacing-padding-inline-xs);
   font-size: var(--foundation-font-size-14);
@@ -3019,7 +3019,7 @@ body > .dropdown-list-box[class*=has-label] .dropdown-list .btn-dropdown-list {
 .field-dropdown .btn-dropdown {
   position: relative;
   width: 100%;
-  padding: 0 32px 0 8px;
+  padding: 0 32px 0 16px;
   border: 1px solid var(--semantic-color-form-control-border-default);
   border-radius: var(--semantic-radius-control-sm);
   background-color: var(--semantic-color-form-control-background-default);
@@ -5799,7 +5799,7 @@ div.modal.show {
   background-color: var(--semantic-base-background-default);
 }
 .modal .modal-container:has(.modal-bottom) {
-  padding: 16px 24px;
+  padding: 20px;
 }
 .modal .modal-container .input-wrap + .input-wrap, .modal .modal-container .input-wrap + .timepicker-box {
   margin-left: 4px;

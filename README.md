@@ -21,7 +21,12 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 
 ## 시작하기
 
-### 1. CSS 연결
+### 1. assets.zip 다운로드
+
+라이브러리 홈의 [시작하기] 페이지에서 `assets.zip`을 받아 프로젝트 루트에 압축 해제합니다.
+`css / fonts / images / js` 가 그대로 배치됩니다. (HTML 마크업은 각 컴포넌트 페이지의 코드 스니펫에서 복사해 사용)
+
+### 2. CSS 연결
 
 ```html
 <!-- 공통 레이아웃 -->
@@ -34,7 +39,7 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 <link rel="stylesheet" href="assets/css/mobile-style.css" />
 ```
 
-### 2. 디자인 토큰 (CSS 변수)
+### 3. 디자인 토큰 (CSS 변수)
 
 모든 토큰은 `assets/css/variables.css`에 정의되어 있습니다.
 
@@ -61,16 +66,16 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 | Checkbox | `layouts/general_pc/checkbox.html` | 다중 선택, 라벨 조합, 비활성 상태 포함 |
 | Datepicker | `layouts/general_pc/datepicker.html` | Single / Range 날짜 선택기 |
 | Dropdown | `layouts/general_pc/dropdown.html` | 단일 항목 선택, has-label 변형 포함 |
-| Filter Chip | `layouts/general_pc/filterChip.html` | has-label / has-label-solid 두 가지 스타일 |
+| Filter Chip | `layouts/general_pc/filter-chip.html` | line / solid 스타일 · prefix 라벨 · default · selected · disabled 상태 |
 | Input | `layouts/general_pc/input.html` | 텍스트, 검색, 비밀번호, 숫자 입력 |
 | Loading | `layouts/general_pc/loading.html` | 로딩 인디케이터 |
 | Modal | `layouts/general_pc/modal.html` | 제목, 내용, 버튼으로 구성되는 팝업 |
 | Radio | `layouts/general_pc/radio.html` | 단일 선택 라디오 버튼 |
-| Range TimePicker | `layouts/general_pc/rangeTimePicker.html` | 시간 범위 선택기 |
-| Accordion | `layouts/general_pc/routeAccordion.html` | 경로 아코디언 |
+| Range TimePicker | `layouts/general_pc/range-time-picker.html` | 시간 범위 선택기 |
+| Accordion | `layouts/general_pc/route-accordion.html` | 경로 아코디언 |
 | Tab | `layouts/general_pc/tab.html` | 탭 네비게이션 |
-| Time Picker | `layouts/general_pc/timePicker.html` | 시간 선택기 |
-| Weather Widget | `layouts/general_pc/weatherWidget.html` | 날씨 위젯 |
+| Time Picker | `layouts/general_pc/time-picker.html` | 시간 선택기 |
+| Weather Widget | `layouts/general_pc/weather-widget.html` | 날씨 위젯 |
 
 ### Mobile
 
@@ -81,19 +86,19 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 | Checkbox | `layouts/general_mobile/checkbox.html` | 모바일 체크박스 |
 | Datepicker | `layouts/general_mobile/datepicker.html` | 모바일 날짜 선택기 |
 | Dropdown | `layouts/general_mobile/dropdown.html` | 모바일 드롭다운 |
-| Dropdown Type Label | `layouts/general_mobile/dropdownTypeLabel.html` | 라벨 타입 드롭다운 (Mobile 전용) |
-| Filter Chip | `layouts/general_mobile/filterChip.html` | 모바일 필터 칩 |
+| Dropdown Type Label | `layouts/general_mobile/dropdown-type-label.html` | 라벨 타입 드롭다운 (Mobile 전용) |
+| Filter Chip | `layouts/general_mobile/filter-chip.html` | line / solid 스타일 · prefix 라벨 · default · selected · disabled 상태 |
 | Input | `layouts/general_mobile/input.html` | 모바일 입력 필드 |
 | Loading | `layouts/general_mobile/loading.html` | 모바일 로딩 인디케이터 |
 | Modal | `layouts/general_mobile/modal.html` | 모바일 팝업 모달 |
-| Multi Dropdown | `layouts/general_mobile/multiDropdown.html` | 다중 선택 드롭다운 (Mobile 전용) |
+| Multi Dropdown | `layouts/general_mobile/multi-dropdown.html` | 다중 선택 드롭다운 (Mobile 전용) |
 | Radio | `layouts/general_mobile/radio.html` | 모바일 라디오 버튼 |
-| Range Time Picker | `layouts/general_mobile/rangeTimePicker.html` | 모바일 시간 범위 선택기 |
-| Accordion | `layouts/general_mobile/routeAccordion.html` | 모바일 아코디언 |
+| Range Time Picker | `layouts/general_mobile/range-time-picker.html` | 모바일 시간 범위 선택기 |
+| Accordion | `layouts/general_mobile/route-accordion.html` | 모바일 아코디언 |
 | Switch | `layouts/general_mobile/switch.html` | 토글 스위치 (Mobile 전용) |
-| Underline Tab | `layouts/general_mobile/tab.html` | 언더라인 탭 |
-| Time Picker | `layouts/general_mobile/timePicker.html` | 모바일 시간 선택기 |
-| Weather Widget | `layouts/general_mobile/weatherWidget.html` | 모바일 날씨 위젯 |
+| Underline Tab | `layouts/general_mobile/underline-tab.html` | 언더라인 탭 |
+| Time Picker | `layouts/general_mobile/time-picker.html` | 모바일 시간 선택기 |
+| Weather Widget | `layouts/general_mobile/weather-widget.html` | 모바일 날씨 위젯 |
 
 ---
 
@@ -102,6 +107,7 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 ```
 s1-code-lib/
 ├── index.html                  # 메인 라이브러리 페이지
+├── assets.zip                  # 시작하기 페이지에서 배포되는 자산 묶음
 ├── assets/
 │   ├── css/
 │   │   ├── variables.css       # 디자인 토큰 (Foundation · Semantic)
@@ -111,8 +117,10 @@ s1-code-lib/
 │   │   ├── pc-components.css   # PC 컴포넌트 상세
 │   │   └── mobile-components.css # Mobile 컴포넌트 상세
 │   ├── js/
-│   │   └── script.js           # 라이브러리 인터랙션
-│   └── images/                 # 이미지 리소스
+│   │   ├── script.js           # 라이브러리 인터랙션
+│   │   └── dropdown.js         # Dropdown · Filter Chip 동작
+│   ├── fonts/                  # Pretendard · Noto Sans KR · FA
+│   └── images/                 # 아이콘 · 이미지 리소스
 ├── layouts/
 │   ├── general_pc/             # PC 컴포넌트 단독 페이지
 │   └── general_mobile/         # Mobile 컴포넌트 단독 페이지
@@ -122,6 +130,13 @@ s1-code-lib/
 ---
 
 ## 업데이트 내역
+
+### v1.1.0 (2026.05)
+- Filter Chip 컴포넌트 확장: line / solid 스타일에 `selected` 상태 추가
+- Filter Chip prefix 라벨 변형(line+, solid+) 미리보기·코드 스니펫 정비
+- 코드 스니펫 포맷 통일: 카테고리별 탭(Medium · Medium + · Small · Small +) 분리
+- 비밀번호 입력 eye 아이콘 색상 정비 (`#C4C4C4` → `#757575`)
+- `assets.zip` 재생성 (CSS · JS · 아이콘 변경분 반영)
 
 ### v1.0.0 (2026.04)
 - PC / Mobile 컴포넌트 최초 공개
