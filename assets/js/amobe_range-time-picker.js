@@ -66,7 +66,6 @@
     // -------------------------
     function placeDropdown($input, $dropdown) {
       var rect = $input.get(0).getBoundingClientRect();
-      var dropdownH = $dropdown.outerHeight(true);
       var dropdownW = $dropdown.outerWidth(true);
       var gap = 6;
 
@@ -74,15 +73,10 @@
       var fRect = (_inFrame && window.frameElement) ? window.frameElement.getBoundingClientRect() : { top: 0, left: 0 };
       var top = rect.bottom + fRect.top + gap;
       var left = rect.left + fRect.left;
-      var winH = _pwin.innerHeight;
       var winW = _pwin.innerWidth;
 
-      if (top + dropdownH > winH) {
-        top = rect.top + fRect.top - dropdownH - gap;
-        $dropdown.addClass(CLASSES.bottom);
-      } else {
-        $dropdown.removeClass(CLASSES.bottom);
-      }
+      // 항상 아래로 플로팅
+      $dropdown.removeClass(CLASSES.bottom);
 
       var willOverflowRight = left + dropdownW > winW;
       if (willOverflowRight) {
@@ -164,6 +158,27 @@
     // 포털 내부 클릭 → 닫힘 방지
     $(_pdoc).on('click', PORTAL_SEL + ' ' + SELECTORS.dropdown, function (e) {
       e.stopPropagation();
+    });
+
+    // tab switch (시작/종료)
+    $(_pdoc).on('click', PORTAL_SEL + ' .tabs .tab', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!openedBox || !$movedDropdown) return;
+
+      var $tab = $(this);
+      var $containerTabs = $tab.closest('.tabs').children('.tab');
+      var idx = $containerTabs.index($tab);
+      if (idx < 0) return;
+
+      var $panels = $movedDropdown.find(SELECTORS.panel);
+      if (idx >= $panels.length) return;
+
+      $containerTabs.find('a').removeClass('on');
+      $tab.find('a').addClass('on');
+
+      $panels.removeClass(CLASSES.active);
+      $panels.eq(idx).addClass(CLASSES.active);
     });
 
     // hour select

@@ -11,8 +11,10 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 
 | 항목 | 수치 |
 |---|---|
-| PC 컴포넌트 | 15개 |
-| Mobile 컴포넌트 | 18개 |
+| PC 컴포넌트 | 14개 |
+| PC 모듈 | 2개 |
+| Mobile 컴포넌트 | 17개 |
+| Mobile 모듈 | 1개 |
 | 디자인 토큰 카테고리 | 3개 (Color · Spacing · Typography) |
 | CSS 변수 | 488개 |
 | 구현 방식 | 순수 HTML/CSS (프레임워크 없음) |
@@ -72,10 +74,16 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 | Modal | `layouts/general_pc/modal.html` | 제목, 내용, 버튼으로 구성되는 팝업 |
 | Radio | `layouts/general_pc/radio.html` | 단일 선택 라디오 버튼 |
 | Range TimePicker | `layouts/general_pc/range-time-picker.html` | 시간 범위 선택기 |
-| Accordion | `layouts/general_pc/route-accordion.html` | 경로 아코디언 |
 | Tab | `layouts/general_pc/tab.html` | 탭 네비게이션 |
 | Time Picker | `layouts/general_pc/time-picker.html` | 시간 선택기 |
 | Weather Widget | `layouts/general_pc/weather-widget.html` | 날씨 위젯 |
+
+### PC Module
+
+| 모듈 | 파일 | 설명 |
+|---|---|---|
+| Accordion | `layouts/general_pc/route-accordion.html` | 노선 리스트 + 배차 정보 + 차량 리스트 등을 조합한 노선 아코디언 |
+| Table | `layouts/general_pc/table.html` | 데이터 리스트(jqGrid) 및 상세정보 폼 테이블 |
 
 ### Mobile
 
@@ -94,11 +102,16 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 | Multi Dropdown | `layouts/general_mobile/multi-dropdown.html` | 다중 선택 드롭다운 (Mobile 전용) |
 | Radio | `layouts/general_mobile/radio.html` | 모바일 라디오 버튼 |
 | Range Time Picker | `layouts/general_mobile/range-time-picker.html` | 모바일 시간 범위 선택기 |
-| Accordion | `layouts/general_mobile/route-accordion.html` | 모바일 아코디언 |
 | Switch | `layouts/general_mobile/switch.html` | 토글 스위치 (Mobile 전용) |
 | Underline Tab | `layouts/general_mobile/underline-tab.html` | 언더라인 탭 |
 | Time Picker | `layouts/general_mobile/time-picker.html` | 모바일 시간 선택기 |
 | Weather Widget | `layouts/general_mobile/weather-widget.html` | 모바일 날씨 위젯 |
+
+### Mobile Module
+
+| 모듈 | 파일 | 설명 |
+|---|---|---|
+| Accordion | `layouts/general_mobile/route-accordion.html` | 노선 리스트 + 배차 정보 + 차량 리스트 등을 조합한 노선 아코디언 |
 
 ---
 
@@ -130,6 +143,12 @@ s1-code-lib/
 ---
 
 ## 업데이트 내역
+
+### v1.1.1 (2026.05.11)
+- PC Button 사이즈 레이블 정비 (sm/md/lg → xxsmall/xsmall/medium 표기)
+- Button Icon Type / Assist Type 코드 스니펫 아이콘 클래스 보정 (`icon-list-download`)
+- 일부 컴포넌트 미세 간격 조정 (Modal padding, Dropdown padding, Button xsmall min-width)
+- `assets.zip` 재생성
 
 ### v1.1.0 (2026.05)
 - Filter Chip 컴포넌트 확장: line / solid 스타일에 `selected` 상태 추가

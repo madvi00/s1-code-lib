@@ -470,10 +470,6 @@
   --semantic-color-status-cluster-bg-gray: var(--foundation-color-gray-500);
 
   /* ── Sizing ── */
-  --semantic-sizing-button-height-lg: var(--foundation-sizing-48);
-  --semantic-sizing-button-height-md: var(--foundation-sizing-44);
-  --semantic-sizing-button-height-sm: var(--foundation-sizing-40);
-  --semantic-sizing-button-height-xs: var(--foundation-sizing-28);
   --semantic-sizing-form-control-height-lg: var(--foundation-sizing-48);
   --semantic-sizing-form-control-height-md: var(--foundation-sizing-44);
   --semantic-sizing-form-control-height-xs: var(--foundation-sizing-34);

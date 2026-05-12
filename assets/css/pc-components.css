@@ -791,10 +791,9 @@ img {
   --semantic-sizing-icon-24: var(--foundation-sizing-24);
   --semantic-sizing-icon-28: var(--foundation-sizing-28);
   --semantic-sizing-icon-32: var(--foundation-sizing-32);
-  --semantic-sizing-button-height-lg: var(--foundation-sizing-44);
-  --semantic-sizing-button-height-md: var(--foundation-sizing-34);
-  --semantic-sizing-button-height-sm: var(--foundation-sizing-40);
-  --semantic-sizing-button-height-xs: var(--foundation-sizing-28);
+  --semantic-sizing-button-height-medium: var(--foundation-sizing-44);
+  --semantic-sizing-button-height-xsmall: var(--foundation-sizing-34);
+  --semantic-sizing-button-height-xxsmall: var(--foundation-sizing-28);
   --semantic-sizing-chip-height-sm: var(--foundation-sizing-28);
   --semantic-sizing-chip-height-md: var(--foundation-sizing-30);
   --semantic-sizing-chip-height-lg: var(--foundation-sizing-34);
@@ -1261,7 +1260,7 @@ img {
   align-items: center;
   gap: 2px;
   min-width: 60px;
-  height: var(--semantic-sizing-button-height-xs);
+  height: var(--semantic-sizing-button-height-xxsmall);
   padding: 0 11px;
   border-radius: var(--foundation-radius-4);
   border: var(--semantic-border-width-default) solid transparent;
@@ -1269,7 +1268,7 @@ img {
   font-weight: var(--foundation-font-weight-medium);
   line-height: var(--foundation-line-height-130);
   letter-spacing: var(--foundation-letter-spacing-normal);
-  line-height: var(--semantic-sizing-button-height-xs);
+  line-height: var(--semantic-sizing-button-height-xxsmall);
   white-space: nowrap;
 }
 .btn:has(> .icon:only-child) {
@@ -1330,13 +1329,13 @@ img {
 }
 .btn.btn-medium {
   min-width: 64px;
-  height: var(--semantic-sizing-button-height-md);
+  height: var(--semantic-sizing-button-height-xsmall);
   padding: 0 var(--semantic-spacing-padding-inline-xs);
   font-size: var(--foundation-font-size-14);
   font-weight: var(--foundation-font-weight-medium);
   line-height: var(--foundation-line-height-130);
   letter-spacing: var(--foundation-letter-spacing-tight);
-  line-height: var(--semantic-sizing-button-height-md);
+  line-height: var(--semantic-sizing-button-height-xsmall);
 }
 .btn.btn-medium .ic {
   width: var(--semantic-sizing-icon-24);
@@ -1344,13 +1343,13 @@ img {
 }
 .btn.btn-large {
   min-width: 90px;
-  height: var(--semantic-sizing-button-height-lg);
+  height: var(--semantic-sizing-button-height-medium);
   padding: 0 var(--semantic-spacing-padding-inline-xs);
   font-size: var(--foundation-font-size-14);
   font-weight: var(--foundation-font-weight-medium);
   line-height: var(--foundation-line-height-130);
   letter-spacing: var(--foundation-letter-spacing-tight);
-  line-height: var(--semantic-sizing-button-height-lg);
+  line-height: var(--semantic-sizing-button-height-medium);
 }
 .btn:disabled, .btn.disabled {
   border-color: var(--semantic-color-button-border-disabled);

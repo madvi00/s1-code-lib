@@ -54,7 +54,9 @@
       "Bash(python _make_pptx.py)",
       "Bash(python -c \"from pptx import Presentation; p = Presentation\\('에스원_UI_라이브러리_성과보고_2026-05-08.pptx'\\); print\\(f'Slides: {len\\(p.slides\\)}'\\); [print\\(f'  {i+1}. {len\\(s.shapes\\)} shapes'\\) for i,s in enumerate\\(p.slides\\)]\")",
       "Bash(python _recolor_pptx.py)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(grep -E '\\\\.html$')",
+      "Bash(git checkout *)"
     ],
     "additionalDirectories": [
       "c:\\dev\\GitHub\\s1-code-lib\\assets\\fonts\\Pretendard",
