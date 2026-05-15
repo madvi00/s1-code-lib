@@ -1,0 +1,27 @@
+# 기본: 텍스트 파일은 자동 감지 + LF 정규화
+* text=auto eol=lf
+
+# 명시적 텍스트 파일
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.svg   text eol=lf
+
+# 바이너리 파일 (변환 금지)
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.zip   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.eot   binary
+
+# 외부 라이브러리: 원본 유지
+vendor/** -text
+assets/js/lib/** -text

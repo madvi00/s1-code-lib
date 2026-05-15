@@ -36,6 +36,21 @@
   <script src="../../assets/js/tab.js"></script>
   <script src="../../assets/js/time-picker.js"></script>
   <title>Guide | Input</title>
+  <style>
+    /* 입력 전후 width가 변하지 않도록 .input-wrap에 명시적 폭 고정.
+       전체 폭은 항상 360px. 버튼이 있는 경우 내부 input-box만 272px로 줄이고
+       나머지 공간을 input-button-box가 차지. */
+    .input-wrap { width: 360px; box-sizing: border-box; }
+    .input-wrap:has(.input-button-box) .input-box {
+      width: 272px;
+      flex: 0 0 272px;
+      box-sizing: border-box;
+    }
+    .input-wrap:has(.input-button-box) .input-button-box {
+      flex: 1 1 auto;
+      margin-left: 8px;
+    }
+  </style>
 </head>
 
 <body style="overflow:hidden; margin:0;">

@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 @font-face {
   font-family: "Pretendard";
   font-weight: 900;
@@ -215,8 +215,8 @@ a {
 }
 
 *:not(html):not(body)::-webkit-scrollbar {
-  width: 12px; /* ?몃줈 ?ㅽ겕濡?*/
-  height: 12px; /* 媛濡??ㅽ겕濡?*/
+  width: 12px; /* 세로 스크롤 */
+  height: 12px; /* 가로 스크롤 */
 }
 
 *:not(html):not(body)::-webkit-scrollbar-thumb {
@@ -256,7 +256,7 @@ img {
   display: none !important;
 }
 
-/* ?泥댄뀓?ㅽ듃 ?④? ?대옒??*/
+/* 대체텍스트 숨김 클래스 */
 .blind {
   position: absolute;
   width: 1px;
@@ -7250,7 +7250,7 @@ body:has(.multi-map-container) {
 .account-container .account-notice-box {
   margin-top: 40px;
 }
-/* ?뚯썝?덊눜 - ?덊눜?꾨즺 */
+/* 회원탈퇴 - 탈퇴완료 */
 .account-layout-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10219,7 +10219,7 @@ body:has(.term-container) {
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 1fr;
   gap: 8px;
-  /* ??쒕낫???곸뿭 2媛쒖씪 ??*/
+  /* 미리보기 영역 2개씩 노출 */
 }
 #dashboard .partition-area .grid-area-box:has(> .area-box:nth-child(1):nth-last-child(2)), #dashboard .partition-area .grid-area-box:has(> .area-box:nth-child(2):nth-last-child(1)), #dashboard .partition-area .grid-area-box:has(> .area-box:only-child) {
   grid-template-columns: repeat(1, 1fr);

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ko">
 
@@ -55,14 +55,14 @@
     <div class="sidebar-scroll">
     <!-- Platform Toggle -->
     <div class="platform-toggle-bar">
-      <button class="platform-btn active" data-platform="pc" onclick="switchPlatform('pc')">
+      <button type="button" class="platform-btn active" data-platform="pc" onclick="switchPlatform('pc')">
         <svg fill="none" height="14" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="14">
           <rect height="10" rx="1.5" width="14" x="1" y="2"></rect>
           <path d="M5 14h6M8 12v2"></path>
         </svg>
         PC
       </button>
-      <button class="platform-btn" data-platform="mobile" onclick="switchPlatform('mobile')">
+      <button type="button" class="platform-btn" data-platform="mobile" onclick="switchPlatform('mobile')">
         <svg fill="none" height="14" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="14">
           <rect height="14" rx="2" width="8" x="4" y="1"></rect>
           <circle cx="8" cy="12.5" fill="currentColor" r="0.8" stroke="none"></circle>
@@ -78,7 +78,7 @@
     </div>
     <div class="sidebar-version">
       v1.0.1 · 2026
-      <button class="changelog-btn" onclick="toggleChangelog()" title="업데이트 내역">
+      <button type="button" class="changelog-btn" onclick="toggleChangelog()" title="업데이트 내역">
         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="13" height="13">
           <circle cx="8" cy="8" r="6"></circle>
           <path d="M8 5v3.5l2 1.5"></path>
@@ -429,7 +429,7 @@
     <div class="changelog-panel" id="changelogPanel">
       <div class="changelog-header">
         <span class="changelog-title">업데이트 내역</span>
-        <button class="changelog-close" onclick="toggleChangelog()">
+        <button type="button" class="changelog-close" onclick="toggleChangelog()">
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" width="14" height="14">
             <path d="M4 4l8 8M12 4l-8 8"></path>
           </svg>
@@ -510,7 +510,7 @@
             </svg>
           </div>
           <div class="stat-body">
-            <div class="stat-num">3</div>
+            <div class="stat-num">6</div>
             <div class="stat-label">디자인 토큰 카테고리</div>
           </div>
         </div>
@@ -534,7 +534,7 @@
             </svg>
           </div>
           <div class="stat-body">
-            <div class="stat-num">488</div>
+            <div class="stat-num">511</div>
             <div class="stat-label">CSS 변수</div>
           </div>
         </div>
@@ -935,8 +935,8 @@
           <div class="step-desc"><strong>PC</strong>와 <strong>Mobile</strong>은 사용하는 CSS 파일이 다릅니다. <code>lib-style.css</code>는 공통 필수이며, 플랫폼에 맞는 컴포넌트 스타일 파일을 함께 연결합니다.</div>
           <div class="gs-tab-wrap">
             <div class="gs-tabs">
-              <button class="gs-tab active" onclick="gsTab(this, 'css-pc')">PC</button>
-              <button class="gs-tab" onclick="gsTab(this, 'css-mobile')">Mobile</button>
+              <button type="button" class="gs-tab active" onclick="gsTab(this, 'css-pc')">PC</button>
+              <button type="button" class="gs-tab" onclick="gsTab(this, 'css-mobile')">Mobile</button>
             </div>
             <div class="gs-tab-panel active" id="css-pc">
               <div class="step-code">&lt;!-- 공통 기본 스타일 (필수) --&gt;
@@ -966,22 +966,21 @@
           <div class="step-desc">jQuery는 공통 필수입니다. 인터랙션이 있는 컴포넌트는 해당 JS 파일을 <strong>추가로</strong> 연결해야 동작합니다. 사용하지 않는 컴포넌트의 JS는 포함하지 않아도 됩니다.</div>
           <div class="gs-tab-wrap">
             <div class="gs-tabs">
-              <button class="gs-tab active" onclick="gsTab(this, 'js-pc')">PC</button>
-              <button class="gs-tab" onclick="gsTab(this, 'js-mobile')">Mobile</button>
+              <button type="button" class="gs-tab active" onclick="gsTab(this, 'js-pc')">PC</button>
+              <button type="button" class="gs-tab" onclick="gsTab(this, 'js-mobile')">Mobile</button>
             </div>
             <div class="gs-tab-panel active" id="js-pc">
               <div class="step-code">&lt;!-- jQuery (필수) --&gt;
 &lt;script src="assets/js/lib/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- 컴포넌트별 JS (사용하는 것만 추가) --&gt;
-&lt;script src="assets/js/dropdown.js"&gt;&lt;/script&gt;       &lt;!-- Dropdown, Filter Chip --&gt;
-&lt;script src="assets/js/modal.js"&gt;&lt;/script&gt;          &lt;!-- Modal --&gt;
-&lt;script src="assets/js/lib/bootstrap-datepicker.js"&gt;&lt;/script&gt; &lt;!-- Datepicker 의존 라이브러리 --&gt;
-&lt;script src="assets/js/datepicker.js"&gt;&lt;/script&gt;     &lt;!-- Datepicker --&gt;
-&lt;script src="assets/js/time-picker.js"&gt;&lt;/script&gt;     &lt;!-- Time Picker --&gt;
-&lt;script src="assets/js/range-time-picker.js"&gt;&lt;/script&gt; &lt;!-- Range Time Picker --&gt;
-&lt;script src="assets/js/tab.js"&gt;&lt;/script&gt;            &lt;!-- Tab --&gt;
-&lt;script src="assets/js/route-accordion.js"&gt;&lt;/script&gt; &lt;!-- Route Accordion --&gt;</div>
+&lt;script src="assets/js/dropdown.js"&gt;&lt;/script&gt;                 &lt;!-- Dropdown, Filter Chip --&gt;
+&lt;script src="assets/js/amobe_modal.js"&gt;&lt;/script&gt;              &lt;!-- Modal --&gt;
+&lt;script src="assets/js/amobe_input.js"&gt;&lt;/script&gt;              &lt;!-- Input --&gt;
+&lt;script src="assets/js/lib/bootstrap-datepicker.js"&gt;&lt;/script&gt; &lt;!-- Datepicker --&gt;
+&lt;script src="assets/js/amobe_time-picker.js"&gt;&lt;/script&gt;        &lt;!-- Time Picker --&gt;
+&lt;script src="assets/js/amobe_range-time-picker.js"&gt;&lt;/script&gt;  &lt;!-- Range Time Picker --&gt;
+&lt;script src="assets/js/route-accordion.js"&gt;&lt;/script&gt;          &lt;!-- Route Accordion --&gt;</div>
             </div>
             <div class="gs-tab-panel" id="js-mobile">
               <div class="step-code">&lt;!-- jQuery (필수) --&gt;
@@ -1002,7 +1001,7 @@
 &lt;script src="assets/js/input.js"&gt;&lt;/script&gt;          &lt;!-- Input --&gt;</div>
             </div>
           </div>
-          <div class="notice" style="margin-top: 14px;">💡 Badge, Button, Checkbox, Radio, Switch, Loading, Weather Widget은 JS 없이 CSS만으로 동작합니다.</div>
+          <div class="notice" style="margin-top: 14px;">💡 Badge, Button, Checkbox, Radio, Switch(Mobile), Loading, Weather Widget은 JS 없이 CSS만으로 동작합니다.</div>
         </div>
       </div>
 
@@ -1024,12 +1023,12 @@
         <h3 class="sub-title">기본 페이지 구조</h3>
         <div class="component-block">
           <div class="gs-tabs" style="margin-bottom: 0; border-bottom: 1px solid var(--gray-200); padding: 0 16px;">
-            <button class="gs-tab active" onclick="gsTab(this, 'struct-pc')" style="border-radius: 0; border-bottom: 2px solid transparent; padding: 10px 14px;">PC</button>
-            <button class="gs-tab" onclick="gsTab(this, 'struct-mobile')" style="border-radius: 0; border-bottom: 2px solid transparent; padding: 10px 14px;">Mobile</button>
+            <button type="button" class="gs-tab active" onclick="gsTab(this, 'struct-pc')" style="border-radius: 0; border-bottom: 2px solid transparent; padding: 10px 14px;">PC</button>
+            <button type="button" class="gs-tab" onclick="gsTab(this, 'struct-mobile')" style="border-radius: 0; border-bottom: 2px solid transparent; padding: 10px 14px;">Mobile</button>
           </div>
           <div class="gs-tab-panel active" id="struct-pc">
             <div class="code-block-wrapper">
-              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+              <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
               <div class="code-snippet active" style="max-height:none;"><pre>&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
@@ -1056,7 +1055,7 @@
           </div>
           <div class="gs-tab-panel" id="struct-mobile">
             <div class="code-block-wrapper">
-              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+              <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
               <div class="code-snippet active" style="max-height:none;"><pre>&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
@@ -1101,7 +1100,7 @@
             </thead>
             <tbody>
               <tr style="border-bottom: 1px solid var(--gray-100);">
-                <td style="padding: 10px 16px; color: var(--gray-800);">Badge · Button · Checkbox · Radio · Switch · Loading · Weather Widget</td>
+                <td style="padding: 10px 16px; color: var(--gray-800);">Badge · Button · Checkbox · Radio · Switch(Mobile) · Loading · Weather Widget</td>
                 <td style="padding: 10px 16px; color: var(--gray-500); font-style: italic;">JS 불필요 (CSS만으로 동작)</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
@@ -1120,32 +1119,32 @@
               </tr>
               <tr style="border-bottom: 1px solid var(--gray-100);">
                 <td style="padding: 10px 16px; color: var(--gray-800);">Modal</td>
-                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/modal.js</td>
+                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/amobe_modal.js <span style="color:var(--gray-400); font-size:11px;">(PC)</span><br>assets/js/modal.js <span style="color:var(--gray-400); font-size:11px;">(Mobile)</span></td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
               </tr>
               <tr style="border-bottom: 1px solid var(--gray-100);">
                 <td style="padding: 10px 16px; color: var(--gray-800);">Datepicker</td>
-                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/lib/bootstrap-datepicker.js<br>assets/js/datepicker.js<br><span style="color:var(--gray-400); font-size:11px;">+ bootstrap-datepicker.standalone.css</span></td>
+                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/lib/bootstrap-datepicker.js<br>assets/js/datepicker.js <span style="color:var(--gray-400); font-size:11px;">(Mobile만)</span><br><span style="color:var(--gray-400); font-size:11px;">+ bootstrap-datepicker.standalone.css</span></td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
               </tr>
               <tr style="border-bottom: 1px solid var(--gray-100);">
                 <td style="padding: 10px 16px; color: var(--gray-800);">Time Picker</td>
-                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/time-picker.js<br><span style="color:var(--gray-400); font-size:11px;">+ swiper-bundle.min.js (Mobile)</span></td>
+                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/amobe_time-picker.js <span style="color:var(--gray-400); font-size:11px;">(PC)</span><br>assets/js/time-picker.js <span style="color:var(--gray-400); font-size:11px;">(Mobile)</span><br><span style="color:var(--gray-400); font-size:11px;">+ swiper-bundle.min.js (Mobile)</span></td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
               </tr>
               <tr style="border-bottom: 1px solid var(--gray-100);">
                 <td style="padding: 10px 16px; color: var(--gray-800);">Range Time Picker</td>
-                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/range-time-picker.js<br><span style="color:var(--gray-400); font-size:11px;">+ swiper-bundle.min.js (Mobile)</span></td>
+                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/amobe_range-time-picker.js <span style="color:var(--gray-400); font-size:11px;">(PC)</span><br>assets/js/range-time-picker.js <span style="color:var(--gray-400); font-size:11px;">(Mobile)</span><br><span style="color:var(--gray-400); font-size:11px;">+ swiper-bundle.min.js (Mobile)</span></td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
               </tr>
               <tr style="border-bottom: 1px solid var(--gray-100);">
                 <td style="padding: 10px 16px; color: var(--gray-800);">Tab</td>
-                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/tab.js</td>
-                <td style="padding: 10px 16px; text-align: center;">✓</td>
+                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/tab.js <span style="color:var(--gray-400); font-size:11px;">(Mobile만)</span></td>
+                <td style="padding: 10px 16px; text-align: center; color: var(--gray-300);">—</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
               </tr>
               <tr style="border-bottom: 1px solid var(--gray-100);">
@@ -1156,14 +1155,14 @@
               </tr>
               <tr>
                 <td style="padding: 10px 16px; color: var(--gray-800);">Input</td>
-                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/input.js</td>
+                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/amobe_input.js <span style="color:var(--gray-400); font-size:11px;">(PC)</span><br>assets/js/input.js <span style="color:var(--gray-400); font-size:11px;">(Mobile)</span></td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
               </tr>
               <tr>
                 <td style="padding: 10px 16px; color: var(--gray-800);">File Upload</td>
                 <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/file.js</td>
-                <td style="padding: 10px 16px; text-align: center;">✓</td>
+                <td style="padding: 10px 16px; text-align: center; color: var(--gray-300);">—</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
               </tr>
             </tbody>
@@ -1176,8 +1175,8 @@
       <div class="section-header">
         <div class="badge">DESIGN TOKENS</div>
         <h1>디자인 토큰</h1>
-        <p>에스원 디자인 시스템은 <strong>Foundation → Semantic</strong> 2계층 구조로 토큰을 관리합니다. Foundation은 원시 값이며, Semantic은 사용 맥락에
-          맞게 Foundation 토큰을 참조합니다. 컴포넌트에는 반드시 <strong>Semantic 토큰</strong>을 사용하세요.</p>
+        <p>에스원 디자인 시스템은 <strong>Foundation → Semantic</strong> 2계층 구조로 토큰을 관리합니다.<br> Foundation은 원시 값이며, Semantic은 사용 맥락에
+          맞게 Foundation 토큰을 참조합니다.<br>컴포넌트에는 반드시 <strong>Semantic 토큰</strong>을 사용하세요.</p>
       </div>
       <!-- LAYER DIAGRAM -->
       <div
@@ -3201,7 +3200,7 @@
           <div class="code-tabs">
             <div class="code-tab active">CSS 적용 예시</div>
           </div>
-          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
           <div class="code-snippet active" style="max-height:none;">
             <pre>/* ✅ 올바른 방법: Semantic 토큰 사용 */
 .btn-primary {
@@ -3274,7 +3273,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Weather Widget</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/weather-widget.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/weather-widget.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -3294,7 +3293,7 @@
             <div class="code-tabs">
               <div class="code-tab active">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;!-- 날씨 아이콘 파일 목록 (assets/images/)
   ic_weather_clear.svg            : 맑음
@@ -3331,7 +3330,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Time Picker</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/time-picker.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/time-picker.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -3351,7 +3350,7 @@
             <div class="code-tabs">
               <div class="code-tab active">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;!-- Medium --&gt;
 &lt;div class="timepicker-box timepicker-medium"&gt;
@@ -3683,7 +3682,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Tab</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/tab.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/tab.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -3703,7 +3702,7 @@
             <div class="code-tabs">
               <div class="code-tab active">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;!-- Size Small - Tab --&gt;
 &lt;div class="btn-group" role="tablist"&gt;
@@ -3756,7 +3755,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Table</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/table.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/table.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -3778,7 +3777,7 @@
               <div class="code-tab" onclick="switchTab(this, 'tbl-empty-html')">Empty 상태</div>
               <div class="code-tab" onclick="switchTab(this, 'tbl-form-html')">Data Form Table</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="tbl-list-html">
               <pre>&lt;div class="data-list-table"&gt;
   &lt;!-- 헤더: 제목 + 버튼 --&gt;
@@ -3981,7 +3980,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Accordion</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/route-accordion.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/route-accordion.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -4001,7 +4000,7 @@
             <div class="code-tabs">
               <div class="code-tab active">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;div class="route-list-box"&gt;
   &lt;ul class="route-lists"&gt;
@@ -4129,7 +4128,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Range Time Picker</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/range-time-picker.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/range-time-picker.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -4149,7 +4148,7 @@
             <div class="code-tabs">
               <div class="code-tab active">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;div class="range-timepicker-box range range-timepicker-medium"&gt;
   &lt;div class="range-timepicker-input"&gt;
@@ -4180,7 +4179,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Radio</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/radio.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/radio.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -4200,7 +4199,7 @@
             <div class="code-tabs">
               <div class="code-tab active">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;div class="radio-group"&gt;
   &lt;label for="radio-1"&gt;
@@ -4230,7 +4229,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Modal</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/modal.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/modal.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -4250,7 +4249,7 @@
             <div class="code-tabs">
               <div class="code-tab active">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;!-- Trigger --&gt;
 &lt;button type="button" class="btn btn-blue btn-medium btn-modal"
@@ -4308,7 +4307,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Loading</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/loading.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/loading.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -4328,7 +4327,7 @@
             <div class="code-tabs">
               <div class="code-tab active">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;!-- 에스원 기본 로딩 --&gt;
 &lt;div class="loading-box" role="status" aria-live="polite" aria-label="로딩 중"&gt;
@@ -4353,7 +4352,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Input</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/input.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/input.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -4376,7 +4375,7 @@
               <div class="code-tab" onclick="switchTab(this, 'input-password-html')">Password</div>
               <div class="code-tab" onclick="switchTab(this, 'input-number-html')">Number</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="input-text-html">
               <pre>&lt;!-- Medium --&gt;
 &lt;div class="input-wrap"&gt;
@@ -4450,7 +4449,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Dropdown</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/dropdown.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/dropdown.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -4471,7 +4470,7 @@
               <div class="code-tab active" onclick="switchTab(this, 'dd-normal')">normal</div>
               <div class="code-tab" onclick="switchTab(this, 'dd-has-label')">has-label</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="dd-normal">
               <pre>&lt;!-- Medium --&gt;
 &lt;div class="field field-dropdown field-medium normal"&gt;
@@ -4559,7 +4558,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Datepicker</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/datepicker.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/datepicker.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -4580,7 +4579,7 @@
               <div class="code-tab active" onclick="switchTab(this, 'dp-single-range')">Single / Range</div>
               <div class="code-tab" onclick="switchTab(this, 'dp-range-time')">Range &amp; time</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="dp-single-range">
               <pre>&lt;!-- Single Medium --&gt;
 &lt;div class="input-wrap date"&gt;
@@ -4765,7 +4764,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Filter Chip</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/filter-chip.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/filter-chip.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -4788,7 +4787,7 @@
               <div class="code-tab" onclick="switchTab(this, 'pc-chip-small')">Small</div>
               <div class="code-tab" onclick="switchTab(this, 'pc-chip-small-plus')">Small +</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="pc-chip-medium">
               <pre>&lt;!-- Default (line) --&gt;
 &lt;div class="field field-dropdown field-medium has-label"&gt;
@@ -4993,7 +4992,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Checkbox</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/checkbox.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/checkbox.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -5014,7 +5013,7 @@
               <div class="code-tab active" onclick="switchTab(this, 'chk-checkbox-only')">Checkbox (without label)</div>
               <div class="code-tab" onclick="switchTab(this, 'chk-checkbox-html')">Checkbox (with label)</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="chk-checkbox-only">
               <pre>&lt;input type="checkbox" id="@@id" name="@@name" /&gt;</pre>
             </div>
@@ -5060,7 +5059,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Button</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/button.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/button.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -5085,7 +5084,7 @@
               <div class="code-tab" onclick="switchTab(this, 'btn-assist-html')">Assist Type</div>
               <div class="code-tab" onclick="switchTab(this, 'btn-text-html')">Text Type</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="btn-primary-html">
               <pre>&lt;!-- xxsmall --&gt;
 &lt;button type="button" class="btn btn-blue"&gt;
@@ -5255,7 +5254,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Badge</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_pc/badge.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_pc/badge.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -5275,7 +5274,7 @@
             <div class="code-tabs">
               <div class="code-tab active">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;div class="badge-box"&gt;&lt;span class="badge blue"&gt;Blue&lt;/span&gt;&lt;/div&gt;
 &lt;div class="badge-box"&gt;&lt;span class="badge gray"&gt;Gray&lt;/span&gt;&lt;/div&gt;
@@ -5302,49 +5301,35 @@
         <div class="do-card">
           <div class="do-header">✅ Do</div>
           <div class="do-preview">
-            <button class="demo-btn primary md">저장</button>
-            <button class="demo-btn secondary md">취소</button>
+            <button type="button" class="demo-btn primary md">저장</button>
+            <button type="button" class="demo-btn secondary md">취소</button>
           </div>
           <div class="do-body">페이지 내 가장 중요한 액션 하나에만 Primary 버튼을 사용하고, 보조 액션에는 Secondary를 사용하세요.</div>
         </div>
         <div class="dont-card">
           <div class="dont-header">❌ Don't</div>
           <div class="dont-preview">
-            <button class="demo-btn primary md">저장</button>
-            <button class="demo-btn primary md">취소</button>
-            <button class="demo-btn primary md">삭제</button>
+            <button type="button" class="demo-btn primary md">저장</button>
+            <button type="button" class="demo-btn primary md">취소</button>
+            <button type="button" class="demo-btn primary md">삭제</button>
           </div>
           <div class="dont-body">Primary 버튼을 여러 개 나란히 배치하지 마세요. 사용자가 주요 액션을 파악하기 어려워집니다.</div>
         </div>
         <div class="do-card">
           <div class="do-header">✅ Do</div>
           <div class="do-preview">
-            <button class="demo-btn primary md">검색</button>
-            <button class="demo-btn secondary md">초기화</button>
+            <button type="button" class="demo-btn primary md">검색</button>
+            <button type="button" class="demo-btn secondary md">초기화</button>
           </div>
           <div class="do-body">버튼 레이블은 동사로 시작하는 명확한 행동 언어를 사용하세요. "저장", "검색", "초기화" 등 결과를 예측할 수 있어야 합니다.</div>
         </div>
         <div class="dont-card">
           <div class="dont-header">❌ Don't</div>
           <div class="dont-preview">
-            <button class="demo-btn primary md">OK</button>
-            <button class="demo-btn secondary md">버튼</button>
+            <button type="button" class="demo-btn primary md">OK</button>
+            <button type="button" class="demo-btn secondary md">버튼</button>
           </div>
           <div class="dont-body">의미 없거나 모호한 레이블 사용을 피하세요. 사용자가 버튼의 결과를 예측하기 어렵습니다.</div>
-        </div>
-        <div class="do-card">
-          <div class="do-header">✅ Do</div>
-          <div class="do-preview">
-            <button class="demo-btn danger md">삭제</button>
-          </div>
-          <div class="do-body">되돌릴 수 없는 위험한 액션(삭제, 초기화)에는 Danger 버튼을 사용하여 사용자에게 경고를 전달하세요.</div>
-        </div>
-        <div class="dont-card">
-          <div class="dont-header">❌ Don't</div>
-          <div class="dont-preview">
-            <button class="demo-btn primary md">삭제</button>
-          </div>
-          <div class="dont-body">삭제와 같은 위험 액션에 Primary 버튼을 사용하지 마세요. 사용자가 행동의 심각성을 인지하기 어렵습니다.</div>
         </div>
       </div>
 
@@ -5631,7 +5616,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Button</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/button.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/button.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -5653,7 +5638,7 @@
               <div class="code-tab" onclick="switchTab(this, 'm-button-secondary')">Secondary</div>
               <div class="code-tab" onclick="switchTab(this, 'm-button-blue-line')">Blue Line</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-button-primary">
               <pre>&lt;!-- Default --&gt;
 &lt;button type="button" class="btn btn-blue"&gt;
@@ -5705,7 +5690,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Input</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/input.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/input.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -5730,7 +5715,7 @@
               <div class="code-tab" onclick="switchTab(this, 'm-input-number')">Number</div>
               <div class="code-tab" onclick="switchTab(this, 'm-input-textarea')">Textarea</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-input-default">
               <pre>&lt;!-- input + 버튼 --&gt;
 &lt;div class="field field-input"&gt;
@@ -5936,7 +5921,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Checkbox</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/checkbox.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/checkbox.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -5957,7 +5942,7 @@
               <div class="code-tab active" onclick="switchTab(this, 'm-checkbox-only')">Checkbox (without label)</div>
               <div class="code-tab" onclick="switchTab(this, 'm-checkbox-label')">Checkbox (with label)</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-checkbox-only">
               <pre>&lt;input type="checkbox" id="checkbox-1" name="checkbox-1" aria-label="체크박스" /&gt;</pre>
             </div>
@@ -6003,7 +5988,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Radio</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/radio.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/radio.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -6025,7 +6010,7 @@
               </div>
               <div class="code-tab" onclick="switchTab(this, 'm-radio-with-label')">Radio (with label)</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-radio-without-label">
               <pre>&lt;input type="radio" id="@@id" name="@@name" /&gt;</pre>
             </div>
@@ -6067,7 +6052,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Switch</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/switch.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/switch.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -6088,7 +6073,7 @@
               <div class="code-tab active" onclick="switchTab(this, 'm-switch-without')">Switch (without label)</div>
               <div class="code-tab" onclick="switchTab(this, 'm-switch-with')">Switch (with label)</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-switch-without">
               <pre>&lt;!-- Off --&gt;
 &lt;div class="switch"&gt;
@@ -6145,7 +6130,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Filter Chip</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/filter-chip.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/filter-chip.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -6166,7 +6151,7 @@
               <div class="code-tab active" onclick="switchTab(this, 'm-chip-default')">Default</div>
               <div class="code-tab" onclick="switchTab(this, 'm-chip-default-plus')">Default +</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-chip-default">
               <pre>&lt;!-- Default (line) — field-dropdown-type-label 필수 --&gt;
 &lt;div class="field field-dropdown field-dropdown-type-label field-medium has-label"&gt;
@@ -6303,7 +6288,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Dropdown</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/dropdown.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/dropdown.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -6323,7 +6308,7 @@
             <div class="code-tabs">
               <div class="code-tab active" onclick="switchTab(this, 'm-dropdown-html')">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-dropdown-html">
               <pre>&lt;div class="field field-dropdown"&gt;
   &lt;div class="field-form"&gt;
@@ -6382,7 +6367,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Multi Dropdown</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/multi-dropdown.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/multi-dropdown.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -6402,7 +6387,7 @@
             <div class="code-tabs">
               <div class="code-tab active" onclick="switchTab(this, 'm-multidropdown-html')">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-multidropdown-html">
               <pre>&lt;div class="field field-multi-dropdown"&gt;
                 &lt;div class="field-form"&gt;
@@ -6476,7 +6461,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Dropdown Type Label</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/dropdown-type-label.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/dropdown-type-label.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -6496,7 +6481,7 @@
             <div class="code-tabs">
               <div class="code-tab active" onclick="switchTab(this, 'm-dropdownlabel-html')">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-dropdownlabel-html">
               <pre>&lt;div class="field field-dropdown field-dropdown-type-label field-small has-label"&gt;
                 &lt;div class="field-form"&gt;
@@ -6566,7 +6551,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Underline Tab</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/underline-tab.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/underline-tab.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -6586,7 +6571,7 @@
             <div class="code-tabs">
               <div class="code-tab active">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;div class="tab-wrap" style="width:100%;"&gt;
   &lt;div class="tabs" role="tablist"&gt;
@@ -6619,7 +6604,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Modal</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/modal.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/modal.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -6639,7 +6624,7 @@
             <div class="code-tabs">
               <div class="code-tab active" onclick="switchTab(this, 'm-modal-html')">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-modal-html">
               <pre>&lt;button type="button" class="btn btn-blue btn-modal" data-modal='modal-01'&gt;
                 &lt;span&gt;Open&lt;/span&gt;
@@ -6688,7 +6673,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Badge</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/badge.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/badge.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -6708,7 +6693,7 @@
             <div class="code-tabs">
               <div class="code-tab active">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active">
               <pre>&lt;div class="badge-box"&gt;&lt;span class="badge blue"&gt;Blue&lt;/span&gt;&lt;/div&gt;
 &lt;div class="badge-box"&gt;&lt;span class="badge gray"&gt;Gray&lt;/span&gt;&lt;/div&gt;
@@ -6733,7 +6718,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Loading</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/loading.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/loading.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -6753,7 +6738,7 @@
             <div class="code-tabs">
               <div class="code-tab active" onclick="switchTab(this, 'm-loading-html')">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-loading-html">
               <pre>&lt;!-- 로딩 --&gt;
 &lt;div class="loading-box" role="status" aria-live="polite" aria-label="로딩 중"&gt;
@@ -6779,7 +6764,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Datepicker</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/datepicker.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/datepicker.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/>
                 <path d="M8 1h3v3M11 1L6 6"/>
@@ -6802,7 +6787,7 @@
             <div class="code-tabs">
               <div class="code-tab active" onclick="switchTab(this, 'm-datepicker-html')">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-datepicker-html">
               <pre>&lt;div class="input-wrap date"&gt;
   &lt;input type="text" class="input-datepicker" id="@@id" name="@@name" placeholder="날짜를 선택하세요" value="" data-value="datepicker" readonly /&gt;
@@ -6850,7 +6835,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Time Picker</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/time-picker.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/time-picker.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -6870,7 +6855,7 @@
             <div class="code-tabs">
               <div class="code-tab active" onclick="switchTab(this, 'm-timepicker-html')">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-timepicker-html">
               <pre>&lt;div class="timepicker-box"&gt;
                 &lt;div class="timepicker-input"&gt;
@@ -7016,7 +7001,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Range Time Picker</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/range-time-picker.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/range-time-picker.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -7036,7 +7021,7 @@
             <div class="code-tabs">
               <div class="code-tab active" onclick="switchTab(this, 'm-rangetimepicker-html')">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-rangetimepicker-html">
               <pre>&lt;div class="range-timepicker-box range range-timepicker-medium"&gt;
                 &lt;div class="range-timepicker-input"&gt;
@@ -7305,7 +7290,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Accordion</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/route-accordion.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/route-accordion.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -7325,7 +7310,7 @@
             <div class="code-tabs">
               <div class="code-tab active" onclick="switchTab(this, 'm-routeaccordion-html')">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-routeaccordion-html">
               <pre>&lt;div class="route-list-box"&gt;
                 &lt;ul class="route-lists"&gt;
@@ -8109,7 +8094,7 @@
         <div class="component-block">
           <div class="component-block-header">
             <div class="component-block-title">Weather Widget</div>
-            <button class="preview-open-btn" onclick="window.open('layouts/general_mobile/weather-widget.html', '_blank')">
+            <button type="button" class="preview-open-btn" onclick="window.open('layouts/general_mobile/weather-widget.html', '_blank')">
               <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7"/><path d="M8 1h3v3M11 1L6 6"/></svg>
               새 창에서 열기
             </button>
@@ -8129,7 +8114,7 @@
             <div class="code-tabs">
               <div class="code-tab active" onclick="switchTab(this, 'm-weatherwidget-html')">HTML</div>
             </div>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="m-weatherwidget-html">
               <pre>&lt;!-- 날씨 아이콘 파일 목록 (assets/images/)
   ic_weather_clear.svg            : 맑음
@@ -8158,7 +8143,7 @@
       <div class="modal-box">
         <div class="modal-header">
           <span class="modal-title">타이틀 텍스트
-          </span><button class="modal-close" onclick="closeModal('demo-modal')">
+          </span><button type="button" class="modal-close" onclick="closeModal('demo-modal')">
             <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16" width="16">
               <line x1="3" x2="13" y1="3" y2="13"></line>
               <line x1="13" x2="3" y1="3" y2="13"></line>
@@ -8169,8 +8154,8 @@
           팝업 컨텐츠 텍스트가 이 영역에 표시됩니다. 확인 버튼을 클릭하거나 X 버튼을 눌러 닫을 수 있습니다.
         </div>
         <div class="modal-footer">
-          <button class="demo-btn secondary md" onclick="closeModal('demo-modal')">취소</button>
-          <button class="demo-btn primary md" onclick="closeModal('demo-modal')">확인</button>
+          <button type="button" class="demo-btn secondary md" onclick="closeModal('demo-modal')">취소</button>
+          <button type="button" class="demo-btn primary md" onclick="closeModal('demo-modal')">확인</button>
         </div>
       </div>
     </div>
@@ -8383,10 +8368,10 @@
 
       <!-- 탭 -->
       <div class="pubguide-tabs" id="pubguideTabs">
-        <button class="pubguide-tab active" data-tab="pg-env">기본 환경</button>
-        <button class="pubguide-tab" data-tab="pg-code">코드 규칙</button>
-        <button class="pubguide-tab" data-tab="pg-std">표준 규칙</button>
-        <button class="pubguide-tab" data-tab="pg-aria">WAI-ARIA 접근성</button>
+        <button type="button" class="pubguide-tab active" data-tab="pg-env">기본 환경</button>
+        <button type="button" class="pubguide-tab" data-tab="pg-code">코드 규칙</button>
+        <button type="button" class="pubguide-tab" data-tab="pg-std">표준 규칙</button>
+        <button type="button" class="pubguide-tab" data-tab="pg-aria">WAI-ARIA 접근성</button>
       </div>
 
       <!-- 탭1: 기본 환경 -->
@@ -8404,6 +8389,7 @@
               <tr><th>외부 라이브러리</th><td>프로젝트별 협의 후 사용. <code class="util-code">/assets/js/lib/</code> 또는 <code class="util-code">/vendor/</code> 하위에 보관</td></tr>
             </tbody>
           </table>
+          <div class="notice" style="margin-top: 14px;">💡 <strong>자동화 권장</strong>: 인코딩(UTF-8 no BOM)·들여쓰기(공백 2칸)·줄 끝(LF) 일관성은 수동 관리로는 유지하기 어렵습니다. 프로젝트 루트에 <code class="util-code">.editorconfig</code>를 두어 에디터가 자동 적용하도록 하고, <code class="util-code">Prettier</code>로 포맷팅을 통일하는 것을 권장합니다. 신규 프로젝트는 시작 시점에 도입하고, 기존 프로젝트는 일괄 변환 후 적용하는 방식을 권장합니다.</div>
         </div>
 
         <div class="pubguide-section">
@@ -8465,6 +8451,7 @@
               <tr><td><code class="util-code">html/</code> 또는 도메인별</td><td>HTML 페이지</td><td>기능 단위 하위 폴더로 분류</td></tr>
             </tbody>
           </table>
+          <div class="notice" style="margin-top: 14px;">💡 <strong>적용 범위</strong>: 본 네이밍 규칙은 <strong>신규 작성 파일</strong>에 한해 적용됩니다. 외부 라이브러리(<code class="util-code">vendor/</code>, <code class="util-code">assets/js/lib/</code>)나 외부 도입 자산은 원본 명명을 그대로 유지합니다. 자동 검사가 필요하면 <code class="util-code">Stylelint</code>(CSS)·ESLint 커스텀 룰·pre-commit hook(예: <code class="util-code">husky</code> + <code class="util-code">lint-staged</code>) 도입을 검토하세요.</div>
         </div>
 
       </div>
@@ -8502,26 +8489,21 @@
             <colgroup><col style="width:12%"><col style="width:52%"><col></colgroup>
             <thead><tr><th>순서</th><th>속성</th><th>비고</th></tr></thead>
             <tbody>
-              <tr><td>1. 기능</td><td><code class="util-code">href</code>, <code class="util-code">src</code>, <code class="util-code">type</code>, <code class="util-code">action</code></td><td></td></tr>
-              <tr><td>2. 이름</td><td><code class="util-code">name</code>, <code class="util-code">id</code></td><td></td></tr>
-              <tr><td>3. 정보</td><td><code class="util-code">value</code>, <code class="util-code">title</code>, <code class="util-code">alt</code>, <code class="util-code">placeholder</code></td><td></td></tr>
-              <tr><td>4. 옵션</td><td><code class="util-code">target</code>, <code class="util-code">tabindex</code>, <code class="util-code">autocomplete</code></td><td></td></tr>
-              <tr><td>5. 꾸미기</td><td><code class="util-code">class</code></td><td></td></tr>
-              <tr><td>6. 역할</td><td><code class="util-code">role</code></td><td></td></tr>
-              <tr><td>7. 데이터</td><td><code class="util-code">data-*</code></td><td>JavaScript 연동용 커스텀 데이터</td></tr>
-              <tr><td>8. ARIA 속성</td><td><code class="util-code">aria-controls</code>, <code class="util-code">aria-labelledby</code>, <code class="util-code">aria-describedby</code> 등</td><td></td></tr>
-              <tr><td>9. 상태</td><td><code class="util-code">checked</code>, <code class="util-code">disabled</code>, <code class="util-code">aria-selected</code>, <code class="util-code">aria-current</code>, <code class="util-code">aria-hidden</code> 등</td><td></td></tr>
+              <tr><td>1. 기능</td><td><code class="util-code">href</code>, <code class="util-code">src</code>, <code class="util-code">type</code>, <code class="util-code">action</code></td><td>요소의 핵심 동작·리소스 지정</td></tr>
+              <tr><td>2. 식별·정보</td><td><code class="util-code">name</code>, <code class="util-code">id</code>, <code class="util-code">value</code>, <code class="util-code">title</code>, <code class="util-code">alt</code>, <code class="util-code">placeholder</code></td><td>요소를 식별하거나 정보를 전달</td></tr>
+              <tr><td>3. 표현·옵션</td><td><code class="util-code">class</code>, <code class="util-code">target</code>, <code class="util-code">tabindex</code>, <code class="util-code">autocomplete</code></td><td>스타일·동작 옵션</td></tr>
+              <tr><td>4. 상태·접근성·데이터</td><td><code class="util-code">role</code>, <code class="util-code">data-*</code>, <code class="util-code">aria-*</code>, <code class="util-code">checked</code>, <code class="util-code">disabled</code>, <code class="util-code">aria-selected</code>, <code class="util-code">aria-current</code>, <code class="util-code">aria-hidden</code></td><td>의미·상태·JS 연동</td></tr>
             </tbody>
           </table>
           <pre class="pubguide-pre"><code>&lt;a href="#" title="새창 열기" target="_blank" class="link-external"&gt;바로가기&lt;/a&gt;
 &lt;img src="img.png" alt="대체 텍스트" class="img-banner" /&gt;
 &lt;input type="text" name="userId" id="userId" value="" title="아이디" class="input-text" disabled /&gt;
-&lt;button type="button" class="btn btn-primary" aria-controls="modal-01"&gt;확인&lt;/button&gt;</code></pre>
+&lt;button type="button" class="btn btn-blue" aria-controls="modal-01"&gt;확인&lt;/button&gt;</code></pre>
 
           <h3 class="pubguide-h3">클래스 네이밍 규칙</h3>
           <ul class="pubguide-desc">
             <li>클래스명은 <strong>소문자 + 하이픈(-)</strong>을 사용한다. 카멜케이스 및 언더스코어 혼용 금지.</li>
-            <li>의미를 나타내는 이름을 사용하며, 시각적 속성(색상, 크기)만으로 네이밍하지 않는다. 예) <code class="util-code">btn-primary</code> ✅ &nbsp; <code class="util-code">btn-blue</code> ❌</li>
+            <li>의미·역할이 명확한 이름을 사용하고, 의미 없는 이름은 피한다. 본 디자인 시스템은 버튼 변형을 색상 기반으로 명명한다(역할을 색으로 구분). 예) <code class="util-code">btn-blue</code> · <code class="util-code">btn-white</code> · <code class="util-code">btn-default</code> ✅ &nbsp; <code class="util-code">box1</code> · <code class="util-code">div-a</code> ❌</li>
             <li>상태 클래스는 <code class="util-code">is-</code> 또는 <code class="util-code">has-</code> 접두사를 붙인다. 예) <code class="util-code">is-active</code>, <code class="util-code">is-disabled</code>, <code class="util-code">has-error</code></li>
             <li>JavaScript 조작용 클래스는 <code class="util-code">js-</code> 접두사를 붙이고, 스타일 적용 목적으로는 사용하지 않는다.</li>
           </ul>
@@ -8664,7 +8646,7 @@
               <tr><td>독립적인 콘텐츠 그룹</td><td><code class="util-code">article</code></td><td>단독으로 의미를 가지는 콘텐츠</td></tr>
               <tr><td>보조적인 콘텐츠</td><td><code class="util-code">aside</code></td><td>본문과 관련 있는 부가 콘텐츠</td></tr>
               <tr><td>내비게이션</td><td><code class="util-code">nav</code></td><td>주요 링크 목록</td></tr>
-              <tr><td rowspan="6">목차</td><td>목차 1레벨</td><td><code class="util-code">h1</code></td><td>페이지 최상위 제목 (문서당 1개 권장)</td></tr>
+              <tr><td rowspan="6">목차</td><td>목차 1레벨</td><td><code class="util-code">h1</code></td><td>페이지 최상위 제목 — <strong>[권장]</strong> 문서당 1개 (예외 허용)</td></tr>
               <tr><td>목차 2레벨</td><td><code class="util-code">h2</code></td><td>주요 섹션 제목</td></tr>
               <tr><td>목차 3레벨</td><td><code class="util-code">h3</code></td><td>콘텐츠 핵심 제목</td></tr>
               <tr><td>목차 4레벨</td><td><code class="util-code">h4</code></td><td>콘텐츠 부제목</td></tr>

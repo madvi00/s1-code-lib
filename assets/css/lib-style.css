@@ -533,7 +533,7 @@
       font-family: var(--font-sans) !important;
       font-size: 14px; color: var(--gray-500);
       line-height: 1.6;
-      max-width: 600px;
+      max-width: 700px;
     }
     #page-overview .section-header p {
       max-width: 900px;
@@ -1239,7 +1239,7 @@
     h3.sub-title {
       font-family: var(--font-sans) !important;
       font-size: 13px; font-weight: 600; color: var(--gray-600);
-      margin-bottom: var(--sp-3); margin-top: var(--sp-1); line-height: 1.5;
+      margin-bottom: var(--sp-3); margin-top: var(--sp-3); line-height: 1.5;
     }
     .notice {
       background: var(--color-info-bg); border: 1px solid rgba(14,165,233,0.2);

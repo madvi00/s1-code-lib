@@ -15,8 +15,8 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 | PC 모듈 | 2개 |
 | Mobile 컴포넌트 | 17개 |
 | Mobile 모듈 | 1개 |
-| 디자인 토큰 카테고리 | 3개 (Color · Spacing · Typography) |
-| CSS 변수 | 488개 |
+| 디자인 토큰 카테고리 | 6개 (Color · Typography · Spacing · Sizing · Radius · Shadow/Border Width) |
+| CSS 변수 | 511개 |
 | 구현 방식 | 순수 HTML/CSS (프레임워크 없음) |
 
 ---
