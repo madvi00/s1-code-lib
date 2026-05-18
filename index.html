@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="ko">
 
@@ -1012,7 +1012,7 @@
           <div class="step-title">컴포넌트 HTML 복사</div>
           <div class="step-desc">원하는 컴포넌트 페이지로 이동한 후 코드 스니펫의 HTML 마크업을 복사해 페이지에 붙여넣습니다. <strong>CSS·JS만으로는 화면에 아무것도 표시되지 않으며, HTML 마크업이 반드시 필요합니다.</strong></div>
           <div class="step-code">&lt;!-- 예시: Button 컴포넌트 --&gt;
-&lt;button type="button" class="btn btn-primary"&gt;
+&lt;button type="button" class="btn btn-blue"&gt;
   &lt;span&gt;라벨&lt;/span&gt;
 &lt;/button&gt;</div>
         </div>
@@ -3202,25 +3202,28 @@
           </div>
           <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
           <div class="code-snippet active" style="max-height:none;">
-            <pre>/* ✅ 올바른 방법: Semantic 토큰 사용 */
-.btn-primary {
+            <pre>/* 예시는 사용자가 새로 만드는 커스텀 버튼 컴포넌트(.my-button) 기준입니다.
+   라이브러리에 이미 있는 컴포넌트는 그대로 .btn.btn-blue / .btn.btn-white 등을 사용하세요. */
+
+/* ✅ 올바른 방법: Semantic 토큰 사용 */
+.my-button {
   background: var(--semantic-color-button-background-primary-default);
   color: var(--semantic-color-button-label-primary-default);
   border: 1px solid var(--semantic-color-button-border-primary-default);
   height: var(--semantic-sizing-button-height-xsmall);
   border-radius: var(--semantic-radius-button-md);
 }
-.btn-primary:hover {
+.my-button:hover {
   background: var(--semantic-color-button-background-primary-hover);
 }
-.btn-primary:disabled {
+.my-button:disabled {
   background: var(--semantic-color-button-background-disabled);
   color: var(--semantic-color-button-label-disabled);
   border-color: var(--semantic-color-button-border-disabled);
 }
 
 /* ❌ 잘못된 방법: Foundation 토큰 직접 사용 */
-.btn-primary {
+.my-button {
   background: var(--foundation-color-blue-400); /* 직접 참조 금지 */
 }</pre>
           </div>
@@ -3291,21 +3294,21 @@
           </div>
           <div class="code-block-wrapper">
             <div class="code-tabs">
-              <div class="code-tab active">HTML</div>
+              <div class="code-tab active" onclick="switchTab(this, 'weatherwidget-html')">HTML</div>
             </div>
             <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
-            <div class="code-snippet active">
+            <div class="code-snippet active" id="weatherwidget-html">
               <pre>&lt;!-- 날씨 아이콘 파일 목록 (assets/images/)
   ic_weather_clear.svg            : 맑음
-  ic_weather_partly_cloudy.svg    : 구름조금 (낮), 구름많음 (낮)
+  ic_weather_partly_cloudy.svg    : 구름조금 (낮)
   ic_weather_cloudy.svg           : 흐림
   ic_weather_rain.svg             : 비
   ic_weather_snow.svg             : 눈
-  ic_weather_rain_or_snow.svg     : 비 또는 눈, 눈 또는 비
+  ic_weather_rain_or_snow.svg     : 비 또는 눈
   ic_weather_thunderstorm.svg     : 천둥번개
-  ic_weather_shower.svg           : 가끔 비, 한때 비
-  ic_weather_snow_shower.svg      : 가끔 눈, 한때 눈
-  ic_weather_rain_or_snow_shower.svg : 가끔 비 또는 눈, 한때 비 또는 눈
+  ic_weather_shower.svg           : 가끔 비
+  ic_weather_snow_shower.svg      : 가끔 눈
+  ic_weather_rain_or_snow_shower.svg : 가끔 비 또는 눈
 --&gt;
 &lt;div class="weather-widget"&gt;
   서울
@@ -8118,15 +8121,15 @@
             <div class="code-snippet active" id="m-weatherwidget-html">
               <pre>&lt;!-- 날씨 아이콘 파일 목록 (assets/images/)
   ic_weather_clear.svg            : 맑음
-  ic_weather_partly_cloudy.svg    : 구름조금 (낮), 구름많음 (낮)
+  ic_weather_partly_cloudy.svg    : 구름조금 (낮)
   ic_weather_cloudy.svg           : 흐림
   ic_weather_rain.svg             : 비
   ic_weather_snow.svg             : 눈
-  ic_weather_rain_or_snow.svg     : 비 또는 눈, 눈 또는 비
+  ic_weather_rain_or_snow.svg     : 비 또는 눈
   ic_weather_thunderstorm.svg     : 천둥번개
-  ic_weather_shower.svg           : 가끔 비, 한때 비
-  ic_weather_snow_shower.svg      : 가끔 눈, 한때 눈
-  ic_weather_rain_or_snow_shower.svg : 가끔 비 또는 눈, 한때 비 또는 눈
+  ic_weather_shower.svg           : 가끔 비
+  ic_weather_snow_shower.svg      : 가끔 눈
+  ic_weather_rain_or_snow_shower.svg : 가끔 비 또는 눈
 --&gt;
 &lt;div class="weather-widget"&gt;
   서울
@@ -8598,6 +8601,7 @@
           <ul class="pubguide-desc">
             <li>모바일 웹뷰에서는 앱 네이티브 헤더/푸터를 사용하는 경우가 많으므로 <code class="util-code">header</code> · <code class="util-code">footer</code> 포함 여부는 프로젝트별 협의한다.</li>
             <li><code class="util-code">user-scalable=no</code>는 앱 내 웹뷰 환경에서만 적용하고, 일반 모바일 웹에서는 사용자 확대를 허용한다.</li>
+            <li>위 예시의 <code class="util-code">common.css</code> · <code class="util-code">common.js</code>는 프로젝트별 통합 자산의 <strong>예시 이름</strong>이다. 본 라이브러리를 사용하는 프로젝트는 <code class="util-code">lib-style.css</code> + <code class="util-code">pc-style.css</code> (또는 <code class="util-code">mobile-style.css</code>) + 필요한 컴포넌트 JS를 연결한다. 자세한 사항은 <strong>[시작하기]</strong> 페이지를 참고한다.</li>
           </ul>
         </div>
 

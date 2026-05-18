@@ -131,6 +131,22 @@
       </div>
     </div>
   </div>
+  <script>
+    // 미리보기 전용: 같은 btn-group 안의 탭 클릭 시 .on(active) 클래스를 재할당해
+    // 선택 상태(파란색)가 옮겨가도록 처리.
+    document.querySelectorAll('.btn-group[role="tablist"]').forEach(function (group) {
+      group.querySelectorAll('button[role="tab"]').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          group.querySelectorAll('button[role="tab"]').forEach(function (b) {
+            b.classList.remove('on');
+            b.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('on');
+          tab.setAttribute('aria-selected', 'true');
+        });
+      });
+    });
+  </script>
   <script>if(window.self===window.top){document.body.style.overflow='auto';}document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
 </body>
 
