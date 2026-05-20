@@ -11,7 +11,7 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 
 | 항목 | 수치 |
 |---|---|
-| PC 컴포넌트 | 14개 |
+| PC 컴포넌트 | 15개 |
 | PC 모듈 | 2개 |
 | Mobile 컴포넌트 | 17개 |
 | Mobile 모듈 | 1개 |
@@ -74,7 +74,8 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 | Modal | `layouts/general_pc/modal.html` | 제목, 내용, 버튼으로 구성되는 팝업 |
 | Radio | `layouts/general_pc/radio.html` | 단일 선택 라디오 버튼 |
 | Range TimePicker | `layouts/general_pc/range-time-picker.html` | 시간 범위 선택기 |
-| Tab | `layouts/general_pc/tab.html` | 탭 네비게이션 |
+| Tab | `layouts/general_pc/tab.html` | 탭 네비게이션 (btn-group 기반) |
+| Underline Tab | `layouts/general_pc/underline-tab.html` | 하단 언더라인으로 활성 탭을 강조하는 탭 |
 | Time Picker | `layouts/general_pc/time-picker.html` | 시간 선택기 |
 | Weather Widget | `layouts/general_pc/weather-widget.html` | 날씨 위젯 |
 
