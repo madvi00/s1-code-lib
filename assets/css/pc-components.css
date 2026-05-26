@@ -2500,6 +2500,16 @@ input[type=checkbox]:disabled + span {
   letter-spacing: 0;
   text-indent: 0;
   color: var(--semantic-color-text-body-tertiary);
+  text-shadow: none;
+}
+/* bootstrap-datepicker 기본 text-shadow 제거 (선택/활성 셀의 글자 뒤 그림자 제거) */
+.datepicker table tr td.selected,
+.datepicker table tr td.selected.highlighted,
+.datepicker table tr td span.active,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled:hover {
+  text-shadow: none;
 }
 .datepicker-dropdown .table-condensed tr th.range, .datepicker-dropdown .table-condensed tr th.range-start, .datepicker-dropdown .table-condensed tr th.range-end,
 .datepicker-dropdown .table-condensed tr td.range,
@@ -4447,6 +4457,7 @@ input[type=radio]:disabled + span {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  min-width: 83px;
 }
 .tabs .tab a {
   display: -webkit-box;
