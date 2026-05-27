@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="sidebar-version">
-      v1.0.1 · 2026
+      v1.0.0 · 2026
       <button type="button" class="changelog-btn" onclick="toggleChangelog()" title="업데이트 내역">
         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16" width="13" height="13">
           <circle cx="8" cy="8" r="6"></circle>
@@ -156,7 +156,7 @@
             <circle cx="13.5" cy="8" r="2"></circle>
             <path d="M13.5 7V8l0.8 0.7"></path>
           </svg>
-          <span>Range TimePicker
+          <span>Range Time Picker
           </span></a><a data-page="tab" href="#">
           <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16">
             <rect height="4" rx="1" width="5" x="1" y="4"></rect>
@@ -408,13 +408,7 @@
       </div>
       <div class="changelog-body">
         <div class="changelog-entry">
-          <div class="changelog-ver">v1.0.1 <span class="changelog-date">2026.04</span></div>
-          <ul>
-            <li class="add">PC Table 컴포넌트 추가 (Data List Table, Data Form Table)</li>
-          </ul>
-        </div>
-        <div class="changelog-entry">
-          <div class="changelog-ver">v1.0.0 <span class="changelog-date">2026.04</span></div>
+          <div class="changelog-ver">v1.0.0 <span class="changelog-date">2026.05</span></div>
           <ul>
             <li class="add">PC / Mobile 컴포넌트 최초 공개</li>
             <li class="add">Badge, Button, Checkbox, Datepicker, Dropdown, Filter Chip, Input, Loading, Modal, Radio, RangeTimePicker, RouteAccordion, Tab, TimePicker, WeatherWidget</li>
@@ -438,7 +432,7 @@
         <input id="searchInput" placeholder="컴포넌트/모듈 검색..." type="text" />
       </div>
       <div class="topbar-actions">
-        <div class="topbar-badge">v1.0.1</div>
+        <div class="topbar-badge">v1.0.0</div>
       </div>
     </header>
     <!-- ====== PAGE: OVERVIEW ====== -->
@@ -618,7 +612,7 @@
                 <path d="M13.5 7V8l0.8 0.7"></path>
               </svg>
             </div>
-            <div class="overview-name">Range TimePicker</div>
+            <div class="overview-name">Range Time Picker</div>
             <div class="overview-desc">시작/종료 시간을 탭으로 전환하여 선택하는 범위 타임피커</div>
           </a><a class="overview-card" data-page="tab" href="#">
             <div class="overview-icon">
@@ -3320,7 +3314,7 @@
           </div>
           <div class="component-preview" style="padding:0;">
             <iframe src="layouts/general_pc/time-picker.html"
-              style="width:100%; height:auto; border:none; display:block;" title="Time Picker"></iframe>
+              style="width:100%; height:auto; min-height:700px; border:none; display:block;" title="Time Picker"></iframe>
           </div>
         </div>
         <div class="component-block">
@@ -3687,27 +3681,27 @@
             </div>
             <button type="button" class="copy-btn" onclick="copyCode(this)">Copy</button>
             <div class="code-snippet active" id="tab-html">
-              <pre>&lt;!-- Size Small - Tab --&gt;
+              <pre>&lt;!-- Size Medium - Tab --&gt;
 &lt;div class="btn-group" role="tablist"&gt;
-  &lt;button type="button" class="btn btn-white on" id="tab1" role="tab" aria-selected="true" aria-controls="panel1"&gt;항목&lt;/button&gt;
-  &lt;button type="button" class="btn btn-white" id="tab2" role="tab" aria-selected="false" aria-controls="panel2"&gt;항목&lt;/button&gt;
-  &lt;button type="button" class="btn btn-white" id="tab3" role="tab" aria-selected="false" aria-controls="panel3"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white btn-medium on" id="tab1" role="tab" aria-selected="true" aria-controls="panel1"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white btn-medium" id="tab2" role="tab" aria-selected="false" aria-controls="panel2"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white btn-medium" id="tab3" role="tab" aria-selected="false" aria-controls="panel3"&gt;항목&lt;/button&gt;
 &lt;/div&gt;
 &lt;div id="panel1" role="tabpanel" aria-labelledby="tab1"&gt;&lt;/div&gt;
 &lt;div id="panel2" role="tabpanel" aria-labelledby="tab2" hidden&gt;&lt;/div&gt;
 &lt;div id="panel3" role="tabpanel" aria-labelledby="tab3" hidden&gt;&lt;/div&gt;
 
-&lt;!-- Size Medium - Tab --&gt;
+&lt;!-- Size Small - Tab --&gt;
 &lt;div class="btn-group" role="tablist"&gt;
-  &lt;button type="button" class="btn btn-white btn-medium on" id="tab4" role="tab" aria-selected="true" aria-controls="panel4"&gt;항목&lt;/button&gt;
-  &lt;button type="button" class="btn btn-white btn-medium" id="tab5" role="tab" aria-selected="false" aria-controls="panel5"&gt;항목&lt;/button&gt;
-  &lt;button type="button" class="btn btn-white btn-medium" id="tab6" role="tab" aria-selected="false" aria-controls="panel6"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white on" id="tab4" role="tab" aria-selected="true" aria-controls="panel4"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white" id="tab5" role="tab" aria-selected="false" aria-controls="panel5"&gt;항목&lt;/button&gt;
+  &lt;button type="button" class="btn btn-white" id="tab6" role="tab" aria-selected="false" aria-controls="panel6"&gt;항목&lt;/button&gt;
 &lt;/div&gt;
 &lt;div id="panel4" role="tabpanel" aria-labelledby="tab4"&gt;&lt;/div&gt;
 &lt;div id="panel5" role="tabpanel" aria-labelledby="tab5" hidden&gt;&lt;/div&gt;
 &lt;div id="panel6" role="tabpanel" aria-labelledby="tab6" hidden&gt;&lt;/div&gt;
 
-&lt;!-- 5개 항목 --&gt;
+&lt;!-- Size Small - 5개 항목 --&gt;
 &lt;div class="btn-group" role="tablist"&gt;
   &lt;button type="button" class="btn btn-white on" id="tab7" role="tab" aria-selected="true" aria-controls="panel7"&gt;항목&lt;/button&gt;
   &lt;button type="button" class="btn btn-white" id="tab8" role="tab" aria-selected="false" aria-controls="panel8"&gt;항목&lt;/button&gt;

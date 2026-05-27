@@ -30,7 +30,6 @@ $(function () {
     if (!$input || !$input.length || !$dropdown || !$dropdown.length) return;
 
     var rect = $input.get(0).getBoundingClientRect();
-    var dropdownH = $dropdown.outerHeight(true);
     var dropdownW = $dropdown.outerWidth(true);
     var gap = 6;
 
@@ -38,15 +37,10 @@ $(function () {
     var fRect = (_inFrame && window.frameElement) ? window.frameElement.getBoundingClientRect() : { top: 0, left: 0 };
     var top = rect.bottom + fRect.top + gap;
     var left = rect.left + fRect.left;
-    var winH = _pwin.innerHeight;
     var winW = _pwin.innerWidth;
 
-    if (top + dropdownH > winH) {
-      top = rect.top + fRect.top - dropdownH - gap;
-      $dropdown.addClass('bottom');
-    } else {
-      $dropdown.removeClass('bottom');
-    }
+    // 항상 아래로 위치 (viewport flip 비활성 — 클릭마다 위/아래 번갈아 뜨는 현상 방지)
+    $dropdown.removeClass('bottom');
 
     var willOverflowRight = left + dropdownW > winW;
     if (willOverflowRight) {
@@ -258,10 +252,17 @@ $(function () {
     closePicker($box);
   });
 
-  // resize/scroll 시 위치 재계산
-  $(_pwin).on('resize scroll', function () {
+  // resize/scroll 시 위치 재계산 — input과 함께 움직이도록
+  function reposition() {
     if (!openedBox || !$movedDropdown) return;
     var $box = $(openedBox);
     placeDropdown($box.find('.time-input'), $movedDropdown);
-  });
+  }
+  $(_pwin).on('resize', reposition);
+
+  // capture phase로 부모 페이지의 모든 스크롤러(.page-section 등)까지 캐치해서 위치 따라가게
+  if (_inFrame && _pwin && _pwin.document) {
+    _pwin.document.addEventListener('scroll', reposition, true);
+  }
+  document.addEventListener('scroll', reposition, true);
 });

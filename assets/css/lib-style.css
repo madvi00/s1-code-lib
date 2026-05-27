@@ -584,10 +584,12 @@
       overflow: hidden;
     }
     .component-block-header {
-      padding: var(--sp-4) var(--sp-5);
+      height: 50px;
+      padding: 0 var(--sp-5);
       background: var(--gray-50);
       border-bottom: 1px solid var(--gray-100);
       display: flex; align-items: center; justify-content: space-between;
+      box-sizing: border-box;
     }
     .preview-open-btn {
       display: inline-flex; align-items: center; gap: 5px;

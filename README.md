@@ -73,7 +73,7 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 | Loading | `layouts/general_pc/loading.html` | 로딩 인디케이터 |
 | Modal | `layouts/general_pc/modal.html` | 제목, 내용, 버튼으로 구성되는 팝업 |
 | Radio | `layouts/general_pc/radio.html` | 단일 선택 라디오 버튼 |
-| Range TimePicker | `layouts/general_pc/range-time-picker.html` | 시간 범위 선택기 |
+| Range Time Picker | `layouts/general_pc/range-time-picker.html` | 시간 범위 선택기 |
 | Tab | `layouts/general_pc/tab.html` | 탭 네비게이션 (btn-group 기반) |
 | Underline Tab | `layouts/general_pc/underline-tab.html` | 하단 언더라인으로 활성 탭을 강조하는 탭 |
 | Time Picker | `layouts/general_pc/time-picker.html` | 시간 선택기 |
@@ -145,20 +145,7 @@ s1-code-lib/
 
 ## 업데이트 내역
 
-### v1.1.1 (2026.05.11)
-- PC Button 사이즈 레이블 정비 (sm/md/lg → xxsmall/xsmall/medium 표기)
-- Button Icon Type / Assist Type 코드 스니펫 아이콘 클래스 보정 (`icon-list-download`)
-- 일부 컴포넌트 미세 간격 조정 (Modal padding, Dropdown padding, Button xsmall min-width)
-- `assets.zip` 재생성
-
-### v1.1.0 (2026.05)
-- Filter Chip 컴포넌트 확장: line / solid 스타일에 `selected` 상태 추가
-- Filter Chip prefix 라벨 변형(line+, solid+) 미리보기·코드 스니펫 정비
-- 코드 스니펫 포맷 통일: 카테고리별 탭(Medium · Medium + · Small · Small +) 분리
-- 비밀번호 입력 eye 아이콘 색상 정비 (`#C4C4C4` → `#757575`)
-- `assets.zip` 재생성 (CSS · JS · 아이콘 변경분 반영)
-
-### v1.0.0 (2026.04)
+### v1.0.0 (2026.05)
 - PC / Mobile 컴포넌트 최초 공개
 - 디자인 토큰 (Color · Spacing · Typography) 문서화
 - 사용 가이드라인 페이지 추가
