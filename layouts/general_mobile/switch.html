@@ -31,7 +31,7 @@
     .switch .switch-label { display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
     .switch .switch-ui {
       position: relative; width: 40px; height: 20px;
-      background-color: var(--semantic-color-icon-gray-light, #c4c4c4);
+      background-color: #9d9d9d;
       border-radius: 20px; transition: background-color 0.2s ease;
     }
     .switch .switch-ui::after {
@@ -47,6 +47,10 @@
       transform: translateX(20px);
     }
     .switch .switch-text { font-size: 14px; font-weight: 400; color: var(--semantic-color-control-label-default, #202020); }
+    /* Disabled */
+    .switch .switch-input:disabled + .switch-label { cursor: not-allowed; }
+    .switch .switch-input:disabled + .switch-label .switch-ui { background-color: #E9E9E9; }
+    .switch .switch-input:disabled:checked + .switch-label .switch-ui { background-color: var(--semantic-color-control-background-selected, #1d6ceb); }
   </style>
 </head>
 
@@ -75,6 +79,13 @@
                   <span class="switch-text"></span>
                 </label>
               </div>
+              <div class="switch">
+                <input type="checkbox" id="switch-5" class="switch-input" role="switch" aria-checked="false" aria-label="스위치" disabled />
+                <label for="switch-5" class="switch-label">
+                  <span class="switch-ui"></span>
+                  <span class="switch-text"></span>
+                </label>
+              </div>
             </div>
           </div>
           <div class="component-block">
@@ -90,6 +101,13 @@
               <div class="switch">
                 <input type="checkbox" id="switch-4" class="switch-input" checked role="switch" aria-checked="true" />
                 <label for="switch-4" class="switch-label">
+                  <span class="switch-ui"></span>
+                  <span class="switch-text">라벨</span>
+                </label>
+              </div>
+              <div class="switch">
+                <input type="checkbox" id="switch-6" class="switch-input" role="switch" aria-checked="false" disabled />
+                <label for="switch-6" class="switch-label">
                   <span class="switch-ui"></span>
                   <span class="switch-text">라벨</span>
                 </label>

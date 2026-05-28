@@ -3,15 +3,23 @@
 
   $(function () {
     // -------------------------
-    // iframe 감지 및 포털 설정
+    // iframe 감지 및 포털 설정 (cross-origin 안전 처리)
     // -------------------------
     var _inFrame = (function () { try { return window.self !== window.top; } catch (e) { return true; } })();
-    var _pwin = _inFrame ? window.parent : window;
-    var _pdoc = _pwin.document;
+    var _pwin, _pdoc, _crossOriginParent = false;
+    try {
+      _pwin = _inFrame ? window.parent : window;
+      _pdoc = _pwin.document;
+      void _pdoc.body; // cross-origin 시 SecurityError throw
+    } catch (e) {
+      _pwin = window;
+      _pdoc = window.document;
+      _crossOriginParent = true;
+    }
 
     var $portal;
     var PORTAL_ID;
-    if (_inFrame) {
+    if (_inFrame && !_crossOriginParent) {
       PORTAL_ID = '__rtp_portal__';
       var _pe = _pdoc.getElementById(PORTAL_ID);
       if (!_pe) { _pe = _pdoc.createElement('div'); _pe.id = PORTAL_ID; _pdoc.body.appendChild(_pe); }
