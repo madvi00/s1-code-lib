@@ -44,7 +44,18 @@
   if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}
 
   document.getElementById('btn-show-loading').addEventListener('click', function() {
-    var pdoc = window.parent !== window ? window.parent.document : document;
+    // cross-origin 안전 처리: 부모 document 접근이 막히면 자기 iframe에 fallback
+    var pdoc = document;
+    var imgSrc = '../../assets/images/loading_dots.gif';
+    try {
+      if (window.parent !== window) {
+        void window.parent.document.body; // cross-origin이면 throw
+        pdoc = window.parent.document;
+        imgSrc = 'assets/images/loading_dots.gif';
+      }
+    } catch (e) {
+      // file:// 등 cross-origin iframe — 자기 document에 표시
+    }
 
     var prev = pdoc.getElementById('__iframe_loading__');
     if (prev) return;
@@ -54,7 +65,7 @@
     box.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);';
 
     var img = pdoc.createElement('img');
-    img.src = window.parent !== window ? 'assets/images/loading_dots.gif' : '../../assets/images/loading_dots.gif';
+    img.src = imgSrc;
     img.alt = 'loading';
     img.style.cssText = 'width:150px;height:auto;';
     box.appendChild(img);
