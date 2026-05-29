@@ -5,6 +5,8 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 
 > 별도 프레임워크 없이 순수 HTML/CSS만으로 에스원 디자인 시스템을 빠르고 일관되게 구현할 수 있습니다.
 
+> 🚀 **빠른 시작**: 전달받은 폴더 전체를 그대로 프로젝트 루트에 복사한 뒤 `index.html`을 브라우저로 열면 라이브러리 문서 사이트가 바로 실행됩니다. 별도 설치·빌드 과정이 없습니다.
+
 ---
 
 ## 주요 수치
@@ -12,8 +14,8 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 | 항목 | 수치 |
 |---|---|
 | PC 컴포넌트 | 15개 |
-| PC 모듈 | 2개 |
-| Mobile 컴포넌트 | 17개 |
+| PC 모듈 | 3개 |
+| Mobile 컴포넌트 | 18개 |
 | Mobile 모듈 | 1개 |
 | 디자인 토큰 카테고리 | 6개 (Color · Typography · Spacing · Sizing · Radius · Shadow/Border Width) |
 | CSS 변수 | 511개 |
@@ -84,6 +86,7 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 | 모듈 | 파일 | 설명 |
 |---|---|---|
 | Accordion | `layouts/general_pc/route-accordion.html` | 노선 리스트 + 배차 정보 + 차량 리스트 등을 조합한 노선 아코디언 |
+| Navigation | `layouts/general_pc/navigation.html` | 상단 글로벌 네비게이션 헤더 (로고·메뉴·언어/유저 도구). 3 사이즈 × viewport 반응형 layout |
 | Table | `layouts/general_pc/table.html` | 데이터 리스트(jqGrid) 및 상세정보 폼 테이블 |
 
 ### Mobile
@@ -106,6 +109,7 @@ PC · Mobile 환경에 최적화된 디자인 토큰, 바로 복사해 사용할
 | Switch | `layouts/general_mobile/switch.html` | 토글 스위치 (Mobile 전용) |
 | Underline Tab | `layouts/general_mobile/underline-tab.html` | 언더라인 탭 |
 | Time Picker | `layouts/general_mobile/time-picker.html` | 모바일 시간 선택기 |
+| Toast Popup | `layouts/general_mobile/toast-popup.html` | 짧은 안내 메시지를 화면 하단에서 띄우는 토스트 알림 |
 | Weather Widget | `layouts/general_mobile/weather-widget.html` | 모바일 날씨 위젯 |
 
 ### Mobile Module
@@ -131,8 +135,14 @@ s1-code-lib/
 │   │   ├── pc-components.css   # PC 컴포넌트 상세
 │   │   └── mobile-components.css # Mobile 컴포넌트 상세
 │   ├── js/
-│   │   ├── script.js           # 라이브러리 인터랙션
-│   │   └── dropdown.js         # Dropdown · Filter Chip 동작
+│   │   ├── script.js                  # 라이브러리 사이트 인터랙션 (사이드바, 탭, 플랫폼 토글)
+│   │   ├── publish.js                 # 공통 헤더/유틸 (퍼블리싱 가이드 기준)
+│   │   ├── dropdown.js / multi-dropdown.js
+│   │   ├── modal.js / tab.js / file.js / input.js
+│   │   ├── datepicker.js / time-picker.js / range-time-picker.js
+│   │   ├── route-accordion.js
+│   │   ├── amobe_*.js                 # PC 변형 (amobe = 동일 기능의 PC 버전)
+│   │   └── lib/                       # jQuery, bootstrap-datepicker, popper, swiper 등 외부 라이브러리
 │   ├── fonts/                  # Pretendard · Noto Sans KR · FA
 │   └── images/                 # 아이콘 · 이미지 리소스
 ├── layouts/
@@ -147,10 +157,26 @@ s1-code-lib/
 
 ### v1.0.0 (2026.05)
 - PC / Mobile 컴포넌트 최초 공개
-- 디자인 토큰 (Color · Spacing · Typography) 문서화
+- 디자인 토큰 (Color · Spacing · Typography) 문서화 — Foundation + Semantic 2-tier 구조, 총 511개 변수
 - 사용 가이드라인 페이지 추가
-- Mobile 전용 컴포넌트: Switch, Multi Dropdown, Dropdown Type Label
+- Mobile 전용 컴포넌트: Switch · Multi Dropdown · Dropdown Type Label
+- PC Underline Tab 컴포넌트 추가
+- Switch: disabled 변형 추가 (배경 `#E9E9E9`, 활성 OFF `#9d9d9d`, 투명도 미적용)
+- Datepicker (PC): Range & time 섹션에 Time Picker JS 연동, dropdown 영역 확보용 iframe `min-height: 900px`
+- Time Picker (PC): 확인 버튼 위 구분선 제거 (Range Time Picker와 일관)
+- Input: 미리보기 페이지 및 코드 스니펫 전체에 `autocomplete="off"` (password는 `"new-password"`) 추가 — 브라우저 자동완성 dropdown 차단
+- 사이드바 컴포넌트 정렬 A-Z 통일, 개요 카드 순서도 동일하게 정리
+- `component-block-header` 높이 50px 표준화
+- Mobile Toast Popup 컴포넌트 추가 — 박스 크기 **320 × 48px 고정**, `.toast-popup-container.active` 트리거 시 3초 자동 사라짐 애니메이션
+- PC Navigation 모듈 추가:
+  - 3 사이즈(medium/small/x-small) × viewport 반응형 max-width(≥1280 → 1280 / ≥1440 → 1440 / ≥1920 → 1920px)
+  - 사이즈별 스펙: medium(height 56px, 메뉴 18px Bold), small(36px, 14px Bold), x-small(36px, 14px Medium)
+  - 메뉴 `<a>` 텍스트 width 고정(99/76/76) + 좌우 padding(10/20/20). Active 인디케이터(파란 underline)는 텍스트 폭만 덮음
+  - 메뉴 클릭 시 active 이동 — `amobe_navigation.js` (Underline Tab과 동일한 인터랙션 패턴)
+  - 옵션 modifier: `navigation-w-XXXX` 고정 너비, `navigation-start` 좌측 정렬 (1920 start = 로고+메뉴 좌측, tools 우측 끝)
+  - 새 창 열기 시 viewport에 관계없이 1920 layout 일관 표시 — 인라인 스크립트가 `window.self===window.top`일 때 body에 `min-width: 1920px !important` 강제
+- PC Datepicker: 월 라벨 `"1월"~"12월"`로 변경, 셀 hover 시 파란 테두리·텍스트 미리보기, 연도 화면에 `::after` 가상 요소로 `'년'` 접미사 자동 부착 (외부 라이브러리 `bootstrap-datepicker.js` 수정 없이 CSS만으로 처리)
 
 ---
 
-© 2025 에스원
+© 2026 에스원

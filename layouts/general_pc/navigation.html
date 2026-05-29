@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="../../assets/css/lib-style.css" />
+  <link rel="stylesheet" href="../../assets/css/pc-style.css" />
+  <link rel="stylesheet" href="../../assets/css/iframe-layout.css" />
+  <script src="../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <script src="../../assets/js/amobe_navigation.js"></script>
+  <title>Guide | Navigation</title>
+  <style>
+    /* 미리보기에서 navigation 자체가 전체 폭을 사용하도록 padding 제거 */
+    .general-area .component-preview { padding: 0; }
+    /* 사이즈 구분용 가벼운 배경 */
+    .navigation { background: var(--semantic-base-background-default); }
+  </style>
+</head>
+
+<body style="overflow:hidden; margin:0;">
+  <div class="general-container">
+    <div class="general-area">
+      <div class="general-top">
+        <div class="general-label">Module</div>
+        <div class="general-title">Navigation</div>
+      </div>
+      <div class="general-middle">
+
+        <!-- pc-medium -->
+        <div class="component-block">
+          <div class="component-block-header"><div><div class="component-block-title">pc-medium</div></div></div>
+          <div class="component-preview">
+            <header class="navigation navigation-medium">
+              <div class="navigation-inner">
+                <a class="navigation-logo" href="#"><img src="../../assets/images/logo_samsung.svg" alt="SAMSUNG" /></a>
+                <nav class="navigation-menu" aria-label="주요 메뉴"><a href="#">모니터링</a><a href="#">운영 관리</a><a class="active" href="#" aria-current="page">통계 현황</a><a href="#">알림 관리</a><a href="#">기준 정보</a><a href="#">설정</a><a href="#">귀성 관리</a></nav>
+                <div class="navigation-tools">
+                  <button type="button" class="navigation-lang-btn"><img src="../../assets/images/ic_language.svg" alt="" /><span>한국어</span></button>
+                  <button type="button" class="navigation-user-btn" aria-label="사용자"><img src="../../assets/images/ic_user.svg" alt="" /></button>
+                </div>
+              </div>
+            </header>
+          </div>
+        </div>
+
+        <!-- pc-small -->
+        <div class="component-block">
+          <div class="component-block-header"><div><div class="component-block-title">pc-small</div></div></div>
+          <div class="component-preview">
+            <header class="navigation navigation-small">
+              <div class="navigation-inner">
+                <a class="navigation-logo" href="#"><img src="../../assets/images/logo_samsung.svg" alt="SAMSUNG" /></a>
+                <nav class="navigation-menu" aria-label="주요 메뉴"><a href="#">모니터링</a><a href="#">운영 관리</a><a class="active" href="#" aria-current="page">통계 현황</a><a href="#">알림 관리</a><a href="#">기준 정보</a><a href="#">설정</a><a href="#">귀성 관리</a></nav>
+                <div class="navigation-tools">
+                  <button type="button" class="navigation-lang-btn"><img src="../../assets/images/ic_language.svg" alt="" /><span>한국어</span></button>
+                  <button type="button" class="navigation-user-btn" aria-label="사용자"><img src="../../assets/images/ic_user.svg" alt="" /></button>
+                </div>
+              </div>
+            </header>
+          </div>
+        </div>
+
+        <!-- pc-x-small -->
+        <div class="component-block">
+          <div class="component-block-header"><div><div class="component-block-title">pc-x-small</div></div></div>
+          <div class="component-preview">
+            <header class="navigation navigation-x-small">
+              <div class="navigation-inner">
+                <a class="navigation-logo" href="#"><img src="../../assets/images/logo_samsung.svg" alt="SAMSUNG" /></a>
+                <nav class="navigation-menu" aria-label="주요 메뉴"><a href="#">모니터링</a><a href="#">운영 관리</a><a class="active" href="#" aria-current="page">통계 현황</a><a href="#">알림 관리</a><a href="#">기준 정보</a><a href="#">설정</a><a href="#">귀성 관리</a></nav>
+                <div class="navigation-tools">
+                  <button type="button" class="navigation-lang-btn"><img src="../../assets/images/ic_language.svg" alt="" /><span>한국어</span></button>
+                  <button type="button" class="navigation-user-btn" aria-label="사용자"><img src="../../assets/images/ic_user.svg" alt="" /></button>
+                </div>
+              </div>
+            </header>
+          </div>
+        </div>
+
+        <!-- 1920 start (pc-x-small 기준, 좌측 정렬, 최대 폭 1920px 고정) -->
+        <div class="component-block">
+          <div class="component-block-header"><div><div class="component-block-title">1920 start (pc-x-small)</div></div></div>
+          <div class="component-preview">
+            <header class="navigation navigation-x-small">
+              <div class="navigation-inner navigation-w-1920 navigation-start">
+                <a class="navigation-logo" href="#"><img src="../../assets/images/logo_samsung.svg" alt="SAMSUNG" /></a>
+                <nav class="navigation-menu" aria-label="주요 메뉴"><a href="#">모니터링</a><a href="#">운영 관리</a><a class="active" href="#" aria-current="page">통계 현황</a><a href="#">알림 관리</a><a href="#">기준 정보</a><a href="#">설정</a><a href="#">귀성 관리</a></nav>
+                <div class="navigation-tools">
+                  <button type="button" class="navigation-lang-btn"><img src="../../assets/images/ic_language.svg" alt="" /><span>한국어</span></button>
+                  <button type="button" class="navigation-user-btn" aria-label="사용자"><img src="../../assets/images/ic_user.svg" alt="" /></button>
+                </div>
+              </div>
+            </header>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script>
+  // 새 창으로 열렸을 때: body min-width 1920px 강제 + 가로/세로 스크롤 허용 → viewport가 좁아도 1920 layout 유지
+  if(window.self===window.top){
+    document.body.style.overflow='auto';
+    document.documentElement.style.setProperty('min-width','1920px','important');
+    document.body.style.setProperty('min-width','1920px','important');
+    document.documentElement.style.setProperty('overflow-x','auto','important');
+    document.body.style.setProperty('overflow-x','auto','important');
+  }
+  document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});
+  function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}
+  window.addEventListener("load",_sh);
+  if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}
+  </script>
+</body>
+
+</html>

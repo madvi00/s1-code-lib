@@ -1968,6 +1968,16 @@ input[type=checkbox]:disabled + span {
   background-color: var(--semantic-color-control-background-default);
   color: var(--semantic-color-text-accent);
 }
+.datepicker-inline .table-condensed tr .month-wrap .month:not(.disabled):not(.active):hover,
+.datepicker-inline .table-condensed tr .month-wrap .year:not(.disabled):not(.active):hover,
+.datepicker-inline .table-condensed tr .year-wrap .month:not(.disabled):not(.active):hover,
+.datepicker-inline .table-condensed tr .year-wrap .year:not(.disabled):not(.active):hover {
+  border-color: var(--semantic-color-control-border-selected);
+  color: var(--semantic-color-text-accent);
+}
+.datepicker-inline .table-condensed tr .year-wrap .year::after {
+  content: '년';
+}
 
 .datepicker-footer .datepicker-controls {
   display: -webkit-box;
@@ -3689,10 +3699,10 @@ textarea::placeholder {
   align-items: center;
   position: relative;
   top: 0;
-  width: calc(100% - 6rem);
-  min-height: 4.5rem;
+  width: 32rem;
+  height: 4.8rem;
   margin: auto;
-  padding: 1.6rem 0;
+  padding: 0;
   border-radius: 5rem;
   background: rgba(34, 34, 34, 0.9);
   font-size: var(--foundation-font-size-14);

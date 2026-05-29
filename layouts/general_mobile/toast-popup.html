@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+  <link rel="stylesheet" href="../../assets/css/lib-style.css" />
+  <link rel="stylesheet" href="../../assets/css/iframe-layout.css" />
+  <link rel="stylesheet" href="../../assets/css/mobile-style.css" />
+  <script src="../../assets/js/lib/jquery-3.6.0.min.js"></script>
+  <title>Guide | Toast Popup</title>
+  <style>
+    /* 미리보기 전용: position:fixed 해제하여 인라인으로 표시 (박스는 320×48 고정) */
+    .component-preview .toast-popup-container {
+      position: static;
+      bottom: auto;
+    }
+  </style>
+</head>
+
+<body style="overflow:hidden; margin:0;">
+  <div class="general-container">
+    <div class="general-area">
+      <div class="general-top">
+        <div class="general-label">Component</div>
+        <div class="general-title">Toast Popup</div>
+      </div>
+      <div class="general-middle">
+
+        <div class="component-block">
+          <div class="component-preview" style="flex-direction:column; align-items:center;">
+            <div class="toast-popup-container">
+              <div class="toast-popup-area">
+                <div class="toast-popup-box" role="status" aria-live="polite">변경 내용이 저장되었어요.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-block">
+          <div class="component-block-header"><div><div class="component-block-title">Trigger</div></div></div>
+          <div class="component-preview">
+            <button type="button" class="btn btn-blue btn-medium" id="btn-show-toast">
+              <span>Show Toast</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 동작용 토스트 컨테이너 -->
+  <div class="toast-popup-container" id="demo-toast">
+    <div class="toast-popup-area">
+      <div class="toast-popup-box" role="status" aria-live="polite">변경 내용이 저장되었어요.</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('btn-show-toast').addEventListener('click', function () {
+      var toast = document.getElementById('demo-toast');
+      toast.classList.remove('active');
+      void toast.offsetWidth;
+      toast.classList.add('active');
+    });
+  </script>
+  <script>if(window.self===window.top){document.body.style.overflow='auto';}document.addEventListener("wheel",function(e){window.parent.postMessage({type:"iframeWheel",deltaY:e.deltaY,deltaX:e.deltaX},"*");},{passive:true});function _sh(){var h=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:"iframeHeight",height:h},"*");}window.addEventListener("load",_sh);if(window.ResizeObserver){new ResizeObserver(_sh).observe(document.body);}</script>
+</body>
+
+</html>

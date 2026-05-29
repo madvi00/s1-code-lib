@@ -575,6 +575,15 @@
     #page-m-filterchip .component-blocks-row .component-block:last-child {
       flex: 4;
     }
+    /* Navigation 페이지: 미리보기/코드 스니펫 세로 배열 (가로 폭이 좁아 반응형 demo가 보이도록) */
+    #page-navigation .component-blocks-row {
+      flex-direction: column;
+    }
+    #page-navigation .component-blocks-row .component-block:first-child,
+    #page-navigation .component-blocks-row .component-block:last-child {
+      flex: 1 1 auto;
+      width: 100%;
+    }
 
     .component-block {
       background: #fff;
