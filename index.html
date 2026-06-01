@@ -427,10 +427,10 @@
           <div class="changelog-ver">v1.0.0 <span class="changelog-date">2026.05</span></div>
           <ul>
             <li class="add">PC / Mobile 컴포넌트 최초 공개</li>
-            <li class="add">Badge, Button, Checkbox, Datepicker, Dropdown, Filter Chip, Input, Loading, Modal, Radio, RangeTimePicker, RouteAccordion, Tab, TimePicker, WeatherWidget</li>
-            <li class="add">Mobile 전용: Switch, Multi Dropdown, Dropdown Type Label</li>
+            <li class="add">PC 전용 18개</li>
+            <li class="add">Mobile 전용 19개</li>
             <li class="add">디자인 토큰(Color, Spacing, Typography) 문서화</li>
-            <li class="add">사용 가이드라인, 퍼블리싱가이드 페이지 추가</li>
+            <li class="add">사용 가이드라인, 퍼블리싱가이드 페이지 제공</li>
           </ul>
         </div>
       </div>
@@ -928,9 +928,10 @@
 │   ├── js/
 │   │   ├── lib/
 │   │   │   ├── jquery-3.6.0.min.js
+│   │   │   ├── bootstrap-datepicker.js
 │   │   │   └── swiper-bundle.min.js
-│   │   ├── dropdown.js
-│   │   ├── modal.js
+│   │   ├── dropdown.js / modal.js / tab.js …       ← Mobile 동작
+│   │   ├── amobe_*.js                              ← PC 변형 (amobe = PC 버전)
 │   │   └── ...
 │   └── images/
 └── index.html</div>
@@ -991,7 +992,8 @@
 &lt;script src="assets/js/amobe_time-picker.js"&gt;&lt;/script&gt;        &lt;!-- Time Picker --&gt;
 &lt;script src="assets/js/amobe_range-time-picker.js"&gt;&lt;/script&gt;  &lt;!-- Range Time Picker --&gt;
 &lt;script src="assets/js/route-accordion.js"&gt;&lt;/script&gt;          &lt;!-- Route Accordion --&gt;
-&lt;script src="assets/js/tab.js"&gt;&lt;/script&gt;                       &lt;!-- Underline Tab --&gt;</div>
+&lt;script src="assets/js/tab.js"&gt;&lt;/script&gt;                       &lt;!-- Underline Tab --&gt;
+&lt;script src="assets/js/amobe_navigation.js"&gt;&lt;/script&gt;          &lt;!-- Navigation (메뉴 클릭 active 이동) --&gt;</div>
             </div>
             <div class="gs-tab-panel" id="js-mobile">
               <div class="step-code">&lt;!-- jQuery (필수) --&gt;
@@ -1012,7 +1014,7 @@
 &lt;script src="assets/js/input.js"&gt;&lt;/script&gt;          &lt;!-- Input --&gt;</div>
             </div>
           </div>
-          <div class="notice" style="margin-top: 14px;">💡 Badge, Button, Checkbox, Radio, Switch(Mobile), Loading, Weather Widget, PC Tab, PC Table은 JS 없이 CSS만으로 정적 표시됩니다. (PC Tab/Table의 동적 동작은 별도 구현 필요)</div>
+          <div class="notice" style="margin-top: 14px;">💡 Badge, Button, Checkbox, Radio, Switch(Mobile), Loading, Weather Widget, Toast Popup(Mobile), PC Tab, PC Table은 외부 JS 파일 없이 CSS만으로 정적 표시됩니다. PC Tab·Table·Toast Popup의 동적 동작(탭 전환, 행 선택, 토스트 노출)은 컴포넌트 미리보기 페이지의 인라인 스크립트를 참고하여 직접 구현해 사용합니다.</div>
         </div>
       </div>
 
@@ -1170,9 +1172,21 @@
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
               </tr>
-              <tr>
+              <tr style="border-bottom: 1px solid var(--gray-100);">
                 <td style="padding: 10px 16px; color: var(--gray-800);">File Upload</td>
                 <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/file.js</td>
+                <td style="padding: 10px 16px; text-align: center; color: var(--gray-300);">—</td>
+                <td style="padding: 10px 16px; text-align: center;">✓</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--gray-100);">
+                <td style="padding: 10px 16px; color: var(--gray-800);">Navigation</td>
+                <td style="padding: 10px 16px; font-family: monospace; color: var(--gray-700);">assets/js/amobe_navigation.js <span style="color:var(--gray-400); font-size:11px;">(메뉴 클릭 시 active 이동)</span></td>
+                <td style="padding: 10px 16px; text-align: center;">✓</td>
+                <td style="padding: 10px 16px; text-align: center; color: var(--gray-300);">—</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 16px; color: var(--gray-800);">Toast Popup</td>
+                <td style="padding: 10px 16px; color: var(--gray-500); font-style: italic;">JS 불필요 (`.toast-popup-container.active` 클래스 추가/제거로 동작 트리거 — 미리보기 페이지 인라인 스크립트 참고)</td>
                 <td style="padding: 10px 16px; text-align: center; color: var(--gray-300);">—</td>
                 <td style="padding: 10px 16px; text-align: center;">✓</td>
               </tr>
